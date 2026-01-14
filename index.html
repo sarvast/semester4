@@ -1,0 +1,265 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sarvasva Notes - BCA Semester 4 Dashboard</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --primary-color: #2c3e50;
+            --secondary-color: #3498db;
+            --accent-color: #e74c3c;
+            --light-color: #f8f9fa;
+            --success-color: #27ae60;
+            --warning-color: #f39c12;
+            --shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            --border-radius: 12px;
+            --card-hover: translateY(-5px);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            background-color: #f0f2f5;
+            color: #333;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            color: white;
+            padding: 3rem 1rem;
+            text-align: center;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.15);
+        }
+
+        .hero h1 {
+            font-size: 2.5rem;
+            margin-bottom: 0.5rem;
+            font-weight: 800;
+        }
+
+        .hero p {
+            font-size: 1.1rem;
+            opacity: 0.9;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        /* Main Container */
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: -40px auto 40px;
+            padding: 0;
+            flex: 1;
+            z-index: 10;
+        }
+
+        /* Grid Layout */
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 25px;
+        }
+
+        /* Cards */
+        .card {
+            background: white;
+            border-radius: var(--border-radius);
+            box-shadow: var(--shadow);
+            padding: 25px;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            text-decoration: none;
+            color: inherit;
+            display: flex;
+            flex-direction: column;
+            position: relative;
+            overflow: hidden;
+            border-top: 5px solid transparent;
+        }
+
+        .card:hover {
+            transform: var(--card-hover);
+            box-shadow: 0 12px 24px rgba(0,0,0,0.15);
+        }
+
+        .card-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-bottom: 15px;
+        }
+
+        .icon-box {
+            width: 50px;
+            height: 50px;
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            color: white;
+        }
+
+        .badge {
+            background: #eee;
+            padding: 4px 8px;
+            border-radius: 4px;
+            font-size: 0.75rem;
+            font-weight: 600;
+            color: #666;
+        }
+
+        .card h3 {
+            font-size: 1.25rem;
+            margin-bottom: 10px;
+            color: var(--primary-color);
+        }
+
+        .card p {
+            font-size: 0.9rem;
+            color: #666;
+            margin-bottom: 20px;
+            flex-grow: 1;
+        }
+
+        .action-text {
+            color: var(--secondary-color);
+            font-weight: 600;
+            font-size: 0.9rem;
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
+
+        /* Unit Colors */
+        .unit-card .icon-box { background: var(--secondary-color); }
+        .unit-card { border-top-color: var(--secondary-color); }
+
+        /* Special Cards */
+        .exam-card .icon-box { background: var(--accent-color); }
+        .exam-card { border-top-color: var(--accent-color); }
+
+        .extra-card .icon-box { background: var(--success-color); }
+        .extra-card { border-top-color: var(--success-color); }
+
+        /* Footer */
+        footer {
+            text-align: center;
+            padding: 20px;
+            color: #7f8c8d;
+            font-size: 0.9rem;
+            background: white;
+            border-top: 1px solid #eee;
+        }
+
+        @media (max-width: 768px) {
+            .container { margin-top: 20px; }
+            .hero { text-align: left; padding: 2rem 1.5rem; }
+        }
+    </style>
+</head>
+<body>
+
+    <section class="hero">
+        <div class="header-content">
+            <div class="logo-area">
+                <h1><i class="fas fa-graduation-cap"></i> Sarvasva Notes</h1>
+                <p>Complete Study Resource for BCA Semester 4</p>
+            </div>
+        </div>
+    </section>
+
+    <div class="container">
+        <div class="grid">
+            <!-- Units Section -->
+            <a href="unit1.html" class="card unit-card">
+                <div class="card-header">
+                    <div class="icon-box"><i class="fas fa-book-open"></i></div>
+                    <span class="badge">Core</span>
+                </div>
+                <h3>Unit 1</h3>
+                <p>Comprehensive notes, MCQs, and syllabus coverage for Unit 1. (Graphics, DBMS, SE, Optimization, Math).</p>
+                <div class="action-text">Study Now <i class="fas fa-arrow-right"></i></div>
+            </a>
+
+            <a href="unit2.html" class="card unit-card">
+                <div class="card-header">
+                    <div class="icon-box"><i class="fas fa-layer-group"></i></div>
+                    <span class="badge">Core</span>
+                </div>
+                <h3>Unit 2</h3>
+                <p>Advanced topics and detailed study materials for the second unit of the curriculum.</p>
+                <div class="action-text">Study Now <i class="fas fa-arrow-right"></i></div>
+            </a>
+
+            <a href="unit3.html" class="card unit-card">
+                <div class="card-header">
+                    <div class="icon-box"><i class="fas fa-code-branch"></i></div>
+                    <span class="badge">Core</span>
+                </div>
+                <h3>Unit 3</h3>
+                <p>In-depth exploration of Unit 3 concepts with practical examples.</p>
+                <div class="action-text">Study Now <i class="fas fa-arrow-right"></i></div>
+            </a>
+
+            <a href="unit4.html" class="card unit-card">
+                <div class="card-header">
+                    <div class="icon-box"><i class="fas fa-network-wired"></i></div>
+                    <span class="badge">Core</span>
+                </div>
+                <h3>Unit 4</h3>
+                <p>Key methodologies and frameworks covered in Unit 4.</p>
+                <div class="action-text">Study Now <i class="fas fa-arrow-right"></i></div>
+            </a>
+
+            <a href="unit5.html" class="card unit-card">
+                <div class="card-header">
+                    <div class="icon-box"><i class="fas fa-server"></i></div>
+                    <span class="badge">Core</span>
+                </div>
+                <h3>Unit 5</h3>
+                <p>Final unit notes comprising advanced systems and conclusion of the syllabus.</p>
+                <div class="action-text">Study Now <i class="fas fa-arrow-right"></i></div>
+            </a>
+
+            <!-- Special Sections -->
+            <a href="exampreparation.html" class="card exam-card">
+                <div class="card-header">
+                    <div class="icon-box"><i class="fas fa-clipboard-check"></i></div>
+                    <span class="badge">High Priority</span>
+                </div>
+                <h3>Exam Preparation</h3>
+                <p>Mock tests, previous year questions (PYQs), and exam strategies.</p>
+                <div class="action-text">Prepare Now <i class="fas fa-arrow-right"></i></div>
+            </a>
+
+            <a href="extranotes.html" class="card extra-card">
+                <div class="card-header">
+                    <div class="icon-box"><i class="fas fa-sticky-note"></i></div>
+                    <span class="badge">Bonus</span>
+                </div>
+                <h3>Extra Notes</h3>
+                <p>Additional resources, cheat sheets, and quick reference guides.</p>
+                <div class="action-text">View Extras <i class="fas fa-arrow-right"></i></div>
+            </a>
+
+        </div>
+    </div>
+
+    <footer>
+        <p>&copy; 2026 Sarvasva Notes. Designed for BCA Students.</p>
+    </footer>
+
+</body>
+</html>
