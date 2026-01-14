@@ -1,35 +1,1019 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Unit 5 - Coming Soon</title>
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <title>Sarvasva Notes - Unit 5 Preparation</title>
+    <meta name="description" content="Unit 5 Notes & MCQs for BCA Sem 4. Topics: Computer Animation, ACID Properties, Software Maintenance, Job Sequencing, and Second Order ODEs.">
+    <meta name="keywords" content="BCA Unit 5, Computer Animation, DBMS Recovery, Software Maintenance, Johnson's Rule, Second Order ODE, BCA Notes">
+    <meta property="og:title" content="Unit 5 Preparation - Sarvasva Notes">
+    <meta property="og:description" content="Master Unit 5: Animation, Transaction Processing, Software Maintenance, Sequencing Problems, and ODEs with PYQs.">
+    <meta property="og:type" content="article">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- MathJax for rendering equations -->
+    <script>
+        MathJax = {
+            tex: {
+                inlineMath: [['$', '$'], ['\\(', '\\)']]
+            }
+        };
+    </script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
+
     <style>
         :root {
             --primary-color: #2c3e50;
-            --secondary-color: #3498db;
-            --accent-color: #e74c3c;
+            --secondary-color: #d35400; /* Orange for Unit 5 */
+            --accent-color: #c0392b;
             --light-color: #f8f9fa;
+            --success-color: #27ae60;
+            --warning-color: #f39c12;
+            --shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            --border-radius: 8px;
         }
-        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Segoe UI', sans-serif; }
-        body { background-color: #f5f7fa; color: #333; display: flex; flex-direction: column; min-height: 100vh; }
-        .container { flex: 1; display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; padding: 2rem; }
-        h1 { font-size: 3rem; color: var(--primary-color); margin-bottom: 1rem; }
-        p { font-size: 1.2rem; color: #666; margin-bottom: 2rem; max-width: 600px; }
-        .icon-box { font-size: 5rem; color: var(--secondary-color); margin-bottom: 1.5rem; opacity: 0.8; }
-        .btn { padding: 12px 30px; background: var(--secondary-color); color: white; text-decoration: none; border-radius: 30px; font-weight: 600; transition: transform 0.3s; box-shadow: 0 4px 15px rgba(52, 152, 219, 0.3); }
-        .btn:hover { transform: translateY(-3px); }
-        footer { margin-top: auto; padding: 20px; text-align: center; color: #888; font-size: 0.9rem; }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            background-color: #f5f7fa;
+            color: #333;
+            line-height: 1.6;
+        }
+
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px 0;
+        }
+
+        /* Header & Navigation */
+        header {
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            color: white;
+            padding: 1.5rem 0;
+            box-shadow: var(--shadow);
+            position: relative;
+            z-index: 100;
+        }
+
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .logo i {
+            font-size: 2.5rem;
+        }
+
+        .logo h1 {
+            font-size: 1.8rem;
+            font-weight: 700;
+        }
+
+        .logo p {
+            font-size: 0.9rem;
+            opacity: 0.9;
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 25px;
+            flex-wrap: wrap;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1.1rem;
+            transition: opacity 0.3s;
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
+
+        nav a:hover {
+            opacity: 0.9;
+        }
+
+        /* Hero Section */
+        .hero {
+            background: white;
+            border-radius: var(--border-radius);
+            padding: 2.5rem;
+            margin: 2rem 0;
+            box-shadow: var(--shadow);
+            text-align: center;
+        }
+
+        .hero h2 {
+            color: var(--primary-color);
+            margin-bottom: 1rem;
+            font-size: 2.2rem;
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            margin-bottom: 2rem;
+            color: #555;
+        }
+
+        .cta-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap;
+            margin-top: 2rem;
+        }
+
+        .btn {
+            padding: 12px 28px;
+            border-radius: 50px;
+            font-weight: 600;
+            font-size: 1.1rem;
+            cursor: pointer;
+            transition: all 0.3s;
+            border: none;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            text-decoration: none;
+        }
+
+        .btn-primary {
+            background-color: var(--secondary-color);
+            color: white;
+        }
+
+        .btn-primary:hover {
+            background-color: #a04000;
+            transform: translateY(-3px);
+        }
+
+        .btn-secondary {
+            background-color: var(--primary-color);
+            color: white;
+        }
+
+        .btn-secondary:hover {
+            background-color: #34495e;
+            transform: translateY(-3px);
+        }
+
+        /* Subject Sections */
+        .section-title {
+            color: var(--primary-color);
+            margin: 2.5rem 0 1.5rem;
+            padding-bottom: 10px;
+            border-bottom: 3px solid var(--secondary-color);
+            font-size: 1.8rem;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .subject-container {
+            background: white;
+            border-radius: var(--border-radius);
+            margin-bottom: 2rem;
+            box-shadow: var(--shadow);
+            overflow: hidden;
+        }
+
+        .subject-header {
+            background-color: var(--primary-color);
+            color: white;
+            padding: 1.2rem 1.5rem;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            transition: background-color 0.3s;
+        }
+
+        .subject-header:hover {
+            background-color: #34495e;
+        }
+
+        .subject-header h3 {
+            font-size: 1.5rem;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .subject-header i {
+            font-size: 1.2rem;
+            transition: transform 0.3s;
+        }
+
+        .subject-content {
+            padding: 0;
+            max-height: 0;
+            overflow: hidden;
+            transition: all 0.5s ease;
+        }
+
+        .subject-content.active {
+            padding: 2rem;
+            max-height: 5000px;
+        }
+
+        .subject-header.active i {
+            transform: rotate(180deg);
+        }
+
+        /* Notes Content */
+        .topic {
+            margin-bottom: 2rem;
+        }
+
+        .topic h4 {
+            color: var(--primary-color);
+            margin-bottom: 0.8rem;
+            font-size: 1.3rem;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .topic-content {
+            background-color: #f8f9fa;
+            padding: 1.5rem;
+            border-radius: var(--border-radius);
+            border-left: 4px solid var(--secondary-color);
+        }
+
+        .topic-content p {
+            margin-bottom: 1rem;
+        }
+
+        .topic-content ul, .topic-content ol {
+            padding-left: 1.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .topic-content li {
+            margin-bottom: 0.5rem;
+        }
+
+        /* MCQ Section */
+        .mcq-section {
+            background-color: white;
+            border-radius: var(--border-radius);
+            padding: 2rem;
+            margin: 3rem 0;
+            box-shadow: var(--shadow);
+        }
+
+        .mcq-container {
+            display: none;
+        }
+
+        .mcq-container.active {
+            display: block;
+        }
+
+        .mcq-subject-tabs {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-bottom: 2rem;
+            border-bottom: 2px solid #eee;
+            padding-bottom: 1rem;
+        }
+
+        .mcq-tab {
+            padding: 10px 20px;
+            background-color: #f1f2f6;
+            border-radius: var(--border-radius);
+            cursor: pointer;
+            font-weight: 600;
+            transition: all 0.3s;
+        }
+
+        .mcq-tab.active {
+            background-color: var(--secondary-color);
+            color: white;
+        }
+
+        .mcq-question {
+            background-color: #f8f9fa;
+            padding: 1.5rem;
+            border-radius: var(--border-radius);
+            margin-bottom: 1.5rem;
+            border-left: 4px solid var(--secondary-color);
+        }
+
+        .mcq-options {
+            margin-top: 1rem;
+        }
+
+        .mcq-option {
+            padding: 12px 15px;
+            margin-bottom: 10px;
+            background-color: white;
+            border-radius: var(--border-radius);
+            border: 2px solid #ddd;
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+
+        .mcq-option:hover {
+            border-color: var(--secondary-color);
+            background-color: #fff5e6;
+        }
+
+        .mcq-option.selected {
+            border-color: var(--secondary-color);
+            background-color: var(--secondary-color);
+            color: white;
+        }
+
+        .mcq-option.correct {
+            border-color: var(--success-color);
+            background-color: #d5f4e6;
+            color: #333;
+        }
+
+        .mcq-option.incorrect {
+            border-color: var(--accent-color);
+            background-color: #fde8e8;
+            color: #333;
+        }
+
+        .submit-answer-btn {
+            background-color: var(--primary-color);
+            color: white;
+            border: none;
+            padding: 8px 16px;
+            border-radius: 4px;
+            cursor: pointer;
+            margin-top: 10px;
+            font-size: 0.9rem;
+            transition: background 0.3s;
+        }
+
+        .submit-answer-btn:hover {
+            background-color: #34495e;
+        }
+
+        .submit-answer-btn:disabled {
+            background-color: #bdc3c7;
+            cursor: not-allowed;
+        }
+
+        .mcq-explanation {
+            padding: 1rem;
+            background-color: #f0f8ff;
+            border-radius: var(--border-radius);
+            margin-top: 1rem;
+            display: none;
+            border-left: 4px solid var(--secondary-color);
+        }
+
+        .mcq-explanation.show {
+            display: block;
+        }
+
+        .mcq-navigation {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 2rem;
+        }
+
+        .score-display {
+            background-color: var(--primary-color);
+            color: white;
+            padding: 1rem;
+            border-radius: var(--border-radius);
+            text-align: center;
+            margin-bottom: 1.5rem;
+            font-weight: 600;
+        }
+
+        /* Footer */
+        footer {
+            background-color: var(--primary-color);
+            color: white;
+            text-align: center;
+            padding: 2rem 0;
+            margin-top: 3rem;
+        }
+
+        footer p {
+            margin-bottom: 1rem;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .header-content {
+                flex-direction: column;
+                text-align: center;
+                gap: 1rem;
+            }
+
+            nav ul {
+                justify-content: center;
+            }
+        }
     </style>
 </head>
 <body>
+    <!-- Header & Navigation -->
+    <header>
+        <div class="container header-content">
+            <div class="logo">
+                <i class="fas fa-graduation-cap"></i>
+                <div>
+                    <h1>Sarvasva Notes</h1>
+                    <p>BCA Semester 4 – Unit 5 Smart Preparation</p>
+                </div>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="index.html"><i class="fas fa-home"></i> Home</a></li>
+                    <li><a href="unit1.html">Unit 1</a></li>
+                    <li><a href="unit2.html">Unit 2</a></li>
+                    <li><a href="unit3.html">Unit 3</a></li>
+                    <li><a href="unit4.html">Unit 4</a></li>
+                    <li><a href="unit5.html" style="text-decoration: underline;">Unit 5</a></li>
+                    <li><a href="#mcq"><i class="fas fa-question-circle"></i> Practice MCQs</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
     <div class="container">
-        <div class="icon-box"><i class="fas fa-layer-group"></i></div>
-        <h1>Unit 5 Content</h1>
-        <p>We are currently curating the best study materials for Unit 5. Check back soon!</p>
-        <a href="index.html" class="btn"><i class="fas fa-home"></i> Back to Dashboard</a>
+        <section class="hero">
+            <h2>Unit 5: Animation, Recovery & Sequencing</h2>
+            <p>Master Computer Animation, DBMS Concurrency, Software Maintenance, Job Sequencing, and Second Order ODEs.</p>
+            <div class="cta-buttons">
+                <a href="#notes" class="btn btn-primary"><i class="fas fa-book"></i> Start Studying</a>
+                <a href="#mcq" class="btn btn-secondary"><i class="fas fa-question-circle"></i> Practice MCQs</a>
+            </div>
+        </section>
+
+        <!-- Subject Notes Section -->
+        <h2 class="section-title" id="notes"><i class="fas fa-book-open"></i> Topic-wise Notes</h2>
+        
+        <!-- Computer Graphics -->
+        <div class="subject-container">
+            <div class="subject-header">
+                <h3><i class="fas fa-film"></i> Computer Graphics & Animation</h3>
+                <i class="fas fa-chevron-down"></i>
+            </div>
+            <div class="subject-content">
+                <div class="topic">
+                <h4>Computer Animation</h4>
+                <div class="topic-content">
+                    <ul>
+                    <li><strong>Definition:</strong> Creating fluid motion by displaying a sequence of still images (frames) quickly.</li>
+                    <li><strong>Frame Rate:</strong> Smooth motion typically requires 24-30 fps.</li>
+                    <li><strong>Key Concepts:</strong>
+                        <ul>
+                            <li><strong>Keyframing:</strong> Defining start and end states; computer interpolates intermediates.</li>
+                            <li><strong>Tweening (In-betweening):</strong> Generating intermediate frames between keyframes.</li>
+                        </ul>
+                    </li>
+                    <li><strong>Morphing:</strong> Transforming one image into another. Steps: <strong>Warping</strong> (Shape distortion) & <strong>Cross-dissolving</strong> (Color fading).</li>
+                    <li><strong>Motion Specifications:</strong>
+                        <ul>
+                            <li><strong>Direct Motion:</strong> Explicitly setting rotation/translation values.</li>
+                            <li><strong>Goal-Directed:</strong> Defining the final state (e.g., "Walk to X").</li>
+                        </ul>
+                    </li>
+                     <li><strong>3D Animation Process:</strong> Modeling $\to$ Layout/Animation $\to$ Rendering.</li>
+                    </ul>
+                </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- DBMS -->
+        <div class="subject-container">
+            <div class="subject-header">
+                <h3><i class="fas fa-database"></i> Database Management System (DBMS)</h3>
+                <i class="fas fa-chevron-down"></i>
+            </div>
+            <div class="subject-content">
+                <div class="topic">
+                <h4>Transaction Processing & Compulsory Control</h4>
+                <div class="topic-content">
+                <ul>
+                    <li><strong>ACID Properties:</strong>
+                         <ul>
+                            <li><strong>Atomicity:</strong> All or nothing.</li>
+                            <li><strong>Consistency:</strong> DB remains valid.</li>
+                            <li><strong>Isolation:</strong> Transactions don't interfere.</li>
+                            <li><strong>Durability:</strong> Saved permanently.</li>
+                        </ul>
+                    </li>
+                    <li><strong>Concurrency Control:</strong> Managing simultaneous transactions.
+                        <ul>
+                            <li><strong>Locking:</strong> Shared (Read) vs. Exclusive (Write).</li>
+                            <li><strong>2PL (Two-Phase Locking):</strong> Ensures Serializability. Phases: Growing (Lock) & Shrinking (Unlock).</li>
+                            <li><strong>Deadlock:</strong> Two transactions waiting for each other indefinitely.</li>
+                        </ul>
+                    </li>
+                    <li><strong>Recovery:</strong>
+                        <ul>
+                            <li><strong>Log-Based (WAL):</strong> Recording changes before writing to disk.</li>
+                            <li><strong>Checkpoints:</strong> Saving logs to disk to **reduce recovery time**.</li>
+                            <li><strong>Shadow Paging:</strong> Using two page tables for atomic recovery.</li>
+                        </ul>
+                    </li>
+                </ul>
+                </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Software Engineering -->
+        <div class="subject-container">
+            <div class="subject-header">
+                <h3><i class="fas fa-tools"></i> Software Engineering</h3>
+                <i class="fas fa-chevron-down"></i>
+            </div>
+            <div class="subject-content">
+                <div class="topic">
+                <h4>Software Maintenance</h4>
+                <div class="topic-content">
+                <ul>
+                    <li><strong>Definition:</strong> Modifying software after delivery.</li>
+                    <li><strong>Types of Maintenance:</strong>
+                        <ol>
+                            <li><strong>Corrective:</strong> Fixing bugs/errors (e.g., login failure).</li>
+                            <li><strong>Adaptive:</strong> Adjusting to new environments (OS/Hardware changes).</li>
+                            <li><strong>Perfective:</strong> Adding features/improving performance (User requests).</li>
+                            <li><strong>Preventive:</strong> Refactoring to prevent future issues.</li>
+                        </ol>
+                    </li>
+                    <li><strong>Reverse Engineering:</strong> Analyzing a system to identify components and create a higher-level representation.</li>
+                </ul>
+                </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Optimization -->
+        <div class="subject-container">
+            <div class="subject-header">
+                <h3><i class="fas fa-tasks"></i> Optimization Techniques</h3>
+                <i class="fas fa-chevron-down"></i>
+            </div>
+            <div class="subject-content">
+                 <div class="topic">
+                <h4>Job Sequencing</h4>
+                <div class="topic-content">
+                <ul>
+                    <li><strong>Goal:</strong> Determine order of jobs on machines to minimize **Total Elapsed Time**.</li>
+                    <li><strong>Johnson's Rule (n Jobs, 2 Machines):</strong>
+                        <ol>
+                            <li>Find minimum processing time in the list.</li>
+                            <li>If on Machine 1 $\to$ Process <strong>First</strong>.</li>
+                            <li>If on Machine 2 $\to$ Process <strong>Last</strong>.</li>
+                            <li>Repeat until all jobs sequenced.</li>
+                        </ol>
+                    </li>
+                    <li><strong>Idle Time:</strong> Time a machine is waiting.</li>
+                </ul>
+                </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Math -->
+        <div class="subject-container">
+            <div class="subject-header">
+                <h3><i class="fas fa-calculator"></i> Mathematics-III</h3>
+                <i class="fas fa-chevron-down"></i>
+            </div>
+            <div class="subject-content">
+                <div class="topic">
+                <h4>ODE of Second Order</h4>
+                <div class="topic-content">
+                <ul>
+                    <li><strong>General Form:</strong> $\frac{d^2y}{dx^2} + P\frac{dy}{dx} + Qy = R(x)$.</li>
+                    <li><strong>Solution ($y$):</strong> Complementary Function (C.F.) + Particular Integral (P.I.).</li>
+                    <li><strong>Finding C.F. (Auxiliary Equation $m^2+Pm+Q=0$):</strong>
+                        <ul>
+                            <li>Real & Distinct ($m_1, m_2$): $y = c_1 e^{m_1x} + c_2 e^{m_2x}$.</li>
+                            <li>Real & Equal ($m, m$): $y = (c_1 + c_2x)e^{mx}$.</li>
+                            <li>Complex ($\alpha \pm i\beta$): $y = e^{\alpha x}(c_1 \cos \beta x + c_2 \sin \beta x)$.</li>
+                        </ul>
+                    </li>
+                    <li><strong>Finding P.I.:</strong>
+                         <ul>
+                            <li>If $R(x) = e^{ax}$, P.I. = $\frac{e^{ax}}{f(a)}$ (provided $f(a) \neq 0$).</li>
+                             <li>Case of Failure: Multiply by $x$ and differentiate denominator.</li>
+                        </ul>
+                    </li>
+                </ul>
+                </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- MCQ Practice Section -->
+        <h2 class="section-title" id="mcq"><i class="fas fa-question-circle"></i> Practice MCQs</h2>
+        
+        <div class="mcq-section">
+            <div class="score-display">
+                <p>Your Score: <span id="score">0</span> out of <span id="total-questions">0</span></p>
+                <button id="reset-btn" class="btn btn-secondary" style="padding: 8px 20px; margin-top: 10px;">Reset Quiz</button>
+            </div>
+            
+            <div class="mcq-subject-tabs" id="mcq-tabs">
+                <div class="mcq-tab active" data-subject="graphics">Graphics</div>
+                <div class="mcq-tab" data-subject="dbms">DBMS</div>
+                <div class="mcq-tab" data-subject="se">Software Engineering</div>
+                <div class="mcq-tab" data-subject="optimization">Optimization</div>
+                <div class="mcq-tab" data-subject="math">Mathematics-III</div>
+            </div>
+            
+            <!-- Graphics MCQs -->
+            <div class="mcq-container active" id="graphics-mcq">
+                <div class="mcq-question">
+                    <p class="question-text">The movement of different attributes of image would make the image dynamic and such a dynamic effect is termed as:</p>
+                    <div class="mcq-options">
+                        <div class="mcq-option" data-correct="false">A. Pictures</div>
+                        <div class="mcq-option" data-correct="true">B. Animation</div>
+                        <div class="mcq-option" data-correct="false">C. Pointing</div>
+                        <div class="mcq-option" data-correct="false">D. All of these</div>
+                    </div>
+                    <div class="mcq-explanation">Appeared in 2024</div>
+                </div>
+                <div class="mcq-question">
+                    <p class="question-text">Which of the following is a technique to blend two or more images to form a new image?</p>
+                    <div class="mcq-options">
+                        <div class="mcq-option" data-correct="false">A. Modeling</div>
+                        <div class="mcq-option" data-correct="true">B. Morphing</div>
+                        <div class="mcq-option" data-correct="false">C. Animating</div>
+                        <div class="mcq-option" data-correct="false">D. Warping</div>
+                    </div>
+                    <div class="mcq-explanation">Appeared in 2022</div>
+                </div>
+                <div class="mcq-question">
+                    <p class="question-text">Video file format is:</p>
+                    <div class="mcq-options">
+                        <div class="mcq-option" data-correct="false">A. TIFF</div>
+                        <div class="mcq-option" data-correct="true">B. AVI</div>
+                        <div class="mcq-option" data-correct="false">C. WAV</div>
+                        <div class="mcq-option" data-correct="false">D. Both (A) & (B)</div>
+                    </div>
+                    <div class="mcq-explanation">Appeared in 2022</div>
+                </div>
+                <div class="mcq-question">
+                    <p class="question-text">How many step process for creating a 3D animation are required?</p>
+                    <div class="mcq-options">
+                        <div class="mcq-option" data-correct="false">A. 2</div>
+                        <div class="mcq-option" data-correct="true">B. 3 (Modeling, Layout/Animation, Rendering)</div>
+                        <div class="mcq-option" data-correct="false">C. 4</div>
+                        <div class="mcq-option" data-correct="false">D. 5</div>
+                    </div>
+                    <div class="mcq-explanation">Appeared in 2022</div>
+                </div>
+            </div>
+
+            <!-- DBMS MCQs -->
+            <div class="mcq-container" id="dbms-mcq">
+                <div class="mcq-question">
+                    <p class="question-text">ACID properties of a transaction include:</p>
+                    <div class="mcq-options">
+                        <div class="mcq-option" data-correct="true">A. Atomicity, Consistency, Isolation, Durability</div>
+                        <div class="mcq-option" data-correct="false">B. Atomicity, Concurrency, Isolation, Durability</div>
+                    </div>
+                    <div class="mcq-explanation">Appeared in 2022, 2024</div>
+                </div>
+                <div class="mcq-question">
+                    <p class="question-text">What is the purpose of checkpoints in DBMS recovery?</p>
+                    <div class="mcq-options">
+                        <div class="mcq-option" data-correct="false">A. To delete data</div>
+                        <div class="mcq-option" data-correct="true">B. To reduce recovery time</div>
+                        <div class="mcq-option" data-correct="false">C. To schedule transactions</div>
+                        <div class="mcq-option" data-correct="false">D. To ensure concurrency</div>
+                    </div>
+                    <div class="mcq-explanation">Appeared in 2024-25</div>
+                </div>
+                <div class="mcq-question">
+                    <p class="question-text">The two-phase locking protocol ensures:</p>
+                    <div class="mcq-options">
+                        <div class="mcq-option" data-correct="false">A. Deadlock freedom</div>
+                        <div class="mcq-option" data-correct="true">B. Serializability</div>
+                        <div class="mcq-option" data-correct="false">C. Conflict</div>
+                        <div class="mcq-option" data-correct="false">D. Inconsistency</div>
+                    </div>
+                    <div class="mcq-explanation">Appeared in 2024-25</div>
+                </div>
+                <div class="mcq-question">
+                    <p class="question-text">When two transactions wait each other to release resources, it is called:</p>
+                    <div class="mcq-options">
+                        <div class="mcq-option" data-correct="false">A. Starvation</div>
+                        <div class="mcq-option" data-correct="true">B. Deadlock</div>
+                        <div class="mcq-option" data-correct="false">C. Locking</div>
+                        <div class="mcq-option" data-correct="false">D. Scheduling</div>
+                    </div>
+                    <div class="mcq-explanation">Appeared in 2024-25</div>
+                </div>
+            </div>
+
+            <!-- SE MCQs -->
+            <div class="mcq-container" id="se-mcq">
+                <div class="mcq-question">
+                    <p class="question-text">Which maintenance activity deals with changing Software to keep it usable in a changed environment?</p>
+                    <div class="mcq-options">
+                        <div class="mcq-option" data-correct="true">A. Adaptive maintenance</div>
+                        <div class="mcq-option" data-correct="false">B. Corrective maintenance</div>
+                        <div class="mcq-option" data-correct="false">C. Perfective maintenance</div>
+                    </div>
+                    <div class="mcq-explanation">Appeared in 2024</div>
+                </div>
+                <div class="mcq-question">
+                    <p class="question-text">What is the primary objective of corrective maintenance?</p>
+                    <div class="mcq-options">
+                        <div class="mcq-option" data-correct="false">A. Improve performance</div>
+                        <div class="mcq-option" data-correct="true">B. Fix defects</div>
+                        <div class="mcq-option" data-correct="false">C. Add new features</div>
+                        <div class="mcq-option" data-correct="false">D. Adapt to a new environment</div>
+                    </div>
+                    <div class="mcq-explanation">Appeared in 2024</div>
+                </div>
+                <div class="mcq-question">
+                    <p class="question-text">The different types of software maintenance systems are:</p>
+                    <div class="mcq-options">
+                        <div class="mcq-option" data-correct="false">A. Corrective</div>
+                        <div class="mcq-option" data-correct="false">B. Adaptive</div>
+                        <div class="mcq-option" data-correct="false">C. Perspective (Perfective)</div>
+                        <div class="mcq-option" data-correct="true">D. All the above</div>
+                    </div>
+                    <div class="mcq-explanation">Appeared in 2024</div>
+                </div>
+            </div>
+
+            <!-- Optimization MCQs -->
+            <div class="mcq-container" id="optimization-mcq">
+                <div class="mcq-question">
+                    <p class="question-text">Johnson’s rule is used for:</p>
+                    <div class="mcq-options">
+                        <div class="mcq-option" data-correct="false">A. Queuing problem</div>
+                        <div class="mcq-option" data-correct="true">B. Sequencing problem</div>
+                        <div class="mcq-option" data-correct="false">C. Both (A) and (B)</div>
+                        <div class="mcq-option" data-correct="false">D. None of the above</div>
+                    </div>
+                    <div class="mcq-explanation">Appeared in 2022-23</div>
+                </div>
+                <div class="mcq-question">
+                    <p class="question-text">Which of the following methods is used to determine the optimal sequence for 'n' jobs through two machines?</p>
+                    <div class="mcq-options">
+                        <div class="mcq-option" data-correct="false">A. Hungarian Method</div>
+                        <div class="mcq-option" data-correct="true">B. Johnson’s Rule</div>
+                        <div class="mcq-option" data-correct="false">C. Simplex Method</div>
+                    </div>
+                    <div class="mcq-explanation">Appeared in 2022</div>
+                </div>
+            </div>
+
+            <!-- Math MCQs -->
+            <div class="mcq-container" id="math-mcq">
+                <div class="mcq-question">
+                    <p class="question-text">Solution of $(D^2 + 5D + 4)y = 0$ is:</p>
+                    <div class="mcq-options">
+                        <div class="mcq-option" data-correct="true">A. $c_1 e^{-x} + c_2 e^{-4x}$</div>
+                        <div class="mcq-option" data-correct="false">B. $c_1 e^{x} + c_2 e^{4x}$</div>
+                    </div>
+                    <div class="mcq-explanation">Appeared in 2022-23</div>
+                </div>
+                <div class="mcq-question">
+                    <p class="question-text">Particular Integral for $(D^2 + 2D + 1)y = 0$ is:</p>
+                    <div class="mcq-options">
+                        <div class="mcq-option" data-correct="true">A. 0</div>
+                        <div class="mcq-option" data-correct="false">B. 1/2</div>
+                    </div>
+                    <div class="mcq-explanation">Appeared in 2022-23 (RHS is 0, so PI is 0)</div>
+                </div>
+                 <div class="mcq-question">
+                    <p class="question-text">The P.I. of $(D^3 - D)y = e^x + e^{-x}$ involves:</p>
+                    <div class="mcq-options">
+                        <div class="mcq-option" data-correct="false">A. $\frac{1}{2}(e^x + e^{-x})$</div>
+                        <div class="mcq-option" data-correct="true">B. Multiplication by x (Case of Failure)</div>
+                    </div>
+                    <div class="mcq-explanation">Appeared in 2022-23</div>
+                </div>
+                <div class="mcq-question">
+                    <p class="question-text">Complementary function for $(D^2 + 1)y = 0$ is:</p>
+                    <div class="mcq-options">
+                        <div class="mcq-option" data-correct="false">A. $c_1 \cos x$</div>
+                        <div class="mcq-option" data-correct="false">B. $c_2 \sin x$</div>
+                        <div class="mcq-option" data-correct="true">D. $c_1 \cos x + c_2 \sin x$</div>
+                    </div>
+                    <div class="mcq-explanation">Appeared in 2022-23</div>
+                </div>
+            </div>
+            
+             <div class="mcq-navigation">
+                <button id="prev-btn" class="btn btn-secondary"><i class="fas fa-arrow-left"></i> Previous</button>
+                <button id="next-btn" class="btn btn-primary">Next <i class="fas fa-arrow-right"></i></button>
+            </div>
+        </div>
     </div>
-    <footer>&copy; 2026 Sarvasva Notes</footer>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <p><i class="fas fa-graduation-cap"></i> Sarvasva Notes - BCA Semester 4 Unit 5</p>
+            <p>Your Ultimate Guide: PYQ-Focused Notes + Practice MCQs</p>
+            <p>© 2026 Sarvasva Notes | All Rights Reserved</p>
+        </div>
+    </footer>
+
+    <script>
+        // Collapsible subject sections
+        document.querySelectorAll('.subject-header').forEach(header => {
+            header.addEventListener('click', () => {
+                const content = header.nextElementSibling;
+                header.classList.toggle('active');
+                content.classList.toggle('active');
+            });
+        });
+
+        // MCQ Tab Switching
+        document.querySelectorAll('.mcq-tab').forEach(tab => {
+            tab.addEventListener('click', () => {
+                document.querySelectorAll('.mcq-tab').forEach(t => t.classList.remove('active'));
+                tab.classList.add('active');
+                
+                document.querySelectorAll('.mcq-container').forEach(container => {
+                    container.classList.remove('active');
+                });
+                
+                const subject = tab.getAttribute('data-subject');
+                document.getElementById(`${subject}-mcq`).classList.add('active');
+                
+                currentQuestion = 0;
+                initializeQuestions();
+            });
+        });
+
+        // MCQ functionality logic
+        let score = 0;
+        let totalQuestions = 0;
+        let currentQuestion = 0;
+        let questions = [];
+        
+        function initializeQuestions() {
+            questions = [];
+            const activeContainer = document.querySelector('.mcq-container.active');
+            if(!activeContainer) return;
+
+            const questionElements = activeContainer.querySelectorAll('.mcq-question');
+            
+            questionElements.forEach((q) => {
+                const options = q.querySelectorAll('.mcq-option');
+                options.forEach(opt => {
+                    opt.classList.remove('selected', 'correct', 'incorrect');
+                    opt.style.pointerEvents = 'auto'; // Reset pointer events
+                });
+
+                const explanation = q.querySelector('.mcq-explanation');
+                if(explanation) explanation.classList.remove('show');
+
+                let submitBtn = q.querySelector('.submit-answer-btn');
+                if (!submitBtn) {
+                    submitBtn = document.createElement('button');
+                    submitBtn.className = 'submit-answer-btn';
+                    submitBtn.textContent = 'Submit Answer';
+                    if (explanation) {
+                        q.insertBefore(submitBtn, explanation);
+                    } else {
+                        q.appendChild(submitBtn);
+                    }
+                }
+                submitBtn.disabled = false;
+                submitBtn.textContent = 'Submit Answer';
+
+                questions.push({
+                    element: q,
+                    answered: false,
+                    correct: false
+                });
+            });
+            
+            document.getElementById('total-questions').textContent = questions.length;
+            score = 0;
+            document.getElementById('score').textContent = score;
+            
+            showQuestion();
+        }
+        
+        function showQuestion() {
+            questions.forEach((q) => {
+                q.element.style.display = 'none';
+            });
+            
+            if (questions[currentQuestion]) {
+                questions[currentQuestion].element.style.display = 'block';
+            }
+            
+            const nextBtn = document.getElementById('next-btn');
+            const prevBtn = document.getElementById('prev-btn');
+            
+            if(prevBtn) prevBtn.disabled = currentQuestion === 0;
+            if(nextBtn) nextBtn.innerHTML = currentQuestion === questions.length - 1 ? 'Finish' : 'Next <i class="fas fa-arrow-right"></i>';
+        }
+        
+        document.addEventListener('click', (e) => {
+            if (e.target.classList.contains('mcq-option')) {
+                const questionDiv = e.target.closest('.mcq-question');
+                const submitBtn = questionDiv.querySelector('.submit-answer-btn');
+                if (submitBtn && submitBtn.disabled) return;
+                const options = questionDiv.querySelectorAll('.mcq-option');
+                options.forEach(opt => opt.classList.remove('selected'));
+                e.target.classList.add('selected');
+            }
+
+            if (e.target.classList.contains('submit-answer-btn')) {
+                const button = e.target;
+                const questionDiv = button.closest('.mcq-question');
+                const selectedOption = questionDiv.querySelector('.mcq-option.selected');
+                
+                if (!selectedOption) {
+                    alert('Please select an option first!');
+                    return;
+                }
+
+                const options = questionDiv.querySelectorAll('.mcq-option');
+                const explanation = questionDiv.querySelector('.mcq-explanation');
+                const questionIndex = questions.findIndex(q => q.element === questionDiv);
+                
+                if (questionIndex !== -1) {
+                    questions[questionIndex].answered = true;
+                    const isCorrect = selectedOption.getAttribute('data-correct') === 'true';
+                    questions[questionIndex].correct = isCorrect;
+                    
+                    if (isCorrect) {
+                        score++;
+                        document.getElementById('score').textContent = score;
+                    }
+
+                    options.forEach(option => {
+                        option.style.pointerEvents = 'none';
+                        if (option.getAttribute('data-correct') === 'true') {
+                            option.classList.add('correct');
+                        } else if (option.classList.contains('selected')) {
+                            option.classList.add('incorrect');
+                        }
+                        option.classList.remove('selected');
+                    });
+
+                    if (explanation) explanation.classList.add('show');
+                    button.disabled = true;
+                    button.textContent = isCorrect ? 'Correct!' : 'Incorrect';
+                }
+            }
+        });
+        
+        document.getElementById('next-btn').addEventListener('click', () => {
+            if (currentQuestion < questions.length - 1) {
+                currentQuestion++;
+                showQuestion();
+            } else {
+                alert(`Quiz completed! Your score: ${score}/${questions.length}`);
+            }
+        });
+        
+        document.getElementById('prev-btn').addEventListener('click', () => {
+            if (currentQuestion > 0) {
+                currentQuestion--;
+                showQuestion();
+            }
+        });
+        
+        document.getElementById('reset-btn').addEventListener('click', () => {
+            initializeQuestions();
+        });
+
+        window.addEventListener('DOMContentLoaded', () => {
+            initializeQuestions();
+            document.querySelector('.subject-header').click();
+        });
+    </script>
 </body>
 </html>
