@@ -1,16 +1,20 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sarvasva Notes - Unit 3 Preparation</title>
-    <meta name="description" content="Unit 3 Notes & MCQs for BCA Sem 4. Topics: 2D Transformations, Data Normalization (1NF, 2NF, 3NF), Software Design (Coupling/Cohesion), Replacement Theory, and Fourier Series.">
-    <meta name="keywords" content="BCA Unit 3, 2D Transformations, Normalization, Functional Dependency, Coupling Cohesion, Replacement Theory, Fourier Series, BCA Notes">
+    <meta name="description"
+        content="Unit 3 Notes & MCQs for BCA Sem 4. Topics: 2D Transformations, Data Normalization (1NF, 2NF, 3NF), Software Design (Coupling/Cohesion), Replacement Theory, and Fourier Series.">
+    <meta name="keywords"
+        content="BCA Unit 3, 2D Transformations, Normalization, Functional Dependency, Coupling Cohesion, Replacement Theory, Fourier Series, BCA Notes">
     <meta property="og:title" content="Unit 3 Preparation - Sarvasva Notes">
-    <meta property="og:description" content="Master Unit 3: Transformations, Normalization, Design Concepts, and more with PYQs.">
+    <meta property="og:description"
+        content="Master Unit 3: Transformations, Normalization, Design Concepts, and more with PYQs.">
     <meta property="og:type" content="article">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    
+
     <!-- MathJax for rendering equations -->
     <script>
         MathJax = {
@@ -264,7 +268,8 @@
             margin-bottom: 1rem;
         }
 
-        .topic-content ul, .topic-content ol {
+        .topic-content ul,
+        .topic-content ol {
             padding-left: 1.5rem;
             margin-bottom: 1rem;
         }
@@ -435,6 +440,7 @@
         }
     </style>
 </head>
+
 <body>
     <!-- Header & Navigation -->
     <header>
@@ -453,6 +459,9 @@
                     <li><a href="unit2.html">Unit 2</a></li>
                     <li><a href="unit3.html" style="text-decoration: underline;">Unit 3</a></li>
                     <li><a href="#mcq"><i class="fas fa-question-circle"></i> Practice MCQs</a></li>
+                    <li><a href="https://wa.me/917985040858" target="_blank"
+                            style="color: #25D366; font-weight: bold;"><i class="fab fa-whatsapp"></i> Chat with
+                            Author</a></li>
                 </ul>
             </nav>
         </div>
@@ -462,7 +471,8 @@
     <div class="container">
         <section class="hero">
             <h2>Unit 3: Geometrical Transformations & Normalization</h2>
-            <p>Master 2D Transformations, Database Normalization, Software Design Models, Replacement Theory, and Fourier Series.</p>
+            <p>Master 2D Transformations, Database Normalization, Software Design Models, Replacement Theory, and
+                Fourier Series.</p>
             <div class="cta-buttons">
                 <a href="#notes" class="btn btn-primary"><i class="fas fa-book"></i> Start Studying</a>
                 <a href="#mcq" class="btn btn-secondary"><i class="fas fa-question-circle"></i> Practice MCQs</a>
@@ -471,7 +481,7 @@
 
         <!-- Subject Notes Section -->
         <h2 class="section-title" id="notes"><i class="fas fa-book-open"></i> Topic-wise Notes</h2>
-        
+
         <!-- Computer Graphics -->
         <div class="subject-container">
             <div class="subject-header">
@@ -480,26 +490,48 @@
             </div>
             <div class="subject-content">
                 <div class="topic">
-                <h4>Geometrical Transformations (2D)</h4>
-                <div class="topic-content">
-                    <ul>
-                    <li><strong>Concept:</strong> Methods to modify the shape, size, or position of an object.</li>
-                    <li><strong>Translation:</strong> Moving an object. Equations: $x' = x + t_x$, $y' = y + t_y$.</li>
-                    <li><strong>Rotation:</strong> Rotating by angle $\theta$. Positive $\theta$ is Counter-Clockwise (CCW).
+                    <h4>Geometrical Transformations (2D)</h4>
+                    <div class="topic-content">
                         <ul>
-                            <li>Equation: $x' = x \cos\theta - y \sin\theta$, $y' = x \sin\theta + y \cos\theta$.</li>
+                            <li><strong>Concept:</strong> Methods to modify the shape, size, or position of an object.
+                            </li>
+                            <li><strong>Translation:</strong> Moving an object. Equations: $x' = x + t_x$, $y' = y +
+                                t_y$.</li>
+                            <li><strong>Rotation:</strong> Rotating by angle $\theta$. Positive $\theta$ is
+                                Counter-Clockwise (CCW).
+                                <ul>
+                                    <li>Equation: $x' = x \cos\theta - y \sin\theta$, $y' = x \sin\theta + y
+                                        \cos\theta$.</li>
+                                </ul>
+                            </li>
+                            <li><strong>Scaling:</strong> Changing size coordinates. $x' = x \cdot s_x$, $y' = y \cdot
+                                s_y$.</li>
+                            <li><strong>Reflection:</strong> Mirror image about an axis ($x$-axis, $y$-axis, $y=x$).
+                            </li>
+                            <li><strong>Shearing:</strong> Slanting the object. X-shear: $x' = x + sh_x \cdot y, y' =
+                                y$.</li>
+                            <li><strong>Homogeneous Coordinates:</strong> Representing 2D points as $(x, y, 1)$ to allow
+                                matrix multiplication for translation.</li>
+                            <li><strong>Composite Transformation:</strong> Sequence of transformations e.g., Rotation
+                                about a pivot point $(x_f, y_f)$:
+                                <ol>
+                                    <li>Translate pivot to origin ($T(-x_f, -y_f)$).</li>
+                                    <li>Rotate about origin ($R(\theta)$).</li>
+                                    <li>Translate back ($T(x_f, y_f)$).</li>
+                                </ol>
+                            </li>
+                            <li><strong>3D Transformations:</strong> Extension to 3D $(x, y, z, 1)$.
+                                <ul>
+                                    <li><em>Rotation:</em> Can happen about X, Y, or Z axis (more complex matrices).
+                                    </li>
+                                </ul>
+                            </li>
                         </ul>
-                    </li>
-                    <li><strong>Scaling:</strong> Changing size coordinates. $x' = x \cdot s_x$, $y' = y \cdot s_y$.</li>
-                    <li><strong>Reflection:</strong> Mirror image about an axis ($x$-axis, $y$-axis, $y=x$).</li>
-                    <li><strong>Shearing:</strong> Slanting the object. X-shear: $x' = x + sh_x \cdot y, y' = y$.</li>
-                    <li><strong>Homogeneous Coordinates:</strong> Representing 2D points as $(x, y, 1)$ to allow matrix multiplication for translation.</li>
-                    </ul>
-                </div>
+                    </div>
                 </div>
             </div>
         </div>
-        
+
         <!-- DBMS -->
         <div class="subject-container">
             <div class="subject-header">
@@ -508,20 +540,34 @@
             </div>
             <div class="subject-content">
                 <div class="topic">
-                <h4>Data Normalization</h4>
-                <div class="topic-content">
-                <ul>
-                    <li><strong>Definition:</strong> Organizing data to minimize redundancy and dependency. Decomposes large tables.</li>
-                    <li><strong>1NF (First Normal Form):</strong> Eliminates repeating groups. Attributes must be atomic.</li>
-                    <li><strong>2NF (Second Normal Form):</strong> 1NF + No <strong>Partial Dependency</strong> (Non-key attributes depend on the full primary key).</li>
-                    <li><strong>3NF (Third Normal Form):</strong> 2NF + No <strong>Transitive Dependency</strong> (Non-key attributes depend only on the primary key, not other non-keys).</li>
-                    <li><strong>BCNF (Boyce-Codd Normal Form):</strong> Stronger 3NF. For functional dependency $X \to Y$, $X$ must be a super key.</li>
-                </ul>
-                </div>
+                    <h4>Data Normalization</h4>
+                    <div class="topic-content">
+                        <ul>
+                            <li><strong>Definition:</strong> Organizing data to minimize redundancy and dependency.
+                                Decomposes large tables.</li>
+                            <li><strong>1NF (First Normal Form):</strong> Eliminates repeating groups. Attributes must
+                                be atomic.</li>
+                            <li><strong>2NF (Second Normal Form):</strong> 1NF + No <strong>Partial Dependency</strong>
+                                (Non-key attributes depend on the full primary key).</li>
+                            <li><strong>3NF (Third Normal Form):</strong> 2NF + No <strong>Transitive
+                                    Dependency</strong> (Non-key attributes depend only on the primary key, not other
+                                non-keys).</li>
+                            <li><strong>BCNF (Boyce-Codd Normal Form):</strong> Stronger 3NF. For functional dependency
+                                $X \to Y$, $X$ must be a super key.</li>
+                            <li><strong>Decomposition Properties:</strong>
+                                <ul>
+                                    <li><em>Lossless Join:</em> Natural join of decomposed tables returns original table
+                                        without spurious tuples.</li>
+                                    <li><em>Dependency Preservation:</em> All functional dependencies can be checked
+                                        within individual tables without joining.</li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </div>
                 </div>
             </div>
         </div>
-        
+
         <!-- Software Engineering -->
         <div class="subject-container">
             <div class="subject-header">
@@ -530,24 +576,41 @@
             </div>
             <div class="subject-content">
                 <div class="topic">
-                <h4>Software Design Concepts</h4>
-                <div class="topic-content">
-                <ul>
-                    <li><strong>Software Design:</strong> Transforming SRS into a structure for implementation.</li>
-                    <li><strong>Modularity:</strong> Dividing software into distinct, addressable components.</li>
-                    <li><strong>Coupling:</strong> Interdependence between modules. <strong>Goal: Low Coupling.</strong>
-                        <ul><li>Worst: Content Coupling. Best: Data Coupling.</li></ul>
-                    </li>
-                    <li><strong>Cohesion:</strong> Strength of relationship within a module. <strong>Goal: High Cohesion.</strong>
-                        <ul><li>Best: Functional Cohesion. Worst: Coincidental Cohesion.</li></ul>
-                    </li>
-                    <li><strong>Structure Chart:</strong> Graphical representation of system modules and hierarchy.</li>
-                </ul>
-                </div>
+                    <h4>Software Design Concepts</h4>
+                    <div class="topic-content">
+                        <ul>
+                            <li><strong>Software Design:</strong> Transforming SRS into a structure for implementation.
+                            </li>
+                            <li><strong>Modularity:</strong> Dividing software into distinct, addressable components.
+                            </li>
+                            <li><strong>Coupling:</strong> Interdependence between modules. <strong>Goal: Low
+                                    Coupling.</strong>
+                                <ul>
+                                    <li>Worst: Content Coupling. Best: Data Coupling.</li>
+                                </ul>
+                            </li>
+                            <li><strong>Cohesion:</strong> Strength of relationship within a module. <strong>Goal: High
+                                    Cohesion.</strong>
+                                <ul>
+                                    <li>Best: Functional Cohesion. Worst: Coincidental Cohesion.</li>
+                                </ul>
+                            </li>
+                            <li><strong>Structure Chart:</strong> Graphical representation of system modules and
+                                hierarchy.</li>
+                            <li><strong>Design Strategies:</strong>
+                                <ul>
+                                    <li><em>Top-Down:</em> Start with main component, decompose into sub-components.
+                                        (Stepwise Refinement).</li>
+                                    <li><em>Bottom-Up:</em> Start with lowest level components (utility functions),
+                                        combine to form higher levels.</li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </div>
                 </div>
             </div>
         </div>
-        
+
         <!-- Optimization -->
         <div class="subject-container">
             <div class="subject-header">
@@ -555,25 +618,45 @@
                 <i class="fas fa-chevron-down"></i>
             </div>
             <div class="subject-content">
-                 <div class="topic">
-                <h4>Replacement Theory</h4>
-                <div class="topic-content">
-                <ul>
-                    <li><strong>Replacement Problem:</strong> Deciding when to replace equipment due to deterioration or failure.</li>
-                    <li><strong>Gradual Failure:</strong> Efficiency drops over time (Machines, Cars). Replace when Maintenance Cost > Average Cost.</li>
-                    <li><strong>Sudden Failure:</strong> Works perfectly until it fails (Light bulbs).</li>
-                    <li><strong>Policies:</strong>
+                <div class="topic">
+                    <h4>Replacement Theory</h4>
+                    <div class="topic-content">
                         <ul>
-                            <li><strong>Individual:</strong> Replace on failure.</li>
-                            <li><strong>Group:</strong> Replace all at fixed time $T$. Good for low-cost bulk items.</li>
+                            <li><strong>Replacement Problem:</strong> Deciding when to replace equipment due to
+                                deterioration or failure.</li>
+                            <li><strong>Gradual Failure:</strong> Efficiency drops over time (Machines, Cars). Replace
+                                when Maintenance Cost > Average Cost.</li>
+                            <li><strong>Sudden Failure:</strong> Works perfectly until it fails (Light bulbs).</li>
+                            <li><strong>Policies:</strong>
+                                <ul>
+                                    <li><strong>Individual:</strong> Replace on failure.</li>
+                                    <li><strong>Group:</strong> Replace all at fixed time $T$. Good for low-cost bulk
+                                        items.</li>
+                                </ul>
+                            </li>
+                            <li><strong>Inventory Control (EOQ):</strong>
+                                <ul>
+                                    <li><strong>EOQ (Economic Order Quantity):</strong> The optimal order quantity that
+                                        minimizes total inventory costs (Ordering Cost + Holding Cost).</li>
+                                    <li><strong>Formula:</strong> $Q = \sqrt{\frac{2DS}{H}}$, where:
+                                        <ul>
+                                            <li>$D$ = Demand rate</li>
+                                            <li>$S$ = Ordering cost per order</li>
+                                            <li>$H$ = Holding cost per unit per year</li>
+                                        </ul>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li><strong>Staffing Problem:</strong> Application of replacement theory to human resources.
+                                <br><em>Goal:</em> Maintain constant workforce size despite resignations/retirements
+                                (mortality) by hiring new recruits. Uses mortality tables.
+                            </li>
                         </ul>
-                    </li>
-                </ul>
-                </div>
+                    </div>
                 </div>
             </div>
         </div>
-        
+
         <!-- Math -->
         <div class="subject-container">
             <div class="subject-header">
@@ -582,35 +665,48 @@
             </div>
             <div class="subject-content">
                 <div class="topic">
-                <h4>Fourier Series</h4>
-                <div class="topic-content">
-                <ul>
-                    <li><strong>Definition:</strong> Expression of a periodic function $f(x)$ as a sum of sines and cosines.</li>
-                    <li><strong>Formula:</strong> $f(x) = \frac{a_0}{2} + \sum_{n=1}^{\infty} a_n \cos(nx) + \sum_{n=1}^{\infty} b_n \sin(nx)$.</li>
-                    <li><strong>Euler's Formulas:</strong>
-                         <ul>
-                            <li>$a_0 = \frac{1}{\pi} \int_{-\pi}^{\pi} f(x) dx$</li>
-                            <li>$a_n = \frac{1}{\pi} \int_{-\pi}^{\pi} f(x) \cos(nx) dx$</li>
-                            <li>$b_n = \frac{1}{\pi} \int_{-\pi}^{\pi} f(x) \sin(nx) dx$</li>
+                    <h4>Fourier Series</h4>
+                    <div class="topic-content">
+                        <ul>
+                            <li><strong>Definition:</strong> Expression of a periodic function $f(x)$ as a sum of sines
+                                and cosines.</li>
+                            <li><strong>Formula:</strong> $f(x) = \frac{a_0}{2} + \sum_{n=1}^{\infty} a_n \cos(nx) +
+                                \sum_{n=1}^{\infty} b_n \sin(nx)$.</li>
+                            <li><strong>Euler's Formulas:</strong>
+                                <ul>
+                                    <li>$a_0 = \frac{1}{\pi} \int_{-\pi}^{\pi} f(x) dx$</li>
+                                    <li>$a_n = \frac{1}{\pi} \int_{-\pi}^{\pi} f(x) \cos(nx) dx$</li>
+                                    <li>$b_n = \frac{1}{\pi} \int_{-\pi}^{\pi} f(x) \sin(nx) dx$</li>
+                                </ul>
+                            </li>
+                            <li><strong>Even Function ($f(-x) = f(x)$):</strong> Symmetric about Y-axis. $b_n = 0$.</li>
+                            <li><strong>Odd Function ($f(-x) = -f(x)$):</strong> Symmetric about Origin. $a_0 = 0, a_n =
+                                0$, only sine terms exist.</li>
+                            <li><strong>Dirichlet Conditions:</strong> Conditions for a function $f(x)$ to be
+                                represented as a Fourier Series:
+                                <ol>
+                                    <li>Defined and single-valued.</li>
+                                    <li>Finite number of discontinuities in period.</li>
+                                    <li>Finite number of maxima and minima.</li>
+                                    <li>$\int_{-\pi}^{\pi} |f(x)| dx$ (Absolute integral) converges.</li>
+                                </ol>
+                            </li>
                         </ul>
-                    </li>
-                    <li><strong>Even Function ($f(-x) = f(x)$):</strong> Symmetric about Y-axis. $b_n = 0$.</li>
-                    <li><strong>Odd Function ($f(-x) = -f(x)$):</strong> Symmetric about Origin. $a_0 = 0, a_n = 0$.</li>
-                </ul>
-                </div>
+                    </div>
                 </div>
             </div>
         </div>
 
         <!-- MCQ Practice Section -->
         <h2 class="section-title" id="mcq"><i class="fas fa-question-circle"></i> Practice MCQs</h2>
-        
+
         <div class="mcq-section">
             <div class="score-display">
                 <p>Your Score: <span id="score">0</span> out of <span id="total-questions">0</span></p>
-                <button id="reset-btn" class="btn btn-secondary" style="padding: 8px 20px; margin-top: 10px;">Reset Quiz</button>
+                <button id="reset-btn" class="btn btn-secondary" style="padding: 8px 20px; margin-top: 10px;">Reset
+                    Quiz</button>
             </div>
-            
+
             <div class="mcq-subject-tabs" id="mcq-tabs">
                 <div class="mcq-tab active" data-subject="graphics">Graphics</div>
                 <div class="mcq-tab" data-subject="dbms">DBMS</div>
@@ -618,7 +714,7 @@
                 <div class="mcq-tab" data-subject="optimization">Optimization</div>
                 <div class="mcq-tab" data-subject="math">Mathematics-III</div>
             </div>
-            
+
             <!-- Graphics MCQs -->
             <div class="mcq-container active" id="graphics-mcq">
                 <div class="mcq-question">
@@ -635,7 +731,8 @@
                 <div class="mcq-question">
                     <p class="question-text">Positive values for the rotation angle defines:</p>
                     <div class="mcq-options">
-                        <div class="mcq-option" data-correct="true">A. Counter clockwise rotations about the endpoints/origin</div>
+                        <div class="mcq-option" data-correct="true">A. Counter clockwise rotations about the
+                            endpoints/origin</div>
                         <div class="mcq-option" data-correct="false">B. Clockwise rotations</div>
                         <div class="mcq-option" data-correct="false">C. Parallel moves</div>
                         <div class="mcq-option" data-correct="false">D. None of these</div>
@@ -644,7 +741,8 @@
                 </div>
 
                 <div class="mcq-question">
-                    <p class="question-text">In 2D translation, a point $(x, y)$ can move to the new position $(x', y')$ by using the equation:</p>
+                    <p class="question-text">In 2D translation, a point $(x, y)$ can move to the new position $(x', y')$
+                        by using the equation:</p>
                     <div class="mcq-options">
                         <div class="mcq-option" data-correct="true">A. $x' = x + t_x$ and $y' = y + t_y$</div>
                         <div class="mcq-option" data-correct="false">B. $x' = x - t_x$ and $y' = y - t_y$</div>
@@ -666,7 +764,8 @@
                 </div>
 
                 <div class="mcq-question">
-                    <p class="question-text">Reflection of a point about x-axis, followed by a counter-clockwise rotation of $90^\circ$, is equivalent to reflection about the line:</p>
+                    <p class="question-text">Reflection of a point about x-axis, followed by a counter-clockwise
+                        rotation of $90^\circ$, is equivalent to reflection about the line:</p>
                     <div class="mcq-options">
                         <div class="mcq-option" data-correct="false">A. $x = -y$</div>
                         <div class="mcq-option" data-correct="true">B. $y = x$</div>
@@ -681,217 +780,275 @@
                     <div class="mcq-options">
                         <div class="mcq-option" data-correct="true">A. $S_x = S_y$</div>
                         <div class="mcq-option" data-correct="false">B. $S_x < S_y$</div>
-                        <div class="mcq-option" data-correct="false">C. $S_x > S_y$</div>
-                        <div class="mcq-option" data-correct="false">D. None of the above</div>
+                                <div class="mcq-option" data-correct="false">C. $S_x > S_y$</div>
+                                <div class="mcq-option" data-correct="false">D. None of the above</div>
+                        </div>
+                        <div class="mcq-explanation">Appeared in: 2024</div>
                     </div>
-                    <div class="mcq-explanation">Appeared in: 2024</div>
+
+                    <div class="mcq-question">
+                        <p class="question-text">The mapping a world window in world coordinates system to viewport is
+                            called:</p>
+                        <div class="mcq-options">
+                            <div class="mcq-option" data-correct="true">A. Transformation viewing</div>
+                            <div class="mcq-option" data-correct="false">B. Viewport</div>
+                            <div class="mcq-option" data-correct="false">C. Clipping window</div>
+                            <div class="mcq-option" data-correct="false">D. Screen coordinate system</div>
+                        </div>
+                        <div class="mcq-explanation">Appeared in: 2022</div>
+                    </div>
+
+                    <div class="mcq-question">
+                        <p class="question-text">Two successive translations are:</p>
+                        <div class="mcq-options">
+                            <div class="mcq-option" data-correct="true">A. Additive</div>
+                            <div class="mcq-option" data-correct="false">B. Multiplicative</div>
+                            <div class="mcq-option" data-correct="false">C. Subtractive</div>
+                            <div class="mcq-option" data-correct="false">D. None</div>
+                        </div>
+                        <div class="mcq-explanation">Appeared in PYQ</div>
+                    </div>
                 </div>
 
-                <div class="mcq-question">
-                    <p class="question-text">The mapping a world window in world coordinates system to viewport is called:</p>
-                    <div class="mcq-options">
-                        <div class="mcq-option" data-correct="true">A. Transformation viewing</div>
-                        <div class="mcq-option" data-correct="false">B. Viewport</div>
-                        <div class="mcq-option" data-correct="false">C. Clipping window</div>
-                        <div class="mcq-option" data-correct="false">D. Screen coordinate system</div>
+                <!-- DBMS MCQs -->
+                <div class="mcq-container" id="dbms-mcq">
+                    <div class="mcq-question">
+                        <p class="question-text">Which normal form eliminates transitive dependencies between non-key
+                            attributes?</p>
+                        <div class="mcq-options">
+                            <div class="mcq-option" data-correct="false">A. First normal form (1NF)</div>
+                            <div class="mcq-option" data-correct="false">B. Second normal form (2NF)</div>
+                            <div class="mcq-option" data-correct="true">C. Third normal form (3NF)</div>
+                            <div class="mcq-option" data-correct="false">D. BCNF</div>
+                        </div>
+                        <div class="mcq-explanation">Appeared in: 2022, 2024</div>
+                    </div>
+
+                    <div class="mcq-question">
+                        <p class="question-text">Which of the following functional dependencies violates the second
+                            normal form (2NF)?</p>
+                        <div class="mcq-options">
+                            <div class="mcq-option" data-correct="true">A. Partial dependency</div>
+                            <div class="mcq-option" data-correct="false">B. Transitive dependency</div>
+                            <div class="mcq-option" data-correct="false">C. Multi-valued dependency</div>
+                            <div class="mcq-option" data-correct="false">D. Trivial dependency</div>
+                        </div>
+                        <div class="mcq-explanation">Appeared in: 2024</div>
+                    </div>
+
+                    <div class="mcq-question">
+                        <p class="question-text">Which normal form requires that the database is in first normal form
+                            and all non-key attributes are fully functionally dependent on the primary key?</p>
+                        <div class="mcq-options">
+                            <div class="mcq-option" data-correct="false">A. 1NF</div>
+                            <div class="mcq-option" data-correct="true">B. 2NF</div>
+                            <div class="mcq-option" data-correct="false">C. 3NF</div>
+                            <div class="mcq-option" data-correct="false">D. BCNF</div>
+                        </div>
+                        <div class="mcq-explanation">Appeared in: 2022, 2024</div>
+                    </div>
+
+                    <div class="mcq-question">
+                        <p class="question-text">BCNF is a stronger version of:</p>
+                        <div class="mcq-options">
+                            <div class="mcq-option" data-correct="false">A. 1NF</div>
+                            <div class="mcq-option" data-correct="false">B. 2NF</div>
+                            <div class="mcq-option" data-correct="true">C. 3NF</div>
+                            <div class="mcq-option" data-correct="false">D. 4NF</div>
+                        </div>
+                        <div class="mcq-explanation">Appeared in: 2022, 2024-25</div>
+                    </div>
+
+                    <div class="mcq-question">
+                        <p class="question-text">Which normal form allows repeating groups and is considered to be the
+                            lowest level of normalization?</p>
+                        <div class="mcq-options">
+                            <div class="mcq-option" data-correct="true">A. First normal form (1NF)</div>
+                            <div class="mcq-option" data-correct="false">B. 2NF</div>
+                            <div class="mcq-option" data-correct="false">C. 3NF</div>
+                            <div class="mcq-option" data-correct="false">D. UNKNOWN</div>
+                        </div>
+                        <div class="mcq-explanation">Appeared in: 2022, 2024</div>
+                    </div>
+
+                    <div class="mcq-question">
+                        <p class="question-text">The process of removing duplicate data from an ER model is known as:
+                        </p>
+                        <div class="mcq-options">
+                            <div class="mcq-option" data-correct="true">A. Normalization</div>
+                            <div class="mcq-option" data-correct="false">B. Denormalization</div>
+                            <div class="mcq-option" data-correct="false">C. Deduplication</div>
+                            <div class="mcq-option" data-correct="false">D. Factoring</div>
+                        </div>
+                        <div class="mcq-explanation">Appeared in: 2022, 2024</div>
+                    </div>
+
+                    <div class="mcq-question">
+                        <p class="question-text">Which of the following properties must be preserved during
+                            normalization?</p>
+                        <div class="mcq-options">
+                            <div class="mcq-option" data-correct="false">A. Lossless Join</div>
+                            <div class="mcq-option" data-correct="false">B. Dependency Preservation</div>
+                            <div class="mcq-option" data-correct="true">C. Both A and B</div>
+                            <div class="mcq-option" data-correct="false">D. None</div>
+                        </div>
+                        <div class="mcq-explanation">Appeared in PYQ</div>
+                    </div>
+                </div>
+
+                <!-- SE MCQs -->
+                <div class="mcq-container" id="se-mcq">
+                    <div class="mcq-question">
+                        <p class="question-text">The relationship of data elements in a module is called (or
+                            intra-dependability):</p>
+                        <div class="mcq-options">
+                            <div class="mcq-option" data-correct="false">A. Coupling</div>
+                            <div class="mcq-option" data-correct="false">B. Modularity</div>
+                            <div class="mcq-option" data-correct="true">C. Cohesion</div>
+                            <div class="mcq-option" data-correct="false">D. None of the above</div>
+                        </div>
+                        <div class="mcq-explanation">Appeared in: 2022, 2023</div>
+                    </div>
+
+                    <div class="mcq-question">
+                        <p class="question-text">The extent to which different modules are dependent upon each other is
+                            called?</p>
+                        <div class="mcq-options">
+                            <div class="mcq-option" data-correct="false">A. Cohesion</div>
+                            <div class="mcq-option" data-correct="true">B. Coupling</div>
+                            <div class="mcq-option" data-correct="false">C. Modularity</div>
+                            <div class="mcq-option" data-correct="false">D. Stability</div>
+                        </div>
+                        <div class="mcq-explanation">Appeared in: 2022, 2024</div>
+                    </div>
+
+                    <div class="mcq-question">
+                        <p class="question-text">Which coupling is also known as Global Coupling?</p>
+                        <div class="mcq-options">
+                            <div class="mcq-option" data-correct="false">A. Content coupling</div>
+                            <div class="mcq-option" data-correct="false">B. Stamp coupling</div>
+                            <div class="mcq-option" data-correct="true">C. Common coupling</div>
+                            <div class="mcq-option" data-correct="false">D. Data coupling</div>
+                        </div>
+                        <div class="mcq-explanation">Appeared in: 2022</div>
+                    </div>
+
+                    <div class="mcq-question">
+                        <p class="question-text">Which is the best type of coupling? (Lowest dependency)</p>
+                        <div class="mcq-options">
+                            <div class="mcq-option" data-correct="false">A. Control coupling</div>
+                            <div class="mcq-option" data-correct="true">B. Data coupling</div>
+                            <div class="mcq-option" data-correct="false">C. Content coupling</div>
+                            <div class="mcq-option" data-correct="false">D. Stamp coupling</div>
+                        </div>
+                        <div class="mcq-explanation">Appeared in: 2022</div>
+                    </div>
+
+                    <div class="mcq-question">
+                        <p class="question-text">Which of the following is the highest form of cohesion?</p>
+                        <div class="mcq-options">
+                            <div class="mcq-option" data-correct="false">A. Temporal cohesion</div>
+                            <div class="mcq-option" data-correct="false">B. Procedural cohesion</div>
+                            <div class="mcq-option" data-correct="true">C. Functional cohesion</div>
+                            <div class="mcq-option" data-correct="false">D. Logical cohesion</div>
+                        </div>
+                        <div class="mcq-explanation">Appeared in: 2022</div>
+                    </div>
+
+                    <div class="mcq-question">
+                        <p class="question-text">Which tool is used for structure design?</p>
+                        <div class="mcq-options">
+                            <div class="mcq-option" data-correct="true">A. Structure chart</div>
+                            <div class="mcq-option" data-correct="false">B. Program flow chart</div>
+                            <div class="mcq-option" data-correct="false">C. Data flow diagram</div>
+                            <div class="mcq-option" data-correct="false">D. Module</div>
+                        </div>
+                        <div class="mcq-explanation">Appeared in: 2022, 2024</div>
+                    </div>
+
+                    <div class="mcq-question">
+                        <p class="question-text">The number of modules directly controlled by a given module is known
+                            as:</p>
+                        <div class="mcq-options">
+                            <div class="mcq-option" data-correct="false">A. Fan-in</div>
+                            <div class="mcq-option" data-correct="true">B. Fan-out</div>
+                            <div class="mcq-option" data-correct="false">C. Depth</div>
+                            <div class="mcq-option" data-correct="false">D. Width</div>
+                        </div>
+                        <div class="mcq-explanation">Appeared in PYQ</div>
+                    </div>
+                </div>
+
+                <!-- Optimization MCQs -->
+                <div class="mcq-container" id="optimization-mcq">
+                    <div class="mcq-question">
+                        <p class="question-text">Replacement is said to be necessary if:</p>
+                        <div class="mcq-options">
+                            <div class="mcq-option" data-correct="false">A. Failure rate is constant</div>
+                            <div class="mcq-option" data-correct="true">B. Failure rate is increasing</div>
+                            <div class="mcq-option" data-correct="false">C. Failure probability is increasing</div>
+                            <div class="mcq-option" data-correct="false">D. Any of these</div>
+                        </div>
+                        <div class="mcq-explanation">Appeared in: 2022, 2024</div>
+                    </div>
+
+                    <div class="mcq-question">
+                        <p class="question-text">Group replacement policy is most suitable for:</p>
+                        <div class="mcq-options">
+                            <div class="mcq-option" data-correct="false">A. Trucks</div>
+                            <div class="mcq-option" data-correct="true">B. Identical low cost items (e.g., Light bulbs)
+                            </div>
+                            <div class="mcq-option" data-correct="false">C. Machines</div>
+                            <div class="mcq-option" data-correct="false">D. New cars</div>
+                        </div>
+                        <div class="mcq-explanation">Appeared in: 2022, 2024</div>
+                    </div>
+
+                    <div class="mcq-question">
+                        <p class="question-text">The problem of replacement is felt when job performing units fail:</p>
+                        <div class="mcq-options">
+                            <div class="mcq-option" data-correct="true">A. Suddenly and gradually</div>
+                            <div class="mcq-option" data-correct="false">B. Gradually</div>
+                            <div class="mcq-option" data-correct="false">C. Suddenly</div>
+                            <div class="mcq-option" data-correct="false">D. None</div>
+                        </div>
+                        <div class="mcq-explanation">Appeared in: 2022</div>
+                    </div>
+
+                    <div class="mcq-question">
+                        <p class="question-text">If a machine becomes old, then the failure rate expected will be:</p>
+                        <div class="mcq-options">
+                            <div class="mcq-option" data-correct="false">A. Constant</div>
+                            <div class="mcq-option" data-correct="true">B. Increasing</div>
+                            <div class="mcq-option" data-correct="false">C. Decreasing</div>
+                            <div class="mcq-option" data-correct="false">D. We cannot say</div>
+                        </div>
+                        <div class="mcq-explanation">Appeared in: 2022</div>
+                    </div>
+
+                    <div class="mcq-question">
+                        <p class="question-text">The replacement policy that is imposed on an item irrespective of its
+                            failure is:</p>
+                        <div class="mcq-options">
+                            <div class="mcq-option" data-correct="true">A. Group replacement</div>
+                            <div class="mcq-option" data-correct="false">B. Individual replacement</div>
+                            <div class="mcq-option" data-correct="false">C. Repair spare replacement</div>
+                            <div class="mcq-option" data-correct="false">D. Successive replacement</div>
+                        </div>
+                        <div class="mcq-explanation">Appeared in: 2022</div>
                     </div>
                     <div class="mcq-explanation">Appeared in: 2022</div>
                 </div>
-            </div>
-
-            <!-- DBMS MCQs -->
-            <div class="mcq-container" id="dbms-mcq">
-                <div class="mcq-question">
-                    <p class="question-text">Which normal form eliminates transitive dependencies between non-key attributes?</p>
-                    <div class="mcq-options">
-                        <div class="mcq-option" data-correct="false">A. First normal form (1NF)</div>
-                        <div class="mcq-option" data-correct="false">B. Second normal form (2NF)</div>
-                        <div class="mcq-option" data-correct="true">C. Third normal form (3NF)</div>
-                        <div class="mcq-option" data-correct="false">D. BCNF</div>
-                    </div>
-                    <div class="mcq-explanation">Appeared in: 2022, 2024</div>
-                </div>
 
                 <div class="mcq-question">
-                    <p class="question-text">Which of the following functional dependencies violates the second normal form (2NF)?</p>
+                    <p class="question-text">EOQ stands for:</p>
                     <div class="mcq-options">
-                        <div class="mcq-option" data-correct="true">A. Partial dependency</div>
-                        <div class="mcq-option" data-correct="false">B. Transitive dependency</div>
-                        <div class="mcq-option" data-correct="false">C. Multi-valued dependency</div>
-                        <div class="mcq-option" data-correct="false">D. Trivial dependency</div>
+                        <div class="mcq-option" data-correct="false">A. Economic Output Quality</div>
+                        <div class="mcq-option" data-correct="true">B. Economic Order Quantity</div>
+                        <div class="mcq-option" data-correct="false">C. Estimated Order Quality</div>
+                        <div class="mcq-option" data-correct="false">D. Equal Order Quantity</div>
                     </div>
-                    <div class="mcq-explanation">Appeared in: 2024</div>
-                </div>
-
-                <div class="mcq-question">
-                    <p class="question-text">Which normal form requires that the database is in first normal form and all non-key attributes are fully functionally dependent on the primary key?</p>
-                    <div class="mcq-options">
-                        <div class="mcq-option" data-correct="false">A. 1NF</div>
-                        <div class="mcq-option" data-correct="true">B. 2NF</div>
-                        <div class="mcq-option" data-correct="false">C. 3NF</div>
-                        <div class="mcq-option" data-correct="false">D. BCNF</div>
-                    </div>
-                    <div class="mcq-explanation">Appeared in: 2022, 2024</div>
-                </div>
-
-                <div class="mcq-question">
-                    <p class="question-text">BCNF is a stronger version of:</p>
-                    <div class="mcq-options">
-                        <div class="mcq-option" data-correct="false">A. 1NF</div>
-                        <div class="mcq-option" data-correct="false">B. 2NF</div>
-                        <div class="mcq-option" data-correct="true">C. 3NF</div>
-                        <div class="mcq-option" data-correct="false">D. 4NF</div>
-                    </div>
-                    <div class="mcq-explanation">Appeared in: 2022, 2024-25</div>
-                </div>
-
-                <div class="mcq-question">
-                    <p class="question-text">Which normal form allows repeating groups and is considered to be the lowest level of normalization?</p>
-                    <div class="mcq-options">
-                        <div class="mcq-option" data-correct="true">A. First normal form (1NF)</div>
-                        <div class="mcq-option" data-correct="false">B. 2NF</div>
-                        <div class="mcq-option" data-correct="false">C. 3NF</div>
-                        <div class="mcq-option" data-correct="false">D. UNKNOWN</div>
-                    </div>
-                    <div class="mcq-explanation">Appeared in: 2022, 2024</div>
-                </div>
-
-                <div class="mcq-question">
-                    <p class="question-text">The process of removing duplicate data from an ER model is known as:</p>
-                    <div class="mcq-options">
-                        <div class="mcq-option" data-correct="true">A. Normalization</div>
-                        <div class="mcq-option" data-correct="false">B. Denormalization</div>
-                        <div class="mcq-option" data-correct="false">C. Deduplication</div>
-                        <div class="mcq-option" data-correct="false">D. Factoring</div>
-                    </div>
-                    <div class="mcq-explanation">Appeared in: 2022, 2024</div>
-                </div>
-            </div>
-
-            <!-- SE MCQs -->
-            <div class="mcq-container" id="se-mcq">
-                <div class="mcq-question">
-                    <p class="question-text">The relationship of data elements in a module is called (or intra-dependability):</p>
-                    <div class="mcq-options">
-                        <div class="mcq-option" data-correct="false">A. Coupling</div>
-                        <div class="mcq-option" data-correct="false">B. Modularity</div>
-                        <div class="mcq-option" data-correct="true">C. Cohesion</div>
-                        <div class="mcq-option" data-correct="false">D. None of the above</div>
-                    </div>
-                    <div class="mcq-explanation">Appeared in: 2022, 2023</div>
-                </div>
-
-                <div class="mcq-question">
-                    <p class="question-text">The extent to which different modules are dependent upon each other is called?</p>
-                    <div class="mcq-options">
-                        <div class="mcq-option" data-correct="false">A. Cohesion</div>
-                        <div class="mcq-option" data-correct="true">B. Coupling</div>
-                        <div class="mcq-option" data-correct="false">C. Modularity</div>
-                        <div class="mcq-option" data-correct="false">D. Stability</div>
-                    </div>
-                    <div class="mcq-explanation">Appeared in: 2022, 2024</div>
-                </div>
-
-                <div class="mcq-question">
-                    <p class="question-text">Which coupling is also known as Global Coupling?</p>
-                    <div class="mcq-options">
-                        <div class="mcq-option" data-correct="false">A. Content coupling</div>
-                        <div class="mcq-option" data-correct="false">B. Stamp coupling</div>
-                        <div class="mcq-option" data-correct="true">C. Common coupling</div>
-                        <div class="mcq-option" data-correct="false">D. Data coupling</div>
-                    </div>
-                    <div class="mcq-explanation">Appeared in: 2022</div>
-                </div>
-
-                <div class="mcq-question">
-                    <p class="question-text">Which is the best type of coupling? (Lowest dependency)</p>
-                    <div class="mcq-options">
-                        <div class="mcq-option" data-correct="false">A. Control coupling</div>
-                        <div class="mcq-option" data-correct="true">B. Data coupling</div>
-                        <div class="mcq-option" data-correct="false">C. Content coupling</div>
-                        <div class="mcq-option" data-correct="false">D. Stamp coupling</div>
-                    </div>
-                    <div class="mcq-explanation">Appeared in: 2022</div>
-                </div>
-
-                <div class="mcq-question">
-                    <p class="question-text">Which of the following is the highest form of cohesion?</p>
-                    <div class="mcq-options">
-                        <div class="mcq-option" data-correct="false">A. Temporal cohesion</div>
-                        <div class="mcq-option" data-correct="false">B. Procedural cohesion</div>
-                        <div class="mcq-option" data-correct="true">C. Functional cohesion</div>
-                        <div class="mcq-option" data-correct="false">D. Logical cohesion</div>
-                    </div>
-                    <div class="mcq-explanation">Appeared in: 2022</div>
-                </div>
-
-                <div class="mcq-question">
-                    <p class="question-text">Which tool is used for structure design?</p>
-                    <div class="mcq-options">
-                        <div class="mcq-option" data-correct="true">A. Structure chart</div>
-                        <div class="mcq-option" data-correct="false">B. Program flow chart</div>
-                        <div class="mcq-option" data-correct="false">C. Data flow diagram</div>
-                        <div class="mcq-option" data-correct="false">D. Module</div>
-                    </div>
-                    <div class="mcq-explanation">Appeared in: 2022, 2024</div>
-                </div>
-            </div>
-
-            <!-- Optimization MCQs -->
-            <div class="mcq-container" id="optimization-mcq">
-                <div class="mcq-question">
-                    <p class="question-text">Replacement is said to be necessary if:</p>
-                    <div class="mcq-options">
-                        <div class="mcq-option" data-correct="false">A. Failure rate is constant</div>
-                        <div class="mcq-option" data-correct="true">B. Failure rate is increasing</div>
-                        <div class="mcq-option" data-correct="false">C. Failure probability is increasing</div>
-                        <div class="mcq-option" data-correct="false">D. Any of these</div>
-                    </div>
-                    <div class="mcq-explanation">Appeared in: 2022, 2024</div>
-                </div>
-
-                <div class="mcq-question">
-                    <p class="question-text">Group replacement policy is most suitable for:</p>
-                    <div class="mcq-options">
-                        <div class="mcq-option" data-correct="false">A. Trucks</div>
-                        <div class="mcq-option" data-correct="true">B. Identical low cost items (e.g., Light bulbs)</div>
-                        <div class="mcq-option" data-correct="false">C. Machines</div>
-                        <div class="mcq-option" data-correct="false">D. New cars</div>
-                    </div>
-                    <div class="mcq-explanation">Appeared in: 2022, 2024</div>
-                </div>
-
-                <div class="mcq-question">
-                    <p class="question-text">The problem of replacement is felt when job performing units fail:</p>
-                    <div class="mcq-options">
-                        <div class="mcq-option" data-correct="true">A. Suddenly and gradually</div>
-                        <div class="mcq-option" data-correct="false">B. Gradually</div>
-                        <div class="mcq-option" data-correct="false">C. Suddenly</div>
-                        <div class="mcq-option" data-correct="false">D. None</div>
-                    </div>
-                    <div class="mcq-explanation">Appeared in: 2022</div>
-                </div>
-
-                <div class="mcq-question">
-                    <p class="question-text">If a machine becomes old, then the failure rate expected will be:</p>
-                    <div class="mcq-options">
-                        <div class="mcq-option" data-correct="false">A. Constant</div>
-                        <div class="mcq-option" data-correct="true">B. Increasing</div>
-                        <div class="mcq-option" data-correct="false">C. Decreasing</div>
-                        <div class="mcq-option" data-correct="false">D. We cannot say</div>
-                    </div>
-                    <div class="mcq-explanation">Appeared in: 2022</div>
-                </div>
-
-                <div class="mcq-question">
-                    <p class="question-text">The replacement policy that is imposed on an item irrespective of its failure is:</p>
-                    <div class="mcq-options">
-                        <div class="mcq-option" data-correct="true">A. Group replacement</div>
-                        <div class="mcq-option" data-correct="false">B. Individual replacement</div>
-                        <div class="mcq-option" data-correct="false">C. Repair spare replacement</div>
-                        <div class="mcq-option" data-correct="false">D. Successive replacement</div>
-                    </div>
-                    <div class="mcq-explanation">Appeared in: 2022</div>
+                    <div class="mcq-explanation">Appeared in: PYQ</div>
                 </div>
             </div>
 
@@ -909,7 +1066,8 @@
                 </div>
 
                 <div class="mcq-question">
-                    <p class="question-text">If $f(x) = x \cos x$ in $[-\pi, \pi]$ (which is an Odd function), then Fourier coefficient $a_n$ is:</p>
+                    <p class="question-text">If $f(x) = x \cos x$ in $[-\pi, \pi]$ (which is an Odd function), then
+                        Fourier coefficient $a_n$ is:</p>
                     <div class="mcq-options">
                         <div class="mcq-option" data-correct="true">A. 0</div>
                         <div class="mcq-option" data-correct="false">B. 1</div>
@@ -920,7 +1078,8 @@
                 </div>
 
                 <div class="mcq-question">
-                    <p class="question-text">If $f(x) = \sin x$ in $[-\pi, \pi]$ (Odd function), then value of $a_n$ in Fourier series:</p>
+                    <p class="question-text">If $f(x) = \sin x$ in $[-\pi, \pi]$ (Odd function), then value of $a_n$ in
+                        Fourier series:</p>
                     <div class="mcq-options">
                         <div class="mcq-option" data-correct="true">A. 0</div>
                         <div class="mcq-option" data-correct="false">B. 1</div>
@@ -960,9 +1119,20 @@
                     </div>
                     <div class="mcq-explanation">Appeared in: 2024</div>
                 </div>
+
+                <div class="mcq-question">
+                    <p class="question-text">Dirichlet's conditions are sufficient conditions for:</p>
+                    <div class="mcq-options">
+                        <div class="mcq-option" data-correct="true">A. Fourier series expansion</div>
+                        <div class="mcq-option" data-correct="false">B. Laplace transform</div>
+                        <div class="mcq-option" data-correct="false">C. Taylor series</div>
+                        <div class="mcq-option" data-correct="false">D. None</div>
+                    </div>
+                    <div class="mcq-explanation">Appeared in PYQ</div>
+                </div>
             </div>
-            
-             <div class="mcq-navigation">
+
+            <div class="mcq-navigation">
                 <button id="prev-btn" class="btn btn-secondary"><i class="fas fa-arrow-left"></i> Previous</button>
                 <button id="next-btn" class="btn btn-primary">Next <i class="fas fa-arrow-right"></i></button>
             </div>
@@ -993,14 +1163,14 @@
             tab.addEventListener('click', () => {
                 document.querySelectorAll('.mcq-tab').forEach(t => t.classList.remove('active'));
                 tab.classList.add('active');
-                
+
                 document.querySelectorAll('.mcq-container').forEach(container => {
                     container.classList.remove('active');
                 });
-                
+
                 const subject = tab.getAttribute('data-subject');
                 document.getElementById(`${subject}-mcq`).classList.add('active');
-                
+
                 currentQuestion = 0;
                 initializeQuestions();
             });
@@ -1011,14 +1181,14 @@
         let totalQuestions = 0;
         let currentQuestion = 0;
         let questions = [];
-        
+
         function initializeQuestions() {
             questions = [];
             const activeContainer = document.querySelector('.mcq-container.active');
-            if(!activeContainer) return;
+            if (!activeContainer) return;
 
             const questionElements = activeContainer.querySelectorAll('.mcq-question');
-            
+
             questionElements.forEach((q) => {
                 const options = q.querySelectorAll('.mcq-option');
                 options.forEach(opt => {
@@ -1027,7 +1197,7 @@
                 });
 
                 const explanation = q.querySelector('.mcq-explanation');
-                if(explanation) explanation.classList.remove('show');
+                if (explanation) explanation.classList.remove('show');
 
                 let submitBtn = q.querySelector('.submit-answer-btn');
                 if (!submitBtn) {
@@ -1049,30 +1219,30 @@
                     correct: false
                 });
             });
-            
+
             document.getElementById('total-questions').textContent = questions.length;
             score = 0;
             document.getElementById('score').textContent = score;
-            
+
             showQuestion();
         }
-        
+
         function showQuestion() {
             questions.forEach((q) => {
                 q.element.style.display = 'none';
             });
-            
+
             if (questions[currentQuestion]) {
                 questions[currentQuestion].element.style.display = 'block';
             }
-            
+
             const nextBtn = document.getElementById('next-btn');
             const prevBtn = document.getElementById('prev-btn');
-            
-            if(prevBtn) prevBtn.disabled = currentQuestion === 0;
-            if(nextBtn) nextBtn.innerHTML = currentQuestion === questions.length - 1 ? 'Finish' : 'Next <i class="fas fa-arrow-right"></i>';
+
+            if (prevBtn) prevBtn.disabled = currentQuestion === 0;
+            if (nextBtn) nextBtn.innerHTML = currentQuestion === questions.length - 1 ? 'Finish' : 'Next <i class="fas fa-arrow-right"></i>';
         }
-        
+
         document.addEventListener('click', (e) => {
             if (e.target.classList.contains('mcq-option')) {
                 const questionDiv = e.target.closest('.mcq-question');
@@ -1087,7 +1257,7 @@
                 const button = e.target;
                 const questionDiv = button.closest('.mcq-question');
                 const selectedOption = questionDiv.querySelector('.mcq-option.selected');
-                
+
                 if (!selectedOption) {
                     alert('Please select an option first!');
                     return;
@@ -1096,12 +1266,12 @@
                 const options = questionDiv.querySelectorAll('.mcq-option');
                 const explanation = questionDiv.querySelector('.mcq-explanation');
                 const questionIndex = questions.findIndex(q => q.element === questionDiv);
-                
+
                 if (questionIndex !== -1) {
                     questions[questionIndex].answered = true;
                     const isCorrect = selectedOption.getAttribute('data-correct') === 'true';
                     questions[questionIndex].correct = isCorrect;
-                    
+
                     if (isCorrect) {
                         score++;
                         document.getElementById('score').textContent = score;
@@ -1123,7 +1293,7 @@
                 }
             }
         });
-        
+
         document.getElementById('next-btn').addEventListener('click', () => {
             if (currentQuestion < questions.length - 1) {
                 currentQuestion++;
@@ -1132,14 +1302,14 @@
                 alert(`Quiz completed! Your score: ${score}/${questions.length}`);
             }
         });
-        
+
         document.getElementById('prev-btn').addEventListener('click', () => {
             if (currentQuestion > 0) {
                 currentQuestion--;
                 showQuestion();
             }
         });
-        
+
         document.getElementById('reset-btn').addEventListener('click', () => {
             initializeQuestions();
         });
@@ -1150,4 +1320,5 @@
         });
     </script>
 </body>
+
 </html>
