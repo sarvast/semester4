@@ -496,17 +496,39 @@
                             <li><strong>Concept:</strong> Methods to modify the shape, size, or position of an object.
                             </li>
                             <li><strong>Translation:</strong> Moving an object. Equations: $x' = x + t_x$, $y' = y +
-                                t_y$.</li>
+                                t_y$.
+                                <ul>
+                                    <li>Matrix: $\begin{bmatrix} 1 & 0 & t_x \\ 0 & 1 & t_y \\ 0 & 0 & 1 \end{bmatrix}$
+                                    </li>
+                                </ul>
+                            </li>
                             <li><strong>Rotation:</strong> Rotating by angle $\theta$. Positive $\theta$ is
                                 Counter-Clockwise (CCW).
                                 <ul>
                                     <li>Equation: $x' = x \cos\theta - y \sin\theta$, $y' = x \sin\theta + y
                                         \cos\theta$.</li>
+                                    <li>Matrix: $\begin{bmatrix} \cos\theta & -\sin\theta & 0 \\ \sin\theta & \cos\theta
+                                        & 0 \\ 0 & 0 & 1 \end{bmatrix}$</li>
                                 </ul>
                             </li>
                             <li><strong>Scaling:</strong> Changing size coordinates. $x' = x \cdot s_x$, $y' = y \cdot
-                                s_y$.</li>
+                                s_y$.
+                                <ul>
+                                    <li>Matrix: $\begin{bmatrix} s_x & 0 & 0 \\ 0 & s_y & 0 \\ 0 & 0 & 1 \end{bmatrix}$
+                                    </li>
+                                </ul>
+                            </li>
                             <li><strong>Reflection:</strong> Mirror image about an axis ($x$-axis, $y$-axis, $y=x$).
+                                <ul>
+                                    <li>About X-axis ($y \to -y$): $\begin{bmatrix} 1 & 0 & 0 \\ 0 & -1 & 0 \\ 0 & 0 & 1
+                                        \end{bmatrix}$</li>
+                                    <li>About Y-axis ($x \to -x$): $\begin{bmatrix} -1 & 0 & 0 \\ 0 & 1 & 0 \\ 0 & 0 & 1
+                                        \end{bmatrix}$</li>
+                                    <li>About Line $y=x$ (Swap $x,y$): $\begin{bmatrix} 0 & 1 & 0 \\ 1 & 0 & 0 \\ 0 & 0
+                                        & 1 \end{bmatrix}$</li>
+                                    <li>About Line $y=-x$: $\begin{bmatrix} 0 & -1 & 0 \\ -1 & 0 & 0 \\ 0 & 0 & 1
+                                        \end{bmatrix}$</li>
+                                </ul>
                             </li>
                             <li><strong>Shearing:</strong> Slanting the object. X-shear: $x' = x + sh_x \cdot y, y' =
                                 y$.</li>
@@ -650,6 +672,42 @@
                             <li><strong>Staffing Problem:</strong> Application of replacement theory to human resources.
                                 <br><em>Goal:</em> Maintain constant workforce size despite resignations/retirements
                                 (mortality) by hiring new recruits. Uses mortality tables.
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="topic">
+                    <h4>Transportation & Assignment Problems <span class="pyq-badge">High Frequency</span></h4>
+                    <div class="topic-content">
+                        <ul>
+                            <li><strong>Transportation Problem:</strong> Minimizing cost of shipping goods from Sources
+                                to Destinations.
+                                <ul>
+                                    <li><strong>Balanced:</strong> Total Supply = Total Demand. (If not, add Dummy
+                                        row/column).</li>
+                                    <li><strong>Initial Basic Feasible Solution Methods:</strong>
+                                        <ul>
+                                            <li><em>North-West Corner Rule (NWCR):</em> Start from top-left cell. Simple
+                                                but rarely gives optimal.</li>
+                                            <li><em>Least Cost Method (Matrix Minima):</em> Select cell with lowest unit
+                                                cost.</li>
+                                            <li><em>Vogel’s Approximation Method (VAM):</em> Uses penalty costs (Diff
+                                                between two lowest costs). Generally gives best initial solution.</li>
+                                        </ul>
+                                    </li>
+                                    <li><strong>Degeneracy:</strong> When number of occupied cells < $m + n - 1$.</li>
+                                </ul>
+                            </li>
+                            <li><strong>Assignment Problem:</strong> Assigning $n$ jobs to $n$ workers to minimize
+                                cost/time.
+                                <ul>
+                                    <li><strong>Method:</strong> Hungarian Method (Reduced Matrix method).
+                                        <br>Steps: Row extraction $\to$ Column extraction $\to$ Cover zeros with min
+                                        lines $\to$ Optimality test.
+                                    </li>
+                                    <li>Special case of Transportation problem where $m=n$ and Supply/Demand = 1.</li>
+                                </ul>
                             </li>
                         </ul>
                     </div>

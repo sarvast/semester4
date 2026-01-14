@@ -662,6 +662,15 @@
                             <li><strong>Graphics Processor (GPU):</strong> Dedicated chip for rendering images quickly,
                                 offloading work from CPU.</li>
                         </ul>
+                        <p><strong>Scan Conversion Algorithms:</strong> <span class="pyq-badge">Important</span></p>
+                        <ul>
+                            <li><strong>DDA (Digital Differential Analyzer):</strong> Uses floating-point arithmetic.
+                                Slower. Cumulative error build-up.</li>
+                            <li><strong>Bresenham’s Line Algorithm:</strong> Uses integer arithmetic
+                                (addition/subtraction). Faster and more accurate.</li>
+                            <li><strong>Circle Generation:</strong> Midpoint Circle Algorithm (also uses integer
+                                arithmetic).</li>
+                        </ul>
                         <p><strong>Software:</strong></p>
                         <ul>
                             <li><strong>GKS (Graphics Kernel System):</strong> First international standard (ISO) for 2D
@@ -904,6 +913,18 @@
                             <li><strong>Artificial Variable ($A \ge 0$):</strong> Added to $\geq$ or $=$ constraints to
                                 get initial identity basis matrix for starting the Simplex table. Has no physical
                                 meaning (Penalty M method used to remove it).</li>
+                            <li><strong>Simplex Method:</strong> Iterative process to find optimal solution.
+                                <ul>
+                                    <li><em>Slack Variable ($S$):</em> Added to $\le$ constraint (unused resources).
+                                        Cost coeff = 0.</li>
+                                    <li><em>Surplus Variable ($-S$):</em> Subtracted from $\ge$ constraint (excess).
+                                        Cost coeff = 0.</li>
+                                    <li><em>Artificial Variable ($A$):</em> Added to $\ge$ or $=$ constraint to get
+                                        initial basis. Cost coeff = $-M$ (Big M Method).</li>
+                                    <li><em>Optimality Condition:</em> For Maximization, stop when all $C_j - Z_j \le 0$
+                                        (for non-basic variables).</li>
+                                </ul>
+                            </li>
                         </ul>
                     </div>
                 </div>
@@ -980,6 +1001,26 @@
                         <p><strong>Roots of Unity:</strong> Solutions to $z^n = 1$. <br><em>Cube roots of unity ($1,
                                 \omega, \omega^2$):</em> sum $1+\omega+\omega^2=0$, product $\omega^3=1$. <span
                                 class="pyq-badge">PYQ 2023</span></p>
+                        <ul>
+                            <li><strong>De Moivre's Theorem:</strong> $(\cos\theta + i\sin\theta)^n = \cos(n\theta) +
+                                i\sin(n\theta)$.</li>
+                            <li><strong>Roots of Unity ($1^{1/3}$):</strong> The cube roots of unity are $1, \omega,
+                                \omega^2$.
+                                <ul>
+                                    <li>Properties: $1 + \omega + \omega^2 = 0$ and $\omega^3 = 1$.</li>
+                                </ul>
+                            </li>
+                            <li><strong>Analytic Functions:</strong> A function $f(z)$ differentiable at every point in
+                                a domain.
+                                <ul>
+                                    <li><strong>Cauchy-Riemann (C-R) Equations:</strong> Necessary condition for
+                                        differentiability.
+                                        <br>$\frac{\partial u}{\partial x} = \frac{\partial v}{\partial y}$ and
+                                        $\frac{\partial u}{\partial y} = -\frac{\partial v}{\partial x}$.
+                                    </li>
+                                </ul>
+                            </li>
+                        </ul>
                     </div>
                 </div>
 
