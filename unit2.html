@@ -712,125 +712,388 @@
             <!-- Graphics MCQs -->
             <div class="mcq-container active" id="graphics-mcq">
                 <div class="mcq-question">
-                    <p class="question-text">Which algorithm is considered a faster method for calculating pixel positions for line drawing?</p>
+                    <p class="question-text">The process of determining which parts of an object are visible (inside a window) and removing the parts that are outside is called:</p>
                     <div class="mcq-options">
-                        <div class="mcq-option" data-correct="false">A. DDA Algorithm</div>
-                        <div class="mcq-option" data-correct="true">B. Bresenham’s Line Algorithm</div>
-                        <div class="mcq-option" data-correct="false">C. Midpoint Algorithm</div>
-                        <div class="mcq-option" data-correct="false">D. Parallel Line Algorithm</div>
+                        <div class="mcq-option" data-correct="false">A. Rendering</div>
+                        <div class="mcq-option" data-correct="true">B. Clipping</div>
+                        <div class="mcq-option" data-correct="false">C. Rasterization</div>
+                        <div class="mcq-option" data-correct="false">D. Transformation</div>
                     </div>
-                    <div class="mcq-explanation">Bresenham's algorithm uses only integer arithmetic (addition/subtraction), making it computationally faster than DDA which uses floating-point values.</div>
                 </div>
 
                 <div class="mcq-question">
-                    <p class="question-text">In the Cohen-Sutherland line clipping algorithm, the region code '1001' implies the point is in which region?</p>
+                    <p class="question-text">Which algorithm is a faster method for calculating pixel positions for line drawing?</p>
                     <div class="mcq-options">
-                        <div class="mcq-option" data-correct="true">A. Top-Left</div>
-                        <div class="mcq-option" data-correct="false">B. Top-Right</div>
-                        <div class="mcq-option" data-correct="false">C. Bottom-Left</div>
-                        <div class="mcq-option" data-correct="false">D. Bottom-Right</div>
+                        <div class="mcq-option" data-correct="true">A. Bresenham’s line algorithm</div>
+                        <div class="mcq-option" data-correct="false">B. Parallel line algorithm</div>
+                        <div class="mcq-option" data-correct="false">C. Midpoint algorithm</div>
+                        <div class="mcq-option" data-correct="false">D. DDA line algorithm</div>
                     </div>
-                    <div class="mcq-explanation">The 4-bit code is T-B-R-L. '1001' means Top (1) and Left (1) bits are set.</div>
+                    <div class="mcq-explanation">Appeared in 2022, 2024</div>
+                </div>
+
+                <div class="mcq-question">
+                    <p class="question-text">The disadvantage of DDA algorithm is:</p>
+                    <div class="mcq-options">
+                        <div class="mcq-option" data-correct="true">A. Time consuming (due to floating point calculations)</div>
+                        <div class="mcq-option" data-correct="false">B. Faster</div>
+                        <div class="mcq-option" data-correct="false">C. Neither (A) nor (B)</div>
+                        <div class="mcq-option" data-correct="false">D. None of the above</div>
+                    </div>
+                    <div class="mcq-explanation">Appeared in 2022, 2024</div>
+                </div>
+
+                 <div class="mcq-question">
+                    <p class="question-text">Which of the following is an accurate and efficient raster line generating algorithm?</p>
+                    <div class="mcq-options">
+                        <div class="mcq-option" data-correct="false">A. DDA algorithm</div>
+                        <div class="mcq-option" data-correct="false">B. Midpoint algorithm</div>
+                        <div class="mcq-option" data-correct="false">C. Parallel line algorithm</div>
+                        <div class="mcq-option" data-correct="true">D. Bresenham’s line algorithm</div>
+                    </div>
+                    <div class="mcq-explanation">Appeared in 2022</div>
+                </div>
+
+                <div class="mcq-question">
+                    <p class="question-text">In Bresenham’s line algorithm, if the distance $d_1 < d_2$, then the decision parameter $P_k$ is:</p>
+                    <div class="mcq-options">
+                        <div class="mcq-option" data-correct="true">A. Negative</div>
+                        <div class="mcq-option" data-correct="false">B. Positive</div>
+                        <div class="mcq-option" data-correct="false">C. Equal</div>
+                        <div class="mcq-option" data-correct="false">D. Zero</div>
+                    </div>
+                    <div class="mcq-explanation">Appeared in 2022</div>
+                </div>
+
+                <div class="mcq-question">
+                    <p class="question-text">The region against which an object is clipped is called as:</p>
+                    <div class="mcq-options">
+                        <div class="mcq-option" data-correct="false">A. Clipping</div>
+                        <div class="mcq-option" data-correct="false">B. Clipping region</div>
+                        <div class="mcq-option" data-correct="true">C. Clip window / Viewport</div>
+                        <div class="mcq-option" data-correct="false">D. None of them</div>
+                    </div>
+                    <div class="mcq-explanation">Appeared in 2022, 2024</div>
+                </div>
+
+                 <div class="mcq-question">
+                    <p class="question-text">Which of the following can be first used to test for overlap of a curve with the clipping window?</p>
+                    <div class="mcq-options">
+                        <div class="mcq-option" data-correct="false">A. Edges of the curve</div>
+                        <div class="mcq-option" data-correct="true">B. The boundary rectangle for the curve (Extent)</div>
+                        <div class="mcq-option" data-correct="false">C. Center of the curve</div>
+                        <div class="mcq-option" data-correct="false">D. None of the above</div>
+                    </div>
+                    <div class="mcq-explanation">Appeared in 2023</div>
                 </div>
             </div>
 
             <!-- DBMS MCQs -->
             <div class="mcq-container" id="dbms-mcq">
                 <div class="mcq-question">
-                    <p class="question-text">In an E-R diagram, a "Diamond" symbol represents:</p>
+                    <p class="question-text">In the E-R model, an Entity is represented by:</p>
                     <div class="mcq-options">
-                        <div class="mcq-option" data-correct="false">A. Entity</div>
-                        <div class="mcq-option" data-correct="false">B. Attribute</div>
-                        <div class="mcq-option" data-correct="true">C. Relationship</div>
-                        <div class="mcq-option" data-correct="false">D. Weak Entity</div>
+                        <div class="mcq-option" data-correct="true">A. Rectangle</div>
+                        <div class="mcq-option" data-correct="false">B. Circle</div>
+                        <div class="mcq-option" data-correct="false">C. Diamond</div>
+                        <div class="mcq-option" data-correct="false">D. Ellipse</div>
                     </div>
-                    <div class="mcq-explanation">Relationships between entity sets are represented by a diamond-shaped box in E-R diagrams.</div>
+                    <div class="mcq-explanation">Appeared in 2024, 2022</div>
                 </div>
 
                 <div class="mcq-question">
-                    <p class="question-text">Which of the following represents a multivalued attribute in an E-R model?</p>
+                    <p class="question-text">In the E-R model, an Attribute is represented by:</p>
                     <div class="mcq-options">
-                        <div class="mcq-option" data-correct="false">A. Dashed Ellipse</div>
-                        <div class="mcq-option" data-correct="true">B. Double Ellipse</div>
-                        <div class="mcq-option" data-correct="false">C. Rectangle</div>
-                        <div class="mcq-option" data-correct="false">D. Diamond</div>
+                        <div class="mcq-option" data-correct="false">A. Rectangle</div>
+                        <div class="mcq-option" data-correct="true">B. Ellipse (Oval)</div>
+                        <div class="mcq-option" data-correct="false">C. Diamond</div>
+                        <div class="mcq-option" data-correct="false">D. Triangle</div>
                     </div>
-                    <div class="mcq-explanation">Multivalued attributes (like phone numbers) are depicted using double ovals (ellipses).</div>
+                    <div class="mcq-explanation">Appeared in 2022, 2024</div>
+                </div>
+
+                <div class="mcq-question">
+                    <p class="question-text">The relationship between two entities is represented by:</p>
+                    <div class="mcq-options">
+                        <div class="mcq-option" data-correct="false">A. Rectangle</div>
+                        <div class="mcq-option" data-correct="false">B. Circle</div>
+                        <div class="mcq-option" data-correct="true">C. Diamond</div>
+                        <div class="mcq-option" data-correct="false">D. Triangle</div>
+                    </div>
+                    <div class="mcq-explanation">Appeared in 2024, 2022</div>
+                </div>
+
+                <div class="mcq-question">
+                    <p class="question-text">Which of the following represents a Multivalued Attribute in the E-R model?</p>
+                    <div class="mcq-options">
+                        <div class="mcq-option" data-correct="false">A. Dashed line</div>
+                        <div class="mcq-option" data-correct="true">B. Double ellipse</div>
+                        <div class="mcq-option" data-correct="false">C. Dotted line</div>
+                        <div class="mcq-option" data-correct="false">D. Double line</div>
+                    </div>
+                    <div class="mcq-explanation">Appeared in 2022, 2024</div>
+                </div>
+
+                <div class="mcq-question">
+                    <p class="question-text">In the E-R model, a Weak Entity is an entity that:</p>
+                    <div class="mcq-options">
+                        <div class="mcq-option" data-correct="false">A. Has a composite primary key</div>
+                        <div class="mcq-option" data-correct="true">B. Cannot exist without a related strong entity (Owner)</div>
+                        <div class="mcq-option" data-correct="false">C. Has a derived attribute</div>
+                        <div class="mcq-option" data-correct="false">D. Has a many-to-many relationship</div>
+                    </div>
+                    <div class="mcq-explanation">Appeared in 2022</div>
+                </div>
+
+                <div class="mcq-question">
+                    <p class="question-text">The process of grouping similar entities into higher-level entities is known as:</p>
+                    <div class="mcq-options">
+                        <div class="mcq-option" data-correct="false">A. Aggregation</div>
+                        <div class="mcq-option" data-correct="false">B. Composition</div>
+                        <div class="mcq-option" data-correct="false">C. Normalization</div>
+                        <div class="mcq-option" data-correct="true">D. Generalization</div>
+                    </div>
+                    <div class="mcq-explanation">Appeared in 2024, 2022</div>
+                </div>
+
+                <div class="mcq-question">
+                    <p class="question-text">Which of the following cardinality ratios represents a one-to-many relationship?</p>
+                    <div class="mcq-options">
+                        <div class="mcq-option" data-correct="false">A. 1:1</div>
+                        <div class="mcq-option" data-correct="true">B. 1:N</div>
+                        <div class="mcq-option" data-correct="false">C. M:N</div>
+                        <div class="mcq-option" data-correct="false">D. 0:N</div>
+                    </div>
+                    <div class="mcq-explanation">Appeared in 2022, 2024</div>
+                </div>
+                
+                 <div class="mcq-question">
+                    <p class="question-text">Which of the following is NOT a type of attribute in E-R model?</p>
+                    <div class="mcq-options">
+                        <div class="mcq-option" data-correct="false">A. Simple</div>
+                        <div class="mcq-option" data-correct="false">B. Derived</div>
+                        <div class="mcq-option" data-correct="false">C. Compound</div>
+                        <div class="mcq-option" data-correct="true">D. Static (Not a standard E-R term)</div>
+                    </div>
+                    <div class="mcq-explanation">Appeared in 2024-25</div>
                 </div>
             </div>
 
             <!-- SE MCQs -->
             <div class="mcq-container" id="se-mcq">
                 <div class="mcq-question">
-                    <p class="question-text">Which of the following is NOT a characteristic of a good SRS?</p>
+                    <p class="question-text">Which of the following is NOT a requirement elicitation technique?</p>
                     <div class="mcq-options">
-                        <div class="mcq-option" data-correct="false">A. Consistent</div>
-                        <div class="mcq-option" data-correct="false">B. Unambiguous</div>
-                        <div class="mcq-option" data-correct="true">C. Brief</div>
-                        <div class="mcq-option" data-correct="false">D. Verifiable</div>
+                        <div class="mcq-option" data-correct="false">A. Interviews</div>
+                        <div class="mcq-option" data-correct="false">B. Brainstorming</div>
+                        <div class="mcq-option" data-correct="true">C. Flowcharting (This is a design/modeling tool)</div>
+                        <div class="mcq-option" data-correct="false">D. Observation</div>
                     </div>
-                    <div class="mcq-explanation">An SRS must be complete and detailed, not necessarily "brief". Briefness can lead to ambiguity.</div>
+                     <div class="mcq-explanation">Appeared in 2024</div>
                 </div>
 
                 <div class="mcq-question">
-                    <p class="question-text">The "Context Diagram" is also known as:</p>
+                    <p class="question-text">Which document is created by the system analyst after the requirements are collected from various stakeholders?</p>
                     <div class="mcq-options">
-                        <div class="mcq-option" data-correct="true">A. Level-0 DFD</div>
-                        <div class="mcq-option" data-correct="false">B. Level-1 DFD</div>
-                        <div class="mcq-option" data-correct="false">C. E-R Diagram</div>
-                        <div class="mcq-option" data-correct="false">D. Use Case</div>
+                        <div class="mcq-option" data-correct="true">A. Software Requirement Specification (SRS)</div>
+                        <div class="mcq-option" data-correct="false">B. Software Requirement Validation</div>
+                        <div class="mcq-option" data-correct="false">C. Feasibility Study</div>
+                        <div class="mcq-option" data-correct="false">D. Testing Document</div>
                     </div>
-                    <div class="mcq-explanation">Level-0 DFD represents the entire system as a single process interacting with external entities.</div>
+                     <div class="mcq-explanation">Appeared in 2022</div>
+                </div>
+                
+                 <div class="mcq-question">
+                    <p class="question-text">Which one is NOT a characteristic of a good SRS?</p>
+                    <div class="mcq-options">
+                        <div class="mcq-option" data-correct="false">A. Correct</div>
+                        <div class="mcq-option" data-correct="false">B. Complete</div>
+                        <div class="mcq-option" data-correct="false">C. Consistent</div>
+                        <div class="mcq-option" data-correct="true">D. Brief (It should be detailed...)</div>
+                    </div>
+                     <div class="mcq-explanation">Appeared in 2022</div>
+                </div>
+
+                <div class="mcq-question">
+                    <p class="question-text">Feasibility study is the first step in which phase?</p>
+                    <div class="mcq-options">
+                        <div class="mcq-option" data-correct="true">A. Analysis / Planning</div>
+                        <div class="mcq-option" data-correct="false">B. Design</div>
+                        <div class="mcq-option" data-correct="false">C. Coding</div>
+                        <div class="mcq-option" data-correct="false">D. Testing</div>
+                    </div>
+                    <div class="mcq-explanation">Appeared in 2022</div>
+                </div>
+
+                <div class="mcq-question">
+                    <p class="question-text">Which type of DFD concentrates on the system process and flow of data in the system?</p>
+                    <div class="mcq-options">
+                        <div class="mcq-option" data-correct="true">A. Logical DFD</div>
+                        <div class="mcq-option" data-correct="false">B. Physical DFD</div>
+                        <div class="mcq-option" data-correct="false">C. Flowchart DFD</div>
+                        <div class="mcq-option" data-correct="false">D. System DFD</div>
+                    </div>
+                     <div class="mcq-explanation">Appeared in 2022</div>
+                </div>
+
+                <div class="mcq-question">
+                    <p class="question-text">Context Diagram explains:</p>
+                    <div class="mcq-options">
+                        <div class="mcq-option" data-correct="true">A. The overview of the system (Level-0 DFD)</div>
+                        <div class="mcq-option" data-correct="false">B. The internal view of the system</div>
+                        <div class="mcq-option" data-correct="false">C. The entities of the system</div>
+                        <div class="mcq-option" data-correct="false">D. None of the above</div>
+                    </div>
+                     <div class="mcq-explanation">Appeared in 2022</div>
                 </div>
             </div>
 
             <!-- Optimization MCQs -->
             <div class="mcq-container" id="optimization-mcq">
                 <div class="mcq-question">
-                    <p class="question-text">A game is said to be "fair" if the value of the game is:</p>
+                    <p class="question-text">A game is said to be fair if the value of the game is:</p>
                     <div class="mcq-options">
-                        <div class="mcq-option" data-correct="false">A. 1</div>
-                        <div class="mcq-option" data-correct="true">B. 0</div>
-                        <div class="mcq-option" data-correct="false">C. Positive</div>
-                        <div class="mcq-option" data-correct="false">D. Negative</div>
+                        <div class="mcq-option" data-correct="false">A. One</div>
+                        <div class="mcq-option" data-correct="false">B. Two</div>
+                        <div class="mcq-option" data-correct="false">C. Three</div>
+                        <div class="mcq-option" data-correct="true">D. Zero</div>
                     </div>
-                    <div class="mcq-explanation">If the value of the game is zero, strictly neither player has an advantage.</div>
+                     <div class="mcq-explanation">Appeared in 2022, 2024</div>
                 </div>
 
                 <div class="mcq-question">
-                    <p class="question-text">The condition for the existence of a Saddle Point is:</p>
+                    <p class="question-text">If there exists a Saddle Point in a game, then:</p>
                     <div class="mcq-options">
-                        <div class="mcq-option" data-correct="true">A. Maximin = Minimax</div>
-                        <div class="mcq-option" data-correct="false">B. Maximin > Minimax</div>
-                        <div class="mcq-option" data-correct="false">C. Maximin < Minimax</div>
-                        <div class="mcq-option" data-correct="false">D. Maximin + Minimax = 0</div>
+                        <div class="mcq-option" data-correct="false">A. Maximin > Minimax</div>
+                        <div class="mcq-option" data-correct="false">B. Maximin < Minimax</div>
+                        <div class="mcq-option" data-correct="true">C. Maximin = Minimax</div>
+                        <div class="mcq-option" data-correct="false">D. None of these</div>
                     </div>
-                    <div class="mcq-explanation">A saddle point exists in a pure strategy game when the maximum of row minimums equals the minimum of column maximums.</div>
+                     <div class="mcq-explanation">Appeared in 2022, 2024</div>
+                </div>
+                
+                 <div class="mcq-question">
+                    <p class="question-text">When the sum of gains of one player is equal to the sum of losses to another player in a game, this situation is known as:</p>
+                    <div class="mcq-options">
+                        <div class="mcq-option" data-correct="false">A. Biased game</div>
+                        <div class="mcq-option" data-correct="true">B. Zero-sum game</div>
+                        <div class="mcq-option" data-correct="false">C. Fair game</div>
+                        <div class="mcq-option" data-correct="false">D. All of the above</div>
+                    </div>
+                     <div class="mcq-explanation">Appeared in 2022</div>
+                </div>
+
+                <div class="mcq-question">
+                    <p class="question-text">A mixed strategy game can be solved by:</p>
+                    <div class="mcq-options">
+                        <div class="mcq-option" data-correct="false">A. Algebraic method</div>
+                        <div class="mcq-option" data-correct="false">B. Matrix method</div>
+                        <div class="mcq-option" data-correct="false">C. Graphical method</div>
+                        <div class="mcq-option" data-correct="true">D. All of the above</div>
+                    </div>
+                     <div class="mcq-explanation">Appeared in 2022</div>
+                </div>
+                
+                <div class="mcq-question">
+                    <p class="question-text">In case there is no saddle point in a game, then the game is:</p>
+                    <div class="mcq-options">
+                        <div class="mcq-option" data-correct="false">A. Deterministic game</div>
+                        <div class="mcq-option" data-correct="false">B. Fair game</div>
+                        <div class="mcq-option" data-correct="true">C. Mixed strategy game</div>
+                        <div class="mcq-option" data-correct="false">D. Multiplayer game</div>
+                    </div>
+                     <div class="mcq-explanation">Appeared in 2022</div>
+                </div>
+                
+                <div class="mcq-question">
+                    <p class="question-text">The outcome of a game is known as:</p>
+                    <div class="mcq-options">
+                        <div class="mcq-option" data-correct="false">A. Profit</div>
+                        <div class="mcq-option" data-correct="false">B. Loss</div>
+                        <div class="mcq-option" data-correct="true">C. Payoff</div>
+                        <div class="mcq-option" data-correct="false">D. None of the above</div>
+                    </div>
+                     <div class="mcq-explanation">Appeared in 2022</div>
                 </div>
             </div>
 
             <!-- Math MCQs -->
             <div class="mcq-container" id="math-mcq">
                 <div class="mcq-question">
-                    <p class="question-text">If $\nabla \cdot \vec{F} = 0$, then the vector $\vec{F}$ is called:</p>
+                    <p class="question-text">Gradient of a scalar function $\phi(x,y,z)$ is:</p>
                     <div class="mcq-options">
-                        <div class="mcq-option" data-correct="true">A. Solenoidal</div>
-                        <div class="mcq-option" data-correct="false">B. Irrotational</div>
-                        <div class="mcq-option" data-correct="false">C. Rotational</div>
-                        <div class="mcq-option" data-correct="false">D. Conservative</div>
+                        <div class="mcq-option" data-correct="false">A. $\frac{\partial\phi}{\partial x} + \frac{\partial\phi}{\partial y} + \frac{\partial\phi}{\partial z}$</div>
+                        <div class="mcq-option" data-correct="true">B. $\frac{\partial\phi}{\partial x}\hat{i} + \frac{\partial\phi}{\partial y}\hat{j} + \frac{\partial\phi}{\partial z}\hat{k}$ (It is a Vector)</div>
+                        <div class="mcq-option" data-correct="false">C. $\frac{\partial^2\phi}{\partial x^2} + ...$</div>
+                        <div class="mcq-option" data-correct="false">D. None</div>
                     </div>
-                    <div class="mcq-explanation">A vector whose divergence is zero is known as a Solenoidal vector.</div>
+                     <div class="mcq-explanation">Appeared in 2024</div>
                 </div>
 
                 <div class="mcq-question">
-                    <p class="question-text">The Gradient of a scalar function $\phi$ results in a:</p>
+                    <p class="question-text">What is the Divergence of a vector field $\vec{F}$?</p>
                     <div class="mcq-options">
-                        <div class="mcq-option" data-correct="false">A. Scalar Quantity</div>
-                        <div class="mcq-option" data-correct="true">B. Vector Quantity</div>
-                        <div class="mcq-option" data-correct="false">C. Constant</div>
-                        <div class="mcq-option" data-correct="false">D. Zero</div>
+                        <div class="mcq-option" data-correct="false">A. Rate of rotation</div>
+                        <div class="mcq-option" data-correct="true">B. Rate at which $\vec{F}$ is spreading out or converging</div>
+                        <div class="mcq-option" data-correct="false">C. Flow along streamline</div>
+                        <div class="mcq-option" data-correct="false">D. None</div>
                     </div>
-                    <div class="mcq-explanation">Gradient ($\nabla \phi$) introduces direction components, resulting in a vector.</div>
+                     <div class="mcq-explanation">Appeared in 2022</div>
+                </div>
+                
+                 <div class="mcq-question">
+                    <p class="question-text">If the Divergence of a vector field $\vec{F}$ is zero ($\nabla \cdot \vec{F} = 0$), then $\vec{F}$ is called:</p>
+                    <div class="mcq-options">
+                        <div class="mcq-option" data-correct="true">A. Solenoidal</div>
+                        <div class="mcq-option" data-correct="false">B. Rotational</div>
+                        <div class="mcq-option" data-correct="false">C. Irrotational</div>
+                        <div class="mcq-option" data-correct="false">D. None</div>
+                    </div>
+                     <div class="mcq-explanation">Appeared in 2024, 2022</div>
+                </div>
+
+                <div class="mcq-question">
+                    <p class="question-text">A vector field is Irrotational if:</p>
+                    <div class="mcq-options">
+                        <div class="mcq-option" data-correct="false">A. $\nabla \times \vec{F} \ne 0$</div>
+                        <div class="mcq-option" data-correct="false">B. $\nabla \cdot \vec{F} = 0$</div>
+                        <div class="mcq-option" data-correct="true">C. $\nabla \times \vec{F} = 0$ (Curl is zero)</div>
+                        <div class="mcq-option" data-correct="false">D. None</div>
+                    </div>
+                     <div class="mcq-explanation">Appeared in 2024, 2022</div>
+                </div>
+                
+                 <div class="mcq-question">
+                    <p class="question-text">The Curl of a vector field represents:</p>
+                    <div class="mcq-options">
+                        <div class="mcq-option" data-correct="false">A. Irrotational field</div>
+                        <div class="mcq-option" data-correct="false">B. Magnetic field</div>
+                        <div class="mcq-option" data-correct="true">C. Rotational field / Rotation</div>
+                        <div class="mcq-option" data-correct="false">D. Laurent field</div>
+                    </div>
+                     <div class="mcq-explanation">Appeared in 2022</div>
+                </div>
+                
+                <div class="mcq-question">
+                    <p class="question-text">Directional derivative of $f$ in the direction of unit vector $\hat{u}$ is:</p>
+                    <div class="mcq-options">
+                        <div class="mcq-option" data-correct="true">A. $\nabla f \cdot \hat{u}$</div>
+                        <div class="mcq-option" data-correct="false">B. $\nabla f$</div>
+                        <div class="mcq-option" data-correct="false">C. $\nabla f \times \hat{u}$</div>
+                        <div class="mcq-option" data-correct="false">D. None</div>
+                    </div>
+                     <div class="mcq-explanation">Appeared in 2024</div>
+                </div>
+
+                <div class="mcq-question">
+                    <p class="question-text">Value of $\nabla \cdot \vec{r}$ (Divergence of position vector $\vec{r} = x\hat{i} + y\hat{j} + z\hat{k}$) is:</p>
+                    <div class="mcq-options">
+                        <div class="mcq-option" data-correct="false">A. 0</div>
+                        <div class="mcq-option" data-correct="true">B. 3</div>
+                        <div class="mcq-option" data-correct="false">C. 1</div>
+                        <div class="mcq-option" data-correct="false">D. -3</div>
+                    </div>
+                     <div class="mcq-explanation">Appeared in 2024</div>
                 </div>
             </div>
             
