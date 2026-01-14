@@ -1,30 +1,15 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Database Management System (DBMS) - Complete Notes</title>
-    <meta name="description"
-        content="Unit 1 Notes & MCQs for BCA Sem 4. Topics: Introduction to Computer Graphics, DBMS Architecture, Software Engineering Basics, Linear Programming, and Vector Calculus.">
-    <meta name="keywords"
-        content="BCA Unit 1 Notes, Computer Graphics Refreshers, CRT, DBMS Architecture, ER Model, Software Engineering Basics, Linear Programming, Vector Calculus, BCA 4th Sem">
-    <meta property="og:title" content="Unit 1 Preparation - Sarvasva Notes">
-    <meta property="og:description"
-        content="Study Unit 1 concepts and practice PYQ-based MCQs for BCA Semester 4 subjects.">
-    <meta property="og:type" content="article">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-
-    <!-- MathJax for rendering equations -->
+    <!-- MathJax -->
     <script>
-        MathJax = {
-            tex: {
-                inlineMath: [['$', '$'], ['\\(', '\\)']]
-            }
-        };
+        MathJax = { tex: { inlineMath: [['$', '$'], ['\\(', '\\)']] } };
     </script>
     <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
-
     <style>
         :root {
             --primary-color: #2c3e50;
@@ -527,60 +512,66 @@
             }
         }
     </style>
+    <style>
+        .mcq-tab-btn.active {
+            background-color: var(--secondary-color) !important;
+            color: white !important;
+            border-color: var(--secondary-color) !important;
+        }
+        .mcq-tab-btn {
+            transition: all 0.3s;
+        }
+    </style>
 </head>
-
 <body>
-    <!-- Header & Navigation -->
+
     <header>
         <div class="container header-content">
             <div class="logo">
                 <i class="fas fa-graduation-cap"></i>
                 <div>
                     <h1>Sarvasva Notes</h1>
-                    <p>BCA Semester 4 – Database Management System (DBMS) - Complete Smart Preparation</p>
+                    <p>Database Management System (DBMS)</p>
                 </div>
             </div>
             <nav>
-                
-    <ul>
-        <li><a href="index.html"><i class="fas fa-home"></i> Home</a></li>
-        <li><a href="graphics.html" >Graphics</a></li>
-        <li><a href="dbms.html" style="text-decoration:underline">DBMS</a></li>
-        <li><a href="se.html" >SE</a></li>
-        <li><a href="optimization.html" >Optimization</a></li>
-        <li><a href="math.html" >Math</a></li>
-    </ul>
-    
+                <ul>
+                    <li><a href="index.html"><i class="fas fa-home"></i> Home</a></li>
+                    <li><a href="graphics.html" class="">Graphics</a></li>
+                    <li><a href="dbms.html" class="active-nav">DBMS</a></li>
+                    <li><a href="se.html" class="">SE</a></li>
+                    <li><a href="optimization.html" class="">Optimization</a></li>
+                    <li><a href="math.html" class="">Math</a></li>
+                </ul>
             </nav>
         </div>
     </header>
 
-    <!-- Hero Section -->
     <div class="container">
+        <!-- Hero -->
         <section class="hero">
-            <h2>Sarvasva Notes - Database Management System (DBMS) - Complete Smart Preparation</h2>
-            <p>Your Ultimate Guide: PYQ-Focused Notes + Practice MCQs (2022–2024)</p>
+            <h2>Database Management System (DBMS)</h2>
+            <p>Complete Subject Notes & MCQs (organized by Unit)</p>
             <div class="cta-buttons">
-                <a href="#notes" class="btn btn-primary"><i class="fas fa-book"></i> Start Studying</a>
-                <a href="#mcq" class="btn btn-secondary"><i class="fas fa-question-circle"></i> Practice MCQs</a>
-                <a href="#pyq" class="btn btn-tertiary"><i class="fas fa-chart-bar"></i> PYQ Weightage</a>
+                <a href="#notes" class="btn btn-primary">Read Notes</a>
+                <a href="#mcq" class="btn btn-secondary">Practice MCQs</a>
             </div>
         </section>
 
-        <!-- Subject Notes Section -->
-        <h2 class="section-title" id="notes"><i class="fas fa-book-open"></i> Subject-Wise Unit 1 Notes</h2>
-
-    <!-- Subject Notes -->
-    <div class="subject-container" style="display:block;">
-        <div class="subject-header active" style="cursor: default;">
-            <h3><i class="fas fa-database"></i> Database Management System (DBMS)</h3>
-        </div>
-        <div class="subject-content active" style="max-height: none; padding: 2rem;">
+        <!-- Notes -->
+        <h2 class="section-title" id="notes"><i class="fas fa-book-open"></i> Subject Notes</h2>
+        <div class="notes-wrapper">
             
-            <div class="unit-block">
-                <h3 class="unit-header">Unit 1</h3>
-                <div class="unit-content">
-                    
+                <div class="unit-block" style="margin-bottom: 30px;">
+                    <div style="background: #f1f2f6; padding: 8px 15px; border-radius: 5px 5px 0 0; border-left: 4px solid #2c3e50;">
+                        <h4 style="margin:0; color:#2c3e50;">Unit 1</h4>
+                    </div>
+                    <div class="subject-container">
+            <div class="subject-header">
+                <h3><i class="fas fa-database"></i> Database Management System (BCA-4002)</h3>
+                <i class="fas fa-chevron-down"></i>
+            </div>
+            <div class="subject-content">
                 <div class="topic">
                     <h4>1. Introduction to DBMS</h4>
                     <div class="topic-content">
@@ -668,13 +659,20 @@
                             (Analysts), Naive Users (End-users).</p>
                     </div>
                 </div>
-            
-                </div>
             </div>
-            <div class="unit-block">
-                <h3 class="unit-header">Unit 2</h3>
-                <div class="unit-content">
-                    
+        </div>
+                </div>
+
+                <div class="unit-block" style="margin-bottom: 30px;">
+                    <div style="background: #f1f2f6; padding: 8px 15px; border-radius: 5px 5px 0 0; border-left: 4px solid #2c3e50;">
+                        <h4 style="margin:0; color:#2c3e50;">Unit 2</h4>
+                    </div>
+                    <div class="subject-container">
+            <div class="subject-header">
+                <h3><i class="fas fa-database"></i> Database Management System (DBMS)</h3>
+                <i class="fas fa-chevron-down"></i>
+            </div>
+            <div class="subject-content">
                 <div class="topic">
                     <h4>E-R Modeling (Entity-Relationship Model)</h4>
                     <div class="topic-content">
@@ -722,13 +720,20 @@
                         </ul>
                     </div>
                 </div>
-            
-                </div>
             </div>
-            <div class="unit-block">
-                <h3 class="unit-header">Unit 3</h3>
-                <div class="unit-content">
-                    
+        </div>
+                </div>
+
+                <div class="unit-block" style="margin-bottom: 30px;">
+                    <div style="background: #f1f2f6; padding: 8px 15px; border-radius: 5px 5px 0 0; border-left: 4px solid #2c3e50;">
+                        <h4 style="margin:0; color:#2c3e50;">Unit 3</h4>
+                    </div>
+                    <div class="subject-container">
+            <div class="subject-header">
+                <h3><i class="fas fa-database"></i> Database Management System (DBMS)</h3>
+                <i class="fas fa-chevron-down"></i>
+            </div>
+            <div class="subject-content">
                 <div class="topic">
                     <h4>Data Normalization</h4>
                     <div class="topic-content">
@@ -755,13 +760,20 @@
                         </ul>
                     </div>
                 </div>
-            
-                </div>
             </div>
-            <div class="unit-block">
-                <h3 class="unit-header">Unit 4</h3>
-                <div class="unit-content">
-                    
+        </div>
+                </div>
+
+                <div class="unit-block" style="margin-bottom: 30px;">
+                    <div style="background: #f1f2f6; padding: 8px 15px; border-radius: 5px 5px 0 0; border-left: 4px solid #2c3e50;">
+                        <h4 style="margin:0; color:#2c3e50;">Unit 4</h4>
+                    </div>
+                    <div class="subject-container">
+            <div class="subject-header">
+                <h3><i class="fas fa-database"></i> Database Management System (DBMS)</h3>
+                <i class="fas fa-chevron-down"></i>
+            </div>
+            <div class="subject-content">
                 <div class="topic">
                     <h4>Relational Model & SQL</h4>
                     <div class="topic-content">
@@ -813,13 +825,20 @@
                         </ul>
                     </div>
                 </div>
-            
-                </div>
             </div>
-            <div class="unit-block">
-                <h3 class="unit-header">Unit 5</h3>
-                <div class="unit-content">
-                    
+        </div>
+                </div>
+
+                <div class="unit-block" style="margin-bottom: 30px;">
+                    <div style="background: #f1f2f6; padding: 8px 15px; border-radius: 5px 5px 0 0; border-left: 4px solid #2c3e50;">
+                        <h4 style="margin:0; color:#2c3e50;">Unit 5</h4>
+                    </div>
+                    <div class="subject-container">
+            <div class="subject-header">
+                <h3><i class="fas fa-database"></i> Database Management System (DBMS)</h3>
+                <i class="fas fa-chevron-down"></i>
+            </div>
+            <div class="subject-content">
                 <div class="topic">
                     <h4>Transaction Processing & Compulsory Control</h4>
                     <div class="topic-content">
@@ -870,21 +889,568 @@
                         </ul>
                     </div>
                 </div>
-            
-                </div>
             </div>
         </div>
-    </div>
-<h2 class="section-title" id="mcq">
-
-    <div class="mcq-section">
-        <div class="score-display">
-            <p>Your Score: <span id="score">0</span> out of <span id="total-questions">0</span></p>
-            <button id="reset-btn" class="btn btn-secondary" style="padding: 8px 20px; margin-top: 10px;">Reset Quiz</button>
+                </div>
         </div>
+
+        <!-- MCQs -->
+        <h2 class="section-title" id="mcq"><i class="fas fa-question-circle"></i> MCQ Practice</h2>
+        <div class="mcq-section">
+            <div class="score-display">
+                Score: <span id="score">0</span> / <span id="total-questions">0</span>
+                <button id="reset-btn" class="btn btn-secondary" style="font-size:0.8rem; padding:4px 10px; margin-left:10px;">Reset</button>
+            </div>
+            
+            <div class="mcq-tabs" style="display:flex; gap:10px; margin-bottom:20px; flex-wrap:wrap;">
+            <button class="mcq-tab-btn active btn btn-secondary" onclick="switchTab('all')">All Units</button><button class="mcq-tab-btn btn btn-secondary" onclick="switchTab('1')" style="background:#fff; color:#333; border:1px solid #ddd;">Unit 1</button><button class="mcq-tab-btn btn btn-secondary" onclick="switchTab('2')" style="background:#fff; color:#333; border:1px solid #ddd;">Unit 2</button><button class="mcq-tab-btn btn btn-secondary" onclick="switchTab('3')" style="background:#fff; color:#333; border:1px solid #ddd;">Unit 3</button><button class="mcq-tab-btn btn btn-secondary" onclick="switchTab('4')" style="background:#fff; color:#333; border:1px solid #ddd;">Unit 4</button><button class="mcq-tab-btn btn btn-secondary" onclick="switchTab('5')" style="background:#fff; color:#333; border:1px solid #ddd;">Unit 5</button></div>
+            
+            <div class="mcq-container" id="container-unit-1" style="display:none;">
+                <div style="background:#e8f5e9; padding:10px; margin-bottom:15px; border-radius:5px;">
+                    <strong>Unit 1 Questions</strong>
+                </div>
+                
+                    <!-- MCQ 1 -->
+                    <div class="mcq-question">
+                        <div class="mcq-question-number">
+                            <span>1. What does DBMS stand for?</span>
+                            <span class="pyq-label">PYQ 2024</span>
+                        </div>
+                        <div class="mcq-options">
+                            <div class="mcq-option" data-correct="true">A. Database Management System</div>
+                            <div class="mcq-option" data-correct="false">B. Data Base Machine System</div>
+                            <div class="mcq-option" data-correct="false">C. Data Business Management Service</div>
+                            <div class="mcq-option" data-correct="false">D. Digital Base Management System</div>
+                        </div>
+                        <div class="mcq-explanation">
+                            <strong>Explanation:</strong> DBMS stands for Database Management System, which is software
+                            for creating, managing, and manipulating databases.
+                        </div>
+                    </div>
+
+                    <!-- MCQ 2 -->
+                    <div class="mcq-question">
+                        <div class="mcq-question-number">
+                            <span>2. Data is:</span>
+                            <span class="pyq-label">PYQ 2022</span>
+                        </div>
+                        <div class="mcq-options">
+                            <div class="mcq-option" data-correct="true">A. Raw facts and figures</div>
+                            <div class="mcq-option" data-correct="false">B. Processed information</div>
+                            <div class="mcq-option" data-correct="false">C. Knowledge</div>
+                            <div class="mcq-option" data-correct="false">D. Wisdom</div>
+                        </div>
+                    </div>
+
+                    <!-- MCQ 3 -->
+                    <div class="mcq-question">
+                        <div class="mcq-question-number">
+                            <span>3. Which of the following is NOT a characteristic of DBMS?</span>
+                            <span class="pyq-label">PYQ 2024</span>
+                        </div>
+                        <div class="mcq-options">
+                            <div class="mcq-option" data-correct="false">A. Data redundancy (DBMS controls redundancy)
+                            </div>
+                            <div class="mcq-option" data-correct="false">B. Data consistency</div>
+                            <div class="mcq-option" data-correct="false">C. Data independence</div>
+                            <div class="mcq-option" data-correct="true">D. Data security (Note: Often context specific,
+                                but Data security is usually a feature)</div>
+                        </div>
+                    </div>
+
+                    <!-- MCQ 4 -->
+                    <div class="mcq-question">
+                        <div class="mcq-question-number">
+                            <span>4. Which is the lowest level of data abstraction?</span>
+                            <span class="pyq-label">PYQ 2024</span>
+                        </div>
+                        <div class="mcq-options">
+                            <div class="mcq-option" data-correct="true">A. Physical level</div>
+                            <div class="mcq-option" data-correct="false">B. Logical level</div>
+                            <div class="mcq-option" data-correct="false">C. View level</div>
+                            <div class="mcq-option" data-correct="false">D. None of the above</div>
+                        </div>
+                        <div class="mcq-explanation">
+                            <strong>Explanation:</strong> Physical level is the lowest level of data abstraction that
+                            describes how data is actually stored on storage media.
+                        </div>
+                    </div>
+
+                    <!-- MCQ 5 -->
+                    <div class="mcq-question">
+                        <div class="mcq-question-number">
+                            <span>5. Which level describes *what* data is stored in the database?</span>
+                            <span class="pyq-label">PYQ 2022</span>
+                        </div>
+                        <div class="mcq-options">
+                            <div class="mcq-option" data-correct="false">A. Physical level</div>
+                            <div class="mcq-option" data-correct="true">B. Logical/Conceptual level</div>
+                            <div class="mcq-option" data-correct="false">C. View level</div>
+                            <div class="mcq-option" data-correct="false">D. None of the above</div>
+                        </div>
+                    </div>
+
+                    <!-- MCQ 6 -->
+                    <div class="mcq-question">
+                        <div class="mcq-question-number">
+                            <span>6. Which layer of DBMS is closest to the physical storage?</span>
+                            <span class="pyq-label">PYQ 2024-25</span>
+                        </div>
+                        <div class="mcq-options">
+                            <div class="mcq-option" data-correct="true">A. Internal level / Physical level</div>
+                            <div class="mcq-option" data-correct="false">B. Conceptual Level</div>
+                            <div class="mcq-option" data-correct="false">C. External Level</div>
+                            <div class="mcq-option" data-correct="false">D. View Level</div>
+                        </div>
+                    </div>
+
+                    <!-- MCQ 7 -->
+                    <div class="mcq-question">
+                        <div class="mcq-question-number">
+                            <span>7. What is logical data independence?</span>
+                            <span class="pyq-label">PYQ 2024-25</span>
+                        </div>
+                        <div class="mcq-options">
+                            <div class="mcq-option" data-correct="true">A. The capacity to change the conceptual schema
+                                without changing the external schema</div>
+                            <div class="mcq-option" data-correct="false">B. Change internal schema without changing
+                                conceptual schema</div>
+                            <div class="mcq-option" data-correct="false">C. Change external schema without changing
+                                internal schema</div>
+                            <div class="mcq-option" data-correct="false">D. None of the above</div>
+                        </div>
+                    </div>
+
+                    <!-- MCQ 8 -->
+                    <div class="mcq-question">
+                        <div class="mcq-question-number">
+                            <span>8. Which of the following is not a type of DBMS?</span>
+                            <span class="pyq-label">PYQ 2024</span>
+                        </div>
+                        <div class="mcq-options">
+                            <div class="mcq-option" data-correct="false">A. Hierarchical</div>
+                            <div class="mcq-option" data-correct="false">B. Relational</div>
+                            <div class="mcq-option" data-correct="false">C. Network</div>
+                            <div class="mcq-option" data-correct="true">D. File-based</div>
+                        </div>
+                    </div>
+
+                    <!-- MCQ 9 -->
+                    <div class="mcq-question">
+                        <div class="mcq-question-number">
+                            <span>9. Which key uniquely identifies a record?</span>
+                            <span class="pyq-label">PYQ 2023</span>
+                        </div>
+                        <div class="mcq-options">
+                            <div class="mcq-option" data-correct="true">A. Primary Key</div>
+                            <div class="mcq-option" data-correct="false">B. Alternate Key</div>
+                            <div class="mcq-option" data-correct="false">C. Candidate Key</div>
+                            <div class="mcq-option" data-correct="false">D. Foreign Key</div>
+                        </div>
+                    </div>
+
+                    <!-- MCQ 10 -->
+                    <div class="mcq-question">
+                        <div class="mcq-question-number">
+                            <span>10. Which command is DDL?</span>
+                            <span class="pyq-label">PYQ 2022</span>
+                        </div>
+                        <div class="mcq-options">
+                            <div class="mcq-option" data-correct="true">A. CREATE</div>
+                            <div class="mcq-option" data-correct="false">B. SELECT</div>
+                            <div class="mcq-option" data-correct="false">C. INSERT</div>
+                            <div class="mcq-option" data-correct="false">D. UPDATE</div>
+                        </div>
+                    </div>
+                
+            </div>
+            <div class="mcq-container" id="container-unit-2" style="display:none;">
+                <div style="background:#e8f5e9; padding:10px; margin-bottom:15px; border-radius:5px;">
+                    <strong>Unit 2 Questions</strong>
+                </div>
+                
+            <div class="mcq-question">
+                <p class="question-text">In the E-R model, an Entity is represented by:</p>
+                <div class="mcq-options">
+                    <div class="mcq-option" data-correct="true">A. Rectangle</div>
+                    <div class="mcq-option" data-correct="false">B. Circle</div>
+                    <div class="mcq-option" data-correct="false">C. Diamond</div>
+                    <div class="mcq-option" data-correct="false">D. Ellipse</div>
+                </div>
+                <div class="mcq-explanation">Appeared in 2024, 2022</div>
+            </div>
+
+            <div class="mcq-question">
+                <p class="question-text">In the E-R model, an Attribute is represented by:</p>
+                <div class="mcq-options">
+                    <div class="mcq-option" data-correct="false">A. Rectangle</div>
+                    <div class="mcq-option" data-correct="true">B. Ellipse (Oval)</div>
+                    <div class="mcq-option" data-correct="false">C. Diamond</div>
+                    <div class="mcq-option" data-correct="false">D. Triangle</div>
+                </div>
+                <div class="mcq-explanation">Appeared in 2022, 2024</div>
+            </div>
+
+            <div class="mcq-question">
+                <p class="question-text">The relationship between two entities is represented by:</p>
+                <div class="mcq-options">
+                    <div class="mcq-option" data-correct="false">A. Rectangle</div>
+                    <div class="mcq-option" data-correct="false">B. Circle</div>
+                    <div class="mcq-option" data-correct="true">C. Diamond</div>
+                    <div class="mcq-option" data-correct="false">D. Triangle</div>
+                </div>
+                <div class="mcq-explanation">Appeared in 2024, 2022</div>
+            </div>
+
+            <div class="mcq-question">
+                <p class="question-text">Which of the following represents a Multivalued Attribute in the E-R model?</p>
+                <div class="mcq-options">
+                    <div class="mcq-option" data-correct="false">A. Dashed line</div>
+                    <div class="mcq-option" data-correct="true">B. Double ellipse</div>
+                    <div class="mcq-option" data-correct="false">C. Dotted line</div>
+                    <div class="mcq-option" data-correct="false">D. Double line</div>
+                </div>
+                <div class="mcq-explanation">Appeared in 2022, 2024</div>
+            </div>
+
+            <div class="mcq-question">
+                <p class="question-text">In the E-R model, a Weak Entity is an entity that:</p>
+                <div class="mcq-options">
+                    <div class="mcq-option" data-correct="false">A. Has a composite primary key</div>
+                    <div class="mcq-option" data-correct="true">B. Cannot exist without a related strong entity (Owner)
+                    </div>
+                    <div class="mcq-option" data-correct="false">C. Has a derived attribute</div>
+                    <div class="mcq-option" data-correct="false">D. Has a many-to-many relationship</div>
+                </div>
+                <div class="mcq-explanation">Appeared in 2022</div>
+            </div>
+
+            <div class="mcq-question">
+                <p class="question-text">The process of grouping similar entities into higher-level entities is known
+                    as:</p>
+                <div class="mcq-options">
+                    <div class="mcq-option" data-correct="false">A. Aggregation</div>
+                    <div class="mcq-option" data-correct="false">B. Composition</div>
+                    <div class="mcq-option" data-correct="false">C. Normalization</div>
+                    <div class="mcq-option" data-correct="true">D. Generalization</div>
+                </div>
+                <div class="mcq-explanation">Appeared in 2024, 2022</div>
+            </div>
+
+            <div class="mcq-question">
+                <p class="question-text">A primary key in an ER model uniquely identifies a(n):</p>
+                <div class="mcq-options">
+                    <div class="mcq-option" data-correct="true">A. Entity set/Entity</div>
+                    <div class="mcq-option" data-correct="false">B. Relationship</div>
+                    <div class="mcq-option" data-correct="false">C. Attribute</div>
+                    <div class="mcq-option" data-correct="false">D. None</div>
+                </div>
+                <div class="mcq-explanation">Appeared in PYQ</div>
+            </div>
         
-        <!-- Only one container for this subject -->
-        <div class="mcq-container active">
+            </div>
+            <div class="mcq-container" id="container-unit-3" style="display:none;">
+                <div style="background:#e8f5e9; padding:10px; margin-bottom:15px; border-radius:5px;">
+                    <strong>Unit 3 Questions</strong>
+                </div>
+                
+                    <div class="mcq-question">
+                        <p class="question-text">Which normal form eliminates transitive dependencies between non-key
+                            attributes?</p>
+                        <div class="mcq-options">
+                            <div class="mcq-option" data-correct="false">A. First normal form (1NF)</div>
+                            <div class="mcq-option" data-correct="false">B. Second normal form (2NF)</div>
+                            <div class="mcq-option" data-correct="true">C. Third normal form (3NF)</div>
+                            <div class="mcq-option" data-correct="false">D. BCNF</div>
+                        </div>
+                        <div class="mcq-explanation">Appeared in: 2022, 2024</div>
+                    </div>
+
+                    <div class="mcq-question">
+                        <p class="question-text">Which of the following functional dependencies violates the second
+                            normal form (2NF)?</p>
+                        <div class="mcq-options">
+                            <div class="mcq-option" data-correct="true">A. Partial dependency</div>
+                            <div class="mcq-option" data-correct="false">B. Transitive dependency</div>
+                            <div class="mcq-option" data-correct="false">C. Multi-valued dependency</div>
+                            <div class="mcq-option" data-correct="false">D. Trivial dependency</div>
+                        </div>
+                        <div class="mcq-explanation">Appeared in: 2024</div>
+                    </div>
+
+                    <div class="mcq-question">
+                        <p class="question-text">Which normal form requires that the database is in first normal form
+                            and all non-key attributes are fully functionally dependent on the primary key?</p>
+                        <div class="mcq-options">
+                            <div class="mcq-option" data-correct="false">A. 1NF</div>
+                            <div class="mcq-option" data-correct="true">B. 2NF</div>
+                            <div class="mcq-option" data-correct="false">C. 3NF</div>
+                            <div class="mcq-option" data-correct="false">D. BCNF</div>
+                        </div>
+                        <div class="mcq-explanation">Appeared in: 2022, 2024</div>
+                    </div>
+
+                    <div class="mcq-question">
+                        <p class="question-text">BCNF is a stronger version of:</p>
+                        <div class="mcq-options">
+                            <div class="mcq-option" data-correct="false">A. 1NF</div>
+                            <div class="mcq-option" data-correct="false">B. 2NF</div>
+                            <div class="mcq-option" data-correct="true">C. 3NF</div>
+                            <div class="mcq-option" data-correct="false">D. 4NF</div>
+                        </div>
+                        <div class="mcq-explanation">Appeared in: 2022, 2024-25</div>
+                    </div>
+
+                    <div class="mcq-question">
+                        <p class="question-text">Which normal form allows repeating groups and is considered to be the
+                            lowest level of normalization?</p>
+                        <div class="mcq-options">
+                            <div class="mcq-option" data-correct="true">A. First normal form (1NF)</div>
+                            <div class="mcq-option" data-correct="false">B. 2NF</div>
+                            <div class="mcq-option" data-correct="false">C. 3NF</div>
+                            <div class="mcq-option" data-correct="false">D. UNKNOWN</div>
+                        </div>
+                        <div class="mcq-explanation">Appeared in: 2022, 2024</div>
+                    </div>
+
+                    <div class="mcq-question">
+                        <p class="question-text">The process of removing duplicate data from an ER model is known as:
+                        </p>
+                        <div class="mcq-options">
+                            <div class="mcq-option" data-correct="true">A. Normalization</div>
+                            <div class="mcq-option" data-correct="false">B. Denormalization</div>
+                            <div class="mcq-option" data-correct="false">C. Deduplication</div>
+                            <div class="mcq-option" data-correct="false">D. Factoring</div>
+                        </div>
+                        <div class="mcq-explanation">Appeared in: 2022, 2024</div>
+                    </div>
+
+                    <div class="mcq-question">
+                        <p class="question-text">Which of the following properties must be preserved during
+                            normalization?</p>
+                        <div class="mcq-options">
+                            <div class="mcq-option" data-correct="false">A. Lossless Join</div>
+                            <div class="mcq-option" data-correct="false">B. Dependency Preservation</div>
+                            <div class="mcq-option" data-correct="true">C. Both A and B</div>
+                            <div class="mcq-option" data-correct="false">D. None</div>
+                        </div>
+                        <div class="mcq-explanation">Appeared in PYQ</div>
+                    </div>
+                
+            </div>
+            <div class="mcq-container" id="container-unit-4" style="display:none;">
+                <div style="background:#e8f5e9; padding:10px; margin-bottom:15px; border-radius:5px;">
+                    <strong>Unit 4 Questions</strong>
+                </div>
+                
+                <div class="mcq-question">
+                    <p class="question-text">Relation algebra is a ________ language.</p>
+                    <div class="mcq-options">
+                        <div class="mcq-option" data-correct="true">A. Procedural</div>
+                        <div class="mcq-option" data-correct="false">B. Declarative</div>
+                    </div>
+                    <div class="mcq-explanation">Appeared in 2022</div>
+                </div>
+                <div class="mcq-question">
+                    <p class="question-text">Which operation is used to select rows from a relation that satisfy a given
+                        condition?</p>
+                    <div class="mcq-options">
+                        <div class="mcq-option" data-correct="false">A. Union</div>
+                        <div class="mcq-option" data-correct="false">B. Join</div>
+                        <div class="mcq-option" data-correct="false">C. Projection</div>
+                        <div class="mcq-option" data-correct="true">D. Selection</div>
+                    </div>
+                    <div class="mcq-explanation">Appeared in 2022</div>
+                </div>
+                <div class="mcq-question">
+                    <p class="question-text">The difference operation in relation algebra is used to:</p>
+                    <div class="mcq-options">
+                        <div class="mcq-option" data-correct="false">A. Combine tuples</div>
+                        <div class="mcq-option" data-correct="true">B. Find tuples in one relation but not in another
+                        </div>
+                    </div>
+                    <div class="mcq-explanation">Appeared in 2022</div>
+                </div>
+                <div class="mcq-question">
+                    <p class="question-text">Which SQL command is used to retrieve data from a database?</p>
+                    <div class="mcq-options">
+                        <div class="mcq-option" data-correct="true">A. SELECT</div>
+                        <div class="mcq-option" data-correct="false">B. GET</div>
+                        <div class="mcq-option" data-correct="false">C. FETCH</div>
+                    </div>
+                    <div class="mcq-explanation">Appeared in 2022, 2024</div>
+                </div>
+                <div class="mcq-question">
+                    <p class="question-text">Which SQL command is used to modify existing data in a table?</p>
+                    <div class="mcq-options">
+                        <div class="mcq-option" data-correct="false">A. SELECT</div>
+                        <div class="mcq-option" data-correct="true">B. UPDATE</div>
+                        <div class="mcq-option" data-correct="false">C. MODIFY</div>
+                    </div>
+                    <div class="mcq-explanation">Appeared in 2022, 2024</div>
+                </div>
+                <div class="mcq-question">
+                    <p class="question-text">Which SQL command is used to remove a table from a database?</p>
+                    <div class="mcq-options">
+                        <div class="mcq-option" data-correct="false">A. DELETE</div>
+                        <div class="mcq-option" data-correct="true">B. DROP TABLE</div>
+                    </div>
+                    <div class="mcq-explanation">Appeared in 2022, 2024</div>
+                </div>
+                <div class="mcq-question">
+                    <p class="question-text">In SQL, which keyword is used to eliminate duplicate rows in results?</p>
+                    <div class="mcq-options">
+                        <div class="mcq-option" data-correct="true">A. DISTINCT</div>
+                        <div class="mcq-option" data-correct="false">B. UNIQUE</div>
+                    </div>
+                    <div class="mcq-explanation">Appeared in 2024</div>
+                </div>
+
+                <div class="mcq-question">
+                    <p class="question-text">A virtual table relating data from one or more tables is called:</p>
+                    <div class="mcq-options">
+                        <div class="mcq-option" data-correct="true">A. View</div>
+                        <div class="mcq-option" data-correct="false">B. Index</div>
+                        <div class="mcq-option" data-correct="false">C. Trigger</div>
+                        <div class="mcq-option" data-correct="false">D. Cursor</div>
+                    </div>
+                    <div class="mcq-explanation">Appeared in PYQ</div>
+                </div>
+            
+            </div>
+            <div class="mcq-container" id="container-unit-5" style="display:none;">
+                <div style="background:#e8f5e9; padding:10px; margin-bottom:15px; border-radius:5px;">
+                    <strong>Unit 5 Questions</strong>
+                </div>
+                
+                <div class="mcq-question">
+                    <p class="question-text">ACID properties of a transaction include:</p>
+                    <div class="mcq-options">
+                        <div class="mcq-option" data-correct="true">A. Atomicity, Consistency, Isolation, Durability
+                        </div>
+                        <div class="mcq-option" data-correct="false">B. Atomicity, Concurrency, Isolation, Durability
+                        </div>
+                    </div>
+                    <div class="mcq-explanation">Appeared in 2022, 2024</div>
+                </div>
+                <div class="mcq-question">
+                    <p class="question-text">In transaction processing, consistency refers to:</p>
+                    <div class="mcq-options">
+                        <div class="mcq-option" data-correct="true">A. Ensuring that the database remains in a valid
+                            state before and after a transaction</div>
+                        <div class="mcq-option" data-correct="false">B. Providing concurrent access</div>
+                    </div>
+                    <div class="mcq-explanation">Appeared in 2022</div>
+                </div>
+                <div class="mcq-question">
+                    <p class="question-text">Which technique records changes to the database before applying them?</p>
+                    <div class="mcq-options">
+                        <div class="mcq-option" data-correct="true">A. Write-ahead logging</div>
+                        <div class="mcq-option" data-correct="false">B. Deferred updates</div>
+                    </div>
+                    <div class="mcq-explanation">Appeared in 2024-25</div>
+                </div>
+                <div class="mcq-question">
+                    <p class="question-text">The process of undoing or rolling back a transaction to its original state
+                        is called:</p>
+                    <div class="mcq-options">
+                        <div class="mcq-option" data-correct="false">A. Recovery</div>
+                        <div class="mcq-option" data-correct="false">B. Commit</div>
+                        <div class="mcq-option" data-correct="true">C. Abort / Rollback</div>
+                    </div>
+                    <div class="mcq-explanation">Appeared in 2022, 2024</div>
+                </div>
+                <div class="mcq-question">
+                    <p class="question-text">What is data recovery in the context of databases?</p>
+                    <div class="mcq-options">
+                        <div class="mcq-option" data-correct="true">A. The process of restoring a database to a previous
+                            state after a system failure</div>
+                        <div class="mcq-option" data-correct="false">B. Deleting old records</div>
+                    </div>
+                    <div class="mcq-explanation">Appeared in 2022</div>
+                </div>
+                <div class="mcq-question">
+                    <p class="question-text">What is the purpose of checkpoints in DBMS recovery?</p>
+                    <div class="mcq-options">
+                        <div class="mcq-option" data-correct="false">A. To delete data</div>
+                        <div class="mcq-option" data-correct="true">B. To reduce recovery time</div>
+                        <div class="mcq-option" data-correct="false">C. To schedule transactions</div>
+                        <div class="mcq-option" data-correct="false">D. To ensure concurrency</div>
+                    </div>
+                    <div class="mcq-explanation">Appeared in 2024-25</div>
+                </div>
+                <div class="mcq-question">
+                    <p class="question-text">Which of the following concurrency control techniques ensures
+                        serializability of transactions?</p>
+                    <div class="mcq-options">
+                        <div class="mcq-option" data-correct="true">A. Locking / Two-phase locking</div>
+                        <div class="mcq-option" data-correct="false">B. Timestamp ordering</div>
+                    </div>
+                    <div class="mcq-explanation">Appeared in 2022, 2024-25</div>
+                </div>
+                <div class="mcq-question">
+                    <p class="question-text">When two transactions wait each other to release resources, it is called:
+                    </p>
+                    <div class="mcq-options">
+                        <div class="mcq-option" data-correct="false">A. Starvation</div>
+                        <div class="mcq-option" data-correct="true">B. Deadlock</div>
+                        <div class="mcq-option" data-correct="false">C. Locking</div>
+                        <div class="mcq-option" data-correct="false">D. Scheduling</div>
+                    </div>
+                    <div class="mcq-explanation">Appeared in 2024-25</div>
+                </div>
+
+                <div class="mcq-question">
+                    <p class="question-text">The specific log record `<Ti, start>` is written when:</p>
+                    <div class="mcq-options">
+                        <div class="mcq-option" data-correct="true">A. A transaction Ti starts</div>
+                        <div class="mcq-option" data-correct="false">B. A transaction commits</div>
+                        <div class="mcq-option" data-correct="false">C. A transaction aborts</div>
+                        <div class="mcq-option" data-correct="false">D. A crash occurs</div>
+                    </div>
+                    <div class="mcq-explanation">Appeared in PYQ</div>
+                </div>
+
+                <div class="mcq-question">
+                    <p class="question-text">In Two-Phase Locking (2PL), a transaction releases locks in which phase?
+                    </p>
+                    <div class="mcq-options">
+                        <div class="mcq-option" data-correct="false">A. Growing Phase</div>
+                        <div class="mcq-option" data-correct="true">B. Shrinking Phase</div>
+                        <div class="mcq-option" data-correct="false">C. Initial Phase</div>
+                        <div class="mcq-option" data-correct="false">D. Validation Phase</div>
+                    </div>
+                    <div class="mcq-explanation">Appeared in PYQ</div>
+                </div>
+
+                <div class="mcq-question">
+                    <p class="question-text">Which recovery technique uses two page tables (current and shadow)?</p>
+                    <div class="mcq-options">
+                        <div class="mcq-option" data-correct="false">A. Log-based recovery</div>
+                        <div class="mcq-option" data-correct="true">B. Shadow Paging</div>
+                        <div class="mcq-option" data-correct="false">C. Checkpointing</div>
+                        <div class="mcq-option" data-correct="false">D. Deferred Update</div>
+                    </div>
+                    <div class="mcq-explanation">Appeared in PYQ</div>
+                </div>
+
+                <div class="mcq-question">
+                    <p class="question-text">The SQL command to remove a user's permission is:</p>
+                    <div class="mcq-options">
+                        <div class="mcq-option" data-correct="false">A. REMOVE</div>
+                        <div class="mcq-option" data-correct="false">B. DELETE</div>
+                        <div class="mcq-option" data-correct="true">C. REVOKE</div>
+                        <div class="mcq-option" data-correct="false">D. DROP</div>
+                    </div>
+                    <div class="mcq-explanation">Appeared in PYQ</div>
+                </div>
+            
+            </div>
+        <div class="mcq-container active" id="container-all">
+            
+            <div class="unit-separator" style="margin: 20px 0 10px 0; border-bottom:2px dashed #ccc; padding-bottom:5px;">
+                <span style="background:#eee; padding:5px 10px; border-radius:5px; font-weight:bold;">Unit 1</span>
+            </div>
             
                     <!-- MCQ 1 -->
                     <div class="mcq-question">
@@ -1039,6 +1605,10 @@
                         </div>
                     </div>
                 
+            <div class="unit-separator" style="margin: 20px 0 10px 0; border-bottom:2px dashed #ccc; padding-bottom:5px;">
+                <span style="background:#eee; padding:5px 10px; border-radius:5px; font-weight:bold;">Unit 2</span>
+            </div>
+            
             <div class="mcq-question">
                 <p class="question-text">In the E-R model, an Entity is represented by:</p>
                 <div class="mcq-options">
@@ -1118,6 +1688,10 @@
                 <div class="mcq-explanation">Appeared in PYQ</div>
             </div>
         
+            <div class="unit-separator" style="margin: 20px 0 10px 0; border-bottom:2px dashed #ccc; padding-bottom:5px;">
+                <span style="background:#eee; padding:5px 10px; border-radius:5px; font-weight:bold;">Unit 3</span>
+            </div>
+            
                     <div class="mcq-question">
                         <p class="question-text">Which normal form eliminates transitive dependencies between non-key
                             attributes?</p>
@@ -1201,6 +1775,10 @@
                         <div class="mcq-explanation">Appeared in PYQ</div>
                     </div>
                 
+            <div class="unit-separator" style="margin: 20px 0 10px 0; border-bottom:2px dashed #ccc; padding-bottom:5px;">
+                <span style="background:#eee; padding:5px 10px; border-radius:5px; font-weight:bold;">Unit 4</span>
+            </div>
+            
                 <div class="mcq-question">
                     <p class="question-text">Relation algebra is a ________ language.</p>
                     <div class="mcq-options">
@@ -1274,6 +1852,10 @@
                     </div>
                     <div class="mcq-explanation">Appeared in PYQ</div>
                 </div>
+            
+            <div class="unit-separator" style="margin: 20px 0 10px 0; border-bottom:2px dashed #ccc; padding-bottom:5px;">
+                <span style="background:#eee; padding:5px 10px; border-radius:5px; font-weight:bold;">Unit 5</span>
+            </div>
             
                 <div class="mcq-question">
                     <p class="question-text">ACID properties of a transaction include:</p>
@@ -1398,327 +1980,196 @@
                 </div>
             
         </div>
-        
-        <div class="mcq-navigation">
-            <button id="prev-btn" class="btn btn-secondary"><i class="fas fa-arrow-left"></i> Previous</button>
-            <button id="next-btn" class="btn btn-primary">Next <i class="fas fa-arrow-right"></i></button>
+            
+            <div class="mcq-navigation">
+                <button id="prev-btn" class="btn btn-secondary">Previous</button>
+                <button id="next-btn" class="btn btn-primary">Next</button>
+            </div>
         </div>
+
     </div>
-    
-<h2 class="section-title" id="pyq"><i class="fas fa-chart-bar"></i> PYQ Weightage Analysis</h2>
 
-            <div class="subject-container">
-                <div class="subject-header">
-                    <h3><i class="fas fa-chart-pie"></i> PYQ Distribution (2022-2024)</h3>
-                    <i class="fas fa-chevron-down"></i>
-                </div>
-                <div class="subject-content">
-                    <div class="topic">
-                        <h4>Subject-wise PYQ Frequency</h4>
-                        <div class="topic-content">
-                            <p><strong>Computer Graphics & Animation:</strong></p>
-                            <ul>
-                                <li>Aspect Ratio (2022, 2023)</li>
-                                <li>Interactive Graphics (2022, 2024)</li>
-                                <li>Pixel & Resolution (2022, 2023)</li>
-                                <li>Applications of CG (2022)</li>
-                            </ul>
-
-                            <p><strong>Database Management System:</strong></p>
-                            <ul>
-                                <li>DBMS Definition (2024)</li>
-                                <li>Three-Schema Architecture (2024)</li>
-                                <li>Data Abstraction (2022, 2024)</li>
-                                <li>Data Independence (2024-25)</li>
-                            </ul>
-
-                            <p><strong>Software Engineering:</strong></p>
-                            <ul>
-                                <li>SDLC Models (2022, 2024)</li>
-                                <li>Software Engineering Definition (2024)</li>
-                                <li>Father of SE (2024)</li>
-                                <li>Software Characteristics (2022)</li>
-                            </ul>
-
-                            <p><strong>Optimization Techniques:</strong></p>
-                            <ul>
-                                <li>Graphical Method (2022, 2024)</li>
-                                <li>LPP Components (2022)</li>
-                                <li>Slack & Surplus Variables (2022, 2024)</li>
-                            </ul>
-
-                            <p><strong>Mathematics-III:</strong></p>
-                            <ul>
-                                <li>Complex Numbers (2022, 2023)</li>
-                                <li>Roots of Unity (2023, 2024)</li>
-                                <li>Powers of i (2024)</li>
-                                <li>Modulus & Argument (2022)</li>
-                            </ul>
-                        </div>
-                    </div>
-
-                    <div class="topic">
-                        <h4>Exam Preparation Tips</h4>
-                        <div class="topic-content">
-                            <ol>
-                                <li><strong>Focus on PYQ Topics:</strong> Questions from previous years have high
-                                    probability of repetition.</li>
-                                <li><strong>Understand Concepts:</strong> Don't just memorize - understand the
-                                    underlying concepts.</li>
-                                <li><strong>Practice MCQs:</strong> Regular practice improves speed and accuracy.</li>
-                                <li><strong>Time Management:</strong> Allocate time based on weightage of each subject.
-                                </li>
-                                <li><strong>Revision Strategy:</strong> Revise important formulas and definitions
-                                    regularly.</li>
-                            </ol>
-                        </div>
-                    </div>
-                </div>
-            </div>
+    <footer>
+        <div class="container" style="text-align:center;">
+            <p>© 2026 Sarvasva Notes</p>
         </div>
+    </footer>
 
-        <!-- Footer -->
-        <footer>
-            <div class="container">
-                <p><i class="fas fa-graduation-cap"></i> Sarvasva Notes - BCA Semester 4 Unit 1</p>
-                <p>Your Ultimate Guide: PYQ-Focused Notes + Practice MCQs</p>
-                <p>© 2026 Sarvasva Notes | All Rights Reserved</p>
-            </div>
-        </footer>
+    <script>
+        // --- Subject Header Toggle ---
+        document.querySelectorAll('.subject-header').forEach(header => {
+            header.addEventListener('click', () => {
+                const content = header.nextElementSibling;
+                header.classList.toggle('active');
+                content.classList.toggle('active');
+            });
+        });
 
-        <script>
-            // Collapsible subject sections
-            document.querySelectorAll('.subject-header').forEach(header => {
-                header.addEventListener('click', () => {
-                    const content = header.nextElementSibling;
-                    header.classList.toggle('active');
-                    content.classList.toggle('active');
+        // --- MCQ System ---
+        let score = 0;
+        let currentQuestion = 0;
+        let questions = [];
+
+        function switchTab(unit) {
+            // Update Tabs
+            document.querySelectorAll('.mcq-tab-btn').forEach(btn => {
+                btn.classList.remove('active');
+                btn.style.background = '#fff';
+                btn.style.color = '#333';
+            });
+            const clickedBtn = event.target;
+            clickedBtn.classList.add('active');
+            clickedBtn.style.background = ''; // revert to CSS class style
+            clickedBtn.style.color = '';
+
+            // Update Containers
+            document.querySelectorAll('.mcq-container').forEach(c => {
+                c.classList.remove('active');
+                c.style.display = 'none';
+            });
+            const target = document.getElementById(unit === 'all' ? 'container-all' : 'container-unit-' + unit);
+            if(target) {
+                target.classList.add('active');
+                target.style.display = 'block';
+            }
+            
+            // Re-init
+            initializeQuestions();
+        }
+
+        function initializeQuestions() {
+            questions = [];
+            const container = document.querySelector('.mcq-container.active');
+            if(!container) return; // Should not happen
+
+            const qElements = container.querySelectorAll('.mcq-question');
+            
+            qElements.forEach(q => {
+                // Reset styling
+                q.querySelectorAll('.mcq-option').forEach(o => {
+                    o.classList.remove('selected', 'correct', 'incorrect');
+                    o.style.pointerEvents = 'auto';
                 });
+                const exp = q.querySelector('.mcq-explanation');
+                if(exp) exp.classList.remove('show');
+
+                // Ensure submit button
+                let btn = q.querySelector('.submit-answer-btn');
+                if(!btn) {
+                    btn = document.createElement('button');
+                    btn.className = 'submit-answer-btn';
+                    btn.textContent = 'Submit Answer';
+                    if(exp) q.insertBefore(btn, exp);
+                    else q.appendChild(btn);
+                }
+                btn.disabled = false;
+                btn.textContent = 'Submit Answer';
+
+                questions.push({ element: q, answered: false });
             });
 
-            // MCQ Tab Switching
-                                // Show the selected MCQ container
-                    const subject = tab.getAttribute('data-subject');
-                    document.getElementById(`${subject}-mcq`).classList.add('active');
+            document.getElementById('total-questions').textContent = questions.length;
+            updateScore(0);
+            showQuestion();
+        }
 
-                    // Reset current question to first question of new subject
-                    currentQuestion = 0;
-                    initializeQuestions();
+        function updateScore(s) {
+            score = s;
+            document.getElementById('score').textContent = score;
+        }
+
+        function showQuestion() {
+            questions.forEach(q => q.element.style.display = 'none');
+            if(questions[currentQuestion]) {
+                questions[currentQuestion].element.style.display = 'block';
+            }
+            
+            const prev = document.getElementById('prev-btn');
+            const next = document.getElementById('next-btn');
+            
+            if(prev) prev.disabled = currentQuestion === 0;
+            if(next) {
+                if(questions.length === 0) next.style.display = 'none';
+                else {
+                    next.style.display = 'inline-block';
+                    next.innerHTML = currentQuestion === questions.length - 1 ? 'Finish' : 'Next <i class="fas fa-arrow-right"></i>';
+                }
+            }
+        }
+
+        // --- Event Delegation for MCQ Interactions ---
+        document.addEventListener('click', (e) => {
+            // Option Select
+            if(e.target.classList.contains('mcq-option')) {
+                const qDiv = e.target.closest('.mcq-question');
+                const btn = qDiv.querySelector('.submit-answer-btn');
+                if(btn && btn.disabled) return;
+                
+                qDiv.querySelectorAll('.mcq-option').forEach(o => o.classList.remove('selected'));
+                e.target.classList.add('selected');
+            }
+
+            // Submit
+            if(e.target.classList.contains('submit-answer-btn')) {
+                const btn = e.target;
+                const qDiv = btn.closest('.mcq-question');
+                const selected = qDiv.querySelector('.mcq-option.selected');
+                
+                if(!selected) { alert('Please select an option'); return; }
+
+                const isCorrect = selected.dataset.correct === 'true';
+                if(isCorrect) updateScore(score + 1);
+
+                qDiv.querySelectorAll('.mcq-option').forEach(o => {
+                    o.style.pointerEvents = 'none';
+                    if(o.dataset.correct === 'true') o.classList.add('correct');
+                    else if(o.classList.contains('selected')) o.classList.add('incorrect');
+                    o.classList.remove('selected');
                 });
-            });
+                
+                const exp = qDiv.querySelector('.mcq-explanation');
+                if(exp) exp.classList.add('show');
+                
+                btn.disabled = true;
+                btn.textContent = isCorrect ? 'Correct!' : 'Incorrect';
+            }
+        });
 
-            // MCQ functionality
-            let score = 0;
-            let totalQuestions = 0;
-            let currentQuestion = 0;
-            let questions = [];
+        // Navigation
+        document.getElementById('next-btn')?.addEventListener('click', () => {
+            if(currentQuestion < questions.length - 1) {
+                currentQuestion++;
+                showQuestion();
+            } else {
+                 if(questions.length > 0) alert('Section Complete! Score: ' + score);
+            }
+        });
 
-            // Initialize questions array
-            function initializeQuestions() {
-                questions = [];
-                const activeContainer = document.querySelector('.mcq-container.active');
-                if (!activeContainer) return;
-
-                const questionElements = activeContainer.querySelectorAll('.mcq-question');
-
-                questionElements.forEach((q) => {
-                    // Reset Options
-                    const options = q.querySelectorAll('.mcq-option');
-                    options.forEach(opt => {
-                        opt.classList.remove('selected', 'correct', 'incorrect');
-                        opt.style.pointerEvents = 'auto';
-                    });
-
-                    // Reset Explanation
-                    const explanation = q.querySelector('.mcq-explanation');
-                    if (explanation) explanation.classList.remove('show');
-
-                    // Add or Reset Submit Button
-                    let submitBtn = q.querySelector('.submit-answer-btn');
-                    if (!submitBtn) {
-                        submitBtn = document.createElement('button');
-                        submitBtn.className = 'submit-answer-btn';
-                        submitBtn.textContent = 'Submit Answer';
-                        // Insert before explanation or append
-                        if (explanation) {
-                            q.insertBefore(submitBtn, explanation);
-                        } else {
-                            q.appendChild(submitBtn);
-                        }
-                    }
-                    submitBtn.disabled = false;
-                    submitBtn.textContent = 'Submit Answer';
-                    // submitBtn.style.display = 'block'; // Ensure it's visible if hidden
-
-                    questions.push({
-                        element: q,
-                        answered: false,
-                        correct: false
-                    });
-                });
-
-                document.getElementById('total-questions').textContent = questions.length;
-                score = 0;
-                document.getElementById('score').textContent = score;
-
+        document.getElementById('prev-btn')?.addEventListener('click', () => {
+            if(currentQuestion > 0) {
+                currentQuestion--;
                 showQuestion();
             }
+        });
 
-            // Show current question
-            function showQuestion() {
-                // Hide all questions
-                questions.forEach((q) => {
-                    q.element.style.display = 'none';
-                });
+        document.getElementById('reset-btn')?.addEventListener('click', () => initializeQuestions());
 
-                // Show current question
-                if (questions[currentQuestion]) {
-                    questions[currentQuestion].element.style.display = 'block';
-                }
-
-                // Update navigation buttons
-                const nextBtn = document.getElementById('next-btn');
-                const prevBtn = document.getElementById('prev-btn');
-
-                if (prevBtn) prevBtn.disabled = currentQuestion === 0;
-                if (nextBtn) nextBtn.innerHTML = currentQuestion === questions.length - 1 ? 'Finish' : 'Next <i class="fas fa-arrow-right"></i>';
-            }
-
-            // Handle MCQ Interactions (Selection & Submission)
-            document.addEventListener('click', (e) => {
-                // 1. Handle Option Selection
-                if (e.target.classList.contains('mcq-option')) {
-                    const questionDiv = e.target.closest('.mcq-question');
-                    const submitBtn = questionDiv.querySelector('.submit-answer-btn');
-
-                    // If already submitted, do nothing
-                    if (submitBtn && submitBtn.disabled) return;
-
-                    // Deselect other options in this question
-                    const options = questionDiv.querySelectorAll('.mcq-option');
-                    options.forEach(opt => opt.classList.remove('selected'));
-
-                    // Select clicked option
-                    e.target.classList.add('selected');
-                }
-
-                // 2. Handle Submit Button Click
-                if (e.target.classList.contains('submit-answer-btn')) {
-                    const button = e.target;
-                    const questionDiv = button.closest('.mcq-question');
-                    const selectedOption = questionDiv.querySelector('.mcq-option.selected');
-
-                    if (!selectedOption) {
-                        alert('Please select an option first!');
-                        return;
-                    }
-
-                    const options = questionDiv.querySelectorAll('.mcq-option');
-                    const explanation = questionDiv.querySelector('.mcq-explanation');
-
-                    // Find question data
-                    const questionIndex = questions.findIndex(q => q.element === questionDiv);
-                    if (questionIndex !== -1) {
-                        questions[questionIndex].answered = true;
-
-                        const isCorrect = selectedOption.getAttribute('data-correct') === 'true';
-                        questions[questionIndex].correct = isCorrect;
-
-                        if (isCorrect) {
-                            score++;
-                            document.getElementById('score').textContent = score;
-                        }
-
-                        // Show Results
-                        options.forEach(option => {
-                            option.style.pointerEvents = 'none'; // Lock
-
-                            // Always highlight the correct answer Green
-                            if (option.getAttribute('data-correct') === 'true') {
-                                option.classList.add('correct');
-                            }
-                            // If selected was wrong, highlight Red
-                            else if (option.classList.contains('selected')) {
-                                option.classList.add('incorrect');
-                            }
-
-                            // Remove blue selection style to avoid confusion
-                            option.classList.remove('selected');
-                        });
-
-                        // Show Explanation
-                        if (explanation) explanation.classList.add('show');
-
-                        // Update Button State
-                        button.disabled = true;
-                        button.textContent = isCorrect ? 'Correct!' : 'Incorrect';
-                    }
-                }
+        // Init
+        window.addEventListener('DOMContentLoaded', () => {
+            initializeQuestions();
+            // Open first note
+            const h = document.querySelector('.subject-header');
+            if(h) h.click();
+        });
+        
+        // Smooth Scroll
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if(target) window.scrollTo({ top: target.offsetTop - 80, behavior: 'smooth' });
             });
-
-            // Navigation buttons
-            document.getElementById('next-btn').addEventListener('click', () => {
-                if (currentQuestion < questions.length - 1) {
-                    currentQuestion++;
-                    showQuestion();
-                } else {
-                    // Show completion message
-                    alert(`Quiz completed! Your score: ${score}/${questions.length}`);
-                }
-            });
-
-            document.getElementById('prev-btn').addEventListener('click', () => {
-                if (currentQuestion > 0) {
-                    currentQuestion--;
-                    showQuestion();
-                }
-            });
-
-            // Reset quiz
-            document.getElementById('reset-btn').addEventListener('click', () => {
-                score = 0;
-                currentQuestion = 0;
-                document.getElementById('score').textContent = score;
-
-                // Reset all questions
-                document.querySelectorAll('.mcq-option').forEach(option => {
-                    option.classList.remove('correct', 'incorrect', 'selected');
-                    option.style.pointerEvents = 'auto';
-                });
-
-                document.querySelectorAll('.mcq-explanation').forEach(exp => {
-                    exp.classList.remove('show');
-                });
-
-                initializeQuestions();
-            });
-
-            // Smooth scrolling for anchor links
-            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-                anchor.addEventListener('click', function (e) {
-                    e.preventDefault();
-
-                    const targetId = this.getAttribute('href');
-                    if (targetId === '#') return;
-
-                    const targetElement = document.querySelector(targetId);
-                    if (targetElement) {
-                        window.scrollTo({
-                            top: targetElement.offsetTop - 80,
-                            behavior: 'smooth'
-                        });
-                    }
-                });
-            });
-
-            // Initialize on page load
-            window.addEventListener('DOMContentLoaded', () => {
-                initializeQuestions();
-
-                // Open first subject by default
-                document.querySelector('.subject-header').click();
-            });
-        </script>
+        });
+    </script>
 </body>
-
 </html>

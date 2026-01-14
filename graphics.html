@@ -1,30 +1,15 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Computer Graphics & Animation - Complete Notes</title>
-    <meta name="description"
-        content="Unit 1 Notes & MCQs for BCA Sem 4. Topics: Introduction to Computer Graphics, DBMS Architecture, Software Engineering Basics, Linear Programming, and Vector Calculus.">
-    <meta name="keywords"
-        content="BCA Unit 1 Notes, Computer Graphics Refreshers, CRT, DBMS Architecture, ER Model, Software Engineering Basics, Linear Programming, Vector Calculus, BCA 4th Sem">
-    <meta property="og:title" content="Unit 1 Preparation - Sarvasva Notes">
-    <meta property="og:description"
-        content="Study Unit 1 concepts and practice PYQ-based MCQs for BCA Semester 4 subjects.">
-    <meta property="og:type" content="article">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-
-    <!-- MathJax for rendering equations -->
+    <!-- MathJax -->
     <script>
-        MathJax = {
-            tex: {
-                inlineMath: [['$', '$'], ['\\(', '\\)']]
-            }
-        };
+        MathJax = { tex: { inlineMath: [['$', '$'], ['\\(', '\\)']] } };
     </script>
     <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
-
     <style>
         :root {
             --primary-color: #2c3e50;
@@ -527,60 +512,66 @@
             }
         }
     </style>
+    <style>
+        .mcq-tab-btn.active {
+            background-color: var(--secondary-color) !important;
+            color: white !important;
+            border-color: var(--secondary-color) !important;
+        }
+        .mcq-tab-btn {
+            transition: all 0.3s;
+        }
+    </style>
 </head>
-
 <body>
-    <!-- Header & Navigation -->
+
     <header>
         <div class="container header-content">
             <div class="logo">
                 <i class="fas fa-graduation-cap"></i>
                 <div>
                     <h1>Sarvasva Notes</h1>
-                    <p>BCA Semester 4 – Computer Graphics & Animation - Complete Smart Preparation</p>
+                    <p>Computer Graphics & Animation</p>
                 </div>
             </div>
             <nav>
-                
-    <ul>
-        <li><a href="index.html"><i class="fas fa-home"></i> Home</a></li>
-        <li><a href="graphics.html" style="text-decoration:underline">Graphics</a></li>
-        <li><a href="dbms.html" >DBMS</a></li>
-        <li><a href="se.html" >SE</a></li>
-        <li><a href="optimization.html" >Optimization</a></li>
-        <li><a href="math.html" >Math</a></li>
-    </ul>
-    
+                <ul>
+                    <li><a href="index.html"><i class="fas fa-home"></i> Home</a></li>
+                    <li><a href="graphics.html" class="active-nav">Graphics</a></li>
+                    <li><a href="dbms.html" class="">DBMS</a></li>
+                    <li><a href="se.html" class="">SE</a></li>
+                    <li><a href="optimization.html" class="">Optimization</a></li>
+                    <li><a href="math.html" class="">Math</a></li>
+                </ul>
             </nav>
         </div>
     </header>
 
-    <!-- Hero Section -->
     <div class="container">
+        <!-- Hero -->
         <section class="hero">
-            <h2>Sarvasva Notes - Computer Graphics & Animation - Complete Smart Preparation</h2>
-            <p>Your Ultimate Guide: PYQ-Focused Notes + Practice MCQs (2022–2024)</p>
+            <h2>Computer Graphics & Animation</h2>
+            <p>Complete Subject Notes & MCQs (organized by Unit)</p>
             <div class="cta-buttons">
-                <a href="#notes" class="btn btn-primary"><i class="fas fa-book"></i> Start Studying</a>
-                <a href="#mcq" class="btn btn-secondary"><i class="fas fa-question-circle"></i> Practice MCQs</a>
-                <a href="#pyq" class="btn btn-tertiary"><i class="fas fa-chart-bar"></i> PYQ Weightage</a>
+                <a href="#notes" class="btn btn-primary">Read Notes</a>
+                <a href="#mcq" class="btn btn-secondary">Practice MCQs</a>
             </div>
         </section>
 
-        <!-- Subject Notes Section -->
-        <h2 class="section-title" id="notes"><i class="fas fa-book-open"></i> Subject-Wise Unit 1 Notes</h2>
-
-    <!-- Subject Notes -->
-    <div class="subject-container" style="display:block;">
-        <div class="subject-header active" style="cursor: default;">
-            <h3><i class="fas fa-desktop"></i> Computer Graphics & Animation</h3>
-        </div>
-        <div class="subject-content active" style="max-height: none; padding: 2rem;">
+        <!-- Notes -->
+        <h2 class="section-title" id="notes"><i class="fas fa-book-open"></i> Subject Notes</h2>
+        <div class="notes-wrapper">
             
-            <div class="unit-block">
-                <h3 class="unit-header">Unit 1</h3>
-                <div class="unit-content">
-                    
+                <div class="unit-block" style="margin-bottom: 30px;">
+                    <div style="background: #f1f2f6; padding: 8px 15px; border-radius: 5px 5px 0 0; border-left: 4px solid #2c3e50;">
+                        <h4 style="margin:0; color:#2c3e50;">Unit 1</h4>
+                    </div>
+                    <div class="subject-container">
+            <div class="subject-header">
+                <h3><i class="fas fa-desktop"></i> Computer Graphics & Animation (BCA-4001)</h3>
+                <i class="fas fa-chevron-down"></i>
+            </div>
+            <div class="subject-content">
                 <div class="topic">
                     <h4>1. Introduction to Interactive Computer Graphics <span class="pyq-badge">PYQ 2022, 2024</span>
                     </h4>
@@ -709,13 +700,20 @@
                                 class="pyq-badge">PYQ 2022, 2023</span></p>
                     </div>
                 </div>
-            
-                </div>
             </div>
-            <div class="unit-block">
-                <h3 class="unit-header">Unit 2</h3>
-                <div class="unit-content">
-                    
+        </div>
+                </div>
+
+                <div class="unit-block" style="margin-bottom: 30px;">
+                    <div style="background: #f1f2f6; padding: 8px 15px; border-radius: 5px 5px 0 0; border-left: 4px solid #2c3e50;">
+                        <h4 style="margin:0; color:#2c3e50;">Unit 2</h4>
+                    </div>
+                    <div class="subject-container">
+            <div class="subject-header">
+                <h3><i class="fas fa-desktop"></i> Computer Graphics & Animation</h3>
+                <i class="fas fa-chevron-down"></i>
+            </div>
+            <div class="subject-content">
                 <div class="topic">
                     <h4>Scan Converting Lines</h4>
                     <div class="topic-content">
@@ -793,13 +791,20 @@
                         </ul>
                     </div>
                 </div>
-            
-                </div>
             </div>
-            <div class="unit-block">
-                <h3 class="unit-header">Unit 3</h3>
-                <div class="unit-content">
-                    
+        </div>
+                </div>
+
+                <div class="unit-block" style="margin-bottom: 30px;">
+                    <div style="background: #f1f2f6; padding: 8px 15px; border-radius: 5px 5px 0 0; border-left: 4px solid #2c3e50;">
+                        <h4 style="margin:0; color:#2c3e50;">Unit 3</h4>
+                    </div>
+                    <div class="subject-container">
+            <div class="subject-header">
+                <h3><i class="fas fa-desktop"></i> Computer Graphics & Animation</h3>
+                <i class="fas fa-chevron-down"></i>
+            </div>
+            <div class="subject-content">
                 <div class="topic">
                     <h4>Geometrical Transformations (2D)</h4>
                     <div class="topic-content">
@@ -862,13 +867,20 @@
                         </ul>
                     </div>
                 </div>
-            
-                </div>
             </div>
-            <div class="unit-block">
-                <h3 class="unit-header">Unit 4</h3>
-                <div class="unit-content">
-                    
+        </div>
+                </div>
+
+                <div class="unit-block" style="margin-bottom: 30px;">
+                    <div style="background: #f1f2f6; padding: 8px 15px; border-radius: 5px 5px 0 0; border-left: 4px solid #2c3e50;">
+                        <h4 style="margin:0; color:#2c3e50;">Unit 4</h4>
+                    </div>
+                    <div class="subject-container">
+            <div class="subject-header">
+                <h3><i class="fas fa-desktop"></i> Computer Graphics & Animation</h3>
+                <i class="fas fa-chevron-down"></i>
+            </div>
+            <div class="subject-content">
                 <div class="topic">
                     <h4>Curves & Surfaces</h4>
                     <div class="topic-content">
@@ -946,13 +958,20 @@
                         </ul>
                     </div>
                 </div>
-            
-                </div>
             </div>
-            <div class="unit-block">
-                <h3 class="unit-header">Unit 5</h3>
-                <div class="unit-content">
-                    
+        </div>
+                </div>
+
+                <div class="unit-block" style="margin-bottom: 30px;">
+                    <div style="background: #f1f2f6; padding: 8px 15px; border-radius: 5px 5px 0 0; border-left: 4px solid #2c3e50;">
+                        <h4 style="margin:0; color:#2c3e50;">Unit 5</h4>
+                    </div>
+                    <div class="subject-container">
+            <div class="subject-header">
+                <h3><i class="fas fa-film"></i> Computer Graphics & Animation</h3>
+                <i class="fas fa-chevron-down"></i>
+            </div>
+            <div class="subject-content">
                 <div class="topic">
                     <h4>Computer Animation</h4>
                     <div class="topic-content">
@@ -1010,21 +1029,527 @@
                         </ul>
                     </div>
                 </div>
-            
-                </div>
             </div>
         </div>
-    </div>
-<h2 class="section-title" id="mcq">
-
-    <div class="mcq-section">
-        <div class="score-display">
-            <p>Your Score: <span id="score">0</span> out of <span id="total-questions">0</span></p>
-            <button id="reset-btn" class="btn btn-secondary" style="padding: 8px 20px; margin-top: 10px;">Reset Quiz</button>
+                </div>
         </div>
-        
-        <!-- Only one container for this subject -->
-        <div class="mcq-container active">
+
+        <!-- MCQs -->
+        <h2 class="section-title" id="mcq"><i class="fas fa-question-circle"></i> MCQ Practice</h2>
+        <div class="mcq-section">
+            <div class="score-display">
+                Score: <span id="score">0</span> / <span id="total-questions">0</span>
+                <button id="reset-btn" class="btn btn-secondary" style="font-size:0.8rem; padding:4px 10px; margin-left:10px;">Reset</button>
+            </div>
+            
+            <div class="mcq-tabs" style="display:flex; gap:10px; margin-bottom:20px; flex-wrap:wrap;">
+            <button class="mcq-tab-btn active btn btn-secondary" onclick="switchTab('all')">All Units</button><button class="mcq-tab-btn btn btn-secondary" onclick="switchTab('1')" style="background:#fff; color:#333; border:1px solid #ddd;">Unit 1</button><button class="mcq-tab-btn btn btn-secondary" onclick="switchTab('2')" style="background:#fff; color:#333; border:1px solid #ddd;">Unit 2</button><button class="mcq-tab-btn btn btn-secondary" onclick="switchTab('3')" style="background:#fff; color:#333; border:1px solid #ddd;">Unit 3</button><button class="mcq-tab-btn btn btn-secondary" onclick="switchTab('4')" style="background:#fff; color:#333; border:1px solid #ddd;">Unit 4</button><button class="mcq-tab-btn btn btn-secondary" onclick="switchTab('5')" style="background:#fff; color:#333; border:1px solid #ddd;">Unit 5</button></div>
+            
+            <div class="mcq-container" id="container-unit-1" style="display:none;">
+                <div style="background:#e8f5e9; padding:10px; margin-bottom:15px; border-radius:5px;">
+                    <strong>Unit 1 Questions</strong>
+                </div>
+                
+                <!-- MCQ 1 -->
+                <div class="mcq-question">
+                    <div class="mcq-question-number">
+                        <span>1. User can make any change on the image with the use of:</span>
+                        <span class="pyq-label">PYQ 2022, 2024</span>
+                    </div>
+                    <div class="mcq-options">
+                        <div class="mcq-option" data-correct="false">A. Non-interactive graphics</div>
+                        <div class="mcq-option" data-correct="true">B. Interactive graphics</div>
+                        <div class="mcq-option" data-correct="false">C. Both</div>
+                        <div class="mcq-option" data-correct="false">D. None</div>
+                    </div>
+                    <div class="mcq-explanation">
+                        <strong>Explanation:</strong> Interactive graphics allows two-way communication between user and
+                        computer, enabling the user to modify images.
+                    </div>
+                </div>
+
+                <!-- MCQ 2 -->
+                <div class="mcq-question">
+                    <div class="mcq-question-number">
+                        <span>2. Aspect ratio means:</span>
+                        <span class="pyq-label">PYQ 2022, 2023</span>
+                    </div>
+                    <div class="mcq-options">
+                        <div class="mcq-option" data-correct="false">A. Number of pixels</div>
+                        <div class="mcq-option" data-correct="true">B. Ratio of vertical points to horizontal points
+                            (Width to Height)</div>
+                        <div class="mcq-option" data-correct="false">C. Ratio of horizontal points to vertical points
+                        </div>
+                    </div>
+                    <div class="mcq-explanation">
+                        <strong>Explanation:</strong> Aspect ratio is the ratio of image width to height.
+                    </div>
+                </div>
+
+                <!-- MCQ 3 -->
+                <div class="mcq-question">
+                    <div class="mcq-question-number">
+                        <span>3. The number of pixels stored in the frame buffer of a graphics system is known
+                            as:</span>
+                        <span class="pyq-label">PYQ 2022, 2023</span>
+                    </div>
+                    <div class="mcq-options">
+                        <div class="mcq-option" data-correct="true">A. Resolution</div>
+                        <div class="mcq-option" data-correct="false">B. Depth</div>
+                        <div class="mcq-option" data-correct="false">C. Resalution</div>
+                    </div>
+                </div>
+
+                <!-- MCQ 4 -->
+                <div class="mcq-question">
+                    <div class="mcq-question-number">
+                        <span>4. Pixel can be arranged in a regular:</span>
+                        <span class="pyq-label">PYQ 2023</span>
+                    </div>
+                    <div class="mcq-options">
+                        <div class="mcq-option" data-correct="false">A. One-dimensional grid</div>
+                        <div class="mcq-option" data-correct="true">B. Two-dimensional grid</div>
+                    </div>
+                </div>
+
+                <!-- MCQ 5 -->
+                <div class="mcq-question">
+                    <div class="mcq-question-number">
+                        <span>5. The primary purpose of an interactive computer graphics system is to allow the user
+                            to:</span>
+                        <span class="pyq-label">PYQ 2022</span>
+                    </div>
+                    <div class="mcq-options">
+                        <div class="mcq-option" data-correct="false">A. View images</div>
+                        <div class="mcq-option" data-correct="true">B. Communicate with the computer</div>
+                    </div>
+                </div>
+
+                <!-- MCQ 6 -->
+                <div class="mcq-question">
+                    <div class="mcq-question-number">
+                        <span>6. What are the components of interactive computer graphics?</span>
+                        <span class="pyq-label">PYQ 2022, 2024</span>
+                    </div>
+                    <div class="mcq-options">
+                        <div class="mcq-option" data-correct="false">A. A digital memory or frame buffer</div>
+                        <div class="mcq-option" data-correct="false">B. A television monitor</div>
+                        <div class="mcq-option" data-correct="false">C. An interface or display controller</div>
+                        <div class="mcq-option" data-correct="true">D. All of the above</div>
+                    </div>
+                </div>
+
+                <!-- MCQ 7 -->
+                <div class="mcq-question">
+                    <div class="mcq-question-number">
+                        <span>7. CAD means:</span>
+                        <span class="pyq-label">PYQ 2022</span>
+                    </div>
+                    <div class="mcq-options">
+                        <div class="mcq-option" data-correct="true">A. Computer Aided Design</div>
+                    </div>
+                </div>
+
+                <!-- MCQ 8 -->
+                <div class="mcq-question">
+                    <div class="mcq-question-number">
+                        <span>8. The device which converts the electrical energy into light is called:</span>
+                        <span class="pyq-label">PYQ 2022</span>
+                    </div>
+                    <div class="mcq-options">
+                        <div class="mcq-option" data-correct="false">A. Liquid crystal displays</div>
+                        <div class="mcq-option" data-correct="false">B. Non-emitters</div>
+                        <div class="mcq-option" data-correct="false">C. Plasma panels</div>
+                        <div class="mcq-option" data-correct="true">D. Emitters</div>
+                    </div>
+                </div>
+
+                <!-- MCQ 9 -->
+                <div class="mcq-question">
+                    <div class="mcq-question-number">
+                        <span>9. Refresh rate below which a picture flickers is:</span>
+                        <span class="pyq-label">PYQ 2024-25</span>
+                    </div>
+                    <div class="mcq-options">
+                        <div class="mcq-option" data-correct="false">A. 25</div>
+                        <div class="mcq-option" data-correct="true">B. 30 (typically < 30-60Hz causes flicker)</div>
+                                <div class="mcq-option" data-correct="false">C. 60</div>
+                                <div class="mcq-option" data-correct="false">D. 100</div>
+                        </div>
+                    </div>
+
+                    <!-- MCQ 10 -->
+                    <div class="mcq-question">
+                        <div class="mcq-question-number">
+                            <span>10. Which algorithm is a raster scan algorithm?</span>
+                            <span class="pyq-label">PYQ 2023</span>
+                        </div>
+                        <div class="mcq-options">
+                            <div class="mcq-option" data-correct="true">A. Bresenham's Algorithm</div>
+                            <div class="mcq-option" data-correct="false">B. Bubble Sort</div>
+                            <div class="mcq-option" data-correct="false">C. Quick Sort</div>
+                            <div class="mcq-option" data-correct="false">D. None of the above</div>
+                        </div>
+                    </div>
+                
+            </div>
+            <div class="mcq-container" id="container-unit-2" style="display:none;">
+                <div style="background:#e8f5e9; padding:10px; margin-bottom:15px; border-radius:5px;">
+                    <strong>Unit 2 Questions</strong>
+                </div>
+                
+                <div class="mcq-question">
+                    <p class="question-text">The process of determining which parts of an object are visible (inside a
+                        window) and removing the parts that are outside is called:</p>
+                    <div class="mcq-options">
+                        <div class="mcq-option" data-correct="false">A. Rendering</div>
+                        <div class="mcq-option" data-correct="true">B. Clipping</div>
+                        <div class="mcq-option" data-correct="false">C. Rasterization</div>
+                        <div class="mcq-option" data-correct="false">D. Transformation</div>
+                    </div>
+                </div>
+
+                <div class="mcq-question">
+                    <p class="question-text">Which algorithm is a faster method for calculating pixel positions for line
+                        drawing?</p>
+                    <div class="mcq-options">
+                        <div class="mcq-option" data-correct="true">A. Bresenham’s line algorithm</div>
+                        <div class="mcq-option" data-correct="false">B. Parallel line algorithm</div>
+                        <div class="mcq-option" data-correct="false">C. Midpoint algorithm</div>
+                        <div class="mcq-option" data-correct="false">D. DDA line algorithm</div>
+                    </div>
+                    <div class="mcq-explanation">Appeared in 2022, 2024</div>
+                </div>
+
+                <div class="mcq-question">
+                    <p class="question-text">The disadvantage of DDA algorithm is:</p>
+                    <div class="mcq-options">
+                        <div class="mcq-option" data-correct="true">A. Time consuming (due to floating point
+                            calculations)</div>
+                        <div class="mcq-option" data-correct="false">B. Faster</div>
+                        <div class="mcq-option" data-correct="false">C. Neither (A) nor (B)</div>
+                        <div class="mcq-option" data-correct="false">D. None of the above</div>
+                    </div>
+                    <div class="mcq-explanation">Appeared in 2022, 2024</div>
+                </div>
+
+                <div class="mcq-question">
+                    <p class="question-text">Which of the following is an accurate and efficient raster line generating
+                        algorithm?</p>
+                    <div class="mcq-options">
+                        <div class="mcq-option" data-correct="false">A. DDA algorithm</div>
+                        <div class="mcq-option" data-correct="false">B. Midpoint algorithm</div>
+                        <div class="mcq-option" data-correct="false">C. Parallel line algorithm</div>
+                        <div class="mcq-option" data-correct="true">D. Bresenham’s line algorithm</div>
+                    </div>
+                    <div class="mcq-explanation">Appeared in 2022</div>
+                </div>
+
+                <div class="mcq-question">
+                    <p class="question-text">In Bresenham’s line algorithm, if the distance $d_1 < d_2$, then the
+                            decision parameter $P_k$ is:</p>
+                            <div class="mcq-options">
+                                <div class="mcq-option" data-correct="true">A. Negative</div>
+                                <div class="mcq-option" data-correct="false">B. Positive</div>
+                                <div class="mcq-option" data-correct="false">C. Equal</div>
+                                <div class="mcq-option" data-correct="false">D. Zero</div>
+                            </div>
+                            <div class="mcq-explanation">Appeared in 2022</div>
+                </div>
+
+                <div class="mcq-question">
+                    <p class="question-text">The region against which an object is clipped is called as:</p>
+                    <div class="mcq-options">
+                        <div class="mcq-option" data-correct="false">A. Clipping</div>
+                        <div class="mcq-option" data-correct="false">B. Clipping region</div>
+                        <div class="mcq-option" data-correct="true">C. Clip window / Viewport</div>
+                        <div class="mcq-option" data-correct="false">D. None of them</div>
+                    </div>
+                    <div class="mcq-explanation">Appeared in 2022, 2024</div>
+                </div>
+
+                <div class="mcq-question">
+                    <p class="question-text">Which of the following can be first used to test for overlap of a curve
+                        with the clipping window?</p>
+                    <div class="mcq-options">
+                        <div class="mcq-option" data-correct="false">A. Edges of the curve</div>
+                        <div class="mcq-option" data-correct="true">B. The boundary rectangle for the curve (Extent)
+                        </div>
+                        <div class="mcq-option" data-correct="false">C. Center of the curve</div>
+                        <div class="mcq-option" data-correct="false">D. None of the above</div>
+                    </div>
+                    <div class="mcq-explanation">Appeared in 2023</div>
+                </div>
+                <div class="mcq-explanation">Appeared in 2023</div>
+            
+            </div>
+            <div class="mcq-container" id="container-unit-3" style="display:none;">
+                <div style="background:#e8f5e9; padding:10px; margin-bottom:15px; border-radius:5px;">
+                    <strong>Unit 3 Questions</strong>
+                </div>
+                
+                <div class="mcq-question">
+                    <p class="question-text">A transformation that slants the shape of objects is called:</p>
+                    <div class="mcq-options">
+                        <div class="mcq-option" data-correct="false">A. Rotation</div>
+                        <div class="mcq-option" data-correct="true">B. Shear</div>
+                        <div class="mcq-option" data-correct="false">C. Reflection</div>
+                        <div class="mcq-option" data-correct="false">D. Translation</div>
+                    </div>
+                    <div class="mcq-explanation">Appeared in: 2022, 2024</div>
+                </div>
+
+                <div class="mcq-question">
+                    <p class="question-text">Positive values for the rotation angle defines:</p>
+                    <div class="mcq-options">
+                        <div class="mcq-option" data-correct="true">A. Counter clockwise rotations about the
+                            endpoints/origin</div>
+                        <div class="mcq-option" data-correct="false">B. Clockwise rotations</div>
+                        <div class="mcq-option" data-correct="false">C. Parallel moves</div>
+                        <div class="mcq-option" data-correct="false">D. None of these</div>
+                    </div>
+                    <div class="mcq-explanation">Appeared in: 2022, 2024</div>
+                </div>
+
+                <div class="mcq-question">
+                    <p class="question-text">In 2D translation, a point $(x, y)$ can move to the new position $(x', y')$
+                        by using the equation:</p>
+                    <div class="mcq-options">
+                        <div class="mcq-option" data-correct="true">A. $x' = x + t_x$ and $y' = y + t_y$</div>
+                        <div class="mcq-option" data-correct="false">B. $x' = x - t_x$ and $y' = y - t_y$</div>
+                        <div class="mcq-option" data-correct="false">C. $x' = x \cdot t_x$ and $y' = y \cdot t_y$</div>
+                        <div class="mcq-option" data-correct="false">D. None of the above</div>
+                    </div>
+                    <div class="mcq-explanation">Appeared in: 2024</div>
+                </div>
+
+                <div class="mcq-question">
+                    <p class="question-text">The 2D scaling equation in the matrix form is:</p>
+                    <div class="mcq-options">
+                        <div class="mcq-option" data-correct="false">A. P'=P+T</div>
+                        <div class="mcq-option" data-correct="true">B. P'=S*P</div>
+                        <div class="mcq-option" data-correct="false">C. P'=P*R</div>
+                        <div class="mcq-option" data-correct="false">D. P'=R+S</div>
+                    </div>
+                    <div class="mcq-explanation">Appeared in: 2022, 2024</div>
+                </div>
+
+                <div class="mcq-question">
+                    <p class="question-text">Reflection of a point about x-axis, followed by a counter-clockwise
+                        rotation of $90^\circ$, is equivalent to reflection about the line:</p>
+                    <div class="mcq-options">
+                        <div class="mcq-option" data-correct="false">A. $x = -y$</div>
+                        <div class="mcq-option" data-correct="true">B. $y = x$</div>
+                        <div class="mcq-option" data-correct="false">C. $x = y$</div>
+                        <div class="mcq-option" data-correct="false">D. $x + y = 1$</div>
+                    </div>
+                    <div class="mcq-explanation">Appeared in: 2022, 2024</div>
+                </div>
+
+                <div class="mcq-question">
+                    <p class="question-text">Scaling transformation is said to be homogeneous if:</p>
+                    <div class="mcq-options">
+                        <div class="mcq-option" data-correct="true">A. $S_x = S_y$</div>
+                        <div class="mcq-option" data-correct="false">B. $S_x < S_y$</div>
+                                <div class="mcq-option" data-correct="false">C. $S_x > S_y$</div>
+                                <div class="mcq-option" data-correct="false">D. None of the above</div>
+                        </div>
+                        <div class="mcq-explanation">Appeared in: 2024</div>
+                    </div>
+
+                    <div class="mcq-question">
+                        <p class="question-text">The mapping a world window in world coordinates system to viewport is
+                            called:</p>
+                        <div class="mcq-options">
+                            <div class="mcq-option" data-correct="true">A. Transformation viewing</div>
+                            <div class="mcq-option" data-correct="false">B. Viewport</div>
+                            <div class="mcq-option" data-correct="false">C. Clipping window</div>
+                            <div class="mcq-option" data-correct="false">D. Screen coordinate system</div>
+                        </div>
+                        <div class="mcq-explanation">Appeared in: 2022</div>
+                    </div>
+
+                    <div class="mcq-question">
+                        <p class="question-text">Two successive translations are:</p>
+                        <div class="mcq-options">
+                            <div class="mcq-option" data-correct="true">A. Additive</div>
+                            <div class="mcq-option" data-correct="false">B. Multiplicative</div>
+                            <div class="mcq-option" data-correct="false">C. Subtractive</div>
+                            <div class="mcq-option" data-correct="false">D. None</div>
+                        </div>
+                        <div class="mcq-explanation">Appeared in PYQ</div>
+                    </div>
+                
+            </div>
+            <div class="mcq-container" id="container-unit-4" style="display:none;">
+                <div style="background:#e8f5e9; padding:10px; margin-bottom:15px; border-radius:5px;">
+                    <strong>Unit 4 Questions</strong>
+                </div>
+                
+                <div class="mcq-question">
+                    <p class="question-text">When the curve passes through all the data points, then the curve is known
+                        as?</p>
+                    <div class="mcq-options">
+                        <div class="mcq-option" data-correct="false">A. Approximation curve</div>
+                        <div class="mcq-option" data-correct="false">B. Pitch curve</div>
+                        <div class="mcq-option" data-correct="false">C. Data curve</div>
+                        <div class="mcq-option" data-correct="true">D. Interpolant / Interpolation curve</div>
+                    </div>
+                    <div class="mcq-explanation">Appeared in 2022</div>
+                </div>
+                <div class="mcq-question">
+                    <p class="question-text">Which of the following is not a synthetic entity?</p>
+                    <div class="mcq-options">
+                        <div class="mcq-option" data-correct="true">A. Hyperbola</div>
+                        <div class="mcq-option" data-correct="false">B. Bezier curve</div>
+                        <div class="mcq-option" data-correct="false">C. B-Spline curve</div>
+                        <div class="mcq-option" data-correct="false">D. Cubic curve</div>
+                    </div>
+                    <div class="mcq-explanation">Appeared in 2022</div>
+                </div>
+                <div class="mcq-question">
+                    <p class="question-text">Spline curve can be either:</p>
+                    <div class="mcq-options">
+                        <div class="mcq-option" data-correct="false">A. Bezier curve</div>
+                        <div class="mcq-option" data-correct="false">B. B-spline</div>
+                        <div class="mcq-option" data-correct="true">C. Both (A) & (B)</div>
+                        <div class="mcq-option" data-correct="false">D. None of these</div>
+                    </div>
+                    <div class="mcq-explanation">Appeared in 2022</div>
+                </div>
+                <div class="mcq-question">
+                    <p class="question-text">The representations for surface modeling include:</p>
+                    <div class="mcq-options">
+                        <div class="mcq-option" data-correct="false">A. Polygon mesh</div>
+                        <div class="mcq-option" data-correct="false">B. Parametric surfaces</div>
+                        <div class="mcq-option" data-correct="false">C. Quadratic surfaces</div>
+                        <div class="mcq-option" data-correct="true">D. All of these</div>
+                    </div>
+                    <div class="mcq-explanation">Appeared in 2022</div>
+                </div>
+
+                <div class="mcq-question">
+                    <p class="question-text">The point at which parallel lines appear to meet in a perspective
+                        projection is called:</p>
+                    <div class="mcq-options">
+                        <div class="mcq-option" data-correct="false">A. Projection point</div>
+                        <div class="mcq-option" data-correct="false">B. View point</div>
+                        <div class="mcq-option" data-correct="true">C. Vanishing point</div>
+                        <div class="mcq-option" data-correct="false">D. Focal point</div>
+                    </div>
+                    <div class="mcq-explanation">Appeared in PYQ</div>
+                </div>
+
+                <div class="mcq-question">
+                    <p class="question-text">Which algorithm is used for Hidden Surface Removal?</p>
+                    <div class="mcq-options">
+                        <div class="mcq-option" data-correct="false">A. Sutherland-Hodgeman</div>
+                        <div class="mcq-option" data-correct="true">B. Z-Buffer Algorithm</div>
+                        <div class="mcq-option" data-correct="false">C. Bresenham’s</div>
+                        <div class="mcq-option" data-correct="false">D. DDA</div>
+                    </div>
+                    <div class="mcq-explanation">Appeared in PYQ</div>
+                </div>
+
+                <div class="mcq-question">
+                    <p class="question-text">A Bezier curve is determined by:</p>
+                    <div class="mcq-options">
+                        <div class="mcq-option" data-correct="false">A. Interpolation Points</div>
+                        <div class="mcq-option" data-correct="true">B. Control Points</div>
+                        <div class="mcq-option" data-correct="false">C. Knots</div>
+                        <div class="mcq-option" data-correct="false">D. None</div>
+                    </div>
+                    <div class="mcq-explanation">Appeared in PYQ</div>
+                </div>
+            
+            </div>
+            <div class="mcq-container" id="container-unit-5" style="display:none;">
+                <div style="background:#e8f5e9; padding:10px; margin-bottom:15px; border-radius:5px;">
+                    <strong>Unit 5 Questions</strong>
+                </div>
+                
+                <div class="mcq-question">
+                    <p class="question-text">The movement of different attributes of image would make the image dynamic
+                        and such a dynamic effect is termed as:</p>
+                    <div class="mcq-options">
+                        <div class="mcq-option" data-correct="false">A. Pictures</div>
+                        <div class="mcq-option" data-correct="true">B. Animation</div>
+                        <div class="mcq-option" data-correct="false">C. Pointing</div>
+                        <div class="mcq-option" data-correct="false">D. All of these</div>
+                    </div>
+                    <div class="mcq-explanation">Appeared in 2024</div>
+                </div>
+                <div class="mcq-question">
+                    <p class="question-text">Graphics and image processing technique used to produce a transformation of
+                        one object into another is called:</p>
+                    <div class="mcq-options">
+                        <div class="mcq-option" data-correct="false">A. Animation</div>
+                        <div class="mcq-option" data-correct="true">B. Morphing</div>
+                        <div class="mcq-option" data-correct="false">C. Half toning</div>
+                        <div class="mcq-option" data-correct="false">D. None of the above</div>
+                    </div>
+                    <div class="mcq-explanation">Appeared in 2024</div>
+                </div>
+                <div class="mcq-question">
+                    <p class="question-text">Which of the following is a technique to blend two or more images to form a
+                        new image?</p>
+                    <div class="mcq-options">
+                        <div class="mcq-option" data-correct="false">A. Modeling</div>
+                        <div class="mcq-option" data-correct="true">B. Morphing</div>
+                        <div class="mcq-option" data-correct="false">C. Animating</div>
+                        <div class="mcq-option" data-correct="false">D. Warping</div>
+                    </div>
+                    <div class="mcq-explanation">Appeared in 2022</div>
+                </div>
+                <div class="mcq-question">
+                    <p class="question-text">A multimedia file:</p>
+                    <div class="mcq-options">
+                        <div class="mcq-option" data-correct="false">A. Is same as any other regular file</div>
+                        <div class="mcq-option" data-correct="true">B. Must be accessed at specific rate (Real-time
+                            requirement)</div>
+                        <div class="mcq-option" data-correct="false">C. Stored on remote server</div>
+                        <div class="mcq-option" data-correct="false">D. None of these</div>
+                    </div>
+                    <div class="mcq-explanation">Appeared in 2022</div>
+                </div>
+                <div class="mcq-question">
+                    <p class="question-text">Video file format is:</p>
+                    <div class="mcq-options">
+                        <div class="mcq-option" data-correct="false">A. TIFF</div>
+                        <div class="mcq-option" data-correct="true">B. AVI</div>
+                        <div class="mcq-option" data-correct="false">C. WAV</div>
+                        <div class="mcq-option" data-correct="false">D. Both (A) & (B)</div>
+                    </div>
+                    <div class="mcq-explanation">Appeared in 2022</div>
+                </div>
+                <div class="mcq-question">
+                    <p class="question-text">How many step process for creating a 3D animation are required?</p>
+                    <div class="mcq-options">
+                        <div class="mcq-option" data-correct="false">A. 2</div>
+                        <div class="mcq-option" data-correct="true">B. 3 (Modeling, Layout/Animation, Rendering)</div>
+                        <div class="mcq-option" data-correct="false">C. 4</div>
+                        <div class="mcq-option" data-correct="false">D. 5</div>
+                    </div>
+                    <div class="mcq-explanation">Appeared in 2022</div>
+                </div>
+
+                <div class="mcq-question">
+                    <p class="question-text">JPEG stands for:</p>
+                    <div class="mcq-options">
+                        <div class="mcq-option" data-correct="false">A. Java Photo Expert Group</div>
+                        <div class="mcq-option" data-correct="true">B. Joint Photographic Experts Group</div>
+                        <div class="mcq-option" data-correct="false">C. Joint Picture Export Group</div>
+                        <div class="mcq-option" data-correct="false">D. Joint Photo Export Graph</div>
+                    </div>
+                    <div class="mcq-explanation">Appeared in PYQ</div>
+                </div>
+            
+            </div>
+        <div class="mcq-container active" id="container-all">
+            
+            <div class="unit-separator" style="margin: 20px 0 10px 0; border-bottom:2px dashed #ccc; padding-bottom:5px;">
+                <span style="background:#eee; padding:5px 10px; border-radius:5px; font-weight:bold;">Unit 1</span>
+            </div>
             
                 <!-- MCQ 1 -->
                 <div class="mcq-question">
@@ -1168,6 +1693,10 @@
                         </div>
                     </div>
                 
+            <div class="unit-separator" style="margin: 20px 0 10px 0; border-bottom:2px dashed #ccc; padding-bottom:5px;">
+                <span style="background:#eee; padding:5px 10px; border-radius:5px; font-weight:bold;">Unit 2</span>
+            </div>
+            
                 <div class="mcq-question">
                     <p class="question-text">The process of determining which parts of an object are visible (inside a
                         window) and removing the parts that are outside is called:</p>
@@ -1251,6 +1780,10 @@
                     <div class="mcq-explanation">Appeared in 2023</div>
                 </div>
                 <div class="mcq-explanation">Appeared in 2023</div>
+            
+            <div class="unit-separator" style="margin: 20px 0 10px 0; border-bottom:2px dashed #ccc; padding-bottom:5px;">
+                <span style="background:#eee; padding:5px 10px; border-radius:5px; font-weight:bold;">Unit 3</span>
+            </div>
             
                 <div class="mcq-question">
                     <p class="question-text">A transformation that slants the shape of objects is called:</p>
@@ -1344,6 +1877,10 @@
                         <div class="mcq-explanation">Appeared in PYQ</div>
                     </div>
                 
+            <div class="unit-separator" style="margin: 20px 0 10px 0; border-bottom:2px dashed #ccc; padding-bottom:5px;">
+                <span style="background:#eee; padding:5px 10px; border-radius:5px; font-weight:bold;">Unit 4</span>
+            </div>
+            
                 <div class="mcq-question">
                     <p class="question-text">When the curve passes through all the data points, then the curve is known
                         as?</p>
@@ -1419,6 +1956,10 @@
                     </div>
                     <div class="mcq-explanation">Appeared in PYQ</div>
                 </div>
+            
+            <div class="unit-separator" style="margin: 20px 0 10px 0; border-bottom:2px dashed #ccc; padding-bottom:5px;">
+                <span style="background:#eee; padding:5px 10px; border-radius:5px; font-weight:bold;">Unit 5</span>
+            </div>
             
                 <div class="mcq-question">
                     <p class="question-text">The movement of different attributes of image would make the image dynamic
@@ -1497,327 +2038,196 @@
                 </div>
             
         </div>
-        
-        <div class="mcq-navigation">
-            <button id="prev-btn" class="btn btn-secondary"><i class="fas fa-arrow-left"></i> Previous</button>
-            <button id="next-btn" class="btn btn-primary">Next <i class="fas fa-arrow-right"></i></button>
+            
+            <div class="mcq-navigation">
+                <button id="prev-btn" class="btn btn-secondary">Previous</button>
+                <button id="next-btn" class="btn btn-primary">Next</button>
+            </div>
         </div>
+
     </div>
-    
-<h2 class="section-title" id="pyq"><i class="fas fa-chart-bar"></i> PYQ Weightage Analysis</h2>
 
-            <div class="subject-container">
-                <div class="subject-header">
-                    <h3><i class="fas fa-chart-pie"></i> PYQ Distribution (2022-2024)</h3>
-                    <i class="fas fa-chevron-down"></i>
-                </div>
-                <div class="subject-content">
-                    <div class="topic">
-                        <h4>Subject-wise PYQ Frequency</h4>
-                        <div class="topic-content">
-                            <p><strong>Computer Graphics & Animation:</strong></p>
-                            <ul>
-                                <li>Aspect Ratio (2022, 2023)</li>
-                                <li>Interactive Graphics (2022, 2024)</li>
-                                <li>Pixel & Resolution (2022, 2023)</li>
-                                <li>Applications of CG (2022)</li>
-                            </ul>
-
-                            <p><strong>Database Management System:</strong></p>
-                            <ul>
-                                <li>DBMS Definition (2024)</li>
-                                <li>Three-Schema Architecture (2024)</li>
-                                <li>Data Abstraction (2022, 2024)</li>
-                                <li>Data Independence (2024-25)</li>
-                            </ul>
-
-                            <p><strong>Software Engineering:</strong></p>
-                            <ul>
-                                <li>SDLC Models (2022, 2024)</li>
-                                <li>Software Engineering Definition (2024)</li>
-                                <li>Father of SE (2024)</li>
-                                <li>Software Characteristics (2022)</li>
-                            </ul>
-
-                            <p><strong>Optimization Techniques:</strong></p>
-                            <ul>
-                                <li>Graphical Method (2022, 2024)</li>
-                                <li>LPP Components (2022)</li>
-                                <li>Slack & Surplus Variables (2022, 2024)</li>
-                            </ul>
-
-                            <p><strong>Mathematics-III:</strong></p>
-                            <ul>
-                                <li>Complex Numbers (2022, 2023)</li>
-                                <li>Roots of Unity (2023, 2024)</li>
-                                <li>Powers of i (2024)</li>
-                                <li>Modulus & Argument (2022)</li>
-                            </ul>
-                        </div>
-                    </div>
-
-                    <div class="topic">
-                        <h4>Exam Preparation Tips</h4>
-                        <div class="topic-content">
-                            <ol>
-                                <li><strong>Focus on PYQ Topics:</strong> Questions from previous years have high
-                                    probability of repetition.</li>
-                                <li><strong>Understand Concepts:</strong> Don't just memorize - understand the
-                                    underlying concepts.</li>
-                                <li><strong>Practice MCQs:</strong> Regular practice improves speed and accuracy.</li>
-                                <li><strong>Time Management:</strong> Allocate time based on weightage of each subject.
-                                </li>
-                                <li><strong>Revision Strategy:</strong> Revise important formulas and definitions
-                                    regularly.</li>
-                            </ol>
-                        </div>
-                    </div>
-                </div>
-            </div>
+    <footer>
+        <div class="container" style="text-align:center;">
+            <p>© 2026 Sarvasva Notes</p>
         </div>
+    </footer>
 
-        <!-- Footer -->
-        <footer>
-            <div class="container">
-                <p><i class="fas fa-graduation-cap"></i> Sarvasva Notes - BCA Semester 4 Unit 1</p>
-                <p>Your Ultimate Guide: PYQ-Focused Notes + Practice MCQs</p>
-                <p>© 2026 Sarvasva Notes | All Rights Reserved</p>
-            </div>
-        </footer>
+    <script>
+        // --- Subject Header Toggle ---
+        document.querySelectorAll('.subject-header').forEach(header => {
+            header.addEventListener('click', () => {
+                const content = header.nextElementSibling;
+                header.classList.toggle('active');
+                content.classList.toggle('active');
+            });
+        });
 
-        <script>
-            // Collapsible subject sections
-            document.querySelectorAll('.subject-header').forEach(header => {
-                header.addEventListener('click', () => {
-                    const content = header.nextElementSibling;
-                    header.classList.toggle('active');
-                    content.classList.toggle('active');
+        // --- MCQ System ---
+        let score = 0;
+        let currentQuestion = 0;
+        let questions = [];
+
+        function switchTab(unit) {
+            // Update Tabs
+            document.querySelectorAll('.mcq-tab-btn').forEach(btn => {
+                btn.classList.remove('active');
+                btn.style.background = '#fff';
+                btn.style.color = '#333';
+            });
+            const clickedBtn = event.target;
+            clickedBtn.classList.add('active');
+            clickedBtn.style.background = ''; // revert to CSS class style
+            clickedBtn.style.color = '';
+
+            // Update Containers
+            document.querySelectorAll('.mcq-container').forEach(c => {
+                c.classList.remove('active');
+                c.style.display = 'none';
+            });
+            const target = document.getElementById(unit === 'all' ? 'container-all' : 'container-unit-' + unit);
+            if(target) {
+                target.classList.add('active');
+                target.style.display = 'block';
+            }
+            
+            // Re-init
+            initializeQuestions();
+        }
+
+        function initializeQuestions() {
+            questions = [];
+            const container = document.querySelector('.mcq-container.active');
+            if(!container) return; // Should not happen
+
+            const qElements = container.querySelectorAll('.mcq-question');
+            
+            qElements.forEach(q => {
+                // Reset styling
+                q.querySelectorAll('.mcq-option').forEach(o => {
+                    o.classList.remove('selected', 'correct', 'incorrect');
+                    o.style.pointerEvents = 'auto';
                 });
+                const exp = q.querySelector('.mcq-explanation');
+                if(exp) exp.classList.remove('show');
+
+                // Ensure submit button
+                let btn = q.querySelector('.submit-answer-btn');
+                if(!btn) {
+                    btn = document.createElement('button');
+                    btn.className = 'submit-answer-btn';
+                    btn.textContent = 'Submit Answer';
+                    if(exp) q.insertBefore(btn, exp);
+                    else q.appendChild(btn);
+                }
+                btn.disabled = false;
+                btn.textContent = 'Submit Answer';
+
+                questions.push({ element: q, answered: false });
             });
 
-            // MCQ Tab Switching
-                                // Show the selected MCQ container
-                    const subject = tab.getAttribute('data-subject');
-                    document.getElementById(`${subject}-mcq`).classList.add('active');
+            document.getElementById('total-questions').textContent = questions.length;
+            updateScore(0);
+            showQuestion();
+        }
 
-                    // Reset current question to first question of new subject
-                    currentQuestion = 0;
-                    initializeQuestions();
+        function updateScore(s) {
+            score = s;
+            document.getElementById('score').textContent = score;
+        }
+
+        function showQuestion() {
+            questions.forEach(q => q.element.style.display = 'none');
+            if(questions[currentQuestion]) {
+                questions[currentQuestion].element.style.display = 'block';
+            }
+            
+            const prev = document.getElementById('prev-btn');
+            const next = document.getElementById('next-btn');
+            
+            if(prev) prev.disabled = currentQuestion === 0;
+            if(next) {
+                if(questions.length === 0) next.style.display = 'none';
+                else {
+                    next.style.display = 'inline-block';
+                    next.innerHTML = currentQuestion === questions.length - 1 ? 'Finish' : 'Next <i class="fas fa-arrow-right"></i>';
+                }
+            }
+        }
+
+        // --- Event Delegation for MCQ Interactions ---
+        document.addEventListener('click', (e) => {
+            // Option Select
+            if(e.target.classList.contains('mcq-option')) {
+                const qDiv = e.target.closest('.mcq-question');
+                const btn = qDiv.querySelector('.submit-answer-btn');
+                if(btn && btn.disabled) return;
+                
+                qDiv.querySelectorAll('.mcq-option').forEach(o => o.classList.remove('selected'));
+                e.target.classList.add('selected');
+            }
+
+            // Submit
+            if(e.target.classList.contains('submit-answer-btn')) {
+                const btn = e.target;
+                const qDiv = btn.closest('.mcq-question');
+                const selected = qDiv.querySelector('.mcq-option.selected');
+                
+                if(!selected) { alert('Please select an option'); return; }
+
+                const isCorrect = selected.dataset.correct === 'true';
+                if(isCorrect) updateScore(score + 1);
+
+                qDiv.querySelectorAll('.mcq-option').forEach(o => {
+                    o.style.pointerEvents = 'none';
+                    if(o.dataset.correct === 'true') o.classList.add('correct');
+                    else if(o.classList.contains('selected')) o.classList.add('incorrect');
+                    o.classList.remove('selected');
                 });
-            });
+                
+                const exp = qDiv.querySelector('.mcq-explanation');
+                if(exp) exp.classList.add('show');
+                
+                btn.disabled = true;
+                btn.textContent = isCorrect ? 'Correct!' : 'Incorrect';
+            }
+        });
 
-            // MCQ functionality
-            let score = 0;
-            let totalQuestions = 0;
-            let currentQuestion = 0;
-            let questions = [];
+        // Navigation
+        document.getElementById('next-btn')?.addEventListener('click', () => {
+            if(currentQuestion < questions.length - 1) {
+                currentQuestion++;
+                showQuestion();
+            } else {
+                 if(questions.length > 0) alert('Section Complete! Score: ' + score);
+            }
+        });
 
-            // Initialize questions array
-            function initializeQuestions() {
-                questions = [];
-                const activeContainer = document.querySelector('.mcq-container.active');
-                if (!activeContainer) return;
-
-                const questionElements = activeContainer.querySelectorAll('.mcq-question');
-
-                questionElements.forEach((q) => {
-                    // Reset Options
-                    const options = q.querySelectorAll('.mcq-option');
-                    options.forEach(opt => {
-                        opt.classList.remove('selected', 'correct', 'incorrect');
-                        opt.style.pointerEvents = 'auto';
-                    });
-
-                    // Reset Explanation
-                    const explanation = q.querySelector('.mcq-explanation');
-                    if (explanation) explanation.classList.remove('show');
-
-                    // Add or Reset Submit Button
-                    let submitBtn = q.querySelector('.submit-answer-btn');
-                    if (!submitBtn) {
-                        submitBtn = document.createElement('button');
-                        submitBtn.className = 'submit-answer-btn';
-                        submitBtn.textContent = 'Submit Answer';
-                        // Insert before explanation or append
-                        if (explanation) {
-                            q.insertBefore(submitBtn, explanation);
-                        } else {
-                            q.appendChild(submitBtn);
-                        }
-                    }
-                    submitBtn.disabled = false;
-                    submitBtn.textContent = 'Submit Answer';
-                    // submitBtn.style.display = 'block'; // Ensure it's visible if hidden
-
-                    questions.push({
-                        element: q,
-                        answered: false,
-                        correct: false
-                    });
-                });
-
-                document.getElementById('total-questions').textContent = questions.length;
-                score = 0;
-                document.getElementById('score').textContent = score;
-
+        document.getElementById('prev-btn')?.addEventListener('click', () => {
+            if(currentQuestion > 0) {
+                currentQuestion--;
                 showQuestion();
             }
+        });
 
-            // Show current question
-            function showQuestion() {
-                // Hide all questions
-                questions.forEach((q) => {
-                    q.element.style.display = 'none';
-                });
+        document.getElementById('reset-btn')?.addEventListener('click', () => initializeQuestions());
 
-                // Show current question
-                if (questions[currentQuestion]) {
-                    questions[currentQuestion].element.style.display = 'block';
-                }
-
-                // Update navigation buttons
-                const nextBtn = document.getElementById('next-btn');
-                const prevBtn = document.getElementById('prev-btn');
-
-                if (prevBtn) prevBtn.disabled = currentQuestion === 0;
-                if (nextBtn) nextBtn.innerHTML = currentQuestion === questions.length - 1 ? 'Finish' : 'Next <i class="fas fa-arrow-right"></i>';
-            }
-
-            // Handle MCQ Interactions (Selection & Submission)
-            document.addEventListener('click', (e) => {
-                // 1. Handle Option Selection
-                if (e.target.classList.contains('mcq-option')) {
-                    const questionDiv = e.target.closest('.mcq-question');
-                    const submitBtn = questionDiv.querySelector('.submit-answer-btn');
-
-                    // If already submitted, do nothing
-                    if (submitBtn && submitBtn.disabled) return;
-
-                    // Deselect other options in this question
-                    const options = questionDiv.querySelectorAll('.mcq-option');
-                    options.forEach(opt => opt.classList.remove('selected'));
-
-                    // Select clicked option
-                    e.target.classList.add('selected');
-                }
-
-                // 2. Handle Submit Button Click
-                if (e.target.classList.contains('submit-answer-btn')) {
-                    const button = e.target;
-                    const questionDiv = button.closest('.mcq-question');
-                    const selectedOption = questionDiv.querySelector('.mcq-option.selected');
-
-                    if (!selectedOption) {
-                        alert('Please select an option first!');
-                        return;
-                    }
-
-                    const options = questionDiv.querySelectorAll('.mcq-option');
-                    const explanation = questionDiv.querySelector('.mcq-explanation');
-
-                    // Find question data
-                    const questionIndex = questions.findIndex(q => q.element === questionDiv);
-                    if (questionIndex !== -1) {
-                        questions[questionIndex].answered = true;
-
-                        const isCorrect = selectedOption.getAttribute('data-correct') === 'true';
-                        questions[questionIndex].correct = isCorrect;
-
-                        if (isCorrect) {
-                            score++;
-                            document.getElementById('score').textContent = score;
-                        }
-
-                        // Show Results
-                        options.forEach(option => {
-                            option.style.pointerEvents = 'none'; // Lock
-
-                            // Always highlight the correct answer Green
-                            if (option.getAttribute('data-correct') === 'true') {
-                                option.classList.add('correct');
-                            }
-                            // If selected was wrong, highlight Red
-                            else if (option.classList.contains('selected')) {
-                                option.classList.add('incorrect');
-                            }
-
-                            // Remove blue selection style to avoid confusion
-                            option.classList.remove('selected');
-                        });
-
-                        // Show Explanation
-                        if (explanation) explanation.classList.add('show');
-
-                        // Update Button State
-                        button.disabled = true;
-                        button.textContent = isCorrect ? 'Correct!' : 'Incorrect';
-                    }
-                }
+        // Init
+        window.addEventListener('DOMContentLoaded', () => {
+            initializeQuestions();
+            // Open first note
+            const h = document.querySelector('.subject-header');
+            if(h) h.click();
+        });
+        
+        // Smooth Scroll
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if(target) window.scrollTo({ top: target.offsetTop - 80, behavior: 'smooth' });
             });
-
-            // Navigation buttons
-            document.getElementById('next-btn').addEventListener('click', () => {
-                if (currentQuestion < questions.length - 1) {
-                    currentQuestion++;
-                    showQuestion();
-                } else {
-                    // Show completion message
-                    alert(`Quiz completed! Your score: ${score}/${questions.length}`);
-                }
-            });
-
-            document.getElementById('prev-btn').addEventListener('click', () => {
-                if (currentQuestion > 0) {
-                    currentQuestion--;
-                    showQuestion();
-                }
-            });
-
-            // Reset quiz
-            document.getElementById('reset-btn').addEventListener('click', () => {
-                score = 0;
-                currentQuestion = 0;
-                document.getElementById('score').textContent = score;
-
-                // Reset all questions
-                document.querySelectorAll('.mcq-option').forEach(option => {
-                    option.classList.remove('correct', 'incorrect', 'selected');
-                    option.style.pointerEvents = 'auto';
-                });
-
-                document.querySelectorAll('.mcq-explanation').forEach(exp => {
-                    exp.classList.remove('show');
-                });
-
-                initializeQuestions();
-            });
-
-            // Smooth scrolling for anchor links
-            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-                anchor.addEventListener('click', function (e) {
-                    e.preventDefault();
-
-                    const targetId = this.getAttribute('href');
-                    if (targetId === '#') return;
-
-                    const targetElement = document.querySelector(targetId);
-                    if (targetElement) {
-                        window.scrollTo({
-                            top: targetElement.offsetTop - 80,
-                            behavior: 'smooth'
-                        });
-                    }
-                });
-            });
-
-            // Initialize on page load
-            window.addEventListener('DOMContentLoaded', () => {
-                initializeQuestions();
-
-                // Open first subject by default
-                document.querySelector('.subject-header').click();
-            });
-        </script>
+        });
+    </script>
 </body>
-
 </html>
