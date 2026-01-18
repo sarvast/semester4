@@ -195,6 +195,7 @@
     <script src="mock-test-questions.js"></script>
     <script src="dbms-questions-2024.js"></script>
     <script src="dbms-questions-2022-23.js"></script>
+    <script src="cg-questions-2022.js"></script>
     <script src="cg-questions-2022-23.js"></script>
     <script src="cg-questions-2023.js"></script>
     <script src="cg-questions-2024.js"></script>
@@ -253,7 +254,8 @@
 
             // Data loading logic
             // Prioritize specific papers if variables exist
-            if (typeof cgQuestions2022_23 !== 'undefined' && testYear === '2022-23' && testSubject === 'computer-graphics') testQuestions = [...cgQuestions2022_23];
+            if (typeof cgQuestions2022 !== 'undefined' && testYear === '2022' && testSubject === 'computer-graphics') testQuestions = [...cgQuestions2022];
+            else if (typeof cgQuestions2022_23 !== 'undefined' && testYear === '2022-23' && testSubject === 'computer-graphics') testQuestions = [...cgQuestions2022_23];
             else if (typeof cgQuestions2023 !== 'undefined' && testYear === '2023' && testSubject === 'computer-graphics') testQuestions = [...cgQuestions2023];
             else if (typeof cgQuestions2024 !== 'undefined' && testYear === '2024' && testSubject === 'computer-graphics') testQuestions = [...cgQuestions2024];
             else if (typeof dbmsQuestions2024 !== 'undefined' && testYear === '2024' && testSubject === 'dbms') testQuestions = [...dbmsQuestions2024];
