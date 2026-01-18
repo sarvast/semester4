@@ -205,6 +205,7 @@
     <script src="maths-questions-2024-25.js"></script>
     <script src="os-questions-2024.js"></script>
     <script src="optimization-questions-2022.js"></script>
+    <script src="optimization-questions-2022-23.js"></script>
     <script>
         // Test state variables
         let currentQuestion = 0;
@@ -253,6 +254,7 @@
             else if (typeof mathsQuestions2024_25 !== 'undefined' && testYear === '2024-25' && testSubject === 'mathematics') testQuestions = [...mathsQuestions2024_25];
             else if (typeof osQuestions2024 !== 'undefined' && testYear === '2024' && testSubject === 'operating-system') testQuestions = [...osQuestions2024];
             else if (typeof optimizationQuestions2022 !== 'undefined' && testYear === '2022' && testSubject === 'operations-research') testQuestions = [...optimizationQuestions2022];
+            else if (typeof optimizationQuestions2022_23 !== 'undefined' && testYear === '2022-23' && testSubject === 'operations-research') testQuestions = [...optimizationQuestions2022_23];
             else if (typeof cgQuestions202425 !== 'undefined' && testYear === '2024-25') testQuestions = [...cgQuestions202425];
             else if (typeof cgQuestions2024_2nd !== 'undefined' && testYear === '2024' && testSession === '2nd Paper') testQuestions = [...cgQuestions2024_2nd];
             else if (typeof mockTestQuestions !== 'undefined' && testSubject === 'computer-graphics-mock') testQuestions = [...mockTestQuestions];
