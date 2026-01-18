@@ -80,14 +80,14 @@
                 <div class="action-link" style="color: #64748b;">Not Available</div>
             </div>
 
-            <div class="card border-top-red" onclick="openSubject('math')" style="cursor:pointer">
+            <div class="card border-top-red" onclick="openSubject('mathematics')" style="cursor:pointer">
                 <div class="card-header">
                     <div class="icon-box bg-red"><i class="fas fa-calculator"></i></div>
-                    <span class="badge" style="background: #e2e8f0; color: #64748b;">Coming Soon</span>
+                    <span class="badge badge-purple">1 Paper</span>
                 </div>
                 <h3>Mathematics-III</h3>
                 <p>Complex variables, Fourier series, Laplace transforms.</p>
-                <div class="action-link" style="color: #64748b;">Not Available</div>
+                <div class="action-link" style="color: #8b5cf6;">View Papers <i class="fas fa-arrow-right"></i></div>
             </div>
         </div>
 
@@ -100,7 +100,7 @@
     <script>
         function openSubject(subject) {
             // Logic to handle navigation or alert for 'Coming Soon'
-            if (subject === 'computer-graphics' || subject === 'dbms') {
+            if (subject === 'computer-graphics' || subject === 'dbms' || subject === 'mathematics') {
                 window.location.href = `question-papers.html?subject=${subject}`;
             } else {
                 alert('Papers for this subject are coming soon!');
