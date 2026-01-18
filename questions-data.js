@@ -602,5 +602,25 @@ const questionBank = {
             correct: 1,
             explanation: "The combined transformation is equivalent to reflection about the line y = -x."
         }
+    ],
+    'operations-research': [
+        {
+            question: "Linear programming is a method of finding the optimal value of:",
+            options: ["A linear function", "A quadratic function", "A cubic function", "No value"],
+            correct: 0,
+            explanation: "Linear programming deals with the optimization of linear objective functions subject to linear constraints."
+        },
+        {
+            question: "In LPP, constraints are represented by:",
+            options: ["Equations", "Inequalities", "Both Equations and Inequalities", "None"],
+            correct: 2,
+            explanation: "Constraints in LPP can be equalities (=) or inequalities (≤, ≥)."
+        },
+        {
+            question: "The objective function of a LPP is:",
+            options: ["To be maximized", "To be minimized", "To be optimized (maximized or minimized)", "None"],
+            correct: 2,
+            explanation: "The goal is optimization, which can be either maximization (profit) or minimization (cost)."
+        }
     ]
 };

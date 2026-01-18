@@ -209,8 +209,8 @@
     <script src="optimization-questions-2022-23.js"></script>
     <script src="optimization-questions-2023.js"></script>
     <script src="optimization-questions-2024.js"></script>
-    <script src="optimization-questions-2024-2nd.js"></script>
     <script src="optimization-questions-2024-25.js"></script>
+    <script src="optimization-questions-2024-2nd.js"></script>
     <script src="se-questions-2024-25.js"></script>
     <script src="se-questions-2024.js"></script>
     <script src="se-questions-2022-23.js"></script>
@@ -253,8 +253,8 @@
 
             // Data loading logic
             // Prioritize specific papers if variables exist
-            if (typeof cgQuestions2022_23 !== 'undefined' && testYear === '2022-23') testQuestions = [...cgQuestions2022_23];
-            else if (typeof cgQuestions2023 !== 'undefined' && testYear === '2023') testQuestions = [...cgQuestions2023];
+            if (typeof cgQuestions2022_23 !== 'undefined' && testYear === '2022-23' && testSubject === 'computer-graphics') testQuestions = [...cgQuestions2022_23];
+            else if (typeof cgQuestions2023 !== 'undefined' && testYear === '2023' && testSubject === 'computer-graphics') testQuestions = [...cgQuestions2023];
             else if (typeof cgQuestions2024 !== 'undefined' && testYear === '2024' && testSubject === 'computer-graphics') testQuestions = [...cgQuestions2024];
             else if (typeof dbmsQuestions2024 !== 'undefined' && testYear === '2024' && testSubject === 'dbms') testQuestions = [...dbmsQuestions2024];
             else if (typeof dbmsQuestions2022_23 !== 'undefined' && testYear === '2022-23' && testSubject === 'dbms') testQuestions = [...dbmsQuestions2022_23];
@@ -263,14 +263,36 @@
             else if (typeof mathsQuestions2022_23 !== 'undefined' && testYear === '2022-23' && testSubject === 'mathematics') testQuestions = [...mathsQuestions2022_23];
             else if (typeof mathsQuestions2024_25 !== 'undefined' && testYear === '2024-25' && testSubject === 'mathematics') testQuestions = [...mathsQuestions2024_25];
             else if (typeof osQuestions2024 !== 'undefined' && testYear === '2024' && testSubject === 'operating-system') testQuestions = [...osQuestions2024];
-            else if (typeof optimizationQuestions2024_2nd !== 'undefined' && testYear === '2024' && testSession === '2nd Paper' && testSubject === 'operations-research') testQuestions = [...optimizationQuestions2024_2nd];
-            else if (typeof optimizationQuestions2024 !== 'undefined' && testYear === '2024' && testSubject === 'operations-research') testQuestions = [...optimizationQuestions2024];
-            else if (typeof optimizationQuestions2022 !== 'undefined' && testYear === '2022' && testSubject === 'operations-research') testQuestions = [...optimizationQuestions2022];
-            else if (typeof optimizationQuestions2022_23 !== 'undefined' && testYear === '2022-23' && testSubject === 'operations-research') testQuestions = [...optimizationQuestions2022_23];
-            else if (typeof optimizationQuestions2023 !== 'undefined' && testYear === '2023' && testSubject === 'operations-research') testQuestions = [...optimizationQuestions2023];
-            else if (typeof optimizationQuestions2024_25 !== 'undefined' && testYear === '2024-25' && testSubject === 'operations-research') testQuestions = [...optimizationQuestions2024_25];
-            else if (typeof cgQuestions202425 !== 'undefined' && testYear === '2024-25') testQuestions = [...cgQuestions202425];
-            else if (typeof cgQuestions2024_2nd !== 'undefined' && testYear === '2024' && testSession === '2nd Paper') testQuestions = [...cgQuestions2024_2nd];
+            else if (typeof optimizationQuestions2024_2nd !== 'undefined' && testYear === '2024' && testSession === '2nd Paper' && testSubject === 'operations-research') {
+                console.log('Loading Optimization 2024 2nd');
+                testQuestions = [...optimizationQuestions2024_2nd];
+            }
+            else if (typeof optimizationQuestions2024 !== 'undefined' && testYear === '2024' && testSubject === 'operations-research') {
+                console.log('Loading Optimization 2024');
+                testQuestions = [...optimizationQuestions2024];
+            }
+            else if (typeof optimizationQuestions2024_25 !== 'undefined' && testYear === '2024-25' && testSubject === 'operations-research') {
+                console.log('Loading Optimization 2024-25');
+                testQuestions = [...optimizationQuestions2024_25];
+            }
+            else if (typeof optimizationQuestions2022 !== 'undefined' && testYear === '2022' && testSubject === 'operations-research') {
+                console.log('Loading Optimization 2022');
+                testQuestions = [...optimizationQuestions2022];
+            }
+            else if (typeof optimizationQuestions2022_23 !== 'undefined' && testYear === '2022-23' && testSubject === 'operations-research') {
+                console.log('Loading Optimization 2022-23');
+                testQuestions = [...optimizationQuestions2022_23];
+            }
+            else if (typeof optimizationQuestions2023 !== 'undefined' && testYear === '2023' && testSubject === 'operations-research') {
+                console.log('Loading Optimization 2023');
+                testQuestions = [...optimizationQuestions2023];
+            }
+            else if (typeof cgQuestions202425 !== 'undefined' && testYear === '2024-25' && testSubject === 'computer-graphics') {
+                testQuestions = [...cgQuestions202425];
+            }
+            else if (typeof cgQuestions2024_2nd !== 'undefined' && testYear === '2024' && testSession === '2nd Paper' && testSubject === 'computer-graphics') {
+                testQuestions = [...cgQuestions2024_2nd];
+            }
             else if (typeof seQuestions2024_25 !== 'undefined' && testYear === '2024-25' && testSubject === 'software-engineering') testQuestions = [...seQuestions2024_25];
             else if (typeof seQuestions2024 !== 'undefined' && testYear === '2024' && testSubject === 'software-engineering') testQuestions = [...seQuestions2024];
             else if (typeof seQuestions2022_23 !== 'undefined' && testYear === '2022-23' && testSubject === 'software-engineering') testQuestions = [...seQuestions2022_23];
@@ -278,8 +300,10 @@
             else if (typeof mockTestQuestions !== 'undefined' && testSubject === 'computer-graphics-mock') testQuestions = [...mockTestQuestions];
             else if (typeof questionBank !== 'undefined' && questionBank[testSubject]) {
                 // Use the global questionBank from questions-data.js
+                console.log('Loading from global questionBank for ' + testSubject);
                 testQuestions = [...questionBank[testSubject]];
             } else {
+                console.log('Generating Sample Questions for ' + testSubject);
                 testQuestions = generateSampleQuestions(testSubject, questionCount);
             }
 
