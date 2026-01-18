@@ -211,6 +211,7 @@
     <script src="optimization-questions-2024.js"></script>
     <script src="optimization-questions-2024-2nd.js"></script>
     <script src="se-questions-2024-25.js"></script>
+    <script src="se-questions-2024.js"></script>
     <script src="se-questions-2022-23.js"></script>
     <script>
         // Test state variables
@@ -268,6 +269,7 @@
             else if (typeof cgQuestions202425 !== 'undefined' && testYear === '2024-25') testQuestions = [...cgQuestions202425];
             else if (typeof cgQuestions2024_2nd !== 'undefined' && testYear === '2024' && testSession === '2nd Paper') testQuestions = [...cgQuestions2024_2nd];
             else if (typeof seQuestions2024_25 !== 'undefined' && testYear === '2024-25' && testSubject === 'software-engineering') testQuestions = [...seQuestions2024_25];
+            else if (typeof seQuestions2024 !== 'undefined' && testYear === '2024' && testSubject === 'software-engineering') testQuestions = [...seQuestions2024];
             else if (typeof seQuestions2022_23 !== 'undefined' && testYear === '2022-23' && testSubject === 'software-engineering') testQuestions = [...seQuestions2022_23];
             else if (typeof mockTestQuestions !== 'undefined' && testSubject === 'computer-graphics-mock') testQuestions = [...mockTestQuestions];
             else if (typeof questionBank !== 'undefined' && questionBank[testSubject]) {
