@@ -3,524 +3,17 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mathematics-III - Complete Notes</title>
+    <title>Mathematics-III - Sarvasva Notes</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
     <!-- MathJax -->
     <script>
         MathJax = { tex: { inlineMath: [['$', '$'], ['\\(', '\\)']] } };
     </script>
     <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
     <style>
-        :root {
-            --primary-color: #2c3e50;
-            --secondary-color: #3498db;
-            --accent-color: #e74c3c;
-            --light-color: #f8f9fa;
-            --success-color: #27ae60;
-            --warning-color: #f39c12;
-            --shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-            --border-radius: 8px;
-        }
-
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-        }
-
-        body {
-            background-color: #f5f7fa;
-            color: #333;
-            line-height: 1.6;
-        }
-
-        .container {
-            width: 90%;
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 20px 0;
-        }
-
-        /* Header & Navigation */
-        header {
-            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
-            color: white;
-            padding: 1.5rem 0;
-            box-shadow: var(--shadow);
-            position: relative;
-            z-index: 100;
-        }
-
-        .header-content {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            flex-wrap: wrap;
-        }
-
-        .logo {
-            display: flex;
-            align-items: center;
-            gap: 10px;
-        }
-
-        .logo i {
-            font-size: 2.5rem;
-        }
-
-        .logo h1 {
-            font-size: 1.8rem;
-            font-weight: 700;
-        }
-
-        .logo p {
-            font-size: 0.9rem;
-            opacity: 0.9;
-        }
-
-        nav ul {
-            display: flex;
-            list-style: none;
-            gap: 25px;
-            flex-wrap: wrap;
-        }
-
-        nav a {
-            color: white;
-            text-decoration: none;
-            font-weight: 600;
-            font-size: 1.1rem;
-            transition: opacity 0.3s;
-            display: flex;
-            align-items: center;
-            gap: 5px;
-        }
-
-        nav a:hover {
-            opacity: 0.9;
-        }
-
-        /* Hero Section */
-        .hero {
-            background: white;
-            border-radius: var(--border-radius);
-            padding: 2.5rem;
-            margin: 2rem 0;
-            box-shadow: var(--shadow);
-            text-align: center;
-        }
-
-        .hero h2 {
-            color: var(--primary-color);
-            margin-bottom: 1rem;
-            font-size: 2.2rem;
-        }
-
-        .hero p {
-            font-size: 1.2rem;
-            margin-bottom: 2rem;
-            color: #555;
-        }
-
-        .cta-buttons {
-            display: flex;
-            justify-content: center;
-            gap: 20px;
-            flex-wrap: wrap;
-            margin-top: 2rem;
-        }
-
-        .btn {
-            padding: 12px 28px;
-            border-radius: 50px;
-            font-weight: 600;
-            font-size: 1.1rem;
-            cursor: pointer;
-            transition: all 0.3s;
-            border: none;
-            display: flex;
-            align-items: center;
-            gap: 10px;
-            text-decoration: none;
-        }
-
-        .btn-primary {
-            background-color: var(--secondary-color);
-            color: white;
-        }
-
-        .btn-primary:hover {
-            background-color: #2980b9;
-            transform: translateY(-3px);
-        }
-
-        .btn-secondary {
-            background-color: var(--warning-color);
-            color: white;
-        }
-
-        .btn-secondary:hover {
-            background-color: #e67e22;
-            transform: translateY(-3px);
-        }
-
-        .btn-tertiary {
-            background-color: var(--success-color);
-            color: white;
-        }
-
-        .btn-tertiary:hover {
-            background-color: #219653;
-            transform: translateY(-3px);
-        }
-
-        /* Subject Sections */
-        .section-title {
-            color: var(--primary-color);
-            margin: 2.5rem 0 1.5rem;
-            padding-bottom: 10px;
-            border-bottom: 3px solid var(--secondary-color);
-            font-size: 1.8rem;
-            display: flex;
-            align-items: center;
-            gap: 10px;
-        }
-
-        .subject-container {
-            background: white;
-            border-radius: var(--border-radius);
-            margin-bottom: 2rem;
-            box-shadow: var(--shadow);
-            overflow: hidden;
-        }
-
-        .subject-header {
-            background-color: var(--primary-color);
-            color: white;
-            padding: 1.2rem 1.5rem;
-            cursor: pointer;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            transition: background-color 0.3s;
-        }
-
-        .subject-header:hover {
-            background-color: #34495e;
-        }
-
-        .subject-header h3 {
-            font-size: 1.5rem;
-            display: flex;
-            align-items: center;
-            gap: 10px;
-        }
-
-        .subject-header i {
-            font-size: 1.2rem;
-            transition: transform 0.3s;
-        }
-
-        .subject-content {
-            padding: 0;
-            max-height: 0;
-            overflow: hidden;
-            transition: all 0.5s ease;
-        }
-
-        .subject-content.active {
-            padding: 2rem;
-            max-height: 5000px;
-        }
-
-        .subject-header.active i {
-            transform: rotate(180deg);
-        }
-
-        /* Notes Content */
-        .topic {
-            margin-bottom: 2rem;
-        }
-
-        .topic h4 {
-            color: var(--primary-color);
-            margin-bottom: 0.8rem;
-            font-size: 1.3rem;
-            display: flex;
-            align-items: center;
-            gap: 10px;
-        }
-
-        .topic-content {
-            background-color: #f8f9fa;
-            padding: 1.5rem;
-            border-radius: var(--border-radius);
-            border-left: 4px solid var(--secondary-color);
-        }
-
-        .topic-content p {
-            margin-bottom: 1rem;
-        }
-
-        .topic-content ul,
-        .topic-content ol {
-            padding-left: 1.5rem;
-            margin-bottom: 1rem;
-        }
-
-        .topic-content li {
-            margin-bottom: 0.5rem;
-        }
-
-        .pyq-badge {
-            display: inline-block;
-            background-color: var(--accent-color);
-            color: white;
-            padding: 4px 12px;
-            border-radius: 20px;
-            font-size: 0.8rem;
-            font-weight: 600;
-            margin-left: 10px;
-            vertical-align: middle;
-        }
-
-        /* MCQ Section */
-        .mcq-section {
-            background-color: white;
-            border-radius: var(--border-radius);
-            padding: 2rem;
-            margin: 3rem 0;
-            box-shadow: var(--shadow);
-        }
-
-        .mcq-container {
-            display: none;
-        }
-
-        .mcq-container.active {
-            display: block;
-        }
-
-        .mcq-subject-tabs {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 10px;
-            margin-bottom: 2rem;
-            border-bottom: 2px solid #eee;
-            padding-bottom: 1rem;
-        }
-
-        .mcq-tab {
-            padding: 10px 20px;
-            background-color: #f1f2f6;
-            border-radius: var(--border-radius);
-            cursor: pointer;
-            font-weight: 600;
-            transition: all 0.3s;
-        }
-
-        .mcq-tab.active {
-            background-color: var(--secondary-color);
-            color: white;
-        }
-
-        .mcq-question {
-            background-color: #f8f9fa;
-            padding: 1.5rem;
-            border-radius: var(--border-radius);
-            margin-bottom: 1.5rem;
-            border-left: 4px solid var(--secondary-color);
-        }
-
-        .mcq-question-number {
-            font-weight: 700;
-            color: var(--primary-color);
-            margin-bottom: 10px;
-            display: flex;
-            justify-content: space-between;
-        }
-
-        .pyq-label {
-            background-color: var(--warning-color);
-            color: white;
-            padding: 3px 10px;
-            border-radius: 15px;
-            font-size: 0.8rem;
-            font-weight: 600;
-        }
-
-        .mcq-options {
-            margin-top: 1rem;
-        }
-
-        .mcq-option {
-            padding: 12px 15px;
-            margin-bottom: 10px;
-            background-color: white;
-            border-radius: var(--border-radius);
-            border: 2px solid #ddd;
-            cursor: pointer;
-            transition: all 0.2s;
-        }
-
-        .mcq-option:hover {
-            border-color: var(--secondary-color);
-            background-color: #f0f8ff;
-        }
-
-        .mcq-option.selected {
-            border-color: var(--secondary-color);
-            background-color: #3498db;
-            color: white;
-        }
-
-        .mcq-option.correct {
-            border-color: var(--success-color);
-            background-color: #d5f4e6;
-            color: #333;
-        }
-
-        .mcq-option.incorrect {
-            border-color: var(--accent-color);
-            background-color: #fde8e8;
-            color: #333;
-        }
-
-        .submit-answer-btn {
-            background-color: var(--primary-color);
-            color: white;
-            border: none;
-            padding: 8px 16px;
-            border-radius: 4px;
-            cursor: pointer;
-            margin-top: 10px;
-            font-size: 0.9rem;
-            transition: background 0.3s;
-        }
-
-        .submit-answer-btn:hover {
-            background-color: #34495e;
-        }
-
-        .submit-answer-btn:disabled {
-            background-color: #bdc3c7;
-            cursor: not-allowed;
-        }
-
-        .mcq-explanation {
-            padding: 1rem;
-            background-color: #f0f8ff;
-            border-radius: var(--border-radius);
-            margin-top: 1rem;
-            display: none;
-            border-left: 4px solid var(--secondary-color);
-        }
-
-        .mcq-explanation.show {
-            display: block;
-        }
-
-        .mcq-navigation {
-            display: flex;
-            justify-content: space-between;
-            margin-top: 2rem;
-        }
-
-        .score-display {
-            background-color: var(--primary-color);
-            color: white;
-            padding: 1rem;
-            border-radius: var(--border-radius);
-            text-align: center;
-            margin-bottom: 1.5rem;
-            font-weight: 600;
-        }
-
-        /* Footer */
-        footer {
-            background-color: var(--primary-color);
-            color: white;
-            text-align: center;
-            padding: 2rem 0;
-            margin-top: 3rem;
-        }
-
-        footer p {
-            margin-bottom: 1rem;
-        }
-
-        /* Responsive Design */
-        @media (max-width: 768px) {
-            .header-content {
-                flex-direction: column;
-                text-align: center;
-                gap: 1rem;
-            }
-
-            nav ul {
-                justify-content: center;
-            }
-
-            .hero h2 {
-                font-size: 1.8rem;
-            }
-
-            .hero p {
-                font-size: 1rem;
-            }
-
-            .btn {
-                padding: 10px 20px;
-                font-size: 1rem;
-            }
-
-            .subject-header h3 {
-                font-size: 1.2rem;
-            }
-
-            .topic h4 {
-                font-size: 1.1rem;
-            }
-
-            .mcq-subject-tabs {
-                justify-content: center;
-            }
-        }
-
-        @media (max-width: 480px) {
-            .container {
-                width: 95%;
-            }
-
-            .hero {
-                padding: 1.5rem;
-            }
-
-            .cta-buttons {
-                flex-direction: column;
-                align-items: center;
-            }
-
-            .subject-content.active {
-                padding: 1.5rem;
-            }
-
-            .mcq-navigation {
-                flex-direction: column;
-                gap: 15px;
-            }
-        }
-    </style>
-    <style>
-        .mcq-tab-btn.active {
-            background-color: var(--secondary-color) !important;
-            color: white !important;
-            border-color: var(--secondary-color) !important;
-        }
-        .mcq-tab-btn {
-            transition: all 0.3s;
-        }
+        /* Specific overrides for Subject Pages */
+        .subject-notes-wrapper { display: flex; flex-direction: column; gap: 1.5rem; }
     </style>
 </head>
 <body>
@@ -530,8 +23,8 @@
             <div class="logo">
                 <i class="fas fa-graduation-cap"></i>
                 <div>
-                    <h1>Sarvasva Notes</h1>
-                    <p>Mathematics-III</p>
+                   <span style="display:block; line-height:1;">Sarvasva Notes</span>
+                   <span style="font-size: 0.8rem; opacity: 0.8; font-weight: 400;">Mathematics-III</span>
                 </div>
             </div>
             <nav>
@@ -541,7 +34,7 @@
                     <li><a href="dbms.html" class="">DBMS</a></li>
                     <li><a href="se.html" class="">SE</a></li>
                     <li><a href="optimization.html" class="">Optimization</a></li>
-                    <li><a href="math.html" class="active-nav">Math</a></li>
+                    <li><a href="math.html" class="active">Math</a></li>
                 </ul>
             </nav>
         </div>
@@ -549,24 +42,25 @@
 
     <div class="container">
         <!-- Hero -->
-        <section class="hero">
-            <h2>Mathematics-III</h2>
-            <p>Complete Subject Notes & MCQs (organized by Unit)</p>
-            <div class="cta-buttons">
-                <a href="#notes" class="btn btn-primary">Read Notes</a>
-                <a href="#mcq" class="btn btn-secondary">Practice MCQs</a>
+        <section class="hero" style="padding: 3rem 1rem; margin-bottom: 2rem;">
+            <h2><i class="fas fa-calculator"></i> Mathematics-III</h2>
+            <p>Comprehensive compilation of notes and MCQs from all 5 Units.</p>
+            <div style="display:flex; justify-content:center; gap:1rem;">
+                <a href="#notes" class="btn btn-primary"><i class="fas fa-book"></i> Notes</a>
+                <a href="#mcq" class="btn btn-secondary"><i class="fas fa-question-circle"></i> MCQs</a>
             </div>
         </section>
 
-        <!-- Notes -->
-        <h2 class="section-title" id="notes"><i class="fas fa-book-open"></i> Subject Notes</h2>
-        <div class="notes-wrapper">
+        <!-- Notes Section -->
+        <h2 class="section-title" id="notes"><i class="fas fa-book-open"></i> Complete Notes (Unit 1-5)</h2>
+        <div class="subject-notes-wrapper">
             
-                <div class="unit-block" style="margin-bottom: 30px;">
-                    <div style="background: #f1f2f6; padding: 8px 15px; border-radius: 5px 5px 0 0; border-left: 4px solid #2c3e50;">
-                        <h4 style="margin:0; color:#2c3e50;">Unit 1</h4>
+                <div class="unit-block" style="margin-bottom: 40px; border: 1px solid #e0e0e0; border-radius: 8px; overflow: hidden;">
+                    <div style="background: #f8f9fa; padding: 10px 20px; border-bottom: 1px solid #ddd;">
+                        <h3 style="margin:0; color: #555; font-size: 1.1rem;">Unit 1 Content</h3>
                     </div>
-                    <div class="subject-container">
+                    <div style="padding: 10px;">
+                        <div class="subject-container">
             <div class="subject-header">
                 <h3><i class="fas fa-calculator"></i> Mathematics-III (BCA-4005)</h3>
                 <i class="fas fa-chevron-down"></i>
@@ -652,13 +146,15 @@
                 </div>
             </div>
         </div>
+                    </div>
                 </div>
 
-                <div class="unit-block" style="margin-bottom: 30px;">
-                    <div style="background: #f1f2f6; padding: 8px 15px; border-radius: 5px 5px 0 0; border-left: 4px solid #2c3e50;">
-                        <h4 style="margin:0; color:#2c3e50;">Unit 2</h4>
+                <div class="unit-block" style="margin-bottom: 40px; border: 1px solid #e0e0e0; border-radius: 8px; overflow: hidden;">
+                    <div style="background: #f8f9fa; padding: 10px 20px; border-bottom: 1px solid #ddd;">
+                        <h3 style="margin:0; color: #555; font-size: 1.1rem;">Unit 2 Content</h3>
                     </div>
-                    <div class="subject-container">
+                    <div style="padding: 10px;">
+                        <div class="subject-container">
             <div class="subject-header">
                 <h3><i class="fas fa-calculator"></i> Mathematics-III</h3>
                 <i class="fas fa-chevron-down"></i>
@@ -698,13 +194,15 @@
                 </div>
             </div>
         </div>
+                    </div>
                 </div>
 
-                <div class="unit-block" style="margin-bottom: 30px;">
-                    <div style="background: #f1f2f6; padding: 8px 15px; border-radius: 5px 5px 0 0; border-left: 4px solid #2c3e50;">
-                        <h4 style="margin:0; color:#2c3e50;">Unit 3</h4>
+                <div class="unit-block" style="margin-bottom: 40px; border: 1px solid #e0e0e0; border-radius: 8px; overflow: hidden;">
+                    <div style="background: #f8f9fa; padding: 10px 20px; border-bottom: 1px solid #ddd;">
+                        <h3 style="margin:0; color: #555; font-size: 1.1rem;">Unit 3 Content</h3>
                     </div>
-                    <div class="subject-container">
+                    <div style="padding: 10px;">
+                        <div class="subject-container">
             <div class="subject-header">
                 <h3><i class="fas fa-calculator"></i> Mathematics-III</h3>
                 <i class="fas fa-chevron-down"></i>
@@ -742,13 +240,15 @@
                 </div>
             </div>
         </div>
+                    </div>
                 </div>
 
-                <div class="unit-block" style="margin-bottom: 30px;">
-                    <div style="background: #f1f2f6; padding: 8px 15px; border-radius: 5px 5px 0 0; border-left: 4px solid #2c3e50;">
-                        <h4 style="margin:0; color:#2c3e50;">Unit 4</h4>
+                <div class="unit-block" style="margin-bottom: 40px; border: 1px solid #e0e0e0; border-radius: 8px; overflow: hidden;">
+                    <div style="background: #f8f9fa; padding: 10px 20px; border-bottom: 1px solid #ddd;">
+                        <h3 style="margin:0; color: #555; font-size: 1.1rem;">Unit 4 Content</h3>
                     </div>
-                    <div class="subject-container">
+                    <div style="padding: 10px;">
+                        <div class="subject-container">
             <div class="subject-header">
                 <h3><i class="fas fa-calculator"></i> Mathematics-III</h3>
                 <i class="fas fa-chevron-down"></i>
@@ -787,13 +287,15 @@
                 </div>
             </div>
         </div>
+                    </div>
                 </div>
 
-                <div class="unit-block" style="margin-bottom: 30px;">
-                    <div style="background: #f1f2f6; padding: 8px 15px; border-radius: 5px 5px 0 0; border-left: 4px solid #2c3e50;">
-                        <h4 style="margin:0; color:#2c3e50;">Unit 5</h4>
+                <div class="unit-block" style="margin-bottom: 40px; border: 1px solid #e0e0e0; border-radius: 8px; overflow: hidden;">
+                    <div style="background: #f8f9fa; padding: 10px 20px; border-bottom: 1px solid #ddd;">
+                        <h3 style="margin:0; color: #555; font-size: 1.1rem;">Unit 5 Content</h3>
                     </div>
-                    <div class="subject-container">
+                    <div style="padding: 10px;">
+                        <div class="subject-container">
             <div class="subject-header">
                 <h3><i class="fas fa-calculator"></i> Mathematics-III</h3>
                 <i class="fas fa-chevron-down"></i>
@@ -834,25 +336,20 @@
                 </div>
             </div>
         </div>
+                    </div>
                 </div>
         </div>
 
-        <!-- MCQs -->
-        <h2 class="section-title" id="mcq"><i class="fas fa-question-circle"></i> MCQ Practice</h2>
+        <!-- MCQ Section -->
+        <h2 class="section-title" id="mcq" style="margin-top: 4rem;"><i class="fas fa-question-circle"></i> MCQ Practice</h2>
         <div class="mcq-section">
             <div class="score-display">
-                Score: <span id="score">0</span> / <span id="total-questions">0</span>
-                <button id="reset-btn" class="btn btn-secondary" style="font-size:0.8rem; padding:4px 10px; margin-left:10px;">Reset</button>
+                <p>Score: <span id="score">0</span> / <span id="total-questions">0</span></p>
+                <button id="reset-btn" class="btn btn-secondary" style="font-size:0.8rem; padding: 5px 15px; color: var(--primary); background: white; border: 1px solid var(--primary); margin-top: 10px;">Reset Quiz</button>
             </div>
             
-            <div class="mcq-tabs" style="display:flex; gap:10px; margin-bottom:20px; flex-wrap:wrap;">
-            <button class="mcq-tab-btn active btn btn-secondary" onclick="switchTab('all')">All Units</button><button class="mcq-tab-btn btn btn-secondary" onclick="switchTab('1')" style="background:#fff; color:#333; border:1px solid #ddd;">Unit 1</button><button class="mcq-tab-btn btn btn-secondary" onclick="switchTab('2')" style="background:#fff; color:#333; border:1px solid #ddd;">Unit 2</button><button class="mcq-tab-btn btn btn-secondary" onclick="switchTab('3')" style="background:#fff; color:#333; border:1px solid #ddd;">Unit 3</button><button class="mcq-tab-btn btn btn-secondary" onclick="switchTab('4')" style="background:#fff; color:#333; border:1px solid #ddd;">Unit 4</button><button class="mcq-tab-btn btn btn-secondary" onclick="switchTab('5')" style="background:#fff; color:#333; border:1px solid #ddd;">Unit 5</button></div>
-            
-            <div class="mcq-container" id="container-unit-1" style="display:none;">
-                <div style="background:#e8f5e9; padding:10px; margin-bottom:15px; border-radius:5px;">
-                    <strong>Unit 1 Questions</strong>
-                </div>
-                
+            <div class="mcq-container active">
+                <!-- Unit 1 MCQs --> <div class="unit-mcq-label" style="background:#eee; padding:5px; margin:10px 0; font-weight:bold;">Unit 1 Questions</div>
                     <!-- MCQ 1 -->
                     <div class="mcq-question">
                         <div class="mcq-question-number">
@@ -1002,12 +499,7 @@
                         </div>
                     </div>
                 
-            </div>
-            <div class="mcq-container" id="container-unit-2" style="display:none;">
-                <div style="background:#e8f5e9; padding:10px; margin-bottom:15px; border-radius:5px;">
-                    <strong>Unit 2 Questions</strong>
-                </div>
-                
+<!-- Unit 2 MCQs --> <div class="unit-mcq-label" style="background:#eee; padding:5px; margin:10px 0; font-weight:bold;">Unit 2 Questions</div>
             <div class="mcq-question">
                 <p class="question-text">Gradient of a scalar function $\phi(x,y,z)$ is:</p>
                 <div class="mcq-options">
@@ -1102,12 +594,7 @@
                 <div class="mcq-explanation">Appeared in PYQ</div>
             </div>
         
-            </div>
-            <div class="mcq-container" id="container-unit-3" style="display:none;">
-                <div style="background:#e8f5e9; padding:10px; margin-bottom:15px; border-radius:5px;">
-                    <strong>Unit 3 Questions</strong>
-                </div>
-                
+<!-- Unit 3 MCQs --> <div class="unit-mcq-label" style="background:#eee; padding:5px; margin:10px 0; font-weight:bold;">Unit 3 Questions</div>
                 <div class="mcq-question">
                     <p class="question-text">In Fourier series of $f(x)$, coefficients $a_0, a_n, b_n$ are called:</p>
                     <div class="mcq-options">
@@ -1185,12 +672,7 @@
                     <div class="mcq-explanation">Appeared in PYQ</div>
                 </div>
             
-            </div>
-            <div class="mcq-container" id="container-unit-4" style="display:none;">
-                <div style="background:#e8f5e9; padding:10px; margin-bottom:15px; border-radius:5px;">
-                    <strong>Unit 4 Questions</strong>
-                </div>
-                
+<!-- Unit 4 MCQs --> <div class="unit-mcq-label" style="background:#eee; padding:5px; margin:10px 0; font-weight:bold;">Unit 4 Questions</div>
                 <div class="mcq-question">
                     <p class="question-text">The order and degree of the differential equation $\frac{d^2y}{dx^2} +
                         x(\frac{dy}{dx})^3 = 0$ are:</p>
@@ -1270,12 +752,7 @@
                     <div class="mcq-explanation">Appeared in PYQ</div>
                 </div>
             
-            </div>
-            <div class="mcq-container" id="container-unit-5" style="display:none;">
-                <div style="background:#e8f5e9; padding:10px; margin-bottom:15px; border-radius:5px;">
-                    <strong>Unit 5 Questions</strong>
-                </div>
-                
+<!-- Unit 5 MCQs --> <div class="unit-mcq-label" style="background:#eee; padding:5px; margin:10px 0; font-weight:bold;">Unit 5 Questions</div>
                 <div class="mcq-question">
                     <p class="question-text">Solution of $(D^2 + 5D + 4)y = 0$ is:</p>
                     <div class="mcq-options">
@@ -1345,499 +822,9 @@
                 </div>
             
             </div>
-        <div class="mcq-container active" id="container-all">
             
-            <div class="unit-separator" style="margin: 20px 0 10px 0; border-bottom:2px dashed #ccc; padding-bottom:5px;">
-                <span style="background:#eee; padding:5px 10px; border-radius:5px; font-weight:bold;">Unit 1</span>
-            </div>
-            
-                    <!-- MCQ 1 -->
-                    <div class="mcq-question">
-                        <div class="mcq-question-number">
-                            <span>1. Modulus value of z = x + iy is:</span>
-                            <span class="pyq-label">PYQ 2022</span>
-                        </div>
-                        <div class="mcq-options">
-                            <div class="mcq-option" data-correct="false">A. √(x² - y²)</div>
-                            <div class="mcq-option" data-correct="true">B. √(x² + y²)</div>
-                            <div class="mcq-option" data-correct="false">C. x² - y²</div>
-                            <div class="mcq-option" data-correct="false">D. x + y</div>
-                        </div>
-                    </div>
-
-                    <!-- MCQ 2 -->
-                    <div class="mcq-question">
-                        <div class="mcq-question-number">
-                            <span>2. Conjugate of z = -3 + 2i is:</span>
-                            <span class="pyq-label">PYQ 2023</span>
-                        </div>
-                        <div class="mcq-options">
-                            <div class="mcq-option" data-correct="true">A. -3 - 2i</div>
-                            <div class="mcq-option" data-correct="false">B. 3 - 2i</div>
-                            <div class="mcq-option" data-correct="false">C. -3 + 2i</div>
-                            <div class="mcq-option" data-correct="false">D. 3 + 2i</div>
-                        </div>
-                    </div>
-
-                    <!-- MCQ 3 -->
-                    <div class="mcq-question">
-                        <div class="mcq-question-number">
-                            <span>3. If z = -1 - i, then the argument is:</span>
-                            <span class="pyq-label">PYQ 2022</span>
-                        </div>
-                        <div class="mcq-options">
-                            <div class="mcq-option" data-correct="false">A. π/4</div>
-                            <div class="mcq-option" data-correct="true">B. -3π/4 (or 5π/4)</div>
-                            <div class="mcq-option" data-correct="false">C. π/2</div>
-                            <div class="mcq-option" data-correct="false">D. 0</div>
-                        </div>
-                    </div>
-
-                    <!-- MCQ 4 -->
-                    <div class="mcq-question">
-                        <div class="mcq-question-number">
-                            <span>4. Cube roots of unity are:</span>
-                            <span class="pyq-label">PYQ 2023</span>
-                        </div>
-                        <div class="mcq-options">
-                            <div class="mcq-option" data-correct="false">A. 1, i, -i</div>
-                            <div class="mcq-option" data-correct="true">B. 1, ω, ω²</div>
-                            <div class="mcq-option" data-correct="false">C. 1, -1, 0</div>
-                            <div class="mcq-option" data-correct="false">D. None of the above</div>
-                        </div>
-                    </div>
-
-                    <!-- MCQ 5 -->
-                    <div class="mcq-question">
-                        <div class="mcq-question-number">
-                            <span>5. If cube roots of unity are 1, ω, ω², then 1 + ω + ω² is:</span>
-                            <span class="pyq-label">PYQ 2024</span>
-                        </div>
-                        <div class="mcq-options">
-                            <div class="mcq-option" data-correct="true">A. 0</div>
-                            <div class="mcq-option" data-correct="false">B. 1</div>
-                            <div class="mcq-option" data-correct="false">C. -1</div>
-                            <div class="mcq-option" data-correct="false">D. 3</div>
-                        </div>
-                    </div>
-
-                    <!-- MCQ 6 -->
-                    <div class="mcq-question">
-                        <div class="mcq-question-number">
-                            <span>6. The value of (i)^100 is:</span>
-                            <span class="pyq-label">PYQ 2023</span>
-                        </div>
-                        <div class="mcq-options">
-                            <div class="mcq-option" data-correct="true">A. 1</div>
-                            <div class="mcq-option" data-correct="false">B. -1</div>
-                            <div class="mcq-option" data-correct="false">C. i</div>
-                            <div class="mcq-option" data-correct="false">D. -i</div>
-                        </div>
-                        <div class="mcq-explanation">
-                            <strong>Explanation:</strong> Since 100 is divisible by 4, i^100 = 1.
-                        </div>
-                    </div>
-
-                    <!-- MCQ 7 -->
-                    <div class="mcq-question">
-                        <div class="mcq-question-number">
-                            <span>7. Value of (i)^19 is:</span>
-                            <span class="pyq-label">PYQ 2024-25</span>
-                        </div>
-                        <div class="mcq-options">
-                            <div class="mcq-option" data-correct="true">A. -i</div>
-                            <div class="mcq-option" data-correct="false">B. 1</div>
-                            <div class="mcq-option" data-correct="false">C. -1</div>
-                            <div class="mcq-option" data-correct="false">D. i</div>
-                        </div>
-                        <div class="mcq-explanation">
-                            <strong>Explanation:</strong> 19 = 4 × 4 + 3, so i^19 = i^3 = -i.
-                        </div>
-                    </div>
-
-                    <!-- MCQ 8 -->
-                    <div class="mcq-question">
-                        <div class="mcq-question-number">
-                            <span>8. If z = 1 + i, find |z|.</span>
-                            <span class="pyq-label">PYQ 2023</span>
-                        </div>
-                        <div class="mcq-options">
-                            <div class="mcq-option" data-correct="true">A. √2</div>
-                            <div class="mcq-option" data-correct="false">B. 2</div>
-                            <div class="mcq-option" data-correct="false">C. 1</div>
-                            <div class="mcq-option" data-correct="false">D. 0</div>
-                        </div>
-                        <div class="mcq-explanation">
-                            <strong>Explanation:</strong> |z| = √(1² + 1²) = √2.
-                        </div>
-                    </div>
-
-                    <!-- MCQ 9 -->
-                    <div class="mcq-question">
-                        <div class="mcq-question-number">
-                            <span>9. Value of i^2?</span>
-                            <span class="pyq-label">PYQ 2024</span>
-                        </div>
-                        <div class="mcq-options">
-                            <div class="mcq-option" data-correct="true">A. -1</div>
-                            <div class="mcq-option" data-correct="false">B. 1</div>
-                            <div class="mcq-option" data-correct="false">C. i</div>
-                            <div class="mcq-option" data-correct="false">D. -i</div>
-                        </div>
-                    </div>
-
-                    <!-- MCQ 10 -->
-                    <div class="mcq-question">
-                        <div class="mcq-question-number">
-                            <span>10. Argument of purely imaginary number zi (where z>0) is?</span>
-                            <span class="pyq-label">PYQ 2022</span>
-                        </div>
-                        <div class="mcq-options">
-                            <div class="mcq-option" data-correct="true">A. π/2</div>
-                            <div class="mcq-option" data-correct="false">B. π</div>
-                            <div class="mcq-option" data-correct="false">C. 0</div>
-                            <div class="mcq-option" data-correct="false">D. 2π</div>
-                        </div>
-                    </div>
-                
-            <div class="unit-separator" style="margin: 20px 0 10px 0; border-bottom:2px dashed #ccc; padding-bottom:5px;">
-                <span style="background:#eee; padding:5px 10px; border-radius:5px; font-weight:bold;">Unit 2</span>
-            </div>
-            
-            <div class="mcq-question">
-                <p class="question-text">Gradient of a scalar function $\phi(x,y,z)$ is:</p>
-                <div class="mcq-options">
-                    <div class="mcq-option" data-correct="false">A. $\frac{\partial\phi}{\partial x} +
-                        \frac{\partial\phi}{\partial y} + \frac{\partial\phi}{\partial z}$</div>
-                    <div class="mcq-option" data-correct="true">B. $\frac{\partial\phi}{\partial x}\hat{i} +
-                        \frac{\partial\phi}{\partial y}\hat{j} + \frac{\partial\phi}{\partial z}\hat{k}$ (It is a
-                        Vector)</div>
-                    <div class="mcq-option" data-correct="false">C. $\frac{\partial^2\phi}{\partial x^2} + ...$</div>
-                    <div class="mcq-option" data-correct="false">D. None</div>
-                </div>
-                <div class="mcq-explanation">Appeared in 2024</div>
-            </div>
-
-            <div class="mcq-question">
-                <p class="question-text">What is the Divergence of a vector field $\vec{F}$?</p>
-                <div class="mcq-options">
-                    <div class="mcq-option" data-correct="false">A. Rate of rotation</div>
-                    <div class="mcq-option" data-correct="true">B. Rate at which $\vec{F}$ is spreading out or
-                        converging</div>
-                    <div class="mcq-option" data-correct="false">C. Flow along streamline</div>
-                    <div class="mcq-option" data-correct="false">D. None</div>
-                </div>
-                <div class="mcq-explanation">Appeared in 2022</div>
-            </div>
-
-            <div class="mcq-question">
-                <p class="question-text">If the Divergence of a vector field $\vec{F}$ is zero ($\nabla \cdot \vec{F} =
-                    0$), then $\vec{F}$ is called:</p>
-                <div class="mcq-options">
-                    <div class="mcq-option" data-correct="true">A. Solenoidal</div>
-                    <div class="mcq-option" data-correct="false">B. Rotational</div>
-                    <div class="mcq-option" data-correct="false">C. Irrotational</div>
-                    <div class="mcq-option" data-correct="false">D. None</div>
-                </div>
-                <div class="mcq-explanation">Appeared in 2024, 2022</div>
-            </div>
-
-            <div class="mcq-question">
-                <p class="question-text">A vector field is Irrotational if:</p>
-                <div class="mcq-options">
-                    <div class="mcq-option" data-correct="false">A. $\nabla \times \vec{F} \ne 0$</div>
-                    <div class="mcq-option" data-correct="false">B. $\nabla \cdot \vec{F} = 0$</div>
-                    <div class="mcq-option" data-correct="true">C. $\nabla \times \vec{F} = 0$ (Curl is zero)</div>
-                    <div class="mcq-option" data-correct="false">D. None</div>
-                </div>
-                <div class="mcq-explanation">Appeared in 2024, 2022</div>
-            </div>
-
-            <div class="mcq-question">
-                <p class="question-text">The Curl of a vector field represents:</p>
-                <div class="mcq-options">
-                    <div class="mcq-option" data-correct="false">A. Irrotational field</div>
-                    <div class="mcq-option" data-correct="false">B. Magnetic field</div>
-                    <div class="mcq-option" data-correct="true">C. Rotational field / Rotation</div>
-                    <div class="mcq-option" data-correct="false">D. Laurent field</div>
-                </div>
-                <div class="mcq-explanation">Appeared in 2022</div>
-            </div>
-
-            <div class="mcq-question">
-                <p class="question-text">Directional derivative of $f$ in the direction of unit vector $\hat{u}$ is:</p>
-                <div class="mcq-options">
-                    <div class="mcq-option" data-correct="true">A. $\nabla f \cdot \hat{u}$</div>
-                    <div class="mcq-option" data-correct="false">B. $\nabla f$</div>
-                    <div class="mcq-option" data-correct="false">C. $\nabla f \times \hat{u}$</div>
-                    <div class="mcq-option" data-correct="false">D. None</div>
-                </div>
-                <div class="mcq-explanation">Appeared in 2024</div>
-            </div>
-
-            <div class="mcq-question">
-                <p class="question-text">Value of $\nabla \cdot \vec{r}$ (Divergence of position vector $\vec{r} =
-                    x\hat{i} + y\hat{j} + z\hat{k}$) is:</p>
-                <div class="mcq-options">
-                    <div class="mcq-option" data-correct="false">A. 0</div>
-                    <div class="mcq-option" data-correct="true">B. 3</div>
-                    <div class="mcq-option" data-correct="false">C. 1</div>
-                    <div class="mcq-option" data-correct="false">D. -3</div>
-                </div>
-                <div class="mcq-explanation">Appeared in 2024</div>
-            </div>
-
-            <div class="mcq-question">
-                <p class="question-text">Divergence of a vector field determines:</p>
-                <div class="mcq-options">
-                    <div class="mcq-option" data-correct="true">A. Flux expansion/contraction</div>
-                    <div class="mcq-option" data-correct="false">B. Rotation</div>
-                    <div class="mcq-option" data-correct="false">C. Gradient</div>
-                    <div class="mcq-option" data-correct="false">D. None</div>
-                </div>
-                <div class="mcq-explanation">Appeared in PYQ</div>
-            </div>
-        
-            <div class="unit-separator" style="margin: 20px 0 10px 0; border-bottom:2px dashed #ccc; padding-bottom:5px;">
-                <span style="background:#eee; padding:5px 10px; border-radius:5px; font-weight:bold;">Unit 3</span>
-            </div>
-            
-                <div class="mcq-question">
-                    <p class="question-text">In Fourier series of $f(x)$, coefficients $a_0, a_n, b_n$ are called:</p>
-                    <div class="mcq-options">
-                        <div class="mcq-option" data-correct="false">A. Laplace coefficients</div>
-                        <div class="mcq-option" data-correct="true">B. Fourier coefficients / Euler's Formula</div>
-                        <div class="mcq-option" data-correct="false">C. Taylor's coefficients</div>
-                        <div class="mcq-option" data-correct="false">D. Not</div>
-                    </div>
-                    <div class="mcq-explanation">Appeared in: 2022</div>
-                </div>
-
-                <div class="mcq-question">
-                    <p class="question-text">If $f(x) = x \cos x$ in $[-\pi, \pi]$ (which is an Odd function), then
-                        Fourier coefficient $a_n$ is:</p>
-                    <div class="mcq-options">
-                        <div class="mcq-option" data-correct="true">A. 0</div>
-                        <div class="mcq-option" data-correct="false">B. 1</div>
-                        <div class="mcq-option" data-correct="false">C. $\pi$</div>
-                        <div class="mcq-option" data-correct="false">D. None</div>
-                    </div>
-                    <div class="mcq-explanation">Appeared in: 2022</div>
-                </div>
-
-                <div class="mcq-question">
-                    <p class="question-text">If $f(x) = \sin x$ in $[-\pi, \pi]$ (Odd function), then value of $a_n$ in
-                        Fourier series:</p>
-                    <div class="mcq-options">
-                        <div class="mcq-option" data-correct="true">A. 0</div>
-                        <div class="mcq-option" data-correct="false">B. 1</div>
-                        <div class="mcq-option" data-correct="false">C. 2</div>
-                        <div class="mcq-option" data-correct="false">D. 3</div>
-                    </div>
-                    <div class="mcq-explanation">Appeared in: 2022</div>
-                </div>
-
-                <div class="mcq-question">
-                    <p class="question-text">Euler's formula for $b_n$ in Fourier series in $[a, b]$ is:</p>
-                    <div class="mcq-options">
-                        <div class="mcq-option" data-correct="false">A. $\int f(x) \cos nx dx$</div>
-                        <div class="mcq-option" data-correct="true">B. $\int f(x) \sin nx dx$</div>
-                    </div>
-                    <div class="mcq-explanation">Appeared in: 2022</div>
-                </div>
-
-                <div class="mcq-question">
-                    <p class="question-text">Fourier series is defined for:</p>
-                    <div class="mcq-options">
-                        <div class="mcq-option" data-correct="false">A. Continuous functions only</div>
-                        <div class="mcq-option" data-correct="false">B. Discontinuous functions only</div>
-                        <div class="mcq-option" data-correct="true">C. Both continuous and discontinuous functions</div>
-                        <div class="mcq-option" data-correct="false">D. None of the above</div>
-                    </div>
-                    <div class="mcq-explanation">Appeared in: 2022</div>
-                </div>
-
-                <div class="mcq-question">
-                    <p class="question-text">If $f(x)$ is an **even function**, then Fourier coefficient $b_n$ is:</p>
-                    <div class="mcq-options">
-                        <div class="mcq-option" data-correct="false">A. $a_n = 0$</div>
-                        <div class="mcq-option" data-correct="false">B. $a_n = 2$</div>
-                        <div class="mcq-option" data-correct="true">C. $b_n = 0$</div>
-                        <div class="mcq-option" data-correct="false">D. $b_n = 2$</div>
-                    </div>
-                    <div class="mcq-explanation">Appeared in: 2024</div>
-                </div>
-
-                <div class="mcq-question">
-                    <p class="question-text">Dirichlet's conditions are sufficient conditions for:</p>
-                    <div class="mcq-options">
-                        <div class="mcq-option" data-correct="true">A. Fourier series expansion</div>
-                        <div class="mcq-option" data-correct="false">B. Laplace transform</div>
-                        <div class="mcq-option" data-correct="false">C. Taylor series</div>
-                        <div class="mcq-option" data-correct="false">D. None</div>
-                    </div>
-                    <div class="mcq-explanation">Appeared in PYQ</div>
-                </div>
-            
-            <div class="unit-separator" style="margin: 20px 0 10px 0; border-bottom:2px dashed #ccc; padding-bottom:5px;">
-                <span style="background:#eee; padding:5px 10px; border-radius:5px; font-weight:bold;">Unit 4</span>
-            </div>
-            
-                <div class="mcq-question">
-                    <p class="question-text">The order and degree of the differential equation $\frac{d^2y}{dx^2} +
-                        x(\frac{dy}{dx})^3 = 0$ are:</p>
-                    <div class="mcq-options">
-                        <div class="mcq-option" data-correct="false">A. 1, 1</div>
-                        <div class="mcq-option" data-correct="true">B. 2, 1</div>
-                    </div>
-                    <div class="mcq-explanation">Appeared in 2022</div>
-                </div>
-                <div class="mcq-question">
-                    <p class="question-text">Integrating factor of linear ODE $\frac{dy}{dx} + Py = Q$ is:</p>
-                    <div class="mcq-options">
-                        <div class="mcq-option" data-correct="false">A. $\int P dx$</div>
-                        <div class="mcq-option" data-correct="true">B. $e^{\int P dx}$</div>
-                    </div>
-                    <div class="mcq-explanation">Appeared in 2022, 2024</div>
-                </div>
-                <div class="mcq-question">
-                    <p class="question-text">Solution of $\frac{dy}{dx} = \frac{y}{x}$ is:</p>
-                    <div class="mcq-options">
-                        <div class="mcq-option" data-correct="true">A. $y = cx$</div>
-                        <div class="mcq-option" data-correct="false">B. $x = cy$</div>
-                    </div>
-                    <div class="mcq-explanation">Appeared in 2022</div>
-                </div>
-                <div class="mcq-question">
-                    <p class="question-text">Which of the following is a homogeneous ODE?</p>
-                    <div class="mcq-options">
-                        <div class="mcq-option" data-correct="false">A. $\frac{dy}{dx} = x^2 + y^2$</div>
-                        <div class="mcq-option" data-correct="true">B. $\frac{dy}{dx} = \frac{x^2+y^2}{xy}$</div>
-                    </div>
-                    <div class="mcq-explanation">Appeared in 2022, 2024</div>
-                </div>
-                <div class="mcq-question">
-                    <p class="question-text">The general solution of $\frac{dy}{dx} = e^x$ is:</p>
-                    <div class="mcq-options">
-                        <div class="mcq-option" data-correct="true">A. $y = e^x + c$</div>
-                        <div class="mcq-option" data-correct="false">B. $y = e^x$</div>
-                    </div>
-                    <div class="mcq-explanation">Appeared in 2024</div>
-                </div>
-
-                <div class="mcq-question">
-                    <p class="question-text">The differential equation $Mdx + Ndy = 0$ is exact if:</p>
-                    <div class="mcq-options">
-                        <div class="mcq-option" data-correct="false">A. $\partial M/\partial x = \partial N/\partial y$
-                        </div>
-                        <div class="mcq-option" data-correct="true">B. $\partial M/\partial y = \partial N/\partial x$
-                        </div>
-                        <div class="mcq-option" data-correct="false">C. $\partial M/\partial x = -\partial N/\partial y$
-                        </div>
-                        <div class="mcq-option" data-correct="false">D. $M = N$</div>
-                    </div>
-                    <div class="mcq-explanation">Appeared in PYQ</div>
-                </div>
-
-                <div class="mcq-question">
-                    <p class="question-text">The Bernoulli equation $y' + Py = Qy^n$ is made linear by substituting:</p>
-                    <div class="mcq-options">
-                        <div class="mcq-option" data-correct="false">A. $v = y^n$</div>
-                        <div class="mcq-option" data-correct="true">B. $v = y^{1-n}$</div>
-                        <div class="mcq-option" data-correct="false">C. $v = y^{-n}$</div>
-                        <div class="mcq-option" data-correct="false">D. $v = y$</div>
-                    </div>
-                    <div class="mcq-explanation">Appeared in PYQ</div>
-                </div>
-
-                <div class="mcq-question">
-                    <p class="question-text">The degree of the differential equation $(\frac{d^2y}{dx^2})^2 +
-                        (\frac{dy}{dx})^3 = 0$ is:</p>
-                    <div class="mcq-options">
-                        <div class="mcq-option" data-correct="false">A. 1</div>
-                        <div class="mcq-option" data-correct="true">B. 2 (Power of highest derivative)</div>
-                        <div class="mcq-option" data-correct="false">C. 3</div>
-                        <div class="mcq-option" data-correct="false">D. Undefined</div>
-                    </div>
-                    <div class="mcq-explanation">Appeared in PYQ</div>
-                </div>
-            
-            <div class="unit-separator" style="margin: 20px 0 10px 0; border-bottom:2px dashed #ccc; padding-bottom:5px;">
-                <span style="background:#eee; padding:5px 10px; border-radius:5px; font-weight:bold;">Unit 5</span>
-            </div>
-            
-                <div class="mcq-question">
-                    <p class="question-text">Solution of $(D^2 + 5D + 4)y = 0$ is:</p>
-                    <div class="mcq-options">
-                        <div class="mcq-option" data-correct="true">A. $c_1 e^{-x} + c_2 e^{-4x}$</div>
-                        <div class="mcq-option" data-correct="false">B. $c_1 e^{x} + c_2 e^{4x}$</div>
-                    </div>
-                    <div class="mcq-explanation">Appeared in 2022-23</div>
-                </div>
-                <div class="mcq-question">
-                    <p class="question-text">Particular Integral for $(D^2 + 2D + 1)y = 0$ is:</p>
-                    <div class="mcq-options">
-                        <div class="mcq-option" data-correct="true">A. 0</div>
-                        <div class="mcq-option" data-correct="false">B. 1/2</div>
-                    </div>
-                    <div class="mcq-explanation">Appeared in 2022-23 (RHS is 0, so PI is 0)</div>
-                </div>
-                <div class="mcq-question">
-                    <p class="question-text">The P.I. of $(D^3 - D)y = e^x + e^{-x}$ involves:</p>
-                    <div class="mcq-options">
-                        <div class="mcq-option" data-correct="false">A. $\frac{1}{2}(e^x + e^{-x})$</div>
-                        <div class="mcq-option" data-correct="true">B. Multiplication by x (Case of Failure)</div>
-                    </div>
-                    <div class="mcq-explanation">Appeared in 2022-23</div>
-                </div>
-                <div class="mcq-question">
-                    <p class="question-text">Complementary function for $(D^2 + 1)y = 0$ is:</p>
-                    <div class="mcq-options">
-                        <div class="mcq-option" data-correct="false">A. $c_1 \cos x$</div>
-                        <div class="mcq-option" data-correct="false">B. $c_2 \sin x$</div>
-                        <div class="mcq-option" data-correct="true">D. $c_1 \cos x + c_2 \sin x$</div>
-                    </div>
-                    <div class="mcq-explanation">Appeared in 2022-23</div>
-                </div>
-                <div class="mcq-question">
-                    <p class="question-text">Complementary function for ODE $(D^2 - 4D + 4)y = 0$ is:</p>
-                    <div class="mcq-options">
-                        <div class="mcq-option" data-correct="true">A. $(c_1 + c_2x)e^{2x}$</div>
-                        <div class="mcq-option" data-correct="false">B. $c_1e^{2x} + c_2e^{-2x}$</div>
-                    </div>
-                    <div class="mcq-explanation">Appeared in 2022</div>
-                </div>
-                <div class="mcq-question">
-                    <p class="question-text">Particular integral for $(D^2 + 1)y = e^{2x}$ is:</p>
-                    <div class="mcq-options">
-                        <div class="mcq-option" data-correct="false">A. $e^{2x}/4$</div>
-                        <div class="mcq-option" data-correct="true">B. $e^{2x}/5$</div>
-                        <div class="mcq-option" data-correct="false">C. $e^{2x}/2$</div>
-                    </div>
-                    <div class="mcq-explanation">Appeared in 2022</div>
-                </div>
-                <div class="mcq-question">
-                    <p class="question-text">Find the P.I. of $(D^2 - 4)y = 1$:</p>
-                    <div class="mcq-options">
-                        <div class="mcq-option" data-correct="false">A. -1/6</div>
-                        <div class="mcq-option" data-correct="false">B. -1/5</div>
-                        <div class="mcq-option" data-correct="true">C. -1/4</div>
-                    </div>
-                    <div class="mcq-explanation">Appeared in 2024</div>
-                </div>
-                <div class="mcq-question">
-                    <p class="question-text">Solution of $(D^2 + 1)y = 0$ is:</p>
-                    <div class="mcq-options">
-                        <div class="mcq-option" data-correct="false">A. $c_1 e^x + c_2 e^{-x}$</div>
-                        <div class="mcq-option" data-correct="true">B. $c_1 \cos x + c_2 \sin x$</div>
-                    </div>
-                    <div class="mcq-explanation">Appeared in 2024</div>
-                </div>
-            
-        </div>
-            
-            <div class="mcq-navigation">
-                <button id="prev-btn" class="btn btn-secondary">Previous</button>
+            <div class="mcq-navigation" style="display:flex; justify-content:space-between; margin-top:2rem;">
+                <button id="prev-btn" class="btn btn-secondary" style="background: #e2e8f0; color: var(--text-main);">Previous</button>
                 <button id="next-btn" class="btn btn-primary">Next</button>
             </div>
         </div>
@@ -1845,13 +832,11 @@
     </div>
 
     <footer>
-        <div class="container" style="text-align:center;">
-            <p>© 2026 Sarvasva Notes</p>
-        </div>
+        <p>© 2026 Sarvasva Notes. All Rights Reserved.</p>
     </footer>
 
     <script>
-        // --- Subject Header Toggle ---
+        // Collapsible Logic
         document.querySelectorAll('.subject-header').forEach(header => {
             header.addEventListener('click', () => {
                 const content = header.nextElementSibling;
@@ -1860,47 +845,19 @@
             });
         });
 
-        // --- MCQ System ---
+        // MCQ Logic
         let score = 0;
         let currentQuestion = 0;
         let questions = [];
 
-        function switchTab(unit) {
-            // Update Tabs
-            document.querySelectorAll('.mcq-tab-btn').forEach(btn => {
-                btn.classList.remove('active');
-                btn.style.background = '#fff';
-                btn.style.color = '#333';
-            });
-            const clickedBtn = event.target;
-            clickedBtn.classList.add('active');
-            clickedBtn.style.background = ''; // revert to CSS class style
-            clickedBtn.style.color = '';
-
-            // Update Containers
-            document.querySelectorAll('.mcq-container').forEach(c => {
-                c.classList.remove('active');
-                c.style.display = 'none';
-            });
-            const target = document.getElementById(unit === 'all' ? 'container-all' : 'container-unit-' + unit);
-            if(target) {
-                target.classList.add('active');
-                target.style.display = 'block';
-            }
-            
-            // Re-init
-            initializeQuestions();
-        }
-
         function initializeQuestions() {
             questions = [];
             const container = document.querySelector('.mcq-container.active');
-            if(!container) return; // Should not happen
+            if(!container) return;
 
-            const qElements = container.querySelectorAll('.mcq-question');
-            
-            qElements.forEach(q => {
-                // Reset styling
+            const qEls = container.querySelectorAll('.mcq-question');
+            qEls.forEach(q => {
+                // Reset UI
                 q.querySelectorAll('.mcq-option').forEach(o => {
                     o.classList.remove('selected', 'correct', 'incorrect');
                     o.style.pointerEvents = 'auto';
@@ -1908,14 +865,17 @@
                 const exp = q.querySelector('.mcq-explanation');
                 if(exp) exp.classList.remove('show');
 
-                // Ensure submit button
+                // Inject Button if missing
                 let btn = q.querySelector('.submit-answer-btn');
                 if(!btn) {
                     btn = document.createElement('button');
                     btn.className = 'submit-answer-btn';
                     btn.textContent = 'Submit Answer';
-                    if(exp) q.insertBefore(btn, exp);
-                    else q.appendChild(btn);
+                    btn.classList.add('btn', 'btn-primary'); // Add new classes
+                    btn.style.marginTop = '15px';
+                    // q.appendChild(btn); // Append at end
+                     if(exp) q.insertBefore(btn, exp);
+                     else q.appendChild(btn);
                 }
                 btn.disabled = false;
                 btn.textContent = 'Submit Answer';
@@ -1923,14 +883,16 @@
                 questions.push({ element: q, answered: false });
             });
 
-            document.getElementById('total-questions').textContent = questions.length;
+            const totalQ = document.getElementById('total-questions');
+            if(totalQ) totalQ.textContent = questions.length;
             updateScore(0);
             showQuestion();
         }
 
         function updateScore(s) {
             score = s;
-            document.getElementById('score').textContent = score;
+            const scoreEl = document.getElementById('score');
+            if(scoreEl) scoreEl.textContent = score;
         }
 
         function showQuestion() {
@@ -1941,20 +903,11 @@
             
             const prev = document.getElementById('prev-btn');
             const next = document.getElementById('next-btn');
-            
             if(prev) prev.disabled = currentQuestion === 0;
-            if(next) {
-                if(questions.length === 0) next.style.display = 'none';
-                else {
-                    next.style.display = 'inline-block';
-                    next.innerHTML = currentQuestion === questions.length - 1 ? 'Finish' : 'Next <i class="fas fa-arrow-right"></i>';
-                }
-            }
+            if(next) next.innerHTML = currentQuestion === questions.length - 1 ? 'Finish' : 'Next <i class="fas fa-arrow-right"></i>';
         }
 
-        // --- Event Delegation for MCQ Interactions ---
         document.addEventListener('click', (e) => {
-            // Option Select
             if(e.target.classList.contains('mcq-option')) {
                 const qDiv = e.target.closest('.mcq-question');
                 const btn = qDiv.querySelector('.submit-answer-btn');
@@ -1964,13 +917,12 @@
                 e.target.classList.add('selected');
             }
 
-            // Submit
             if(e.target.classList.contains('submit-answer-btn')) {
                 const btn = e.target;
                 const qDiv = btn.closest('.mcq-question');
                 const selected = qDiv.querySelector('.mcq-option.selected');
                 
-                if(!selected) { alert('Please select an option'); return; }
+                if(!selected) { alert('Please select an option.'); return; }
 
                 const isCorrect = selected.dataset.correct === 'true';
                 if(isCorrect) updateScore(score + 1);
@@ -1990,13 +942,12 @@
             }
         });
 
-        // Navigation
         document.getElementById('next-btn')?.addEventListener('click', () => {
             if(currentQuestion < questions.length - 1) {
                 currentQuestion++;
                 showQuestion();
             } else {
-                 if(questions.length > 0) alert('Section Complete! Score: ' + score);
+                alert('Quiz Complete! Score: ' + score);
             }
         });
 
@@ -2009,20 +960,26 @@
 
         document.getElementById('reset-btn')?.addEventListener('click', () => initializeQuestions());
 
-        // Init
         window.addEventListener('DOMContentLoaded', () => {
             initializeQuestions();
-            // Open first note
-            const h = document.querySelector('.subject-header');
-            if(h) h.click();
+            // Open first note block
+            const firstHeader = document.querySelector('.subject-header');
+            if(firstHeader) firstHeader.click();
         });
-        
-        // Smooth Scroll
+
+        // Smooth scroll
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function (e) {
                 e.preventDefault();
-                const target = document.querySelector(this.getAttribute('href'));
-                if(target) window.scrollTo({ top: target.offsetTop - 80, behavior: 'smooth' });
+                const targetId = this.getAttribute('href');
+                if (targetId === '#') return;
+                const targetElement = document.querySelector(targetId);
+                if (targetElement) {
+                    window.scrollTo({
+                        top: targetElement.offsetTop - 80,
+                        behavior: 'smooth'
+                    });
+                }
             });
         });
     </script>

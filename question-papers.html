@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Question Papers - Sarvasva Notes</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body style="display: flex; flex-direction: column; min-height: 100vh;">
+
+    <header>
+        <div class="container header-content">
+            <div class="logo">
+                <i class="fas fa-graduation-cap"></i>
+                <span>Sarvasva Notes</span>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="index.html"><i class="fas fa-home"></i> Home</a></li>
+                    <li><a href="exam-preparation.html" class="active"><i class="fas fa-fire"></i> Exam Prep</a></li>
+                    <li><a href="https://wa.me/917985040858" target="_blank"><i class="fab fa-whatsapp"></i> Contact</a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <div class="container">
+
+        <div style="margin-bottom: 2rem;">
+            <a href="exam-preparation.html" class="btn btn-secondary"
+                style="background: white; border: 1px solid #e2e8f0; color: var(--text-muted);"><i
+                    class="fas fa-arrow-left"></i> Back to Subjects</a>
+        </div>
+
+        <div class="hero"
+            style="background: linear-gradient(135deg, #4f46e5, #4338ca); padding: 2rem; margin-bottom: 2rem; text-align: left; display: flex; align-items: center; justify-content: space-between;">
+            <div>
+                <h1 style="font-size: 2rem; margin-bottom: 0.5rem;"><i class="fas fa-file-alt"></i> Question Papers</h1>
+                <p style="font-size: 1.1rem; opacity: 0.9; margin: 0;" id="subjectTitle">Loading Subject...</p>
+            </div>
+            <i class="fas fa-file-signature" style="font-size: 4rem; opacity: 0.2;"></i>
+        </div>
+
+        <div class="grid" id="papersGrid">
+            <!-- Papers will be loaded here -->
+        </div>
+
+        <div id="noPapers" style="display: none; text-align: center; padding: 4rem;">
+            <div style="font-size: 4rem; color: var(--text-muted); margin-bottom: 1rem; opacity: 0.5;"><i
+                    class="fas fa-folder-open"></i></div>
+            <h3 style="color: var(--text-main);">No papers available yet</h3>
+            <p style="color: var(--text-muted);">Check back later or contact us on WhatsApp.</p>
+        </div>
+
+    </div>
+
+    <footer style="margin-top: auto;">
+        <p>© 2026 Sarvasva Notes. All Rights Reserved.</p>
+    </footer>
+
+    <script>
+        const subjectData = {
+            'computer-graphics': {
+                title: 'Computer Graphics & Multimedia',
+                papers: [
+                    { year: 'Mock Test', session: 'High Priority', duration: '3 Hours', marks: '100', questions: 100, subjectOverride: 'computer-graphics-mock' },
+                    { year: '2022', session: 'July', duration: '3 Hours', marks: '70', questions: 100 },
+                    { year: '2022-23', session: 'Annual', duration: '3 Hours', marks: '70', questions: 100 },
+                    { year: '2024', session: 'Annual', duration: '3 Hours', marks: '70', questions: 100 },
+                    { year: '2024-25', session: 'Annual', duration: '3 Hours', marks: '70', questions: 100 },
+                    { year: '2024', session: '2nd Paper', duration: '3 Hours', marks: '70', questions: 100 }
+                ]
+            },
+            'dbms': {
+                title: 'Database Management System',
+                papers: [
+                    { year: '2024', session: 'Annual', duration: '3 Hours', marks: '70', questions: 100 },
+                    { year: '2022-23', session: 'Annual', duration: '3 Hours', marks: '70', questions: 100 }
+                ]
+            },
+            'software-engineering': {
+                title: 'Software Engineering',
+                papers: []
+            },
+            'operations-research': {
+                title: 'Operations Research',
+                papers: []
+            },
+            'mathematics': {
+                title: 'Mathematics IV',
+                papers: [
+                    { year: '2024', session: 'Annual', duration: '3 Hours', marks: '70', questions: 100 }
+                ]
+            }
+        };
+
+        function getUrlParameter(name) {
+            name = name.replace(/[\[]/, '\\[').replace(/[\]]/, '\\]');
+            var regex = new RegExp('[\\?&]' + name + '=([^&#]*)');
+            var results = regex.exec(location.search);
+            return results === null ? '' : decodeURIComponent(results[1].replace(/\+/g, ' '));
+        }
+
+        function loadPapers() {
+            const subject = getUrlParameter('subject');
+            const subjectTitle = document.getElementById('subjectTitle');
+            const papersGrid = document.getElementById('papersGrid');
+            const noPapers = document.getElementById('noPapers');
+
+            // Default to computer-graphics for demo if no param
+            const currentSubject = subjectData[subject] ? subject : null;
+
+            if (currentSubject && subjectData[currentSubject]) {
+                const data = subjectData[currentSubject];
+                subjectTitle.textContent = data.title;
+
+                if (data.papers.length > 0) {
+                    papersGrid.innerHTML = '';
+                    noPapers.style.display = 'none';
+
+                    data.papers.forEach((paper) => {
+                        const paperCard = document.createElement('div');
+                        paperCard.className = 'card';
+                        paperCard.style.cssText = 'border-top: 4px solid var(--primary); display: flex; flex-direction: column;';
+
+                        // Use override if present, otherwise default subject
+                        const testSubject = paper.subjectOverride || currentSubject;
+
+                        paperCard.innerHTML = `
+                            <div class="card-header">
+                                <span class="badge" style="background: #e0e7ff; color: var(--primary); font-size: 1rem; padding: 0.5rem 1rem;">${paper.year}</span>
+                                <span style="font-size: 0.9rem; color: var(--text-muted); font-weight: 600;">${paper.session}</span>
+                            </div>
+                            
+                            <div style="display: flex; gap: 1rem; margin-bottom: 1.5rem; color: var(--text-muted); font-size: 0.9rem;">
+                                <span><i class="fas fa-clock"></i> ${paper.duration}</span>
+                                <span><i class="fas fa-star"></i> ${paper.marks} Marks</span>
+                            </div>
+
+                            <button class="btn btn-primary" style="margin-top: auto; justify-content: center;" onclick="startTest('${testSubject}', '${paper.year}', '${paper.session}', ${paper.questions})" ${paper.questions === 0 ? 'disabled' : ''}>
+                                ${paper.questions === 0 ? 'Coming Soon' : `<i class="fas fa-play"></i> Start Test (${paper.questions} Qs)`}
+                            </button>
+                        `;
+                        papersGrid.appendChild(paperCard);
+                    });
+                } else {
+                    papersGrid.innerHTML = '';
+                    noPapers.style.display = 'block';
+                }
+
+            } else {
+                subjectTitle.textContent = 'Subject Not Found';
+                noPapers.style.display = 'block';
+                noPapers.querySelector('h3').textContent = 'Invalid Subject Selected';
+            }
+        }
+
+        function startTest(subject, year, session, questionCount) {
+            if (questionCount === 0) {
+                alert('Question paper coming soon!');
+                return;
+            }
+            
+            // Handle mock test specially
+            if (year === 'Mock Test') {
+                window.location.href = 'mock-test.html';
+                return;
+            }
+            
+            window.location.href = `mcq-test.html?subject=${subject}&year=${year}&session=${session}&questions=${questionCount}`;
+        }
+
+        document.addEventListener('DOMContentLoaded', loadPapers);
+    </script>
+</body>
+
+</html>

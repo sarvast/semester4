@@ -3,524 +3,17 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Software Engineering - Complete Notes</title>
+    <title>Software Engineering - Sarvasva Notes</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
     <!-- MathJax -->
     <script>
         MathJax = { tex: { inlineMath: [['$', '$'], ['\\(', '\\)']] } };
     </script>
     <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
     <style>
-        :root {
-            --primary-color: #2c3e50;
-            --secondary-color: #3498db;
-            --accent-color: #e74c3c;
-            --light-color: #f8f9fa;
-            --success-color: #27ae60;
-            --warning-color: #f39c12;
-            --shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-            --border-radius: 8px;
-        }
-
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-        }
-
-        body {
-            background-color: #f5f7fa;
-            color: #333;
-            line-height: 1.6;
-        }
-
-        .container {
-            width: 90%;
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 20px 0;
-        }
-
-        /* Header & Navigation */
-        header {
-            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
-            color: white;
-            padding: 1.5rem 0;
-            box-shadow: var(--shadow);
-            position: relative;
-            z-index: 100;
-        }
-
-        .header-content {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            flex-wrap: wrap;
-        }
-
-        .logo {
-            display: flex;
-            align-items: center;
-            gap: 10px;
-        }
-
-        .logo i {
-            font-size: 2.5rem;
-        }
-
-        .logo h1 {
-            font-size: 1.8rem;
-            font-weight: 700;
-        }
-
-        .logo p {
-            font-size: 0.9rem;
-            opacity: 0.9;
-        }
-
-        nav ul {
-            display: flex;
-            list-style: none;
-            gap: 25px;
-            flex-wrap: wrap;
-        }
-
-        nav a {
-            color: white;
-            text-decoration: none;
-            font-weight: 600;
-            font-size: 1.1rem;
-            transition: opacity 0.3s;
-            display: flex;
-            align-items: center;
-            gap: 5px;
-        }
-
-        nav a:hover {
-            opacity: 0.9;
-        }
-
-        /* Hero Section */
-        .hero {
-            background: white;
-            border-radius: var(--border-radius);
-            padding: 2.5rem;
-            margin: 2rem 0;
-            box-shadow: var(--shadow);
-            text-align: center;
-        }
-
-        .hero h2 {
-            color: var(--primary-color);
-            margin-bottom: 1rem;
-            font-size: 2.2rem;
-        }
-
-        .hero p {
-            font-size: 1.2rem;
-            margin-bottom: 2rem;
-            color: #555;
-        }
-
-        .cta-buttons {
-            display: flex;
-            justify-content: center;
-            gap: 20px;
-            flex-wrap: wrap;
-            margin-top: 2rem;
-        }
-
-        .btn {
-            padding: 12px 28px;
-            border-radius: 50px;
-            font-weight: 600;
-            font-size: 1.1rem;
-            cursor: pointer;
-            transition: all 0.3s;
-            border: none;
-            display: flex;
-            align-items: center;
-            gap: 10px;
-            text-decoration: none;
-        }
-
-        .btn-primary {
-            background-color: var(--secondary-color);
-            color: white;
-        }
-
-        .btn-primary:hover {
-            background-color: #2980b9;
-            transform: translateY(-3px);
-        }
-
-        .btn-secondary {
-            background-color: var(--warning-color);
-            color: white;
-        }
-
-        .btn-secondary:hover {
-            background-color: #e67e22;
-            transform: translateY(-3px);
-        }
-
-        .btn-tertiary {
-            background-color: var(--success-color);
-            color: white;
-        }
-
-        .btn-tertiary:hover {
-            background-color: #219653;
-            transform: translateY(-3px);
-        }
-
-        /* Subject Sections */
-        .section-title {
-            color: var(--primary-color);
-            margin: 2.5rem 0 1.5rem;
-            padding-bottom: 10px;
-            border-bottom: 3px solid var(--secondary-color);
-            font-size: 1.8rem;
-            display: flex;
-            align-items: center;
-            gap: 10px;
-        }
-
-        .subject-container {
-            background: white;
-            border-radius: var(--border-radius);
-            margin-bottom: 2rem;
-            box-shadow: var(--shadow);
-            overflow: hidden;
-        }
-
-        .subject-header {
-            background-color: var(--primary-color);
-            color: white;
-            padding: 1.2rem 1.5rem;
-            cursor: pointer;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            transition: background-color 0.3s;
-        }
-
-        .subject-header:hover {
-            background-color: #34495e;
-        }
-
-        .subject-header h3 {
-            font-size: 1.5rem;
-            display: flex;
-            align-items: center;
-            gap: 10px;
-        }
-
-        .subject-header i {
-            font-size: 1.2rem;
-            transition: transform 0.3s;
-        }
-
-        .subject-content {
-            padding: 0;
-            max-height: 0;
-            overflow: hidden;
-            transition: all 0.5s ease;
-        }
-
-        .subject-content.active {
-            padding: 2rem;
-            max-height: 5000px;
-        }
-
-        .subject-header.active i {
-            transform: rotate(180deg);
-        }
-
-        /* Notes Content */
-        .topic {
-            margin-bottom: 2rem;
-        }
-
-        .topic h4 {
-            color: var(--primary-color);
-            margin-bottom: 0.8rem;
-            font-size: 1.3rem;
-            display: flex;
-            align-items: center;
-            gap: 10px;
-        }
-
-        .topic-content {
-            background-color: #f8f9fa;
-            padding: 1.5rem;
-            border-radius: var(--border-radius);
-            border-left: 4px solid var(--secondary-color);
-        }
-
-        .topic-content p {
-            margin-bottom: 1rem;
-        }
-
-        .topic-content ul,
-        .topic-content ol {
-            padding-left: 1.5rem;
-            margin-bottom: 1rem;
-        }
-
-        .topic-content li {
-            margin-bottom: 0.5rem;
-        }
-
-        .pyq-badge {
-            display: inline-block;
-            background-color: var(--accent-color);
-            color: white;
-            padding: 4px 12px;
-            border-radius: 20px;
-            font-size: 0.8rem;
-            font-weight: 600;
-            margin-left: 10px;
-            vertical-align: middle;
-        }
-
-        /* MCQ Section */
-        .mcq-section {
-            background-color: white;
-            border-radius: var(--border-radius);
-            padding: 2rem;
-            margin: 3rem 0;
-            box-shadow: var(--shadow);
-        }
-
-        .mcq-container {
-            display: none;
-        }
-
-        .mcq-container.active {
-            display: block;
-        }
-
-        .mcq-subject-tabs {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 10px;
-            margin-bottom: 2rem;
-            border-bottom: 2px solid #eee;
-            padding-bottom: 1rem;
-        }
-
-        .mcq-tab {
-            padding: 10px 20px;
-            background-color: #f1f2f6;
-            border-radius: var(--border-radius);
-            cursor: pointer;
-            font-weight: 600;
-            transition: all 0.3s;
-        }
-
-        .mcq-tab.active {
-            background-color: var(--secondary-color);
-            color: white;
-        }
-
-        .mcq-question {
-            background-color: #f8f9fa;
-            padding: 1.5rem;
-            border-radius: var(--border-radius);
-            margin-bottom: 1.5rem;
-            border-left: 4px solid var(--secondary-color);
-        }
-
-        .mcq-question-number {
-            font-weight: 700;
-            color: var(--primary-color);
-            margin-bottom: 10px;
-            display: flex;
-            justify-content: space-between;
-        }
-
-        .pyq-label {
-            background-color: var(--warning-color);
-            color: white;
-            padding: 3px 10px;
-            border-radius: 15px;
-            font-size: 0.8rem;
-            font-weight: 600;
-        }
-
-        .mcq-options {
-            margin-top: 1rem;
-        }
-
-        .mcq-option {
-            padding: 12px 15px;
-            margin-bottom: 10px;
-            background-color: white;
-            border-radius: var(--border-radius);
-            border: 2px solid #ddd;
-            cursor: pointer;
-            transition: all 0.2s;
-        }
-
-        .mcq-option:hover {
-            border-color: var(--secondary-color);
-            background-color: #f0f8ff;
-        }
-
-        .mcq-option.selected {
-            border-color: var(--secondary-color);
-            background-color: #3498db;
-            color: white;
-        }
-
-        .mcq-option.correct {
-            border-color: var(--success-color);
-            background-color: #d5f4e6;
-            color: #333;
-        }
-
-        .mcq-option.incorrect {
-            border-color: var(--accent-color);
-            background-color: #fde8e8;
-            color: #333;
-        }
-
-        .submit-answer-btn {
-            background-color: var(--primary-color);
-            color: white;
-            border: none;
-            padding: 8px 16px;
-            border-radius: 4px;
-            cursor: pointer;
-            margin-top: 10px;
-            font-size: 0.9rem;
-            transition: background 0.3s;
-        }
-
-        .submit-answer-btn:hover {
-            background-color: #34495e;
-        }
-
-        .submit-answer-btn:disabled {
-            background-color: #bdc3c7;
-            cursor: not-allowed;
-        }
-
-        .mcq-explanation {
-            padding: 1rem;
-            background-color: #f0f8ff;
-            border-radius: var(--border-radius);
-            margin-top: 1rem;
-            display: none;
-            border-left: 4px solid var(--secondary-color);
-        }
-
-        .mcq-explanation.show {
-            display: block;
-        }
-
-        .mcq-navigation {
-            display: flex;
-            justify-content: space-between;
-            margin-top: 2rem;
-        }
-
-        .score-display {
-            background-color: var(--primary-color);
-            color: white;
-            padding: 1rem;
-            border-radius: var(--border-radius);
-            text-align: center;
-            margin-bottom: 1.5rem;
-            font-weight: 600;
-        }
-
-        /* Footer */
-        footer {
-            background-color: var(--primary-color);
-            color: white;
-            text-align: center;
-            padding: 2rem 0;
-            margin-top: 3rem;
-        }
-
-        footer p {
-            margin-bottom: 1rem;
-        }
-
-        /* Responsive Design */
-        @media (max-width: 768px) {
-            .header-content {
-                flex-direction: column;
-                text-align: center;
-                gap: 1rem;
-            }
-
-            nav ul {
-                justify-content: center;
-            }
-
-            .hero h2 {
-                font-size: 1.8rem;
-            }
-
-            .hero p {
-                font-size: 1rem;
-            }
-
-            .btn {
-                padding: 10px 20px;
-                font-size: 1rem;
-            }
-
-            .subject-header h3 {
-                font-size: 1.2rem;
-            }
-
-            .topic h4 {
-                font-size: 1.1rem;
-            }
-
-            .mcq-subject-tabs {
-                justify-content: center;
-            }
-        }
-
-        @media (max-width: 480px) {
-            .container {
-                width: 95%;
-            }
-
-            .hero {
-                padding: 1.5rem;
-            }
-
-            .cta-buttons {
-                flex-direction: column;
-                align-items: center;
-            }
-
-            .subject-content.active {
-                padding: 1.5rem;
-            }
-
-            .mcq-navigation {
-                flex-direction: column;
-                gap: 15px;
-            }
-        }
-    </style>
-    <style>
-        .mcq-tab-btn.active {
-            background-color: var(--secondary-color) !important;
-            color: white !important;
-            border-color: var(--secondary-color) !important;
-        }
-        .mcq-tab-btn {
-            transition: all 0.3s;
-        }
+        /* Specific overrides for Subject Pages */
+        .subject-notes-wrapper { display: flex; flex-direction: column; gap: 1.5rem; }
     </style>
 </head>
 <body>
@@ -530,8 +23,8 @@
             <div class="logo">
                 <i class="fas fa-graduation-cap"></i>
                 <div>
-                    <h1>Sarvasva Notes</h1>
-                    <p>Software Engineering</p>
+                   <span style="display:block; line-height:1;">Sarvasva Notes</span>
+                   <span style="font-size: 0.8rem; opacity: 0.8; font-weight: 400;">Software Engineering</span>
                 </div>
             </div>
             <nav>
@@ -539,7 +32,7 @@
                     <li><a href="index.html"><i class="fas fa-home"></i> Home</a></li>
                     <li><a href="graphics.html" class="">Graphics</a></li>
                     <li><a href="dbms.html" class="">DBMS</a></li>
-                    <li><a href="se.html" class="active-nav">SE</a></li>
+                    <li><a href="se.html" class="active">SE</a></li>
                     <li><a href="optimization.html" class="">Optimization</a></li>
                     <li><a href="math.html" class="">Math</a></li>
                 </ul>
@@ -549,24 +42,25 @@
 
     <div class="container">
         <!-- Hero -->
-        <section class="hero">
-            <h2>Software Engineering</h2>
-            <p>Complete Subject Notes & MCQs (organized by Unit)</p>
-            <div class="cta-buttons">
-                <a href="#notes" class="btn btn-primary">Read Notes</a>
-                <a href="#mcq" class="btn btn-secondary">Practice MCQs</a>
+        <section class="hero" style="padding: 3rem 1rem; margin-bottom: 2rem;">
+            <h2><i class="fas fa-code"></i> Software Engineering</h2>
+            <p>Comprehensive compilation of notes and MCQs from all 5 Units.</p>
+            <div style="display:flex; justify-content:center; gap:1rem;">
+                <a href="#notes" class="btn btn-primary"><i class="fas fa-book"></i> Notes</a>
+                <a href="#mcq" class="btn btn-secondary"><i class="fas fa-question-circle"></i> MCQs</a>
             </div>
         </section>
 
-        <!-- Notes -->
-        <h2 class="section-title" id="notes"><i class="fas fa-book-open"></i> Subject Notes</h2>
-        <div class="notes-wrapper">
+        <!-- Notes Section -->
+        <h2 class="section-title" id="notes"><i class="fas fa-book-open"></i> Complete Notes (Unit 1-5)</h2>
+        <div class="subject-notes-wrapper">
             
-                <div class="unit-block" style="margin-bottom: 30px;">
-                    <div style="background: #f1f2f6; padding: 8px 15px; border-radius: 5px 5px 0 0; border-left: 4px solid #2c3e50;">
-                        <h4 style="margin:0; color:#2c3e50;">Unit 1</h4>
+                <div class="unit-block" style="margin-bottom: 40px; border: 1px solid #e0e0e0; border-radius: 8px; overflow: hidden;">
+                    <div style="background: #f8f9fa; padding: 10px 20px; border-bottom: 1px solid #ddd;">
+                        <h3 style="margin:0; color: #555; font-size: 1.1rem;">Unit 1 Content</h3>
                     </div>
-                    <div class="subject-container">
+                    <div style="padding: 10px;">
+                        <div class="subject-container">
             <div class="subject-header">
                 <h3><i class="fas fa-code"></i> Software Engineering (BCA-4003)</h3>
                 <i class="fas fa-chevron-down"></i>
@@ -631,13 +125,15 @@
                 </div>
             </div>
         </div>
+                    </div>
                 </div>
 
-                <div class="unit-block" style="margin-bottom: 30px;">
-                    <div style="background: #f1f2f6; padding: 8px 15px; border-radius: 5px 5px 0 0; border-left: 4px solid #2c3e50;">
-                        <h4 style="margin:0; color:#2c3e50;">Unit 2</h4>
+                <div class="unit-block" style="margin-bottom: 40px; border: 1px solid #e0e0e0; border-radius: 8px; overflow: hidden;">
+                    <div style="background: #f8f9fa; padding: 10px 20px; border-bottom: 1px solid #ddd;">
+                        <h3 style="margin:0; color: #555; font-size: 1.1rem;">Unit 2 Content</h3>
                     </div>
-                    <div class="subject-container">
+                    <div style="padding: 10px;">
+                        <div class="subject-container">
             <div class="subject-header">
                 <h3><i class="fas fa-code"></i> Software Engineering</h3>
                 <i class="fas fa-chevron-down"></i>
@@ -709,13 +205,15 @@
                 </div>
             </div>
         </div>
+                    </div>
                 </div>
 
-                <div class="unit-block" style="margin-bottom: 30px;">
-                    <div style="background: #f1f2f6; padding: 8px 15px; border-radius: 5px 5px 0 0; border-left: 4px solid #2c3e50;">
-                        <h4 style="margin:0; color:#2c3e50;">Unit 3</h4>
+                <div class="unit-block" style="margin-bottom: 40px; border: 1px solid #e0e0e0; border-radius: 8px; overflow: hidden;">
+                    <div style="background: #f8f9fa; padding: 10px 20px; border-bottom: 1px solid #ddd;">
+                        <h3 style="margin:0; color: #555; font-size: 1.1rem;">Unit 3 Content</h3>
                     </div>
-                    <div class="subject-container">
+                    <div style="padding: 10px;">
+                        <div class="subject-container">
             <div class="subject-header">
                 <h3><i class="fas fa-code"></i> Software Engineering</h3>
                 <i class="fas fa-chevron-down"></i>
@@ -756,13 +254,15 @@
                 </div>
             </div>
         </div>
+                    </div>
                 </div>
 
-                <div class="unit-block" style="margin-bottom: 30px;">
-                    <div style="background: #f1f2f6; padding: 8px 15px; border-radius: 5px 5px 0 0; border-left: 4px solid #2c3e50;">
-                        <h4 style="margin:0; color:#2c3e50;">Unit 4</h4>
+                <div class="unit-block" style="margin-bottom: 40px; border: 1px solid #e0e0e0; border-radius: 8px; overflow: hidden;">
+                    <div style="background: #f8f9fa; padding: 10px 20px; border-bottom: 1px solid #ddd;">
+                        <h3 style="margin:0; color: #555; font-size: 1.1rem;">Unit 4 Content</h3>
                     </div>
-                    <div class="subject-container">
+                    <div style="padding: 10px;">
+                        <div class="subject-container">
             <div class="subject-header">
                 <h3><i class="fas fa-code"></i> Software Engineering</h3>
                 <i class="fas fa-chevron-down"></i>
@@ -824,13 +324,15 @@
                 </div>
             </div>
         </div>
+                    </div>
                 </div>
 
-                <div class="unit-block" style="margin-bottom: 30px;">
-                    <div style="background: #f1f2f6; padding: 8px 15px; border-radius: 5px 5px 0 0; border-left: 4px solid #2c3e50;">
-                        <h4 style="margin:0; color:#2c3e50;">Unit 5</h4>
+                <div class="unit-block" style="margin-bottom: 40px; border: 1px solid #e0e0e0; border-radius: 8px; overflow: hidden;">
+                    <div style="background: #f8f9fa; padding: 10px 20px; border-bottom: 1px solid #ddd;">
+                        <h3 style="margin:0; color: #555; font-size: 1.1rem;">Unit 5 Content</h3>
                     </div>
-                    <div class="subject-container">
+                    <div style="padding: 10px;">
+                        <div class="subject-container">
             <div class="subject-header">
                 <h3><i class="fas fa-tools"></i> Software Engineering</h3>
                 <i class="fas fa-chevron-down"></i>
@@ -866,25 +368,20 @@
                 </div>
             </div>
         </div>
+                    </div>
                 </div>
         </div>
 
-        <!-- MCQs -->
-        <h2 class="section-title" id="mcq"><i class="fas fa-question-circle"></i> MCQ Practice</h2>
+        <!-- MCQ Section -->
+        <h2 class="section-title" id="mcq" style="margin-top: 4rem;"><i class="fas fa-question-circle"></i> MCQ Practice</h2>
         <div class="mcq-section">
             <div class="score-display">
-                Score: <span id="score">0</span> / <span id="total-questions">0</span>
-                <button id="reset-btn" class="btn btn-secondary" style="font-size:0.8rem; padding:4px 10px; margin-left:10px;">Reset</button>
+                <p>Score: <span id="score">0</span> / <span id="total-questions">0</span></p>
+                <button id="reset-btn" class="btn btn-secondary" style="font-size:0.8rem; padding: 5px 15px; color: var(--primary); background: white; border: 1px solid var(--primary); margin-top: 10px;">Reset Quiz</button>
             </div>
             
-            <div class="mcq-tabs" style="display:flex; gap:10px; margin-bottom:20px; flex-wrap:wrap;">
-            <button class="mcq-tab-btn active btn btn-secondary" onclick="switchTab('all')">All Units</button><button class="mcq-tab-btn btn btn-secondary" onclick="switchTab('1')" style="background:#fff; color:#333; border:1px solid #ddd;">Unit 1</button><button class="mcq-tab-btn btn btn-secondary" onclick="switchTab('2')" style="background:#fff; color:#333; border:1px solid #ddd;">Unit 2</button><button class="mcq-tab-btn btn btn-secondary" onclick="switchTab('3')" style="background:#fff; color:#333; border:1px solid #ddd;">Unit 3</button><button class="mcq-tab-btn btn btn-secondary" onclick="switchTab('4')" style="background:#fff; color:#333; border:1px solid #ddd;">Unit 4</button><button class="mcq-tab-btn btn btn-secondary" onclick="switchTab('5')" style="background:#fff; color:#333; border:1px solid #ddd;">Unit 5</button></div>
-            
-            <div class="mcq-container" id="container-unit-1" style="display:none;">
-                <div style="background:#e8f5e9; padding:10px; margin-bottom:15px; border-radius:5px;">
-                    <strong>Unit 1 Questions</strong>
-                </div>
-                
+            <div class="mcq-container active">
+                <!-- Unit 1 MCQs --> <div class="unit-mcq-label" style="background:#eee; padding:5px; margin:10px 0; font-weight:bold;">Unit 1 Questions</div>
                     <!-- MCQ 1 -->
                     <div class="mcq-question">
                         <div class="mcq-question-number">
@@ -1035,12 +532,7 @@
                         </div>
                     </div>
                 
-            </div>
-            <div class="mcq-container" id="container-unit-2" style="display:none;">
-                <div style="background:#e8f5e9; padding:10px; margin-bottom:15px; border-radius:5px;">
-                    <strong>Unit 2 Questions</strong>
-                </div>
-                
+<!-- Unit 2 MCQs --> <div class="unit-mcq-label" style="background:#eee; padding:5px; margin:10px 0; font-weight:bold;">Unit 2 Questions</div>
             <div class="mcq-question">
                 <p class="question-text">Which of the following is NOT a requirement elicitation technique?</p>
                 <div class="mcq-options">
@@ -1110,12 +602,7 @@
             </div>
             <div class="mcq-explanation">Appeared in 2022</div>
         
-            </div>
-            <div class="mcq-container" id="container-unit-3" style="display:none;">
-                <div style="background:#e8f5e9; padding:10px; margin-bottom:15px; border-radius:5px;">
-                    <strong>Unit 3 Questions</strong>
-                </div>
-                
+<!-- Unit 3 MCQs --> <div class="unit-mcq-label" style="background:#eee; padding:5px; margin:10px 0; font-weight:bold;">Unit 3 Questions</div>
                     <div class="mcq-question">
                         <p class="question-text">The relationship of data elements in a module is called (or
                             intra-dependability):</p>
@@ -1196,12 +683,7 @@
                         <div class="mcq-explanation">Appeared in PYQ</div>
                     </div>
                 
-            </div>
-            <div class="mcq-container" id="container-unit-4" style="display:none;">
-                <div style="background:#e8f5e9; padding:10px; margin-bottom:15px; border-radius:5px;">
-                    <strong>Unit 4 Questions</strong>
-                </div>
-                
+<!-- Unit 4 MCQs --> <div class="unit-mcq-label" style="background:#eee; padding:5px; margin:10px 0; font-weight:bold;">Unit 4 Questions</div>
                 <div class="mcq-question">
                     <p class="question-text">Which of the following is NOT recommended in good coding style?</p>
                     <div class="mcq-options">
@@ -1278,12 +760,7 @@
                     <div class="mcq-explanation">Appeared in PYQ</div>
                 </div>
             
-            </div>
-            <div class="mcq-container" id="container-unit-5" style="display:none;">
-                <div style="background:#e8f5e9; padding:10px; margin-bottom:15px; border-radius:5px;">
-                    <strong>Unit 5 Questions</strong>
-                </div>
-                
+<!-- Unit 5 MCQs --> <div class="unit-mcq-label" style="background:#eee; padding:5px; margin:10px 0; font-weight:bold;">Unit 5 Questions</div>
                 <div class="mcq-question">
                     <p class="question-text">Which maintenance activity deals with changing Software to keep it usable
                         in a changed environment?</p>
@@ -1335,457 +812,9 @@
                 </div>
             
             </div>
-        <div class="mcq-container active" id="container-all">
             
-            <div class="unit-separator" style="margin: 20px 0 10px 0; border-bottom:2px dashed #ccc; padding-bottom:5px;">
-                <span style="background:#eee; padding:5px 10px; border-radius:5px; font-weight:bold;">Unit 1</span>
-            </div>
-            
-                    <!-- MCQ 1 -->
-                    <div class="mcq-question">
-                        <div class="mcq-question-number">
-                            <span>1. What is Software Engineering?</span>
-                            <span class="pyq-label">PYQ 2024</span>
-                        </div>
-                        <div class="mcq-options">
-                            <div class="mcq-option" data-correct="true">A. Systematic, disciplined, quantifiable
-                                approach to development</div>
-                            <div class="mcq-option" data-correct="false">B. Only writing code</div>
-                            <div class="mcq-option" data-correct="false">C. Manufacturing of hardware</div>
-                            <div class="mcq-option" data-correct="false">D. Just testing software</div>
-                        </div>
-                    </div>
-
-                    <!-- MCQ 2 -->
-                    <div class="mcq-question">
-                        <div class="mcq-question-number">
-                            <span>2. Who is the father of software engineering?</span>
-                            <span class="pyq-label">PYQ 2024</span>
-                        </div>
-                        <div class="mcq-options">
-                            <div class="mcq-option" data-correct="true">A. Watts S. Humphrey</div>
-                            <div class="mcq-option" data-correct="false">B. Alan Turing</div>
-                            <div class="mcq-option" data-correct="false">C. Charles Babbage</div>
-                            <div class="mcq-option" data-correct="false">D. Bill Gates</div>
-                        </div>
-                        <div class="mcq-explanation">
-                            <strong>Explanation:</strong> Watts S. Humphrey is often called the "father of software
-                            engineering" for his contributions to software process improvement.
-                        </div>
-                    </div>
-
-                    <!-- MCQ 3 -->
-                    <div class="mcq-question">
-                        <div class="mcq-question-number">
-                            <span>3. Software is:</span>
-                            <span class="pyq-label">PYQ 2022</span>
-                        </div>
-                        <div class="mcq-options">
-                            <div class="mcq-option" data-correct="true">A. Developed or engineered</div>
-                            <div class="mcq-option" data-correct="false">B. Manufactured in the classical sense</div>
-                            <div class="mcq-option" data-correct="false">C. Always correct</div>
-                            <div class="mcq-option" data-correct="false">D. Physical entity</div>
-                        </div>
-                    </div>
-
-                    <!-- MCQ 4 -->
-                    <div class="mcq-question">
-                        <div class="mcq-question-number">
-                            <span>4. Which model is also known as the "Classic Life Cycle" or "Linear Sequential
-                                Model"?</span>
-                            <span class="pyq-label">PYQ 2024</span>
-                        </div>
-                        <div class="mcq-options">
-                            <div class="mcq-option" data-correct="true">A. Waterfall Model</div>
-                            <div class="mcq-option" data-correct="false">B. Spiral Model</div>
-                            <div class="mcq-option" data-correct="false">C. Prototype Model</div>
-                            <div class="mcq-option" data-correct="false">D. RAD Model</div>
-                        </div>
-                    </div>
-
-                    <!-- MCQ 5 -->
-                    <div class="mcq-question">
-                        <div class="mcq-question-number">
-                            <span>5. Which model is best for high-risk projects?</span>
-                            <span class="pyq-label">PYQ 2022</span>
-                        </div>
-                        <div class="mcq-options">
-                            <div class="mcq-option" data-correct="false">A. Waterfall</div>
-                            <div class="mcq-option" data-correct="true">B. Spiral Model</div>
-                            <div class="mcq-option" data-correct="false">C. Incremental Model</div>
-                            <div class="mcq-option" data-correct="false">D. V-Model</div>
-                        </div>
-                        <div class="mcq-explanation">
-                            <strong>Explanation:</strong> Spiral model is risk-driven and iterative, making it suitable
-                            for high-risk projects where requirements may change.
-                        </div>
-                    </div>
-
-                    <!-- MCQ 6 -->
-                    <div class="mcq-question">
-                        <div class="mcq-question-number">
-                            <span>6. Which phase is NOT available in the software life cycle?</span>
-                            <span class="pyq-label">PYQ 2022</span>
-                        </div>
-                        <div class="mcq-options">
-                            <div class="mcq-option" data-correct="false">A. Coding</div>
-                            <div class="mcq-option" data-correct="false">B. Testing</div>
-                            <div class="mcq-option" data-correct="false">C. Maintenance</div>
-                            <div class="mcq-option" data-correct="true">D. Abstraction</div>
-                        </div>
-                    </div>
-
-                    <!-- MCQ 7 -->
-                    <div class="mcq-question">
-                        <div class="mcq-question-number">
-                            <span>7. Feasibility study is conducted in which phase?</span>
-                            <span class="pyq-label">PYQ 2024</span>
-                        </div>
-                        <div class="mcq-options">
-                            <div class="mcq-option" data-correct="true">A. Planning / Analysis</div>
-                            <div class="mcq-option" data-correct="false">B. Design</div>
-                            <div class="mcq-option" data-correct="false">C. Testing</div>
-                            <div class="mcq-option" data-correct="false">D. Maintenance</div>
-                        </div>
-                    </div>
-
-                    <!-- MCQ 8 -->
-                    <div class="mcq-question">
-                        <div class="mcq-question-number">
-                            <span>8. SDLC stands for?</span>
-                            <span class="pyq-label">PYQ 2023</span>
-                        </div>
-                        <div class="mcq-options">
-                            <div class="mcq-option" data-correct="true">A. Software Development Life Cycle</div>
-                            <div class="mcq-option" data-correct="false">B. System Design Life Cycle</div>
-                            <div class="mcq-option" data-correct="false">C. Software Design Life Cycle</div>
-                            <div class="mcq-option" data-correct="false">D. System Development Life Cycle</div>
-                        </div>
-                    </div>
-
-                    <!-- MCQ 9 -->
-                    <div class="mcq-question">
-                        <div class="mcq-question-number">
-                            <span>9. White box testing is also known as?</span>
-                            <span class="pyq-label">PYQ 2024</span>
-                        </div>
-                        <div class="mcq-options">
-                            <div class="mcq-option" data-correct="true">A. Structural Testing</div>
-                            <div class="mcq-option" data-correct="false">B. Functional Testing</div>
-                            <div class="mcq-option" data-correct="false">C. Grey Box Testing</div>
-                            <div class="mcq-option" data-correct="false">D. None of the above</div>
-                        </div>
-                    </div>
-
-                    <!-- MCQ 10 -->
-                    <div class="mcq-question">
-                        <div class="mcq-question-number">
-                            <span>10. SRS stands for?</span>
-                            <span class="pyq-label">PYQ 2022</span>
-                        </div>
-                        <div class="mcq-options">
-                            <div class="mcq-option" data-correct="true">A. Software Requirements Specification</div>
-                            <div class="mcq-option" data-correct="false">B. System Requirements Specification</div>
-                            <div class="mcq-option" data-correct="false">C. Software Recruitment System</div>
-                            <div class="mcq-option" data-correct="false">D. System Reference Sheet</div>
-                        </div>
-                    </div>
-                
-            <div class="unit-separator" style="margin: 20px 0 10px 0; border-bottom:2px dashed #ccc; padding-bottom:5px;">
-                <span style="background:#eee; padding:5px 10px; border-radius:5px; font-weight:bold;">Unit 2</span>
-            </div>
-            
-            <div class="mcq-question">
-                <p class="question-text">Which of the following is NOT a requirement elicitation technique?</p>
-                <div class="mcq-options">
-                    <div class="mcq-option" data-correct="false">A. Interviews</div>
-                    <div class="mcq-option" data-correct="false">B. Brainstorming</div>
-                    <div class="mcq-option" data-correct="true">C. Flowcharting (This is a design/modeling tool)</div>
-                    <div class="mcq-option" data-correct="false">D. Observation</div>
-                </div>
-                <div class="mcq-explanation">Appeared in 2024</div>
-            </div>
-
-            <div class="mcq-question">
-                <p class="question-text">Which document is created by the system analyst after the requirements are
-                    collected from various stakeholders?</p>
-                <div class="mcq-options">
-                    <div class="mcq-option" data-correct="true">A. Software Requirement Specification (SRS)</div>
-                    <div class="mcq-option" data-correct="false">B. Software Requirement Validation</div>
-                    <div class="mcq-option" data-correct="false">C. Feasibility Study</div>
-                    <div class="mcq-option" data-correct="false">D. Testing Document</div>
-                </div>
-                <div class="mcq-explanation">Appeared in 2022</div>
-            </div>
-
-            <div class="mcq-question">
-                <p class="question-text">Which one is NOT a characteristic of a good SRS?</p>
-                <div class="mcq-options">
-                    <div class="mcq-option" data-correct="false">A. Correct</div>
-                    <div class="mcq-option" data-correct="false">B. Complete</div>
-                    <div class="mcq-option" data-correct="false">C. Consistent</div>
-                    <div class="mcq-option" data-correct="true">D. Brief (It should be detailed...)</div>
-                </div>
-                <div class="mcq-explanation">Appeared in 2022</div>
-            </div>
-
-            <div class="mcq-question">
-                <p class="question-text">Feasibility study is the first step in which phase?</p>
-                <div class="mcq-options">
-                    <div class="mcq-option" data-correct="true">A. Analysis / Planning</div>
-                    <div class="mcq-option" data-correct="false">B. Design</div>
-                    <div class="mcq-option" data-correct="false">C. Coding</div>
-                    <div class="mcq-option" data-correct="false">D. Testing</div>
-                </div>
-                <div class="mcq-explanation">Appeared in 2022</div>
-            </div>
-
-            <div class="mcq-question">
-                <p class="question-text">Which type of DFD concentrates on the system process and flow of data in the
-                    system?</p>
-                <div class="mcq-options">
-                    <div class="mcq-option" data-correct="true">A. Logical DFD</div>
-                    <div class="mcq-option" data-correct="false">B. Physical DFD</div>
-                    <div class="mcq-option" data-correct="false">C. Flowchart DFD</div>
-                    <div class="mcq-option" data-correct="false">D. System DFD</div>
-                </div>
-                <div class="mcq-explanation">Appeared in 2022</div>
-            </div>
-
-            <div class="mcq-question">
-                <p class="question-text">Context Diagram explains:</p>
-                <div class="mcq-options">
-                    <div class="mcq-option" data-correct="true">A. The overview of the system (Level-0 DFD)</div>
-                    <div class="mcq-option" data-correct="false">B. The internal view of the system</div>
-                    <div class="mcq-option" data-correct="false">C. The entities of the system</div>
-                    <div class="mcq-option" data-correct="false">D. None of the above</div>
-                </div>
-                <div class="mcq-explanation">Appeared in 2022</div>
-            </div>
-            <div class="mcq-explanation">Appeared in 2022</div>
-        
-            <div class="unit-separator" style="margin: 20px 0 10px 0; border-bottom:2px dashed #ccc; padding-bottom:5px;">
-                <span style="background:#eee; padding:5px 10px; border-radius:5px; font-weight:bold;">Unit 3</span>
-            </div>
-            
-                    <div class="mcq-question">
-                        <p class="question-text">The relationship of data elements in a module is called (or
-                            intra-dependability):</p>
-                        <div class="mcq-options">
-                            <div class="mcq-option" data-correct="false">A. Coupling</div>
-                            <div class="mcq-option" data-correct="false">B. Modularity</div>
-                            <div class="mcq-option" data-correct="true">C. Cohesion</div>
-                            <div class="mcq-option" data-correct="false">D. None of the above</div>
-                        </div>
-                        <div class="mcq-explanation">Appeared in: 2022, 2023</div>
-                    </div>
-
-                    <div class="mcq-question">
-                        <p class="question-text">The extent to which different modules are dependent upon each other is
-                            called?</p>
-                        <div class="mcq-options">
-                            <div class="mcq-option" data-correct="false">A. Cohesion</div>
-                            <div class="mcq-option" data-correct="true">B. Coupling</div>
-                            <div class="mcq-option" data-correct="false">C. Modularity</div>
-                            <div class="mcq-option" data-correct="false">D. Stability</div>
-                        </div>
-                        <div class="mcq-explanation">Appeared in: 2022, 2024</div>
-                    </div>
-
-                    <div class="mcq-question">
-                        <p class="question-text">Which coupling is also known as Global Coupling?</p>
-                        <div class="mcq-options">
-                            <div class="mcq-option" data-correct="false">A. Content coupling</div>
-                            <div class="mcq-option" data-correct="false">B. Stamp coupling</div>
-                            <div class="mcq-option" data-correct="true">C. Common coupling</div>
-                            <div class="mcq-option" data-correct="false">D. Data coupling</div>
-                        </div>
-                        <div class="mcq-explanation">Appeared in: 2022</div>
-                    </div>
-
-                    <div class="mcq-question">
-                        <p class="question-text">Which is the best type of coupling? (Lowest dependency)</p>
-                        <div class="mcq-options">
-                            <div class="mcq-option" data-correct="false">A. Control coupling</div>
-                            <div class="mcq-option" data-correct="true">B. Data coupling</div>
-                            <div class="mcq-option" data-correct="false">C. Content coupling</div>
-                            <div class="mcq-option" data-correct="false">D. Stamp coupling</div>
-                        </div>
-                        <div class="mcq-explanation">Appeared in: 2022</div>
-                    </div>
-
-                    <div class="mcq-question">
-                        <p class="question-text">Which of the following is the highest form of cohesion?</p>
-                        <div class="mcq-options">
-                            <div class="mcq-option" data-correct="false">A. Temporal cohesion</div>
-                            <div class="mcq-option" data-correct="false">B. Procedural cohesion</div>
-                            <div class="mcq-option" data-correct="true">C. Functional cohesion</div>
-                            <div class="mcq-option" data-correct="false">D. Logical cohesion</div>
-                        </div>
-                        <div class="mcq-explanation">Appeared in: 2022</div>
-                    </div>
-
-                    <div class="mcq-question">
-                        <p class="question-text">Which tool is used for structure design?</p>
-                        <div class="mcq-options">
-                            <div class="mcq-option" data-correct="true">A. Structure chart</div>
-                            <div class="mcq-option" data-correct="false">B. Program flow chart</div>
-                            <div class="mcq-option" data-correct="false">C. Data flow diagram</div>
-                            <div class="mcq-option" data-correct="false">D. Module</div>
-                        </div>
-                        <div class="mcq-explanation">Appeared in: 2022, 2024</div>
-                    </div>
-
-                    <div class="mcq-question">
-                        <p class="question-text">The number of modules directly controlled by a given module is known
-                            as:</p>
-                        <div class="mcq-options">
-                            <div class="mcq-option" data-correct="false">A. Fan-in</div>
-                            <div class="mcq-option" data-correct="true">B. Fan-out</div>
-                            <div class="mcq-option" data-correct="false">C. Depth</div>
-                            <div class="mcq-option" data-correct="false">D. Width</div>
-                        </div>
-                        <div class="mcq-explanation">Appeared in PYQ</div>
-                    </div>
-                
-            <div class="unit-separator" style="margin: 20px 0 10px 0; border-bottom:2px dashed #ccc; padding-bottom:5px;">
-                <span style="background:#eee; padding:5px 10px; border-radius:5px; font-weight:bold;">Unit 4</span>
-            </div>
-            
-                <div class="mcq-question">
-                    <p class="question-text">Which of the following is NOT recommended in good coding style?</p>
-                    <div class="mcq-options">
-                        <div class="mcq-option" data-correct="true">A. Writing long functions with hundreds of lines
-                        </div>
-                        <div class="mcq-option" data-correct="false">B. Adding inline comments</div>
-                        <div class="mcq-option" data-correct="false">C. Keeping functions small</div>
-                        <div class="mcq-option" data-correct="false">D. Using consistent formatting</div>
-                    </div>
-                    <div class="mcq-explanation">Appeared in 2022</div>
-                </div>
-                <div class="mcq-question">
-                    <p class="question-text">What is the primary goal of following a good coding style?</p>
-                    <div class="mcq-options">
-                        <div class="mcq-option" data-correct="false">A. To make code run faster</div>
-                        <div class="mcq-option" data-correct="true">B. To improve code readability and maintainability
-                        </div>
-                        <div class="mcq-option" data-correct="false">C. To reduce file size</div>
-                    </div>
-                    <div class="mcq-explanation">Appeared in 2022</div>
-                </div>
-                <div class="mcq-question">
-                    <p class="question-text">Why is commenting your code important?</p>
-                    <div class="mcq-options">
-                        <div class="mcq-option" data-correct="false">A. It helps the compiler</div>
-                        <div class="mcq-option" data-correct="false">B. It makes code run faster</div>
-                        <div class="mcq-option" data-correct="true">C. It helps other developers (and you) understand
-                            logic</div>
-                    </div>
-                    <div class="mcq-explanation">Appeared in 2022</div>
-                </div>
-                <div class="mcq-question">
-                    <p class="question-text">In software testing, the bug can occur for the:</p>
-                    <div class="mcq-options">
-                        <div class="mcq-option" data-correct="true">A. Wrong coding</div>
-                        <div class="mcq-option" data-correct="false">B. Missing coding</div>
-                        <div class="mcq-option" data-correct="false">C. Extra coding</div>
-                        <div class="mcq-option" data-correct="false">D. All of the above</div>
-                    </div>
-                    <div class="mcq-explanation">Appeared in 2024</div>
-                </div>
-
-                <div class="mcq-question">
-                    <p class="question-text">Which testing is performed by the developer who writes the code?</p>
-                    <div class="mcq-options">
-                        <div class="mcq-option" data-correct="false">A. System Testing</div>
-                        <div class="mcq-option" data-correct="true">B. Unit Testing</div>
-                        <div class="mcq-option" data-correct="false">C. Acceptance Testing</div>
-                        <div class="mcq-option" data-correct="false">D. Beta Testing</div>
-                    </div>
-                    <div class="mcq-explanation">Appeared in PYQ</div>
-                </div>
-
-                <div class="mcq-question">
-                    <p class="question-text">The process of controlling changes to software during its lifecycle is
-                        called:</p>
-                    <div class="mcq-options">
-                        <div class="mcq-option" data-correct="false">A. Risk Management</div>
-                        <div class="mcq-option" data-correct="true">B. Software Configuration Management (SCM)</div>
-                        <div class="mcq-option" data-correct="false">C. Quality Assurance</div>
-                        <div class="mcq-option" data-correct="false">D. Requirement Analysis</div>
-                    </div>
-                    <div class="mcq-explanation">Appeared in PYQ</div>
-                </div>
-
-                <div class="mcq-question">
-                    <p class="question-text">Black Box testing is also known as:</p>
-                    <div class="mcq-options">
-                        <div class="mcq-option" data-correct="true">A. Functional Testing</div>
-                        <div class="mcq-option" data-correct="false">B. Structural Testing</div>
-                        <div class="mcq-option" data-correct="false">C. Glass Box Testing</div>
-                        <div class="mcq-option" data-correct="false">D. White Box Testing</div>
-                    </div>
-                    <div class="mcq-explanation">Appeared in PYQ</div>
-                </div>
-            
-            <div class="unit-separator" style="margin: 20px 0 10px 0; border-bottom:2px dashed #ccc; padding-bottom:5px;">
-                <span style="background:#eee; padding:5px 10px; border-radius:5px; font-weight:bold;">Unit 5</span>
-            </div>
-            
-                <div class="mcq-question">
-                    <p class="question-text">Which maintenance activity deals with changing Software to keep it usable
-                        in a changed environment?</p>
-                    <div class="mcq-options">
-                        <div class="mcq-option" data-correct="true">A. Adaptive maintenance</div>
-                        <div class="mcq-option" data-correct="false">B. Corrective maintenance</div>
-                        <div class="mcq-option" data-correct="false">C. Perfective maintenance</div>
-                    </div>
-                    <div class="mcq-explanation">Appeared in 2024</div>
-                </div>
-                <div class="mcq-question">
-                    <p class="question-text">What is the primary objective of corrective maintenance?</p>
-                    <div class="mcq-options">
-                        <div class="mcq-option" data-correct="false">A. Improve performance</div>
-                        <div class="mcq-option" data-correct="true">B. Fix defects</div>
-                        <div class="mcq-option" data-correct="false">C. Add new features</div>
-                        <div class="mcq-option" data-correct="false">D. Adapt to a new environment</div>
-                    </div>
-                    <div class="mcq-explanation">Appeared in 2024</div>
-                </div>
-                <div class="mcq-question">
-                    <p class="question-text">The maintenance initiated by defects in the software is:</p>
-                    <div class="mcq-options">
-                        <div class="mcq-option" data-correct="false">A. Adaptive</div>
-                        <div class="mcq-option" data-correct="true">B. Corrective maintenance</div>
-                        <div class="mcq-option" data-correct="false">C. Perfective</div>
-                    </div>
-                    <div class="mcq-explanation">Appeared in 2022</div>
-                </div>
-                <div class="mcq-question">
-                    <p class="question-text">Which one is not a category of maintenance?</p>
-                    <div class="mcq-options">
-                        <div class="mcq-option" data-correct="false">A. Corrective</div>
-                        <div class="mcq-option" data-correct="false">B. Adaptive</div>
-                        <div class="mcq-option" data-correct="true">C. Effective</div>
-                        <div class="mcq-option" data-correct="false">D. Perfective</div>
-                    </div>
-                    <div class="mcq-explanation">Appeared in 2022</div>
-                </div>
-                <div class="mcq-question">
-                    <p class="question-text">The different types of software maintenance systems are:</p>
-                    <div class="mcq-options">
-                        <div class="mcq-option" data-correct="false">A. Corrective</div>
-                        <div class="mcq-option" data-correct="false">B. Adaptive</div>
-                        <div class="mcq-option" data-correct="false">C. Perspective (Perfective)</div>
-                        <div class="mcq-option" data-correct="true">D. All the above</div>
-                    </div>
-                    <div class="mcq-explanation">Appeared in 2024</div>
-                </div>
-            
-        </div>
-            
-            <div class="mcq-navigation">
-                <button id="prev-btn" class="btn btn-secondary">Previous</button>
+            <div class="mcq-navigation" style="display:flex; justify-content:space-between; margin-top:2rem;">
+                <button id="prev-btn" class="btn btn-secondary" style="background: #e2e8f0; color: var(--text-main);">Previous</button>
                 <button id="next-btn" class="btn btn-primary">Next</button>
             </div>
         </div>
@@ -1793,13 +822,11 @@
     </div>
 
     <footer>
-        <div class="container" style="text-align:center;">
-            <p>© 2026 Sarvasva Notes</p>
-        </div>
+        <p>© 2026 Sarvasva Notes. All Rights Reserved.</p>
     </footer>
 
     <script>
-        // --- Subject Header Toggle ---
+        // Collapsible Logic
         document.querySelectorAll('.subject-header').forEach(header => {
             header.addEventListener('click', () => {
                 const content = header.nextElementSibling;
@@ -1808,47 +835,19 @@
             });
         });
 
-        // --- MCQ System ---
+        // MCQ Logic
         let score = 0;
         let currentQuestion = 0;
         let questions = [];
 
-        function switchTab(unit) {
-            // Update Tabs
-            document.querySelectorAll('.mcq-tab-btn').forEach(btn => {
-                btn.classList.remove('active');
-                btn.style.background = '#fff';
-                btn.style.color = '#333';
-            });
-            const clickedBtn = event.target;
-            clickedBtn.classList.add('active');
-            clickedBtn.style.background = ''; // revert to CSS class style
-            clickedBtn.style.color = '';
-
-            // Update Containers
-            document.querySelectorAll('.mcq-container').forEach(c => {
-                c.classList.remove('active');
-                c.style.display = 'none';
-            });
-            const target = document.getElementById(unit === 'all' ? 'container-all' : 'container-unit-' + unit);
-            if(target) {
-                target.classList.add('active');
-                target.style.display = 'block';
-            }
-            
-            // Re-init
-            initializeQuestions();
-        }
-
         function initializeQuestions() {
             questions = [];
             const container = document.querySelector('.mcq-container.active');
-            if(!container) return; // Should not happen
+            if(!container) return;
 
-            const qElements = container.querySelectorAll('.mcq-question');
-            
-            qElements.forEach(q => {
-                // Reset styling
+            const qEls = container.querySelectorAll('.mcq-question');
+            qEls.forEach(q => {
+                // Reset UI
                 q.querySelectorAll('.mcq-option').forEach(o => {
                     o.classList.remove('selected', 'correct', 'incorrect');
                     o.style.pointerEvents = 'auto';
@@ -1856,14 +855,17 @@
                 const exp = q.querySelector('.mcq-explanation');
                 if(exp) exp.classList.remove('show');
 
-                // Ensure submit button
+                // Inject Button if missing
                 let btn = q.querySelector('.submit-answer-btn');
                 if(!btn) {
                     btn = document.createElement('button');
                     btn.className = 'submit-answer-btn';
                     btn.textContent = 'Submit Answer';
-                    if(exp) q.insertBefore(btn, exp);
-                    else q.appendChild(btn);
+                    btn.classList.add('btn', 'btn-primary'); // Add new classes
+                    btn.style.marginTop = '15px';
+                    // q.appendChild(btn); // Append at end
+                     if(exp) q.insertBefore(btn, exp);
+                     else q.appendChild(btn);
                 }
                 btn.disabled = false;
                 btn.textContent = 'Submit Answer';
@@ -1871,14 +873,16 @@
                 questions.push({ element: q, answered: false });
             });
 
-            document.getElementById('total-questions').textContent = questions.length;
+            const totalQ = document.getElementById('total-questions');
+            if(totalQ) totalQ.textContent = questions.length;
             updateScore(0);
             showQuestion();
         }
 
         function updateScore(s) {
             score = s;
-            document.getElementById('score').textContent = score;
+            const scoreEl = document.getElementById('score');
+            if(scoreEl) scoreEl.textContent = score;
         }
 
         function showQuestion() {
@@ -1889,20 +893,11 @@
             
             const prev = document.getElementById('prev-btn');
             const next = document.getElementById('next-btn');
-            
             if(prev) prev.disabled = currentQuestion === 0;
-            if(next) {
-                if(questions.length === 0) next.style.display = 'none';
-                else {
-                    next.style.display = 'inline-block';
-                    next.innerHTML = currentQuestion === questions.length - 1 ? 'Finish' : 'Next <i class="fas fa-arrow-right"></i>';
-                }
-            }
+            if(next) next.innerHTML = currentQuestion === questions.length - 1 ? 'Finish' : 'Next <i class="fas fa-arrow-right"></i>';
         }
 
-        // --- Event Delegation for MCQ Interactions ---
         document.addEventListener('click', (e) => {
-            // Option Select
             if(e.target.classList.contains('mcq-option')) {
                 const qDiv = e.target.closest('.mcq-question');
                 const btn = qDiv.querySelector('.submit-answer-btn');
@@ -1912,13 +907,12 @@
                 e.target.classList.add('selected');
             }
 
-            // Submit
             if(e.target.classList.contains('submit-answer-btn')) {
                 const btn = e.target;
                 const qDiv = btn.closest('.mcq-question');
                 const selected = qDiv.querySelector('.mcq-option.selected');
                 
-                if(!selected) { alert('Please select an option'); return; }
+                if(!selected) { alert('Please select an option.'); return; }
 
                 const isCorrect = selected.dataset.correct === 'true';
                 if(isCorrect) updateScore(score + 1);
@@ -1938,13 +932,12 @@
             }
         });
 
-        // Navigation
         document.getElementById('next-btn')?.addEventListener('click', () => {
             if(currentQuestion < questions.length - 1) {
                 currentQuestion++;
                 showQuestion();
             } else {
-                 if(questions.length > 0) alert('Section Complete! Score: ' + score);
+                alert('Quiz Complete! Score: ' + score);
             }
         });
 
@@ -1957,20 +950,26 @@
 
         document.getElementById('reset-btn')?.addEventListener('click', () => initializeQuestions());
 
-        // Init
         window.addEventListener('DOMContentLoaded', () => {
             initializeQuestions();
-            // Open first note
-            const h = document.querySelector('.subject-header');
-            if(h) h.click();
+            // Open first note block
+            const firstHeader = document.querySelector('.subject-header');
+            if(firstHeader) firstHeader.click();
         });
-        
-        // Smooth Scroll
+
+        // Smooth scroll
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function (e) {
                 e.preventDefault();
-                const target = document.querySelector(this.getAttribute('href'));
-                if(target) window.scrollTo({ top: target.offsetTop - 80, behavior: 'smooth' });
+                const targetId = this.getAttribute('href');
+                if (targetId === '#') return;
+                const targetElement = document.querySelector(targetId);
+                if (targetElement) {
+                    window.scrollTo({
+                        top: targetElement.offsetTop - 80,
+                        behavior: 'smooth'
+                    });
+                }
             });
         });
     </script>

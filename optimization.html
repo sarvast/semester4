@@ -3,524 +3,17 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Optimization Techniques - Complete Notes</title>
+    <title>Optimization Techniques - Sarvasva Notes</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
     <!-- MathJax -->
     <script>
         MathJax = { tex: { inlineMath: [['$', '$'], ['\\(', '\\)']] } };
     </script>
     <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
     <style>
-        :root {
-            --primary-color: #2c3e50;
-            --secondary-color: #3498db;
-            --accent-color: #e74c3c;
-            --light-color: #f8f9fa;
-            --success-color: #27ae60;
-            --warning-color: #f39c12;
-            --shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-            --border-radius: 8px;
-        }
-
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-        }
-
-        body {
-            background-color: #f5f7fa;
-            color: #333;
-            line-height: 1.6;
-        }
-
-        .container {
-            width: 90%;
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 20px 0;
-        }
-
-        /* Header & Navigation */
-        header {
-            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
-            color: white;
-            padding: 1.5rem 0;
-            box-shadow: var(--shadow);
-            position: relative;
-            z-index: 100;
-        }
-
-        .header-content {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            flex-wrap: wrap;
-        }
-
-        .logo {
-            display: flex;
-            align-items: center;
-            gap: 10px;
-        }
-
-        .logo i {
-            font-size: 2.5rem;
-        }
-
-        .logo h1 {
-            font-size: 1.8rem;
-            font-weight: 700;
-        }
-
-        .logo p {
-            font-size: 0.9rem;
-            opacity: 0.9;
-        }
-
-        nav ul {
-            display: flex;
-            list-style: none;
-            gap: 25px;
-            flex-wrap: wrap;
-        }
-
-        nav a {
-            color: white;
-            text-decoration: none;
-            font-weight: 600;
-            font-size: 1.1rem;
-            transition: opacity 0.3s;
-            display: flex;
-            align-items: center;
-            gap: 5px;
-        }
-
-        nav a:hover {
-            opacity: 0.9;
-        }
-
-        /* Hero Section */
-        .hero {
-            background: white;
-            border-radius: var(--border-radius);
-            padding: 2.5rem;
-            margin: 2rem 0;
-            box-shadow: var(--shadow);
-            text-align: center;
-        }
-
-        .hero h2 {
-            color: var(--primary-color);
-            margin-bottom: 1rem;
-            font-size: 2.2rem;
-        }
-
-        .hero p {
-            font-size: 1.2rem;
-            margin-bottom: 2rem;
-            color: #555;
-        }
-
-        .cta-buttons {
-            display: flex;
-            justify-content: center;
-            gap: 20px;
-            flex-wrap: wrap;
-            margin-top: 2rem;
-        }
-
-        .btn {
-            padding: 12px 28px;
-            border-radius: 50px;
-            font-weight: 600;
-            font-size: 1.1rem;
-            cursor: pointer;
-            transition: all 0.3s;
-            border: none;
-            display: flex;
-            align-items: center;
-            gap: 10px;
-            text-decoration: none;
-        }
-
-        .btn-primary {
-            background-color: var(--secondary-color);
-            color: white;
-        }
-
-        .btn-primary:hover {
-            background-color: #2980b9;
-            transform: translateY(-3px);
-        }
-
-        .btn-secondary {
-            background-color: var(--warning-color);
-            color: white;
-        }
-
-        .btn-secondary:hover {
-            background-color: #e67e22;
-            transform: translateY(-3px);
-        }
-
-        .btn-tertiary {
-            background-color: var(--success-color);
-            color: white;
-        }
-
-        .btn-tertiary:hover {
-            background-color: #219653;
-            transform: translateY(-3px);
-        }
-
-        /* Subject Sections */
-        .section-title {
-            color: var(--primary-color);
-            margin: 2.5rem 0 1.5rem;
-            padding-bottom: 10px;
-            border-bottom: 3px solid var(--secondary-color);
-            font-size: 1.8rem;
-            display: flex;
-            align-items: center;
-            gap: 10px;
-        }
-
-        .subject-container {
-            background: white;
-            border-radius: var(--border-radius);
-            margin-bottom: 2rem;
-            box-shadow: var(--shadow);
-            overflow: hidden;
-        }
-
-        .subject-header {
-            background-color: var(--primary-color);
-            color: white;
-            padding: 1.2rem 1.5rem;
-            cursor: pointer;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            transition: background-color 0.3s;
-        }
-
-        .subject-header:hover {
-            background-color: #34495e;
-        }
-
-        .subject-header h3 {
-            font-size: 1.5rem;
-            display: flex;
-            align-items: center;
-            gap: 10px;
-        }
-
-        .subject-header i {
-            font-size: 1.2rem;
-            transition: transform 0.3s;
-        }
-
-        .subject-content {
-            padding: 0;
-            max-height: 0;
-            overflow: hidden;
-            transition: all 0.5s ease;
-        }
-
-        .subject-content.active {
-            padding: 2rem;
-            max-height: 5000px;
-        }
-
-        .subject-header.active i {
-            transform: rotate(180deg);
-        }
-
-        /* Notes Content */
-        .topic {
-            margin-bottom: 2rem;
-        }
-
-        .topic h4 {
-            color: var(--primary-color);
-            margin-bottom: 0.8rem;
-            font-size: 1.3rem;
-            display: flex;
-            align-items: center;
-            gap: 10px;
-        }
-
-        .topic-content {
-            background-color: #f8f9fa;
-            padding: 1.5rem;
-            border-radius: var(--border-radius);
-            border-left: 4px solid var(--secondary-color);
-        }
-
-        .topic-content p {
-            margin-bottom: 1rem;
-        }
-
-        .topic-content ul,
-        .topic-content ol {
-            padding-left: 1.5rem;
-            margin-bottom: 1rem;
-        }
-
-        .topic-content li {
-            margin-bottom: 0.5rem;
-        }
-
-        .pyq-badge {
-            display: inline-block;
-            background-color: var(--accent-color);
-            color: white;
-            padding: 4px 12px;
-            border-radius: 20px;
-            font-size: 0.8rem;
-            font-weight: 600;
-            margin-left: 10px;
-            vertical-align: middle;
-        }
-
-        /* MCQ Section */
-        .mcq-section {
-            background-color: white;
-            border-radius: var(--border-radius);
-            padding: 2rem;
-            margin: 3rem 0;
-            box-shadow: var(--shadow);
-        }
-
-        .mcq-container {
-            display: none;
-        }
-
-        .mcq-container.active {
-            display: block;
-        }
-
-        .mcq-subject-tabs {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 10px;
-            margin-bottom: 2rem;
-            border-bottom: 2px solid #eee;
-            padding-bottom: 1rem;
-        }
-
-        .mcq-tab {
-            padding: 10px 20px;
-            background-color: #f1f2f6;
-            border-radius: var(--border-radius);
-            cursor: pointer;
-            font-weight: 600;
-            transition: all 0.3s;
-        }
-
-        .mcq-tab.active {
-            background-color: var(--secondary-color);
-            color: white;
-        }
-
-        .mcq-question {
-            background-color: #f8f9fa;
-            padding: 1.5rem;
-            border-radius: var(--border-radius);
-            margin-bottom: 1.5rem;
-            border-left: 4px solid var(--secondary-color);
-        }
-
-        .mcq-question-number {
-            font-weight: 700;
-            color: var(--primary-color);
-            margin-bottom: 10px;
-            display: flex;
-            justify-content: space-between;
-        }
-
-        .pyq-label {
-            background-color: var(--warning-color);
-            color: white;
-            padding: 3px 10px;
-            border-radius: 15px;
-            font-size: 0.8rem;
-            font-weight: 600;
-        }
-
-        .mcq-options {
-            margin-top: 1rem;
-        }
-
-        .mcq-option {
-            padding: 12px 15px;
-            margin-bottom: 10px;
-            background-color: white;
-            border-radius: var(--border-radius);
-            border: 2px solid #ddd;
-            cursor: pointer;
-            transition: all 0.2s;
-        }
-
-        .mcq-option:hover {
-            border-color: var(--secondary-color);
-            background-color: #f0f8ff;
-        }
-
-        .mcq-option.selected {
-            border-color: var(--secondary-color);
-            background-color: #3498db;
-            color: white;
-        }
-
-        .mcq-option.correct {
-            border-color: var(--success-color);
-            background-color: #d5f4e6;
-            color: #333;
-        }
-
-        .mcq-option.incorrect {
-            border-color: var(--accent-color);
-            background-color: #fde8e8;
-            color: #333;
-        }
-
-        .submit-answer-btn {
-            background-color: var(--primary-color);
-            color: white;
-            border: none;
-            padding: 8px 16px;
-            border-radius: 4px;
-            cursor: pointer;
-            margin-top: 10px;
-            font-size: 0.9rem;
-            transition: background 0.3s;
-        }
-
-        .submit-answer-btn:hover {
-            background-color: #34495e;
-        }
-
-        .submit-answer-btn:disabled {
-            background-color: #bdc3c7;
-            cursor: not-allowed;
-        }
-
-        .mcq-explanation {
-            padding: 1rem;
-            background-color: #f0f8ff;
-            border-radius: var(--border-radius);
-            margin-top: 1rem;
-            display: none;
-            border-left: 4px solid var(--secondary-color);
-        }
-
-        .mcq-explanation.show {
-            display: block;
-        }
-
-        .mcq-navigation {
-            display: flex;
-            justify-content: space-between;
-            margin-top: 2rem;
-        }
-
-        .score-display {
-            background-color: var(--primary-color);
-            color: white;
-            padding: 1rem;
-            border-radius: var(--border-radius);
-            text-align: center;
-            margin-bottom: 1.5rem;
-            font-weight: 600;
-        }
-
-        /* Footer */
-        footer {
-            background-color: var(--primary-color);
-            color: white;
-            text-align: center;
-            padding: 2rem 0;
-            margin-top: 3rem;
-        }
-
-        footer p {
-            margin-bottom: 1rem;
-        }
-
-        /* Responsive Design */
-        @media (max-width: 768px) {
-            .header-content {
-                flex-direction: column;
-                text-align: center;
-                gap: 1rem;
-            }
-
-            nav ul {
-                justify-content: center;
-            }
-
-            .hero h2 {
-                font-size: 1.8rem;
-            }
-
-            .hero p {
-                font-size: 1rem;
-            }
-
-            .btn {
-                padding: 10px 20px;
-                font-size: 1rem;
-            }
-
-            .subject-header h3 {
-                font-size: 1.2rem;
-            }
-
-            .topic h4 {
-                font-size: 1.1rem;
-            }
-
-            .mcq-subject-tabs {
-                justify-content: center;
-            }
-        }
-
-        @media (max-width: 480px) {
-            .container {
-                width: 95%;
-            }
-
-            .hero {
-                padding: 1.5rem;
-            }
-
-            .cta-buttons {
-                flex-direction: column;
-                align-items: center;
-            }
-
-            .subject-content.active {
-                padding: 1.5rem;
-            }
-
-            .mcq-navigation {
-                flex-direction: column;
-                gap: 15px;
-            }
-        }
-    </style>
-    <style>
-        .mcq-tab-btn.active {
-            background-color: var(--secondary-color) !important;
-            color: white !important;
-            border-color: var(--secondary-color) !important;
-        }
-        .mcq-tab-btn {
-            transition: all 0.3s;
-        }
+        /* Specific overrides for Subject Pages */
+        .subject-notes-wrapper { display: flex; flex-direction: column; gap: 1.5rem; }
     </style>
 </head>
 <body>
@@ -530,8 +23,8 @@
             <div class="logo">
                 <i class="fas fa-graduation-cap"></i>
                 <div>
-                    <h1>Sarvasva Notes</h1>
-                    <p>Optimization Techniques</p>
+                   <span style="display:block; line-height:1;">Sarvasva Notes</span>
+                   <span style="font-size: 0.8rem; opacity: 0.8; font-weight: 400;">Optimization Techniques</span>
                 </div>
             </div>
             <nav>
@@ -540,7 +33,7 @@
                     <li><a href="graphics.html" class="">Graphics</a></li>
                     <li><a href="dbms.html" class="">DBMS</a></li>
                     <li><a href="se.html" class="">SE</a></li>
-                    <li><a href="optimization.html" class="active-nav">Optimization</a></li>
+                    <li><a href="optimization.html" class="active">Optimization</a></li>
                     <li><a href="math.html" class="">Math</a></li>
                 </ul>
             </nav>
@@ -549,24 +42,25 @@
 
     <div class="container">
         <!-- Hero -->
-        <section class="hero">
-            <h2>Optimization Techniques</h2>
-            <p>Complete Subject Notes & MCQs (organized by Unit)</p>
-            <div class="cta-buttons">
-                <a href="#notes" class="btn btn-primary">Read Notes</a>
-                <a href="#mcq" class="btn btn-secondary">Practice MCQs</a>
+        <section class="hero" style="padding: 3rem 1rem; margin-bottom: 2rem;">
+            <h2><i class="fas fa-chart-line"></i> Optimization Techniques</h2>
+            <p>Comprehensive compilation of notes and MCQs from all 5 Units.</p>
+            <div style="display:flex; justify-content:center; gap:1rem;">
+                <a href="#notes" class="btn btn-primary"><i class="fas fa-book"></i> Notes</a>
+                <a href="#mcq" class="btn btn-secondary"><i class="fas fa-question-circle"></i> MCQs</a>
             </div>
         </section>
 
-        <!-- Notes -->
-        <h2 class="section-title" id="notes"><i class="fas fa-book-open"></i> Subject Notes</h2>
-        <div class="notes-wrapper">
+        <!-- Notes Section -->
+        <h2 class="section-title" id="notes"><i class="fas fa-book-open"></i> Complete Notes (Unit 1-5)</h2>
+        <div class="subject-notes-wrapper">
             
-                <div class="unit-block" style="margin-bottom: 30px;">
-                    <div style="background: #f1f2f6; padding: 8px 15px; border-radius: 5px 5px 0 0; border-left: 4px solid #2c3e50;">
-                        <h4 style="margin:0; color:#2c3e50;">Unit 1</h4>
+                <div class="unit-block" style="margin-bottom: 40px; border: 1px solid #e0e0e0; border-radius: 8px; overflow: hidden;">
+                    <div style="background: #f8f9fa; padding: 10px 20px; border-bottom: 1px solid #ddd;">
+                        <h3 style="margin:0; color: #555; font-size: 1.1rem;">Unit 1 Content</h3>
                     </div>
-                    <div class="subject-container">
+                    <div style="padding: 10px;">
+                        <div class="subject-container">
             <div class="subject-header">
                 <h3><i class="fas fa-chart-line"></i> Optimization Techniques (BCA-4004)</h3>
                 <i class="fas fa-chevron-down"></i>
@@ -658,13 +152,15 @@
                 </div>
             </div>
         </div>
+                    </div>
                 </div>
 
-                <div class="unit-block" style="margin-bottom: 30px;">
-                    <div style="background: #f1f2f6; padding: 8px 15px; border-radius: 5px 5px 0 0; border-left: 4px solid #2c3e50;">
-                        <h4 style="margin:0; color:#2c3e50;">Unit 2</h4>
+                <div class="unit-block" style="margin-bottom: 40px; border: 1px solid #e0e0e0; border-radius: 8px; overflow: hidden;">
+                    <div style="background: #f8f9fa; padding: 10px 20px; border-bottom: 1px solid #ddd;">
+                        <h3 style="margin:0; color: #555; font-size: 1.1rem;">Unit 2 Content</h3>
                     </div>
-                    <div class="subject-container">
+                    <div style="padding: 10px;">
+                        <div class="subject-container">
             <div class="subject-header">
                 <h3><i class="fas fa-chart-line"></i> Optimization Techniques</h3>
                 <i class="fas fa-chevron-down"></i>
@@ -712,13 +208,15 @@
                 </div>
             </div>
         </div>
+                    </div>
                 </div>
 
-                <div class="unit-block" style="margin-bottom: 30px;">
-                    <div style="background: #f1f2f6; padding: 8px 15px; border-radius: 5px 5px 0 0; border-left: 4px solid #2c3e50;">
-                        <h4 style="margin:0; color:#2c3e50;">Unit 3</h4>
+                <div class="unit-block" style="margin-bottom: 40px; border: 1px solid #e0e0e0; border-radius: 8px; overflow: hidden;">
+                    <div style="background: #f8f9fa; padding: 10px 20px; border-bottom: 1px solid #ddd;">
+                        <h3 style="margin:0; color: #555; font-size: 1.1rem;">Unit 3 Content</h3>
                     </div>
-                    <div class="subject-container">
+                    <div style="padding: 10px;">
+                        <div class="subject-container">
             <div class="subject-header">
                 <h3><i class="fas fa-chart-line"></i> Optimization Techniques</h3>
                 <i class="fas fa-chevron-down"></i>
@@ -798,13 +296,15 @@
                 </div>
             </div>
         </div>
+                    </div>
                 </div>
 
-                <div class="unit-block" style="margin-bottom: 30px;">
-                    <div style="background: #f1f2f6; padding: 8px 15px; border-radius: 5px 5px 0 0; border-left: 4px solid #2c3e50;">
-                        <h4 style="margin:0; color:#2c3e50;">Unit 4</h4>
+                <div class="unit-block" style="margin-bottom: 40px; border: 1px solid #e0e0e0; border-radius: 8px; overflow: hidden;">
+                    <div style="background: #f8f9fa; padding: 10px 20px; border-bottom: 1px solid #ddd;">
+                        <h3 style="margin:0; color: #555; font-size: 1.1rem;">Unit 4 Content</h3>
                     </div>
-                    <div class="subject-container">
+                    <div style="padding: 10px;">
+                        <div class="subject-container">
             <div class="subject-header">
                 <h3><i class="fas fa-chart-line"></i> Optimization Techniques</h3>
                 <i class="fas fa-chevron-down"></i>
@@ -837,13 +337,15 @@
                 </div>
             </div>
         </div>
+                    </div>
                 </div>
 
-                <div class="unit-block" style="margin-bottom: 30px;">
-                    <div style="background: #f1f2f6; padding: 8px 15px; border-radius: 5px 5px 0 0; border-left: 4px solid #2c3e50;">
-                        <h4 style="margin:0; color:#2c3e50;">Unit 5</h4>
+                <div class="unit-block" style="margin-bottom: 40px; border: 1px solid #e0e0e0; border-radius: 8px; overflow: hidden;">
+                    <div style="background: #f8f9fa; padding: 10px 20px; border-bottom: 1px solid #ddd;">
+                        <h3 style="margin:0; color: #555; font-size: 1.1rem;">Unit 5 Content</h3>
                     </div>
-                    <div class="subject-container">
+                    <div style="padding: 10px;">
+                        <div class="subject-container">
             <div class="subject-header">
                 <h3><i class="fas fa-tasks"></i> Optimization Techniques</h3>
                 <i class="fas fa-chevron-down"></i>
@@ -882,25 +384,20 @@
                 </div>
             </div>
         </div>
+                    </div>
                 </div>
         </div>
 
-        <!-- MCQs -->
-        <h2 class="section-title" id="mcq"><i class="fas fa-question-circle"></i> MCQ Practice</h2>
+        <!-- MCQ Section -->
+        <h2 class="section-title" id="mcq" style="margin-top: 4rem;"><i class="fas fa-question-circle"></i> MCQ Practice</h2>
         <div class="mcq-section">
             <div class="score-display">
-                Score: <span id="score">0</span> / <span id="total-questions">0</span>
-                <button id="reset-btn" class="btn btn-secondary" style="font-size:0.8rem; padding:4px 10px; margin-left:10px;">Reset</button>
+                <p>Score: <span id="score">0</span> / <span id="total-questions">0</span></p>
+                <button id="reset-btn" class="btn btn-secondary" style="font-size:0.8rem; padding: 5px 15px; color: var(--primary); background: white; border: 1px solid var(--primary); margin-top: 10px;">Reset Quiz</button>
             </div>
             
-            <div class="mcq-tabs" style="display:flex; gap:10px; margin-bottom:20px; flex-wrap:wrap;">
-            <button class="mcq-tab-btn active btn btn-secondary" onclick="switchTab('all')">All Units</button><button class="mcq-tab-btn btn btn-secondary" onclick="switchTab('1')" style="background:#fff; color:#333; border:1px solid #ddd;">Unit 1</button><button class="mcq-tab-btn btn btn-secondary" onclick="switchTab('2')" style="background:#fff; color:#333; border:1px solid #ddd;">Unit 2</button><button class="mcq-tab-btn btn btn-secondary" onclick="switchTab('3')" style="background:#fff; color:#333; border:1px solid #ddd;">Unit 3</button><button class="mcq-tab-btn btn btn-secondary" onclick="switchTab('4')" style="background:#fff; color:#333; border:1px solid #ddd;">Unit 4</button><button class="mcq-tab-btn btn btn-secondary" onclick="switchTab('5')" style="background:#fff; color:#333; border:1px solid #ddd;">Unit 5</button></div>
-            
-            <div class="mcq-container" id="container-unit-1" style="display:none;">
-                <div style="background:#e8f5e9; padding:10px; margin-bottom:15px; border-radius:5px;">
-                    <strong>Unit 1 Questions</strong>
-                </div>
-                
+            <div class="mcq-container active">
+                <!-- Unit 1 MCQs --> <div class="unit-mcq-label" style="background:#eee; padding:5px; margin:10px 0; font-weight:bold;">Unit 1 Questions</div>
                     <!-- MCQ 1 -->
                     <div class="mcq-question">
                         <div class="mcq-question-number">
@@ -1053,12 +550,7 @@
                         </div>
                     </div>
                 
-            </div>
-            <div class="mcq-container" id="container-unit-2" style="display:none;">
-                <div style="background:#e8f5e9; padding:10px; margin-bottom:15px; border-radius:5px;">
-                    <strong>Unit 2 Questions</strong>
-                </div>
-                
+<!-- Unit 2 MCQs --> <div class="unit-mcq-label" style="background:#eee; padding:5px; margin:10px 0; font-weight:bold;">Unit 2 Questions</div>
         <div class="mcq-question">
             <p class="question-text">A game is said to be fair if the value of the game is:</p>
             <div class="mcq-options">
@@ -1137,12 +629,7 @@
                 <div class="mcq-explanation">Appeared in PYQ</div>
             </div>
         
-            </div>
-            <div class="mcq-container" id="container-unit-3" style="display:none;">
-                <div style="background:#e8f5e9; padding:10px; margin-bottom:15px; border-radius:5px;">
-                    <strong>Unit 3 Questions</strong>
-                </div>
-                
+<!-- Unit 3 MCQs --> <div class="unit-mcq-label" style="background:#eee; padding:5px; margin:10px 0; font-weight:bold;">Unit 3 Questions</div>
                     <div class="mcq-question">
                         <p class="question-text">Replacement is said to be necessary if:</p>
                         <div class="mcq-options">
@@ -1201,12 +688,7 @@
                     </div>
                     <div class="mcq-explanation">Appeared in: 2022</div>
                 
-            </div>
-            <div class="mcq-container" id="container-unit-4" style="display:none;">
-                <div style="background:#e8f5e9; padding:10px; margin-bottom:15px; border-radius:5px;">
-                    <strong>Unit 4 Questions</strong>
-                </div>
-                
+<!-- Unit 4 MCQs --> <div class="unit-mcq-label" style="background:#eee; padding:5px; margin:10px 0; font-weight:bold;">Unit 4 Questions</div>
                 <div class="mcq-question">
                     <p class="question-text">The formula for calculating expected time ($t_e$) in PERT is:</p>
                     <div class="mcq-options">
@@ -1273,12 +755,7 @@
                     <div class="mcq-explanation">Appeared in 2024</div>
                 </div>
             
-            </div>
-            <div class="mcq-container" id="container-unit-5" style="display:none;">
-                <div style="background:#e8f5e9; padding:10px; margin-bottom:15px; border-radius:5px;">
-                    <strong>Unit 5 Questions</strong>
-                </div>
-                
+<!-- Unit 5 MCQs --> <div class="unit-mcq-label" style="background:#eee; padding:5px; margin:10px 0; font-weight:bold;">Unit 5 Questions</div>
                 <div class="mcq-question">
                     <p class="question-text">Johnson’s rule is used for:</p>
                     <div class="mcq-options">
@@ -1351,457 +828,9 @@
                 </div>
             
             </div>
-        <div class="mcq-container active" id="container-all">
             
-            <div class="unit-separator" style="margin: 20px 0 10px 0; border-bottom:2px dashed #ccc; padding-bottom:5px;">
-                <span style="background:#eee; padding:5px 10px; border-radius:5px; font-weight:bold;">Unit 1</span>
-            </div>
-            
-                    <!-- MCQ 1 -->
-                    <div class="mcq-question">
-                        <div class="mcq-question-number">
-                            <span>1. Objective function of a linear programming problem is:</span>
-                            <span class="pyq-label">PYQ 2022</span>
-                        </div>
-                        <div class="mcq-options">
-                            <div class="mcq-option" data-correct="true">A. A function to be optimized (Maximized or
-                                Minimized)</div>
-                            <div class="mcq-option" data-correct="false">B. A relation between variables</div>
-                            <div class="mcq-option" data-correct="false">C. A constraint</div>
-                            <div class="mcq-option" data-correct="false">D. None of the above</div>
-                        </div>
-                    </div>
-
-                    <!-- MCQ 2 -->
-                    <div class="mcq-question">
-                        <div class="mcq-question-number">
-                            <span>2. A set of values X1, X2 which satisfies the constraints of the LPP is called:</span>
-                            <span class="pyq-label">PYQ 2022</span>
-                        </div>
-                        <div class="mcq-options">
-                            <div class="mcq-option" data-correct="true">A. Solution / Feasible Solution</div>
-                            <div class="mcq-option" data-correct="false">B. Infeasible Solution</div>
-                            <div class="mcq-option" data-correct="false">C. Optimal Solution</div>
-                            <div class="mcq-option" data-correct="false">D. Unbounded Solution</div>
-                        </div>
-                    </div>
-
-                    <!-- MCQ 3 -->
-                    <div class="mcq-question">
-                        <div class="mcq-question-number">
-                            <span>3. Graphical method can be applied to solve LPP when there are only:</span>
-                            <span class="pyq-label">PYQ 2022, 2024</span>
-                        </div>
-                        <div class="mcq-options">
-                            <div class="mcq-option" data-correct="true">A. Two variables</div>
-                            <div class="mcq-option" data-correct="false">B. Three variables</div>
-                            <div class="mcq-option" data-correct="false">C. Four variables</div>
-                            <div class="mcq-option" data-correct="false">D. One variable</div>
-                        </div>
-                        <div class="mcq-explanation">
-                            <strong>Explanation:</strong> Graphical method is limited to problems with only two decision
-                            variables because we can plot them on a 2D graph.
-                        </div>
-                    </div>
-
-                    <!-- MCQ 4 -->
-                    <div class="mcq-question">
-                        <div class="mcq-question-number">
-                            <span>4. In graphical method, the feasible region is:</span>
-                            <span class="pyq-label">PYQ 2024</span>
-                        </div>
-                        <div class="mcq-options">
-                            <div class="mcq-option" data-correct="true">A. A region that satisfies all constraints</div>
-                            <div class="mcq-option" data-correct="false">B. A region outside all constraints</div>
-                            <div class="mcq-option" data-correct="false">C. Unbounded region</div>
-                            <div class="mcq-option" data-correct="false">D. None of the above</div>
-                        </div>
-                    </div>
-
-                    <!-- MCQ 5 -->
-                    <div class="mcq-question">
-                        <div class="mcq-question-number">
-                            <span>5. In simplex method, we add which variable in case of "≤" (Less than or
-                                equal)?</span>
-                            <span class="pyq-label">PYQ 2024</span>
-                        </div>
-                        <div class="mcq-options">
-                            <div class="mcq-option" data-correct="true">A. Slack Variable</div>
-                            <div class="mcq-option" data-correct="false">B. Surplus Variable</div>
-                            <div class="mcq-option" data-correct="false">C. Artificial Variable</div>
-                            <div class="mcq-option" data-correct="false">D. None of the above</div>
-                        </div>
-                        <div class="mcq-explanation">
-                            <strong>Explanation:</strong> Slack variable is added to a "less than or equal to" (≤)
-                            constraint to convert it into an equation.
-                        </div>
-                    </div>
-
-                    <!-- MCQ 6 -->
-                    <div class="mcq-question">
-                        <div class="mcq-question-number">
-                            <span>6. In simplex method, if there is a tie between a decision variable and a slack
-                                variable, which should be selected?</span>
-                            <span class="pyq-label">PYQ 2022</span>
-                        </div>
-                        <div class="mcq-options">
-                            <div class="mcq-option" data-correct="true">A. Decision variable</div>
-                            <div class="mcq-option" data-correct="false">B. Slack variable</div>
-                            <div class="mcq-option" data-correct="false">C. Surplus variable</div>
-                            <div class="mcq-option" data-correct="false">D. Artificial variable</div>
-                        </div>
-                    </div>
-
-                    <!-- MCQ 7 -->
-                    <div class="mcq-question">
-                        <div class="mcq-question-number">
-                            <span>7. Operations Research (OR) is a:</span>
-                            <span class="pyq-label">PYQ 2022</span>
-                        </div>
-                        <div class="mcq-options">
-                            <div class="mcq-option" data-correct="true">A. Interdisciplinary approach / Scientific
-                                approach</div>
-                            <div class="mcq-option" data-correct="false">B. Artistic approach</div>
-                            <div class="mcq-option" data-correct="false">C. Historic approach</div>
-                            <div class="mcq-option" data-correct="false">D. None of the above</div>
-                        </div>
-                    </div>
-
-                    <!-- MCQ 8 -->
-                    <div class="mcq-question">
-                        <div class="mcq-question-number">
-                            <span>8. Dual of a dual is?</span>
-                            <span class="pyq-label">PYQ 2023</span>
-                        </div>
-                        <div class="mcq-options">
-                            <div class="mcq-option" data-correct="true">A. Primal</div>
-                            <div class="mcq-option" data-correct="false">B. Dual</div>
-                            <div class="mcq-option" data-correct="false">C. None</div>
-                            <div class="mcq-option" data-correct="false">D. All of the above</div>
-                        </div>
-                    </div>
-
-                    <!-- MCQ 9 -->
-                    <div class="mcq-question">
-                        <div class="mcq-question-number">
-                            <span>9. Which variable represents unused resources in LPP?</span>
-                            <span class="pyq-label">PYQ 2024</span>
-                        </div>
-                        <div class="mcq-options">
-                            <div class="mcq-option" data-correct="true">A. Slack Variable</div>
-                            <div class="mcq-option" data-correct="false">B. Surplus Variable</div>
-                            <div class="mcq-option" data-correct="false">C. Artificial Variable</div>
-                            <div class="mcq-option" data-correct="false">D. Decision Variable</div>
-                        </div>
-                    </div>
-
-                    <!-- MCQ 10 -->
-                    <div class="mcq-question">
-                        <div class="mcq-question-number">
-                            <span>10. North West Corner Method is used for?</span>
-                            <span class="pyq-label">PYQ 2022</span>
-                        </div>
-                        <div class="mcq-options">
-                            <div class="mcq-option" data-correct="true">A. Transportation Problem</div>
-                            <div class="mcq-option" data-correct="false">B. Assignment Problem</div>
-                            <div class="mcq-option" data-correct="false">C. Sequencing Problem</div>
-                            <div class="mcq-option" data-correct="false">D. None of the above</div>
-                        </div>
-                    </div>
-                
-            <div class="unit-separator" style="margin: 20px 0 10px 0; border-bottom:2px dashed #ccc; padding-bottom:5px;">
-                <span style="background:#eee; padding:5px 10px; border-radius:5px; font-weight:bold;">Unit 2</span>
-            </div>
-            
-        <div class="mcq-question">
-            <p class="question-text">A game is said to be fair if the value of the game is:</p>
-            <div class="mcq-options">
-                <div class="mcq-option" data-correct="false">A. One</div>
-                <div class="mcq-option" data-correct="false">B. Two</div>
-                <div class="mcq-option" data-correct="false">C. Three</div>
-                <div class="mcq-option" data-correct="true">D. Zero</div>
-            </div>
-            <div class="mcq-explanation">Appeared in 2022, 2024</div>
-        </div>
-
-        <div class="mcq-question">
-            <p class="question-text">If there exists a Saddle Point in a game, then:</p>
-            <div class="mcq-options">
-                <div class="mcq-option" data-correct="false">A. Maximin > Minimax</div>
-                <div class="mcq-option" data-correct="false">B. Maximin < Minimax</div>
-                        <div class="mcq-option" data-correct="true">C. Maximin = Minimax</div>
-                        <div class="mcq-option" data-correct="false">D. None of these</div>
-                </div>
-                <div class="mcq-explanation">Appeared in 2022, 2024</div>
-            </div>
-
-            <div class="mcq-question">
-                <p class="question-text">When the sum of gains of one player is equal to the sum of losses to another
-                    player in a game, this situation is known as:</p>
-                <div class="mcq-options">
-                    <div class="mcq-option" data-correct="false">A. Biased game</div>
-                    <div class="mcq-option" data-correct="true">B. Zero-sum game</div>
-                    <div class="mcq-option" data-correct="false">C. Fair game</div>
-                    <div class="mcq-option" data-correct="false">D. All of the above</div>
-                </div>
-                <div class="mcq-explanation">Appeared in 2022</div>
-            </div>
-
-            <div class="mcq-question">
-                <p class="question-text">A mixed strategy game can be solved by:</p>
-                <div class="mcq-options">
-                    <div class="mcq-option" data-correct="false">A. Algebraic method</div>
-                    <div class="mcq-option" data-correct="false">B. Matrix method</div>
-                    <div class="mcq-option" data-correct="false">C. Graphical method</div>
-                    <div class="mcq-option" data-correct="true">D. All of the above</div>
-                </div>
-                <div class="mcq-explanation">Appeared in 2022</div>
-            </div>
-
-            <div class="mcq-question">
-                <p class="question-text">In case there is no saddle point in a game, then the game is:</p>
-                <div class="mcq-options">
-                    <div class="mcq-option" data-correct="false">A. Deterministic game</div>
-                    <div class="mcq-option" data-correct="false">B. Fair game</div>
-                    <div class="mcq-option" data-correct="true">C. Mixed strategy game</div>
-                    <div class="mcq-option" data-correct="false">D. Multiplayer game</div>
-                </div>
-                <div class="mcq-explanation">Appeared in 2022</div>
-            </div>
-
-            <div class="mcq-question">
-                <p class="question-text">The outcome of a game is known as:</p>
-                <div class="mcq-options">
-                    <div class="mcq-option" data-correct="false">A. Profit</div>
-                    <div class="mcq-option" data-correct="false">B. Loss</div>
-                    <div class="mcq-option" data-correct="true">C. Payoff</div>
-                    <div class="mcq-option" data-correct="false">D. None of the above</div>
-                </div>
-                <div class="mcq-explanation">Appeared in 2022</div>
-            </div>
-
-            <div class="mcq-question">
-                <p class="question-text">If a game has no saddle point, it is solved using:</p>
-                <div class="mcq-options">
-                    <div class="mcq-option" data-correct="true">A. Mixed strategies</div>
-                    <div class="mcq-option" data-correct="false">B. Pure strategies</div>
-                    <div class="mcq-option" data-correct="false">C. Graphical method only</div>
-                    <div class="mcq-option" data-correct="false">D. None</div>
-                </div>
-                <div class="mcq-explanation">Appeared in PYQ</div>
-            </div>
-        
-            <div class="unit-separator" style="margin: 20px 0 10px 0; border-bottom:2px dashed #ccc; padding-bottom:5px;">
-                <span style="background:#eee; padding:5px 10px; border-radius:5px; font-weight:bold;">Unit 3</span>
-            </div>
-            
-                    <div class="mcq-question">
-                        <p class="question-text">Replacement is said to be necessary if:</p>
-                        <div class="mcq-options">
-                            <div class="mcq-option" data-correct="false">A. Failure rate is constant</div>
-                            <div class="mcq-option" data-correct="true">B. Failure rate is increasing</div>
-                            <div class="mcq-option" data-correct="false">C. Failure probability is increasing</div>
-                            <div class="mcq-option" data-correct="false">D. Any of these</div>
-                        </div>
-                        <div class="mcq-explanation">Appeared in: 2022, 2024</div>
-                    </div>
-
-                    <div class="mcq-question">
-                        <p class="question-text">Group replacement policy is most suitable for:</p>
-                        <div class="mcq-options">
-                            <div class="mcq-option" data-correct="false">A. Trucks</div>
-                            <div class="mcq-option" data-correct="true">B. Identical low cost items (e.g., Light bulbs)
-                            </div>
-                            <div class="mcq-option" data-correct="false">C. Machines</div>
-                            <div class="mcq-option" data-correct="false">D. New cars</div>
-                        </div>
-                        <div class="mcq-explanation">Appeared in: 2022, 2024</div>
-                    </div>
-
-                    <div class="mcq-question">
-                        <p class="question-text">The problem of replacement is felt when job performing units fail:</p>
-                        <div class="mcq-options">
-                            <div class="mcq-option" data-correct="true">A. Suddenly and gradually</div>
-                            <div class="mcq-option" data-correct="false">B. Gradually</div>
-                            <div class="mcq-option" data-correct="false">C. Suddenly</div>
-                            <div class="mcq-option" data-correct="false">D. None</div>
-                        </div>
-                        <div class="mcq-explanation">Appeared in: 2022</div>
-                    </div>
-
-                    <div class="mcq-question">
-                        <p class="question-text">If a machine becomes old, then the failure rate expected will be:</p>
-                        <div class="mcq-options">
-                            <div class="mcq-option" data-correct="false">A. Constant</div>
-                            <div class="mcq-option" data-correct="true">B. Increasing</div>
-                            <div class="mcq-option" data-correct="false">C. Decreasing</div>
-                            <div class="mcq-option" data-correct="false">D. We cannot say</div>
-                        </div>
-                        <div class="mcq-explanation">Appeared in: 2022</div>
-                    </div>
-
-                    <div class="mcq-question">
-                        <p class="question-text">The replacement policy that is imposed on an item irrespective of its
-                            failure is:</p>
-                        <div class="mcq-options">
-                            <div class="mcq-option" data-correct="true">A. Group replacement</div>
-                            <div class="mcq-option" data-correct="false">B. Individual replacement</div>
-                            <div class="mcq-option" data-correct="false">C. Repair spare replacement</div>
-                            <div class="mcq-option" data-correct="false">D. Successive replacement</div>
-                        </div>
-                        <div class="mcq-explanation">Appeared in: 2022</div>
-                    </div>
-                    <div class="mcq-explanation">Appeared in: 2022</div>
-                
-            <div class="unit-separator" style="margin: 20px 0 10px 0; border-bottom:2px dashed #ccc; padding-bottom:5px;">
-                <span style="background:#eee; padding:5px 10px; border-radius:5px; font-weight:bold;">Unit 4</span>
-            </div>
-            
-                <div class="mcq-question">
-                    <p class="question-text">The formula for calculating expected time ($t_e$) in PERT is:</p>
-                    <div class="mcq-options">
-                        <div class="mcq-option" data-correct="true">A. $(t_o + 4t_m + t_p) / 6$</div>
-                        <div class="mcq-option" data-correct="false">B. $(t_o + t_m + t_p) / 3$</div>
-                    </div>
-                    <div class="mcq-explanation">Appeared in 2022, 2024</div>
-                </div>
-                <div class="mcq-question">
-                    <p class="question-text">Critical path is the path that has:</p>
-                    <div class="mcq-options">
-                        <div class="mcq-option" data-correct="false">A. Highest cost</div>
-                        <div class="mcq-option" data-correct="false">B. Shortest duration</div>
-                        <div class="mcq-option" data-correct="true">C. Longest duration</div>
-                        <div class="mcq-option" data-correct="false">D. None</div>
-                    </div>
-                    <div class="mcq-explanation">Appeared in 2024</div>
-                </div>
-                <div class="mcq-question">
-                    <p class="question-text">If an activity has zero slack, it implies that:</p>
-                    <div class="mcq-options">
-                        <div class="mcq-option" data-correct="true">A. It lies on the critical path</div>
-                        <div class="mcq-option" data-correct="false">B. It is a dummy activity</div>
-                    </div>
-                    <div class="mcq-explanation">Appeared in 2022, 2024</div>
-                </div>
-                <div class="mcq-question">
-                    <p class="question-text">PERT is used for:</p>
-                    <div class="mcq-options">
-                        <div class="mcq-option" data-correct="false">A. Repetitive projects</div>
-                        <div class="mcq-option" data-correct="true">B. Non-repetitive projects (R&D)</div>
-                    </div>
-                    <div class="mcq-explanation">Appeared in 2024</div>
-                </div>
-                <div class="mcq-question">
-                    <p class="question-text">In a network diagram, an activity is denoted by:</p>
-                    <div class="mcq-options">
-                        <div class="mcq-option" data-correct="false">A. Node</div>
-                        <div class="mcq-option" data-correct="true">B. Arrow</div>
-                        <div class="mcq-option" data-correct="false">C. Triangle</div>
-                    </div>
-                    <div class="mcq-explanation">Appeared in 2022</div>
-                </div>
-                <div class="mcq-question">
-                    <p class="question-text">Which is NOT a type of time estimate in PERT?</p>
-                    <div class="mcq-options">
-                        <div class="mcq-option" data-correct="false">A. Optimistic</div>
-                        <div class="mcq-option" data-correct="false">B. Pessimistic</div>
-                        <div class="mcq-option" data-correct="false">C. Most likely</div>
-                        <div class="mcq-option" data-correct="true">D. Realistic time</div>
-                    </div>
-                    <div class="mcq-explanation">Appeared in 2024</div>
-                </div>
-
-                <div class="mcq-question">
-                    <p class="question-text">Slack time refers to:</p>
-                    <div class="mcq-options">
-                        <div class="mcq-option" data-correct="true">A. Allowable delay for an activity without delaying
-                            project</div>
-                        <div class="mcq-option" data-correct="false">B. Late start time</div>
-                        <div class="mcq-option" data-correct="false">C. Early finish time</div>
-                        <div class="mcq-option" data-correct="false">D. None</div>
-                    </div>
-                    <div class="mcq-explanation">Appeared in 2024</div>
-                </div>
-            
-            <div class="unit-separator" style="margin: 20px 0 10px 0; border-bottom:2px dashed #ccc; padding-bottom:5px;">
-                <span style="background:#eee; padding:5px 10px; border-radius:5px; font-weight:bold;">Unit 5</span>
-            </div>
-            
-                <div class="mcq-question">
-                    <p class="question-text">Johnson’s rule is used for:</p>
-                    <div class="mcq-options">
-                        <div class="mcq-option" data-correct="false">A. Queuing problem</div>
-                        <div class="mcq-option" data-correct="true">B. Sequencing problem</div>
-                        <div class="mcq-option" data-correct="false">C. Both (A) and (B)</div>
-                        <div class="mcq-option" data-correct="false">D. None of the above</div>
-                    </div>
-                    <div class="mcq-explanation">Appeared in 2022-23</div>
-                </div>
-                <div class="mcq-question">
-                    <p class="question-text">In sequencing problems, ‘idle time’ refers to:</p>
-                    <div class="mcq-options">
-                        <div class="mcq-option" data-correct="false">A. Time when a job is waiting</div>
-                        <div class="mcq-option" data-correct="true">B. Time when a machine is not in use</div>
-                        <div class="mcq-option" data-correct="false">C. Total processing time</div>
-                    </div>
-                    <div class="mcq-explanation">Appeared in 2024</div>
-                </div>
-                <div class="mcq-question">
-                    <p class="question-text">In sequencing problems, the primary objective is to:</p>
-                    <div class="mcq-options">
-                        <div class="mcq-option" data-correct="false">A. Maximize number of jobs</div>
-                        <div class="mcq-option" data-correct="true">B. Minimize total processing time / elapsed time
-                        </div>
-                        <div class="mcq-option" data-correct="false">C. Maximize idle time</div>
-                    </div>
-                    <div class="mcq-explanation">Appeared in 2024</div>
-                </div>
-                <div class="mcq-question">
-                    <p class="question-text">The total time required to complete all the jobs in a job sequencing
-                        problem is known as:</p>
-                    <div class="mcq-options">
-                        <div class="mcq-option" data-correct="false">A. Processing time</div>
-                        <div class="mcq-option" data-correct="true">B. Elapsed time</div>
-                        <div class="mcq-option" data-correct="false">C. Idle time</div>
-                    </div>
-                    <div class="mcq-explanation">Appeared in 2022</div>
-                </div>
-                <div class="mcq-question">
-                    <p class="question-text">In n job and two machines (M1, M2) sequencing problem, if job has minimum
-                        time on machine M2, it is processed:</p>
-                    <div class="mcq-options">
-                        <div class="mcq-option" data-correct="false">A. First</div>
-                        <div class="mcq-option" data-correct="true">B. Last</div>
-                    </div>
-                    <div class="mcq-explanation">Appeared in 2022</div>
-                </div>
-                <div class="mcq-question">
-                    <p class="question-text">Which of the following methods is used to determine the optimal sequence
-                        for 'n' jobs through two machines?</p>
-                    <div class="mcq-options">
-                        <div class="mcq-option" data-correct="false">A. Hungarian Method</div>
-                        <div class="mcq-option" data-correct="true">B. Johnson’s Rule</div>
-                        <div class="mcq-option" data-correct="false">C. Simplex Method</div>
-                    </div>
-                    <div class="mcq-explanation">Appeared in 2022</div>
-                </div>
-
-                <div class="mcq-question">
-                    <p class="question-text">In Queuing Theory, if arrival rate is $\lambda$ and service rate is $\mu$,
-                        traffic intensity is:</p>
-                    <div class="mcq-options">
-                        <div class="mcq-option" data-correct="false">A. $\mu / \lambda$</div>
-                        <div class="mcq-option" data-correct="true">B. $\lambda / \mu$</div>
-                        <div class="mcq-option" data-correct="false">C. $\lambda - \mu$</div>
-                        <div class="mcq-option" data-correct="false">D. $\lambda + \mu$</div>
-                    </div>
-                    <div class="mcq-explanation">Appeared in PYQ</div>
-                </div>
-            
-        </div>
-            
-            <div class="mcq-navigation">
-                <button id="prev-btn" class="btn btn-secondary">Previous</button>
+            <div class="mcq-navigation" style="display:flex; justify-content:space-between; margin-top:2rem;">
+                <button id="prev-btn" class="btn btn-secondary" style="background: #e2e8f0; color: var(--text-main);">Previous</button>
                 <button id="next-btn" class="btn btn-primary">Next</button>
             </div>
         </div>
@@ -1809,13 +838,11 @@
     </div>
 
     <footer>
-        <div class="container" style="text-align:center;">
-            <p>© 2026 Sarvasva Notes</p>
-        </div>
+        <p>© 2026 Sarvasva Notes. All Rights Reserved.</p>
     </footer>
 
     <script>
-        // --- Subject Header Toggle ---
+        // Collapsible Logic
         document.querySelectorAll('.subject-header').forEach(header => {
             header.addEventListener('click', () => {
                 const content = header.nextElementSibling;
@@ -1824,47 +851,19 @@
             });
         });
 
-        // --- MCQ System ---
+        // MCQ Logic
         let score = 0;
         let currentQuestion = 0;
         let questions = [];
 
-        function switchTab(unit) {
-            // Update Tabs
-            document.querySelectorAll('.mcq-tab-btn').forEach(btn => {
-                btn.classList.remove('active');
-                btn.style.background = '#fff';
-                btn.style.color = '#333';
-            });
-            const clickedBtn = event.target;
-            clickedBtn.classList.add('active');
-            clickedBtn.style.background = ''; // revert to CSS class style
-            clickedBtn.style.color = '';
-
-            // Update Containers
-            document.querySelectorAll('.mcq-container').forEach(c => {
-                c.classList.remove('active');
-                c.style.display = 'none';
-            });
-            const target = document.getElementById(unit === 'all' ? 'container-all' : 'container-unit-' + unit);
-            if(target) {
-                target.classList.add('active');
-                target.style.display = 'block';
-            }
-            
-            // Re-init
-            initializeQuestions();
-        }
-
         function initializeQuestions() {
             questions = [];
             const container = document.querySelector('.mcq-container.active');
-            if(!container) return; // Should not happen
+            if(!container) return;
 
-            const qElements = container.querySelectorAll('.mcq-question');
-            
-            qElements.forEach(q => {
-                // Reset styling
+            const qEls = container.querySelectorAll('.mcq-question');
+            qEls.forEach(q => {
+                // Reset UI
                 q.querySelectorAll('.mcq-option').forEach(o => {
                     o.classList.remove('selected', 'correct', 'incorrect');
                     o.style.pointerEvents = 'auto';
@@ -1872,14 +871,17 @@
                 const exp = q.querySelector('.mcq-explanation');
                 if(exp) exp.classList.remove('show');
 
-                // Ensure submit button
+                // Inject Button if missing
                 let btn = q.querySelector('.submit-answer-btn');
                 if(!btn) {
                     btn = document.createElement('button');
                     btn.className = 'submit-answer-btn';
                     btn.textContent = 'Submit Answer';
-                    if(exp) q.insertBefore(btn, exp);
-                    else q.appendChild(btn);
+                    btn.classList.add('btn', 'btn-primary'); // Add new classes
+                    btn.style.marginTop = '15px';
+                    // q.appendChild(btn); // Append at end
+                     if(exp) q.insertBefore(btn, exp);
+                     else q.appendChild(btn);
                 }
                 btn.disabled = false;
                 btn.textContent = 'Submit Answer';
@@ -1887,14 +889,16 @@
                 questions.push({ element: q, answered: false });
             });
 
-            document.getElementById('total-questions').textContent = questions.length;
+            const totalQ = document.getElementById('total-questions');
+            if(totalQ) totalQ.textContent = questions.length;
             updateScore(0);
             showQuestion();
         }
 
         function updateScore(s) {
             score = s;
-            document.getElementById('score').textContent = score;
+            const scoreEl = document.getElementById('score');
+            if(scoreEl) scoreEl.textContent = score;
         }
 
         function showQuestion() {
@@ -1905,20 +909,11 @@
             
             const prev = document.getElementById('prev-btn');
             const next = document.getElementById('next-btn');
-            
             if(prev) prev.disabled = currentQuestion === 0;
-            if(next) {
-                if(questions.length === 0) next.style.display = 'none';
-                else {
-                    next.style.display = 'inline-block';
-                    next.innerHTML = currentQuestion === questions.length - 1 ? 'Finish' : 'Next <i class="fas fa-arrow-right"></i>';
-                }
-            }
+            if(next) next.innerHTML = currentQuestion === questions.length - 1 ? 'Finish' : 'Next <i class="fas fa-arrow-right"></i>';
         }
 
-        // --- Event Delegation for MCQ Interactions ---
         document.addEventListener('click', (e) => {
-            // Option Select
             if(e.target.classList.contains('mcq-option')) {
                 const qDiv = e.target.closest('.mcq-question');
                 const btn = qDiv.querySelector('.submit-answer-btn');
@@ -1928,13 +923,12 @@
                 e.target.classList.add('selected');
             }
 
-            // Submit
             if(e.target.classList.contains('submit-answer-btn')) {
                 const btn = e.target;
                 const qDiv = btn.closest('.mcq-question');
                 const selected = qDiv.querySelector('.mcq-option.selected');
                 
-                if(!selected) { alert('Please select an option'); return; }
+                if(!selected) { alert('Please select an option.'); return; }
 
                 const isCorrect = selected.dataset.correct === 'true';
                 if(isCorrect) updateScore(score + 1);
@@ -1954,13 +948,12 @@
             }
         });
 
-        // Navigation
         document.getElementById('next-btn')?.addEventListener('click', () => {
             if(currentQuestion < questions.length - 1) {
                 currentQuestion++;
                 showQuestion();
             } else {
-                 if(questions.length > 0) alert('Section Complete! Score: ' + score);
+                alert('Quiz Complete! Score: ' + score);
             }
         });
 
@@ -1973,20 +966,26 @@
 
         document.getElementById('reset-btn')?.addEventListener('click', () => initializeQuestions());
 
-        // Init
         window.addEventListener('DOMContentLoaded', () => {
             initializeQuestions();
-            // Open first note
-            const h = document.querySelector('.subject-header');
-            if(h) h.click();
+            // Open first note block
+            const firstHeader = document.querySelector('.subject-header');
+            if(firstHeader) firstHeader.click();
         });
-        
-        // Smooth Scroll
+
+        // Smooth scroll
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function (e) {
                 e.preventDefault();
-                const target = document.querySelector(this.getAttribute('href'));
-                if(target) window.scrollTo({ top: target.offsetTop - 80, behavior: 'smooth' });
+                const targetId = this.getAttribute('href');
+                if (targetId === '#') return;
+                const targetElement = document.querySelector(targetId);
+                if (targetElement) {
+                    window.scrollTo({
+                        top: targetElement.offsetTop - 80,
+                        behavior: 'smooth'
+                    });
+                }
             });
         });
     </script>

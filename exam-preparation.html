@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exam Preparation - Sarvasva Notes</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <header>
+        <div class="container header-content">
+            <div class="logo">
+                <i class="fas fa-graduation-cap"></i>
+                <span>Sarvasva Notes</span>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="index.html"><i class="fas fa-home"></i> Home</a></li>
+                    <li><a href="exam-preparation.html" class="active"><i class="fas fa-fire"></i> Exam Prep</a></li>
+                    <li><a href="https://wa.me/917985040858" target="_blank"><i class="fab fa-whatsapp"></i> Contact</a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <div class="container">
+
+        <!-- Hero Section -->
+        <section class="hero" style="background: linear-gradient(135deg, #ef4444, #991b1b);">
+            <h1><i class="fas fa-clipboard-check"></i> Exam Preparation Hub</h1>
+            <p>Access Previous Year Questions (PYQs), Mock Tests, and Exam Strategies.</p>
+        </section>
+
+        <!-- Use a grid for subjects -->
+        <h2 class="section-title"><i class="fas fa-file-alt"></i> Select a Subject</h2>
+
+        <div class="grid">
+            <div class="card border-top-purple" onclick="openSubject('computer-graphics')" style="cursor:pointer">
+                <div class="card-header">
+                    <div class="icon-box bg-purple"><i class="fas fa-desktop"></i></div>
+                    <span class="badge" style="background: #f3e8ff; color: #6b21a8;">5 Papers</span>
+                </div>
+                <h3>Computer Graphics</h3>
+                <p>2D/3D transformations, clipping, animation, multimedia.</p>
+                <div class="action-link" style="color: #8b5cf6;">View Papers <i class="fas fa-arrow-right"></i></div>
+            </div>
+
+            <div class="card border-top-blue" onclick="openSubject('dbms')" style="cursor:pointer">
+                <div class="card-header">
+                    <div class="icon-box bg-blue"><i class="fas fa-database"></i></div>
+                    <span class="badge badge-purple">2 Papers</span>
+                </div>
+                <h3>DBMS</h3>
+                <p>SQL, normalization, transaction management.</p>
+                <div class="action-link" style="color: #8b5cf6;">View Papers <i class="fas fa-arrow-right"></i></div>
+            </div>
+
+            <div class="card border-top-orange" onclick="openSubject('se')" style="cursor:pointer">
+                <div class="card-header">
+                    <div class="icon-box bg-orange"><i class="fas fa-code"></i></div>
+                    <span class="badge" style="background: #e2e8f0; color: #64748b;">Coming Soon</span>
+                </div>
+                <h3>Software Engineering</h3>
+                <p>SDLC, testing, maintenance, project management.</p>
+                <div class="action-link" style="color: #64748b;">Not Available</div>
+            </div>
+
+            <div class="card border-top-green" onclick="openSubject('optimization')" style="cursor:pointer">
+                <div class="card-header">
+                    <div class="icon-box bg-green"><i class="fas fa-chart-line"></i></div>
+                    <span class="badge" style="background: #e2e8f0; color: #64748b;">Coming Soon</span>
+                </div>
+                <h3>Optimization Techniques</h3>
+                <p>Linear programming, transportation, assignment, game theory.</p>
+                <div class="action-link" style="color: #64748b;">Not Available</div>
+            </div>
+
+            <div class="card border-top-red" onclick="openSubject('math')" style="cursor:pointer">
+                <div class="card-header">
+                    <div class="icon-box bg-red"><i class="fas fa-calculator"></i></div>
+                    <span class="badge" style="background: #e2e8f0; color: #64748b;">Coming Soon</span>
+                </div>
+                <h3>Mathematics-III</h3>
+                <p>Complex variables, Fourier series, Laplace transforms.</p>
+                <div class="action-link" style="color: #64748b;">Not Available</div>
+            </div>
+        </div>
+
+    </div>
+
+    <footer>
+        <p>© 2026 Sarvasva Notes. All Rights Reserved.</p>
+    </footer>
+
+    <script>
+        function openSubject(subject) {
+            // Logic to handle navigation or alert for 'Coming Soon'
+            if (subject === 'computer-graphics' || subject === 'dbms') {
+                window.location.href = `question-papers.html?subject=${subject}`;
+            } else {
+                alert('Papers for this subject are coming soon!');
+            }
+        }
+    </script>
+</body>
+
+</html>

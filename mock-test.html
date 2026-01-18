@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mock Test - Computer Graphics</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+    <style>
+        .test-container {
+            display: grid;
+            grid-template-columns: 1fr 300px;
+            gap: 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+        .question-panel {
+            background: white;
+            border-radius: 15px;
+            padding: 2rem;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        }
+        .option {
+            background: #f8f9fa;
+            border: 2px solid #e9ecef;
+            border-radius: 10px;
+            padding: 15px;
+            margin-bottom: 15px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+        .option:hover {
+            border-color: #667eea;
+            background: #e3f2fd;
+        }
+        .option.selected {
+            border-color: #4caf50;
+            background: #e8f5e8;
+        }
+        .option-label {
+            background: #667eea;
+            color: white;
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 600;
+        }
+        .option.selected .option-label {
+            background: #4caf50;
+        }
+        .sidebar {
+            background: white;
+            border-radius: 15px;
+            padding: 1.5rem;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            height: fit-content;
+        }
+        .question-grid {
+            display: grid;
+            grid-template-columns: repeat(5, 1fr);
+            gap: 0.5rem;
+            margin-bottom: 1.5rem;
+        }
+        .question-btn {
+            width: 40px;
+            height: 40px;
+            border: 1px solid #e2e8f0;
+            border-radius: 8px;
+            background: white;
+            cursor: pointer;
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.2s;
+        }
+        .question-btn.current {
+            border-color: #667eea;
+            color: #667eea;
+        }
+        .question-btn.answered {
+            background: #4caf50;
+            color: white;
+            border-color: #4caf50;
+        }
+        .timer {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: #667eea;
+            text-align: center;
+            margin-bottom: 1rem;
+        }
+        @media (max-width: 900px) {
+            .test-container {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container header-content">
+            <div class="logo">
+                <i class="fas fa-graduation-cap"></i>
+                <span>Sarvasva Notes</span>
+            </div>
+            <div class="timer" id="timer">03:00:00</div>
+        </div>
+    </header>
+
+    <div class="test-container">
+        <div class="question-panel">
+            <div style="display: flex; justify-content: space-between; margin-bottom: 1.5rem;">
+                <span class="badge" style="background: #667eea; color: white;" id="questionNumber">Q1</span>
+                <span style="color: #666; font-weight: 600;">1 Mark</span>
+            </div>
+
+            <p id="questionText" style="font-size: 1.25rem; margin-bottom: 2rem; color: #2c3e50;">Loading question...</p>
+
+            <div id="optionsContainer">
+                <!-- Options will be loaded here -->
+            </div>
+
+            <div style="display: flex; justify-content: space-between; margin-top: 2rem;">
+                <button class="btn btn-secondary" id="prevBtn" onclick="previousQuestion()">Previous</button>
+                <button class="btn btn-primary" id="nextBtn" onclick="nextQuestion()">Next</button>
+            </div>
+            
+            <button class="btn btn-success" style="width: 100%; margin-top: 1rem;" onclick="submitTest()">Submit Test</button>
+        </div>
+
+        <div class="sidebar">
+            <h3 style="margin-bottom: 1rem;"><i class="fas fa-th"></i> Question Palette</h3>
+            <div class="question-grid" id="questionGrid">
+                <!-- Question buttons will be generated here -->
+            </div>
+
+            <div style="font-size: 0.9rem; display: flex; flex-direction: column; gap: 0.5rem;">
+                <div style="display: flex; align-items: center; gap: 0.5rem;">
+                    <div style="width: 12px; height: 12px; border-radius: 50%; background: #4caf50;"></div>
+                    Answered
+                </div>
+                <div style="display: flex; align-items: center; gap: 0.5rem;">
+                    <div style="width: 12px; height: 12px; border-radius: 50%; background: #f1f5f9; border: 1px solid #cbd5e1;"></div>
+                    Unanswered
+                </div>
+                <div style="display: flex; align-items: center; gap: 0.5rem;">
+                    <div style="width: 12px; height: 12px; border-radius: 50%; border: 2px solid #667eea;"></div>
+                    Current
+                </div>
+            </div>
+
+            <div style="margin-top: 1.5rem; padding-top: 1rem; border-top: 1px solid #e2e8f0;">
+                <div style="display: flex; justify-content: space-between; margin-bottom: 0.5rem;">
+                    <span>Answered:</span>
+                    <strong id="answeredCount">0</strong>
+                </div>
+                <div style="display: flex; justify-content: space-between;">
+                    <span>Remaining:</span>
+                    <strong id="remainingCount">75</strong>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="mock-test-questions.js"></script>
+    <script>
+        let currentQuestion = 0;
+        let answers = {};
+        let timeRemaining = 3 * 60 * 60; // 3 hours
+        let timerInterval;
+
+        function initializeTest() {
+            generateQuestionGrid();
+            loadQuestion();
+            startTimer();
+            updateSummary();
+        }
+
+        function generateQuestionGrid() {
+            const grid = document.getElementById('questionGrid');
+            grid.innerHTML = '';
+            mockTestQuestions.forEach((_, i) => {
+                const btn = document.createElement('div');
+                btn.className = 'question-btn';
+                btn.textContent = i + 1;
+                btn.onclick = () => goToQuestion(i);
+                grid.appendChild(btn);
+            });
+        }
+
+        function loadQuestion() {
+            const q = mockTestQuestions[currentQuestion];
+            document.getElementById('questionNumber').textContent = `Q${currentQuestion + 1}`;
+            document.getElementById('questionText').textContent = q.question;
+
+            const container = document.getElementById('optionsContainer');
+            container.innerHTML = '';
+
+            q.options.forEach((opt, idx) => {
+                const div = document.createElement('div');
+                div.className = `option ${answers[currentQuestion] === idx ? 'selected' : ''}`;
+                div.innerHTML = `<div class="option-label">${String.fromCharCode(65 + idx)}</div> ${opt}`;
+                div.onclick = () => selectOption(idx);
+                container.appendChild(div);
+            });
+
+            updateNavigationButtons();
+            highlightCurrentGrid();
+        }
+
+        function selectOption(idx) {
+            answers[currentQuestion] = idx;
+            loadQuestion();
+            updateSummary();
+        }
+
+        function highlightCurrentGrid() {
+            document.querySelectorAll('.question-btn').forEach((btn, i) => {
+                btn.className = 'question-btn';
+                if (i === currentQuestion) btn.classList.add('current');
+                else if (answers[i] !== undefined) btn.classList.add('answered');
+            });
+        }
+
+        function updateSummary() {
+            const answered = Object.keys(answers).length;
+            const remaining = 75 - answered; // Only first 75 evaluated
+            document.getElementById('answeredCount').textContent = answered;
+            document.getElementById('remainingCount').textContent = remaining < 0 ? 0 : remaining;
+        }
+
+        function goToQuestion(i) {
+            currentQuestion = i;
+            loadQuestion();
+        }
+
+        function nextQuestion() {
+            if (currentQuestion < mockTestQuestions.length - 1) {
+                currentQuestion++;
+                loadQuestion();
+            }
+        }
+
+        function previousQuestion() {
+            if (currentQuestion > 0) {
+                currentQuestion--;
+                loadQuestion();
+            }
+        }
+
+        function updateNavigationButtons() {
+            document.getElementById('prevBtn').disabled = currentQuestion === 0;
+            document.getElementById('nextBtn').textContent = currentQuestion === mockTestQuestions.length - 1 ? 'Finish' : 'Next';
+        }
+
+        function startTimer() {
+            timerInterval = setInterval(() => {
+                timeRemaining--;
+                const h = Math.floor(timeRemaining / 3600).toString().padStart(2, '0');
+                const m = Math.floor((timeRemaining % 3600) / 60).toString().padStart(2, '0');
+                const s = (timeRemaining % 60).toString().padStart(2, '0');
+                document.getElementById('timer').textContent = `${h}:${m}:${s}`;
+                if (timeRemaining <= 0) submitTest();
+            }, 1000);
+        }
+
+        function submitTest() {
+            if (!confirm('Are you sure you want to submit the test?')) return;
+            
+            clearInterval(timerInterval);
+            let correct = 0;
+            
+            // Only evaluate first 75 questions as per exam pattern
+            const evaluatedQuestions = Math.min(mockTestQuestions.length, 75);
+            mockTestQuestions.slice(0, evaluatedQuestions).forEach((q, i) => {
+                if (answers[i] === q.correct) correct++;
+            });
+
+            const results = {
+                subject: 'computer-graphics',
+                year: 'Mock Test',
+                session: 'High Priority',
+                totalQuestions: mockTestQuestions.length,
+                correctAnswers: correct,
+                percentage: ((correct / evaluatedQuestions) * 100).toFixed(1),
+                answers: answers,
+                questions: mockTestQuestions
+            };
+
+            localStorage.setItem('testResults', JSON.stringify(results));
+            window.location.href = 'test-results.html';
+        }
+
+        document.addEventListener('DOMContentLoaded', initializeTest);
+    </script>
+</body>
+</html>

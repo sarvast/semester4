@@ -1,0 +1,404 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MCQ Test - Sarvasva Notes</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+    <style>
+        /* Specific overrides for Test Interface */
+        body {
+            background: var(--background);
+        }
+
+        .test-header {
+            background: var(--surface);
+            border-bottom: 1px solid #e2e8f0;
+            padding: 1rem 0;
+        }
+
+        .test-container {
+            display: grid;
+            grid-template-columns: 1fr 320px;
+            gap: 2rem;
+            padding: 2rem 0;
+            max-width: 1200px;
+            margin: 0 auto;
+            width: 90%;
+        }
+
+        .question-panel {
+            background: var(--surface);
+            border-radius: var(--radius-md);
+            padding: 2rem;
+            box-shadow: var(--shadow-sm);
+            border: 1px solid #e2e8f0;
+        }
+
+        .option {
+            background: #f8fafc;
+            border: 2px solid #e2e8f0;
+            border-radius: var(--radius-sm);
+            padding: 1rem;
+            margin-bottom: 1rem;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            transition: all 0.2s;
+        }
+
+        .option:hover {
+            border-color: var(--primary);
+        }
+
+        .option.selected {
+            border-color: var(--primary);
+            background: #eff6ff;
+        }
+
+        .option-label {
+            width: 32px;
+            height: 32px;
+            border-radius: 50%;
+            background: #cbd5e1;
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+        }
+
+        .option.selected .option-label {
+            background: var(--primary);
+        }
+
+        .question-btn {
+            width: 40px;
+            height: 40px;
+            border: 1px solid #e2e8f0;
+            border-radius: 8px;
+            background: white;
+            cursor: pointer;
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .question-btn.current {
+            border-color: var(--primary);
+            color: var(--primary);
+        }
+
+        .question-btn.answered {
+            background: var(--success);
+            color: white;
+            border-color: var(--success);
+        }
+
+        .question-btn.unanswered {
+            background: #f1f5f9;
+        }
+
+        @media (max-width: 900px) {
+            .test-container {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <header class="test-header">
+        <div class="container header-content" style="padding: 0;">
+            <div class="test-info">
+                <h2 id="testTitle" style="color: var(--secondary); margin: 0; font-size: 1.25rem;">Loading Test...</h2>
+                <div id="testDetails" style="font-size: 0.9rem; color: var(--text-muted);">Loading Details...</div>
+            </div>
+            <div class="timer-section" style="text-align: right;">
+                <div id="timer" style="font-size: 1.5rem; font-weight: 700; color: var(--primary);">00:00:00</div>
+                <div style="font-size: 0.8rem; color: var(--text-muted);">Time Remaining</div>
+            </div>
+        </div>
+    </header>
+
+    <div class="test-container">
+
+        <!-- Question Area -->
+        <div class="question-panel">
+            <div style="display: flex; justify-content: space-between; margin-bottom: 1.5rem;">
+                <span class="badge" style="background: var(--primary); color: white;" id="questionNumber">Q1</span>
+                <span style="color: var(--text-muted); font-weight: 600;">1 Mark</span>
+            </div>
+
+            <p id="questionText" style="font-size: 1.25rem; margin-bottom: 2rem; color: var(--text-main);">Loading
+                question...</p>
+
+            <div id="optionsContainer">
+                <!-- Options -->
+            </div>
+
+            <div style="display: flex; justify-content: space-between; margin-top: 2rem;">
+                <button class="btn btn-secondary" id="prevBtn" onclick="previousQuestion()"
+                    style="background: #e2e8f0; color: var(--text-main);">Previous</button>
+                <button class="btn btn-primary" id="nextBtn" onclick="nextQuestion()">Next</button>
+            </div>
+            <button class="btn btn-accent"
+                style="width: 100%; margin-top: 2rem; justify-content: center; background: var(--danger);"
+                onclick="showSubmitModal()">Submit Test</button>
+        </div>
+
+        <!-- Sidebar -->
+        <div class="sidebar card" style="height: fit-content;">
+            <h3 style="margin-bottom: 1rem;"><i class="fas fa-th"></i> Question Palette</h3>
+            <div id="questionGrid"
+                style="display: grid; grid-template-columns: repeat(5, 1fr); gap: 0.5rem; margin-bottom: 1.5rem;">
+                <!-- Grid -->
+            </div>
+
+            <div style="font-size: 0.9rem; display: flex; flex-direction: column; gap: 0.5rem;">
+                <div style="display: flex; align-items: center; gap: 0.5rem;">
+                    <div style="width: 12px; height: 12px; border-radius: 50%; background: var(--success);"></div>
+                    Answered
+                </div>
+                <div style="display: flex; align-items: center; gap: 0.5rem;">
+                    <div
+                        style="width: 12px; height: 12px; border-radius: 50%; background: #f1f5f9; border: 1px solid #cbd5e1;">
+                    </div> Unanswered
+                </div>
+                <div style="display: flex; align-items: center; gap: 0.5rem;">
+                    <div style="width: 12px; height: 12px; border-radius: 50%; border: 2px solid var(--primary);"></div>
+                    Current
+                </div>
+            </div>
+
+            <div style="margin-top: 1.5rem; padding-top: 1rem; border-top: 1px solid #e2e8f0;">
+                <div style="display: flex; justify-content: space-between; margin-bottom: 0.5rem;">
+                    <span>Answered:</span>
+                    <strong id="answeredCount">0</strong>
+                </div>
+                <div style="display: flex; justify-content: space-between;">
+                    <span>Remaining:</span>
+                    <strong id="remainingCount">0</strong>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <!-- Scripts -->
+    <script src="questions-data.js"></script>
+    <script src="mock-test-questions.js"></script>
+    <script src="dbms-questions-2024.js"></script>
+    <script src="dbms-questions-2022-23.js"></script>
+    <script src="cg-questions-2022-23.js"></script>
+    <script src="cg-questions-2024.js"></script>
+    <script src="cg-questions-2024-25.js"></script>
+    <script src="cg-questions-2024-2nd.js"></script>
+    <script src="maths-questions-2024.js"></script>
+    <script>
+        // Test state variables
+        let currentQuestion = 0;
+        let answers = {};
+        let timeRemaining = 3 * 60 * 60; // 3 hours
+        let timerInterval;
+        let testQuestions = [];
+        let testSubject = '';
+        let testYear = '';
+        let testSession = '';
+
+        function getUrlParameter(name) {
+            name = name.replace(/[\[]/, '\\[').replace(/[\]]/, '\\]');
+            var regex = new RegExp('[\\?&]' + name + '=([^&#]*)');
+            var results = regex.exec(location.search);
+            return results === null ? '' : decodeURIComponent(results[1].replace(/\+/g, ' '));
+        }
+
+        function initializeTest() {
+            testSubject = getUrlParameter('subject');
+            testYear = getUrlParameter('year');
+            testSession = getUrlParameter('session');
+            const questionCount = parseInt(getUrlParameter('questions')) || 30;
+
+            const subjectTitles = {
+                'computer-graphics': 'Computer Graphics & Multimedia',
+                'dbms': 'Database Management System',
+                'software-engineering': 'Software Engineering',
+                'operations-research': 'Operations Research',
+                'mathematics': 'Mathematics IV'
+            };
+
+            document.getElementById('testTitle').textContent = subjectTitles[testSubject] || 'Test';
+            document.getElementById('testDetails').textContent = `${testYear} ${testSession} Session • ${questionCount} Questions`;
+
+            // Data loading logic
+            // Prioritize specific papers if variables exist
+            if (typeof cgQuestions2022_23 !== 'undefined' && testYear === '2022-23') testQuestions = [...cgQuestions2022_23];
+            else if (typeof cgQuestions2024 !== 'undefined' && testYear === '2024' && testSubject === 'computer-graphics') testQuestions = [...cgQuestions2024];
+            else if (typeof dbmsQuestions2024 !== 'undefined' && testYear === '2024' && testSubject === 'dbms') testQuestions = [...dbmsQuestions2024];
+            else if (typeof dbmsQuestions2022_23 !== 'undefined' && testYear === '2022-23' && testSubject === 'dbms') testQuestions = [...dbmsQuestions2022_23];
+            else if (typeof mathsQuestions2024 !== 'undefined' && testYear === '2024' && testSubject === 'mathematics') testQuestions = [...mathsQuestions2024];
+            else if (typeof cgQuestions202425 !== 'undefined' && testYear === '2024-25') testQuestions = [...cgQuestions202425];
+            else if (typeof cgQuestions2024_2nd !== 'undefined' && testYear === '2024' && testSession === '2nd Paper') testQuestions = [...cgQuestions2024_2nd];
+            else if (typeof mockTestQuestions !== 'undefined' && testSubject === 'computer-graphics-mock') testQuestions = [...mockTestQuestions];
+            else if (typeof questionBank !== 'undefined' && questionBank[testSubject]) {
+                // Use the global questionBank from questions-data.js
+                testQuestions = [...questionBank[testSubject]];
+            } else {
+                testQuestions = generateSampleQuestions(testSubject, questionCount);
+            }
+
+            // Validation
+            if (testQuestions.length === 0) {
+                alert("No questions found for this subject/paper.");
+                testQuestions = generateSampleQuestions(testSubject, 10); // Fallback to samples so UI doesn't break
+            }
+
+            generateQuestionGrid();
+            loadQuestion();
+            startTimer();
+            updateSummary();
+        }
+
+        function generateSampleQuestions(subject, count) {
+            // ... (Same sample logic as original)
+            return Array.from({ length: count }, (_, i) => ({
+                question: `Sample Question ${i + 1} for ${subject}`,
+                options: ["Option A", "Option B", "Option C", "Option D"],
+                correct: 0
+            }));
+        }
+
+        function generateQuestionGrid() {
+            const grid = document.getElementById('questionGrid');
+            grid.innerHTML = '';
+            testQuestions.forEach((_, i) => {
+                const btn = document.createElement('div');
+                btn.className = 'question-btn unanswered';
+                btn.textContent = i + 1;
+                btn.onclick = () => goToQuestion(i);
+                grid.appendChild(btn);
+            });
+            document.getElementById('remainingCount').textContent = testQuestions.length;
+        }
+
+        function loadQuestion() {
+            if (currentQuestion >= testQuestions.length) return;
+            const q = testQuestions[currentQuestion];
+
+            document.getElementById('questionNumber').textContent = `Q${currentQuestion + 1}`;
+            document.getElementById('questionText').textContent = q.question;
+
+            const container = document.getElementById('optionsContainer');
+            container.innerHTML = '';
+
+            q.options.forEach((opt, idx) => {
+                const div = document.createElement('div');
+                div.className = `option ${answers[currentQuestion] === idx ? 'selected' : ''}`;
+                div.innerHTML = `<div class="option-label">${String.fromCharCode(65 + idx)}</div> ${opt}`;
+                div.onclick = () => selectOption(idx);
+                container.appendChild(div);
+            });
+
+            updateNavigationButtons();
+            highlightCurrentGrid();
+        }
+
+        function selectOption(idx) {
+            answers[currentQuestion] = idx;
+            loadQuestion(); // Re-render to update selection
+            updateSummary();
+        }
+
+        function highlightCurrentGrid() {
+            document.querySelectorAll('.question-btn').forEach((btn, i) => {
+                btn.className = 'question-btn';
+                if (i === currentQuestion) btn.classList.add('current');
+                else if (answers[i] !== undefined) btn.classList.add('answered');
+                else btn.classList.add('unanswered');
+            });
+        }
+
+        function updateSummary() {
+            const answered = Object.keys(answers).length;
+            // Target is 75 if we have 100 questions (Exam Pattern), otherwise all
+            const target = testQuestions.length >= 75 ? 75 : testQuestions.length;
+            const remaining = target - answered;
+
+            document.getElementById('answeredCount').textContent = answered;
+            document.getElementById('remainingCount').textContent = remaining < 0 ? 0 : remaining;
+        }
+
+        function goToQuestion(i) {
+            currentQuestion = i;
+            loadQuestion();
+        }
+
+        function nextQuestion() {
+            if (currentQuestion < testQuestions.length - 1) {
+                currentQuestion++;
+                loadQuestion();
+            }
+        }
+
+        function previousQuestion() {
+            if (currentQuestion > 0) {
+                currentQuestion--;
+                loadQuestion();
+            }
+        }
+
+        function updateNavigationButtons() {
+            document.getElementById('prevBtn').disabled = currentQuestion === 0;
+            document.getElementById('nextBtn').textContent = currentQuestion === testQuestions.length - 1 ? 'Finish' : 'Next';
+        }
+
+        function startTimer() {
+            timerInterval = setInterval(() => {
+                timeRemaining--;
+                const h = Math.floor(timeRemaining / 3600).toString().padStart(2, '0');
+                const m = Math.floor((timeRemaining % 3600) / 60).toString().padStart(2, '0');
+                const s = (timeRemaining % 60).toString().padStart(2, '0');
+                document.getElementById('timer').textContent = `${h}:${m}:${s}`;
+                if (timeRemaining <= 0) submitTest();
+            }, 1000);
+        }
+
+        function showSubmitModal() {
+            if (confirm('Are you sure you want to submit?')) submitTest();
+        }
+
+        function submitTest() {
+            clearInterval(timerInterval);
+            let correct = 0;
+            // Only evaluate first 75 as per original logic if needed, or all.
+            // Simplified for this version:
+            const limit = Math.min(testQuestions.length, 75); // Only first 75 evaluated
+            testQuestions.slice(0, limit).forEach((q, i) => {
+                if (answers[i] === q.correct) correct++;
+            });
+
+            const results = {
+                subject: testSubject,
+                year: testYear,
+                session: testSession,
+                totalQuestions: testQuestions.length,
+                correctAnswers: correct,
+                percentage: ((correct / Math.min(testQuestions.length, 75)) * 100).toFixed(1), // % based on 75
+                answers: answers,
+                questions: testQuestions
+            };
+
+            localStorage.setItem('testResults', JSON.stringify(results));
+            window.location.href = 'test-results.html';
+        }
+
+        document.addEventListener('DOMContentLoaded', initializeTest);
+    </script>
+</body>
+
+</html>

@@ -140,16 +140,10 @@ function extractContent() {
 
 // 4. Generate Pages
 function generatePages() {
-    // Read styles from Unit 1
-    const unit1 = fs.readFileSync('unit1.html', 'utf8');
-    const styleStart = unit1.indexOf('<style>');
-    const styleEnd = unit1.indexOf('</style>') + 8;
-    const styleBlock = unit1.substring(styleStart, styleEnd);
-
     Object.keys(subjects).forEach(key => {
         const sub = subjects[key];
-        const notesContent = sub.notes.join('\n') || "<p>No notes found for this subject.</p>";
-        const mcqsContent = sub.mcqs.join('\n') || "<p>No MCQs found for this subject.</p>";
+        const notesContent = sub.notes.join('\n') || "<div class='card'><p>No notes found for this subject.</p></div>";
+        const mcqsContent = sub.mcqs.join('\n') || "<div class='card'><p>No MCQs found for this subject.</p></div>";
 
         const pageHtml = `<!DOCTYPE html>
 <html lang="en">
@@ -158,16 +152,15 @@ function generatePages() {
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>${sub.title} - Sarvasva Notes</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
     <!-- MathJax -->
     <script>
         MathJax = { tex: { inlineMath: [['$', '$'], ['\\\\(', '\\\\)']] } };
     </script>
     <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
-    ${styleBlock}
     <style>
-        /* Extra overrides for subject page */
-        .subject-notes-wrapper { margin-top: 2rem; }
-        .nav-active { text-decoration: underline; font-weight: bold; }
+        /* Specific overrides for Subject Pages */
+        .subject-notes-wrapper { display: flex; flex-direction: column; gap: 1.5rem; }
     </style>
 </head>
 <body>
@@ -177,18 +170,18 @@ function generatePages() {
             <div class="logo">
                 <i class="fas fa-graduation-cap"></i>
                 <div>
-                    <h1>Sarvasva Notes</h1>
-                    <p>${sub.title} (Complete Syllabus)</p>
+                   <span style="display:block; line-height:1;">Sarvasva Notes</span>
+                   <span style="font-size: 0.8rem; opacity: 0.8; font-weight: 400;">${sub.title}</span>
                 </div>
             </div>
             <nav>
                 <ul>
                     <li><a href="index.html"><i class="fas fa-home"></i> Home</a></li>
-                    <li><a href="graphics.html" class="${key === 'graphics' ? 'nav-active' : ''}"><i class="fas fa-desktop"></i> Graphics</a></li>
-                    <li><a href="dbms.html" class="${key === 'dbms' ? 'nav-active' : ''}"><i class="fas fa-database"></i> DBMS</a></li>
-                    <li><a href="se.html" class="${key === 'se' ? 'nav-active' : ''}"><i class="fas fa-code"></i> SE</a></li>
-                    <li><a href="optimization.html" class="${key === 'optimization' ? 'nav-active' : ''}"><i class="fas fa-chart-line"></i> Optimization</a></li>
-                    <li><a href="math.html" class="${key === 'math' ? 'nav-active' : ''}"><i class="fas fa-calculator"></i> Math</a></li>
+                    <li><a href="graphics.html" class="${key === 'graphics' ? 'active' : ''}">Graphics</a></li>
+                    <li><a href="dbms.html" class="${key === 'dbms' ? 'active' : ''}">DBMS</a></li>
+                    <li><a href="se.html" class="${key === 'se' ? 'active' : ''}">SE</a></li>
+                    <li><a href="optimization.html" class="${key === 'optimization' ? 'active' : ''}">Optimization</a></li>
+                    <li><a href="math.html" class="${key === 'math' ? 'active' : ''}">Math</a></li>
                 </ul>
             </nav>
         </div>
@@ -196,12 +189,12 @@ function generatePages() {
 
     <div class="container">
         <!-- Hero -->
-        <section class="hero">
+        <section class="hero" style="padding: 3rem 1rem; margin-bottom: 2rem;">
             <h2><i class="fas ${sub.icon}"></i> ${sub.title}</h2>
             <p>Comprehensive compilation of notes and MCQs from all 5 Units.</p>
-            <div class="cta-buttons">
-                <a href="#notes" class="btn btn-primary"><i class="fas fa-book"></i> Read Notes</a>
-                <a href="#mcq" class="btn btn-secondary"><i class="fas fa-question-circle"></i> Solve MCQs</a>
+            <div style="display:flex; justify-content:center; gap:1rem;">
+                <a href="#notes" class="btn btn-primary"><i class="fas fa-book"></i> Notes</a>
+                <a href="#mcq" class="btn btn-secondary"><i class="fas fa-question-circle"></i> MCQs</a>
             </div>
         </section>
 
@@ -212,19 +205,19 @@ function generatePages() {
         </div>
 
         <!-- MCQ Section -->
-        <h2 class="section-title" id="mcq"><i class="fas fa-question-circle"></i> MCQ Practice (Unit 1-5)</h2>
+        <h2 class="section-title" id="mcq" style="margin-top: 4rem;"><i class="fas fa-question-circle"></i> MCQ Practice</h2>
         <div class="mcq-section">
             <div class="score-display">
                 <p>Score: <span id="score">0</span> / <span id="total-questions">0</span></p>
-                <button id="reset-btn" class="btn btn-secondary" style="font-size:0.8rem; padding: 5px 15px;">Reset Quiz</button>
+                <button id="reset-btn" class="btn btn-secondary" style="font-size:0.8rem; padding: 5px 15px; color: var(--primary); background: white; border: 1px solid var(--primary); margin-top: 10px;">Reset Quiz</button>
             </div>
             
             <div class="mcq-container active">
                 ${mcqsContent}
             </div>
             
-            <div class="mcq-navigation">
-                <button id="prev-btn" class="btn btn-secondary">Previous</button>
+            <div class="mcq-navigation" style="display:flex; justify-content:space-between; margin-top:2rem;">
+                <button id="prev-btn" class="btn btn-secondary" style="background: #e2e8f0; color: var(--text-main);">Previous</button>
                 <button id="next-btn" class="btn btn-primary">Next</button>
             </div>
         </div>
@@ -232,9 +225,7 @@ function generatePages() {
     </div>
 
     <footer>
-        <div class="container">
-            <p>© 2026 Sarvasva Notes. All Rights Reserved.</p>
-        </div>
+        <p>© 2026 Sarvasva Notes. All Rights Reserved.</p>
     </footer>
 
     <script>
@@ -273,6 +264,8 @@ function generatePages() {
                     btn = document.createElement('button');
                     btn.className = 'submit-answer-btn';
                     btn.textContent = 'Submit Answer';
+                    btn.classList.add('btn', 'btn-primary'); // Add new classes
+                    btn.style.marginTop = '15px';
                     // q.appendChild(btn); // Append at end
                      if(exp) q.insertBefore(btn, exp);
                      else q.appendChild(btn);
@@ -283,14 +276,16 @@ function generatePages() {
                 questions.push({ element: q, answered: false });
             });
 
-            document.getElementById('total-questions').textContent = questions.length;
+            const totalQ = document.getElementById('total-questions');
+            if(totalQ) totalQ.textContent = questions.length;
             updateScore(0);
             showQuestion();
         }
 
         function updateScore(s) {
             score = s;
-            document.getElementById('score').textContent = score;
+            const scoreEl = document.getElementById('score');
+            if(scoreEl) scoreEl.textContent = score;
         }
 
         function showQuestion() {
