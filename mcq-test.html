@@ -213,6 +213,7 @@
     <script src="se-questions-2024-25.js"></script>
     <script src="se-questions-2024.js"></script>
     <script src="se-questions-2022-23.js"></script>
+    <script src="se-questions-2022.js"></script>
     <script>
         // Test state variables
         let currentQuestion = 0;
@@ -271,6 +272,7 @@
             else if (typeof seQuestions2024_25 !== 'undefined' && testYear === '2024-25' && testSubject === 'software-engineering') testQuestions = [...seQuestions2024_25];
             else if (typeof seQuestions2024 !== 'undefined' && testYear === '2024' && testSubject === 'software-engineering') testQuestions = [...seQuestions2024];
             else if (typeof seQuestions2022_23 !== 'undefined' && testYear === '2022-23' && testSubject === 'software-engineering') testQuestions = [...seQuestions2022_23];
+            else if (typeof seQuestions2022 !== 'undefined' && testYear === '2022' && testSubject === 'software-engineering') testQuestions = [...seQuestions2022];
             else if (typeof mockTestQuestions !== 'undefined' && testSubject === 'computer-graphics-mock') testQuestions = [...mockTestQuestions];
             else if (typeof questionBank !== 'undefined' && questionBank[testSubject]) {
                 // Use the global questionBank from questions-data.js
