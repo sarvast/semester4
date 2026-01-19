@@ -449,7 +449,7 @@
             // Simplified for this version:
             const limit = Math.min(testQuestions.length, 75); // Only first 75 evaluated
             testQuestions.slice(0, limit).forEach((q, i) => {
-                if (answers[i] === q.correct) correct++;
+                if (answers[i] !== undefined && q.correct !== undefined && answers[i] === q.correct) correct++;
             });
 
             const results = {

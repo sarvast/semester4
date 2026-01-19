@@ -181,6 +181,12 @@
                                 <i class="fas fa-times-circle"></i> Your Answer: ${q.options[userAns]}
                             </div>
                         ` : ''}
+                        ${q.explanation ? `
+                            <div style="margin-top: 1rem; padding-top: 0.75rem; border-top: 1px solid #e2e8f0; color: var(--text-main); font-size: 0.95rem;">
+                                <strong style="color: var(--secondary);"><i class="fas fa-lightbulb" style="color: #f59e0b;"></i> Explanation:</strong>
+                                <p style="margin-top: 0.25rem; color: var(--text-muted);">${q.explanation}</p>
+                            </div>
+                        ` : ''}
                     </div>
                 `;
                 container.appendChild(div);
