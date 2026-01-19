@@ -312,11 +312,20 @@
             // Normalize questions (handle 'answer' format instead of 'correct' index)
             if (testQuestions && testQuestions.length > 0) {
                  testQuestions.forEach(q => {
-                    if (q.correct === undefined && q.answer) {
-                        // Check for format like "(A)", "(B)", etc.
-                        const match = q.answer.match(/\(([A-D])\)/i);
-                        if (match) {
-                            q.correct = match[1].toUpperCase().charCodeAt(0) - 65;
+                    // Case 1: 'answer' property exists but 'correct' is missing
+                    if (q.correct === undefined && q.answer !== undefined) {
+                        if (typeof q.answer === 'number') {
+                            // Direct numeric mapping (e.g. answer: 1)
+                            q.correct = q.answer;
+                        } else if (typeof q.answer === 'string') {
+                            // String format (e.g. answer: "(A)" or "A")
+                            const match = q.answer.match(/\(([A-D])\)/i);
+                            if (match) {
+                                q.correct = match[1].toUpperCase().charCodeAt(0) - 65;
+                            } else if (/^[A-D]$/i.test(q.answer.trim())) {
+                                // Raw letter "A", "B", etc.
+                                q.correct = q.answer.trim().toUpperCase().charCodeAt(0) - 65;
+                            }
                         }
                     }
                 });

@@ -281,7 +281,8 @@
             // Only evaluate first 75 questions as per exam pattern
             const evaluatedQuestions = Math.min(mockTestQuestions.length, 75);
             mockTestQuestions.slice(0, evaluatedQuestions).forEach((q, i) => {
-                if (answers[i] === q.correct) correct++;
+                 // Strict check: User must have answered (not undefined) and match the correct answer
+                if (answers[i] !== undefined && q.correct !== undefined && answers[i] === q.correct) correct++;
             });
 
             const results = {
@@ -297,6 +298,25 @@
 
             localStorage.setItem('testResults', JSON.stringify(results));
             window.location.href = 'test-results.html';
+        }
+
+        function initializeTest() {
+             // Normalize data (handle inconsistencies)
+             if (mockTestQuestions && mockTestQuestions.length > 0) {
+                 mockTestQuestions.forEach(q => {
+                    if (q.correct === undefined && q.answer !== undefined) {
+                        if (typeof q.answer === 'number') q.correct = q.answer;
+                        else if (typeof q.answer === 'string') {
+                             const match = q.answer.match(/\(([A-D])\)/i);
+                             if (match) q.correct = match[1].toUpperCase().charCodeAt(0) - 65;
+                        }
+                    }
+                });
+            }
+            
+            loadQuestion();
+            startTimer();
+            updateSummary();
         }
 
         document.addEventListener('DOMContentLoaded', initializeTest);
