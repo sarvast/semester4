@@ -309,6 +309,19 @@
                 testQuestions = generateSampleQuestions(testSubject, questionCount);
             }
 
+            // Normalize questions (handle 'answer' format instead of 'correct' index)
+            if (testQuestions && testQuestions.length > 0) {
+                 testQuestions.forEach(q => {
+                    if (q.correct === undefined && q.answer) {
+                        // Check for format like "(A)", "(B)", etc.
+                        const match = q.answer.match(/\(([A-D])\)/i);
+                        if (match) {
+                            q.correct = match[1].toUpperCase().charCodeAt(0) - 65;
+                        }
+                    }
+                });
+            }
+
             // Validation
             if (testQuestions.length === 0) {
                 alert("No questions found for this subject/paper.");
