@@ -9,7 +9,7 @@
     <link rel="stylesheet" href="style.css">
 </head>
 
-<body style="display: flex; flex-direction: column; min-height: 100vh;">
+<body>
 
     <header>
         <div class="container header-content">
@@ -30,35 +30,33 @@
 
     <div class="container">
 
-        <div style="margin-bottom: 2rem;">
-            <a href="exam-preparation.html" class="btn btn-secondary"
-                style="background: white; border: 1px solid #e2e8f0; color: var(--text-muted);"><i
+        <div class="mb-2">
+            <a href="exam-preparation.html" class="btn btn-secondary btn-back-secondary"><i
                     class="fas fa-arrow-left"></i> Back to Subjects</a>
         </div>
 
-        <div class="hero"
-            style="background: linear-gradient(135deg, #4f46e5, #4338ca); padding: 2rem; margin-bottom: 2rem; text-align: left; display: flex; align-items: center; justify-content: space-between;">
+        <div class="hero hero-blue-gradient">
             <div>
-                <h1 style="font-size: 2rem; margin-bottom: 0.5rem;"><i class="fas fa-file-alt"></i> Question Papers</h1>
-                <p style="font-size: 1.1rem; opacity: 0.9; margin: 0;" id="subjectTitle">Loading Subject...</p>
+                <h1 class="hero-title"><i class="fas fa-file-alt"></i> Question Papers</h1>
+                <p class="hero-subtitle" id="subjectTitle">Loading Subject...</p>
             </div>
-            <i class="fas fa-file-signature" style="font-size: 4rem; opacity: 0.2;"></i>
+            <i class="fas fa-file-signature" class="hero-icon-bg"></i>
         </div>
 
         <div class="grid" id="papersGrid">
             <!-- Papers will be loaded here -->
         </div>
 
-        <div id="noPapers" style="display: none; text-align: center; padding: 4rem;">
-            <div style="font-size: 4rem; color: var(--text-muted); margin-bottom: 1rem; opacity: 0.5;"><i
+        <div id="noPapers" style="display: none;" class="no-papers-msg">
+            <div class="icon-large-muted"><i
                     class="fas fa-folder-open"></i></div>
-            <h3 style="color: var(--text-main);">No papers available yet</h3>
-            <p style="color: var(--text-muted);">Check back later or contact us on WhatsApp.</p>
+            <h3 >No papers available yet</h3>
+            <p class="text-muted">Check back later or contact us on WhatsApp.</p>
         </div>
 
     </div>
 
-    <footer style="margin-top: auto;">
+    <footer class="mt-auto">
         <p>© 2026 Sarvasva Notes. All Rights Reserved.</p>
     </footer>
 
@@ -146,24 +144,23 @@
 
                     data.papers.forEach((paper) => {
                         const paperCard = document.createElement('div');
-                        paperCard.className = 'card';
-                        paperCard.style.cssText = 'border-top: 4px solid var(--primary); display: flex; flex-direction: column;';
+                        paperCard.className = 'card card-paper-item';
 
                         // Use override if present, otherwise default subject
                         const testSubject = paper.subjectOverride || currentSubject;
 
                         paperCard.innerHTML = `
                             <div class="card-header">
-                                <span class="badge" style="background: #e0e7ff; color: var(--primary); font-size: 1rem; padding: 0.5rem 1rem;">${paper.year}</span>
-                                <span style="font-size: 0.9rem; color: var(--text-muted); font-weight: 600;">${paper.session}</span>
+                                <span class="badge badge-paper-year">${paper.year}</span>
+                                <span class="text-muted font-600 font-sm">${paper.session}</span>
                             </div>
                             
-                            <div style="display: flex; gap: 1rem; margin-bottom: 1.5rem; color: var(--text-muted); font-size: 0.9rem;">
+                            <div class="paper-meta">
                                 <span><i class="fas fa-clock"></i> ${paper.duration}</span>
                                 <span><i class="fas fa-star"></i> ${paper.marks} Marks</span>
                             </div>
 
-                            <button class="btn btn-primary" style="margin-top: auto; justify-content: center;" onclick="startTest('${testSubject}', '${paper.year}', '${paper.session}', ${paper.questions})" ${paper.questions === 0 ? 'disabled' : ''}>
+                            <button class="btn btn-primary paper-action-btn" onclick="startTest('${testSubject}', '${paper.year}', '${paper.session}', ${paper.questions})" ${paper.questions === 0 ? 'disabled' : ''}>
                                 ${paper.questions === 0 ? 'Coming Soon' : `<i class="fas fa-play"></i> Start Test (${paper.questions} Qs)`}
                             </button>
                         `;
@@ -198,6 +195,11 @@
 
         document.addEventListener('DOMContentLoaded', loadPapers);
     </script>
+    <script src="theme.js"></script>
 </body>
 
 </html>
+
+
+
+

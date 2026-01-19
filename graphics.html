@@ -14,6 +14,17 @@
     <style>
         /* Specific overrides for Subject Pages */
         .subject-notes-wrapper { display: flex; flex-direction: column; gap: 1.5rem; }
+        .pyq-badge {
+            background-color: #f59e0b;
+            color: white;
+            font-size: 0.75rem;
+            padding: 2px 6px;
+            border-radius: 4px;
+            margin-left: 8px;
+            font-weight: bold;
+            vertical-align: middle;
+            display: inline-block;
+        }
     </style>
 </head>
 <body>
@@ -23,8 +34,8 @@
             <div class="logo">
                 <i class="fas fa-graduation-cap"></i>
                 <div>
-                   <span style="display:block; line-height:1;">Sarvasva Notes</span>
-                   <span style="font-size: 0.8rem; opacity: 0.8; font-weight: 400;">Computer Graphics & Animation</span>
+                   <span >Sarvasva Notes</span>
+                   <span class="logo-subtitle">Computer Graphics & Animation</span>
                 </div>
             </div>
             <nav>
@@ -42,13 +53,13 @@
 
     <div class="container">
         <!-- Hero -->
-        <section class="hero" style="padding: 3rem 1rem; margin-bottom: 2rem;">
+        <section class="hero hero-pad">
             <h2><i class="fas fa-desktop"></i> Computer Graphics & Animation</h2>
             <p>Comprehensive compilation of notes and MCQs from all 5 Units.</p>
-            <div style="display:flex; justify-content:center; gap:1rem; flex-wrap:wrap;">
+            <div class="hero-actions">
                 <a href="#notes" class="btn btn-primary"><i class="fas fa-book"></i> Notes</a>
                 <a href="#mcq" class="btn btn-secondary"><i class="fas fa-question-circle"></i> MCQs</a>
-                <a href="question-papers.html?subject=computer-graphics" class="btn" style="background: var(--accent); color: white;"><i class="fas fa-stopwatch"></i> PYQ Test</a>
+                <a href="question-papers.html?subject=computer-graphics" class="btn" class="btn btn-accent"><i class="fas fa-stopwatch"></i> PYQ Test</a>
             </div>
         </section>
 
@@ -56,11 +67,11 @@
         <h2 class="section-title" id="notes"><i class="fas fa-book-open"></i> Complete Notes (Unit 1-5)</h2>
         <div class="subject-notes-wrapper">
             
-                <div class="unit-block" style="margin-bottom: 40px; border: 1px solid #e0e0e0; border-radius: 8px; overflow: hidden;">
-                    <div style="background: #f8f9fa; padding: 10px 20px; border-bottom: 1px solid #ddd;">
-                        <h3 style="margin:0; color: #555; font-size: 1.1rem;">Unit 1 Content</h3>
+                <div class="unit-block">
+                    <div class="card-unit-header">
+                        <h3>Unit 1 Content</h3>
                     </div>
-                    <div style="padding: 10px;">
+                    <div class="unit-content-pad">
                         <div class="subject-container">
             <div class="subject-header">
                 <h3><i class="fas fa-desktop"></i> Computer Graphics & Animation (BCA-4001)</h3>
@@ -128,16 +139,20 @@
                     <div class="topic-content">
                         <p><strong>Hardware:</strong></p>
                         <ul>
-                            <li><strong>Input Devices:</strong> Mouse, Keyboard, Tablet, Light Pen, Joystick.</li>
+                            <li><strong>Input Devices:</strong> Mouse, Keyboard, Tablet, Light Pen, Joystick. <span class="pyq-badge">PYQ 2024</span></li>
                             <li><strong>Output Devices (Display Technologies):</strong>
                                 <ul>
                                     <li><strong>CRT (Cathode Ray Tube):</strong> Uses electron guns to fire electrons at
                                         a phosphorescent screen.
                                         <ul>
                                             <li><em>Random Scan (Vector):</em> Electron beam directed only to parts of
-                                                screen where picture is drawn. High resolution, no aliasing.</li>
+                                                screen where picture is drawn.
+                                                <br><strong>Real Life Example:</strong> Old Oscilloscopes used in labs, early Radar displays. Crisp lines but no filled shapes.
+                                            </li>
                                             <li><em>Raster Scan:</em> Electron beam scans across the screen row by row
-                                                from top to bottom. Universally used in TVs/Monitors.</li>
+                                                from top to bottom.
+                                                <br><strong>Real Life Example:</strong> Traditional Tube TVs, Modern PC Monitors (LCD/LED work on the same pixel-grid principle).
+                                            </li>
                                         </ul>
                                     </li>
                                     <li><strong>Flat Panel Displays:</strong> Portable and thinner.
@@ -169,9 +184,15 @@
                             <li><strong>DDA (Digital Differential Analyzer):</strong> Uses floating-point arithmetic.
                                 Slower. Cumulative error build-up.</li>
                             <li><strong>Bresenham’s Line Algorithm:</strong> Uses integer arithmetic
-                                (addition/subtraction). Faster and more accurate.</li>
+                                (addition/subtraction). Faster and more accurate. <span class="pyq-badge">PYQ 2022</span></li>
                             <li><strong>Circle Generation:</strong> Midpoint Circle Algorithm (also uses integer
                                 arithmetic).</li>
+                            <li><strong>Ellipse Generation:</strong> Midpoint Ellipse Algorithm.
+                                <ul>
+                                    <li>Similar to Midpoint Circle but calculates points for an ellipse ($b^2x^2 + a^2y^2 = a^2b^2$).</li>
+                                    <li>Divides the quadrant into two regions based on slope (magnitude > 1 and < 1) and uses different decision parameters for each.</li>
+                                </ul>
+                            </li>
                         </ul>
                         <p><strong>Software:</strong></p>
                         <ul>
@@ -200,11 +221,11 @@
                     </div>
                 </div>
 
-                <div class="unit-block" style="margin-bottom: 40px; border: 1px solid #e0e0e0; border-radius: 8px; overflow: hidden;">
-                    <div style="background: #f8f9fa; padding: 10px 20px; border-bottom: 1px solid #ddd;">
-                        <h3 style="margin:0; color: #555; font-size: 1.1rem;">Unit 2 Content</h3>
+                <div class="unit-block">
+                    <div class="card-unit-header">
+                        <h3>Unit 2 Content</h3>
                     </div>
-                    <div style="padding: 10px;">
+                    <div class="unit-content-pad">
                         <div class="subject-container">
             <div class="subject-header">
                 <h3><i class="fas fa-desktop"></i> Computer Graphics & Animation</h3>
@@ -236,6 +257,11 @@
                                     <li>If $p_k < 0$, the next point is $(x_{k+1}, y_k)$; otherwise, it is $(x_{k+1},
                                             y_{k+1})$ (for slope $0 < m < 1$).</li>
                                 </ul>
+                                <div class="note-info-block">
+                                    <strong>Practical Walkthrough:</strong> Drawing line from (9, 18) to (14, 22). 
+                                    <br>$\Delta x=5, \Delta y=4$. Decision Parameter $p_0 = 2\Delta y - \Delta x = 8 - 5 = 3$.
+                                    <br>Since $p_0 > 0$, we choose upper pixel $(10, 19)$ and update $p$. This avoids floating point math entirely!
+                                </div>
                             </li>
                         </ul>
                     </div>
@@ -245,14 +271,16 @@
                     <h4>Scan Converting Circles & Clipping</h4>
                     <div class="topic-content">
                         <ul>
-                            <li><strong>Symmetry:</strong> A circle is highly symmetric (8-way symmetry). If you
+                            <li><strong>Symmetry:</strong> A circle is highly symmetric (8-way symmetry). If 
+                                <br><strong>Analogy:</strong> Looking through a camera viewfinder. You only see what's inside the rectangular frame; the rest of the world exists but is "clipped" from your photo.
+                            you
                                 calculate one point $(x, y)$, you can determine 7 other points.</li>
                             <li><strong>Midpoint Circle Algorithm:</strong> Uses a decision parameter to find the
                                 closest pixel to the true circle boundary. It avoids square root calculations.</li>
                             <li><strong>Clipping:</strong> Definition: The process of determining which parts of an
                                 object are visible (inside a window) and removing the parts that are outside.</li>
                             <li><strong>Cohen-Sutherland Line Clipping:</strong> Uses a 4-bit region code (TBRL - Top,
-                                Bottom, Right, Left) to identify position relative to the window.
+                                Bottom, Right, Left) to identify position relative to the window. <span class="pyq-badge">PYQ 2022</span>
                                 <ul>
                                     <li>Region Codes: Bit 1 (Left), Bit 2 (Right), Bit 3 (Bottom), Bit 4 (Top).</li>
                                     <li>Trivial Acceptance: Both endpoints have code 0000.</li>
@@ -293,11 +321,11 @@
                     </div>
                 </div>
 
-                <div class="unit-block" style="margin-bottom: 40px; border: 1px solid #e0e0e0; border-radius: 8px; overflow: hidden;">
-                    <div style="background: #f8f9fa; padding: 10px 20px; border-bottom: 1px solid #ddd;">
-                        <h3 style="margin:0; color: #555; font-size: 1.1rem;">Unit 3 Content</h3>
+                <div class="unit-block">
+                    <div class="card-unit-header">
+                        <h3>Unit 3 Content</h3>
                     </div>
-                    <div style="padding: 10px;">
+                    <div class="unit-content-pad">
                         <div class="subject-container">
             <div class="subject-header">
                 <h3><i class="fas fa-desktop"></i> Computer Graphics & Animation</h3>
@@ -327,7 +355,7 @@
                                 </ul>
                             </li>
                             <li><strong>Scaling:</strong> Changing size coordinates. $x' = x \cdot s_x$, $y' = y \cdot
-                                s_y$.
+                                s_y$. <span class="pyq-badge">PYQ 2022</span>
                                 <ul>
                                     <li>Matrix: $\begin{bmatrix} s_x & 0 & 0 \\ 0 & s_y & 0 \\ 0 & 0 & 1 \end{bmatrix}$
                                     </li>
@@ -363,6 +391,20 @@
                                     </li>
                                 </ul>
                             </li>
+                            <li><strong>Window-to-Viewport Transformation:</strong>
+                                <ul>
+                                    <li><strong>Window:</strong> A world-coordinate area selected for display (What we see).</li>
+                                    <li><strong>Viewport:</strong> An area on a display device to map the window (Where we see it).</li>
+                                    <li><strong>Process:</strong> Maps world coordinates $(x_w, y_w)$ to device coordinates $(x_v, y_v)$.</li>
+                                    <li><strong>Formula:</strong>
+                                        <ul>
+                                            <li>$s_x = \frac{x_{vmax} - x_{vmin}}{x_{wmax} - x_{wmin}}$, $s_y = \frac{y_{vmax} - y_{vmin}}{y_{wmax} - y_{wmin}}$</li>
+                                            <li>$x_v = x_{vmin} + (x_w - x_{wmin}) \cdot s_x$</li>
+                                            <li>$y_v = y_{vmin} + (y_w - y_{wmin}) \cdot s_y$</li>
+                                        </ul>
+                                    </li>
+                                </ul>
+                            </li>
                         </ul>
                     </div>
                 </div>
@@ -371,11 +413,11 @@
                     </div>
                 </div>
 
-                <div class="unit-block" style="margin-bottom: 40px; border: 1px solid #e0e0e0; border-radius: 8px; overflow: hidden;">
-                    <div style="background: #f8f9fa; padding: 10px 20px; border-bottom: 1px solid #ddd;">
-                        <h3 style="margin:0; color: #555; font-size: 1.1rem;">Unit 4 Content</h3>
+                <div class="unit-block">
+                    <div class="card-unit-header">
+                        <h3>Unit 4 Content</h3>
                     </div>
-                    <div style="padding: 10px;">
+                    <div class="unit-content-pad">
                         <div class="subject-container">
             <div class="subject-header">
                 <h3><i class="fas fa-desktop"></i> Computer Graphics & Animation</h3>
@@ -427,6 +469,13 @@
                                     </li>
                                 </ul>
                             </li>
+                            <li><strong>Quadric Surfaces:</strong>
+                                <ul>
+                                    <li>Surfaces defined by 2nd-degree equations (e.g., Spheres, Ellipsoids, Torus).</li>
+                                    <li>Equation: $Ax^2 + By^2 + Cz^2 + Dxy + ... = 0$.</li>
+                                    <li><strong>Superquadrics:</strong> Extension of quadrics with additional flexibility using powers to control shape (squareness/roundness). Used in solid modeling.</li>
+                                </ul>
+                            </li>
                             <li><strong>Continuity:</strong>
                                 <ul>
                                     <li>$G^0$: Curves touch (Position continuity).</li>
@@ -464,11 +513,11 @@
                     </div>
                 </div>
 
-                <div class="unit-block" style="margin-bottom: 40px; border: 1px solid #e0e0e0; border-radius: 8px; overflow: hidden;">
-                    <div style="background: #f8f9fa; padding: 10px 20px; border-bottom: 1px solid #ddd;">
-                        <h3 style="margin:0; color: #555; font-size: 1.1rem;">Unit 5 Content</h3>
+                <div class="unit-block">
+                    <div class="card-unit-header">
+                        <h3>Unit 5 Content</h3>
                     </div>
-                    <div style="padding: 10px;">
+                    <div class="unit-content-pad">
                         <div class="subject-container">
             <div class="subject-header">
                 <h3><i class="fas fa-film"></i> Computer Graphics & Animation</h3>
@@ -504,8 +553,32 @@
                             </li>
                             <li><strong>3D Animation Process:</strong> Modeling $\to$ Layout/Animation $\to$ Rendering.
                             </li>
-                            <!-- Gap Analysis Addition -->
-                            <li><strong>Multimedia Standards & File Formats:</strong>
+                            <li><strong>Animation Types:</strong>
+                                <ul>
+                                    <li><strong>Frame-by-Frame (Cel Animation):</strong> Traditional hand-drawn frames.</li>
+                                    <li><strong>Keyframing:</strong> Computer generates frames between start/end points.</li>
+                                    <li><strong>Procedural:</strong> Motion ruled by laws of physics/algorithms (particles).</li>
+                                    <li><strong>Morphing:</strong> Smooth transformation between two shapes.</li>
+                                </ul>
+                            </li>
+                            <li><strong>Sequencing of Animation Design:</strong>
+                                <ol>
+                                    <li><strong>Storyboarding:</strong> Visual outline of the events.</li>
+                                    <li><strong>Object Definition:</strong> Modeling the characters/objects.</li>
+                                    <li><strong>Keyframe Definition:</strong> Positioning objects at critical time points.</li>
+                                    <li><strong>In-betweening:</strong> Generating intermediate frames.</li>
+                                </ol>
+                            </li>
+                            <li><strong>Fundamental Principles (Disney's 12 Principles):</strong>
+                                <ul>
+                                    <li><strong>Squash and Stretch:</strong> Giving weight and volume to moving objects.</li>
+                                    <li><strong>Anticipation:</strong> Prepares the viewer for an action.</li>
+                                    <li><strong>Staging:</strong> Presenting an idea clearly.</li>
+                                    <li><strong>Follow Through & Overlapping Action:</strong> Parts continue moving after the main body stops.</li>
+                                    <li><strong>Slow In and Slow Out:</strong> Movement starts slow, speeds up, then slows down.</li>
+                                </ul>
+                            </li>
+                            <li><strong>Multimedia Standards & File Formats:</strong> <span class="pyq-badge">PYQ 2024</span>
                                 <ul>
                                     <li><strong>TIFF (Tagged Image File Format):</strong> Lossless, high quality, used
                                         in print/publishing.</li>
@@ -539,15 +612,15 @@
         </div>
 
         <!-- MCQ Section -->
-        <h2 class="section-title" id="mcq" style="margin-top: 4rem;"><i class="fas fa-question-circle"></i> MCQ Practice</h2>
+        <h2 class="section-title mcq-section-title" id="mcq"><i class="fas fa-question-circle"></i> MCQ Practice</h2>
         <div class="mcq-section">
             <div class="score-display">
                 <p>Score: <span id="score">0</span> / <span id="total-questions">0</span></p>
-                <button id="reset-btn" class="btn btn-secondary" style="font-size:0.8rem; padding: 5px 15px; color: var(--primary); background: white; border: 1px solid var(--primary); margin-top: 10px;">Reset Quiz</button>
+                <button id="reset-btn" class="btn btn-outline-primary btn-sm mt-2">Reset Quiz</button>
             </div>
             
             <div class="mcq-container active">
-                <!-- Unit 1 MCQs --> <div class="unit-mcq-label" style="background:#eee; padding:5px; margin:10px 0; font-weight:bold;">Unit 1 Questions</div>
+                <!-- Unit 1 MCQs --> <div class="unit-mcq-label" >Unit 1 Questions</div>
                 <!-- MCQ 1 -->
                 <div class="mcq-question">
                     <div class="mcq-question-number">
@@ -690,7 +763,7 @@
                         </div>
                     </div>
                 
-<!-- Unit 2 MCQs --> <div class="unit-mcq-label" style="background:#eee; padding:5px; margin:10px 0; font-weight:bold;">Unit 2 Questions</div>
+<!-- Unit 2 MCQs --> <div class="unit-mcq-label" >Unit 2 Questions</div>
                 <div class="mcq-question">
                     <p class="question-text">The process of determining which parts of an object are visible (inside a
                         window) and removing the parts that are outside is called:</p>
@@ -775,7 +848,7 @@
                 </div>
                 <div class="mcq-explanation">Appeared in 2023</div>
             
-<!-- Unit 3 MCQs --> <div class="unit-mcq-label" style="background:#eee; padding:5px; margin:10px 0; font-weight:bold;">Unit 3 Questions</div>
+<!-- Unit 3 MCQs --> <div class="unit-mcq-label" >Unit 3 Questions</div>
                 <div class="mcq-question">
                     <p class="question-text">A transformation that slants the shape of objects is called:</p>
                     <div class="mcq-options">
@@ -868,7 +941,7 @@
                         <div class="mcq-explanation">Appeared in PYQ</div>
                     </div>
                 
-<!-- Unit 4 MCQs --> <div class="unit-mcq-label" style="background:#eee; padding:5px; margin:10px 0; font-weight:bold;">Unit 4 Questions</div>
+<!-- Unit 4 MCQs --> <div class="unit-mcq-label" >Unit 4 Questions</div>
                 <div class="mcq-question">
                     <p class="question-text">When the curve passes through all the data points, then the curve is known
                         as?</p>
@@ -945,7 +1018,7 @@
                     <div class="mcq-explanation">Appeared in PYQ</div>
                 </div>
             
-<!-- Unit 5 MCQs --> <div class="unit-mcq-label" style="background:#eee; padding:5px; margin:10px 0; font-weight:bold;">Unit 5 Questions</div>
+<!-- Unit 5 MCQs --> <div class="unit-mcq-label" >Unit 5 Questions</div>
                 <div class="mcq-question">
                     <p class="question-text">The movement of different attributes of image would make the image dynamic
                         and such a dynamic effect is termed as:</p>
@@ -1024,8 +1097,8 @@
             
             </div>
             
-            <div class="mcq-navigation" style="display:flex; justify-content:space-between; margin-top:2rem;">
-                <button id="prev-btn" class="btn btn-secondary" style="background: #e2e8f0; color: var(--text-main);">Previous</button>
+            <div class="mcq-navigation mcq-nav">
+                <button id="prev-btn" class="btn btn-secondary" class="btn btn-secondary">Previous</button>
                 <button id="next-btn" class="btn btn-primary">Next</button>
             </div>
         </div>
@@ -1184,5 +1257,11 @@
             });
         });
     </script>
+    <script src="theme.js"></script>
 </body>
 </html>
+
+
+
+
+

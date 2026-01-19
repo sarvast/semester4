@@ -117,72 +117,70 @@
 
     <div class="test-container">
         <div class="question-panel">
-            <div style="display: flex; justify-content: space-between; margin-bottom: 1.5rem;">
-                <span class="badge" style="background: #667eea; color: white;" id="questionNumber">Q1</span>
-                <span style="color: #666; font-weight: 600;">1 Mark</span>
+            <div class="test-header-flex">
+                <span class="badge" class="badge badge-blue" id="questionNumber">Q1</span>
+                <span class="text-mark">1 Mark</span>
             </div>
 
-            <p id="questionText" style="font-size: 1.25rem; margin-bottom: 2rem; color: #2c3e50;">Loading question...</p>
+            <p id="questionText" class="question-loading">Loading question...</p>
 
             <div id="optionsContainer">
                 <!-- Options will be loaded here -->
             </div>
 
-            <div style="display: flex; justify-content: space-between; margin-top: 2rem;">
+            <div class="test-footer-flex">
                 <button class="btn btn-secondary" id="prevBtn" onclick="previousQuestion()">Previous</button>
                 <button class="btn btn-primary" id="nextBtn" onclick="nextQuestion()">Next</button>
             </div>
             
-            <button class="btn btn-success" style="width: 100%; margin-top: 1rem;" onclick="submitTest()">Submit Test</button>
+            <button class="btn btn-success btn-full-width mt-1" onclick="submitTest()">
+                <i class="fas fa-check-circle"></i> Submit Test
+            </button>
         </div>
 
         <div class="sidebar">
-            <h3 style="margin-bottom: 1rem;"><i class="fas fa-th"></i> Question Palette</h3>
+            <h3 class="mb-1"><i class="fas fa-th"></i> Question Palette</h3>
+
+            <div class="test-stats-container dashboard-top">
+                <div class="stat-item-box">
+                     <span class="stat-value" id="answeredCount">0</span>
+                     <span class="stat-label">Answered</span>
+                </div>
+                <div class="stat-item-box">
+                     <span class="stat-value" id="remainingCount">75</span>
+                     <span class="stat-label">Remaining</span>
+                </div>
+            </div>
+
             <div class="question-grid" id="questionGrid">
                 <!-- Question buttons will be generated here -->
             </div>
 
-            <div style="font-size: 0.9rem; display: flex; flex-direction: column; gap: 0.5rem;">
-                <div style="display: flex; align-items: center; gap: 0.5rem;">
-                    <div style="width: 12px; height: 12px; border-radius: 50%; background: #4caf50;"></div>
+            <div class="palette-legend">
+                <div class="legend-item">
+                    <div class="status-circle-green"></div>
                     Answered
                 </div>
-                <div style="display: flex; align-items: center; gap: 0.5rem;">
-                    <div style="width: 12px; height: 12px; border-radius: 50%; background: #f1f5f9; border: 1px solid #cbd5e1;"></div>
+                <div class="legend-item">
+                    <div class="status-circle-empty"></div>
                     Unanswered
                 </div>
-                <div style="display: flex; align-items: center; gap: 0.5rem;">
-                    <div style="width: 12px; height: 12px; border-radius: 50%; border: 2px solid #667eea;"></div>
+                <div class="legend-item">
+                    <div class="status-circle-current"></div>
                     Current
-                </div>
-            </div>
-
-            <div style="margin-top: 1.5rem; padding-top: 1rem; border-top: 1px solid #e2e8f0;">
-                <div style="display: flex; justify-content: space-between; margin-bottom: 0.5rem;">
-                    <span>Answered:</span>
-                    <strong id="answeredCount">0</strong>
-                </div>
-                <div style="display: flex; justify-content: space-between;">
-                    <span>Remaining:</span>
-                    <strong id="remainingCount">75</strong>
                 </div>
             </div>
         </div>
     </div>
 
-    <script src="mock-test-questions.js"></script>
+    <script src="questions/mock-test-questions.js"></script>
     <script>
         let currentQuestion = 0;
         let answers = {};
         let timeRemaining = 3 * 60 * 60; // 3 hours
         let timerInterval;
 
-        function initializeTest() {
-            generateQuestionGrid();
-            loadQuestion();
-            startTimer();
-            updateSummary();
-        }
+
 
         function generateQuestionGrid() {
             const grid = document.getElementById('questionGrid');
@@ -301,8 +299,8 @@
         }
 
         function initializeTest() {
-             // Normalize data (handle inconsistencies)
-             if (mockTestQuestions && mockTestQuestions.length > 0) {
+            // Normalize data (handle inconsistencies)
+            if (mockTestQuestions && mockTestQuestions.length > 0) {
                  mockTestQuestions.forEach(q => {
                     if (q.correct === undefined && q.answer !== undefined) {
                         if (typeof q.answer === 'number') q.correct = q.answer;
@@ -313,7 +311,8 @@
                     }
                 });
             }
-            
+
+            generateQuestionGrid();
             loadQuestion();
             startTimer();
             updateSummary();
@@ -321,5 +320,8 @@
 
         document.addEventListener('DOMContentLoaded', initializeTest);
     </script>
+    <script src="theme.js"></script>
 </body>
 </html>
+
+

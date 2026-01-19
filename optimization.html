@@ -23,8 +23,8 @@
             <div class="logo">
                 <i class="fas fa-graduation-cap"></i>
                 <div>
-                   <span style="display:block; line-height:1;">Sarvasva Notes</span>
-                   <span style="font-size: 0.8rem; opacity: 0.8; font-weight: 400;">Optimization Techniques</span>
+                   <span >Sarvasva Notes</span>
+                   <span class="logo-subtitle">Optimization Techniques</span>
                 </div>
             </div>
             <nav>
@@ -42,13 +42,13 @@
 
     <div class="container">
         <!-- Hero -->
-        <section class="hero" style="padding: 3rem 1rem; margin-bottom: 2rem;">
+        <section class="hero hero-pad">
             <h2><i class="fas fa-chart-line"></i> Optimization Techniques</h2>
             <p>Comprehensive compilation of notes and MCQs from all 5 Units.</p>
-            <div style="display:flex; justify-content:center; gap:1rem; flex-wrap:wrap;">
+            <div class="hero-actions">
                 <a href="#notes" class="btn btn-primary"><i class="fas fa-book"></i> Notes</a>
                 <a href="#mcq" class="btn btn-secondary"><i class="fas fa-question-circle"></i> MCQs</a>
-                <a href="question-papers.html?subject=operations-research" class="btn" style="background: var(--accent); color: white;"><i class="fas fa-stopwatch"></i> PYQ Test</a>
+                <a href="question-papers.html?subject=operations-research" class="btn" class="btn btn-accent"><i class="fas fa-stopwatch"></i> PYQ Test</a>
             </div>
         </section>
 
@@ -56,11 +56,11 @@
         <h2 class="section-title" id="notes"><i class="fas fa-book-open"></i> Complete Notes (Unit 1-5)</h2>
         <div class="subject-notes-wrapper">
             
-                <div class="unit-block" style="margin-bottom: 40px; border: 1px solid #e0e0e0; border-radius: 8px; overflow: hidden;">
-                    <div style="background: #f8f9fa; padding: 10px 20px; border-bottom: 1px solid #ddd;">
-                        <h3 style="margin:0; color: #555; font-size: 1.1rem;">Unit 1 Content</h3>
+                <div class="unit-block">
+                    <div class="card-unit-header">
+                        <h3>Unit 1 Content</h3>
                     </div>
-                    <div style="padding: 10px;">
+                    <div class="unit-content-pad">
                         <div class="subject-container">
             <div class="subject-header">
                 <h3><i class="fas fa-chart-line"></i> Optimization Techniques (BCA-4004)</h3>
@@ -71,9 +71,19 @@
                     <h4>1. Linear Programming Problem (LPP)</h4>
                     <div class="topic-content">
                         <p><strong>Central Problem:</strong> Optimization (Maximizing Profit or Minimizing Cost) subject
-                            to limited resources (constraints). All relationships are linear.</p>
+                            to limited resources (constraints). All relationships are linear. <span class="pyq-badge">PYQ 2024</span></p>
                         <p><strong>Structure:</strong> Max/Min $Z = c_1x_1 + ... + c_nx_n$ (Objective) <br>Subject to:
                             $a_{11}x_1 + ... \leq b_1$ (Constraints) <br>and $x_i \geq 0$ (Non-negativity).</p>
+                        <div class="note-block-yellow">
+                            <strong>Practical Example (The Bakery Problem):</strong>
+                            <p>A bakery makes Cakes ($x$) and Bread ($y$).
+                            <br><strong>Maximize Profit ($Z$):</strong> $40x + 20y$ (₹40 per cake, ₹20 per bread).
+                            <br><strong>Constraints:</strong>
+                            <br>1. Flour: $2x + y \le 100$ kg.
+                            <br>2. Sugar: $x + y \le 80$ kg.
+                            <br>3. Non-negativity: $x, y \ge 0$ (Can't bake negative cakes!).
+                            <br><em>Goal:</em> Find optimal $x$ and $y$ to get max money.</p>
+                        </div>
                         <p><strong>Definitions:</strong> <span class="pyq-badge">PYQ 2022</span></p>
                         <ul>
                             <li><strong>Solution:</strong> Any set of variables satisfying constraints.</li>
@@ -120,7 +130,11 @@
                                     <li><em>Surplus Variable ($-S$):</em> Subtracted from $\ge$ constraint (excess).
                                         Cost coeff = 0.</li>
                                     <li><em>Artificial Variable ($A$):</em> Added to $\ge$ or $=$ constraint to get
-                                        initial basis. Cost coeff = $-M$ (Big M Method).</li>
+                                        initial basis. Cost coeff = $-M$ (Big M Method).
+                                        <ul>
+                                            <li><strong>Two-Phase Method:</strong> Alternative to Big-M. Phase 1 minimizes sum of artificial variables. Phase 2 optimizes original function.</li>
+                                        </ul>
+                                    </li>
                                     <li><em>Optimality Condition:</em> For Maximization, stop when all $C_j - Z_j \le 0$
                                         (for non-basic variables).</li>
                                 </ul>
@@ -156,11 +170,11 @@
                     </div>
                 </div>
 
-                <div class="unit-block" style="margin-bottom: 40px; border: 1px solid #e0e0e0; border-radius: 8px; overflow: hidden;">
-                    <div style="background: #f8f9fa; padding: 10px 20px; border-bottom: 1px solid #ddd;">
-                        <h3 style="margin:0; color: #555; font-size: 1.1rem;">Unit 2 Content</h3>
+                <div class="unit-block">
+                    <div class="card-unit-header">
+                        <h3>Unit 2 Content</h3>
                     </div>
-                    <div style="padding: 10px;">
+                    <div class="unit-content-pad">
                         <div class="subject-container">
             <div class="subject-header">
                 <h3><i class="fas fa-chart-line"></i> Optimization Techniques</h3>
@@ -193,7 +207,7 @@
                                         \frac{a_{11}a_{22}-a_{12}a_{21}}{(a_{11}+a_{22})-(a_{12}+a_{21})}$.</li>
                                 </ul>
                             </li>
-                            <li><strong>Dominance Rule:</strong> Used to reduce matrix size.
+                            <li><strong>Dominance Rule:</strong> Used to reduce matrix size. <span class="pyq-badge">PYQ 2024</span>
                                 <ul>
                                     <li>Row Dominance: If row $R_i \le R_j$ (all elements), delete $R_i$ (Player A
                                         avoids worse payouts).</li>
@@ -212,11 +226,11 @@
                     </div>
                 </div>
 
-                <div class="unit-block" style="margin-bottom: 40px; border: 1px solid #e0e0e0; border-radius: 8px; overflow: hidden;">
-                    <div style="background: #f8f9fa; padding: 10px 20px; border-bottom: 1px solid #ddd;">
-                        <h3 style="margin:0; color: #555; font-size: 1.1rem;">Unit 3 Content</h3>
+                <div class="unit-block">
+                    <div class="card-unit-header">
+                        <h3>Unit 3 Content</h3>
                     </div>
-                    <div style="padding: 10px;">
+                    <div class="unit-content-pad">
                         <div class="subject-container">
             <div class="subject-header">
                 <h3><i class="fas fa-chart-line"></i> Optimization Techniques</h3>
@@ -252,6 +266,17 @@
                                     </li>
                                 </ul>
                             </li>
+                            <li><strong>Inventory Management Techniques:</strong>
+                                <ul>
+                                    <li><strong>ABC Analysis (Always Better Control):</strong> Categorizing inventory based on value/usage.
+                                        <ul>
+                                            <li><em>A Items:</em> High value, low volume (Strict control).</li>
+                                            <li><em>B Items:</em> Moderate value, moderate volume.</li>
+                                            <li><em>C Items:</em> Low value, high volume (Loose control).</li>
+                                        </ul>
+                                    </li>
+                                </ul>
+                            </li>
                             <li><strong>Staffing Problem:</strong> Application of replacement theory to human resources.
                                 <br><em>Goal:</em> Maintain constant workforce size despite resignations/retirements
                                 (mortality) by hiring new recruits. Uses mortality tables.
@@ -281,6 +306,12 @@
                                     </li>
                                     <li><strong>Degeneracy:</strong> When number of occupied cells < $m + n - 1$.</li>
                                 </ul>
+                                <div class="note-block-blue">
+                                    <strong>Real Life Application (Logistics):</strong>
+                                    <p>Amazon has 3 warehouses (Sources) in Mumbai, Delhi, Bangalore and 4 delivery zones (Destinations).
+                                    <br>Each route has a different shipping cost (fuel, tolls).
+                                    <br>The Transportation Problem calculates exactly how many packages each warehouse should send to each zone to minimize the <strong>Total Shipping Bill</strong> while meeting all demand.</p>
+                                </div>
                             </li>
                             <li><strong>Assignment Problem:</strong> Assigning $n$ jobs to $n$ workers to minimize
                                 cost/time.
@@ -300,11 +331,11 @@
                     </div>
                 </div>
 
-                <div class="unit-block" style="margin-bottom: 40px; border: 1px solid #e0e0e0; border-radius: 8px; overflow: hidden;">
-                    <div style="background: #f8f9fa; padding: 10px 20px; border-bottom: 1px solid #ddd;">
-                        <h3 style="margin:0; color: #555; font-size: 1.1rem;">Unit 4 Content</h3>
+                <div class="unit-block">
+                    <div class="card-unit-header">
+                        <h3>Unit 4 Content</h3>
                     </div>
-                    <div style="padding: 10px;">
+                    <div class="unit-content-pad">
                         <div class="subject-container">
             <div class="subject-header">
                 <h3><i class="fas fa-chart-line"></i> Optimization Techniques</h3>
@@ -341,11 +372,11 @@
                     </div>
                 </div>
 
-                <div class="unit-block" style="margin-bottom: 40px; border: 1px solid #e0e0e0; border-radius: 8px; overflow: hidden;">
-                    <div style="background: #f8f9fa; padding: 10px 20px; border-bottom: 1px solid #ddd;">
-                        <h3 style="margin:0; color: #555; font-size: 1.1rem;">Unit 5 Content</h3>
+                <div class="unit-block">
+                    <div class="card-unit-header">
+                        <h3>Unit 5 Content</h3>
                     </div>
-                    <div style="padding: 10px;">
+                    <div class="unit-content-pad">
                         <div class="subject-container">
             <div class="subject-header">
                 <h3><i class="fas fa-tasks"></i> Optimization Techniques</h3>
@@ -390,15 +421,15 @@
         </div>
 
         <!-- MCQ Section -->
-        <h2 class="section-title" id="mcq" style="margin-top: 4rem;"><i class="fas fa-question-circle"></i> MCQ Practice</h2>
+        <h2 class="section-title mcq-section-title" id="mcq"><i class="fas fa-question-circle"></i> MCQ Practice</h2>
         <div class="mcq-section">
             <div class="score-display">
                 <p>Score: <span id="score">0</span> / <span id="total-questions">0</span></p>
-                <button id="reset-btn" class="btn btn-secondary" style="font-size:0.8rem; padding: 5px 15px; color: var(--primary); background: white; border: 1px solid var(--primary); margin-top: 10px;">Reset Quiz</button>
+                <button id="reset-btn" class="btn btn-outline-primary btn-sm mt-2">Reset Quiz</button>
             </div>
             
             <div class="mcq-container active">
-                <!-- Unit 1 MCQs --> <div class="unit-mcq-label" style="background:#eee; padding:5px; margin:10px 0; font-weight:bold;">Unit 1 Questions</div>
+                <!-- Unit 1 MCQs --> <div class="unit-mcq-label" >Unit 1 Questions</div>
                     <!-- MCQ 1 -->
                     <div class="mcq-question">
                         <div class="mcq-question-number">
@@ -551,7 +582,7 @@
                         </div>
                     </div>
                 
-<!-- Unit 2 MCQs --> <div class="unit-mcq-label" style="background:#eee; padding:5px; margin:10px 0; font-weight:bold;">Unit 2 Questions</div>
+<!-- Unit 2 MCQs --> <div class="unit-mcq-label" >Unit 2 Questions</div>
         <div class="mcq-question">
             <p class="question-text">A game is said to be fair if the value of the game is:</p>
             <div class="mcq-options">
@@ -630,7 +661,7 @@
                 <div class="mcq-explanation">Appeared in PYQ</div>
             </div>
         
-<!-- Unit 3 MCQs --> <div class="unit-mcq-label" style="background:#eee; padding:5px; margin:10px 0; font-weight:bold;">Unit 3 Questions</div>
+<!-- Unit 3 MCQs --> <div class="unit-mcq-label" >Unit 3 Questions</div>
                     <div class="mcq-question">
                         <p class="question-text">Replacement is said to be necessary if:</p>
                         <div class="mcq-options">
@@ -689,7 +720,7 @@
                     </div>
                     <div class="mcq-explanation">Appeared in: 2022</div>
                 
-<!-- Unit 4 MCQs --> <div class="unit-mcq-label" style="background:#eee; padding:5px; margin:10px 0; font-weight:bold;">Unit 4 Questions</div>
+<!-- Unit 4 MCQs --> <div class="unit-mcq-label" >Unit 4 Questions</div>
                 <div class="mcq-question">
                     <p class="question-text">The formula for calculating expected time ($t_e$) in PERT is:</p>
                     <div class="mcq-options">
@@ -756,7 +787,7 @@
                     <div class="mcq-explanation">Appeared in 2024</div>
                 </div>
             
-<!-- Unit 5 MCQs --> <div class="unit-mcq-label" style="background:#eee; padding:5px; margin:10px 0; font-weight:bold;">Unit 5 Questions</div>
+<!-- Unit 5 MCQs --> <div class="unit-mcq-label" >Unit 5 Questions</div>
                 <div class="mcq-question">
                     <p class="question-text">Johnson’s rule is used for:</p>
                     <div class="mcq-options">
@@ -830,8 +861,8 @@
             
             </div>
             
-            <div class="mcq-navigation" style="display:flex; justify-content:space-between; margin-top:2rem;">
-                <button id="prev-btn" class="btn btn-secondary" style="background: #e2e8f0; color: var(--text-main);">Previous</button>
+            <div class="mcq-navigation mcq-nav">
+                <button id="prev-btn" class="btn btn-secondary" class="btn btn-secondary">Previous</button>
                 <button id="next-btn" class="btn btn-primary">Next</button>
             </div>
         </div>
@@ -990,5 +1021,12 @@
             });
         });
     </script>
+    <script src="theme.js"></script>
 </body>
 </html>
+
+
+
+
+
+

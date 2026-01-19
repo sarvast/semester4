@@ -23,8 +23,8 @@
             <div class="logo">
                 <i class="fas fa-graduation-cap"></i>
                 <div>
-                   <span style="display:block; line-height:1;">Sarvasva Notes</span>
-                   <span style="font-size: 0.8rem; opacity: 0.8; font-weight: 400;">Mathematics-III</span>
+                   <span >Sarvasva Notes</span>
+                   <span class="logo-subtitle">Mathematics-III</span>
                 </div>
             </div>
             <nav>
@@ -42,13 +42,13 @@
 
     <div class="container">
         <!-- Hero -->
-        <section class="hero" style="padding: 3rem 1rem; margin-bottom: 2rem;">
+        <section class="hero hero-pad">
             <h2><i class="fas fa-calculator"></i> Mathematics-III</h2>
             <p>Comprehensive compilation of notes and MCQs from all 5 Units.</p>
-            <div style="display:flex; justify-content:center; gap:1rem; flex-wrap:wrap;">
+            <div class="hero-actions">
                 <a href="#notes" class="btn btn-primary"><i class="fas fa-book"></i> Notes</a>
                 <a href="#mcq" class="btn btn-secondary"><i class="fas fa-question-circle"></i> MCQs</a>
-                <a href="question-papers.html?subject=mathematics" class="btn" style="background: var(--accent); color: white;"><i class="fas fa-stopwatch"></i> PYQ Test</a>
+                <a href="question-papers.html?subject=mathematics" class="btn" class="btn btn-accent"><i class="fas fa-stopwatch"></i> PYQ Test</a>
             </div>
         </section>
 
@@ -56,11 +56,11 @@
         <h2 class="section-title" id="notes"><i class="fas fa-book-open"></i> Complete Notes (Unit 1-5)</h2>
         <div class="subject-notes-wrapper">
             
-                <div class="unit-block" style="margin-bottom: 40px; border: 1px solid #e0e0e0; border-radius: 8px; overflow: hidden;">
-                    <div style="background: #f8f9fa; padding: 10px 20px; border-bottom: 1px solid #ddd;">
-                        <h3 style="margin:0; color: #555; font-size: 1.1rem;">Unit 1 Content</h3>
+                <div class="unit-block">
+                    <div class="card-unit-header">
+                        <h3>Unit 1 Content</h3>
                     </div>
-                    <div style="padding: 10px;">
+                    <div class="unit-content-pad">
                         <div class="subject-container">
             <div class="subject-header">
                 <h3><i class="fas fa-calculator"></i> Mathematics-III (BCA-4005)</h3>
@@ -114,6 +114,9 @@
                                 \omega^2$.
                                 <ul>
                                     <li>Properties: $1 + \omega + \omega^2 = 0$ and $\omega^3 = 1$.</li>
+                                    <li><em>Example:</em> Evaluate $(1-\omega+\omega^2)^5 + (1+\omega-\omega^2)^5$.
+                                        <br>Sol: Since $1+\omega^2 = -\omega$, term 1 is $(-2\omega)^5$. Since
+                                        $1+\omega=-\omega^2$, term 2 is $(-2\omega^2)^5$. Result is 32.</li>
                                 </ul>
                             </li>
                             <li><strong>Analytic Functions:</strong> A function $f(z)$ differentiable at every point in
@@ -150,11 +153,11 @@
                     </div>
                 </div>
 
-                <div class="unit-block" style="margin-bottom: 40px; border: 1px solid #e0e0e0; border-radius: 8px; overflow: hidden;">
-                    <div style="background: #f8f9fa; padding: 10px 20px; border-bottom: 1px solid #ddd;">
-                        <h3 style="margin:0; color: #555; font-size: 1.1rem;">Unit 2 Content</h3>
+                <div class="unit-block">
+                    <div class="card-unit-header">
+                        <h3>Unit 2 Content</h3>
                     </div>
-                    <div style="padding: 10px;">
+                    <div class="unit-content-pad">
                         <div class="subject-container">
             <div class="subject-header">
                 <h3><i class="fas fa-calculator"></i> Mathematics-III</h3>
@@ -171,6 +174,14 @@
                                 Direction of $\nabla \phi$ gives the direction of steepest ascent.
                                 <br>$\nabla \phi = \frac{\partial \phi}{\partial x}\hat{i} + \frac{\partial
                                 \phi}{\partial y}\hat{j} + \frac{\partial \phi}{\partial z}\hat{k}$.
+                                <div class="note-block-success">
+                                    <strong>Real Life Example: Hiking a Mountain</strong><br>
+                                    Imagine you are standing on a hillside in fog.
+                                    <ul>
+                                        <li><strong>Scalar Field ($\phi$):</strong> The altitude at every point $(x,y)$.</li>
+                                        <li><strong>Gradient ($\nabla \phi$):</strong> A vector pointing uphill in the steepest direction. If you want to climb as fast as possible, follow the gradient. If the gradient is zero, you are at a peak (or a valley).</li>
+                                    </ul>
+                                </div>
                             </li>
                             <li><strong>Divergence ($\nabla \cdot \vec{F}$):</strong> Dot product of $\nabla$ and Vector
                                 $\vec{F}$. Result is Scalar.
@@ -190,6 +201,13 @@
                                 <br>Formula: D.D. = $\nabla \phi \cdot \frac{\vec{a}}{|\vec{a}|}$ (Grad $\phi$ dot unit
                                 vector).
                             </li>
+                            <li><strong>Integral Theorems (Important):</strong>
+                                <ul>
+                                    <li><strong>Green's Theorem:</strong> Relates line integral to double integral in a plane.</li>
+                                    <li><strong>Stokes' Theorem:</strong> Relates surface integral of curl to line integral around boundary.</li>
+                                    <li><strong>Gauss Divergence Theorem:</strong> Relates surface integral to volume integral of divergence.</li>
+                                </ul>
+                            </li>
                         </ul>
                     </div>
                 </div>
@@ -198,11 +216,11 @@
                     </div>
                 </div>
 
-                <div class="unit-block" style="margin-bottom: 40px; border: 1px solid #e0e0e0; border-radius: 8px; overflow: hidden;">
-                    <div style="background: #f8f9fa; padding: 10px 20px; border-bottom: 1px solid #ddd;">
-                        <h3 style="margin:0; color: #555; font-size: 1.1rem;">Unit 3 Content</h3>
+                <div class="unit-block">
+                    <div class="card-unit-header">
+                        <h3>Unit 3 Content</h3>
                     </div>
-                    <div style="padding: 10px;">
+                    <div class="unit-content-pad">
                         <div class="subject-container">
             <div class="subject-header">
                 <h3><i class="fas fa-calculator"></i> Mathematics-III</h3>
@@ -226,7 +244,7 @@
                             </li>
                             <li><strong>Even Function ($f(-x) = f(x)$):</strong> Symmetric about Y-axis. $b_n = 0$.</li>
                             <li><strong>Odd Function ($f(-x) = -f(x)$):</strong> Symmetric about Origin. $a_0 = 0, a_n =
-                                0$, only sine terms exist.</li>
+                                0$, only sine terms exist. <span class="pyq-badge">PYQ 2022</span></li>
                             <li><strong>Dirichlet Conditions:</strong> Conditions for a function $f(x)$ to be
                                 represented as a Fourier Series:
                                 <ol>
@@ -235,6 +253,15 @@
                                     <li>Finite number of maxima and minima.</li>
                                     <li>$\int_{-\pi}^{\pi} |f(x)| dx$ (Absolute integral) converges.</li>
                                 </ol>
+                                <div class="note-block-warning">
+                                    <strong>Analogy: The Music Synthesizer</strong><br>
+                                    Think of a musical chord played on a piano.
+                                    <ul>
+                                        <li><strong>Complex Wave ($f(x)$):</strong> The rich sound you hear is a complex periodic waveform.</li>
+                                        <li><strong>Fourier Series:</strong> It breaks that complex sound down into simple "pure tones" (Sine and Cosine waves) of different frequencies.</li>
+                                        <li>Just as a synthesizer combines simple sine waves to mimic a violin or flute, any repeating signal can be built from simple Sines and Cosines.</li>
+                                    </ul>
+                                </div>
                             </li>
                         </ul>
                     </div>
@@ -244,11 +271,11 @@
                     </div>
                 </div>
 
-                <div class="unit-block" style="margin-bottom: 40px; border: 1px solid #e0e0e0; border-radius: 8px; overflow: hidden;">
-                    <div style="background: #f8f9fa; padding: 10px 20px; border-bottom: 1px solid #ddd;">
-                        <h3 style="margin:0; color: #555; font-size: 1.1rem;">Unit 4 Content</h3>
+                <div class="unit-block">
+                    <div class="card-unit-header">
+                        <h3>Unit 4 Content</h3>
                     </div>
-                    <div style="padding: 10px;">
+                    <div class="unit-content-pad">
                         <div class="subject-container">
             <div class="subject-header">
                 <h3><i class="fas fa-calculator"></i> Mathematics-III</h3>
@@ -291,11 +318,11 @@
                     </div>
                 </div>
 
-                <div class="unit-block" style="margin-bottom: 40px; border: 1px solid #e0e0e0; border-radius: 8px; overflow: hidden;">
-                    <div style="background: #f8f9fa; padding: 10px 20px; border-bottom: 1px solid #ddd;">
-                        <h3 style="margin:0; color: #555; font-size: 1.1rem;">Unit 5 Content</h3>
+                <div class="unit-block">
+                    <div class="card-unit-header">
+                        <h3>Unit 5 Content</h3>
                     </div>
-                    <div style="padding: 10px;">
+                    <div class="unit-content-pad">
                         <div class="subject-container">
             <div class="subject-header">
                 <h3><i class="fas fa-calculator"></i> Mathematics-III</h3>
@@ -324,7 +351,7 @@
                                 </ul>
                             </li>
                             <li><strong>Laplace Transform:</strong> Converts time-domain functions $f(t)$ to s-domain
-                                $F(s)$.
+                                $F(s)$. <span class="pyq-badge">PYQ 2022</span>
                                 <ul>
                                     <li>$L\{1\} = 1/s$</li>
                                     <li>$L\{t^n\} = n!/s^{n+1}$</li>
@@ -342,15 +369,15 @@
         </div>
 
         <!-- MCQ Section -->
-        <h2 class="section-title" id="mcq" style="margin-top: 4rem;"><i class="fas fa-question-circle"></i> MCQ Practice</h2>
+        <h2 class="section-title mcq-section-title" id="mcq"><i class="fas fa-question-circle"></i> MCQ Practice</h2>
         <div class="mcq-section">
             <div class="score-display">
                 <p>Score: <span id="score">0</span> / <span id="total-questions">0</span></p>
-                <button id="reset-btn" class="btn btn-secondary" style="font-size:0.8rem; padding: 5px 15px; color: var(--primary); background: white; border: 1px solid var(--primary); margin-top: 10px;">Reset Quiz</button>
+                <button id="reset-btn" class="btn btn-outline-primary btn-sm mt-2">Reset Quiz</button>
             </div>
             
             <div class="mcq-container active">
-                <!-- Unit 1 MCQs --> <div class="unit-mcq-label" style="background:#eee; padding:5px; margin:10px 0; font-weight:bold;">Unit 1 Questions</div>
+                <!-- Unit 1 MCQs --> <div class="unit-mcq-label" >Unit 1 Questions</div>
                     <!-- MCQ 1 -->
                     <div class="mcq-question">
                         <div class="mcq-question-number">
@@ -500,7 +527,7 @@
                         </div>
                     </div>
                 
-<!-- Unit 2 MCQs --> <div class="unit-mcq-label" style="background:#eee; padding:5px; margin:10px 0; font-weight:bold;">Unit 2 Questions</div>
+<!-- Unit 2 MCQs --> <div class="unit-mcq-label" >Unit 2 Questions</div>
             <div class="mcq-question">
                 <p class="question-text">Gradient of a scalar function $\phi(x,y,z)$ is:</p>
                 <div class="mcq-options">
@@ -595,7 +622,7 @@
                 <div class="mcq-explanation">Appeared in PYQ</div>
             </div>
         
-<!-- Unit 3 MCQs --> <div class="unit-mcq-label" style="background:#eee; padding:5px; margin:10px 0; font-weight:bold;">Unit 3 Questions</div>
+<!-- Unit 3 MCQs --> <div class="unit-mcq-label" >Unit 3 Questions</div>
                 <div class="mcq-question">
                     <p class="question-text">In Fourier series of $f(x)$, coefficients $a_0, a_n, b_n$ are called:</p>
                     <div class="mcq-options">
@@ -673,7 +700,7 @@
                     <div class="mcq-explanation">Appeared in PYQ</div>
                 </div>
             
-<!-- Unit 4 MCQs --> <div class="unit-mcq-label" style="background:#eee; padding:5px; margin:10px 0; font-weight:bold;">Unit 4 Questions</div>
+<!-- Unit 4 MCQs --> <div class="unit-mcq-label" >Unit 4 Questions</div>
                 <div class="mcq-question">
                     <p class="question-text">The order and degree of the differential equation $\frac{d^2y}{dx^2} +
                         x(\frac{dy}{dx})^3 = 0$ are:</p>
@@ -753,7 +780,7 @@
                     <div class="mcq-explanation">Appeared in PYQ</div>
                 </div>
             
-<!-- Unit 5 MCQs --> <div class="unit-mcq-label" style="background:#eee; padding:5px; margin:10px 0; font-weight:bold;">Unit 5 Questions</div>
+<!-- Unit 5 MCQs --> <div class="unit-mcq-label" >Unit 5 Questions</div>
                 <div class="mcq-question">
                     <p class="question-text">Solution of $(D^2 + 5D + 4)y = 0$ is:</p>
                     <div class="mcq-options">
@@ -824,8 +851,8 @@
             
             </div>
             
-            <div class="mcq-navigation" style="display:flex; justify-content:space-between; margin-top:2rem;">
-                <button id="prev-btn" class="btn btn-secondary" style="background: #e2e8f0; color: var(--text-main);">Previous</button>
+            <div class="mcq-navigation mcq-nav">
+                <button id="prev-btn" class="btn btn-secondary" class="btn btn-secondary">Previous</button>
                 <button id="next-btn" class="btn btn-primary">Next</button>
             </div>
         </div>
@@ -984,5 +1011,12 @@
             });
         });
     </script>
+    <script src="theme.js"></script>
 </body>
 </html>
+
+
+
+
+
+

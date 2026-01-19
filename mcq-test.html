@@ -114,7 +114,7 @@
 <body>
 
     <header class="test-header">
-        <div class="container header-content" style="padding: 0;">
+        <div class="container header-content" class="p-0">
             <div class="test-info">
                 <h2 id="testTitle" style="color: var(--secondary); margin: 0; font-size: 1.25rem;">Loading Test...</h2>
                 <div id="testDetails" style="font-size: 0.9rem; color: var(--text-muted);">Loading Details...</div>
@@ -156,7 +156,7 @@
         <div class="sidebar card" style="height: fit-content;">
             <h3 style="margin-bottom: 1rem;"><i class="fas fa-th"></i> Question Palette</h3>
             <div id="questionGrid"
-                style="display: grid; grid-template-columns: repeat(5, 1fr); gap: 0.5rem; margin-bottom: 1.5rem;">
+                class="grid-5-cols">
                 <!-- Grid -->
             </div>
 
@@ -191,31 +191,31 @@
     </div>
 
     <!-- Scripts -->
-    <script src="questions-data.js"></script>
-    <script src="mock-test-questions.js"></script>
-    <script src="dbms-questions-2024.js"></script>
-    <script src="dbms-questions-2022-23.js"></script>
-    <script src="cg-questions-2022.js"></script>
-    <script src="cg-questions-2022-23.js"></script>
-    <script src="cg-questions-2023.js"></script>
-    <script src="cg-questions-2024.js"></script>
-    <script src="cg-questions-2024-25.js"></script>
-    <script src="cg-questions-2024-2nd.js"></script>
-    <script src="maths-questions-2024.js"></script>
-    <script src="maths-questions-2022.js"></script>
-    <script src="maths-questions-2022-23.js"></script>
-    <script src="maths-questions-2024-25.js"></script>
-    <script src="os-questions-2024.js"></script>
-    <script src="optimization-questions-2022.js"></script>
-    <script src="optimization-questions-2022-23.js"></script>
-    <script src="optimization-questions-2023.js"></script>
-    <script src="optimization-questions-2024.js"></script>
-    <script src="optimization-questions-2024-25.js"></script>
-    <script src="optimization-questions-2024-2nd.js"></script>
-    <script src="se-questions-2024-25.js"></script>
-    <script src="se-questions-2024.js"></script>
-    <script src="se-questions-2022-23.js"></script>
-    <script src="se-questions-2022.js"></script>
+    <script src="questions/questions-data.js"></script>
+    <script src="questions/mock-test-questions.js"></script>
+    <script src="questions/dbms-questions-2024.js"></script>
+    <script src="questions/dbms-questions-2022-23.js"></script>
+    <script src="questions/cg-questions-2022.js"></script>
+    <script src="questions/cg-questions-2022-23.js"></script>
+    <script src="questions/cg-questions-2023.js"></script>
+    <script src="questions/cg-questions-2024.js"></script>
+    <script src="questions/cg-questions-2024-25.js"></script>
+    <script src="questions/cg-questions-2024-2nd.js"></script>
+    <script src="questions/maths-questions-2024.js"></script>
+    <script src="questions/maths-questions-2022.js"></script>
+    <script src="questions/maths-questions-2022-23.js"></script>
+    <script src="questions/maths-questions-2024-25.js"></script>
+    <script src="questions/os-questions-2024.js"></script>
+    <script src="questions/optimization-questions-2022.js"></script>
+    <script src="questions/optimization-questions-2022-23.js"></script>
+    <script src="questions/optimization-questions-2023.js"></script>
+    <script src="questions/optimization-questions-2024.js"></script>
+    <script src="questions/optimization-questions-2024-25.js"></script>
+    <script src="questions/optimization-questions-2024-2nd.js"></script>
+    <script src="questions/se-questions-2024-25.js"></script>
+    <script src="questions/se-questions-2024.js"></script>
+    <script src="questions/se-questions-2022-23.js"></script>
+    <script src="questions/se-questions-2022.js"></script>
     <script>
         // Test state variables
         let currentQuestion = 0;
@@ -478,6 +478,10 @@
 
         document.addEventListener('DOMContentLoaded', initializeTest);
     </script>
+    <script src="theme.js"></script>
 </body>
 
 </html>
+
+
+

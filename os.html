@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Operating System - Sarvasva Notes</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+    <!-- MathJax -->
+    <script>
+        MathJax = { tex: { inlineMath: [['$', '$'], ['\\(', '\\)']] } };
+    </script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
+    <style>
+        /* Specific overrides for Subject Pages */
+        .subject-notes-wrapper { display: flex; flex-direction: column; gap: 1.5rem; }
+        .pyq-badge {
+            background-color: #f59e0b;
+            color: white;
+            font-size: 0.75rem;
+            padding: 2px 6px;
+            border-radius: 4px;
+            margin-left: 8px;
+            font-weight: bold;
+            vertical-align: middle;
+            display: inline-block;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="container header-content">
+            <div class="logo">
+                <i class="fas fa-graduation-cap"></i>
+                <div>
+                   <span >Sarvasva Notes</span>
+                   <span class="logo-subtitle">Operating System</span>
+                </div>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="index.html"><i class="fas fa-home"></i> Home</a></li>
+                    <li><a href="graphics.html">Graphics</a></li>
+                    <li><a href="dbms.html">DBMS</a></li>
+                    <li><a href="se.html">SE</a></li>
+                    <li><a href="optimization.html">Optimization</a></li>
+                    <li><a href="os.html" class="active">OS</a></li>
+                    <li><a href="math.html">Math</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <div class="container">
+        <!-- Hero -->
+        <section class="hero hero-pad">
+            <h2><i class="fas fa-microchip"></i> Operating System</h2>
+            <p>Comprehensive notes and MCQs for Operating System.</p>
+            <div class="hero-actions">
+                <a href="#notes" class="btn btn-primary"><i class="fas fa-book"></i> Notes</a>
+                <a href="#mcq" class="btn btn-secondary"><i class="fas fa-question-circle"></i> MCQs</a>
+                <a href="question-papers.html?subject=operating-system" class="btn" class="btn btn-accent"><i class="fas fa-stopwatch"></i> PYQ Test</a>
+            </div>
+        </section>
+
+        <!-- Notes Section -->
+        <h2 class="section-title" id="notes"><i class="fas fa-book-open"></i> Complete Notes</h2>
+        <div class="subject-notes-wrapper">
+            
+                <div class="unit-block">
+                    <div class="card-unit-header">
+                        <h3>Unit 1: Introduction & Processes</h3>
+                    </div>
+                    <div class="unit-content-pad">
+                        <div class="subject-container">
+            <div class="subject-header">
+                <h3><i class="fas fa-microchip"></i> Operating System Basics</h3>
+                <i class="fas fa-chevron-down"></i>
+            </div>
+            <div class="subject-content">
+                <div class="topic">
+                    <h4>1. Introduction</h4>
+                    <div class="topic-content">
+                        <p><strong>Operating System (OS):</strong> System software that manages computer hardware, software resources, and provides common services for computer programs. Acts as an intermediary between user and hardware.</p>
+                        <p><strong>Functions:</strong> Memory Management, Process Management, Device Management, File Management, Security. <span class="pyq-badge">PYQ 2024</span></p>
+                    </div>
+                </div>
+                <div class="topic">
+                     <h4>2. Process Management</h4>
+                     <div class="topic-content">
+                         <p><strong>Process:</strong> A program in execution.</p>
+                         <p><strong>Process States:</strong> New, Ready, Running, Waiting (Blocked), Terminated. <span class="pyq-badge">PYQ 2024</span></p>
+                         <p><strong>PCB (Process Control Block):</strong> Data structure storing process info (ID, State, PC, Registers).</p>
+                     </div>
+                </div>
+            </div>
+        </div>
+                    </div>
+                </div>
+
+                <div class="unit-block">
+                    <div class="card-unit-header">
+                        <h3>Unit 2: Deadlocks & Scheduling</h3>
+                    </div>
+                    <div class="unit-content-pad">
+                        <div class="subject-container">
+            <div class="subject-header">
+                 <h3><i class="fas fa-lock"></i> Deadlocks</h3>
+                 <i class="fas fa-chevron-down"></i>
+            </div>
+            <div class="subject-content">
+                <div class="topic">
+                    <h4>Deadlock</h4>
+                    <div class="topic-content">
+                        <p><strong>Definition:</strong> A situation where a set of processes are blocked because each process is holding a resource and waiting for another resource acquired by some other process.</p>
+                        <p><strong>Necessary Conditions (Coffman Conditions):</strong> Mutual Exclusion, Hold and Wait, No Preemption, Circular Wait.</p>
+                        <p><strong>Banker's Algorithm:</strong> A resource allocation and deadlock avoidance algorithm that tests for safety by simulating the allocation for predetermined maximum possible amounts of all resources. <span class="pyq-badge">PYQ 2024</span></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+                    </div>
+                </div>
+        </div>
+
+        <!-- MCQ Section -->
+        <h2 class="section-title mcq-section-title" id="mcq"><i class="fas fa-question-circle"></i> MCQ Practice</h2>
+        <div class="mcq-section">
+            <div class="score-display">
+                <p>Score: <span id="score">0</span> / <span id="total-questions">0</span></p>
+                <button id="reset-btn" class="btn btn-outline-primary btn-sm mt-2">Reset Quiz</button>
+            </div>
+            
+            <div class="mcq-container active">
+                <div class="unit-mcq-label" >OS Questions</div>
+                <!-- Questions will be loaded dynamically or can be static here -->
+                <div id="dynamic-os-content"></div>
+            </div>
+             <div class="mcq-navigation mcq-nav">
+                <button id="prev-btn" class="btn btn-secondary" class="btn btn-secondary">Previous</button>
+                <button id="next-btn" class="btn btn-primary">Next</button>
+            </div>
+        </div>
+
+    </div>
+
+    <footer>
+        <p>© 2026 Sarvasva Notes. All Rights Reserved.</p>
+    </footer>
+
+    <!-- Load Data -->
+    <script src="questions/os-questions-2024.js"></script>
+    <script>
+        // Collapsible Logic
+        document.querySelectorAll('.subject-header').forEach(header => {
+            header.addEventListener('click', () => {
+                const content = header.nextElementSibling;
+                header.classList.toggle('active');
+                content.classList.toggle('active');
+            });
+        });
+
+         // MCQ Logic Wrapper - reusing the logic from other pages approximately
+        let score = 0;
+        let currentQuestion = 0;
+        let questions = [];
+
+        function renderQuestions() {
+            const container = document.querySelector('#dynamic-os-content');
+            if (typeof osQuestions2024 !== 'undefined') {
+                osQuestions2024.forEach((qData, index) => {
+                    const qDiv = document.createElement('div');
+                    qDiv.className = 'mcq-question';
+                    qDiv.style.display = 'none'; // Initially hidden
+                    
+                    const optionsHtml = qData.options.map((opt, i) => 
+                        `<div class="mcq-option" data-correct="${i === qData.correct}">${opt}</div>`
+                    ).join('');
+
+                    qDiv.innerHTML = `
+                        <div class="mcq-question-number">
+                            <span>${index + 1}. ${qData.question}</span>
+                             <span class="pyq-label">PYQ 2024</span>
+                        </div>
+                        <div class="mcq-options">${optionsHtml}</div>
+                        <div class="mcq-explanation">
+                            <strong>Explanation:</strong> ${qData.explanation}
+                        </div>
+                         <button class="btn btn-primary submit-answer-btn" class="mt-15px">Submit Answer</button>
+                    `;
+                    container.appendChild(qDiv);
+                });
+            }
+        }
+
+        function initializeQuestions() {
+            questions = [];
+            renderQuestions(); // Load from JS file
+            const container = document.querySelector('.mcq-container.active');
+            if(!container) return;
+
+             const qEls = container.querySelectorAll('.mcq-question');
+            qEls.forEach(q => {
+                 questions.push({ element: q, answered: false });
+            });
+
+            const totalQ = document.getElementById('total-questions');
+            if(totalQ) totalQ.textContent = questions.length;
+            updateScore(0);
+            showQuestion();
+        }
+
+        function updateScore(s) {
+            score = s;
+            const scoreEl = document.getElementById('score');
+            if(scoreEl) scoreEl.textContent = score;
+        }
+
+         function showQuestion() {
+            questions.forEach(q => q.element.style.display = 'none');
+            if(questions[currentQuestion]) {
+                questions[currentQuestion].element.style.display = 'block';
+            }
+            
+            const prev = document.getElementById('prev-btn');
+            const next = document.getElementById('next-btn');
+            if(prev) prev.disabled = currentQuestion === 0;
+            if(next) next.innerHTML = currentQuestion === questions.length - 1 ? 'Finish' : 'Next <i class="fas fa-arrow-right"></i>';
+        }
+
+        document.addEventListener('click', (e) => {
+            if(e.target.classList.contains('mcq-option')) {
+                const qDiv = e.target.closest('.mcq-question');
+                const btn = qDiv.querySelector('.submit-answer-btn');
+                if(btn && btn.disabled) return;
+                
+                qDiv.querySelectorAll('.mcq-option').forEach(o => o.classList.remove('selected'));
+                e.target.classList.add('selected');
+            }
+
+            if(e.target.classList.contains('submit-answer-btn')) {
+                const btn = e.target;
+                const qDiv = btn.closest('.mcq-question');
+                const selected = qDiv.querySelector('.mcq-option.selected');
+                
+                if(!selected) { alert('Please select an option.'); return; }
+
+                const isCorrect = selected.dataset.correct === 'true';
+                if(isCorrect) updateScore(score + 1);
+
+                qDiv.querySelectorAll('.mcq-option').forEach(o => {
+                    o.style.pointerEvents = 'none';
+                    if(o.dataset.correct === 'true') o.classList.add('correct');
+                    else if(o.classList.contains('selected')) o.classList.add('incorrect');
+                    o.classList.remove('selected');
+                });
+                
+                const exp = qDiv.querySelector('.mcq-explanation');
+                if(exp) exp.classList.add('show');
+                
+                btn.disabled = true;
+                btn.textContent = isCorrect ? 'Correct!' : 'Incorrect';
+            }
+        });
+
+          document.getElementById('next-btn')?.addEventListener('click', () => {
+            if(currentQuestion < questions.length - 1) {
+                currentQuestion++;
+                showQuestion();
+            } else {
+                alert('Quiz Complete! Score: ' + score);
+            }
+        });
+
+        document.getElementById('prev-btn')?.addEventListener('click', () => {
+            if(currentQuestion > 0) {
+                currentQuestion--;
+                showQuestion();
+            }
+        });
+
+        document.getElementById('reset-btn')?.addEventListener('click', () => {
+             document.querySelector('#dynamic-os-content').innerHTML = ''; // Clear
+            initializeQuestions();
+        });
+
+
+        window.addEventListener('DOMContentLoaded', () => {
+            initializeQuestions();
+        });
+    </script>
+    <script src="theme.js"></script>
+</body>
+</html>
+
+
+
+
+
+

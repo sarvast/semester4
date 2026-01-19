@@ -23,8 +23,8 @@
             <div class="logo">
                 <i class="fas fa-graduation-cap"></i>
                 <div>
-                   <span style="display:block; line-height:1;">Sarvasva Notes</span>
-                   <span style="font-size: 0.8rem; opacity: 0.8; font-weight: 400;">Database Management System (DBMS)</span>
+                   <span >Sarvasva Notes</span>
+                   <span class="logo-subtitle">Database Management System (DBMS)</span>
                 </div>
             </div>
             <nav>
@@ -42,13 +42,13 @@
 
     <div class="container">
         <!-- Hero -->
-        <section class="hero" style="padding: 3rem 1rem; margin-bottom: 2rem;">
+        <section class="hero hero-pad">
             <h2><i class="fas fa-database"></i> Database Management System (DBMS)</h2>
             <p>Comprehensive compilation of notes and MCQs from all 5 Units.</p>
-            <div style="display:flex; justify-content:center; gap:1rem; flex-wrap:wrap;">
+            <div class="hero-actions">
                 <a href="#notes" class="btn btn-primary"><i class="fas fa-book"></i> Notes</a>
                 <a href="#mcq" class="btn btn-secondary"><i class="fas fa-question-circle"></i> MCQs</a>
-                <a href="question-papers.html?subject=dbms" class="btn" style="background: var(--accent); color: white;"><i class="fas fa-stopwatch"></i> PYQ Test</a>
+                <a href="question-papers.html?subject=dbms" class="btn" class="btn btn-accent"><i class="fas fa-stopwatch"></i> PYQ Test</a>
             </div>
         </section>
 
@@ -56,11 +56,11 @@
         <h2 class="section-title" id="notes"><i class="fas fa-book-open"></i> Complete Notes (Unit 1-5)</h2>
         <div class="subject-notes-wrapper">
             
-                <div class="unit-block" style="margin-bottom: 40px; border: 1px solid #e0e0e0; border-radius: 8px; overflow: hidden;">
-                    <div style="background: #f8f9fa; padding: 10px 20px; border-bottom: 1px solid #ddd;">
-                        <h3 style="margin:0; color: #555; font-size: 1.1rem;">Unit 1 Content</h3>
+                <div class="unit-block">
+                    <div class="card-unit-header">
+                        <h3>Unit 1 Content</h3>
                     </div>
-                    <div style="padding: 10px;">
+                    <div class="unit-content-pad">
                         <div class="subject-container">
             <div class="subject-header">
                 <h3><i class="fas fa-database"></i> Database Management System (BCA-4002)</h3>
@@ -159,11 +159,11 @@
                     </div>
                 </div>
 
-                <div class="unit-block" style="margin-bottom: 40px; border: 1px solid #e0e0e0; border-radius: 8px; overflow: hidden;">
-                    <div style="background: #f8f9fa; padding: 10px 20px; border-bottom: 1px solid #ddd;">
-                        <h3 style="margin:0; color: #555; font-size: 1.1rem;">Unit 2 Content</h3>
+                <div class="unit-block">
+                    <div class="card-unit-header">
+                        <h3>Unit 2 Content</h3>
                     </div>
-                    <div style="padding: 10px;">
+                    <div class="unit-content-pad">
                         <div class="subject-container">
             <div class="subject-header">
                 <h3><i class="fas fa-database"></i> Database Management System (DBMS)</h3>
@@ -178,7 +178,7 @@
                                 identifiable (e.g., Student, Employee). Represented by a <strong>Rectangle</strong>.
                             </li>
                             <li><strong>Attributes:</strong> Properties that describe an entity (e.g., Name, Age).
-                                Represented by an <strong>Ellipse</strong>.
+                                Represented by an <strong>Ellipse</strong>. <span class="pyq-badge">PYQ 2022-23</span>
                                 <ul>
                                     <li><strong>Simple:</strong> Atomic values (e.g., Roll No).</li>
                                     <li><strong>Composite:</strong> Subparts (e.g., Name $\rightarrow$ First, Last).
@@ -189,20 +189,30 @@
                                 </ul>
                             </li>
                             <li><strong>Relationship:</strong> An association between two or more entities. Represented
-                                by a <strong>Diamond</strong>.</li>
+                                by a <strong>Diamond</strong>. <span class="pyq-badge">PYQ 2022-23</span></li>
                             <li><strong>Keys:</strong>
-                                <ul>
-                                    <li><strong>Primary Key:</strong> Uniquely identifies an entity. Underlined.</li>
+                                <ul>    
+                                    <li><strong>Primary Key:</strong> Uniquely identifies an entity. Underlined. <span class="pyq-badge">PYQ 2022-23</span></li>
                                     <li><strong>Weak Entity:</strong> Cannot exist without a strong owner entity. No
                                         primary key. <strong>Double Rectangle</strong>.</li>
                                 </ul>
+                                <div class="note-block-yellow">
+                                    <strong>Real Life Example (University System):</strong>
+                                    <ul>
+                                        <li><strong>Entity:</strong> Student, Course.</li>
+                                        <li><strong>Relationship:</strong> "Enrolled In" (Student $\leftrightarrow$ Course).</li>
+                                        <li><strong>Attribute:</strong> Student Name, DoB.</li>
+                                        <li><strong>Multivalued Attribute:</strong> Phone Numbers (Assume a student has 2 SIMs).</li>
+                                        <li><strong>Weak Entity:</strong> Dependent (e.g., family members covered by insurance, defined only by the Employee).</li>
+                                    </ul>
+                                </div>
                             </li>
                         </ul>
                     </div>
                 </div>
 
                 <div class="topic">
-                    <h4>Normalization <span class="pyq-badge">Important</span></h4>
+                    <h4>Normalization <span class="pyq-badge">Important</span> <span class="pyq-badge">PYQ 2022-23</span></h4>
                     <div class="topic-content">
                         <p>Process of organizing data to minimize redundancy and dependency.</p>
                         <ul>
@@ -215,6 +225,10 @@
                             <li><strong>BCNF (Boyce-Codd Normal Form):</strong> Stricter 3NF. For every dependency $A
                                 \to B$, $A$ must be a Super Key.</li>
                         </ul>
+                        <div style="background:#e8f5e9; padding:10px; border-left:4px solid #28a745; margin-top:10px;">
+                            <strong>Why Normalize? (Practical Scenario):</strong>
+                            <p>Imagine a single table storing <em>Student_Name</em> and <em>Professor_Name</em> together. If a Professor leaves, you might have to delete student records just to remove the professor from the database (Anomaly!). Normalization splits this into two tables (Students, Professors) linked by an ID, preventing data loss.</p>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -222,11 +236,11 @@
                     </div>
                 </div>
 
-                <div class="unit-block" style="margin-bottom: 40px; border: 1px solid #e0e0e0; border-radius: 8px; overflow: hidden;">
-                    <div style="background: #f8f9fa; padding: 10px 20px; border-bottom: 1px solid #ddd;">
-                        <h3 style="margin:0; color: #555; font-size: 1.1rem;">Unit 3 Content</h3>
+                <div class="unit-block">
+                    <div class="card-unit-header">
+                        <h3>Unit 3 Content</h3>
                     </div>
-                    <div style="padding: 10px;">
+                    <div class="unit-content-pad">
                         <div class="subject-container">
             <div class="subject-header">
                 <h3><i class="fas fa-database"></i> Database Management System (DBMS)</h3>
@@ -264,11 +278,11 @@
                     </div>
                 </div>
 
-                <div class="unit-block" style="margin-bottom: 40px; border: 1px solid #e0e0e0; border-radius: 8px; overflow: hidden;">
-                    <div style="background: #f8f9fa; padding: 10px 20px; border-bottom: 1px solid #ddd;">
-                        <h3 style="margin:0; color: #555; font-size: 1.1rem;">Unit 4 Content</h3>
+                <div class="unit-block">
+                    <div class="card-unit-header">
+                        <h3>Unit 4 Content</h3>
                     </div>
-                    <div style="padding: 10px;">
+                    <div class="unit-content-pad">
                         <div class="subject-container">
             <div class="subject-header">
                 <h3><i class="fas fa-database"></i> Database Management System (DBMS)</h3>
@@ -297,6 +311,14 @@
                                     <li><strong>DML:</strong> SELECT, INSERT, UPDATE, DELETE.</li>
                                     <li><strong>Keywords:</strong> DISTINCT (Remove duplicates), WHERE (Filter).</li>
                                 </ul>
+                                <p><strong>Example Queries:</strong></p>
+                                <pre style="background:#333; color:#fff; padding:10px; border-radius:5px; overflow-x:auto;">
+-- Find students older than 20
+SELECT Name, Age FROM Students WHERE Age > 20;
+
+-- Count students in each department
+SELECT Dept, COUNT(*) FROM Students GROUP BY Dept;
+                                </pre>
                             </li>
                         </ul>
                     </div>
@@ -320,7 +342,13 @@
                             <li><strong>Concurrency Control:</strong> Managing simultaneous access.
                                 <ul>
                                     <li><em>Locks:</em> Binary, Shared/Exclusive.</li>
-                                    <li><em>Deadlock:</em> Two transactions waiting for each other.</li>
+                                    <li><em>Deadlock:</em> Two transactions waiting for each other.
+                                        <ul>
+                                            <li><strong>Prevention:</strong> Wait-Die / Wound-Wait schemes.</li>
+                                            <li><strong>Detection:</strong> Wait-for graph (Cycle detection).</li>
+                                            <li><strong>Recovery:</strong> Rollback victim transaction.</li>
+                                        </ul>
+                                    </li>
                                 </ul>
                             </li>
                         </ul>
@@ -331,11 +359,11 @@
                     </div>
                 </div>
 
-                <div class="unit-block" style="margin-bottom: 40px; border: 1px solid #e0e0e0; border-radius: 8px; overflow: hidden;">
-                    <div style="background: #f8f9fa; padding: 10px 20px; border-bottom: 1px solid #ddd;">
-                        <h3 style="margin:0; color: #555; font-size: 1.1rem;">Unit 5 Content</h3>
+                <div class="unit-block">
+                    <div class="card-unit-header">
+                        <h3>Unit 5 Content</h3>
                     </div>
-                    <div style="padding: 10px;">
+                    <div class="unit-content-pad">
                         <div class="subject-container">
             <div class="subject-header">
                 <h3><i class="fas fa-database"></i> Database Management System (DBMS)</h3>
@@ -371,7 +399,13 @@
                                 </ul>
                             </li>
                             <li><strong>Recovery Techniques:</strong>
+                                <ul> No Undo/Redo needed.</li>
+                                </ul>
+                            </li>
+                            <li><strong>Serializability:</strong>
                                 <ul>
+                                    <li>Ensures a concurrent schedule is equivalent to a serial one (correctness).</li>
+                                    <li><strong>Conflict Serializability:</strong> determined by swapping non-conflicting operations.
                                     <li><strong>Log-Based (WAL):</strong> Records every transaction in a "Log" file
                                         before applying to disk.</li>
                                     <li><strong>Checkpoints:</strong> Periodically saving database state to disk to
@@ -399,15 +433,15 @@
         </div>
 
         <!-- MCQ Section -->
-        <h2 class="section-title" id="mcq" style="margin-top: 4rem;"><i class="fas fa-question-circle"></i> MCQ Practice</h2>
+        <h2 class="section-title mcq-section-title" id="mcq"><i class="fas fa-question-circle"></i> MCQ Practice</h2>
         <div class="mcq-section">
             <div class="score-display">
                 <p>Score: <span id="score">0</span> / <span id="total-questions">0</span></p>
-                <button id="reset-btn" class="btn btn-secondary" style="font-size:0.8rem; padding: 5px 15px; color: var(--primary); background: white; border: 1px solid var(--primary); margin-top: 10px;">Reset Quiz</button>
+                <button id="reset-btn" class="btn btn-outline-primary btn-sm mt-2">Reset Quiz</button>
             </div>
             
             <div class="mcq-container active">
-                <!-- Unit 1 MCQs --> <div class="unit-mcq-label" style="background:#eee; padding:5px; margin:10px 0; font-weight:bold;">Unit 1 Questions</div>
+                <!-- Unit 1 MCQs --> <div class="unit-mcq-label" >Unit 1 Questions</div>
                     <!-- MCQ 1 -->
                     <div class="mcq-question">
                         <div class="mcq-question-number">
@@ -561,7 +595,7 @@
                         </div>
                     </div>
                 
-<!-- Unit 2 MCQs --> <div class="unit-mcq-label" style="background:#eee; padding:5px; margin:10px 0; font-weight:bold;">Unit 2 Questions</div>
+<!-- Unit 2 MCQs --> <div class="unit-mcq-label" >Unit 2 Questions</div>
             <div class="mcq-question">
                 <p class="question-text">In the E-R model, an Entity is represented by:</p>
                 <div class="mcq-options">
@@ -641,7 +675,7 @@
                 <div class="mcq-explanation">Appeared in PYQ</div>
             </div>
         
-<!-- Unit 3 MCQs --> <div class="unit-mcq-label" style="background:#eee; padding:5px; margin:10px 0; font-weight:bold;">Unit 3 Questions</div>
+<!-- Unit 3 MCQs --> <div class="unit-mcq-label" >Unit 3 Questions</div>
                     <div class="mcq-question">
                         <p class="question-text">Which normal form eliminates transitive dependencies between non-key
                             attributes?</p>
@@ -725,7 +759,7 @@
                         <div class="mcq-explanation">Appeared in PYQ</div>
                     </div>
                 
-<!-- Unit 4 MCQs --> <div class="unit-mcq-label" style="background:#eee; padding:5px; margin:10px 0; font-weight:bold;">Unit 4 Questions</div>
+<!-- Unit 4 MCQs --> <div class="unit-mcq-label" >Unit 4 Questions</div>
                 <div class="mcq-question">
                     <p class="question-text">Relation algebra is a ________ language.</p>
                     <div class="mcq-options">
@@ -800,7 +834,7 @@
                     <div class="mcq-explanation">Appeared in PYQ</div>
                 </div>
             
-<!-- Unit 5 MCQs --> <div class="unit-mcq-label" style="background:#eee; padding:5px; margin:10px 0; font-weight:bold;">Unit 5 Questions</div>
+<!-- Unit 5 MCQs --> <div class="unit-mcq-label" >Unit 5 Questions</div>
                 <div class="mcq-question">
                     <p class="question-text">ACID properties of a transaction include:</p>
                     <div class="mcq-options">
@@ -925,8 +959,8 @@
             
             </div>
             
-            <div class="mcq-navigation" style="display:flex; justify-content:space-between; margin-top:2rem;">
-                <button id="prev-btn" class="btn btn-secondary" style="background: #e2e8f0; color: var(--text-main);">Previous</button>
+            <div class="mcq-navigation mcq-nav">
+                <button id="prev-btn" class="btn btn-secondary" class="btn btn-secondary">Previous</button>
                 <button id="next-btn" class="btn btn-primary">Next</button>
             </div>
         </div>
@@ -1085,5 +1119,12 @@
             });
         });
     </script>
+    <script src="theme.js"></script>
 </body>
 </html>
+
+
+
+
+
+

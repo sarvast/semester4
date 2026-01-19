@@ -23,8 +23,8 @@
             <div class="logo">
                 <i class="fas fa-graduation-cap"></i>
                 <div>
-                   <span style="display:block; line-height:1;">Sarvasva Notes</span>
-                   <span style="font-size: 0.8rem; opacity: 0.8; font-weight: 400;">Software Engineering</span>
+                   <span >Sarvasva Notes</span>
+                   <span class="logo-subtitle">Software Engineering</span>
                 </div>
             </div>
             <nav>
@@ -42,13 +42,13 @@
 
     <div class="container">
         <!-- Hero -->
-        <section class="hero" style="padding: 3rem 1rem; margin-bottom: 2rem;">
+        <section class="hero hero-pad">
             <h2><i class="fas fa-code"></i> Software Engineering</h2>
             <p>Comprehensive compilation of notes and MCQs from all 5 Units.</p>
-            <div style="display:flex; justify-content:center; gap:1rem; flex-wrap:wrap;">
+            <div class="hero-actions">
                 <a href="#notes" class="btn btn-primary"><i class="fas fa-book"></i> Notes</a>
                 <a href="#mcq" class="btn btn-secondary"><i class="fas fa-question-circle"></i> MCQs</a>
-                <a href="question-papers.html?subject=software-engineering" class="btn" style="background: var(--accent); color: white;"><i class="fas fa-stopwatch"></i> PYQ Test</a>
+                <a href="question-papers.html?subject=software-engineering" class="btn" class="btn btn-accent"><i class="fas fa-stopwatch"></i> PYQ Test</a>
             </div>
         </section>
 
@@ -56,11 +56,11 @@
         <h2 class="section-title" id="notes"><i class="fas fa-book-open"></i> Complete Notes (Unit 1-5)</h2>
         <div class="subject-notes-wrapper">
             
-                <div class="unit-block" style="margin-bottom: 40px; border: 1px solid #e0e0e0; border-radius: 8px; overflow: hidden;">
-                    <div style="background: #f8f9fa; padding: 10px 20px; border-bottom: 1px solid #ddd;">
-                        <h3 style="margin:0; color: #555; font-size: 1.1rem;">Unit 1 Content</h3>
+                <div class="unit-block">
+                    <div class="card-unit-header">
+                        <h3>Unit 1 Content</h3>
                     </div>
-                    <div style="padding: 10px;">
+                    <div class="unit-content-pad">
                         <div class="subject-container">
             <div class="subject-header">
                 <h3><i class="fas fa-code"></i> Software Engineering (BCA-4003)</h3>
@@ -122,6 +122,14 @@
                         </p>
                         <p><strong>Agile Model:</strong> Iterative, incremental, flexible. Focus on customer
                             satisfaction and responding to change (e.g., Scrum, XP).</p>
+                        <div class="note-block-gray">
+                            <strong>Real World Comparison: When to use what?</strong>
+                            <ul>
+                                <li><strong>Waterfall (Construction):</strong> Building a bridge. You cannot change the design halfway through pouring concrete. Requirements must be fixed first.</li>
+                                <li><strong>Agile (Startup App):</strong> Developing Instagram. You release a basic version (MVP), get user feedback, and keep adding features (Stories, Reels) over time.</li>
+                                <li><strong>Spiral (NASA):</strong> Mars Rover software. High risk of failure implies billions lost. Risk analysis is critical at every step.</li>
+                            </ul>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -129,11 +137,11 @@
                     </div>
                 </div>
 
-                <div class="unit-block" style="margin-bottom: 40px; border: 1px solid #e0e0e0; border-radius: 8px; overflow: hidden;">
-                    <div style="background: #f8f9fa; padding: 10px 20px; border-bottom: 1px solid #ddd;">
-                        <h3 style="margin:0; color: #555; font-size: 1.1rem;">Unit 2 Content</h3>
+                <div class="unit-block">
+                    <div class="card-unit-header">
+                        <h3>Unit 2 Content</h3>
                     </div>
-                    <div style="padding: 10px;">
+                    <div class="unit-content-pad">
                         <div class="subject-container">
             <div class="subject-header">
                 <h3><i class="fas fa-code"></i> Software Engineering</h3>
@@ -145,10 +153,20 @@
                     <div class="topic-content">
                         <ul>
                             <li><strong>Requirement Engineering Process:</strong> Feasibility Study, Elicitation,
-                                Analysis, and Validation.</li>
-                            <li><strong>SRS (Software Requirement Specification):</strong> A document describing
-                                <strong>what</strong> the system should do.
+                                Analysis, and Validation.
                                 <ul>
+                                    <li><strong>Feasibility Study Types:</strong>
+                                        <ul>
+                                            <li><em>Technical:</em> Can we build it with current tech?</li>
+                                            <li><em>Economic:</em> Is it cost-effective? (Cost-Benefit Analysis).</li>
+                                            <li><em>Operational:</em> Will it work in the organization's environment?</li>
+                                        </ul>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li><strong>SRS (Software Requirement Specification):</strong> A document describing
+                                <strong>what</strong> the system should do. <span class="pyq-badge">PYQ 2022</span>
+                                <ul>    
                                     <li>Characteristics: <strong>Correctness, Unambiguous, Consistent,
                                             Verifiable</strong>.</li>
                                 </ul>
@@ -183,12 +201,12 @@
                 </div>
 
                 <div class="topic">
-                    <h4>Design Concepts: Coupling & Cohesion <span class="pyq-badge">PYQ</span></h4>
+                    <h4>Design Concepts: Coupling & Cohesion <span class="pyq-badge">PYQ 2022, 2024</span></h4>
                     <div class="topic-content">
                         <p><strong>Goal:</strong> High Cohesion and Low Coupling.</p>
                         <ul>
                             <li><strong>Cohesion (Internal strength):</strong> Measure of how related functions are
-                                within a module.
+                                within a module. <span class="pyq-badge">PYQ 2022</span>
                                 <ul>
                                     <li><em>Functional Cohesion (Best):</em> Module performs one specific task.</li>
                                     <li><em>Coincidental Cohesion (Worst):</em> Unrelated tasks grouped together.</li>
@@ -209,11 +227,11 @@
                     </div>
                 </div>
 
-                <div class="unit-block" style="margin-bottom: 40px; border: 1px solid #e0e0e0; border-radius: 8px; overflow: hidden;">
-                    <div style="background: #f8f9fa; padding: 10px 20px; border-bottom: 1px solid #ddd;">
-                        <h3 style="margin:0; color: #555; font-size: 1.1rem;">Unit 3 Content</h3>
+                <div class="unit-block">
+                    <div class="card-unit-header">
+                        <h3>Unit 3 Content</h3>
                     </div>
-                    <div style="padding: 10px;">
+                    <div class="unit-content-pad">
                         <div class="subject-container">
             <div class="subject-header">
                 <h3><i class="fas fa-code"></i> Software Engineering</h3>
@@ -258,11 +276,11 @@
                     </div>
                 </div>
 
-                <div class="unit-block" style="margin-bottom: 40px; border: 1px solid #e0e0e0; border-radius: 8px; overflow: hidden;">
-                    <div style="background: #f8f9fa; padding: 10px 20px; border-bottom: 1px solid #ddd;">
-                        <h3 style="margin:0; color: #555; font-size: 1.1rem;">Unit 4 Content</h3>
+                <div class="unit-block">
+                    <div class="card-unit-header">
+                        <h3>Unit 4 Content</h3>
                     </div>
-                    <div style="padding: 10px;">
+                    <div class="unit-content-pad">
                         <div class="subject-container">
             <div class="subject-header">
                 <h3><i class="fas fa-code"></i> Software Engineering</h3>
@@ -290,17 +308,34 @@
                             <li><strong>Software Testing Strategies:</strong>
                                 <ul>
                                     <li><strong>White Box (Glass Box):</strong> Testing internal logic/code (e.g., Basis
-                                        Path). Developer does this.
+                                        Path). Developer does this. <span class="pyq-badge">PYQ 2024</span>
                                         <ul>
                                             <li><em>Cyclomatic Complexity:</em> Metric $V(G) = E - N + 2P$. Measures
                                                 logical complexity.</li>
                                         </ul>
                                     </li>
                                     <li><strong>Black Box:</strong> Testing functionality (Input/Output) without knowing
-                                        code (e.g., Boundary Value Analysis).</li>
-                                    <li><strong>Levels:</strong> Unit (Individual modules), Integration (Interaction),
-                                        System (Complete).</li>
+                                        code (e.g., Boundary Value Analysis). <span class="pyq-badge">PYQ 2024</span></li>
+                                    <li><strong>Levels:</strong>
+                                        <ul>
+                                            <li><em>Unit Testing:</em> Testing individual components (drivers/stubs). <span class="pyq-badge">PYQ</span></li>
+                                            <li><em>Integration Testing:</em> Testing interfaces between modules.
+                                                <ul>
+                                                    <li>Strategies: Top-down (Depth/Breadth-first), Bottom-up, Sandwich (Hybrid).</li>
+                                                </ul>
+                                            </li>
+                                            <li><em>System Testing:</em> Testing the full system against requirements (Recovery, Security, Stress).</li>
+                                            <li><em>Acceptance Testing:</em> Validation by the client.</li>
+                                        </ul>
+                                    </li>
                                 </ul>
+                                <div class="note-block-teal">
+                                    <strong>Analogy (The Car Test):</strong>
+                                    <ul>
+                                        <li><strong>White Box:</strong> The mechanic opens the hood, checks the engine wiring, and ensures the pistons fire correctly. (Requires internal knowledge).</li>
+                                        <li><strong>Black Box:</strong> The driver sits in the seat, turns the key, and checks if the car starts and drives. (Doesn't care <em>how</em> the engine works, just that it works).</li>
+                                    </ul>
+                                </div>
                             </li>
                             <li><strong>Software Configuration Management (SCM):</strong> Managing changes (Version
                                 Control) and controlling software evolution.</li>
@@ -328,11 +363,11 @@
                     </div>
                 </div>
 
-                <div class="unit-block" style="margin-bottom: 40px; border: 1px solid #e0e0e0; border-radius: 8px; overflow: hidden;">
-                    <div style="background: #f8f9fa; padding: 10px 20px; border-bottom: 1px solid #ddd;">
-                        <h3 style="margin:0; color: #555; font-size: 1.1rem;">Unit 5 Content</h3>
+                <div class="unit-block">
+                    <div class="card-unit-header">
+                        <h3>Unit 5 Content</h3>
                     </div>
-                    <div style="padding: 10px;">
+                    <div class="unit-content-pad">
                         <div class="subject-container">
             <div class="subject-header">
                 <h3><i class="fas fa-tools"></i> Software Engineering</h3>
@@ -344,7 +379,7 @@
                     <div class="topic-content">
                         <ul>
                             <li><strong>Definition:</strong> Modifying software after delivery.</li>
-                            <li><strong>Types of Maintenance:</strong>
+                            <li><strong>Types of Maintenance:</strong> <span class="pyq-badge">PYQ 2022, 2024</span>
                                 <ol>
                                     <li><strong>Corrective:</strong> Fixing bugs/errors (e.g., login failure).</li>
                                     <li><strong>Adaptive:</strong> Adjusting to new environments (OS/Hardware changes).
@@ -374,15 +409,15 @@
         </div>
 
         <!-- MCQ Section -->
-        <h2 class="section-title" id="mcq" style="margin-top: 4rem;"><i class="fas fa-question-circle"></i> MCQ Practice</h2>
+        <h2 class="section-title mcq-section-title" id="mcq"><i class="fas fa-question-circle"></i> MCQ Practice</h2>
         <div class="mcq-section">
             <div class="score-display">
                 <p>Score: <span id="score">0</span> / <span id="total-questions">0</span></p>
-                <button id="reset-btn" class="btn btn-secondary" style="font-size:0.8rem; padding: 5px 15px; color: var(--primary); background: white; border: 1px solid var(--primary); margin-top: 10px;">Reset Quiz</button>
+                <button id="reset-btn" class="btn btn-outline-primary btn-sm mt-2">Reset Quiz</button>
             </div>
             
             <div class="mcq-container active">
-                <!-- Unit 1 MCQs --> <div class="unit-mcq-label" style="background:#eee; padding:5px; margin:10px 0; font-weight:bold;">Unit 1 Questions</div>
+                <!-- Unit 1 MCQs --> <div class="unit-mcq-label" >Unit 1 Questions</div>
                     <!-- MCQ 1 -->
                     <div class="mcq-question">
                         <div class="mcq-question-number">
@@ -533,7 +568,7 @@
                         </div>
                     </div>
                 
-<!-- Unit 2 MCQs --> <div class="unit-mcq-label" style="background:#eee; padding:5px; margin:10px 0; font-weight:bold;">Unit 2 Questions</div>
+<!-- Unit 2 MCQs --> <div class="unit-mcq-label" >Unit 2 Questions</div>
             <div class="mcq-question">
                 <p class="question-text">Which of the following is NOT a requirement elicitation technique?</p>
                 <div class="mcq-options">
@@ -603,7 +638,7 @@
             </div>
             <div class="mcq-explanation">Appeared in 2022</div>
         
-<!-- Unit 3 MCQs --> <div class="unit-mcq-label" style="background:#eee; padding:5px; margin:10px 0; font-weight:bold;">Unit 3 Questions</div>
+<!-- Unit 3 MCQs --> <div class="unit-mcq-label" >Unit 3 Questions</div>
                     <div class="mcq-question">
                         <p class="question-text">The relationship of data elements in a module is called (or
                             intra-dependability):</p>
@@ -684,7 +719,7 @@
                         <div class="mcq-explanation">Appeared in PYQ</div>
                     </div>
                 
-<!-- Unit 4 MCQs --> <div class="unit-mcq-label" style="background:#eee; padding:5px; margin:10px 0; font-weight:bold;">Unit 4 Questions</div>
+<!-- Unit 4 MCQs --> <div class="unit-mcq-label" >Unit 4 Questions</div>
                 <div class="mcq-question">
                     <p class="question-text">Which of the following is NOT recommended in good coding style?</p>
                     <div class="mcq-options">
@@ -761,7 +796,7 @@
                     <div class="mcq-explanation">Appeared in PYQ</div>
                 </div>
             
-<!-- Unit 5 MCQs --> <div class="unit-mcq-label" style="background:#eee; padding:5px; margin:10px 0; font-weight:bold;">Unit 5 Questions</div>
+<!-- Unit 5 MCQs --> <div class="unit-mcq-label" >Unit 5 Questions</div>
                 <div class="mcq-question">
                     <p class="question-text">Which maintenance activity deals with changing Software to keep it usable
                         in a changed environment?</p>
@@ -814,8 +849,8 @@
             
             </div>
             
-            <div class="mcq-navigation" style="display:flex; justify-content:space-between; margin-top:2rem;">
-                <button id="prev-btn" class="btn btn-secondary" style="background: #e2e8f0; color: var(--text-main);">Previous</button>
+            <div class="mcq-navigation mcq-nav">
+                <button id="prev-btn" class="btn btn-secondary" class="btn btn-secondary">Previous</button>
                 <button id="next-btn" class="btn btn-primary">Next</button>
             </div>
         </div>
@@ -974,5 +1009,12 @@
             });
         });
     </script>
+    <script src="theme.js"></script>
 </body>
 </html>
+
+
+
+
+
+
