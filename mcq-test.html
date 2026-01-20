@@ -108,10 +108,109 @@
                 grid-template-columns: 1fr;
             }
         }
+
+        /* Submit Confirmation Modal */
+        .modal-overlay {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.7);
+            z-index: 1000;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .modal-overlay.active {
+            display: flex;
+        }
+
+        .modal-content {
+            background: var(--surface);
+            border-radius: var(--radius-md);
+            padding: 2rem;
+            max-width: 400px;
+            width: 90%;
+            box-shadow: var(--shadow-lg);
+            text-align: center;
+        }
+
+        .modal-icon {
+            font-size: 3rem;
+            color: var(--accent);
+            margin-bottom: 1rem;
+        }
+
+        .modal-title {
+            font-size: 1.5rem;
+            color: var(--text-main);
+            margin-bottom: 0.5rem;
+        }
+
+        .modal-message {
+            color: var(--text-muted);
+            margin-bottom: 2rem;
+        }
+
+        .modal-actions {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+        }
+
+        .modal-btn {
+            padding: 0.75rem 1.5rem;
+            border-radius: 50px;
+            font-weight: 600;
+            cursor: pointer;
+            border: none;
+            transition: all 0.2s;
+        }
+
+        .modal-btn-confirm {
+            background: var(--accent);
+            color: white;
+        }
+
+        .modal-btn-confirm:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 8px rgba(245, 158, 11, 0.3);
+        }
+
+        .modal-btn-cancel {
+            background: #e2e8f0;
+            color: var(--text-main);
+        }
+
+        .modal-btn-cancel:hover {
+            background: #cbd5e1;
+        }
+
+        [data-theme="dark"] .modal-btn-cancel {
+            background: var(--surface);
+            border: 1px solid var(--border-color);
+        }
     </style>
 </head>
 
 <body>
+    <!-- Submit Confirmation Modal -->
+    <div id="submitModal" class="modal-overlay">
+        <div class="modal-content">
+            <div class="modal-icon">
+                <i class="fas fa-exclamation-circle"></i>
+            </div>
+            <h2 class="modal-title">Submit Test?</h2>
+            <p class="modal-message">Are you sure you want to submit your test? You won't be able to change your answers
+                after submission.</p>
+            <div class="modal-actions">
+                <button class="modal-btn modal-btn-cancel" onclick="closeSubmitModal()">Cancel</button>
+                <button class="modal-btn modal-btn-confirm" onclick="confirmSubmit()">Submit</button>
+            </div>
+        </div>
+    </div>
 
     <header class="test-header">
         <div class="container header-content" class="p-0">
@@ -142,21 +241,17 @@
                 <!-- Options -->
             </div>
 
-            <div style="display: flex; justify-content: space-between; margin-top: 2rem;">
-                <button class="btn btn-secondary" id="prevBtn" onclick="previousQuestion()"
-                    style="background: #e2e8f0; color: var(--text-main);">Previous</button>
+            <div class="test-navigation">
+                <button class="btn btn-secondary" id="prevBtn" onclick="previousQuestion()">Previous</button>
                 <button class="btn btn-primary" id="nextBtn" onclick="nextQuestion()">Next</button>
             </div>
-            <button class="btn btn-accent"
-                style="width: 100%; margin-top: 2rem; justify-content: center; background: var(--danger);"
-                onclick="showSubmitModal()">Submit Test</button>
+            <button class="btn btn-danger btn-submit" onclick="showSubmitModal()">Submit Test</button>
         </div>
 
         <!-- Sidebar -->
-        <div class="sidebar card" style="height: fit-content;">
-            <h3 style="margin-bottom: 1rem;"><i class="fas fa-th"></i> Question Palette</h3>
-            <div id="questionGrid"
-                class="grid-5-cols">
+        <div class="sidebar card">
+            <h3 class="sidebar-title"><i class="fas fa-th"></i> Question Palette</h3>
+            <div id="questionGrid" class="grid-5-cols">
                 <!-- Grid -->
             </div>
 
@@ -212,10 +307,17 @@
     <script src="questions/optimization-questions-2024.js"></script>
     <script src="questions/optimization-questions-2024-25.js"></script>
     <script src="questions/optimization-questions-2024-2nd.js"></script>
-    <script src="questions/se-questions-2024-25.js"></script>
-    <script src="questions/se-questions-2024.js"></script>
-    <script src="questions/se-questions-2022-23.js"></script>
+    <script src="questions/optimization-questions-2024-25.js"></script>
+
+    <script src="questions/os-questions-2024.js"></script>
+
     <script src="questions/se-questions-2022.js"></script>
+    <script src="questions/se-questions-2022-23.js"></script>
+    <script src="questions/se-questions-2024.js"></script>
+    <script src="questions/se-questions-2024-25.js"></script>
+
+    <script src="questions/mock-test-questions.js"></script>
+
     <script>
         // Test state variables
         let currentQuestion = 0;
@@ -245,8 +347,7 @@
                 'dbms': 'Database Management System',
                 'software-engineering': 'Software Engineering',
                 'operations-research': 'Operations Research',
-                'mathematics': 'Mathematics IV',
-                'operating-system': 'Operating System'
+                'mathematics': 'Mathematics IV'
             };
 
             document.getElementById('testTitle').textContent = subjectTitles[testSubject] || 'Test';
@@ -311,7 +412,7 @@
 
             // Normalize questions (handle 'answer' format instead of 'correct' index)
             if (testQuestions && testQuestions.length > 0) {
-                 testQuestions.forEach(q => {
+                testQuestions.forEach(q => {
                     // Case 1: 'answer' property exists but 'correct' is missing
                     if (q.correct === undefined && q.answer !== undefined) {
                         if (typeof q.answer === 'number') {
@@ -448,7 +549,16 @@
         }
 
         function showSubmitModal() {
-            if (confirm('Are you sure you want to submit?')) submitTest();
+            document.getElementById('submitModal').classList.add('active');
+        }
+
+        function closeSubmitModal() {
+            document.getElementById('submitModal').classList.remove('active');
+        }
+
+        function confirmSubmit() {
+            closeSubmitModal();
+            submitTest();
         }
 
         function submitTest() {
@@ -482,6 +592,3 @@
 </body>
 
 </html>
-
-
-

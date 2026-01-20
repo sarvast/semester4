@@ -29,8 +29,7 @@
     <div class="container">
 
         <div class="result-card text-center">
-            <div
-                class="test-hero-icon">
+            <div class="test-hero-icon">
                 <i class="fas fa-trophy"></i>
             </div>
             <h1 class="test-hero-title">Test Completed!</h1>
@@ -42,21 +41,19 @@
                     <div class="test-score-label">Score</div>
                 </div>
                 <div class="score-box score-box-green">
-                    <div class="score-number" id="correctCount" class="score-number score-green">0</div>
+                    <div class="score-number score-green" id="correctCount">0</div>
                     <div class="test-score-label">Correct</div>
                 </div>
                 <div class="score-box score-box-red">
-                    <div class="score-number" id="incorrectCount" class="score-number score-red">0</div>
+                    <div class="score-number score-red" id="incorrectCount">0</div>
                     <div class="test-score-label">Incorrect</div>
                 </div>
             </div>
 
             <div class="test-actions">
                 <a id="retryBtn" href="#" class="btn btn-primary"><i class="fas fa-redo"></i> Retry Test</a>
-                <a id="backToPapersBtn" href="#" class="btn btn-secondary"
-                    class="btn btn-secondary btn-gray-light"><i class="fas fa-arrow-left"></i> Papers</a>
-                <a href="index.html" class="btn btn-secondary" class="btn btn-secondary btn-gray-lighter"><i
-                        class="fas fa-home"></i> Dashboard</a>
+                <a id="backToPapersBtn" href="#" class="btn btn-secondary"><i class="fas fa-arrow-left"></i> Papers</a>
+                <a href="index.html" class="btn btn-secondary"><i class="fas fa-home"></i> Dashboard</a>
             </div>
         </div>
 
@@ -106,7 +103,7 @@
                 const isAnswered = userAns !== undefined;
 
                 let status = isAnswered ? (isCorrect ? 'Correct' : 'Incorrect') : 'Unanswered';
-                let statusColor = isAnswered ? (isCorrect ? 'var(--success)' : 'var(--danger)') : 'var(--text-muted)';
+                let statusClass = isAnswered ? (isCorrect ? 'status-correct' : 'status-incorrect') : 'status-unanswered';
                 let bgClass = isAnswered ? (isCorrect ? 'correct' : 'incorrect') : 'unanswered';
 
                 const div = document.createElement('div');
@@ -114,7 +111,7 @@
                 div.innerHTML = `
                     <div class="result-header">
                         <strong class="text-secondary">Q${i + 1}</strong>
-                        <span class="status-badge" style="background: ${statusColor}; color: white;">${status}</span>
+                        <span class="status-badge ${statusClass}">${status}</span>
                     </div>
                     <p class="result-question-text">${q.question}</p>
                     <div class="result-answer-box">
@@ -161,4 +158,3 @@
 </body>
 
 </html>
-
