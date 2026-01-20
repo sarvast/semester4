@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -13,9 +14,14 @@
     <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
     <style>
         /* Specific overrides for Subject Pages */
-        .subject-notes-wrapper { display: flex; flex-direction: column; gap: 1.5rem; }
+        .subject-notes-wrapper {
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
+        }
     </style>
 </head>
+
 <body>
 
     <header>
@@ -23,8 +29,8 @@
             <div class="logo">
                 <i class="fas fa-graduation-cap"></i>
                 <div>
-                   <span >Sarvasva Notes</span>
-                   <span class="logo-subtitle">Optimization Techniques</span>
+                    <span>Sarvasva Notes</span>
+                    <span class="logo-subtitle">Optimization Techniques</span>
                 </div>
             </div>
             <nav>
@@ -48,376 +54,447 @@
             <div class="hero-actions">
                 <a href="#notes" class="btn btn-primary"><i class="fas fa-book"></i> Notes</a>
                 <a href="#mcq" class="btn btn-secondary"><i class="fas fa-question-circle"></i> MCQs</a>
-                <a href="question-papers.html?subject=operations-research" class="btn" class="btn btn-accent"><i class="fas fa-stopwatch"></i> PYQ Test</a>
+                <a href="question-papers.html?subject=operations-research" class="btn" class="btn btn-accent"><i
+                        class="fas fa-stopwatch"></i> PYQ Test</a>
             </div>
         </section>
 
         <!-- Notes Section -->
         <h2 class="section-title" id="notes"><i class="fas fa-book-open"></i> Complete Notes (Unit 1-5)</h2>
         <div class="subject-notes-wrapper">
-            
-                <div class="unit-block">
-                    <div class="card-unit-header">
-                        <h3>Unit 1 Content</h3>
-                    </div>
-                    <div class="unit-content-pad">
-                        <div class="subject-container">
-            <div class="subject-header">
-                <h3><i class="fas fa-chart-line"></i> Optimization Techniques (BCA-4004)</h3>
-                <i class="fas fa-chevron-down"></i>
-            </div>
-            <div class="subject-content">
-                <div class="topic">
-                    <h4>1. Linear Programming Problem (LPP)</h4>
-                    <div class="topic-content">
-                        <p><strong>Central Problem:</strong> Optimization (Maximizing Profit or Minimizing Cost) subject
-                            to limited resources (constraints). All relationships are linear. <span class="pyq-badge">PYQ 2024</span></p>
-                        <p><strong>Structure:</strong> Max/Min $Z = c_1x_1 + ... + c_nx_n$ (Objective) <br>Subject to:
-                            $a_{11}x_1 + ... \leq b_1$ (Constraints) <br>and $x_i \geq 0$ (Non-negativity).</p>
-                        <div class="note-block-yellow">
-                            <strong>Practical Example (The Bakery Problem):</strong>
-                            <p>A bakery makes Cakes ($x$) and Bread ($y$).
-                            <br><strong>Maximize Profit ($Z$):</strong> $40x + 20y$ (₹40 per cake, ₹20 per bread).
-                            <br><strong>Constraints:</strong>
-                            <br>1. Flour: $2x + y \le 100$ kg.
-                            <br>2. Sugar: $x + y \le 80$ kg.
-                            <br>3. Non-negativity: $x, y \ge 0$ (Can't bake negative cakes!).
-                            <br><em>Goal:</em> Find optimal $x$ and $y$ to get max money.</p>
+
+            <div class="unit-block">
+                <div class="card-unit-header">
+                    <h3>Unit 1 Content</h3>
+                </div>
+                <div class="unit-content-pad">
+                    <div class="subject-container">
+                        <div class="subject-header">
+                            <h3><i class="fas fa-chart-line"></i> Optimization Techniques (BCA-4004)</h3>
+                            <i class="fas fa-chevron-down"></i>
                         </div>
-                        <p><strong>Definitions:</strong> <span class="pyq-badge">PYQ 2022</span></p>
-                        <ul>
-                            <li><strong>Solution:</strong> Any set of variables satisfying constraints.</li>
-                            <li><strong>Feasible Solution:</strong> A solution that also satisfies non-negativity
-                                restrictions ($x \geq 0$).</li>
-                            <li><strong>Optimal Solution:</strong> A feasible solution that optimizes $Z$.</li>
-                            <li><strong>Convex Set:</strong> A set of points where the line segment joining any two
-                                points lies entirely within the set. (Feasible region is always convex).</li>
-                        </ul>
-                    </div>
-                </div>
-
-                <div class="topic">
-                    <h4>2. Graphical Method <span class="pyq-badge">PYQ 2022, 2024</span></h4>
-                    <div class="topic-content">
-                        <p>Visual method for problems with <strong>2 variables</strong>.</p>
-                        <ul>
-                            <li>Plot constraint lines. Use ($=0$) to find intercepts.</li>
-                            <li>Identify <strong>Feasible Region</strong> (common shaded area).</li>
-                            <li><strong>Corner Point Theorem:</strong> Optimal solution always lies at one of the corner
-                                points (vertices) of the feasible region.</li>
-                        </ul>
-                    </div>
-                </div>
-
-                <div class="topic">
-                    <h4>3. Simplex Method</h4>
-                    <div class="topic-content">
-                        <p>Iterative algebraic procedure for solving LPP with <strong>more than 2 variables</strong>.
-                        </p>
-                        <ul>
-                            <li><strong>Slack Variable ($S \ge 0$):</strong> Added to $\leq$ constraint (e.g., $2x + y
-                                \le 10 \to 2x + y + S = 10$). Represents unused resource. <span class="pyq-badge">PYQ
-                                    2024</span></li>
-                            <li><strong>Surplus Variable ($-S$):</strong> Subtracted from $\geq$ constraint. Represents
-                                excess amount over requirement.</li>
-                            <li><strong>Artificial Variable ($A \ge 0$):</strong> Added to $\geq$ or $=$ constraints to
-                                get initial identity basis matrix for starting the Simplex table. Has no physical
-                                meaning (Penalty M method used to remove it).</li>
-                            <li><strong>Simplex Method:</strong> Iterative process to find optimal solution.
-                                <ul>
-                                    <li><em>Slack Variable ($S$):</em> Added to $\le$ constraint (unused resources).
-                                        Cost coeff = 0.</li>
-                                    <li><em>Surplus Variable ($-S$):</em> Subtracted from $\ge$ constraint (excess).
-                                        Cost coeff = 0.</li>
-                                    <li><em>Artificial Variable ($A$):</em> Added to $\ge$ or $=$ constraint to get
-                                        initial basis. Cost coeff = $-M$ (Big M Method).
-                                        <ul>
-                                            <li><strong>Two-Phase Method:</strong> Alternative to Big-M. Phase 1 minimizes sum of artificial variables. Phase 2 optimizes original function.</li>
-                                        </ul>
-                                    </li>
-                                    <li><em>Optimality Condition:</em> For Maximization, stop when all $C_j - Z_j \le 0$
-                                        (for non-basic variables).</li>
-                                </ul>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-
-                <div class="topic">
-                    <h4>4. Primal and Dual</h4>
-                    <div class="topic-content">
-                        <p>Every LPP (Primal) has an associated LPP called <strong>Dual</strong>.</p>
-                        <ul>
-                            <li>Max Z in Primal $\leftrightarrow$ Min W in Dual.</li>
-                            <li>No. of constraints in Primal = No. of variables in Dual.</li>
-                            <li>Dual of Dual is Primal. <span class="pyq-badge">PYQ 2023</span></li>
-                        </ul>
-                    </div>
-                </div>
-
-                <div class="topic">
-                    <h4>5. Transportation & Assignment</h4>
-                    <div class="topic-content">
-                        <p><strong>Transportation Problem:</strong> Minimizing cost of shipping goods from $m$ sources
-                            to $n$ destinations. <br><em>Methods:</em> North West Corner (NWC), Least Cost, VAM. <span
-                                class="pyq-badge">PYQ 2022</span></p>
-                        <p><strong>Assignment Problem:</strong> Assigning $n$ jobs to $n$ machines/people 1-to-1 to
-                            minimize cost/time. <br><em>Method:</em> Hungarian Method.</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-                    </div>
-                </div>
-
-                <div class="unit-block">
-                    <div class="card-unit-header">
-                        <h3>Unit 2 Content</h3>
-                    </div>
-                    <div class="unit-content-pad">
-                        <div class="subject-container">
-            <div class="subject-header">
-                <h3><i class="fas fa-chart-line"></i> Optimization Techniques</h3>
-                <i class="fas fa-chevron-down"></i>
-            </div>
-            <div class="subject-content">
-                <div class="topic">
-                    <h4>Game Theory Basics</h4>
-                    <div class="topic-content">
-                        <ul>
-                            <li><strong>Zero-Sum Game:</strong> One player's gain is exactly equal to the other player's
-                                loss.</li>
-                            <li><strong>Pure Strategy:</strong> Players select the same strategy every time. Exists if
-                                <strong>Maximin = Minimax</strong>.
-                                <ul>
-                                    <li><strong>Maximin:</strong> Max of row minimums (Player A).</li>
-                                    <li><strong>Minimax:</strong> Min of column maximums (Player B).</li>
-                                </ul>
-                            </li>
-                            <li><strong>Saddle Point:</strong> Where Maximin = Minimax. Value of the Game is unique.
-                            </li>
-                            <li><strong>Mixed Strategy (Algebraic Method):</strong> Used when no saddle point exists
-                                (Maximin $\neq$ Minimax).
-                                <ul>
-                                    <li>For a 2x2 game pay-off matrix $\begin{bmatrix} a_{11} & a_{12} \\ a_{21} &
-                                        a_{22} \end{bmatrix}$:</li>
-                                    <li>Probability for Player A ($p_1$): $p_1 =
-                                        \frac{a_{22}-a_{21}}{(a_{11}+a_{22})-(a_{12}+a_{21})}$.</li>
-                                    <li>Value of Game ($V$): $V =
-                                        \frac{a_{11}a_{22}-a_{12}a_{21}}{(a_{11}+a_{22})-(a_{12}+a_{21})}$.</li>
-                                </ul>
-                            </li>
-                            <li><strong>Dominance Rule:</strong> Used to reduce matrix size. <span class="pyq-badge">PYQ 2024</span>
-                                <ul>
-                                    <li>Row Dominance: If row $R_i \le R_j$ (all elements), delete $R_i$ (Player A
-                                        avoids worse payouts).</li>
-                                    <li>Column Dominance: If column $C_i \ge C_j$ (all elements), delete $C_i$ (Player B
-                                        avoids high payouts to A).</li>
-                                    <li>Modified Dominance: If a row/column is dominated by the average of two others.
-                                    </li>
-                                </ul>
-                            </li>
-                            <li><strong>Fair Game:</strong> A game where the Value ($V$) = 0.</li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-        </div>
-                    </div>
-                </div>
-
-                <div class="unit-block">
-                    <div class="card-unit-header">
-                        <h3>Unit 3 Content</h3>
-                    </div>
-                    <div class="unit-content-pad">
-                        <div class="subject-container">
-            <div class="subject-header">
-                <h3><i class="fas fa-chart-line"></i> Optimization Techniques</h3>
-                <i class="fas fa-chevron-down"></i>
-            </div>
-            <div class="subject-content">
-                <div class="topic">
-                    <h4>Replacement Theory</h4>
-                    <div class="topic-content">
-                        <ul>
-                            <li><strong>Replacement Problem:</strong> Deciding when to replace equipment due to
-                                deterioration or failure.</li>
-                            <li><strong>Gradual Failure:</strong> Efficiency drops over time (Machines, Cars). Replace
-                                when Maintenance Cost > Average Cost.</li>
-                            <li><strong>Sudden Failure:</strong> Works perfectly until it fails (Light bulbs).</li>
-                            <li><strong>Policies:</strong>
-                                <ul>
-                                    <li><strong>Individual:</strong> Replace on failure.</li>
-                                    <li><strong>Group:</strong> Replace all at fixed time $T$. Good for low-cost bulk
-                                        items.</li>
-                                </ul>
-                            </li>
-                            <li><strong>Inventory Control (EOQ):</strong>
-                                <ul>
-                                    <li><strong>EOQ (Economic Order Quantity):</strong> The optimal order quantity that
-                                        minimizes total inventory costs (Ordering Cost + Holding Cost).</li>
-                                    <li><strong>Formula:</strong> $Q = \sqrt{\frac{2DS}{H}}$, where:
-                                        <ul>
-                                            <li>$D$ = Demand rate</li>
-                                            <li>$S$ = Ordering cost per order</li>
-                                            <li>$H$ = Holding cost per unit per year</li>
-                                        </ul>
-                                    </li>
-                                </ul>
-                            </li>
-                            <li><strong>Inventory Management Techniques:</strong>
-                                <ul>
-                                    <li><strong>ABC Analysis (Always Better Control):</strong> Categorizing inventory based on value/usage.
-                                        <ul>
-                                            <li><em>A Items:</em> High value, low volume (Strict control).</li>
-                                            <li><em>B Items:</em> Moderate value, moderate volume.</li>
-                                            <li><em>C Items:</em> Low value, high volume (Loose control).</li>
-                                        </ul>
-                                    </li>
-                                </ul>
-                            </li>
-                            <li><strong>Staffing Problem:</strong> Application of replacement theory to human resources.
-                                <br><em>Goal:</em> Maintain constant workforce size despite resignations/retirements
-                                (mortality) by hiring new recruits. Uses mortality tables.
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-
-                <div class="topic">
-                    <h4>Transportation & Assignment Problems <span class="pyq-badge">High Frequency</span></h4>
-                    <div class="topic-content">
-                        <ul>
-                            <li><strong>Transportation Problem:</strong> Minimizing cost of shipping goods from Sources
-                                to Destinations.
-                                <ul>
-                                    <li><strong>Balanced:</strong> Total Supply = Total Demand. (If not, add Dummy
-                                        row/column).</li>
-                                    <li><strong>Initial Basic Feasible Solution Methods:</strong>
-                                        <ul>
-                                            <li><em>North-West Corner Rule (NWCR):</em> Start from top-left cell. Simple
-                                                but rarely gives optimal.</li>
-                                            <li><em>Least Cost Method (Matrix Minima):</em> Select cell with lowest unit
-                                                cost.</li>
-                                            <li><em>Vogel’s Approximation Method (VAM):</em> Uses penalty costs (Diff
-                                                between two lowest costs). Generally gives best initial solution.</li>
-                                        </ul>
-                                    </li>
-                                    <li><strong>Degeneracy:</strong> When number of occupied cells < $m + n - 1$.</li>
-                                </ul>
-                                <div class="note-block-blue">
-                                    <strong>Real Life Application (Logistics):</strong>
-                                    <p>Amazon has 3 warehouses (Sources) in Mumbai, Delhi, Bangalore and 4 delivery zones (Destinations).
-                                    <br>Each route has a different shipping cost (fuel, tolls).
-                                    <br>The Transportation Problem calculates exactly how many packages each warehouse should send to each zone to minimize the <strong>Total Shipping Bill</strong> while meeting all demand.</p>
+                        <div class="subject-content">
+                            <div class="topic">
+                                <h4>1. Linear Programming Problem (LPP)</h4>
+                                <div class="topic-content">
+                                    <p><strong>Central Problem:</strong> Optimization (Maximizing Profit or Minimizing
+                                        Cost) subject
+                                        to limited resources (constraints). All relationships are linear. <span
+                                            class="pyq-badge">PYQ 2024</span></p>
+                                    <p><strong>Structure:</strong> Max/Min $Z = c_1x_1 + ... + c_nx_n$ (Objective)
+                                        <br>Subject to:
+                                        $a_{11}x_1 + ... \leq b_1$ (Constraints) <br>and $x_i \geq 0$ (Non-negativity).
+                                    </p>
+                                    <div class="note-block-yellow">
+                                        <strong>Practical Example (The Bakery Problem):</strong>
+                                        <p>A bakery makes Cakes ($x$) and Bread ($y$).
+                                            <br><strong>Maximize Profit ($Z$):</strong> $40x + 20y$ (₹40 per cake, ₹20
+                                            per bread).
+                                            <br><strong>Constraints:</strong>
+                                            <br>1. Flour: $2x + y \le 100$ kg.
+                                            <br>2. Sugar: $x + y \le 80$ kg.
+                                            <br>3. Non-negativity: $x, y \ge 0$ (Can't bake negative cakes!).
+                                            <br><em>Goal:</em> Find optimal $x$ and $y$ to get max money.
+                                        </p>
+                                    </div>
+                                    <p><strong>Definitions:</strong> <span class="pyq-badge">PYQ 2022</span></p>
+                                    <ul>
+                                        <li><strong>Solution:</strong> Any set of variables satisfying constraints.</li>
+                                        <li><strong>Feasible Solution:</strong> A solution that also satisfies
+                                            non-negativity
+                                            restrictions ($x \geq 0$).</li>
+                                        <li><strong>Optimal Solution:</strong> A feasible solution that optimizes $Z$.
+                                        </li>
+                                        <li><strong>Convex Set:</strong> A set of points where the line segment joining
+                                            any two
+                                            points lies entirely within the set. (Feasible region is always convex).
+                                        </li>
+                                    </ul>
                                 </div>
-                            </li>
-                            <li><strong>Assignment Problem:</strong> Assigning $n$ jobs to $n$ workers to minimize
-                                cost/time.
-                                <ul>
-                                    <li><strong>Method:</strong> Hungarian Method (Reduced Matrix method).
-                                        <br>Steps: Row extraction $\to$ Column extraction $\to$ Cover zeros with min
-                                        lines $\to$ Optimality test.
-                                    </li>
-                                    <li>Special case of Transportation problem where $m=n$ and Supply/Demand = 1.</li>
-                                </ul>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-        </div>
-                    </div>
-                </div>
+                            </div>
 
-                <div class="unit-block">
-                    <div class="card-unit-header">
-                        <h3>Unit 4 Content</h3>
-                    </div>
-                    <div class="unit-content-pad">
-                        <div class="subject-container">
-            <div class="subject-header">
-                <h3><i class="fas fa-chart-line"></i> Optimization Techniques</h3>
-                <i class="fas fa-chevron-down"></i>
-            </div>
-            <div class="subject-content">
-                <div class="topic">
-                    <h4>Project Management (PERT & CPM)</h4>
-                    <div class="topic-content">
-                        <ul>
-                            <li><strong>Network Diagram:</strong> Visualizes project activities (Arrows $\rightarrow$)
-                                and events (Nodes $\circ$).</li>
-                            <li><strong>CPM (Critical Path Method):</strong> Deterministic (Fixed times). Finds the
-                                longest path (Critical Path). Zero float activities are critical.</li>
-                            <li><strong>PERT (Program Evaluation Review Technique):</strong> Probabilistic (Uncertain
-                                times). Used for R&D.</li>
-                            <li><strong>Time Estimates (PERT):</strong> Optimistic ($t_o$), Most Likely ($t_m$),
-                                Pessimistic ($t_p$).</li>
-                            <li><strong>Expected Time:</strong> $t_e = \frac{t_o + 4t_m + t_p}{6}$.</li>
-                            <li><strong>Float (Slack):</strong> Spare time available.
-                                <ul>
-                                    <li><em>Total Float:</em> Max delay without delaying project finish. ($LS - ES$ or
-                                        $LF - EF$).</li>
-                                    <li><em>Free Float:</em> Delay without delaying successor start.</li>
-                                    <li><em>Independent Float:</em> Delay without affecting predecessor or successor.
-                                    </li>
-                                </ul>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-        </div>
-                    </div>
-                </div>
+                            <div class="topic">
+                                <h4>2. Graphical Method <span class="pyq-badge">PYQ 2022, 2024</span></h4>
+                                <div class="topic-content">
+                                    <p>Visual method for problems with <strong>2 variables</strong>.</p>
+                                    <ul>
+                                        <li>Plot constraint lines. Use ($=0$) to find intercepts.</li>
+                                        <li>Identify <strong>Feasible Region</strong> (common shaded area).</li>
+                                        <li><strong>Corner Point Theorem:</strong> Optimal solution always lies at one
+                                            of the corner
+                                            points (vertices) of the feasible region.</li>
+                                    </ul>
+                                </div>
+                            </div>
 
-                <div class="unit-block">
-                    <div class="card-unit-header">
-                        <h3>Unit 5 Content</h3>
-                    </div>
-                    <div class="unit-content-pad">
-                        <div class="subject-container">
-            <div class="subject-header">
-                <h3><i class="fas fa-tasks"></i> Optimization Techniques</h3>
-                <i class="fas fa-chevron-down"></i>
-            </div>
-            <div class="subject-content">
-                <div class="topic">
-                    <h4>Job Sequencing</h4>
-                    <div class="topic-content">
-                        <ul>
-                            <li><strong>Goal:</strong> Determine order of jobs on machines to minimize **Total Elapsed
-                                Time**.</li>
-                            <li><strong>Johnson's Rule (n Jobs, 2 Machines):</strong>
-                                <ol>
-                                    <li>Find minimum processing time in the list.</li>
-                                    <li>If on Machine 1 $\to$ Process <strong>First</strong>.</li>
-                                    <li>If on Machine 2 $\to$ Process <strong>Last</strong>.</li>
-                                    <li>Repeat until all jobs sequenced.</li>
-                                </ol>
-                            </li>
-                            <li><strong>Idle Time:</strong> Time a machine is waiting.</li>
-                            <!-- Gap Analysis Addition -->
-                            <li><strong>Queuing Theory:</strong> Mathematical study of waiting lines.
-                                <ul>
-                                    <li><strong>Metrics:</strong> $\lambda$ (Arrival Rate), $\mu$ (Service Rate), $\rho
-                                        = \lambda/\mu$ (Traffic Intensity).</li>
-                                    <li><strong>Kendall’s Notation:</strong> (M/M/1) = Poisson Arrival, Exponential
-                                        Service, 1 Server.</li>
-                                </ul>
-                            </li>
-                            <li><strong>Little’s Law:</strong> $L = \lambda W$.
-                                <br>Where $L$ = Avg number of customers in system, $\lambda$ = Arrival rate, $W$ = Avg
-                                time in system.
-                            </li>
-                        </ul>
+                            <div class="topic">
+                                <h4>3. Simplex Method</h4>
+                                <div class="topic-content">
+                                    <p>Iterative algebraic procedure for solving LPP with <strong>more than 2
+                                            variables</strong>.
+                                    </p>
+                                    <ul>
+                                        <li><strong>Slack Variable ($S \ge 0$):</strong> Added to $\leq$ constraint
+                                            (e.g., $2x + y
+                                            \le 10 \to 2x + y + S = 10$). Represents unused resource. <span
+                                                class="pyq-badge">PYQ
+                                                2024</span></li>
+                                        <li><strong>Surplus Variable ($-S$):</strong> Subtracted from $\geq$ constraint.
+                                            Represents
+                                            excess amount over requirement.</li>
+                                        <li><strong>Artificial Variable ($A \ge 0$):</strong> Added to $\geq$ or $=$
+                                            constraints to
+                                            get initial identity basis matrix for starting the Simplex table. Has no
+                                            physical
+                                            meaning (Penalty M method used to remove it).</li>
+                                        <li><strong>Simplex Method:</strong> Iterative process to find optimal solution.
+                                            <ul>
+                                                <li><em>Slack Variable ($S$):</em> Added to $\le$ constraint (unused
+                                                    resources).
+                                                    Cost coeff = 0.</li>
+                                                <li><em>Surplus Variable ($-S$):</em> Subtracted from $\ge$ constraint
+                                                    (excess).
+                                                    Cost coeff = 0.</li>
+                                                <li><em>Artificial Variable ($A$):</em> Added to $\ge$ or $=$ constraint
+                                                    to get
+                                                    initial basis. Cost coeff = $-M$ (Big M Method).
+                                                    <ul>
+                                                        <li><strong>Two-Phase Method:</strong> Alternative to Big-M.
+                                                            Phase 1 minimizes sum of artificial variables. Phase 2
+                                                            optimizes original function.</li>
+                                                    </ul>
+                                                </li>
+                                                <li><em>Optimality Condition:</em> For Maximization, stop when all $C_j
+                                                    - Z_j \le 0$
+                                                    (for non-basic variables).</li>
+                                            </ul>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+
+                            <div class="topic">
+                                <h4>4. Primal and Dual</h4>
+                                <div class="topic-content">
+                                    <p>Every LPP (Primal) has an associated LPP called <strong>Dual</strong>.</p>
+                                    <ul>
+                                        <li>Max Z in Primal $\leftrightarrow$ Min W in Dual.</li>
+                                        <li>No. of constraints in Primal = No. of variables in Dual.</li>
+                                        <li>Dual of Dual is Primal. <span class="pyq-badge">PYQ 2023</span></li>
+                                    </ul>
+                                </div>
+                            </div>
+
+                            <div class="topic">
+                                <h4>5. Transportation & Assignment</h4>
+                                <div class="topic-content">
+                                    <p><strong>Transportation Problem:</strong> Minimizing cost of shipping goods from
+                                        $m$ sources
+                                        to $n$ destinations. <br><em>Methods:</em> North West Corner (NWC), Least Cost,
+                                        VAM. <span class="pyq-badge">PYQ 2022</span></p>
+                                    <p><strong>Assignment Problem:</strong> Assigning $n$ jobs to $n$ machines/people
+                                        1-to-1 to
+                                        minimize cost/time. <br><em>Method:</em> Hungarian Method.</p>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
-        </div>
+
+            <div class="unit-block">
+                <div class="card-unit-header">
+                    <h3>Unit 2 Content</h3>
+                </div>
+                <div class="unit-content-pad">
+                    <div class="subject-container">
+                        <div class="subject-header">
+                            <h3><i class="fas fa-chart-line"></i> Optimization Techniques</h3>
+                            <i class="fas fa-chevron-down"></i>
+                        </div>
+                        <div class="subject-content">
+                            <div class="topic">
+                                <h4>Game Theory Basics</h4>
+                                <div class="topic-content">
+                                    <ul>
+                                        <li><strong>Zero-Sum Game:</strong> One player's gain is exactly equal to the
+                                            other player's
+                                            loss.</li>
+                                        <li><strong>Pure Strategy:</strong> Players select the same strategy every time.
+                                            Exists if
+                                            <strong>Maximin = Minimax</strong>.
+                                            <ul>
+                                                <li><strong>Maximin:</strong> Max of row minimums (Player A).</li>
+                                                <li><strong>Minimax:</strong> Min of column maximums (Player B).</li>
+                                            </ul>
+                                        </li>
+                                        <li><strong>Saddle Point:</strong> Where Maximin = Minimax. Value of the Game is
+                                            unique.
+                                        </li>
+                                        <li><strong>Mixed Strategy (Algebraic Method):</strong> Used when no saddle
+                                            point exists
+                                            (Maximin $\neq$ Minimax).
+                                            <ul>
+                                                <li>For a 2x2 game pay-off matrix $\begin{bmatrix} a_{11} & a_{12} \\
+                                                    a_{21} &
+                                                    a_{22} \end{bmatrix}$:</li>
+                                                <li>Probability for Player A ($p_1$): $p_1 =
+                                                    \frac{a_{22}-a_{21}}{(a_{11}+a_{22})-(a_{12}+a_{21})}$.</li>
+                                                <li>Value of Game ($V$): $V =
+                                                    \frac{a_{11}a_{22}-a_{12}a_{21}}{(a_{11}+a_{22})-(a_{12}+a_{21})}$.
+                                                </li>
+                                            </ul>
+                                        </li>
+                                        <li><strong>Dominance Rule:</strong> Used to reduce matrix size. <span
+                                                class="pyq-badge">PYQ 2024</span>
+                                            <ul>
+                                                <li>Row Dominance: If row $R_i \le R_j$ (all elements), delete $R_i$
+                                                    (Player A
+                                                    avoids worse payouts).</li>
+                                                <li>Column Dominance: If column $C_i \ge C_j$ (all elements), delete
+                                                    $C_i$ (Player B
+                                                    avoids high payouts to A).</li>
+                                                <li>Modified Dominance: If a row/column is dominated by the average of
+                                                    two others.
+                                                </li>
+                                            </ul>
+                                        </li>
+                                        <li><strong>Fair Game:</strong> A game where the Value ($V$) = 0.</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
+            </div>
+
+            <div class="unit-block">
+                <div class="card-unit-header">
+                    <h3>Unit 3 Content</h3>
+                </div>
+                <div class="unit-content-pad">
+                    <div class="subject-container">
+                        <div class="subject-header">
+                            <h3><i class="fas fa-chart-line"></i> Optimization Techniques</h3>
+                            <i class="fas fa-chevron-down"></i>
+                        </div>
+                        <div class="subject-content">
+                            <div class="topic">
+                                <h4>Replacement Theory</h4>
+                                <div class="topic-content">
+                                    <ul>
+                                        <li><strong>Replacement Problem:</strong> Deciding when to replace equipment due
+                                            to
+                                            deterioration or failure.</li>
+                                        <li><strong>Gradual Failure:</strong> Efficiency drops over time (Machines,
+                                            Cars). Replace
+                                            when Maintenance Cost > Average Cost.</li>
+                                        <li><strong>Sudden Failure:</strong> Works perfectly until it fails (Light
+                                            bulbs).</li>
+                                        <li><strong>Policies:</strong>
+                                            <ul>
+                                                <li><strong>Individual:</strong> Replace on failure.</li>
+                                                <li><strong>Group:</strong> Replace all at fixed time $T$. Good for
+                                                    low-cost bulk
+                                                    items.</li>
+                                            </ul>
+                                        </li>
+                                        <li><strong>Inventory Control (EOQ):</strong>
+                                            <ul>
+                                                <li><strong>EOQ (Economic Order Quantity):</strong> The optimal order
+                                                    quantity that
+                                                    minimizes total inventory costs (Ordering Cost + Holding Cost).</li>
+                                                <li><strong>Formula:</strong> $Q = \sqrt{\frac{2DS}{H}}$, where:
+                                                    <ul>
+                                                        <li>$D$ = Demand rate</li>
+                                                        <li>$S$ = Ordering cost per order</li>
+                                                        <li>$H$ = Holding cost per unit per year</li>
+                                                    </ul>
+                                                </li>
+                                            </ul>
+                                        </li>
+                                        <li><strong>Inventory Management Techniques:</strong>
+                                            <ul>
+                                                <li><strong>ABC Analysis (Always Better Control):</strong> Categorizing
+                                                    inventory based on value/usage.
+                                                    <ul>
+                                                        <li><em>A Items:</em> High value, low volume (Strict control).
+                                                        </li>
+                                                        <li><em>B Items:</em> Moderate value, moderate volume.</li>
+                                                        <li><em>C Items:</em> Low value, high volume (Loose control).
+                                                        </li>
+                                                    </ul>
+                                                </li>
+                                            </ul>
+                                        </li>
+                                        <li><strong>Staffing Problem:</strong> Application of replacement theory to
+                                            human resources.
+                                            <br><em>Goal:</em> Maintain constant workforce size despite
+                                            resignations/retirements
+                                            (mortality) by hiring new recruits. Uses mortality tables.
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+
+                            <div class="topic">
+                                <h4>Transportation & Assignment Problems <span class="pyq-badge">High Frequency</span>
+                                </h4>
+                                <div class="topic-content">
+                                    <ul>
+                                        <li><strong>Transportation Problem:</strong> Minimizing cost of shipping goods
+                                            from Sources
+                                            to Destinations.
+                                            <ul>
+                                                <li><strong>Balanced:</strong> Total Supply = Total Demand. (If not, add
+                                                    Dummy
+                                                    row/column).</li>
+                                                <li><strong>Initial Basic Feasible Solution Methods:</strong>
+                                                    <ul>
+                                                        <li><em>North-West Corner Rule (NWCR):</em> Start from top-left
+                                                            cell. Simple
+                                                            but rarely gives optimal.</li>
+                                                        <li><em>Least Cost Method (Matrix Minima):</em> Select cell with
+                                                            lowest unit
+                                                            cost.</li>
+                                                        <li><em>Vogel’s Approximation Method (VAM):</em> Uses penalty
+                                                            costs (Diff
+                                                            between two lowest costs). Generally gives best initial
+                                                            solution.</li>
+                                                    </ul>
+                                                </li>
+                                                <li><strong>Degeneracy:</strong> When number of occupied cells < $m + n
+                                                        - 1$.</li>
+                                            </ul>
+                                            <div class="note-block-blue">
+                                                <strong>Real Life Application (Logistics):</strong>
+                                                <p>Amazon has 3 warehouses (Sources) in Mumbai, Delhi, Bangalore and 4
+                                                    delivery zones (Destinations).
+                                                    <br>Each route has a different shipping cost (fuel, tolls).
+                                                    <br>The Transportation Problem calculates exactly how many packages
+                                                    each warehouse should send to each zone to minimize the
+                                                    <strong>Total Shipping Bill</strong> while meeting all demand.
+                                                </p>
+                                            </div>
+                                        </li>
+                                        <li><strong>Assignment Problem:</strong> Assigning $n$ jobs to $n$ workers to
+                                            minimize
+                                            cost/time.
+                                            <ul>
+                                                <li><strong>Method:</strong> Hungarian Method (Reduced Matrix method).
+                                                    <br>Steps: Row extraction $\to$ Column extraction $\to$ Cover zeros
+                                                    with min
+                                                    lines $\to$ Optimality test.
+                                                </li>
+                                                <li>Special case of Transportation problem where $m=n$ and Supply/Demand
+                                                    = 1.</li>
+                                            </ul>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="unit-block">
+                <div class="card-unit-header">
+                    <h3>Unit 4 Content</h3>
+                </div>
+                <div class="unit-content-pad">
+                    <div class="subject-container">
+                        <div class="subject-header">
+                            <h3><i class="fas fa-chart-line"></i> Optimization Techniques</h3>
+                            <i class="fas fa-chevron-down"></i>
+                        </div>
+                        <div class="subject-content">
+                            <div class="topic">
+                                <h4>Project Management (PERT & CPM)</h4>
+                                <div class="topic-content">
+                                    <ul>
+                                        <li><strong>Network Diagram:</strong> Visualizes project activities (Arrows
+                                            $\rightarrow$)
+                                            and events (Nodes $\circ$).</li>
+                                        <li><strong>CPM (Critical Path Method):</strong> Deterministic (Fixed times).
+                                            Finds the
+                                            longest path (Critical Path). Zero float activities are critical.</li>
+                                        <li><strong>PERT (Program Evaluation Review Technique):</strong> Probabilistic
+                                            (Uncertain
+                                            times). Used for R&D.</li>
+                                        <li><strong>Time Estimates (PERT):</strong> Optimistic ($t_o$), Most Likely
+                                            ($t_m$),
+                                            Pessimistic ($t_p$).</li>
+                                        <li><strong>Expected Time:</strong> $t_e = \frac{t_o + 4t_m + t_p}{6}$.</li>
+                                        <li><strong>Float (Slack):</strong> Spare time available.
+                                            <ul>
+                                                <li><em>Total Float:</em> Max delay without delaying project finish.
+                                                    ($LS - ES$ or
+                                                    $LF - EF$).</li>
+                                                <li><em>Free Float:</em> Delay without delaying successor start.</li>
+                                                <li><em>Independent Float:</em> Delay without affecting predecessor or
+                                                    successor.
+                                                </li>
+                                            </ul>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="unit-block">
+                <div class="card-unit-header">
+                    <h3>Unit 5 Content</h3>
+                </div>
+                <div class="unit-content-pad">
+                    <div class="subject-container">
+                        <div class="subject-header">
+                            <h3><i class="fas fa-tasks"></i> Optimization Techniques</h3>
+                            <i class="fas fa-chevron-down"></i>
+                        </div>
+                        <div class="subject-content">
+                            <div class="topic">
+                                <h4>Job Sequencing</h4>
+                                <div class="topic-content">
+                                    <ul>
+                                        <li><strong>Goal:</strong> Determine order of jobs on machines to minimize
+                                            **Total Elapsed
+                                            Time**.</li>
+                                        <li><strong>Johnson's Rule (n Jobs, 2 Machines):</strong>
+                                            <ol>
+                                                <li>Find minimum processing time in the list.</li>
+                                                <li>If on Machine 1 $\to$ Process <strong>First</strong>.</li>
+                                                <li>If on Machine 2 $\to$ Process <strong>Last</strong>.</li>
+                                                <li>Repeat until all jobs sequenced.</li>
+                                            </ol>
+                                        </li>
+                                        <li><strong>Idle Time:</strong> Time a machine is waiting.</li>
+                                        <!-- Gap Analysis Addition -->
+                                        <li><strong>Queuing Theory:</strong> Mathematical study of waiting lines.
+                                            <ul>
+                                                <li><strong>Metrics:</strong> $\lambda$ (Arrival Rate), $\mu$ (Service
+                                                    Rate), $\rho
+                                                    = \lambda/\mu$ (Traffic Intensity).</li>
+                                                <li><strong>Kendall’s Notation:</strong> (M/M/1) = Poisson Arrival,
+                                                    Exponential
+                                                    Service, 1 Server.</li>
+                                            </ul>
+                                        </li>
+                                        <li><strong>Little’s Law:</strong> $L = \lambda W$.
+                                            <br>Where $L$ = Avg number of customers in system, $\lambda$ = Arrival rate,
+                                            $W$ = Avg
+                                            time in system.
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
 
         <!-- MCQ Section -->
@@ -427,241 +504,245 @@
                 <p>Score: <span id="score">0</span> / <span id="total-questions">0</span></p>
                 <button id="reset-btn" class="btn btn-outline-primary btn-sm mt-2">Reset Quiz</button>
             </div>
-            
+
             <div class="mcq-container active">
-                <!-- Unit 1 MCQs --> <div class="unit-mcq-label" >Unit 1 Questions</div>
-                    <!-- MCQ 1 -->
-                    <div class="mcq-question">
-                        <div class="mcq-question-number">
-                            <span>1. Objective function of a linear programming problem is:</span>
-                            <span class="pyq-label">PYQ 2022</span>
+                <!-- Unit 1 MCQs -->
+                <div class="unit-mcq-label">Unit 1 Questions</div>
+                <!-- MCQ 1 -->
+                <div class="mcq-question">
+                    <div class="mcq-question-number">
+                        <span>1. Objective function of a linear programming problem is:</span>
+                        <span class="pyq-label">PYQ 2022</span>
+                    </div>
+                    <div class="mcq-options">
+                        <div class="mcq-option" data-correct="true">A. A function to be optimized (Maximized or
+                            Minimized)</div>
+                        <div class="mcq-option" data-correct="false">B. A relation between variables</div>
+                        <div class="mcq-option" data-correct="false">C. A constraint</div>
+                        <div class="mcq-option" data-correct="false">D. None of the above</div>
+                    </div>
+                </div>
+
+                <!-- MCQ 2 -->
+                <div class="mcq-question">
+                    <div class="mcq-question-number">
+                        <span>2. A set of values X1, X2 which satisfies the constraints of the LPP is called:</span>
+                        <span class="pyq-label">PYQ 2022</span>
+                    </div>
+                    <div class="mcq-options">
+                        <div class="mcq-option" data-correct="true">A. Solution / Feasible Solution</div>
+                        <div class="mcq-option" data-correct="false">B. Infeasible Solution</div>
+                        <div class="mcq-option" data-correct="false">C. Optimal Solution</div>
+                        <div class="mcq-option" data-correct="false">D. Unbounded Solution</div>
+                    </div>
+                </div>
+
+                <!-- MCQ 3 -->
+                <div class="mcq-question">
+                    <div class="mcq-question-number">
+                        <span>3. Graphical method can be applied to solve LPP when there are only:</span>
+                        <span class="pyq-label">PYQ 2022, 2024</span>
+                    </div>
+                    <div class="mcq-options">
+                        <div class="mcq-option" data-correct="true">A. Two variables</div>
+                        <div class="mcq-option" data-correct="false">B. Three variables</div>
+                        <div class="mcq-option" data-correct="false">C. Four variables</div>
+                        <div class="mcq-option" data-correct="false">D. One variable</div>
+                    </div>
+                    <div class="mcq-explanation">
+                        <strong>Explanation:</strong> Graphical method is limited to problems with only two decision
+                        variables because we can plot them on a 2D graph.
+                    </div>
+                </div>
+
+                <!-- MCQ 4 -->
+                <div class="mcq-question">
+                    <div class="mcq-question-number">
+                        <span>4. In graphical method, the feasible region is:</span>
+                        <span class="pyq-label">PYQ 2024</span>
+                    </div>
+                    <div class="mcq-options">
+                        <div class="mcq-option" data-correct="true">A. A region that satisfies all constraints</div>
+                        <div class="mcq-option" data-correct="false">B. A region outside all constraints</div>
+                        <div class="mcq-option" data-correct="false">C. Unbounded region</div>
+                        <div class="mcq-option" data-correct="false">D. None of the above</div>
+                    </div>
+                </div>
+
+                <!-- MCQ 5 -->
+                <div class="mcq-question">
+                    <div class="mcq-question-number">
+                        <span>5. In simplex method, we add which variable in case of "≤" (Less than or
+                            equal)?</span>
+                        <span class="pyq-label">PYQ 2024</span>
+                    </div>
+                    <div class="mcq-options">
+                        <div class="mcq-option" data-correct="true">A. Slack Variable</div>
+                        <div class="mcq-option" data-correct="false">B. Surplus Variable</div>
+                        <div class="mcq-option" data-correct="false">C. Artificial Variable</div>
+                        <div class="mcq-option" data-correct="false">D. None of the above</div>
+                    </div>
+                    <div class="mcq-explanation">
+                        <strong>Explanation:</strong> Slack variable is added to a "less than or equal to" (≤)
+                        constraint to convert it into an equation.
+                    </div>
+                </div>
+
+                <!-- MCQ 6 -->
+                <div class="mcq-question">
+                    <div class="mcq-question-number">
+                        <span>6. In simplex method, if there is a tie between a decision variable and a slack
+                            variable, which should be selected?</span>
+                        <span class="pyq-label">PYQ 2022</span>
+                    </div>
+                    <div class="mcq-options">
+                        <div class="mcq-option" data-correct="true">A. Decision variable</div>
+                        <div class="mcq-option" data-correct="false">B. Slack variable</div>
+                        <div class="mcq-option" data-correct="false">C. Surplus variable</div>
+                        <div class="mcq-option" data-correct="false">D. Artificial variable</div>
+                    </div>
+                </div>
+
+                <!-- MCQ 7 -->
+                <div class="mcq-question">
+                    <div class="mcq-question-number">
+                        <span>7. Operations Research (OR) is a:</span>
+                        <span class="pyq-label">PYQ 2022</span>
+                    </div>
+                    <div class="mcq-options">
+                        <div class="mcq-option" data-correct="true">A. Interdisciplinary approach / Scientific
+                            approach</div>
+                        <div class="mcq-option" data-correct="false">B. Artistic approach</div>
+                        <div class="mcq-option" data-correct="false">C. Historic approach</div>
+                        <div class="mcq-option" data-correct="false">D. None of the above</div>
+                    </div>
+                </div>
+
+                <!-- MCQ 8 -->
+                <div class="mcq-question">
+                    <div class="mcq-question-number">
+                        <span>8. Dual of a dual is?</span>
+                        <span class="pyq-label">PYQ 2023</span>
+                    </div>
+                    <div class="mcq-options">
+                        <div class="mcq-option" data-correct="true">A. Primal</div>
+                        <div class="mcq-option" data-correct="false">B. Dual</div>
+                        <div class="mcq-option" data-correct="false">C. None</div>
+                        <div class="mcq-option" data-correct="false">D. All of the above</div>
+                    </div>
+                </div>
+
+                <!-- MCQ 9 -->
+                <div class="mcq-question">
+                    <div class="mcq-question-number">
+                        <span>9. Which variable represents unused resources in LPP?</span>
+                        <span class="pyq-label">PYQ 2024</span>
+                    </div>
+                    <div class="mcq-options">
+                        <div class="mcq-option" data-correct="true">A. Slack Variable</div>
+                        <div class="mcq-option" data-correct="false">B. Surplus Variable</div>
+                        <div class="mcq-option" data-correct="false">C. Artificial Variable</div>
+                        <div class="mcq-option" data-correct="false">D. Decision Variable</div>
+                    </div>
+                </div>
+
+                <!-- MCQ 10 -->
+                <div class="mcq-question">
+                    <div class="mcq-question-number">
+                        <span>10. North West Corner Method is used for?</span>
+                        <span class="pyq-label">PYQ 2022</span>
+                    </div>
+                    <div class="mcq-options">
+                        <div class="mcq-option" data-correct="true">A. Transportation Problem</div>
+                        <div class="mcq-option" data-correct="false">B. Assignment Problem</div>
+                        <div class="mcq-option" data-correct="false">C. Sequencing Problem</div>
+                        <div class="mcq-option" data-correct="false">D. None of the above</div>
+                    </div>
+                </div>
+
+                <!-- Unit 2 MCQs -->
+                <div class="unit-mcq-label">Unit 2 Questions</div>
+                <div class="mcq-question">
+                    <p class="question-text">A game is said to be fair if the value of the game is:</p>
+                    <div class="mcq-options">
+                        <div class="mcq-option" data-correct="false">A. One</div>
+                        <div class="mcq-option" data-correct="false">B. Two</div>
+                        <div class="mcq-option" data-correct="false">C. Three</div>
+                        <div class="mcq-option" data-correct="true">D. Zero</div>
+                    </div>
+                    <div class="mcq-explanation">Appeared in 2022, 2024</div>
+                </div>
+
+                <div class="mcq-question">
+                    <p class="question-text">If there exists a Saddle Point in a game, then:</p>
+                    <div class="mcq-options">
+                        <div class="mcq-option" data-correct="false">A. Maximin > Minimax</div>
+                        <div class="mcq-option" data-correct="false">B. Maximin < Minimax</div>
+                                <div class="mcq-option" data-correct="true">C. Maximin = Minimax</div>
+                                <div class="mcq-option" data-correct="false">D. None of these</div>
                         </div>
-                        <div class="mcq-options">
-                            <div class="mcq-option" data-correct="true">A. A function to be optimized (Maximized or
-                                Minimized)</div>
-                            <div class="mcq-option" data-correct="false">B. A relation between variables</div>
-                            <div class="mcq-option" data-correct="false">C. A constraint</div>
-                            <div class="mcq-option" data-correct="false">D. None of the above</div>
-                        </div>
+                        <div class="mcq-explanation">Appeared in 2022, 2024</div>
                     </div>
 
-                    <!-- MCQ 2 -->
                     <div class="mcq-question">
-                        <div class="mcq-question-number">
-                            <span>2. A set of values X1, X2 which satisfies the constraints of the LPP is called:</span>
-                            <span class="pyq-label">PYQ 2022</span>
-                        </div>
+                        <p class="question-text">When the sum of gains of one player is equal to the sum of losses to
+                            another
+                            player in a game, this situation is known as:</p>
                         <div class="mcq-options">
-                            <div class="mcq-option" data-correct="true">A. Solution / Feasible Solution</div>
-                            <div class="mcq-option" data-correct="false">B. Infeasible Solution</div>
-                            <div class="mcq-option" data-correct="false">C. Optimal Solution</div>
-                            <div class="mcq-option" data-correct="false">D. Unbounded Solution</div>
-                        </div>
-                    </div>
-
-                    <!-- MCQ 3 -->
-                    <div class="mcq-question">
-                        <div class="mcq-question-number">
-                            <span>3. Graphical method can be applied to solve LPP when there are only:</span>
-                            <span class="pyq-label">PYQ 2022, 2024</span>
-                        </div>
-                        <div class="mcq-options">
-                            <div class="mcq-option" data-correct="true">A. Two variables</div>
-                            <div class="mcq-option" data-correct="false">B. Three variables</div>
-                            <div class="mcq-option" data-correct="false">C. Four variables</div>
-                            <div class="mcq-option" data-correct="false">D. One variable</div>
-                        </div>
-                        <div class="mcq-explanation">
-                            <strong>Explanation:</strong> Graphical method is limited to problems with only two decision
-                            variables because we can plot them on a 2D graph.
-                        </div>
-                    </div>
-
-                    <!-- MCQ 4 -->
-                    <div class="mcq-question">
-                        <div class="mcq-question-number">
-                            <span>4. In graphical method, the feasible region is:</span>
-                            <span class="pyq-label">PYQ 2024</span>
-                        </div>
-                        <div class="mcq-options">
-                            <div class="mcq-option" data-correct="true">A. A region that satisfies all constraints</div>
-                            <div class="mcq-option" data-correct="false">B. A region outside all constraints</div>
-                            <div class="mcq-option" data-correct="false">C. Unbounded region</div>
-                            <div class="mcq-option" data-correct="false">D. None of the above</div>
-                        </div>
-                    </div>
-
-                    <!-- MCQ 5 -->
-                    <div class="mcq-question">
-                        <div class="mcq-question-number">
-                            <span>5. In simplex method, we add which variable in case of "≤" (Less than or
-                                equal)?</span>
-                            <span class="pyq-label">PYQ 2024</span>
-                        </div>
-                        <div class="mcq-options">
-                            <div class="mcq-option" data-correct="true">A. Slack Variable</div>
-                            <div class="mcq-option" data-correct="false">B. Surplus Variable</div>
-                            <div class="mcq-option" data-correct="false">C. Artificial Variable</div>
-                            <div class="mcq-option" data-correct="false">D. None of the above</div>
-                        </div>
-                        <div class="mcq-explanation">
-                            <strong>Explanation:</strong> Slack variable is added to a "less than or equal to" (≤)
-                            constraint to convert it into an equation.
-                        </div>
-                    </div>
-
-                    <!-- MCQ 6 -->
-                    <div class="mcq-question">
-                        <div class="mcq-question-number">
-                            <span>6. In simplex method, if there is a tie between a decision variable and a slack
-                                variable, which should be selected?</span>
-                            <span class="pyq-label">PYQ 2022</span>
-                        </div>
-                        <div class="mcq-options">
-                            <div class="mcq-option" data-correct="true">A. Decision variable</div>
-                            <div class="mcq-option" data-correct="false">B. Slack variable</div>
-                            <div class="mcq-option" data-correct="false">C. Surplus variable</div>
-                            <div class="mcq-option" data-correct="false">D. Artificial variable</div>
-                        </div>
-                    </div>
-
-                    <!-- MCQ 7 -->
-                    <div class="mcq-question">
-                        <div class="mcq-question-number">
-                            <span>7. Operations Research (OR) is a:</span>
-                            <span class="pyq-label">PYQ 2022</span>
-                        </div>
-                        <div class="mcq-options">
-                            <div class="mcq-option" data-correct="true">A. Interdisciplinary approach / Scientific
-                                approach</div>
-                            <div class="mcq-option" data-correct="false">B. Artistic approach</div>
-                            <div class="mcq-option" data-correct="false">C. Historic approach</div>
-                            <div class="mcq-option" data-correct="false">D. None of the above</div>
-                        </div>
-                    </div>
-
-                    <!-- MCQ 8 -->
-                    <div class="mcq-question">
-                        <div class="mcq-question-number">
-                            <span>8. Dual of a dual is?</span>
-                            <span class="pyq-label">PYQ 2023</span>
-                        </div>
-                        <div class="mcq-options">
-                            <div class="mcq-option" data-correct="true">A. Primal</div>
-                            <div class="mcq-option" data-correct="false">B. Dual</div>
-                            <div class="mcq-option" data-correct="false">C. None</div>
+                            <div class="mcq-option" data-correct="false">A. Biased game</div>
+                            <div class="mcq-option" data-correct="true">B. Zero-sum game</div>
+                            <div class="mcq-option" data-correct="false">C. Fair game</div>
                             <div class="mcq-option" data-correct="false">D. All of the above</div>
                         </div>
+                        <div class="mcq-explanation">Appeared in 2022</div>
                     </div>
 
-                    <!-- MCQ 9 -->
                     <div class="mcq-question">
-                        <div class="mcq-question-number">
-                            <span>9. Which variable represents unused resources in LPP?</span>
-                            <span class="pyq-label">PYQ 2024</span>
-                        </div>
+                        <p class="question-text">A mixed strategy game can be solved by:</p>
                         <div class="mcq-options">
-                            <div class="mcq-option" data-correct="true">A. Slack Variable</div>
-                            <div class="mcq-option" data-correct="false">B. Surplus Variable</div>
-                            <div class="mcq-option" data-correct="false">C. Artificial Variable</div>
-                            <div class="mcq-option" data-correct="false">D. Decision Variable</div>
+                            <div class="mcq-option" data-correct="false">A. Algebraic method</div>
+                            <div class="mcq-option" data-correct="false">B. Matrix method</div>
+                            <div class="mcq-option" data-correct="false">C. Graphical method</div>
+                            <div class="mcq-option" data-correct="true">D. All of the above</div>
                         </div>
+                        <div class="mcq-explanation">Appeared in 2022</div>
                     </div>
 
-                    <!-- MCQ 10 -->
                     <div class="mcq-question">
-                        <div class="mcq-question-number">
-                            <span>10. North West Corner Method is used for?</span>
-                            <span class="pyq-label">PYQ 2022</span>
-                        </div>
+                        <p class="question-text">In case there is no saddle point in a game, then the game is:</p>
                         <div class="mcq-options">
-                            <div class="mcq-option" data-correct="true">A. Transportation Problem</div>
-                            <div class="mcq-option" data-correct="false">B. Assignment Problem</div>
-                            <div class="mcq-option" data-correct="false">C. Sequencing Problem</div>
+                            <div class="mcq-option" data-correct="false">A. Deterministic game</div>
+                            <div class="mcq-option" data-correct="false">B. Fair game</div>
+                            <div class="mcq-option" data-correct="true">C. Mixed strategy game</div>
+                            <div class="mcq-option" data-correct="false">D. Multiplayer game</div>
+                        </div>
+                        <div class="mcq-explanation">Appeared in 2022</div>
+                    </div>
+
+                    <div class="mcq-question">
+                        <p class="question-text">The outcome of a game is known as:</p>
+                        <div class="mcq-options">
+                            <div class="mcq-option" data-correct="false">A. Profit</div>
+                            <div class="mcq-option" data-correct="false">B. Loss</div>
+                            <div class="mcq-option" data-correct="true">C. Payoff</div>
                             <div class="mcq-option" data-correct="false">D. None of the above</div>
                         </div>
+                        <div class="mcq-explanation">Appeared in 2022</div>
                     </div>
-                
-<!-- Unit 2 MCQs --> <div class="unit-mcq-label" >Unit 2 Questions</div>
-        <div class="mcq-question">
-            <p class="question-text">A game is said to be fair if the value of the game is:</p>
-            <div class="mcq-options">
-                <div class="mcq-option" data-correct="false">A. One</div>
-                <div class="mcq-option" data-correct="false">B. Two</div>
-                <div class="mcq-option" data-correct="false">C. Three</div>
-                <div class="mcq-option" data-correct="true">D. Zero</div>
-            </div>
-            <div class="mcq-explanation">Appeared in 2022, 2024</div>
-        </div>
 
-        <div class="mcq-question">
-            <p class="question-text">If there exists a Saddle Point in a game, then:</p>
-            <div class="mcq-options">
-                <div class="mcq-option" data-correct="false">A. Maximin > Minimax</div>
-                <div class="mcq-option" data-correct="false">B. Maximin < Minimax</div>
-                        <div class="mcq-option" data-correct="true">C. Maximin = Minimax</div>
-                        <div class="mcq-option" data-correct="false">D. None of these</div>
-                </div>
-                <div class="mcq-explanation">Appeared in 2022, 2024</div>
-            </div>
+                    <div class="mcq-question">
+                        <p class="question-text">If a game has no saddle point, it is solved using:</p>
+                        <div class="mcq-options">
+                            <div class="mcq-option" data-correct="true">A. Mixed strategies</div>
+                            <div class="mcq-option" data-correct="false">B. Pure strategies</div>
+                            <div class="mcq-option" data-correct="false">C. Graphical method only</div>
+                            <div class="mcq-option" data-correct="false">D. None</div>
+                        </div>
+                        <div class="mcq-explanation">Appeared in PYQ</div>
+                    </div>
 
-            <div class="mcq-question">
-                <p class="question-text">When the sum of gains of one player is equal to the sum of losses to another
-                    player in a game, this situation is known as:</p>
-                <div class="mcq-options">
-                    <div class="mcq-option" data-correct="false">A. Biased game</div>
-                    <div class="mcq-option" data-correct="true">B. Zero-sum game</div>
-                    <div class="mcq-option" data-correct="false">C. Fair game</div>
-                    <div class="mcq-option" data-correct="false">D. All of the above</div>
-                </div>
-                <div class="mcq-explanation">Appeared in 2022</div>
-            </div>
-
-            <div class="mcq-question">
-                <p class="question-text">A mixed strategy game can be solved by:</p>
-                <div class="mcq-options">
-                    <div class="mcq-option" data-correct="false">A. Algebraic method</div>
-                    <div class="mcq-option" data-correct="false">B. Matrix method</div>
-                    <div class="mcq-option" data-correct="false">C. Graphical method</div>
-                    <div class="mcq-option" data-correct="true">D. All of the above</div>
-                </div>
-                <div class="mcq-explanation">Appeared in 2022</div>
-            </div>
-
-            <div class="mcq-question">
-                <p class="question-text">In case there is no saddle point in a game, then the game is:</p>
-                <div class="mcq-options">
-                    <div class="mcq-option" data-correct="false">A. Deterministic game</div>
-                    <div class="mcq-option" data-correct="false">B. Fair game</div>
-                    <div class="mcq-option" data-correct="true">C. Mixed strategy game</div>
-                    <div class="mcq-option" data-correct="false">D. Multiplayer game</div>
-                </div>
-                <div class="mcq-explanation">Appeared in 2022</div>
-            </div>
-
-            <div class="mcq-question">
-                <p class="question-text">The outcome of a game is known as:</p>
-                <div class="mcq-options">
-                    <div class="mcq-option" data-correct="false">A. Profit</div>
-                    <div class="mcq-option" data-correct="false">B. Loss</div>
-                    <div class="mcq-option" data-correct="true">C. Payoff</div>
-                    <div class="mcq-option" data-correct="false">D. None of the above</div>
-                </div>
-                <div class="mcq-explanation">Appeared in 2022</div>
-            </div>
-
-            <div class="mcq-question">
-                <p class="question-text">If a game has no saddle point, it is solved using:</p>
-                <div class="mcq-options">
-                    <div class="mcq-option" data-correct="true">A. Mixed strategies</div>
-                    <div class="mcq-option" data-correct="false">B. Pure strategies</div>
-                    <div class="mcq-option" data-correct="false">C. Graphical method only</div>
-                    <div class="mcq-option" data-correct="false">D. None</div>
-                </div>
-                <div class="mcq-explanation">Appeared in PYQ</div>
-            </div>
-        
-<!-- Unit 3 MCQs --> <div class="unit-mcq-label" >Unit 3 Questions</div>
+                    <!-- Unit 3 MCQs -->
+                    <div class="unit-mcq-label">Unit 3 Questions</div>
                     <div class="mcq-question">
                         <p class="question-text">Replacement is said to be necessary if:</p>
                         <div class="mcq-options">
@@ -719,314 +800,316 @@
                         <div class="mcq-explanation">Appeared in: 2022</div>
                     </div>
                     <div class="mcq-explanation">Appeared in: 2022</div>
-                
-<!-- Unit 4 MCQs --> <div class="unit-mcq-label" >Unit 4 Questions</div>
-                <div class="mcq-question">
-                    <p class="question-text">The formula for calculating expected time ($t_e$) in PERT is:</p>
-                    <div class="mcq-options">
-                        <div class="mcq-option" data-correct="true">A. $(t_o + 4t_m + t_p) / 6$</div>
-                        <div class="mcq-option" data-correct="false">B. $(t_o + t_m + t_p) / 3$</div>
-                    </div>
-                    <div class="mcq-explanation">Appeared in 2022, 2024</div>
-                </div>
-                <div class="mcq-question">
-                    <p class="question-text">Critical path is the path that has:</p>
-                    <div class="mcq-options">
-                        <div class="mcq-option" data-correct="false">A. Highest cost</div>
-                        <div class="mcq-option" data-correct="false">B. Shortest duration</div>
-                        <div class="mcq-option" data-correct="true">C. Longest duration</div>
-                        <div class="mcq-option" data-correct="false">D. None</div>
-                    </div>
-                    <div class="mcq-explanation">Appeared in 2024</div>
-                </div>
-                <div class="mcq-question">
-                    <p class="question-text">If an activity has zero slack, it implies that:</p>
-                    <div class="mcq-options">
-                        <div class="mcq-option" data-correct="true">A. It lies on the critical path</div>
-                        <div class="mcq-option" data-correct="false">B. It is a dummy activity</div>
-                    </div>
-                    <div class="mcq-explanation">Appeared in 2022, 2024</div>
-                </div>
-                <div class="mcq-question">
-                    <p class="question-text">PERT is used for:</p>
-                    <div class="mcq-options">
-                        <div class="mcq-option" data-correct="false">A. Repetitive projects</div>
-                        <div class="mcq-option" data-correct="true">B. Non-repetitive projects (R&D)</div>
-                    </div>
-                    <div class="mcq-explanation">Appeared in 2024</div>
-                </div>
-                <div class="mcq-question">
-                    <p class="question-text">In a network diagram, an activity is denoted by:</p>
-                    <div class="mcq-options">
-                        <div class="mcq-option" data-correct="false">A. Node</div>
-                        <div class="mcq-option" data-correct="true">B. Arrow</div>
-                        <div class="mcq-option" data-correct="false">C. Triangle</div>
-                    </div>
-                    <div class="mcq-explanation">Appeared in 2022</div>
-                </div>
-                <div class="mcq-question">
-                    <p class="question-text">Which is NOT a type of time estimate in PERT?</p>
-                    <div class="mcq-options">
-                        <div class="mcq-option" data-correct="false">A. Optimistic</div>
-                        <div class="mcq-option" data-correct="false">B. Pessimistic</div>
-                        <div class="mcq-option" data-correct="false">C. Most likely</div>
-                        <div class="mcq-option" data-correct="true">D. Realistic time</div>
-                    </div>
-                    <div class="mcq-explanation">Appeared in 2024</div>
-                </div>
 
-                <div class="mcq-question">
-                    <p class="question-text">Slack time refers to:</p>
-                    <div class="mcq-options">
-                        <div class="mcq-option" data-correct="true">A. Allowable delay for an activity without delaying
-                            project</div>
-                        <div class="mcq-option" data-correct="false">B. Late start time</div>
-                        <div class="mcq-option" data-correct="false">C. Early finish time</div>
-                        <div class="mcq-option" data-correct="false">D. None</div>
-                    </div>
-                    <div class="mcq-explanation">Appeared in 2024</div>
-                </div>
-            
-<!-- Unit 5 MCQs --> <div class="unit-mcq-label" >Unit 5 Questions</div>
-                <div class="mcq-question">
-                    <p class="question-text">Johnson’s rule is used for:</p>
-                    <div class="mcq-options">
-                        <div class="mcq-option" data-correct="false">A. Queuing problem</div>
-                        <div class="mcq-option" data-correct="true">B. Sequencing problem</div>
-                        <div class="mcq-option" data-correct="false">C. Both (A) and (B)</div>
-                        <div class="mcq-option" data-correct="false">D. None of the above</div>
-                    </div>
-                    <div class="mcq-explanation">Appeared in 2022-23</div>
-                </div>
-                <div class="mcq-question">
-                    <p class="question-text">In sequencing problems, ‘idle time’ refers to:</p>
-                    <div class="mcq-options">
-                        <div class="mcq-option" data-correct="false">A. Time when a job is waiting</div>
-                        <div class="mcq-option" data-correct="true">B. Time when a machine is not in use</div>
-                        <div class="mcq-option" data-correct="false">C. Total processing time</div>
-                    </div>
-                    <div class="mcq-explanation">Appeared in 2024</div>
-                </div>
-                <div class="mcq-question">
-                    <p class="question-text">In sequencing problems, the primary objective is to:</p>
-                    <div class="mcq-options">
-                        <div class="mcq-option" data-correct="false">A. Maximize number of jobs</div>
-                        <div class="mcq-option" data-correct="true">B. Minimize total processing time / elapsed time
+                    <!-- Unit 4 MCQs -->
+                    <div class="unit-mcq-label">Unit 4 Questions</div>
+                    <div class="mcq-question">
+                        <p class="question-text">The formula for calculating expected time ($t_e$) in PERT is:</p>
+                        <div class="mcq-options">
+                            <div class="mcq-option" data-correct="true">A. $(t_o + 4t_m + t_p) / 6$</div>
+                            <div class="mcq-option" data-correct="false">B. $(t_o + t_m + t_p) / 3$</div>
                         </div>
-                        <div class="mcq-option" data-correct="false">C. Maximize idle time</div>
+                        <div class="mcq-explanation">Appeared in 2022, 2024</div>
                     </div>
-                    <div class="mcq-explanation">Appeared in 2024</div>
-                </div>
-                <div class="mcq-question">
-                    <p class="question-text">The total time required to complete all the jobs in a job sequencing
-                        problem is known as:</p>
-                    <div class="mcq-options">
-                        <div class="mcq-option" data-correct="false">A. Processing time</div>
-                        <div class="mcq-option" data-correct="true">B. Elapsed time</div>
-                        <div class="mcq-option" data-correct="false">C. Idle time</div>
+                    <div class="mcq-question">
+                        <p class="question-text">Critical path is the path that has:</p>
+                        <div class="mcq-options">
+                            <div class="mcq-option" data-correct="false">A. Highest cost</div>
+                            <div class="mcq-option" data-correct="false">B. Shortest duration</div>
+                            <div class="mcq-option" data-correct="true">C. Longest duration</div>
+                            <div class="mcq-option" data-correct="false">D. None</div>
+                        </div>
+                        <div class="mcq-explanation">Appeared in 2024</div>
                     </div>
-                    <div class="mcq-explanation">Appeared in 2022</div>
-                </div>
-                <div class="mcq-question">
-                    <p class="question-text">In n job and two machines (M1, M2) sequencing problem, if job has minimum
-                        time on machine M2, it is processed:</p>
-                    <div class="mcq-options">
-                        <div class="mcq-option" data-correct="false">A. First</div>
-                        <div class="mcq-option" data-correct="true">B. Last</div>
+                    <div class="mcq-question">
+                        <p class="question-text">If an activity has zero slack, it implies that:</p>
+                        <div class="mcq-options">
+                            <div class="mcq-option" data-correct="true">A. It lies on the critical path</div>
+                            <div class="mcq-option" data-correct="false">B. It is a dummy activity</div>
+                        </div>
+                        <div class="mcq-explanation">Appeared in 2022, 2024</div>
                     </div>
-                    <div class="mcq-explanation">Appeared in 2022</div>
-                </div>
-                <div class="mcq-question">
-                    <p class="question-text">Which of the following methods is used to determine the optimal sequence
-                        for 'n' jobs through two machines?</p>
-                    <div class="mcq-options">
-                        <div class="mcq-option" data-correct="false">A. Hungarian Method</div>
-                        <div class="mcq-option" data-correct="true">B. Johnson’s Rule</div>
-                        <div class="mcq-option" data-correct="false">C. Simplex Method</div>
+                    <div class="mcq-question">
+                        <p class="question-text">PERT is used for:</p>
+                        <div class="mcq-options">
+                            <div class="mcq-option" data-correct="false">A. Repetitive projects</div>
+                            <div class="mcq-option" data-correct="true">B. Non-repetitive projects (R&D)</div>
+                        </div>
+                        <div class="mcq-explanation">Appeared in 2024</div>
                     </div>
-                    <div class="mcq-explanation">Appeared in 2022</div>
+                    <div class="mcq-question">
+                        <p class="question-text">In a network diagram, an activity is denoted by:</p>
+                        <div class="mcq-options">
+                            <div class="mcq-option" data-correct="false">A. Node</div>
+                            <div class="mcq-option" data-correct="true">B. Arrow</div>
+                            <div class="mcq-option" data-correct="false">C. Triangle</div>
+                        </div>
+                        <div class="mcq-explanation">Appeared in 2022</div>
+                    </div>
+                    <div class="mcq-question">
+                        <p class="question-text">Which is NOT a type of time estimate in PERT?</p>
+                        <div class="mcq-options">
+                            <div class="mcq-option" data-correct="false">A. Optimistic</div>
+                            <div class="mcq-option" data-correct="false">B. Pessimistic</div>
+                            <div class="mcq-option" data-correct="false">C. Most likely</div>
+                            <div class="mcq-option" data-correct="true">D. Realistic time</div>
+                        </div>
+                        <div class="mcq-explanation">Appeared in 2024</div>
+                    </div>
+
+                    <div class="mcq-question">
+                        <p class="question-text">Slack time refers to:</p>
+                        <div class="mcq-options">
+                            <div class="mcq-option" data-correct="true">A. Allowable delay for an activity without
+                                delaying
+                                project</div>
+                            <div class="mcq-option" data-correct="false">B. Late start time</div>
+                            <div class="mcq-option" data-correct="false">C. Early finish time</div>
+                            <div class="mcq-option" data-correct="false">D. None</div>
+                        </div>
+                        <div class="mcq-explanation">Appeared in 2024</div>
+                    </div>
+
+                    <!-- Unit 5 MCQs -->
+                    <div class="unit-mcq-label">Unit 5 Questions</div>
+                    <div class="mcq-question">
+                        <p class="question-text">Johnson’s rule is used for:</p>
+                        <div class="mcq-options">
+                            <div class="mcq-option" data-correct="false">A. Queuing problem</div>
+                            <div class="mcq-option" data-correct="true">B. Sequencing problem</div>
+                            <div class="mcq-option" data-correct="false">C. Both (A) and (B)</div>
+                            <div class="mcq-option" data-correct="false">D. None of the above</div>
+                        </div>
+                        <div class="mcq-explanation">Appeared in 2022-23</div>
+                    </div>
+                    <div class="mcq-question">
+                        <p class="question-text">In sequencing problems, ‘idle time’ refers to:</p>
+                        <div class="mcq-options">
+                            <div class="mcq-option" data-correct="false">A. Time when a job is waiting</div>
+                            <div class="mcq-option" data-correct="true">B. Time when a machine is not in use</div>
+                            <div class="mcq-option" data-correct="false">C. Total processing time</div>
+                        </div>
+                        <div class="mcq-explanation">Appeared in 2024</div>
+                    </div>
+                    <div class="mcq-question">
+                        <p class="question-text">In sequencing problems, the primary objective is to:</p>
+                        <div class="mcq-options">
+                            <div class="mcq-option" data-correct="false">A. Maximize number of jobs</div>
+                            <div class="mcq-option" data-correct="true">B. Minimize total processing time / elapsed time
+                            </div>
+                            <div class="mcq-option" data-correct="false">C. Maximize idle time</div>
+                        </div>
+                        <div class="mcq-explanation">Appeared in 2024</div>
+                    </div>
+                    <div class="mcq-question">
+                        <p class="question-text">The total time required to complete all the jobs in a job sequencing
+                            problem is known as:</p>
+                        <div class="mcq-options">
+                            <div class="mcq-option" data-correct="false">A. Processing time</div>
+                            <div class="mcq-option" data-correct="true">B. Elapsed time</div>
+                            <div class="mcq-option" data-correct="false">C. Idle time</div>
+                        </div>
+                        <div class="mcq-explanation">Appeared in 2022</div>
+                    </div>
+                    <div class="mcq-question">
+                        <p class="question-text">In n job and two machines (M1, M2) sequencing problem, if job has
+                            minimum
+                            time on machine M2, it is processed:</p>
+                        <div class="mcq-options">
+                            <div class="mcq-option" data-correct="false">A. First</div>
+                            <div class="mcq-option" data-correct="true">B. Last</div>
+                        </div>
+                        <div class="mcq-explanation">Appeared in 2022</div>
+                    </div>
+                    <div class="mcq-question">
+                        <p class="question-text">Which of the following methods is used to determine the optimal
+                            sequence
+                            for 'n' jobs through two machines?</p>
+                        <div class="mcq-options">
+                            <div class="mcq-option" data-correct="false">A. Hungarian Method</div>
+                            <div class="mcq-option" data-correct="true">B. Johnson’s Rule</div>
+                            <div class="mcq-option" data-correct="false">C. Simplex Method</div>
+                        </div>
+                        <div class="mcq-explanation">Appeared in 2022</div>
+                    </div>
+
+                    <div class="mcq-question">
+                        <p class="question-text">In Queuing Theory, if arrival rate is $\lambda$ and service rate is
+                            $\mu$,
+                            traffic intensity is:</p>
+                        <div class="mcq-options">
+                            <div class="mcq-option" data-correct="false">A. $\mu / \lambda$</div>
+                            <div class="mcq-option" data-correct="true">B. $\lambda / \mu$</div>
+                            <div class="mcq-option" data-correct="false">C. $\lambda - \mu$</div>
+                            <div class="mcq-option" data-correct="false">D. $\lambda + \mu$</div>
+                        </div>
+                        <div class="mcq-explanation">Appeared in PYQ</div>
+                    </div>
+
                 </div>
 
-                <div class="mcq-question">
-                    <p class="question-text">In Queuing Theory, if arrival rate is $\lambda$ and service rate is $\mu$,
-                        traffic intensity is:</p>
-                    <div class="mcq-options">
-                        <div class="mcq-option" data-correct="false">A. $\mu / \lambda$</div>
-                        <div class="mcq-option" data-correct="true">B. $\lambda / \mu$</div>
-                        <div class="mcq-option" data-correct="false">C. $\lambda - \mu$</div>
-                        <div class="mcq-option" data-correct="false">D. $\lambda + \mu$</div>
-                    </div>
-                    <div class="mcq-explanation">Appeared in PYQ</div>
+                <div class="mcq-navigation mcq-nav">
+                    <button id="prev-btn" class="btn btn-secondary" class="btn btn-secondary">Previous</button>
+                    <button id="next-btn" class="btn btn-primary">Next</button>
                 </div>
-            
             </div>
-            
-            <div class="mcq-navigation mcq-nav">
-                <button id="prev-btn" class="btn btn-secondary" class="btn btn-secondary">Previous</button>
-                <button id="next-btn" class="btn btn-primary">Next</button>
-            </div>
+
         </div>
 
-    </div>
+        <footer>
+            <p>© 2026 Sarvasva Notes. All Rights Reserved.</p>
+        </footer>
 
-    <footer>
-        <p>© 2026 Sarvasva Notes. All Rights Reserved.</p>
-    </footer>
-
-    <script>
-        // Collapsible Logic
-        document.querySelectorAll('.subject-header').forEach(header => {
-            header.addEventListener('click', () => {
-                const content = header.nextElementSibling;
-                header.classList.toggle('active');
-                content.classList.toggle('active');
-            });
-        });
-
-        // MCQ Logic
-        let score = 0;
-        let currentQuestion = 0;
-        let questions = [];
-
-        function initializeQuestions() {
-            questions = [];
-            const container = document.querySelector('.mcq-container.active');
-            if(!container) return;
-
-            const qEls = container.querySelectorAll('.mcq-question');
-            qEls.forEach(q => {
-                // Reset UI
-                q.querySelectorAll('.mcq-option').forEach(o => {
-                    o.classList.remove('selected', 'correct', 'incorrect');
-                    o.style.pointerEvents = 'auto';
+        <script>
+            // Collapsible Logic
+            document.querySelectorAll('.subject-header').forEach(header => {
+                header.addEventListener('click', () => {
+                    const content = header.nextElementSibling;
+                    header.classList.toggle('active');
+                    content.classList.toggle('active');
                 });
-                const exp = q.querySelector('.mcq-explanation');
-                if(exp) exp.classList.remove('show');
-
-                // Inject Button if missing
-                let btn = q.querySelector('.submit-answer-btn');
-                if(!btn) {
-                    btn = document.createElement('button');
-                    btn.className = 'submit-answer-btn';
-                    btn.textContent = 'Submit Answer';
-                    btn.classList.add('btn', 'btn-primary'); // Add new classes
-                    btn.style.marginTop = '15px';
-                    // q.appendChild(btn); // Append at end
-                     if(exp) q.insertBefore(btn, exp);
-                     else q.appendChild(btn);
-                }
-                btn.disabled = false;
-                btn.textContent = 'Submit Answer';
-
-                questions.push({ element: q, answered: false });
             });
 
-            const totalQ = document.getElementById('total-questions');
-            if(totalQ) totalQ.textContent = questions.length;
-            updateScore(0);
-            showQuestion();
-        }
+            // MCQ Logic
+            let score = 0;
+            let currentQuestion = 0;
+            let questions = [];
 
-        function updateScore(s) {
-            score = s;
-            const scoreEl = document.getElementById('score');
-            if(scoreEl) scoreEl.textContent = score;
-        }
+            function initializeQuestions() {
+                questions = [];
+                const container = document.querySelector('.mcq-container.active');
+                if (!container) return;
 
-        function showQuestion() {
-            questions.forEach(q => q.element.style.display = 'none');
-            if(questions[currentQuestion]) {
-                questions[currentQuestion].element.style.display = 'block';
-            }
-            
-            const prev = document.getElementById('prev-btn');
-            const next = document.getElementById('next-btn');
-            if(prev) prev.disabled = currentQuestion === 0;
-            if(next) next.innerHTML = currentQuestion === questions.length - 1 ? 'Finish' : 'Next <i class="fas fa-arrow-right"></i>';
-        }
-
-        document.addEventListener('click', (e) => {
-            if(e.target.classList.contains('mcq-option')) {
-                const qDiv = e.target.closest('.mcq-question');
-                const btn = qDiv.querySelector('.submit-answer-btn');
-                if(btn && btn.disabled) return;
-                
-                qDiv.querySelectorAll('.mcq-option').forEach(o => o.classList.remove('selected'));
-                e.target.classList.add('selected');
-            }
-
-            if(e.target.classList.contains('submit-answer-btn')) {
-                const btn = e.target;
-                const qDiv = btn.closest('.mcq-question');
-                const selected = qDiv.querySelector('.mcq-option.selected');
-                
-                if(!selected) { alert('Please select an option.'); return; }
-
-                const isCorrect = selected.dataset.correct === 'true';
-                if(isCorrect) updateScore(score + 1);
-
-                qDiv.querySelectorAll('.mcq-option').forEach(o => {
-                    o.style.pointerEvents = 'none';
-                    if(o.dataset.correct === 'true') o.classList.add('correct');
-                    else if(o.classList.contains('selected')) o.classList.add('incorrect');
-                    o.classList.remove('selected');
-                });
-                
-                const exp = qDiv.querySelector('.mcq-explanation');
-                if(exp) exp.classList.add('show');
-                
-                btn.disabled = true;
-                btn.textContent = isCorrect ? 'Correct!' : 'Incorrect';
-            }
-        });
-
-        document.getElementById('next-btn')?.addEventListener('click', () => {
-            if(currentQuestion < questions.length - 1) {
-                currentQuestion++;
-                showQuestion();
-            } else {
-                alert('Quiz Complete! Score: ' + score);
-            }
-        });
-
-        document.getElementById('prev-btn')?.addEventListener('click', () => {
-            if(currentQuestion > 0) {
-                currentQuestion--;
-                showQuestion();
-            }
-        });
-
-        document.getElementById('reset-btn')?.addEventListener('click', () => initializeQuestions());
-
-        window.addEventListener('DOMContentLoaded', () => {
-            initializeQuestions();
-            // Open first note block
-            const firstHeader = document.querySelector('.subject-header');
-            if(firstHeader) firstHeader.click();
-        });
-
-        // Smooth scroll
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                e.preventDefault();
-                const targetId = this.getAttribute('href');
-                if (targetId === '#') return;
-                const targetElement = document.querySelector(targetId);
-                if (targetElement) {
-                    window.scrollTo({
-                        top: targetElement.offsetTop - 80,
-                        behavior: 'smooth'
+                const qEls = container.querySelectorAll('.mcq-question');
+                qEls.forEach(q => {
+                    // Reset UI
+                    q.querySelectorAll('.mcq-option').forEach(o => {
+                        o.classList.remove('selected', 'correct', 'incorrect');
+                        o.style.pointerEvents = 'auto';
                     });
+                    const exp = q.querySelector('.mcq-explanation');
+                    if (exp) exp.classList.remove('show');
+
+                    // Inject Button if missing
+                    let btn = q.querySelector('.submit-answer-btn');
+                    if (!btn) {
+                        btn = document.createElement('button');
+                        btn.className = 'submit-answer-btn';
+                        btn.textContent = 'Submit Answer';
+                        btn.classList.add('btn', 'btn-primary'); // Add new classes
+                        btn.style.marginTop = '15px';
+                        // q.appendChild(btn); // Append at end
+                        if (exp) q.insertBefore(btn, exp);
+                        else q.appendChild(btn);
+                    }
+                    btn.disabled = false;
+                    btn.textContent = 'Submit Answer';
+
+                    questions.push({ element: q, answered: false });
+                });
+
+                const totalQ = document.getElementById('total-questions');
+                if (totalQ) totalQ.textContent = questions.length;
+                updateScore(0);
+                showQuestion();
+            }
+
+            function updateScore(s) {
+                score = s;
+                const scoreEl = document.getElementById('score');
+                if (scoreEl) scoreEl.textContent = score;
+            }
+
+            function showQuestion() {
+                questions.forEach(q => q.element.style.display = 'none');
+                if (questions[currentQuestion]) {
+                    questions[currentQuestion].element.style.display = 'block';
+                }
+
+                const prev = document.getElementById('prev-btn');
+                const next = document.getElementById('next-btn');
+                if (prev) prev.disabled = currentQuestion === 0;
+                if (next) next.innerHTML = currentQuestion === questions.length - 1 ? 'Finish' : 'Next <i class="fas fa-arrow-right"></i>';
+            }
+
+            document.addEventListener('click', (e) => {
+                if (e.target.classList.contains('mcq-option')) {
+                    const qDiv = e.target.closest('.mcq-question');
+                    const btn = qDiv.querySelector('.submit-answer-btn');
+                    if (btn && btn.disabled) return;
+
+                    qDiv.querySelectorAll('.mcq-option').forEach(o => o.classList.remove('selected'));
+                    e.target.classList.add('selected');
+                }
+
+                if (e.target.classList.contains('submit-answer-btn')) {
+                    const btn = e.target;
+                    const qDiv = btn.closest('.mcq-question');
+                    const selected = qDiv.querySelector('.mcq-option.selected');
+
+                    if (!selected) { alert('Please select an option.'); return; }
+
+                    const isCorrect = selected.dataset.correct === 'true';
+                    if (isCorrect) updateScore(score + 1);
+
+                    qDiv.querySelectorAll('.mcq-option').forEach(o => {
+                        o.style.pointerEvents = 'none';
+                        if (o.dataset.correct === 'true') o.classList.add('correct');
+                        else if (o.classList.contains('selected')) o.classList.add('incorrect');
+                        o.classList.remove('selected');
+                    });
+
+                    const exp = qDiv.querySelector('.mcq-explanation');
+                    if (exp) exp.classList.add('show');
+
+                    btn.disabled = true;
+                    btn.textContent = isCorrect ? 'Correct!' : 'Incorrect';
                 }
             });
-        });
-    </script>
-    <script src="theme.js"></script>
+
+            document.getElementById('next-btn')?.addEventListener('click', () => {
+                if (currentQuestion < questions.length - 1) {
+                    currentQuestion++;
+                    showQuestion();
+                } else {
+                    alert('Quiz Complete! Score: ' + score);
+                }
+            });
+
+            document.getElementById('prev-btn')?.addEventListener('click', () => {
+                if (currentQuestion > 0) {
+                    currentQuestion--;
+                    showQuestion();
+                }
+            });
+
+            document.getElementById('reset-btn')?.addEventListener('click', () => initializeQuestions());
+
+            window.addEventListener('DOMContentLoaded', () => {
+                initializeQuestions();
+                // Open first note block
+                const firstHeader = document.querySelector('.subject-header');
+                if (firstHeader) firstHeader.click();
+            });
+
+            // Smooth scroll
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function (e) {
+                    e.preventDefault();
+                    const targetId = this.getAttribute('href');
+                    if (targetId === '#') return;
+                    const targetElement = document.querySelector(targetId);
+                    if (targetElement) {
+                        window.scrollTo({
+                            top: targetElement.offsetTop - 80,
+                            behavior: 'smooth'
+                        });
+                    }
+                });
+            });
+        </script>
+        <script src="theme.js"></script>
+        <script src="hamburger-menu.js"></script>
 </body>
+
 </html>
-
-
-
-
-
-

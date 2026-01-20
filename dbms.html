@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -13,9 +14,14 @@
     <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
     <style>
         /* Specific overrides for Subject Pages */
-        .subject-notes-wrapper { display: flex; flex-direction: column; gap: 1.5rem; }
+        .subject-notes-wrapper {
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
+        }
     </style>
 </head>
+
 <body>
 
     <header>
@@ -23,8 +29,8 @@
             <div class="logo">
                 <i class="fas fa-graduation-cap"></i>
                 <div>
-                   <span >Sarvasva Notes</span>
-                   <span class="logo-subtitle">Database Management System (DBMS)</span>
+                    <span>Sarvasva Notes</span>
+                    <span class="logo-subtitle">Database Management System (DBMS)</span>
                 </div>
             </div>
             <nav>
@@ -48,388 +54,460 @@
             <div class="hero-actions">
                 <a href="#notes" class="btn btn-primary"><i class="fas fa-book"></i> Notes</a>
                 <a href="#mcq" class="btn btn-secondary"><i class="fas fa-question-circle"></i> MCQs</a>
-                <a href="question-papers.html?subject=dbms" class="btn" class="btn btn-accent"><i class="fas fa-stopwatch"></i> PYQ Test</a>
+                <a href="question-papers.html?subject=dbms" class="btn" class="btn btn-accent"><i
+                        class="fas fa-stopwatch"></i> PYQ Test</a>
             </div>
         </section>
 
         <!-- Notes Section -->
         <h2 class="section-title" id="notes"><i class="fas fa-book-open"></i> Complete Notes (Unit 1-5)</h2>
         <div class="subject-notes-wrapper">
-            
-                <div class="unit-block">
-                    <div class="card-unit-header">
-                        <h3>Unit 1 Content</h3>
-                    </div>
-                    <div class="unit-content-pad">
-                        <div class="subject-container">
-            <div class="subject-header">
-                <h3><i class="fas fa-database"></i> Database Management System (BCA-4002)</h3>
-                <i class="fas fa-chevron-down"></i>
-            </div>
-            <div class="subject-content">
-                <div class="topic">
-                    <h4>1. Introduction to DBMS</h4>
-                    <div class="topic-content">
-                        <p><strong>Database:</strong> A clear, organized collection of data. <br><strong>DBMS:</strong>
-                            Software to define, construct, manipulate, and share databases.</p>
-                        <p><strong>Characteristics of Database Approach:</strong> <span class="pyq-badge">PYQ
-                                2024</span></p>
-                        <ul>
-                            <li><strong>Self-Describing Nature:</strong> Contains data + metadata (catalog).</li>
-                            <li><strong>Insulation between Programs and Data:</strong> Data Abstraction.</li>
-                            <li><strong>Support of Multiple Views:</strong> Different users see different parts of data.
-                            </li>
-                            <li><strong>Data Sharing & Multi-user Transaction Processing:</strong> Concurrent access.
-                            </li>
-                        </ul>
-                    </div>
-                </div>
 
-                <div class="topic">
-                    <h4>2. Data Models</h4>
-                    <div class="topic-content">
-                        <p>A collection of concepts for describing data, relationships, and constraints.</p>
-                        <ul>
-                            <li><strong>High-Level (Conceptual):</strong> Close to user view. E.g., Entity-Relationship
-                                (ER) Model.</li>
-                            <li><strong>Representational (Implementation):</strong> Between high and low level. E.g.,
-                                <strong>Relational Model</strong> (Tables), Hierarchical (Tree), Network (Graph). <span
-                                    class="pyq-badge">PYQ 2024</span>
-                            </li>
-                            <li><strong>Low-Level (Physical):</strong> How data is stored on disk.</li>
-                        </ul>
-                    </div>
+            <div class="unit-block">
+                <div class="card-unit-header">
+                    <h3>Unit 1 Content</h3>
                 </div>
-
-                <div class="topic">
-                    <h4>3. DBMS Architecture <span class="pyq-badge">PYQ 2024</span></h4>
-                    <div class="topic-content">
-                        <p><strong>Three-Schema Architecture (ANSI/SPARC):</strong></p>
-                        <ol>
-                            <li><strong>Internal/Physical Level:</strong> Physical storage details. <span
-                                    class="pyq-badge">PYQ 2024-25</span></li>
-                            <li><strong>Conceptual/Logical Level:</strong> Structure of whole database (Tables,
-                                Constraints). Hides physical details. <span class="pyq-badge">PYQ 2022</span></li>
-                            <li><strong>External/View Level:</strong> User-specific views. (e.g., Student sees only
-                                grades, Admin sees everything).</li>
-                        </ol>
-                        <p><strong>Client-Server Architectures:</strong></p>
-                        <ul>
-                            <li><strong>2-Tier:</strong> Client Application ↔ Database Server (Direct).</li>
-                            <li><strong>3-Tier:</strong> Client ↔ Application Server ↔ Database Server (Scalable,
-                                Secure).</li>
-                        </ul>
-                    </div>
-                </div>
-
-                <div class="topic">
-                    <h4>4. Data Independence <span class="pyq-badge">PYQ 2024-25</span></h4>
-                    <div class="topic-content">
-                        <p>The capacity to change the schema at one level without changing the schema at the next higher
-                            level.</p>
-                        <ul>
-                            <li><strong>Logical Data Independence:</strong> Modify Conceptual Schema without changing
-                                External Views/Application Programs. (e.g., Adding a new column doesn't break app code).
-                            </li>
-                            <li><strong>Physical Data Independence:</strong> Modify Internal Schema without changing
-                                Conceptual Schema. (e.g., Changing from HDD to SSD or changing file indexing structure).
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-
-                <div class="topic">
-                    <h4>5. DBMS Languages & Users</h4>
-                    <div class="topic-content">
-                        <ul>
-                            <li><strong>DDL (Data Definition Language):</strong> Define structure (CREATE, ALTER, DROP,
-                                TRUNCATE). <span class="pyq-badge">MCQ Topic</span></li>
-                            <li><strong>DML (Data Manipulation Language):</strong> Manage data (SELECT, INSERT, UPDATE,
-                                DELETE).</li>
-                            <li><strong>DCL (Data Control Language):</strong> Control access (GRANT, REVOKE).</li>
-                            <li><strong>TCL (Transaction Control Language):</strong> Manage transactions (COMMIT,
-                                ROLLBACK).</li>
-                        </ul>
-                        <p><strong>Database Users:</strong> DBA (Admin), Application Programmers, Sophisticated Users
-                            (Analysts), Naive Users (End-users).</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-                    </div>
-                </div>
-
-                <div class="unit-block">
-                    <div class="card-unit-header">
-                        <h3>Unit 2 Content</h3>
-                    </div>
-                    <div class="unit-content-pad">
-                        <div class="subject-container">
-            <div class="subject-header">
-                <h3><i class="fas fa-database"></i> Database Management System (DBMS)</h3>
-                <i class="fas fa-chevron-down"></i>
-            </div>
-            <div class="subject-content">
-                <div class="topic">
-                    <h4>E-R Modeling (Entity-Relationship Model)</h4>
-                    <div class="topic-content">
-                        <ul>
-                            <li><strong>Entity:</strong> A real-world object (animate or inanimate) that is easily
-                                identifiable (e.g., Student, Employee). Represented by a <strong>Rectangle</strong>.
-                            </li>
-                            <li><strong>Attributes:</strong> Properties that describe an entity (e.g., Name, Age).
-                                Represented by an <strong>Ellipse</strong>. <span class="pyq-badge">PYQ 2022-23</span>
-                                <ul>
-                                    <li><strong>Simple:</strong> Atomic values (e.g., Roll No).</li>
-                                    <li><strong>Composite:</strong> Subparts (e.g., Name $\rightarrow$ First, Last).
-                                    </li>
-                                    <li><strong>Multivalued:</strong> Multiple values (e.g., Phone). Represented by
-                                        <strong>Double Ovals</strong>.
-                                    </li>
-                                </ul>
-                            </li>
-                            <li><strong>Relationship:</strong> An association between two or more entities. Represented
-                                by a <strong>Diamond</strong>. <span class="pyq-badge">PYQ 2022-23</span></li>
-                            <li><strong>Keys:</strong>
-                                <ul>    
-                                    <li><strong>Primary Key:</strong> Uniquely identifies an entity. Underlined. <span class="pyq-badge">PYQ 2022-23</span></li>
-                                    <li><strong>Weak Entity:</strong> Cannot exist without a strong owner entity. No
-                                        primary key. <strong>Double Rectangle</strong>.</li>
-                                </ul>
-                                <div class="note-block-yellow">
-                                    <strong>Real Life Example (University System):</strong>
+                <div class="unit-content-pad">
+                    <div class="subject-container">
+                        <div class="subject-header">
+                            <h3><i class="fas fa-database"></i> Database Management System (BCA-4002)</h3>
+                            <i class="fas fa-chevron-down"></i>
+                        </div>
+                        <div class="subject-content">
+                            <div class="topic">
+                                <h4>1. Introduction to DBMS</h4>
+                                <div class="topic-content">
+                                    <p><strong>Database:</strong> A clear, organized collection of data.
+                                        <br><strong>DBMS:</strong>
+                                        Software to define, construct, manipulate, and share databases.</p>
+                                    <p><strong>Characteristics of Database Approach:</strong> <span
+                                            class="pyq-badge">PYQ
+                                            2024</span></p>
                                     <ul>
-                                        <li><strong>Entity:</strong> Student, Course.</li>
-                                        <li><strong>Relationship:</strong> "Enrolled In" (Student $\leftrightarrow$ Course).</li>
-                                        <li><strong>Attribute:</strong> Student Name, DoB.</li>
-                                        <li><strong>Multivalued Attribute:</strong> Phone Numbers (Assume a student has 2 SIMs).</li>
-                                        <li><strong>Weak Entity:</strong> Dependent (e.g., family members covered by insurance, defined only by the Employee).</li>
+                                        <li><strong>Self-Describing Nature:</strong> Contains data + metadata (catalog).
+                                        </li>
+                                        <li><strong>Insulation between Programs and Data:</strong> Data Abstraction.
+                                        </li>
+                                        <li><strong>Support of Multiple Views:</strong> Different users see different
+                                            parts of data.
+                                        </li>
+                                        <li><strong>Data Sharing & Multi-user Transaction Processing:</strong>
+                                            Concurrent access.
+                                        </li>
                                     </ul>
                                 </div>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
+                            </div>
 
-                <div class="topic">
-                    <h4>Normalization <span class="pyq-badge">Important</span> <span class="pyq-badge">PYQ 2022-23</span></h4>
-                    <div class="topic-content">
-                        <p>Process of organizing data to minimize redundancy and dependency.</p>
-                        <ul>
-                            <li><strong>1NF (First Normal Form):</strong> Atomic values (No multi-valued attributes).
-                            </li>
-                            <li><strong>2NF (Second Normal Form):</strong> 1NF + No Partial Dependency (All non-key
-                                attributes dependent on full Primary Key).</li>
-                            <li><strong>3NF (Third Normal Form):</strong> 2NF + No Transitive Dependency (Non-key
-                                attribute determining another non-key attribute).</li>
-                            <li><strong>BCNF (Boyce-Codd Normal Form):</strong> Stricter 3NF. For every dependency $A
-                                \to B$, $A$ must be a Super Key.</li>
-                        </ul>
-                        <div style="background:#e8f5e9; padding:10px; border-left:4px solid #28a745; margin-top:10px;">
-                            <strong>Why Normalize? (Practical Scenario):</strong>
-                            <p>Imagine a single table storing <em>Student_Name</em> and <em>Professor_Name</em> together. If a Professor leaves, you might have to delete student records just to remove the professor from the database (Anomaly!). Normalization splits this into two tables (Students, Professors) linked by an ID, preventing data loss.</p>
+                            <div class="topic">
+                                <h4>2. Data Models</h4>
+                                <div class="topic-content">
+                                    <p>A collection of concepts for describing data, relationships, and constraints.</p>
+                                    <ul>
+                                        <li><strong>High-Level (Conceptual):</strong> Close to user view. E.g.,
+                                            Entity-Relationship
+                                            (ER) Model.</li>
+                                        <li><strong>Representational (Implementation):</strong> Between high and low
+                                            level. E.g.,
+                                            <strong>Relational Model</strong> (Tables), Hierarchical (Tree), Network
+                                            (Graph). <span class="pyq-badge">PYQ 2024</span>
+                                        </li>
+                                        <li><strong>Low-Level (Physical):</strong> How data is stored on disk.</li>
+                                    </ul>
+                                </div>
+                            </div>
+
+                            <div class="topic">
+                                <h4>3. DBMS Architecture <span class="pyq-badge">PYQ 2024</span></h4>
+                                <div class="topic-content">
+                                    <p><strong>Three-Schema Architecture (ANSI/SPARC):</strong></p>
+                                    <ol>
+                                        <li><strong>Internal/Physical Level:</strong> Physical storage details. <span
+                                                class="pyq-badge">PYQ 2024-25</span></li>
+                                        <li><strong>Conceptual/Logical Level:</strong> Structure of whole database
+                                            (Tables,
+                                            Constraints). Hides physical details. <span class="pyq-badge">PYQ
+                                                2022</span></li>
+                                        <li><strong>External/View Level:</strong> User-specific views. (e.g., Student
+                                            sees only
+                                            grades, Admin sees everything).</li>
+                                    </ol>
+                                    <p><strong>Client-Server Architectures:</strong></p>
+                                    <ul>
+                                        <li><strong>2-Tier:</strong> Client Application ↔ Database Server (Direct).</li>
+                                        <li><strong>3-Tier:</strong> Client ↔ Application Server ↔ Database Server
+                                            (Scalable,
+                                            Secure).</li>
+                                    </ul>
+                                </div>
+                            </div>
+
+                            <div class="topic">
+                                <h4>4. Data Independence <span class="pyq-badge">PYQ 2024-25</span></h4>
+                                <div class="topic-content">
+                                    <p>The capacity to change the schema at one level without changing the schema at the
+                                        next higher
+                                        level.</p>
+                                    <ul>
+                                        <li><strong>Logical Data Independence:</strong> Modify Conceptual Schema without
+                                            changing
+                                            External Views/Application Programs. (e.g., Adding a new column doesn't
+                                            break app code).
+                                        </li>
+                                        <li><strong>Physical Data Independence:</strong> Modify Internal Schema without
+                                            changing
+                                            Conceptual Schema. (e.g., Changing from HDD to SSD or changing file indexing
+                                            structure).
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+
+                            <div class="topic">
+                                <h4>5. DBMS Languages & Users</h4>
+                                <div class="topic-content">
+                                    <ul>
+                                        <li><strong>DDL (Data Definition Language):</strong> Define structure (CREATE,
+                                            ALTER, DROP,
+                                            TRUNCATE). <span class="pyq-badge">MCQ Topic</span></li>
+                                        <li><strong>DML (Data Manipulation Language):</strong> Manage data (SELECT,
+                                            INSERT, UPDATE,
+                                            DELETE).</li>
+                                        <li><strong>DCL (Data Control Language):</strong> Control access (GRANT,
+                                            REVOKE).</li>
+                                        <li><strong>TCL (Transaction Control Language):</strong> Manage transactions
+                                            (COMMIT,
+                                            ROLLBACK).</li>
+                                    </ul>
+                                    <p><strong>Database Users:</strong> DBA (Admin), Application Programmers,
+                                        Sophisticated Users
+                                        (Analysts), Naive Users (End-users).</p>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
-        </div>
-                    </div>
-                </div>
 
-                <div class="unit-block">
-                    <div class="card-unit-header">
-                        <h3>Unit 3 Content</h3>
-                    </div>
-                    <div class="unit-content-pad">
-                        <div class="subject-container">
-            <div class="subject-header">
-                <h3><i class="fas fa-database"></i> Database Management System (DBMS)</h3>
-                <i class="fas fa-chevron-down"></i>
-            </div>
-            <div class="subject-content">
-                <div class="topic">
-                    <h4>Data Normalization</h4>
-                    <div class="topic-content">
-                        <ul>
-                            <li><strong>Definition:</strong> Organizing data to minimize redundancy and dependency.
-                                Decomposes large tables.</li>
-                            <li><strong>1NF (First Normal Form):</strong> Eliminates repeating groups. Attributes must
-                                be atomic.</li>
-                            <li><strong>2NF (Second Normal Form):</strong> 1NF + No <strong>Partial Dependency</strong>
-                                (Non-key attributes depend on the full primary key).</li>
-                            <li><strong>3NF (Third Normal Form):</strong> 2NF + No <strong>Transitive
-                                    Dependency</strong> (Non-key attributes depend only on the primary key, not other
-                                non-keys).</li>
-                            <li><strong>BCNF (Boyce-Codd Normal Form):</strong> Stronger 3NF. For functional dependency
-                                $X \to Y$, $X$ must be a super key.</li>
-                            <li><strong>Decomposition Properties:</strong>
-                                <ul>
-                                    <li><em>Lossless Join:</em> Natural join of decomposed tables returns original table
-                                        without spurious tuples.</li>
-                                    <li><em>Dependency Preservation:</em> All functional dependencies can be checked
-                                        within individual tables without joining.</li>
-                                </ul>
-                            </li>
-                        </ul>
-                    </div>
+            <div class="unit-block">
+                <div class="card-unit-header">
+                    <h3>Unit 2 Content</h3>
                 </div>
-            </div>
-        </div>
-                    </div>
-                </div>
+                <div class="unit-content-pad">
+                    <div class="subject-container">
+                        <div class="subject-header">
+                            <h3><i class="fas fa-database"></i> Database Management System (DBMS)</h3>
+                            <i class="fas fa-chevron-down"></i>
+                        </div>
+                        <div class="subject-content">
+                            <div class="topic">
+                                <h4>E-R Modeling (Entity-Relationship Model)</h4>
+                                <div class="topic-content">
+                                    <ul>
+                                        <li><strong>Entity:</strong> A real-world object (animate or inanimate) that is
+                                            easily
+                                            identifiable (e.g., Student, Employee). Represented by a
+                                            <strong>Rectangle</strong>.
+                                        </li>
+                                        <li><strong>Attributes:</strong> Properties that describe an entity (e.g., Name,
+                                            Age).
+                                            Represented by an <strong>Ellipse</strong>. <span class="pyq-badge">PYQ
+                                                2022-23</span>
+                                            <ul>
+                                                <li><strong>Simple:</strong> Atomic values (e.g., Roll No).</li>
+                                                <li><strong>Composite:</strong> Subparts (e.g., Name $\rightarrow$
+                                                    First, Last).
+                                                </li>
+                                                <li><strong>Multivalued:</strong> Multiple values (e.g., Phone).
+                                                    Represented by
+                                                    <strong>Double Ovals</strong>.
+                                                </li>
+                                            </ul>
+                                        </li>
+                                        <li><strong>Relationship:</strong> An association between two or more entities.
+                                            Represented
+                                            by a <strong>Diamond</strong>. <span class="pyq-badge">PYQ 2022-23</span>
+                                        </li>
+                                        <li><strong>Keys:</strong>
+                                            <ul>
+                                                <li><strong>Primary Key:</strong> Uniquely identifies an entity.
+                                                    Underlined. <span class="pyq-badge">PYQ 2022-23</span></li>
+                                                <li><strong>Weak Entity:</strong> Cannot exist without a strong owner
+                                                    entity. No
+                                                    primary key. <strong>Double Rectangle</strong>.</li>
+                                            </ul>
+                                            <div class="note-block-yellow">
+                                                <strong>Real Life Example (University System):</strong>
+                                                <ul>
+                                                    <li><strong>Entity:</strong> Student, Course.</li>
+                                                    <li><strong>Relationship:</strong> "Enrolled In" (Student
+                                                        $\leftrightarrow$ Course).</li>
+                                                    <li><strong>Attribute:</strong> Student Name, DoB.</li>
+                                                    <li><strong>Multivalued Attribute:</strong> Phone Numbers (Assume a
+                                                        student has 2 SIMs).</li>
+                                                    <li><strong>Weak Entity:</strong> Dependent (e.g., family members
+                                                        covered by insurance, defined only by the Employee).</li>
+                                                </ul>
+                                            </div>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
 
-                <div class="unit-block">
-                    <div class="card-unit-header">
-                        <h3>Unit 4 Content</h3>
+                            <div class="topic">
+                                <h4>Normalization <span class="pyq-badge">Important</span> <span class="pyq-badge">PYQ
+                                        2022-23</span></h4>
+                                <div class="topic-content">
+                                    <p>Process of organizing data to minimize redundancy and dependency.</p>
+                                    <ul>
+                                        <li><strong>1NF (First Normal Form):</strong> Atomic values (No multi-valued
+                                            attributes).
+                                        </li>
+                                        <li><strong>2NF (Second Normal Form):</strong> 1NF + No Partial Dependency (All
+                                            non-key
+                                            attributes dependent on full Primary Key).</li>
+                                        <li><strong>3NF (Third Normal Form):</strong> 2NF + No Transitive Dependency
+                                            (Non-key
+                                            attribute determining another non-key attribute).</li>
+                                        <li><strong>BCNF (Boyce-Codd Normal Form):</strong> Stricter 3NF. For every
+                                            dependency $A
+                                            \to B$, $A$ must be a Super Key.</li>
+                                    </ul>
+                                    <div
+                                        style="background:#e8f5e9; padding:10px; border-left:4px solid #28a745; margin-top:10px;">
+                                        <strong>Why Normalize? (Practical Scenario):</strong>
+                                        <p>Imagine a single table storing <em>Student_Name</em> and
+                                            <em>Professor_Name</em> together. If a Professor leaves, you might have to
+                                            delete student records just to remove the professor from the database
+                                            (Anomaly!). Normalization splits this into two tables (Students, Professors)
+                                            linked by an ID, preventing data loss.</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                     </div>
-                    <div class="unit-content-pad">
-                        <div class="subject-container">
-            <div class="subject-header">
-                <h3><i class="fas fa-database"></i> Database Management System (DBMS)</h3>
-                <i class="fas fa-chevron-down"></i>
+                </div>
             </div>
-            <div class="subject-content">
-                <div class="topic">
-                    <h4>Relational Model & SQL</h4>
-                    <div class="topic-content">
-                        <ul>
-                            <li><strong>Relational Model:</strong> Data in tables (Relations). Row=Tuple,
-                                Column=Attribute.</li>
-                            <li><strong>Integrity Constraints:</strong> Entity (PK $\neq$ Null), Referential (FK matches
-                                PK), Domain (Valid values).</li>
-                            <li><strong>Relational Algebra:</strong>
-                                <ul>
-                                    <li>Selection ($\sigma$): Horizontal subset (Rows).</li>
-                                    <li>Projection ($\pi$): Vertical subset (Columns).</li>
-                                    <li>Difference ($-$): Rows in A but not B.</li>
-                                    <li>Cartesian Product ($\times$): All combinations of rows.</li>
-                                </ul>
-                            </li>
-                            <li><strong>SQL (Structured Query Language):</strong>
-                                <ul>
-                                    <li><strong>DDL:</strong> CREATE, ALTER, DROP.</li>
-                                    <li><strong>DML:</strong> SELECT, INSERT, UPDATE, DELETE.</li>
-                                    <li><strong>Keywords:</strong> DISTINCT (Remove duplicates), WHERE (Filter).</li>
-                                </ul>
-                                <p><strong>Example Queries:</strong></p>
-                                <pre style="background:#333; color:#fff; padding:10px; border-radius:5px; overflow-x:auto;">
+
+            <div class="unit-block">
+                <div class="card-unit-header">
+                    <h3>Unit 3 Content</h3>
+                </div>
+                <div class="unit-content-pad">
+                    <div class="subject-container">
+                        <div class="subject-header">
+                            <h3><i class="fas fa-database"></i> Database Management System (DBMS)</h3>
+                            <i class="fas fa-chevron-down"></i>
+                        </div>
+                        <div class="subject-content">
+                            <div class="topic">
+                                <h4>Data Normalization</h4>
+                                <div class="topic-content">
+                                    <ul>
+                                        <li><strong>Definition:</strong> Organizing data to minimize redundancy and
+                                            dependency.
+                                            Decomposes large tables.</li>
+                                        <li><strong>1NF (First Normal Form):</strong> Eliminates repeating groups.
+                                            Attributes must
+                                            be atomic.</li>
+                                        <li><strong>2NF (Second Normal Form):</strong> 1NF + No <strong>Partial
+                                                Dependency</strong>
+                                            (Non-key attributes depend on the full primary key).</li>
+                                        <li><strong>3NF (Third Normal Form):</strong> 2NF + No <strong>Transitive
+                                                Dependency</strong> (Non-key attributes depend only on the primary key,
+                                            not other
+                                            non-keys).</li>
+                                        <li><strong>BCNF (Boyce-Codd Normal Form):</strong> Stronger 3NF. For functional
+                                            dependency
+                                            $X \to Y$, $X$ must be a super key.</li>
+                                        <li><strong>Decomposition Properties:</strong>
+                                            <ul>
+                                                <li><em>Lossless Join:</em> Natural join of decomposed tables returns
+                                                    original table
+                                                    without spurious tuples.</li>
+                                                <li><em>Dependency Preservation:</em> All functional dependencies can be
+                                                    checked
+                                                    within individual tables without joining.</li>
+                                            </ul>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="unit-block">
+                <div class="card-unit-header">
+                    <h3>Unit 4 Content</h3>
+                </div>
+                <div class="unit-content-pad">
+                    <div class="subject-container">
+                        <div class="subject-header">
+                            <h3><i class="fas fa-database"></i> Database Management System (DBMS)</h3>
+                            <i class="fas fa-chevron-down"></i>
+                        </div>
+                        <div class="subject-content">
+                            <div class="topic">
+                                <h4>Relational Model & SQL</h4>
+                                <div class="topic-content">
+                                    <ul>
+                                        <li><strong>Relational Model:</strong> Data in tables (Relations). Row=Tuple,
+                                            Column=Attribute.</li>
+                                        <li><strong>Integrity Constraints:</strong> Entity (PK $\neq$ Null), Referential
+                                            (FK matches
+                                            PK), Domain (Valid values).</li>
+                                        <li><strong>Relational Algebra:</strong>
+                                            <ul>
+                                                <li>Selection ($\sigma$): Horizontal subset (Rows).</li>
+                                                <li>Projection ($\pi$): Vertical subset (Columns).</li>
+                                                <li>Difference ($-$): Rows in A but not B.</li>
+                                                <li>Cartesian Product ($\times$): All combinations of rows.</li>
+                                            </ul>
+                                        </li>
+                                        <li><strong>SQL (Structured Query Language):</strong>
+                                            <ul>
+                                                <li><strong>DDL:</strong> CREATE, ALTER, DROP.</li>
+                                                <li><strong>DML:</strong> SELECT, INSERT, UPDATE, DELETE.</li>
+                                                <li><strong>Keywords:</strong> DISTINCT (Remove duplicates), WHERE
+                                                    (Filter).</li>
+                                            </ul>
+                                            <p><strong>Example Queries:</strong></p>
+                                            <pre
+                                                style="background:#333; color:#fff; padding:10px; border-radius:5px; overflow-x:auto;">
 -- Find students older than 20
 SELECT Name, Age FROM Students WHERE Age > 20;
 
 -- Count students in each department
 SELECT Dept, COUNT(*) FROM Students GROUP BY Dept;
                                 </pre>
-                            </li>
-                        </ul>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+
+                            <div class="topic">
+                                <h4>Transaction Management & Concurrency</h4>
+                                <div class="topic-content">
+                                    <ul>
+                                        <li><strong>Transaction:</strong> logical unit of work (e.g., Transfer money).
+                                        </li>
+                                        <li><strong>ACID Properties:</strong>
+                                            <ul>
+                                                <li><strong>Atomicity:</strong> All or nothing. (Commit/Rollback).</li>
+                                                <li><strong>Consistency:</strong> DB remains consistent before/after
+                                                    transaction.
+                                                </li>
+                                                <li><strong>Isolation:</strong> Transactions don't interfere with each
+                                                    other.</li>
+                                                <li><strong>Durability:</strong> Committed changes are permanent
+                                                    (survive failure).
+                                                </li>
+                                            </ul>
+                                        </li>
+                                        <li><strong>Concurrency Control:</strong> Managing simultaneous access.
+                                            <ul>
+                                                <li><em>Locks:</em> Binary, Shared/Exclusive.</li>
+                                                <li><em>Deadlock:</em> Two transactions waiting for each other.
+                                                    <ul>
+                                                        <li><strong>Prevention:</strong> Wait-Die / Wound-Wait schemes.
+                                                        </li>
+                                                        <li><strong>Detection:</strong> Wait-for graph (Cycle
+                                                            detection).</li>
+                                                        <li><strong>Recovery:</strong> Rollback victim transaction.</li>
+                                                    </ul>
+                                                </li>
+                                            </ul>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
+            </div>
 
-                <div class="topic">
-                    <h4>Transaction Management & Concurrency</h4>
-                    <div class="topic-content">
-                        <ul>
-                            <li><strong>Transaction:</strong> logical unit of work (e.g., Transfer money).</li>
-                            <li><strong>ACID Properties:</strong>
-                                <ul>
-                                    <li><strong>Atomicity:</strong> All or nothing. (Commit/Rollback).</li>
-                                    <li><strong>Consistency:</strong> DB remains consistent before/after transaction.
+            <div class="unit-block">
+                <div class="card-unit-header">
+                    <h3>Unit 5 Content</h3>
+                </div>
+                <div class="unit-content-pad">
+                    <div class="subject-container">
+                        <div class="subject-header">
+                            <h3><i class="fas fa-database"></i> Database Management System (DBMS)</h3>
+                            <i class="fas fa-chevron-down"></i>
+                        </div>
+                        <div class="subject-content">
+                            <div class="topic">
+                                <h4>Transaction Processing & Compulsory Control</h4>
+                                <div class="topic-content">
+                                    <ul>
+                                        <li><strong>ACID Properties:</strong>
+                                            <ul>
+                                                <li><strong>Atomicity:</strong> All or nothing.</li>
+                                                <li><strong>Consistency:</strong> DB remains valid.</li>
+                                                <li><strong>Isolation:</strong> Transactions don't interfere.</li>
+                                                <li><strong>Durability:</strong> Saved permanently.</li>
+                                            </ul>
+                                        </li>
+                                        <li><strong>Concurrency Control:</strong> Ensures that simultaneous transactions
+                                            do not
+                                            conflict.
+                                            <ul>
+                                                <li><strong>Locking Protocols:</strong> Shared Lock (Read), Exclusive
+                                                    Lock (Write).
+                                                </li>
+                                                <li><strong>2PL (Two-Phase Locking):</strong> Ensures Serializability.
+                                                    <ul>
+                                                        <li><em>Growing Phase:</em> Transaction acquires locks.</li>
+                                                        <li><em>Shrinking Phase:</em> Transaction releases locks. Cannot
+                                                            acquire new
+                                                            locks.</li>
+                                                    </ul>
+                                                </li>
+                                                <li><strong>Deadlock:</strong> A situation where Transaction A waits for
+                                                    B, and B
+                                                    waits for A. Neither proceeds.</li>
+                                            </ul>
+                                        </li>
+                                        <li><strong>Recovery Techniques:</strong>
+                                            <ul> No Undo/Redo needed.
+                                        </li>
+                                    </ul>
                                     </li>
-                                    <li><strong>Isolation:</strong> Transactions don't interfere with each other.</li>
-                                    <li><strong>Durability:</strong> Committed changes are permanent (survive failure).
-                                    </li>
-                                </ul>
-                            </li>
-                            <li><strong>Concurrency Control:</strong> Managing simultaneous access.
-                                <ul>
-                                    <li><em>Locks:</em> Binary, Shared/Exclusive.</li>
-                                    <li><em>Deadlock:</em> Two transactions waiting for each other.
+                                    <li><strong>Serializability:</strong>
                                         <ul>
-                                            <li><strong>Prevention:</strong> Wait-Die / Wound-Wait schemes.</li>
-                                            <li><strong>Detection:</strong> Wait-for graph (Cycle detection).</li>
-                                            <li><strong>Recovery:</strong> Rollback victim transaction.</li>
+                                            <li>Ensures a concurrent schedule is equivalent to a serial one
+                                                (correctness).</li>
+                                            <li><strong>Conflict Serializability:</strong> determined by swapping
+                                                non-conflicting operations.
+                                            <li><strong>Log-Based (WAL):</strong> Records every transaction in a "Log"
+                                                file
+                                                before applying to disk.</li>
+                                            <li><strong>Checkpoints:</strong> Periodically saving database state to disk
+                                                to
+                                                minimize recovery time.</li>
+                                            <li><strong>Shadow Paging:</strong> Maintains two page tables (Current and
+                                                Shadow).
+                                                Updates play on new pages; Shadow becomes Current on commit.</li>
                                         </ul>
                                     </li>
-                                </ul>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-        </div>
-                    </div>
-                </div>
-
-                <div class="unit-block">
-                    <div class="card-unit-header">
-                        <h3>Unit 5 Content</h3>
-                    </div>
-                    <div class="unit-content-pad">
-                        <div class="subject-container">
-            <div class="subject-header">
-                <h3><i class="fas fa-database"></i> Database Management System (DBMS)</h3>
-                <i class="fas fa-chevron-down"></i>
-            </div>
-            <div class="subject-content">
-                <div class="topic">
-                    <h4>Transaction Processing & Compulsory Control</h4>
-                    <div class="topic-content">
-                        <ul>
-                            <li><strong>ACID Properties:</strong>
-                                <ul>
-                                    <li><strong>Atomicity:</strong> All or nothing.</li>
-                                    <li><strong>Consistency:</strong> DB remains valid.</li>
-                                    <li><strong>Isolation:</strong> Transactions don't interfere.</li>
-                                    <li><strong>Durability:</strong> Saved permanently.</li>
-                                </ul>
-                            </li>
-                            <li><strong>Concurrency Control:</strong> Ensures that simultaneous transactions do not
-                                conflict.
-                                <ul>
-                                    <li><strong>Locking Protocols:</strong> Shared Lock (Read), Exclusive Lock (Write).
-                                    </li>
-                                    <li><strong>2PL (Two-Phase Locking):</strong> Ensures Serializability.
+                                    <li><strong>Transaction States:</strong>
                                         <ul>
-                                            <li><em>Growing Phase:</em> Transaction acquires locks.</li>
-                                            <li><em>Shrinking Phase:</em> Transaction releases locks. Cannot acquire new
-                                                locks.</li>
+                                            <li><em>Active:</em> Execution starts.</li>
+                                            <li><em>Partially Committed:</em> Final statement executed.</li>
+                                            <li><em>Committed:</em> Successful completion.</li>
+                                            <li><em>Failed:</em> Normal execution cannot proceed.</li>
+                                            <li><em>Aborted:</em> Transaction rolled back.</li>
                                         </ul>
                                     </li>
-                                    <li><strong>Deadlock:</strong> A situation where Transaction A waits for B, and B
-                                        waits for A. Neither proceeds.</li>
-                                </ul>
-                            </li>
-                            <li><strong>Recovery Techniques:</strong>
-                                <ul> No Undo/Redo needed.</li>
-                                </ul>
-                            </li>
-                            <li><strong>Serializability:</strong>
-                                <ul>
-                                    <li>Ensures a concurrent schedule is equivalent to a serial one (correctness).</li>
-                                    <li><strong>Conflict Serializability:</strong> determined by swapping non-conflicting operations.
-                                    <li><strong>Log-Based (WAL):</strong> Records every transaction in a "Log" file
-                                        before applying to disk.</li>
-                                    <li><strong>Checkpoints:</strong> Periodically saving database state to disk to
-                                        minimize recovery time.</li>
-                                    <li><strong>Shadow Paging:</strong> Maintains two page tables (Current and Shadow).
-                                        Updates play on new pages; Shadow becomes Current on commit.</li>
-                                </ul>
-                            </li>
-                            <li><strong>Transaction States:</strong>
-                                <ul>
-                                    <li><em>Active:</em> Execution starts.</li>
-                                    <li><em>Partially Committed:</em> Final statement executed.</li>
-                                    <li><em>Committed:</em> Successful completion.</li>
-                                    <li><em>Failed:</em> Normal execution cannot proceed.</li>
-                                    <li><em>Aborted:</em> Transaction rolled back.</li>
-                                </ul>
-                            </li>
-                        </ul>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
-        </div>
-                    </div>
-                </div>
         </div>
 
         <!-- MCQ Section -->
@@ -439,327 +517,334 @@ SELECT Dept, COUNT(*) FROM Students GROUP BY Dept;
                 <p>Score: <span id="score">0</span> / <span id="total-questions">0</span></p>
                 <button id="reset-btn" class="btn btn-outline-primary btn-sm mt-2">Reset Quiz</button>
             </div>
-            
+
             <div class="mcq-container active">
-                <!-- Unit 1 MCQs --> <div class="unit-mcq-label" >Unit 1 Questions</div>
-                    <!-- MCQ 1 -->
-                    <div class="mcq-question">
-                        <div class="mcq-question-number">
-                            <span>1. What does DBMS stand for?</span>
-                            <span class="pyq-label">PYQ 2024</span>
-                        </div>
-                        <div class="mcq-options">
-                            <div class="mcq-option" data-correct="true">A. Database Management System</div>
-                            <div class="mcq-option" data-correct="false">B. Data Base Machine System</div>
-                            <div class="mcq-option" data-correct="false">C. Data Business Management Service</div>
-                            <div class="mcq-option" data-correct="false">D. Digital Base Management System</div>
-                        </div>
-                        <div class="mcq-explanation">
-                            <strong>Explanation:</strong> DBMS stands for Database Management System, which is software
-                            for creating, managing, and manipulating databases.
-                        </div>
+                <!-- Unit 1 MCQs -->
+                <div class="unit-mcq-label">Unit 1 Questions</div>
+                <!-- MCQ 1 -->
+                <div class="mcq-question">
+                    <div class="mcq-question-number">
+                        <span>1. What does DBMS stand for?</span>
+                        <span class="pyq-label">PYQ 2024</span>
                     </div>
-
-                    <!-- MCQ 2 -->
-                    <div class="mcq-question">
-                        <div class="mcq-question-number">
-                            <span>2. Data is:</span>
-                            <span class="pyq-label">PYQ 2022</span>
-                        </div>
-                        <div class="mcq-options">
-                            <div class="mcq-option" data-correct="true">A. Raw facts and figures</div>
-                            <div class="mcq-option" data-correct="false">B. Processed information</div>
-                            <div class="mcq-option" data-correct="false">C. Knowledge</div>
-                            <div class="mcq-option" data-correct="false">D. Wisdom</div>
-                        </div>
+                    <div class="mcq-options">
+                        <div class="mcq-option" data-correct="true">A. Database Management System</div>
+                        <div class="mcq-option" data-correct="false">B. Data Base Machine System</div>
+                        <div class="mcq-option" data-correct="false">C. Data Business Management Service</div>
+                        <div class="mcq-option" data-correct="false">D. Digital Base Management System</div>
                     </div>
-
-                    <!-- MCQ 3 -->
-                    <div class="mcq-question">
-                        <div class="mcq-question-number">
-                            <span>3. Which of the following is NOT a characteristic of DBMS?</span>
-                            <span class="pyq-label">PYQ 2024</span>
-                        </div>
-                        <div class="mcq-options">
-                            <div class="mcq-option" data-correct="false">A. Data redundancy (DBMS controls redundancy)
-                            </div>
-                            <div class="mcq-option" data-correct="false">B. Data consistency</div>
-                            <div class="mcq-option" data-correct="false">C. Data independence</div>
-                            <div class="mcq-option" data-correct="true">D. Data security (Note: Often context specific,
-                                but Data security is usually a feature)</div>
-                        </div>
+                    <div class="mcq-explanation">
+                        <strong>Explanation:</strong> DBMS stands for Database Management System, which is software
+                        for creating, managing, and manipulating databases.
                     </div>
-
-                    <!-- MCQ 4 -->
-                    <div class="mcq-question">
-                        <div class="mcq-question-number">
-                            <span>4. Which is the lowest level of data abstraction?</span>
-                            <span class="pyq-label">PYQ 2024</span>
-                        </div>
-                        <div class="mcq-options">
-                            <div class="mcq-option" data-correct="true">A. Physical level</div>
-                            <div class="mcq-option" data-correct="false">B. Logical level</div>
-                            <div class="mcq-option" data-correct="false">C. View level</div>
-                            <div class="mcq-option" data-correct="false">D. None of the above</div>
-                        </div>
-                        <div class="mcq-explanation">
-                            <strong>Explanation:</strong> Physical level is the lowest level of data abstraction that
-                            describes how data is actually stored on storage media.
-                        </div>
-                    </div>
-
-                    <!-- MCQ 5 -->
-                    <div class="mcq-question">
-                        <div class="mcq-question-number">
-                            <span>5. Which level describes *what* data is stored in the database?</span>
-                            <span class="pyq-label">PYQ 2022</span>
-                        </div>
-                        <div class="mcq-options">
-                            <div class="mcq-option" data-correct="false">A. Physical level</div>
-                            <div class="mcq-option" data-correct="true">B. Logical/Conceptual level</div>
-                            <div class="mcq-option" data-correct="false">C. View level</div>
-                            <div class="mcq-option" data-correct="false">D. None of the above</div>
-                        </div>
-                    </div>
-
-                    <!-- MCQ 6 -->
-                    <div class="mcq-question">
-                        <div class="mcq-question-number">
-                            <span>6. Which layer of DBMS is closest to the physical storage?</span>
-                            <span class="pyq-label">PYQ 2024-25</span>
-                        </div>
-                        <div class="mcq-options">
-                            <div class="mcq-option" data-correct="true">A. Internal level / Physical level</div>
-                            <div class="mcq-option" data-correct="false">B. Conceptual Level</div>
-                            <div class="mcq-option" data-correct="false">C. External Level</div>
-                            <div class="mcq-option" data-correct="false">D. View Level</div>
-                        </div>
-                    </div>
-
-                    <!-- MCQ 7 -->
-                    <div class="mcq-question">
-                        <div class="mcq-question-number">
-                            <span>7. What is logical data independence?</span>
-                            <span class="pyq-label">PYQ 2024-25</span>
-                        </div>
-                        <div class="mcq-options">
-                            <div class="mcq-option" data-correct="true">A. The capacity to change the conceptual schema
-                                without changing the external schema</div>
-                            <div class="mcq-option" data-correct="false">B. Change internal schema without changing
-                                conceptual schema</div>
-                            <div class="mcq-option" data-correct="false">C. Change external schema without changing
-                                internal schema</div>
-                            <div class="mcq-option" data-correct="false">D. None of the above</div>
-                        </div>
-                    </div>
-
-                    <!-- MCQ 8 -->
-                    <div class="mcq-question">
-                        <div class="mcq-question-number">
-                            <span>8. Which of the following is not a type of DBMS?</span>
-                            <span class="pyq-label">PYQ 2024</span>
-                        </div>
-                        <div class="mcq-options">
-                            <div class="mcq-option" data-correct="false">A. Hierarchical</div>
-                            <div class="mcq-option" data-correct="false">B. Relational</div>
-                            <div class="mcq-option" data-correct="false">C. Network</div>
-                            <div class="mcq-option" data-correct="true">D. File-based</div>
-                        </div>
-                    </div>
-
-                    <!-- MCQ 9 -->
-                    <div class="mcq-question">
-                        <div class="mcq-question-number">
-                            <span>9. Which key uniquely identifies a record?</span>
-                            <span class="pyq-label">PYQ 2023</span>
-                        </div>
-                        <div class="mcq-options">
-                            <div class="mcq-option" data-correct="true">A. Primary Key</div>
-                            <div class="mcq-option" data-correct="false">B. Alternate Key</div>
-                            <div class="mcq-option" data-correct="false">C. Candidate Key</div>
-                            <div class="mcq-option" data-correct="false">D. Foreign Key</div>
-                        </div>
-                    </div>
-
-                    <!-- MCQ 10 -->
-                    <div class="mcq-question">
-                        <div class="mcq-question-number">
-                            <span>10. Which command is DDL?</span>
-                            <span class="pyq-label">PYQ 2022</span>
-                        </div>
-                        <div class="mcq-options">
-                            <div class="mcq-option" data-correct="true">A. CREATE</div>
-                            <div class="mcq-option" data-correct="false">B. SELECT</div>
-                            <div class="mcq-option" data-correct="false">C. INSERT</div>
-                            <div class="mcq-option" data-correct="false">D. UPDATE</div>
-                        </div>
-                    </div>
-                
-<!-- Unit 2 MCQs --> <div class="unit-mcq-label" >Unit 2 Questions</div>
-            <div class="mcq-question">
-                <p class="question-text">In the E-R model, an Entity is represented by:</p>
-                <div class="mcq-options">
-                    <div class="mcq-option" data-correct="true">A. Rectangle</div>
-                    <div class="mcq-option" data-correct="false">B. Circle</div>
-                    <div class="mcq-option" data-correct="false">C. Diamond</div>
-                    <div class="mcq-option" data-correct="false">D. Ellipse</div>
                 </div>
-                <div class="mcq-explanation">Appeared in 2024, 2022</div>
-            </div>
 
-            <div class="mcq-question">
-                <p class="question-text">In the E-R model, an Attribute is represented by:</p>
-                <div class="mcq-options">
-                    <div class="mcq-option" data-correct="false">A. Rectangle</div>
-                    <div class="mcq-option" data-correct="true">B. Ellipse (Oval)</div>
-                    <div class="mcq-option" data-correct="false">C. Diamond</div>
-                    <div class="mcq-option" data-correct="false">D. Triangle</div>
+                <!-- MCQ 2 -->
+                <div class="mcq-question">
+                    <div class="mcq-question-number">
+                        <span>2. Data is:</span>
+                        <span class="pyq-label">PYQ 2022</span>
+                    </div>
+                    <div class="mcq-options">
+                        <div class="mcq-option" data-correct="true">A. Raw facts and figures</div>
+                        <div class="mcq-option" data-correct="false">B. Processed information</div>
+                        <div class="mcq-option" data-correct="false">C. Knowledge</div>
+                        <div class="mcq-option" data-correct="false">D. Wisdom</div>
+                    </div>
                 </div>
-                <div class="mcq-explanation">Appeared in 2022, 2024</div>
-            </div>
 
-            <div class="mcq-question">
-                <p class="question-text">The relationship between two entities is represented by:</p>
-                <div class="mcq-options">
-                    <div class="mcq-option" data-correct="false">A. Rectangle</div>
-                    <div class="mcq-option" data-correct="false">B. Circle</div>
-                    <div class="mcq-option" data-correct="true">C. Diamond</div>
-                    <div class="mcq-option" data-correct="false">D. Triangle</div>
+                <!-- MCQ 3 -->
+                <div class="mcq-question">
+                    <div class="mcq-question-number">
+                        <span>3. Which of the following is NOT a characteristic of DBMS?</span>
+                        <span class="pyq-label">PYQ 2024</span>
+                    </div>
+                    <div class="mcq-options">
+                        <div class="mcq-option" data-correct="false">A. Data redundancy (DBMS controls redundancy)
+                        </div>
+                        <div class="mcq-option" data-correct="false">B. Data consistency</div>
+                        <div class="mcq-option" data-correct="false">C. Data independence</div>
+                        <div class="mcq-option" data-correct="true">D. Data security (Note: Often context specific,
+                            but Data security is usually a feature)</div>
+                    </div>
                 </div>
-                <div class="mcq-explanation">Appeared in 2024, 2022</div>
-            </div>
 
-            <div class="mcq-question">
-                <p class="question-text">Which of the following represents a Multivalued Attribute in the E-R model?</p>
-                <div class="mcq-options">
-                    <div class="mcq-option" data-correct="false">A. Dashed line</div>
-                    <div class="mcq-option" data-correct="true">B. Double ellipse</div>
-                    <div class="mcq-option" data-correct="false">C. Dotted line</div>
-                    <div class="mcq-option" data-correct="false">D. Double line</div>
+                <!-- MCQ 4 -->
+                <div class="mcq-question">
+                    <div class="mcq-question-number">
+                        <span>4. Which is the lowest level of data abstraction?</span>
+                        <span class="pyq-label">PYQ 2024</span>
+                    </div>
+                    <div class="mcq-options">
+                        <div class="mcq-option" data-correct="true">A. Physical level</div>
+                        <div class="mcq-option" data-correct="false">B. Logical level</div>
+                        <div class="mcq-option" data-correct="false">C. View level</div>
+                        <div class="mcq-option" data-correct="false">D. None of the above</div>
+                    </div>
+                    <div class="mcq-explanation">
+                        <strong>Explanation:</strong> Physical level is the lowest level of data abstraction that
+                        describes how data is actually stored on storage media.
+                    </div>
                 </div>
-                <div class="mcq-explanation">Appeared in 2022, 2024</div>
-            </div>
 
-            <div class="mcq-question">
-                <p class="question-text">In the E-R model, a Weak Entity is an entity that:</p>
-                <div class="mcq-options">
-                    <div class="mcq-option" data-correct="false">A. Has a composite primary key</div>
-                    <div class="mcq-option" data-correct="true">B. Cannot exist without a related strong entity (Owner)
+                <!-- MCQ 5 -->
+                <div class="mcq-question">
+                    <div class="mcq-question-number">
+                        <span>5. Which level describes *what* data is stored in the database?</span>
+                        <span class="pyq-label">PYQ 2022</span>
                     </div>
-                    <div class="mcq-option" data-correct="false">C. Has a derived attribute</div>
-                    <div class="mcq-option" data-correct="false">D. Has a many-to-many relationship</div>
+                    <div class="mcq-options">
+                        <div class="mcq-option" data-correct="false">A. Physical level</div>
+                        <div class="mcq-option" data-correct="true">B. Logical/Conceptual level</div>
+                        <div class="mcq-option" data-correct="false">C. View level</div>
+                        <div class="mcq-option" data-correct="false">D. None of the above</div>
+                    </div>
                 </div>
-                <div class="mcq-explanation">Appeared in 2022</div>
-            </div>
 
-            <div class="mcq-question">
-                <p class="question-text">The process of grouping similar entities into higher-level entities is known
-                    as:</p>
-                <div class="mcq-options">
-                    <div class="mcq-option" data-correct="false">A. Aggregation</div>
-                    <div class="mcq-option" data-correct="false">B. Composition</div>
-                    <div class="mcq-option" data-correct="false">C. Normalization</div>
-                    <div class="mcq-option" data-correct="true">D. Generalization</div>
+                <!-- MCQ 6 -->
+                <div class="mcq-question">
+                    <div class="mcq-question-number">
+                        <span>6. Which layer of DBMS is closest to the physical storage?</span>
+                        <span class="pyq-label">PYQ 2024-25</span>
+                    </div>
+                    <div class="mcq-options">
+                        <div class="mcq-option" data-correct="true">A. Internal level / Physical level</div>
+                        <div class="mcq-option" data-correct="false">B. Conceptual Level</div>
+                        <div class="mcq-option" data-correct="false">C. External Level</div>
+                        <div class="mcq-option" data-correct="false">D. View Level</div>
+                    </div>
                 </div>
-                <div class="mcq-explanation">Appeared in 2024, 2022</div>
-            </div>
 
-            <div class="mcq-question">
-                <p class="question-text">A primary key in an ER model uniquely identifies a(n):</p>
-                <div class="mcq-options">
-                    <div class="mcq-option" data-correct="true">A. Entity set/Entity</div>
-                    <div class="mcq-option" data-correct="false">B. Relationship</div>
-                    <div class="mcq-option" data-correct="false">C. Attribute</div>
-                    <div class="mcq-option" data-correct="false">D. None</div>
+                <!-- MCQ 7 -->
+                <div class="mcq-question">
+                    <div class="mcq-question-number">
+                        <span>7. What is logical data independence?</span>
+                        <span class="pyq-label">PYQ 2024-25</span>
+                    </div>
+                    <div class="mcq-options">
+                        <div class="mcq-option" data-correct="true">A. The capacity to change the conceptual schema
+                            without changing the external schema</div>
+                        <div class="mcq-option" data-correct="false">B. Change internal schema without changing
+                            conceptual schema</div>
+                        <div class="mcq-option" data-correct="false">C. Change external schema without changing
+                            internal schema</div>
+                        <div class="mcq-option" data-correct="false">D. None of the above</div>
+                    </div>
                 </div>
-                <div class="mcq-explanation">Appeared in PYQ</div>
-            </div>
-        
-<!-- Unit 3 MCQs --> <div class="unit-mcq-label" >Unit 3 Questions</div>
-                    <div class="mcq-question">
-                        <p class="question-text">Which normal form eliminates transitive dependencies between non-key
-                            attributes?</p>
-                        <div class="mcq-options">
-                            <div class="mcq-option" data-correct="false">A. First normal form (1NF)</div>
-                            <div class="mcq-option" data-correct="false">B. Second normal form (2NF)</div>
-                            <div class="mcq-option" data-correct="true">C. Third normal form (3NF)</div>
-                            <div class="mcq-option" data-correct="false">D. BCNF</div>
-                        </div>
-                        <div class="mcq-explanation">Appeared in: 2022, 2024</div>
-                    </div>
 
-                    <div class="mcq-question">
-                        <p class="question-text">Which of the following functional dependencies violates the second
-                            normal form (2NF)?</p>
-                        <div class="mcq-options">
-                            <div class="mcq-option" data-correct="true">A. Partial dependency</div>
-                            <div class="mcq-option" data-correct="false">B. Transitive dependency</div>
-                            <div class="mcq-option" data-correct="false">C. Multi-valued dependency</div>
-                            <div class="mcq-option" data-correct="false">D. Trivial dependency</div>
-                        </div>
-                        <div class="mcq-explanation">Appeared in: 2024</div>
+                <!-- MCQ 8 -->
+                <div class="mcq-question">
+                    <div class="mcq-question-number">
+                        <span>8. Which of the following is not a type of DBMS?</span>
+                        <span class="pyq-label">PYQ 2024</span>
                     </div>
+                    <div class="mcq-options">
+                        <div class="mcq-option" data-correct="false">A. Hierarchical</div>
+                        <div class="mcq-option" data-correct="false">B. Relational</div>
+                        <div class="mcq-option" data-correct="false">C. Network</div>
+                        <div class="mcq-option" data-correct="true">D. File-based</div>
+                    </div>
+                </div>
 
-                    <div class="mcq-question">
-                        <p class="question-text">Which normal form requires that the database is in first normal form
-                            and all non-key attributes are fully functionally dependent on the primary key?</p>
-                        <div class="mcq-options">
-                            <div class="mcq-option" data-correct="false">A. 1NF</div>
-                            <div class="mcq-option" data-correct="true">B. 2NF</div>
-                            <div class="mcq-option" data-correct="false">C. 3NF</div>
-                            <div class="mcq-option" data-correct="false">D. BCNF</div>
-                        </div>
-                        <div class="mcq-explanation">Appeared in: 2022, 2024</div>
+                <!-- MCQ 9 -->
+                <div class="mcq-question">
+                    <div class="mcq-question-number">
+                        <span>9. Which key uniquely identifies a record?</span>
+                        <span class="pyq-label">PYQ 2023</span>
                     </div>
+                    <div class="mcq-options">
+                        <div class="mcq-option" data-correct="true">A. Primary Key</div>
+                        <div class="mcq-option" data-correct="false">B. Alternate Key</div>
+                        <div class="mcq-option" data-correct="false">C. Candidate Key</div>
+                        <div class="mcq-option" data-correct="false">D. Foreign Key</div>
+                    </div>
+                </div>
 
-                    <div class="mcq-question">
-                        <p class="question-text">BCNF is a stronger version of:</p>
-                        <div class="mcq-options">
-                            <div class="mcq-option" data-correct="false">A. 1NF</div>
-                            <div class="mcq-option" data-correct="false">B. 2NF</div>
-                            <div class="mcq-option" data-correct="true">C. 3NF</div>
-                            <div class="mcq-option" data-correct="false">D. 4NF</div>
-                        </div>
-                        <div class="mcq-explanation">Appeared in: 2022, 2024-25</div>
+                <!-- MCQ 10 -->
+                <div class="mcq-question">
+                    <div class="mcq-question-number">
+                        <span>10. Which command is DDL?</span>
+                        <span class="pyq-label">PYQ 2022</span>
                     </div>
+                    <div class="mcq-options">
+                        <div class="mcq-option" data-correct="true">A. CREATE</div>
+                        <div class="mcq-option" data-correct="false">B. SELECT</div>
+                        <div class="mcq-option" data-correct="false">C. INSERT</div>
+                        <div class="mcq-option" data-correct="false">D. UPDATE</div>
+                    </div>
+                </div>
 
-                    <div class="mcq-question">
-                        <p class="question-text">Which normal form allows repeating groups and is considered to be the
-                            lowest level of normalization?</p>
-                        <div class="mcq-options">
-                            <div class="mcq-option" data-correct="true">A. First normal form (1NF)</div>
-                            <div class="mcq-option" data-correct="false">B. 2NF</div>
-                            <div class="mcq-option" data-correct="false">C. 3NF</div>
-                            <div class="mcq-option" data-correct="false">D. UNKNOWN</div>
-                        </div>
-                        <div class="mcq-explanation">Appeared in: 2022, 2024</div>
+                <!-- Unit 2 MCQs -->
+                <div class="unit-mcq-label">Unit 2 Questions</div>
+                <div class="mcq-question">
+                    <p class="question-text">In the E-R model, an Entity is represented by:</p>
+                    <div class="mcq-options">
+                        <div class="mcq-option" data-correct="true">A. Rectangle</div>
+                        <div class="mcq-option" data-correct="false">B. Circle</div>
+                        <div class="mcq-option" data-correct="false">C. Diamond</div>
+                        <div class="mcq-option" data-correct="false">D. Ellipse</div>
                     </div>
+                    <div class="mcq-explanation">Appeared in 2024, 2022</div>
+                </div>
 
-                    <div class="mcq-question">
-                        <p class="question-text">The process of removing duplicate data from an ER model is known as:
-                        </p>
-                        <div class="mcq-options">
-                            <div class="mcq-option" data-correct="true">A. Normalization</div>
-                            <div class="mcq-option" data-correct="false">B. Denormalization</div>
-                            <div class="mcq-option" data-correct="false">C. Deduplication</div>
-                            <div class="mcq-option" data-correct="false">D. Factoring</div>
-                        </div>
-                        <div class="mcq-explanation">Appeared in: 2022, 2024</div>
+                <div class="mcq-question">
+                    <p class="question-text">In the E-R model, an Attribute is represented by:</p>
+                    <div class="mcq-options">
+                        <div class="mcq-option" data-correct="false">A. Rectangle</div>
+                        <div class="mcq-option" data-correct="true">B. Ellipse (Oval)</div>
+                        <div class="mcq-option" data-correct="false">C. Diamond</div>
+                        <div class="mcq-option" data-correct="false">D. Triangle</div>
                     </div>
+                    <div class="mcq-explanation">Appeared in 2022, 2024</div>
+                </div>
 
-                    <div class="mcq-question">
-                        <p class="question-text">Which of the following properties must be preserved during
-                            normalization?</p>
-                        <div class="mcq-options">
-                            <div class="mcq-option" data-correct="false">A. Lossless Join</div>
-                            <div class="mcq-option" data-correct="false">B. Dependency Preservation</div>
-                            <div class="mcq-option" data-correct="true">C. Both A and B</div>
-                            <div class="mcq-option" data-correct="false">D. None</div>
-                        </div>
-                        <div class="mcq-explanation">Appeared in PYQ</div>
+                <div class="mcq-question">
+                    <p class="question-text">The relationship between two entities is represented by:</p>
+                    <div class="mcq-options">
+                        <div class="mcq-option" data-correct="false">A. Rectangle</div>
+                        <div class="mcq-option" data-correct="false">B. Circle</div>
+                        <div class="mcq-option" data-correct="true">C. Diamond</div>
+                        <div class="mcq-option" data-correct="false">D. Triangle</div>
                     </div>
-                
-<!-- Unit 4 MCQs --> <div class="unit-mcq-label" >Unit 4 Questions</div>
+                    <div class="mcq-explanation">Appeared in 2024, 2022</div>
+                </div>
+
+                <div class="mcq-question">
+                    <p class="question-text">Which of the following represents a Multivalued Attribute in the E-R model?
+                    </p>
+                    <div class="mcq-options">
+                        <div class="mcq-option" data-correct="false">A. Dashed line</div>
+                        <div class="mcq-option" data-correct="true">B. Double ellipse</div>
+                        <div class="mcq-option" data-correct="false">C. Dotted line</div>
+                        <div class="mcq-option" data-correct="false">D. Double line</div>
+                    </div>
+                    <div class="mcq-explanation">Appeared in 2022, 2024</div>
+                </div>
+
+                <div class="mcq-question">
+                    <p class="question-text">In the E-R model, a Weak Entity is an entity that:</p>
+                    <div class="mcq-options">
+                        <div class="mcq-option" data-correct="false">A. Has a composite primary key</div>
+                        <div class="mcq-option" data-correct="true">B. Cannot exist without a related strong entity
+                            (Owner)
+                        </div>
+                        <div class="mcq-option" data-correct="false">C. Has a derived attribute</div>
+                        <div class="mcq-option" data-correct="false">D. Has a many-to-many relationship</div>
+                    </div>
+                    <div class="mcq-explanation">Appeared in 2022</div>
+                </div>
+
+                <div class="mcq-question">
+                    <p class="question-text">The process of grouping similar entities into higher-level entities is
+                        known
+                        as:</p>
+                    <div class="mcq-options">
+                        <div class="mcq-option" data-correct="false">A. Aggregation</div>
+                        <div class="mcq-option" data-correct="false">B. Composition</div>
+                        <div class="mcq-option" data-correct="false">C. Normalization</div>
+                        <div class="mcq-option" data-correct="true">D. Generalization</div>
+                    </div>
+                    <div class="mcq-explanation">Appeared in 2024, 2022</div>
+                </div>
+
+                <div class="mcq-question">
+                    <p class="question-text">A primary key in an ER model uniquely identifies a(n):</p>
+                    <div class="mcq-options">
+                        <div class="mcq-option" data-correct="true">A. Entity set/Entity</div>
+                        <div class="mcq-option" data-correct="false">B. Relationship</div>
+                        <div class="mcq-option" data-correct="false">C. Attribute</div>
+                        <div class="mcq-option" data-correct="false">D. None</div>
+                    </div>
+                    <div class="mcq-explanation">Appeared in PYQ</div>
+                </div>
+
+                <!-- Unit 3 MCQs -->
+                <div class="unit-mcq-label">Unit 3 Questions</div>
+                <div class="mcq-question">
+                    <p class="question-text">Which normal form eliminates transitive dependencies between non-key
+                        attributes?</p>
+                    <div class="mcq-options">
+                        <div class="mcq-option" data-correct="false">A. First normal form (1NF)</div>
+                        <div class="mcq-option" data-correct="false">B. Second normal form (2NF)</div>
+                        <div class="mcq-option" data-correct="true">C. Third normal form (3NF)</div>
+                        <div class="mcq-option" data-correct="false">D. BCNF</div>
+                    </div>
+                    <div class="mcq-explanation">Appeared in: 2022, 2024</div>
+                </div>
+
+                <div class="mcq-question">
+                    <p class="question-text">Which of the following functional dependencies violates the second
+                        normal form (2NF)?</p>
+                    <div class="mcq-options">
+                        <div class="mcq-option" data-correct="true">A. Partial dependency</div>
+                        <div class="mcq-option" data-correct="false">B. Transitive dependency</div>
+                        <div class="mcq-option" data-correct="false">C. Multi-valued dependency</div>
+                        <div class="mcq-option" data-correct="false">D. Trivial dependency</div>
+                    </div>
+                    <div class="mcq-explanation">Appeared in: 2024</div>
+                </div>
+
+                <div class="mcq-question">
+                    <p class="question-text">Which normal form requires that the database is in first normal form
+                        and all non-key attributes are fully functionally dependent on the primary key?</p>
+                    <div class="mcq-options">
+                        <div class="mcq-option" data-correct="false">A. 1NF</div>
+                        <div class="mcq-option" data-correct="true">B. 2NF</div>
+                        <div class="mcq-option" data-correct="false">C. 3NF</div>
+                        <div class="mcq-option" data-correct="false">D. BCNF</div>
+                    </div>
+                    <div class="mcq-explanation">Appeared in: 2022, 2024</div>
+                </div>
+
+                <div class="mcq-question">
+                    <p class="question-text">BCNF is a stronger version of:</p>
+                    <div class="mcq-options">
+                        <div class="mcq-option" data-correct="false">A. 1NF</div>
+                        <div class="mcq-option" data-correct="false">B. 2NF</div>
+                        <div class="mcq-option" data-correct="true">C. 3NF</div>
+                        <div class="mcq-option" data-correct="false">D. 4NF</div>
+                    </div>
+                    <div class="mcq-explanation">Appeared in: 2022, 2024-25</div>
+                </div>
+
+                <div class="mcq-question">
+                    <p class="question-text">Which normal form allows repeating groups and is considered to be the
+                        lowest level of normalization?</p>
+                    <div class="mcq-options">
+                        <div class="mcq-option" data-correct="true">A. First normal form (1NF)</div>
+                        <div class="mcq-option" data-correct="false">B. 2NF</div>
+                        <div class="mcq-option" data-correct="false">C. 3NF</div>
+                        <div class="mcq-option" data-correct="false">D. UNKNOWN</div>
+                    </div>
+                    <div class="mcq-explanation">Appeared in: 2022, 2024</div>
+                </div>
+
+                <div class="mcq-question">
+                    <p class="question-text">The process of removing duplicate data from an ER model is known as:
+                    </p>
+                    <div class="mcq-options">
+                        <div class="mcq-option" data-correct="true">A. Normalization</div>
+                        <div class="mcq-option" data-correct="false">B. Denormalization</div>
+                        <div class="mcq-option" data-correct="false">C. Deduplication</div>
+                        <div class="mcq-option" data-correct="false">D. Factoring</div>
+                    </div>
+                    <div class="mcq-explanation">Appeared in: 2022, 2024</div>
+                </div>
+
+                <div class="mcq-question">
+                    <p class="question-text">Which of the following properties must be preserved during
+                        normalization?</p>
+                    <div class="mcq-options">
+                        <div class="mcq-option" data-correct="false">A. Lossless Join</div>
+                        <div class="mcq-option" data-correct="false">B. Dependency Preservation</div>
+                        <div class="mcq-option" data-correct="true">C. Both A and B</div>
+                        <div class="mcq-option" data-correct="false">D. None</div>
+                    </div>
+                    <div class="mcq-explanation">Appeared in PYQ</div>
+                </div>
+
+                <!-- Unit 4 MCQs -->
+                <div class="unit-mcq-label">Unit 4 Questions</div>
                 <div class="mcq-question">
                     <p class="question-text">Relation algebra is a ________ language.</p>
                     <div class="mcq-options">
@@ -833,8 +918,9 @@ SELECT Dept, COUNT(*) FROM Students GROUP BY Dept;
                     </div>
                     <div class="mcq-explanation">Appeared in PYQ</div>
                 </div>
-            
-<!-- Unit 5 MCQs --> <div class="unit-mcq-label" >Unit 5 Questions</div>
+
+                <!-- Unit 5 MCQs -->
+                <div class="unit-mcq-label">Unit 5 Questions</div>
                 <div class="mcq-question">
                     <p class="question-text">ACID properties of a transaction include:</p>
                     <div class="mcq-options">
@@ -956,9 +1042,9 @@ SELECT Dept, COUNT(*) FROM Students GROUP BY Dept;
                     </div>
                     <div class="mcq-explanation">Appeared in PYQ</div>
                 </div>
-            
+
             </div>
-            
+
             <div class="mcq-navigation mcq-nav">
                 <button id="prev-btn" class="btn btn-secondary" class="btn btn-secondary">Previous</button>
                 <button id="next-btn" class="btn btn-primary">Next</button>
@@ -989,7 +1075,7 @@ SELECT Dept, COUNT(*) FROM Students GROUP BY Dept;
         function initializeQuestions() {
             questions = [];
             const container = document.querySelector('.mcq-container.active');
-            if(!container) return;
+            if (!container) return;
 
             const qEls = container.querySelectorAll('.mcq-question');
             qEls.forEach(q => {
@@ -999,19 +1085,19 @@ SELECT Dept, COUNT(*) FROM Students GROUP BY Dept;
                     o.style.pointerEvents = 'auto';
                 });
                 const exp = q.querySelector('.mcq-explanation');
-                if(exp) exp.classList.remove('show');
+                if (exp) exp.classList.remove('show');
 
                 // Inject Button if missing
                 let btn = q.querySelector('.submit-answer-btn');
-                if(!btn) {
+                if (!btn) {
                     btn = document.createElement('button');
                     btn.className = 'submit-answer-btn';
                     btn.textContent = 'Submit Answer';
                     btn.classList.add('btn', 'btn-primary'); // Add new classes
                     btn.style.marginTop = '15px';
                     // q.appendChild(btn); // Append at end
-                     if(exp) q.insertBefore(btn, exp);
-                     else q.appendChild(btn);
+                    if (exp) q.insertBefore(btn, exp);
+                    else q.appendChild(btn);
                 }
                 btn.disabled = false;
                 btn.textContent = 'Submit Answer';
@@ -1020,7 +1106,7 @@ SELECT Dept, COUNT(*) FROM Students GROUP BY Dept;
             });
 
             const totalQ = document.getElementById('total-questions');
-            if(totalQ) totalQ.textContent = questions.length;
+            if (totalQ) totalQ.textContent = questions.length;
             updateScore(0);
             showQuestion();
         }
@@ -1028,58 +1114,58 @@ SELECT Dept, COUNT(*) FROM Students GROUP BY Dept;
         function updateScore(s) {
             score = s;
             const scoreEl = document.getElementById('score');
-            if(scoreEl) scoreEl.textContent = score;
+            if (scoreEl) scoreEl.textContent = score;
         }
 
         function showQuestion() {
             questions.forEach(q => q.element.style.display = 'none');
-            if(questions[currentQuestion]) {
+            if (questions[currentQuestion]) {
                 questions[currentQuestion].element.style.display = 'block';
             }
-            
+
             const prev = document.getElementById('prev-btn');
             const next = document.getElementById('next-btn');
-            if(prev) prev.disabled = currentQuestion === 0;
-            if(next) next.innerHTML = currentQuestion === questions.length - 1 ? 'Finish' : 'Next <i class="fas fa-arrow-right"></i>';
+            if (prev) prev.disabled = currentQuestion === 0;
+            if (next) next.innerHTML = currentQuestion === questions.length - 1 ? 'Finish' : 'Next <i class="fas fa-arrow-right"></i>';
         }
 
         document.addEventListener('click', (e) => {
-            if(e.target.classList.contains('mcq-option')) {
+            if (e.target.classList.contains('mcq-option')) {
                 const qDiv = e.target.closest('.mcq-question');
                 const btn = qDiv.querySelector('.submit-answer-btn');
-                if(btn && btn.disabled) return;
-                
+                if (btn && btn.disabled) return;
+
                 qDiv.querySelectorAll('.mcq-option').forEach(o => o.classList.remove('selected'));
                 e.target.classList.add('selected');
             }
 
-            if(e.target.classList.contains('submit-answer-btn')) {
+            if (e.target.classList.contains('submit-answer-btn')) {
                 const btn = e.target;
                 const qDiv = btn.closest('.mcq-question');
                 const selected = qDiv.querySelector('.mcq-option.selected');
-                
-                if(!selected) { alert('Please select an option.'); return; }
+
+                if (!selected) { alert('Please select an option.'); return; }
 
                 const isCorrect = selected.dataset.correct === 'true';
-                if(isCorrect) updateScore(score + 1);
+                if (isCorrect) updateScore(score + 1);
 
                 qDiv.querySelectorAll('.mcq-option').forEach(o => {
                     o.style.pointerEvents = 'none';
-                    if(o.dataset.correct === 'true') o.classList.add('correct');
-                    else if(o.classList.contains('selected')) o.classList.add('incorrect');
+                    if (o.dataset.correct === 'true') o.classList.add('correct');
+                    else if (o.classList.contains('selected')) o.classList.add('incorrect');
                     o.classList.remove('selected');
                 });
-                
+
                 const exp = qDiv.querySelector('.mcq-explanation');
-                if(exp) exp.classList.add('show');
-                
+                if (exp) exp.classList.add('show');
+
                 btn.disabled = true;
                 btn.textContent = isCorrect ? 'Correct!' : 'Incorrect';
             }
         });
 
         document.getElementById('next-btn')?.addEventListener('click', () => {
-            if(currentQuestion < questions.length - 1) {
+            if (currentQuestion < questions.length - 1) {
                 currentQuestion++;
                 showQuestion();
             } else {
@@ -1088,7 +1174,7 @@ SELECT Dept, COUNT(*) FROM Students GROUP BY Dept;
         });
 
         document.getElementById('prev-btn')?.addEventListener('click', () => {
-            if(currentQuestion > 0) {
+            if (currentQuestion > 0) {
                 currentQuestion--;
                 showQuestion();
             }
@@ -1100,7 +1186,7 @@ SELECT Dept, COUNT(*) FROM Students GROUP BY Dept;
             initializeQuestions();
             // Open first note block
             const firstHeader = document.querySelector('.subject-header');
-            if(firstHeader) firstHeader.click();
+            if (firstHeader) firstHeader.click();
         });
 
         // Smooth scroll
@@ -1120,11 +1206,7 @@ SELECT Dept, COUNT(*) FROM Students GROUP BY Dept;
         });
     </script>
     <script src="theme.js"></script>
+    <script src="hamburger-menu.js"></script>
 </body>
+
 </html>
-
-
-
-
-
-

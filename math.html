@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -13,9 +14,14 @@
     <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
     <style>
         /* Specific overrides for Subject Pages */
-        .subject-notes-wrapper { display: flex; flex-direction: column; gap: 1.5rem; }
+        .subject-notes-wrapper {
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
+        }
     </style>
 </head>
+
 <body>
 
     <header>
@@ -23,8 +29,8 @@
             <div class="logo">
                 <i class="fas fa-graduation-cap"></i>
                 <div>
-                   <span >Sarvasva Notes</span>
-                   <span class="logo-subtitle">Mathematics-III</span>
+                    <span>Sarvasva Notes</span>
+                    <span class="logo-subtitle">Mathematics-III</span>
                 </div>
             </div>
             <nav>
@@ -48,324 +54,387 @@
             <div class="hero-actions">
                 <a href="#notes" class="btn btn-primary"><i class="fas fa-book"></i> Notes</a>
                 <a href="#mcq" class="btn btn-secondary"><i class="fas fa-question-circle"></i> MCQs</a>
-                <a href="question-papers.html?subject=mathematics" class="btn" class="btn btn-accent"><i class="fas fa-stopwatch"></i> PYQ Test</a>
+                <a href="question-papers.html?subject=mathematics" class="btn" class="btn btn-accent"><i
+                        class="fas fa-stopwatch"></i> PYQ Test</a>
             </div>
         </section>
 
         <!-- Notes Section -->
         <h2 class="section-title" id="notes"><i class="fas fa-book-open"></i> Complete Notes (Unit 1-5)</h2>
         <div class="subject-notes-wrapper">
-            
-                <div class="unit-block">
-                    <div class="card-unit-header">
-                        <h3>Unit 1 Content</h3>
-                    </div>
-                    <div class="unit-content-pad">
-                        <div class="subject-container">
-            <div class="subject-header">
-                <h3><i class="fas fa-calculator"></i> Mathematics-III (BCA-4005)</h3>
-                <i class="fas fa-chevron-down"></i>
-            </div>
-            <div class="subject-content">
-                <div class="topic">
-                    <h4>1. Complex Number System</h4>
-                    <div class="topic-content">
-                        <p><strong>Definition:</strong> A number of the form $z = x + iy$, where $x, y \in \mathbb{R}$
-                            and $i = \sqrt{-1}$.</p>
-                        <ul>
-                            <li><strong>Real Part:</strong> $Re(z) = x$</li>
-                            <li><strong>Imaginary Part:</strong> $Im(z) = y$</li>
-                            <li><strong>Conjugate ($\bar{z}$):</strong> If $z = x + iy$, then $\bar{z} = x - iy$.</li>
-                            <li><strong>Modulus ($|z|$):</strong> Distance from origin. $|z| = \sqrt{x^2 + y^2}$. <span
-                                    class="pyq-badge">PYQ 2022</span></li>
-                            <li><strong>Powers of $i$:</strong> Cycle of 4 ($i, -1, -i, 1$). <br><em>Example:</em>
-                                $i^{19} = i^{4(4)+3} = i^3 = -i$ <span class="pyq-badge">PYQ 2024</span></li>
-                        </ul>
-                    </div>
-                </div>
 
-                <div class="topic">
-                    <h4>2. Polar Form & Arguments</h4>
-                    <div class="topic-content">
-                        <p>Representing $z$ using radius $r$ and angle $\theta$.</p>
-                        <p><strong>Form:</strong> $z = r(\cos\theta + i\sin\theta)$ or $z = re^{i\theta}$ (Euler's
-                            Form).</p>
-                        <ul>
-                            <li>$r = |z|$ (Modulus)</li>
-                            <li>$\theta = \tan^{-1}(y/x)$ (Argument or Amplitude).</li>
-                            <li><strong>Principal Argument:</strong> Value of $\theta$ in $(-\pi, \pi]$.</li>
-                        </ul>
-                    </div>
+            <div class="unit-block">
+                <div class="card-unit-header">
+                    <h3>Unit 1 Content</h3>
                 </div>
-
-                <div class="topic">
-                    <h4>3. De Moivre's Theorem <span class="pyq-badge">PYQ 2023</span></h4>
-                    <div class="topic-content">
-                        <p><strong>Theorem:</strong> For any real number $n$, $(\cos\theta + i\sin\theta)^n =
-                            \cos(n\theta) + i\sin(n\theta)$.</p>
-                        <p><strong>Use:</strong> Finding powers and roots of complex numbers.</p>
-                        <p><strong>Roots of Unity:</strong> Solutions to $z^n = 1$. <br><em>Cube roots of unity ($1,
-                                \omega, \omega^2$):</em> sum $1+\omega+\omega^2=0$, product $\omega^3=1$. <span
-                                class="pyq-badge">PYQ 2023</span></p>
-                        <ul>
-                            <li><strong>De Moivre's Theorem:</strong> $(\cos\theta + i\sin\theta)^n = \cos(n\theta) +
-                                i\sin(n\theta)$.</li>
-                            <li><strong>Roots of Unity ($1^{1/3}$):</strong> The cube roots of unity are $1, \omega,
-                                \omega^2$.
-                                <ul>
-                                    <li>Properties: $1 + \omega + \omega^2 = 0$ and $\omega^3 = 1$.</li>
-                                    <li><em>Example:</em> Evaluate $(1-\omega+\omega^2)^5 + (1+\omega-\omega^2)^5$.
-                                        <br>Sol: Since $1+\omega^2 = -\omega$, term 1 is $(-2\omega)^5$. Since
-                                        $1+\omega=-\omega^2$, term 2 is $(-2\omega^2)^5$. Result is 32.</li>
-                                </ul>
-                            </li>
-                            <li><strong>Analytic Functions:</strong> A function $f(z)$ differentiable at every point in
-                                a domain.
-                                <ul>
-                                    <li><strong>Cauchy-Riemann (C-R) Equations:</strong> Necessary condition for
-                                        differentiability.
-                                        <br>$\frac{\partial u}{\partial x} = \frac{\partial v}{\partial y}$ and
-                                        $\frac{\partial u}{\partial y} = -\frac{\partial v}{\partial x}$.
-                                    </li>
-                                </ul>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-
-                <div class="topic">
-                    <h4>4. Functions of Complex Variable</h4>
-                    <div class="topic-content">
-                        <p><strong>Function $f(z)$:</strong> A rule assigning a complex number $w$ to $z$. $w = f(z) =
-                            u(x,y) + iv(x,y)$.</p>
-                        <ul>
-                            <li><strong>Limit:</strong> $lim_{z \to z_0} f(z) = L$. Path independent approach required.
-                            </li>
-                            <li><strong>Continuity:</strong> Limit exists and equals function value.</li>
-                            <li><strong>Differentiability:</strong> Derivative exists. A function differentiable
-                                everywhere is <strong>Analytic</strong> (Holomorphic). Verified using <em>Cauchy-Riemann
-                                    Equations</em> ($u_x=v_y, u_y=-v_x$). <span class="pyq-badge">PYQ 2024</span></li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-        </div>
-                    </div>
-                </div>
-
-                <div class="unit-block">
-                    <div class="card-unit-header">
-                        <h3>Unit 2 Content</h3>
-                    </div>
-                    <div class="unit-content-pad">
-                        <div class="subject-container">
-            <div class="subject-header">
-                <h3><i class="fas fa-calculator"></i> Mathematics-III</h3>
-                <i class="fas fa-chevron-down"></i>
-            </div>
-            <div class="subject-content">
-                <div class="topic">
-                    <h4>Vector Calculus</h4>
-                    <div class="topic-content">
-                        <ul>
-                            <li><strong>Gradient ($\nabla \phi$):</strong> Acts on a Scalar function $\phi$. Result is a
-                                Vector. Represents normal to surface.
-                                <br><strong>Physical Meaning:</strong> Represents the rate of change of a scalar field.
-                                Direction of $\nabla \phi$ gives the direction of steepest ascent.
-                                <br>$\nabla \phi = \frac{\partial \phi}{\partial x}\hat{i} + \frac{\partial
-                                \phi}{\partial y}\hat{j} + \frac{\partial \phi}{\partial z}\hat{k}$.
-                                <div class="note-block-success">
-                                    <strong>Real Life Example: Hiking a Mountain</strong><br>
-                                    Imagine you are standing on a hillside in fog.
+                <div class="unit-content-pad">
+                    <div class="subject-container">
+                        <div class="subject-header">
+                            <h3><i class="fas fa-calculator"></i> Mathematics-III (BCA-4005)</h3>
+                            <i class="fas fa-chevron-down"></i>
+                        </div>
+                        <div class="subject-content">
+                            <div class="topic">
+                                <h4>1. Complex Number System</h4>
+                                <div class="topic-content">
+                                    <p><strong>Definition:</strong> A number of the form $z = x + iy$, where $x, y \in
+                                        \mathbb{R}$
+                                        and $i = \sqrt{-1}$.</p>
                                     <ul>
-                                        <li><strong>Scalar Field ($\phi$):</strong> The altitude at every point $(x,y)$.</li>
-                                        <li><strong>Gradient ($\nabla \phi$):</strong> A vector pointing uphill in the steepest direction. If you want to climb as fast as possible, follow the gradient. If the gradient is zero, you are at a peak (or a valley).</li>
+                                        <li><strong>Real Part:</strong> $Re(z) = x$</li>
+                                        <li><strong>Imaginary Part:</strong> $Im(z) = y$</li>
+                                        <li><strong>Conjugate ($\bar{z}$):</strong> If $z = x + iy$, then $\bar{z} = x -
+                                            iy$.</li>
+                                        <li><strong>Modulus ($|z|$):</strong> Distance from origin. $|z| = \sqrt{x^2 +
+                                            y^2}$. <span class="pyq-badge">PYQ 2022</span></li>
+                                        <li><strong>Powers of $i$:</strong> Cycle of 4 ($i, -1, -i, 1$).
+                                            <br><em>Example:</em>
+                                            $i^{19} = i^{4(4)+3} = i^3 = -i$ <span class="pyq-badge">PYQ 2024</span>
+                                        </li>
                                     </ul>
                                 </div>
-                            </li>
-                            <li><strong>Divergence ($\nabla \cdot \vec{F}$):</strong> Dot product of $\nabla$ and Vector
-                                $\vec{F}$. Result is Scalar.
-                                <br><strong>Physical Meaning:</strong> Represents the rate of flux expansion (source) or
-                                contraction (sink) per unit volume.
-                                <br>If $\text{div } \vec{F} = 0$, vector is <strong>Solenoidal</strong> (incompressible
-                                flow).
-                            </li>
-                            <li><strong>Curl ($\nabla \times \vec{F}$):</strong> Cross product. Result is Vector.
-                                <br><strong>Physical Meaning:</strong> Represents the rotation or angular velocity of a
-                                vector field.
-                                <br>If $\text{curl } \vec{F} = 0$, vector is <strong>Irrotational</strong> (conservative
-                                field).
-                            </li>
-                            <li><strong>Directional Derivative:</strong> Rate of change of $\phi$ in direction of vector
-                                $\vec{a}$.
-                                <br>Formula: D.D. = $\nabla \phi \cdot \frac{\vec{a}}{|\vec{a}|}$ (Grad $\phi$ dot unit
-                                vector).
-                            </li>
-                            <li><strong>Integral Theorems (Important):</strong>
-                                <ul>
-                                    <li><strong>Green's Theorem:</strong> Relates line integral to double integral in a plane.</li>
-                                    <li><strong>Stokes' Theorem:</strong> Relates surface integral of curl to line integral around boundary.</li>
-                                    <li><strong>Gauss Divergence Theorem:</strong> Relates surface integral to volume integral of divergence.</li>
-                                </ul>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-        </div>
-                    </div>
-                </div>
+                            </div>
 
-                <div class="unit-block">
-                    <div class="card-unit-header">
-                        <h3>Unit 3 Content</h3>
-                    </div>
-                    <div class="unit-content-pad">
-                        <div class="subject-container">
-            <div class="subject-header">
-                <h3><i class="fas fa-calculator"></i> Mathematics-III</h3>
-                <i class="fas fa-chevron-down"></i>
-            </div>
-            <div class="subject-content">
-                <div class="topic">
-                    <h4>Fourier Series</h4>
-                    <div class="topic-content">
-                        <ul>
-                            <li><strong>Definition:</strong> Expression of a periodic function $f(x)$ as a sum of sines
-                                and cosines.</li>
-                            <li><strong>Formula:</strong> $f(x) = \frac{a_0}{2} + \sum_{n=1}^{\infty} a_n \cos(nx) +
-                                \sum_{n=1}^{\infty} b_n \sin(nx)$.</li>
-                            <li><strong>Euler's Formulas:</strong>
-                                <ul>
-                                    <li>$a_0 = \frac{1}{\pi} \int_{-\pi}^{\pi} f(x) dx$</li>
-                                    <li>$a_n = \frac{1}{\pi} \int_{-\pi}^{\pi} f(x) \cos(nx) dx$</li>
-                                    <li>$b_n = \frac{1}{\pi} \int_{-\pi}^{\pi} f(x) \sin(nx) dx$</li>
-                                </ul>
-                            </li>
-                            <li><strong>Even Function ($f(-x) = f(x)$):</strong> Symmetric about Y-axis. $b_n = 0$.</li>
-                            <li><strong>Odd Function ($f(-x) = -f(x)$):</strong> Symmetric about Origin. $a_0 = 0, a_n =
-                                0$, only sine terms exist. <span class="pyq-badge">PYQ 2022</span></li>
-                            <li><strong>Dirichlet Conditions:</strong> Conditions for a function $f(x)$ to be
-                                represented as a Fourier Series:
-                                <ol>
-                                    <li>Defined and single-valued.</li>
-                                    <li>Finite number of discontinuities in period.</li>
-                                    <li>Finite number of maxima and minima.</li>
-                                    <li>$\int_{-\pi}^{\pi} |f(x)| dx$ (Absolute integral) converges.</li>
-                                </ol>
-                                <div class="note-block-warning">
-                                    <strong>Analogy: The Music Synthesizer</strong><br>
-                                    Think of a musical chord played on a piano.
+                            <div class="topic">
+                                <h4>2. Polar Form & Arguments</h4>
+                                <div class="topic-content">
+                                    <p>Representing $z$ using radius $r$ and angle $\theta$.</p>
+                                    <p><strong>Form:</strong> $z = r(\cos\theta + i\sin\theta)$ or $z = re^{i\theta}$
+                                        (Euler's
+                                        Form).</p>
                                     <ul>
-                                        <li><strong>Complex Wave ($f(x)$):</strong> The rich sound you hear is a complex periodic waveform.</li>
-                                        <li><strong>Fourier Series:</strong> It breaks that complex sound down into simple "pure tones" (Sine and Cosine waves) of different frequencies.</li>
-                                        <li>Just as a synthesizer combines simple sine waves to mimic a violin or flute, any repeating signal can be built from simple Sines and Cosines.</li>
+                                        <li>$r = |z|$ (Modulus)</li>
+                                        <li>$\theta = \tan^{-1}(y/x)$ (Argument or Amplitude).</li>
+                                        <li><strong>Principal Argument:</strong> Value of $\theta$ in $(-\pi, \pi]$.
+                                        </li>
                                     </ul>
                                 </div>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-        </div>
-                    </div>
-                </div>
+                            </div>
 
-                <div class="unit-block">
-                    <div class="card-unit-header">
-                        <h3>Unit 4 Content</h3>
-                    </div>
-                    <div class="unit-content-pad">
-                        <div class="subject-container">
-            <div class="subject-header">
-                <h3><i class="fas fa-calculator"></i> Mathematics-III</h3>
-                <i class="fas fa-chevron-down"></i>
-            </div>
-            <div class="subject-content">
-                <div class="topic">
-                    <h4>Ordinary Differential Equations (First Order)</h4>
-                    <div class="topic-content">
-                        <ul>
-                            <li><strong>Order vs. Degree:</strong> Order = Highest derivative. Degree = Power of highest
-                                derivative.</li>
-                            <li><strong>Variable Separable:</strong> Separate $x$ and $y$ terms and integrate.</li>
-                            <li><strong>Linear ODE:</strong> Form $\frac{dy}{dx} + Py = Q$.
-                                <ul>
-                                    <li>Integrating Factor (IF) = $e^{\int P dx}$. Solution: $y(IF) = \int (Q \cdot IF)
-                                        dx + C$.</li>
-                                </ul>
-                            </li>
-                            <li><strong>Homogeneous Equation:</strong> Degree of terms in $x$ and $y$ is same. Put
-                                $y=vx$.</li>
-                            <!-- Gap Analysis Addition -->
-                            <li><strong>Bernoulli’s Equation:</strong> form $\frac{dy}{dx} + Py = Qy^n$. Solution:
-                                Divide by $y^n$, put $v = y^{1-n}$ to make it Linear.</li>
-                            <li><strong>Exact Differential Equation:</strong> $Mdx + Ndy = 0$ is exact if
-                                $\frac{\partial M}{\partial y} = \frac{\partial N}{\partial x}$.
-                                <br>Solution: $\int M dx (\text{y const}) + \int (\text{terms of N free from x}) dy =
-                                C$.
-                            </li>
-                            <li><strong>Orthogonal Trajectories:</strong> Curves cutting a family of curves at
-                                $90^\circ$.
-                                <br><em>Method:</em> Form differential equation. Replace $\frac{dy}{dx}$ with
-                                $-\frac{dx}{dy}$. Solve new DE.
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-        </div>
-                    </div>
-                </div>
+                            <div class="topic">
+                                <h4>3. De Moivre's Theorem <span class="pyq-badge">PYQ 2023</span></h4>
+                                <div class="topic-content">
+                                    <p><strong>Theorem:</strong> For any real number $n$, $(\cos\theta + i\sin\theta)^n
+                                        =
+                                        \cos(n\theta) + i\sin(n\theta)$.</p>
+                                    <p><strong>Use:</strong> Finding powers and roots of complex numbers.</p>
+                                    <p><strong>Roots of Unity:</strong> Solutions to $z^n = 1$. <br><em>Cube roots of
+                                            unity ($1,
+                                            \omega, \omega^2$):</em> sum $1+\omega+\omega^2=0$, product $\omega^3=1$.
+                                        <span class="pyq-badge">PYQ 2023</span></p>
+                                    <ul>
+                                        <li><strong>De Moivre's Theorem:</strong> $(\cos\theta + i\sin\theta)^n =
+                                            \cos(n\theta) +
+                                            i\sin(n\theta)$.</li>
+                                        <li><strong>Roots of Unity ($1^{1/3}$):</strong> The cube roots of unity are $1,
+                                            \omega,
+                                            \omega^2$.
+                                            <ul>
+                                                <li>Properties: $1 + \omega + \omega^2 = 0$ and $\omega^3 = 1$.</li>
+                                                <li><em>Example:</em> Evaluate $(1-\omega+\omega^2)^5 +
+                                                    (1+\omega-\omega^2)^5$.
+                                                    <br>Sol: Since $1+\omega^2 = -\omega$, term 1 is $(-2\omega)^5$.
+                                                    Since
+                                                    $1+\omega=-\omega^2$, term 2 is $(-2\omega^2)^5$. Result is 32.
+                                                </li>
+                                            </ul>
+                                        </li>
+                                        <li><strong>Analytic Functions:</strong> A function $f(z)$ differentiable at
+                                            every point in
+                                            a domain.
+                                            <ul>
+                                                <li><strong>Cauchy-Riemann (C-R) Equations:</strong> Necessary condition
+                                                    for
+                                                    differentiability.
+                                                    <br>$\frac{\partial u}{\partial x} = \frac{\partial v}{\partial y}$
+                                                    and
+                                                    $\frac{\partial u}{\partial y} = -\frac{\partial v}{\partial x}$.
+                                                </li>
+                                            </ul>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
 
-                <div class="unit-block">
-                    <div class="card-unit-header">
-                        <h3>Unit 5 Content</h3>
-                    </div>
-                    <div class="unit-content-pad">
-                        <div class="subject-container">
-            <div class="subject-header">
-                <h3><i class="fas fa-calculator"></i> Mathematics-III</h3>
-                <i class="fas fa-chevron-down"></i>
-            </div>
-            <div class="subject-content">
-                <div class="topic">
-                    <h4>ODE of Second Order</h4>
-                    <div class="topic-content">
-                        <ul>
-                            <li><strong>General Form:</strong> $\frac{d^2y}{dx^2} + P\frac{dy}{dx} + Qy = R(x)$.</li>
-                            <li><strong>Solution ($y$):</strong> Complementary Function (C.F.) + Particular Integral
-                                (P.I.).</li>
-                            <li><strong>Finding C.F. (Auxiliary Equation $m^2+Pm+Q=0$):</strong>
-                                <ul>
-                                    <li>Real & Distinct ($m_1, m_2$): $y = c_1 e^{m_1x} + c_2 e^{m_2x}$.</li>
-                                    <li>Real & Equal ($m, m$): $y = (c_1 + c_2x)e^{mx}$.</li>
-                                    <li>Complex ($\alpha \pm i\beta$): $y = e^{\alpha x}(c_1 \cos \beta x + c_2 \sin
-                                        \beta x)$.</li>
-                                </ul>
-                            </li>
-                            <li><strong>Finding P.I.:</strong>
-                                <ul>
-                                    <li>If $R(x) = e^{ax}$, P.I. = $\frac{e^{ax}}{f(a)}$ (provided $f(a) \neq 0$).</li>
-                                    <li>Case of Failure: Multiply by $x$ and differentiate denominator.</li>
-                                </ul>
-                            </li>
-                            <li><strong>Laplace Transform:</strong> Converts time-domain functions $f(t)$ to s-domain
-                                $F(s)$. <span class="pyq-badge">PYQ 2022</span>
-                                <ul>
-                                    <li>$L\{1\} = 1/s$</li>
-                                    <li>$L\{t^n\} = n!/s^{n+1}$</li>
-                                    <li>$L\{e^{at}\} = 1/(s-a)$</li>
-                                    <li>$L\{\sin at\} = a/(s^2+a^2)$</li>
-                                </ul>
-                            </li>
-                        </ul>
+                            <div class="topic">
+                                <h4>4. Functions of Complex Variable</h4>
+                                <div class="topic-content">
+                                    <p><strong>Function $f(z)$:</strong> A rule assigning a complex number $w$ to $z$.
+                                        $w = f(z) =
+                                        u(x,y) + iv(x,y)$.</p>
+                                    <ul>
+                                        <li><strong>Limit:</strong> $lim_{z \to z_0} f(z) = L$. Path independent
+                                            approach required.
+                                        </li>
+                                        <li><strong>Continuity:</strong> Limit exists and equals function value.</li>
+                                        <li><strong>Differentiability:</strong> Derivative exists. A function
+                                            differentiable
+                                            everywhere is <strong>Analytic</strong> (Holomorphic). Verified using
+                                            <em>Cauchy-Riemann
+                                                Equations</em> ($u_x=v_y, u_y=-v_x$). <span class="pyq-badge">PYQ
+                                                2024</span></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
-        </div>
+
+            <div class="unit-block">
+                <div class="card-unit-header">
+                    <h3>Unit 2 Content</h3>
+                </div>
+                <div class="unit-content-pad">
+                    <div class="subject-container">
+                        <div class="subject-header">
+                            <h3><i class="fas fa-calculator"></i> Mathematics-III</h3>
+                            <i class="fas fa-chevron-down"></i>
+                        </div>
+                        <div class="subject-content">
+                            <div class="topic">
+                                <h4>Vector Calculus</h4>
+                                <div class="topic-content">
+                                    <ul>
+                                        <li><strong>Gradient ($\nabla \phi$):</strong> Acts on a Scalar function $\phi$.
+                                            Result is a
+                                            Vector. Represents normal to surface.
+                                            <br><strong>Physical Meaning:</strong> Represents the rate of change of a
+                                            scalar field.
+                                            Direction of $\nabla \phi$ gives the direction of steepest ascent.
+                                            <br>$\nabla \phi = \frac{\partial \phi}{\partial x}\hat{i} + \frac{\partial
+                                            \phi}{\partial y}\hat{j} + \frac{\partial \phi}{\partial z}\hat{k}$.
+                                            <div class="note-block-success">
+                                                <strong>Real Life Example: Hiking a Mountain</strong><br>
+                                                Imagine you are standing on a hillside in fog.
+                                                <ul>
+                                                    <li><strong>Scalar Field ($\phi$):</strong> The altitude at every
+                                                        point $(x,y)$.</li>
+                                                    <li><strong>Gradient ($\nabla \phi$):</strong> A vector pointing
+                                                        uphill in the steepest direction. If you want to climb as fast
+                                                        as possible, follow the gradient. If the gradient is zero, you
+                                                        are at a peak (or a valley).</li>
+                                                </ul>
+                                            </div>
+                                        </li>
+                                        <li><strong>Divergence ($\nabla \cdot \vec{F}$):</strong> Dot product of
+                                            $\nabla$ and Vector
+                                            $\vec{F}$. Result is Scalar.
+                                            <br><strong>Physical Meaning:</strong> Represents the rate of flux expansion
+                                            (source) or
+                                            contraction (sink) per unit volume.
+                                            <br>If $\text{div } \vec{F} = 0$, vector is <strong>Solenoidal</strong>
+                                            (incompressible
+                                            flow).
+                                        </li>
+                                        <li><strong>Curl ($\nabla \times \vec{F}$):</strong> Cross product. Result is
+                                            Vector.
+                                            <br><strong>Physical Meaning:</strong> Represents the rotation or angular
+                                            velocity of a
+                                            vector field.
+                                            <br>If $\text{curl } \vec{F} = 0$, vector is <strong>Irrotational</strong>
+                                            (conservative
+                                            field).
+                                        </li>
+                                        <li><strong>Directional Derivative:</strong> Rate of change of $\phi$ in
+                                            direction of vector
+                                            $\vec{a}$.
+                                            <br>Formula: D.D. = $\nabla \phi \cdot \frac{\vec{a}}{|\vec{a}|}$ (Grad
+                                            $\phi$ dot unit
+                                            vector).
+                                        </li>
+                                        <li><strong>Integral Theorems (Important):</strong>
+                                            <ul>
+                                                <li><strong>Green's Theorem:</strong> Relates line integral to double
+                                                    integral in a plane.</li>
+                                                <li><strong>Stokes' Theorem:</strong> Relates surface integral of curl
+                                                    to line integral around boundary.</li>
+                                                <li><strong>Gauss Divergence Theorem:</strong> Relates surface integral
+                                                    to volume integral of divergence.</li>
+                                            </ul>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
+            </div>
+
+            <div class="unit-block">
+                <div class="card-unit-header">
+                    <h3>Unit 3 Content</h3>
+                </div>
+                <div class="unit-content-pad">
+                    <div class="subject-container">
+                        <div class="subject-header">
+                            <h3><i class="fas fa-calculator"></i> Mathematics-III</h3>
+                            <i class="fas fa-chevron-down"></i>
+                        </div>
+                        <div class="subject-content">
+                            <div class="topic">
+                                <h4>Fourier Series</h4>
+                                <div class="topic-content">
+                                    <ul>
+                                        <li><strong>Definition:</strong> Expression of a periodic function $f(x)$ as a
+                                            sum of sines
+                                            and cosines.</li>
+                                        <li><strong>Formula:</strong> $f(x) = \frac{a_0}{2} + \sum_{n=1}^{\infty} a_n
+                                            \cos(nx) +
+                                            \sum_{n=1}^{\infty} b_n \sin(nx)$.</li>
+                                        <li><strong>Euler's Formulas:</strong>
+                                            <ul>
+                                                <li>$a_0 = \frac{1}{\pi} \int_{-\pi}^{\pi} f(x) dx$</li>
+                                                <li>$a_n = \frac{1}{\pi} \int_{-\pi}^{\pi} f(x) \cos(nx) dx$</li>
+                                                <li>$b_n = \frac{1}{\pi} \int_{-\pi}^{\pi} f(x) \sin(nx) dx$</li>
+                                            </ul>
+                                        </li>
+                                        <li><strong>Even Function ($f(-x) = f(x)$):</strong> Symmetric about Y-axis.
+                                            $b_n = 0$.</li>
+                                        <li><strong>Odd Function ($f(-x) = -f(x)$):</strong> Symmetric about Origin.
+                                            $a_0 = 0, a_n =
+                                            0$, only sine terms exist. <span class="pyq-badge">PYQ 2022</span></li>
+                                        <li><strong>Dirichlet Conditions:</strong> Conditions for a function $f(x)$ to
+                                            be
+                                            represented as a Fourier Series:
+                                            <ol>
+                                                <li>Defined and single-valued.</li>
+                                                <li>Finite number of discontinuities in period.</li>
+                                                <li>Finite number of maxima and minima.</li>
+                                                <li>$\int_{-\pi}^{\pi} |f(x)| dx$ (Absolute integral) converges.</li>
+                                            </ol>
+                                            <div class="note-block-warning">
+                                                <strong>Analogy: The Music Synthesizer</strong><br>
+                                                Think of a musical chord played on a piano.
+                                                <ul>
+                                                    <li><strong>Complex Wave ($f(x)$):</strong> The rich sound you hear
+                                                        is a complex periodic waveform.</li>
+                                                    <li><strong>Fourier Series:</strong> It breaks that complex sound
+                                                        down into simple "pure tones" (Sine and Cosine waves) of
+                                                        different frequencies.</li>
+                                                    <li>Just as a synthesizer combines simple sine waves to mimic a
+                                                        violin or flute, any repeating signal can be built from simple
+                                                        Sines and Cosines.</li>
+                                                </ul>
+                                            </div>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="unit-block">
+                <div class="card-unit-header">
+                    <h3>Unit 4 Content</h3>
+                </div>
+                <div class="unit-content-pad">
+                    <div class="subject-container">
+                        <div class="subject-header">
+                            <h3><i class="fas fa-calculator"></i> Mathematics-III</h3>
+                            <i class="fas fa-chevron-down"></i>
+                        </div>
+                        <div class="subject-content">
+                            <div class="topic">
+                                <h4>Ordinary Differential Equations (First Order)</h4>
+                                <div class="topic-content">
+                                    <ul>
+                                        <li><strong>Order vs. Degree:</strong> Order = Highest derivative. Degree =
+                                            Power of highest
+                                            derivative.</li>
+                                        <li><strong>Variable Separable:</strong> Separate $x$ and $y$ terms and
+                                            integrate.</li>
+                                        <li><strong>Linear ODE:</strong> Form $\frac{dy}{dx} + Py = Q$.
+                                            <ul>
+                                                <li>Integrating Factor (IF) = $e^{\int P dx}$. Solution: $y(IF) = \int
+                                                    (Q \cdot IF)
+                                                    dx + C$.</li>
+                                            </ul>
+                                        </li>
+                                        <li><strong>Homogeneous Equation:</strong> Degree of terms in $x$ and $y$ is
+                                            same. Put
+                                            $y=vx$.</li>
+                                        <!-- Gap Analysis Addition -->
+                                        <li><strong>Bernoulli’s Equation:</strong> form $\frac{dy}{dx} + Py = Qy^n$.
+                                            Solution:
+                                            Divide by $y^n$, put $v = y^{1-n}$ to make it Linear.</li>
+                                        <li><strong>Exact Differential Equation:</strong> $Mdx + Ndy = 0$ is exact if
+                                            $\frac{\partial M}{\partial y} = \frac{\partial N}{\partial x}$.
+                                            <br>Solution: $\int M dx (\text{y const}) + \int (\text{terms of N free from
+                                            x}) dy =
+                                            C$.
+                                        </li>
+                                        <li><strong>Orthogonal Trajectories:</strong> Curves cutting a family of curves
+                                            at
+                                            $90^\circ$.
+                                            <br><em>Method:</em> Form differential equation. Replace $\frac{dy}{dx}$
+                                            with
+                                            $-\frac{dx}{dy}$. Solve new DE.
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="unit-block">
+                <div class="card-unit-header">
+                    <h3>Unit 5 Content</h3>
+                </div>
+                <div class="unit-content-pad">
+                    <div class="subject-container">
+                        <div class="subject-header">
+                            <h3><i class="fas fa-calculator"></i> Mathematics-III</h3>
+                            <i class="fas fa-chevron-down"></i>
+                        </div>
+                        <div class="subject-content">
+                            <div class="topic">
+                                <h4>ODE of Second Order</h4>
+                                <div class="topic-content">
+                                    <ul>
+                                        <li><strong>General Form:</strong> $\frac{d^2y}{dx^2} + P\frac{dy}{dx} + Qy =
+                                            R(x)$.</li>
+                                        <li><strong>Solution ($y$):</strong> Complementary Function (C.F.) + Particular
+                                            Integral
+                                            (P.I.).</li>
+                                        <li><strong>Finding C.F. (Auxiliary Equation $m^2+Pm+Q=0$):</strong>
+                                            <ul>
+                                                <li>Real & Distinct ($m_1, m_2$): $y = c_1 e^{m_1x} + c_2 e^{m_2x}$.
+                                                </li>
+                                                <li>Real & Equal ($m, m$): $y = (c_1 + c_2x)e^{mx}$.</li>
+                                                <li>Complex ($\alpha \pm i\beta$): $y = e^{\alpha x}(c_1 \cos \beta x +
+                                                    c_2 \sin
+                                                    \beta x)$.</li>
+                                            </ul>
+                                        </li>
+                                        <li><strong>Finding P.I.:</strong>
+                                            <ul>
+                                                <li>If $R(x) = e^{ax}$, P.I. = $\frac{e^{ax}}{f(a)}$ (provided $f(a)
+                                                    \neq 0$).</li>
+                                                <li>Case of Failure: Multiply by $x$ and differentiate denominator.</li>
+                                            </ul>
+                                        </li>
+                                        <li><strong>Laplace Transform:</strong> Converts time-domain functions $f(t)$ to
+                                            s-domain
+                                            $F(s)$. <span class="pyq-badge">PYQ 2022</span>
+                                            <ul>
+                                                <li>$L\{1\} = 1/s$</li>
+                                                <li>$L\{t^n\} = n!/s^{n+1}$</li>
+                                                <li>$L\{e^{at}\} = 1/(s-a)$</li>
+                                                <li>$L\{\sin at\} = a/(s^2+a^2)$</li>
+                                            </ul>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
 
         <!-- MCQ Section -->
@@ -375,254 +444,260 @@
                 <p>Score: <span id="score">0</span> / <span id="total-questions">0</span></p>
                 <button id="reset-btn" class="btn btn-outline-primary btn-sm mt-2">Reset Quiz</button>
             </div>
-            
+
             <div class="mcq-container active">
-                <!-- Unit 1 MCQs --> <div class="unit-mcq-label" >Unit 1 Questions</div>
-                    <!-- MCQ 1 -->
-                    <div class="mcq-question">
-                        <div class="mcq-question-number">
-                            <span>1. Modulus value of z = x + iy is:</span>
-                            <span class="pyq-label">PYQ 2022</span>
-                        </div>
-                        <div class="mcq-options">
-                            <div class="mcq-option" data-correct="false">A. √(x² - y²)</div>
-                            <div class="mcq-option" data-correct="true">B. √(x² + y²)</div>
-                            <div class="mcq-option" data-correct="false">C. x² - y²</div>
-                            <div class="mcq-option" data-correct="false">D. x + y</div>
-                        </div>
+                <!-- Unit 1 MCQs -->
+                <div class="unit-mcq-label">Unit 1 Questions</div>
+                <!-- MCQ 1 -->
+                <div class="mcq-question">
+                    <div class="mcq-question-number">
+                        <span>1. Modulus value of z = x + iy is:</span>
+                        <span class="pyq-label">PYQ 2022</span>
                     </div>
-
-                    <!-- MCQ 2 -->
-                    <div class="mcq-question">
-                        <div class="mcq-question-number">
-                            <span>2. Conjugate of z = -3 + 2i is:</span>
-                            <span class="pyq-label">PYQ 2023</span>
-                        </div>
-                        <div class="mcq-options">
-                            <div class="mcq-option" data-correct="true">A. -3 - 2i</div>
-                            <div class="mcq-option" data-correct="false">B. 3 - 2i</div>
-                            <div class="mcq-option" data-correct="false">C. -3 + 2i</div>
-                            <div class="mcq-option" data-correct="false">D. 3 + 2i</div>
-                        </div>
+                    <div class="mcq-options">
+                        <div class="mcq-option" data-correct="false">A. √(x² - y²)</div>
+                        <div class="mcq-option" data-correct="true">B. √(x² + y²)</div>
+                        <div class="mcq-option" data-correct="false">C. x² - y²</div>
+                        <div class="mcq-option" data-correct="false">D. x + y</div>
                     </div>
-
-                    <!-- MCQ 3 -->
-                    <div class="mcq-question">
-                        <div class="mcq-question-number">
-                            <span>3. If z = -1 - i, then the argument is:</span>
-                            <span class="pyq-label">PYQ 2022</span>
-                        </div>
-                        <div class="mcq-options">
-                            <div class="mcq-option" data-correct="false">A. π/4</div>
-                            <div class="mcq-option" data-correct="true">B. -3π/4 (or 5π/4)</div>
-                            <div class="mcq-option" data-correct="false">C. π/2</div>
-                            <div class="mcq-option" data-correct="false">D. 0</div>
-                        </div>
-                    </div>
-
-                    <!-- MCQ 4 -->
-                    <div class="mcq-question">
-                        <div class="mcq-question-number">
-                            <span>4. Cube roots of unity are:</span>
-                            <span class="pyq-label">PYQ 2023</span>
-                        </div>
-                        <div class="mcq-options">
-                            <div class="mcq-option" data-correct="false">A. 1, i, -i</div>
-                            <div class="mcq-option" data-correct="true">B. 1, ω, ω²</div>
-                            <div class="mcq-option" data-correct="false">C. 1, -1, 0</div>
-                            <div class="mcq-option" data-correct="false">D. None of the above</div>
-                        </div>
-                    </div>
-
-                    <!-- MCQ 5 -->
-                    <div class="mcq-question">
-                        <div class="mcq-question-number">
-                            <span>5. If cube roots of unity are 1, ω, ω², then 1 + ω + ω² is:</span>
-                            <span class="pyq-label">PYQ 2024</span>
-                        </div>
-                        <div class="mcq-options">
-                            <div class="mcq-option" data-correct="true">A. 0</div>
-                            <div class="mcq-option" data-correct="false">B. 1</div>
-                            <div class="mcq-option" data-correct="false">C. -1</div>
-                            <div class="mcq-option" data-correct="false">D. 3</div>
-                        </div>
-                    </div>
-
-                    <!-- MCQ 6 -->
-                    <div class="mcq-question">
-                        <div class="mcq-question-number">
-                            <span>6. The value of (i)^100 is:</span>
-                            <span class="pyq-label">PYQ 2023</span>
-                        </div>
-                        <div class="mcq-options">
-                            <div class="mcq-option" data-correct="true">A. 1</div>
-                            <div class="mcq-option" data-correct="false">B. -1</div>
-                            <div class="mcq-option" data-correct="false">C. i</div>
-                            <div class="mcq-option" data-correct="false">D. -i</div>
-                        </div>
-                        <div class="mcq-explanation">
-                            <strong>Explanation:</strong> Since 100 is divisible by 4, i^100 = 1.
-                        </div>
-                    </div>
-
-                    <!-- MCQ 7 -->
-                    <div class="mcq-question">
-                        <div class="mcq-question-number">
-                            <span>7. Value of (i)^19 is:</span>
-                            <span class="pyq-label">PYQ 2024-25</span>
-                        </div>
-                        <div class="mcq-options">
-                            <div class="mcq-option" data-correct="true">A. -i</div>
-                            <div class="mcq-option" data-correct="false">B. 1</div>
-                            <div class="mcq-option" data-correct="false">C. -1</div>
-                            <div class="mcq-option" data-correct="false">D. i</div>
-                        </div>
-                        <div class="mcq-explanation">
-                            <strong>Explanation:</strong> 19 = 4 × 4 + 3, so i^19 = i^3 = -i.
-                        </div>
-                    </div>
-
-                    <!-- MCQ 8 -->
-                    <div class="mcq-question">
-                        <div class="mcq-question-number">
-                            <span>8. If z = 1 + i, find |z|.</span>
-                            <span class="pyq-label">PYQ 2023</span>
-                        </div>
-                        <div class="mcq-options">
-                            <div class="mcq-option" data-correct="true">A. √2</div>
-                            <div class="mcq-option" data-correct="false">B. 2</div>
-                            <div class="mcq-option" data-correct="false">C. 1</div>
-                            <div class="mcq-option" data-correct="false">D. 0</div>
-                        </div>
-                        <div class="mcq-explanation">
-                            <strong>Explanation:</strong> |z| = √(1² + 1²) = √2.
-                        </div>
-                    </div>
-
-                    <!-- MCQ 9 -->
-                    <div class="mcq-question">
-                        <div class="mcq-question-number">
-                            <span>9. Value of i^2?</span>
-                            <span class="pyq-label">PYQ 2024</span>
-                        </div>
-                        <div class="mcq-options">
-                            <div class="mcq-option" data-correct="true">A. -1</div>
-                            <div class="mcq-option" data-correct="false">B. 1</div>
-                            <div class="mcq-option" data-correct="false">C. i</div>
-                            <div class="mcq-option" data-correct="false">D. -i</div>
-                        </div>
-                    </div>
-
-                    <!-- MCQ 10 -->
-                    <div class="mcq-question">
-                        <div class="mcq-question-number">
-                            <span>10. Argument of purely imaginary number zi (where z>0) is?</span>
-                            <span class="pyq-label">PYQ 2022</span>
-                        </div>
-                        <div class="mcq-options">
-                            <div class="mcq-option" data-correct="true">A. π/2</div>
-                            <div class="mcq-option" data-correct="false">B. π</div>
-                            <div class="mcq-option" data-correct="false">C. 0</div>
-                            <div class="mcq-option" data-correct="false">D. 2π</div>
-                        </div>
-                    </div>
-                
-<!-- Unit 2 MCQs --> <div class="unit-mcq-label" >Unit 2 Questions</div>
-            <div class="mcq-question">
-                <p class="question-text">Gradient of a scalar function $\phi(x,y,z)$ is:</p>
-                <div class="mcq-options">
-                    <div class="mcq-option" data-correct="false">A. $\frac{\partial\phi}{\partial x} +
-                        \frac{\partial\phi}{\partial y} + \frac{\partial\phi}{\partial z}$</div>
-                    <div class="mcq-option" data-correct="true">B. $\frac{\partial\phi}{\partial x}\hat{i} +
-                        \frac{\partial\phi}{\partial y}\hat{j} + \frac{\partial\phi}{\partial z}\hat{k}$ (It is a
-                        Vector)</div>
-                    <div class="mcq-option" data-correct="false">C. $\frac{\partial^2\phi}{\partial x^2} + ...$</div>
-                    <div class="mcq-option" data-correct="false">D. None</div>
                 </div>
-                <div class="mcq-explanation">Appeared in 2024</div>
-            </div>
 
-            <div class="mcq-question">
-                <p class="question-text">What is the Divergence of a vector field $\vec{F}$?</p>
-                <div class="mcq-options">
-                    <div class="mcq-option" data-correct="false">A. Rate of rotation</div>
-                    <div class="mcq-option" data-correct="true">B. Rate at which $\vec{F}$ is spreading out or
-                        converging</div>
-                    <div class="mcq-option" data-correct="false">C. Flow along streamline</div>
-                    <div class="mcq-option" data-correct="false">D. None</div>
+                <!-- MCQ 2 -->
+                <div class="mcq-question">
+                    <div class="mcq-question-number">
+                        <span>2. Conjugate of z = -3 + 2i is:</span>
+                        <span class="pyq-label">PYQ 2023</span>
+                    </div>
+                    <div class="mcq-options">
+                        <div class="mcq-option" data-correct="true">A. -3 - 2i</div>
+                        <div class="mcq-option" data-correct="false">B. 3 - 2i</div>
+                        <div class="mcq-option" data-correct="false">C. -3 + 2i</div>
+                        <div class="mcq-option" data-correct="false">D. 3 + 2i</div>
+                    </div>
                 </div>
-                <div class="mcq-explanation">Appeared in 2022</div>
-            </div>
 
-            <div class="mcq-question">
-                <p class="question-text">If the Divergence of a vector field $\vec{F}$ is zero ($\nabla \cdot \vec{F} =
-                    0$), then $\vec{F}$ is called:</p>
-                <div class="mcq-options">
-                    <div class="mcq-option" data-correct="true">A. Solenoidal</div>
-                    <div class="mcq-option" data-correct="false">B. Rotational</div>
-                    <div class="mcq-option" data-correct="false">C. Irrotational</div>
-                    <div class="mcq-option" data-correct="false">D. None</div>
+                <!-- MCQ 3 -->
+                <div class="mcq-question">
+                    <div class="mcq-question-number">
+                        <span>3. If z = -1 - i, then the argument is:</span>
+                        <span class="pyq-label">PYQ 2022</span>
+                    </div>
+                    <div class="mcq-options">
+                        <div class="mcq-option" data-correct="false">A. π/4</div>
+                        <div class="mcq-option" data-correct="true">B. -3π/4 (or 5π/4)</div>
+                        <div class="mcq-option" data-correct="false">C. π/2</div>
+                        <div class="mcq-option" data-correct="false">D. 0</div>
+                    </div>
                 </div>
-                <div class="mcq-explanation">Appeared in 2024, 2022</div>
-            </div>
 
-            <div class="mcq-question">
-                <p class="question-text">A vector field is Irrotational if:</p>
-                <div class="mcq-options">
-                    <div class="mcq-option" data-correct="false">A. $\nabla \times \vec{F} \ne 0$</div>
-                    <div class="mcq-option" data-correct="false">B. $\nabla \cdot \vec{F} = 0$</div>
-                    <div class="mcq-option" data-correct="true">C. $\nabla \times \vec{F} = 0$ (Curl is zero)</div>
-                    <div class="mcq-option" data-correct="false">D. None</div>
+                <!-- MCQ 4 -->
+                <div class="mcq-question">
+                    <div class="mcq-question-number">
+                        <span>4. Cube roots of unity are:</span>
+                        <span class="pyq-label">PYQ 2023</span>
+                    </div>
+                    <div class="mcq-options">
+                        <div class="mcq-option" data-correct="false">A. 1, i, -i</div>
+                        <div class="mcq-option" data-correct="true">B. 1, ω, ω²</div>
+                        <div class="mcq-option" data-correct="false">C. 1, -1, 0</div>
+                        <div class="mcq-option" data-correct="false">D. None of the above</div>
+                    </div>
                 </div>
-                <div class="mcq-explanation">Appeared in 2024, 2022</div>
-            </div>
 
-            <div class="mcq-question">
-                <p class="question-text">The Curl of a vector field represents:</p>
-                <div class="mcq-options">
-                    <div class="mcq-option" data-correct="false">A. Irrotational field</div>
-                    <div class="mcq-option" data-correct="false">B. Magnetic field</div>
-                    <div class="mcq-option" data-correct="true">C. Rotational field / Rotation</div>
-                    <div class="mcq-option" data-correct="false">D. Laurent field</div>
+                <!-- MCQ 5 -->
+                <div class="mcq-question">
+                    <div class="mcq-question-number">
+                        <span>5. If cube roots of unity are 1, ω, ω², then 1 + ω + ω² is:</span>
+                        <span class="pyq-label">PYQ 2024</span>
+                    </div>
+                    <div class="mcq-options">
+                        <div class="mcq-option" data-correct="true">A. 0</div>
+                        <div class="mcq-option" data-correct="false">B. 1</div>
+                        <div class="mcq-option" data-correct="false">C. -1</div>
+                        <div class="mcq-option" data-correct="false">D. 3</div>
+                    </div>
                 </div>
-                <div class="mcq-explanation">Appeared in 2022</div>
-            </div>
 
-            <div class="mcq-question">
-                <p class="question-text">Directional derivative of $f$ in the direction of unit vector $\hat{u}$ is:</p>
-                <div class="mcq-options">
-                    <div class="mcq-option" data-correct="true">A. $\nabla f \cdot \hat{u}$</div>
-                    <div class="mcq-option" data-correct="false">B. $\nabla f$</div>
-                    <div class="mcq-option" data-correct="false">C. $\nabla f \times \hat{u}$</div>
-                    <div class="mcq-option" data-correct="false">D. None</div>
+                <!-- MCQ 6 -->
+                <div class="mcq-question">
+                    <div class="mcq-question-number">
+                        <span>6. The value of (i)^100 is:</span>
+                        <span class="pyq-label">PYQ 2023</span>
+                    </div>
+                    <div class="mcq-options">
+                        <div class="mcq-option" data-correct="true">A. 1</div>
+                        <div class="mcq-option" data-correct="false">B. -1</div>
+                        <div class="mcq-option" data-correct="false">C. i</div>
+                        <div class="mcq-option" data-correct="false">D. -i</div>
+                    </div>
+                    <div class="mcq-explanation">
+                        <strong>Explanation:</strong> Since 100 is divisible by 4, i^100 = 1.
+                    </div>
                 </div>
-                <div class="mcq-explanation">Appeared in 2024</div>
-            </div>
 
-            <div class="mcq-question">
-                <p class="question-text">Value of $\nabla \cdot \vec{r}$ (Divergence of position vector $\vec{r} =
-                    x\hat{i} + y\hat{j} + z\hat{k}$) is:</p>
-                <div class="mcq-options">
-                    <div class="mcq-option" data-correct="false">A. 0</div>
-                    <div class="mcq-option" data-correct="true">B. 3</div>
-                    <div class="mcq-option" data-correct="false">C. 1</div>
-                    <div class="mcq-option" data-correct="false">D. -3</div>
+                <!-- MCQ 7 -->
+                <div class="mcq-question">
+                    <div class="mcq-question-number">
+                        <span>7. Value of (i)^19 is:</span>
+                        <span class="pyq-label">PYQ 2024-25</span>
+                    </div>
+                    <div class="mcq-options">
+                        <div class="mcq-option" data-correct="true">A. -i</div>
+                        <div class="mcq-option" data-correct="false">B. 1</div>
+                        <div class="mcq-option" data-correct="false">C. -1</div>
+                        <div class="mcq-option" data-correct="false">D. i</div>
+                    </div>
+                    <div class="mcq-explanation">
+                        <strong>Explanation:</strong> 19 = 4 × 4 + 3, so i^19 = i^3 = -i.
+                    </div>
                 </div>
-                <div class="mcq-explanation">Appeared in 2024</div>
-            </div>
 
-            <div class="mcq-question">
-                <p class="question-text">Divergence of a vector field determines:</p>
-                <div class="mcq-options">
-                    <div class="mcq-option" data-correct="true">A. Flux expansion/contraction</div>
-                    <div class="mcq-option" data-correct="false">B. Rotation</div>
-                    <div class="mcq-option" data-correct="false">C. Gradient</div>
-                    <div class="mcq-option" data-correct="false">D. None</div>
+                <!-- MCQ 8 -->
+                <div class="mcq-question">
+                    <div class="mcq-question-number">
+                        <span>8. If z = 1 + i, find |z|.</span>
+                        <span class="pyq-label">PYQ 2023</span>
+                    </div>
+                    <div class="mcq-options">
+                        <div class="mcq-option" data-correct="true">A. √2</div>
+                        <div class="mcq-option" data-correct="false">B. 2</div>
+                        <div class="mcq-option" data-correct="false">C. 1</div>
+                        <div class="mcq-option" data-correct="false">D. 0</div>
+                    </div>
+                    <div class="mcq-explanation">
+                        <strong>Explanation:</strong> |z| = √(1² + 1²) = √2.
+                    </div>
                 </div>
-                <div class="mcq-explanation">Appeared in PYQ</div>
-            </div>
-        
-<!-- Unit 3 MCQs --> <div class="unit-mcq-label" >Unit 3 Questions</div>
+
+                <!-- MCQ 9 -->
+                <div class="mcq-question">
+                    <div class="mcq-question-number">
+                        <span>9. Value of i^2?</span>
+                        <span class="pyq-label">PYQ 2024</span>
+                    </div>
+                    <div class="mcq-options">
+                        <div class="mcq-option" data-correct="true">A. -1</div>
+                        <div class="mcq-option" data-correct="false">B. 1</div>
+                        <div class="mcq-option" data-correct="false">C. i</div>
+                        <div class="mcq-option" data-correct="false">D. -i</div>
+                    </div>
+                </div>
+
+                <!-- MCQ 10 -->
+                <div class="mcq-question">
+                    <div class="mcq-question-number">
+                        <span>10. Argument of purely imaginary number zi (where z>0) is?</span>
+                        <span class="pyq-label">PYQ 2022</span>
+                    </div>
+                    <div class="mcq-options">
+                        <div class="mcq-option" data-correct="true">A. π/2</div>
+                        <div class="mcq-option" data-correct="false">B. π</div>
+                        <div class="mcq-option" data-correct="false">C. 0</div>
+                        <div class="mcq-option" data-correct="false">D. 2π</div>
+                    </div>
+                </div>
+
+                <!-- Unit 2 MCQs -->
+                <div class="unit-mcq-label">Unit 2 Questions</div>
+                <div class="mcq-question">
+                    <p class="question-text">Gradient of a scalar function $\phi(x,y,z)$ is:</p>
+                    <div class="mcq-options">
+                        <div class="mcq-option" data-correct="false">A. $\frac{\partial\phi}{\partial x} +
+                            \frac{\partial\phi}{\partial y} + \frac{\partial\phi}{\partial z}$</div>
+                        <div class="mcq-option" data-correct="true">B. $\frac{\partial\phi}{\partial x}\hat{i} +
+                            \frac{\partial\phi}{\partial y}\hat{j} + \frac{\partial\phi}{\partial z}\hat{k}$ (It is a
+                            Vector)</div>
+                        <div class="mcq-option" data-correct="false">C. $\frac{\partial^2\phi}{\partial x^2} + ...$
+                        </div>
+                        <div class="mcq-option" data-correct="false">D. None</div>
+                    </div>
+                    <div class="mcq-explanation">Appeared in 2024</div>
+                </div>
+
+                <div class="mcq-question">
+                    <p class="question-text">What is the Divergence of a vector field $\vec{F}$?</p>
+                    <div class="mcq-options">
+                        <div class="mcq-option" data-correct="false">A. Rate of rotation</div>
+                        <div class="mcq-option" data-correct="true">B. Rate at which $\vec{F}$ is spreading out or
+                            converging</div>
+                        <div class="mcq-option" data-correct="false">C. Flow along streamline</div>
+                        <div class="mcq-option" data-correct="false">D. None</div>
+                    </div>
+                    <div class="mcq-explanation">Appeared in 2022</div>
+                </div>
+
+                <div class="mcq-question">
+                    <p class="question-text">If the Divergence of a vector field $\vec{F}$ is zero ($\nabla \cdot
+                        \vec{F} =
+                        0$), then $\vec{F}$ is called:</p>
+                    <div class="mcq-options">
+                        <div class="mcq-option" data-correct="true">A. Solenoidal</div>
+                        <div class="mcq-option" data-correct="false">B. Rotational</div>
+                        <div class="mcq-option" data-correct="false">C. Irrotational</div>
+                        <div class="mcq-option" data-correct="false">D. None</div>
+                    </div>
+                    <div class="mcq-explanation">Appeared in 2024, 2022</div>
+                </div>
+
+                <div class="mcq-question">
+                    <p class="question-text">A vector field is Irrotational if:</p>
+                    <div class="mcq-options">
+                        <div class="mcq-option" data-correct="false">A. $\nabla \times \vec{F} \ne 0$</div>
+                        <div class="mcq-option" data-correct="false">B. $\nabla \cdot \vec{F} = 0$</div>
+                        <div class="mcq-option" data-correct="true">C. $\nabla \times \vec{F} = 0$ (Curl is zero)</div>
+                        <div class="mcq-option" data-correct="false">D. None</div>
+                    </div>
+                    <div class="mcq-explanation">Appeared in 2024, 2022</div>
+                </div>
+
+                <div class="mcq-question">
+                    <p class="question-text">The Curl of a vector field represents:</p>
+                    <div class="mcq-options">
+                        <div class="mcq-option" data-correct="false">A. Irrotational field</div>
+                        <div class="mcq-option" data-correct="false">B. Magnetic field</div>
+                        <div class="mcq-option" data-correct="true">C. Rotational field / Rotation</div>
+                        <div class="mcq-option" data-correct="false">D. Laurent field</div>
+                    </div>
+                    <div class="mcq-explanation">Appeared in 2022</div>
+                </div>
+
+                <div class="mcq-question">
+                    <p class="question-text">Directional derivative of $f$ in the direction of unit vector $\hat{u}$ is:
+                    </p>
+                    <div class="mcq-options">
+                        <div class="mcq-option" data-correct="true">A. $\nabla f \cdot \hat{u}$</div>
+                        <div class="mcq-option" data-correct="false">B. $\nabla f$</div>
+                        <div class="mcq-option" data-correct="false">C. $\nabla f \times \hat{u}$</div>
+                        <div class="mcq-option" data-correct="false">D. None</div>
+                    </div>
+                    <div class="mcq-explanation">Appeared in 2024</div>
+                </div>
+
+                <div class="mcq-question">
+                    <p class="question-text">Value of $\nabla \cdot \vec{r}$ (Divergence of position vector $\vec{r} =
+                        x\hat{i} + y\hat{j} + z\hat{k}$) is:</p>
+                    <div class="mcq-options">
+                        <div class="mcq-option" data-correct="false">A. 0</div>
+                        <div class="mcq-option" data-correct="true">B. 3</div>
+                        <div class="mcq-option" data-correct="false">C. 1</div>
+                        <div class="mcq-option" data-correct="false">D. -3</div>
+                    </div>
+                    <div class="mcq-explanation">Appeared in 2024</div>
+                </div>
+
+                <div class="mcq-question">
+                    <p class="question-text">Divergence of a vector field determines:</p>
+                    <div class="mcq-options">
+                        <div class="mcq-option" data-correct="true">A. Flux expansion/contraction</div>
+                        <div class="mcq-option" data-correct="false">B. Rotation</div>
+                        <div class="mcq-option" data-correct="false">C. Gradient</div>
+                        <div class="mcq-option" data-correct="false">D. None</div>
+                    </div>
+                    <div class="mcq-explanation">Appeared in PYQ</div>
+                </div>
+
+                <!-- Unit 3 MCQs -->
+                <div class="unit-mcq-label">Unit 3 Questions</div>
                 <div class="mcq-question">
                     <p class="question-text">In Fourier series of $f(x)$, coefficients $a_0, a_n, b_n$ are called:</p>
                     <div class="mcq-options">
@@ -699,8 +774,9 @@
                     </div>
                     <div class="mcq-explanation">Appeared in PYQ</div>
                 </div>
-            
-<!-- Unit 4 MCQs --> <div class="unit-mcq-label" >Unit 4 Questions</div>
+
+                <!-- Unit 4 MCQs -->
+                <div class="unit-mcq-label">Unit 4 Questions</div>
                 <div class="mcq-question">
                     <p class="question-text">The order and degree of the differential equation $\frac{d^2y}{dx^2} +
                         x(\frac{dy}{dx})^3 = 0$ are:</p>
@@ -779,8 +855,9 @@
                     </div>
                     <div class="mcq-explanation">Appeared in PYQ</div>
                 </div>
-            
-<!-- Unit 5 MCQs --> <div class="unit-mcq-label" >Unit 5 Questions</div>
+
+                <!-- Unit 5 MCQs -->
+                <div class="unit-mcq-label">Unit 5 Questions</div>
                 <div class="mcq-question">
                     <p class="question-text">Solution of $(D^2 + 5D + 4)y = 0$ is:</p>
                     <div class="mcq-options">
@@ -848,9 +925,9 @@
                     </div>
                     <div class="mcq-explanation">Appeared in 2024</div>
                 </div>
-            
+
             </div>
-            
+
             <div class="mcq-navigation mcq-nav">
                 <button id="prev-btn" class="btn btn-secondary" class="btn btn-secondary">Previous</button>
                 <button id="next-btn" class="btn btn-primary">Next</button>
@@ -881,7 +958,7 @@
         function initializeQuestions() {
             questions = [];
             const container = document.querySelector('.mcq-container.active');
-            if(!container) return;
+            if (!container) return;
 
             const qEls = container.querySelectorAll('.mcq-question');
             qEls.forEach(q => {
@@ -891,19 +968,19 @@
                     o.style.pointerEvents = 'auto';
                 });
                 const exp = q.querySelector('.mcq-explanation');
-                if(exp) exp.classList.remove('show');
+                if (exp) exp.classList.remove('show');
 
                 // Inject Button if missing
                 let btn = q.querySelector('.submit-answer-btn');
-                if(!btn) {
+                if (!btn) {
                     btn = document.createElement('button');
                     btn.className = 'submit-answer-btn';
                     btn.textContent = 'Submit Answer';
                     btn.classList.add('btn', 'btn-primary'); // Add new classes
                     btn.style.marginTop = '15px';
                     // q.appendChild(btn); // Append at end
-                     if(exp) q.insertBefore(btn, exp);
-                     else q.appendChild(btn);
+                    if (exp) q.insertBefore(btn, exp);
+                    else q.appendChild(btn);
                 }
                 btn.disabled = false;
                 btn.textContent = 'Submit Answer';
@@ -912,7 +989,7 @@
             });
 
             const totalQ = document.getElementById('total-questions');
-            if(totalQ) totalQ.textContent = questions.length;
+            if (totalQ) totalQ.textContent = questions.length;
             updateScore(0);
             showQuestion();
         }
@@ -920,58 +997,58 @@
         function updateScore(s) {
             score = s;
             const scoreEl = document.getElementById('score');
-            if(scoreEl) scoreEl.textContent = score;
+            if (scoreEl) scoreEl.textContent = score;
         }
 
         function showQuestion() {
             questions.forEach(q => q.element.style.display = 'none');
-            if(questions[currentQuestion]) {
+            if (questions[currentQuestion]) {
                 questions[currentQuestion].element.style.display = 'block';
             }
-            
+
             const prev = document.getElementById('prev-btn');
             const next = document.getElementById('next-btn');
-            if(prev) prev.disabled = currentQuestion === 0;
-            if(next) next.innerHTML = currentQuestion === questions.length - 1 ? 'Finish' : 'Next <i class="fas fa-arrow-right"></i>';
+            if (prev) prev.disabled = currentQuestion === 0;
+            if (next) next.innerHTML = currentQuestion === questions.length - 1 ? 'Finish' : 'Next <i class="fas fa-arrow-right"></i>';
         }
 
         document.addEventListener('click', (e) => {
-            if(e.target.classList.contains('mcq-option')) {
+            if (e.target.classList.contains('mcq-option')) {
                 const qDiv = e.target.closest('.mcq-question');
                 const btn = qDiv.querySelector('.submit-answer-btn');
-                if(btn && btn.disabled) return;
-                
+                if (btn && btn.disabled) return;
+
                 qDiv.querySelectorAll('.mcq-option').forEach(o => o.classList.remove('selected'));
                 e.target.classList.add('selected');
             }
 
-            if(e.target.classList.contains('submit-answer-btn')) {
+            if (e.target.classList.contains('submit-answer-btn')) {
                 const btn = e.target;
                 const qDiv = btn.closest('.mcq-question');
                 const selected = qDiv.querySelector('.mcq-option.selected');
-                
-                if(!selected) { alert('Please select an option.'); return; }
+
+                if (!selected) { alert('Please select an option.'); return; }
 
                 const isCorrect = selected.dataset.correct === 'true';
-                if(isCorrect) updateScore(score + 1);
+                if (isCorrect) updateScore(score + 1);
 
                 qDiv.querySelectorAll('.mcq-option').forEach(o => {
                     o.style.pointerEvents = 'none';
-                    if(o.dataset.correct === 'true') o.classList.add('correct');
-                    else if(o.classList.contains('selected')) o.classList.add('incorrect');
+                    if (o.dataset.correct === 'true') o.classList.add('correct');
+                    else if (o.classList.contains('selected')) o.classList.add('incorrect');
                     o.classList.remove('selected');
                 });
-                
+
                 const exp = qDiv.querySelector('.mcq-explanation');
-                if(exp) exp.classList.add('show');
-                
+                if (exp) exp.classList.add('show');
+
                 btn.disabled = true;
                 btn.textContent = isCorrect ? 'Correct!' : 'Incorrect';
             }
         });
 
         document.getElementById('next-btn')?.addEventListener('click', () => {
-            if(currentQuestion < questions.length - 1) {
+            if (currentQuestion < questions.length - 1) {
                 currentQuestion++;
                 showQuestion();
             } else {
@@ -980,7 +1057,7 @@
         });
 
         document.getElementById('prev-btn')?.addEventListener('click', () => {
-            if(currentQuestion > 0) {
+            if (currentQuestion > 0) {
                 currentQuestion--;
                 showQuestion();
             }
@@ -992,7 +1069,7 @@
             initializeQuestions();
             // Open first note block
             const firstHeader = document.querySelector('.subject-header');
-            if(firstHeader) firstHeader.click();
+            if (firstHeader) firstHeader.click();
         });
 
         // Smooth scroll
@@ -1012,11 +1089,7 @@
         });
     </script>
     <script src="theme.js"></script>
+    <script src="hamburger-menu.js"></script>
 </body>
+
 </html>
-
-
-
-
-
-

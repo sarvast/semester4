@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -13,9 +14,14 @@
     <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
     <style>
         /* Specific overrides for Subject Pages */
-        .subject-notes-wrapper { display: flex; flex-direction: column; gap: 1.5rem; }
+        .subject-notes-wrapper {
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
+        }
     </style>
 </head>
+
 <body>
 
     <header>
@@ -23,8 +29,8 @@
             <div class="logo">
                 <i class="fas fa-graduation-cap"></i>
                 <div>
-                   <span >Sarvasva Notes</span>
-                   <span class="logo-subtitle">Software Engineering</span>
+                    <span>Sarvasva Notes</span>
+                    <span class="logo-subtitle">Software Engineering</span>
                 </div>
             </div>
             <nav>
@@ -48,364 +54,436 @@
             <div class="hero-actions">
                 <a href="#notes" class="btn btn-primary"><i class="fas fa-book"></i> Notes</a>
                 <a href="#mcq" class="btn btn-secondary"><i class="fas fa-question-circle"></i> MCQs</a>
-                <a href="question-papers.html?subject=software-engineering" class="btn" class="btn btn-accent"><i class="fas fa-stopwatch"></i> PYQ Test</a>
+                <a href="question-papers.html?subject=software-engineering" class="btn" class="btn btn-accent"><i
+                        class="fas fa-stopwatch"></i> PYQ Test</a>
             </div>
         </section>
 
         <!-- Notes Section -->
         <h2 class="section-title" id="notes"><i class="fas fa-book-open"></i> Complete Notes (Unit 1-5)</h2>
         <div class="subject-notes-wrapper">
-            
-                <div class="unit-block">
-                    <div class="card-unit-header">
-                        <h3>Unit 1 Content</h3>
-                    </div>
-                    <div class="unit-content-pad">
-                        <div class="subject-container">
-            <div class="subject-header">
-                <h3><i class="fas fa-code"></i> Software Engineering (BCA-4003)</h3>
-                <i class="fas fa-chevron-down"></i>
-            </div>
-            <div class="subject-content">
-                <div class="topic">
-                    <h4>1. Definition and Basics</h4>
-                    <div class="topic-content">
-                        <p><strong>Software Engineering (IEEE):</strong> "The application of a systematic, disciplined,
-                            quantifiable approach to the development, operation, and maintenance of software." <span
-                                class="pyq-badge">PYQ 2024</span></p>
-                        <p><strong>Father of SE:</strong> Watts S. Humphrey <span class="pyq-badge">PYQ 2024</span></p>
-                        <p><strong>Software Characteristics:</strong> <span class="pyq-badge">PYQ 2022</span></p>
-                        <ul>
-                            <li>Logic-based, not physical (does not wear out).</li>
-                            <li>Engineered/Developed, not manufactured.</li>
-                            <li>Custom-built usually, unlike hardware components.</li>
-                            <li>Complex and invisible.</li>
-                        </ul>
-                    </div>
-                </div>
 
-                <div class="topic">
-                    <h4>2. Generic View of Software Engineering</h4>
-                    <div class="topic-content">
-                        <p>Software Engineering is a <strong>Layered Technology</strong>:</p>
-                        <ul>
-                            <li><strong>Tools:</strong> Automated support (CASE tools).</li>
-                            <li><strong>Methods:</strong> Technical "how-to" for building software (Analysis, Design,
-                                Coding, Testing).</li>
-                            <li><strong>Process:</strong> The glue that holds layers together; defines the framework
-                                (Activities, Actions, Tasks).</li>
-                            <li><strong>Quality Focus:</strong> The foundation; bedrock that supports software
-                                engineering.</li>
-                        </ul>
-                        <p><strong>Process Framework Activities:</strong> Communication, Planning, Modeling,
-                            Construction, Deployment.</p>
-                    </div>
+            <div class="unit-block">
+                <div class="card-unit-header">
+                    <h3>Unit 1 Content</h3>
                 </div>
+                <div class="unit-content-pad">
+                    <div class="subject-container">
+                        <div class="subject-header">
+                            <h3><i class="fas fa-code"></i> Software Engineering (BCA-4003)</h3>
+                            <i class="fas fa-chevron-down"></i>
+                        </div>
+                        <div class="subject-content">
+                            <div class="topic">
+                                <h4>1. Definition and Basics</h4>
+                                <div class="topic-content">
+                                    <p><strong>Software Engineering (IEEE):</strong> "The application of a systematic,
+                                        disciplined,
+                                        quantifiable approach to the development, operation, and maintenance of
+                                        software." <span class="pyq-badge">PYQ 2024</span></p>
+                                    <p><strong>Father of SE:</strong> Watts S. Humphrey <span class="pyq-badge">PYQ
+                                            2024</span></p>
+                                    <p><strong>Software Characteristics:</strong> <span class="pyq-badge">PYQ
+                                            2022</span></p>
+                                    <ul>
+                                        <li>Logic-based, not physical (does not wear out).</li>
+                                        <li>Engineered/Developed, not manufactured.</li>
+                                        <li>Custom-built usually, unlike hardware components.</li>
+                                        <li>Complex and invisible.</li>
+                                    </ul>
+                                </div>
+                            </div>
 
-                <div class="topic">
-                    <h4>3. Software Paradigms (SDLC Models) <span class="pyq-badge">PYQ 2022, 2024</span></h4>
-                    <div class="topic-content">
-                        <p><strong>Waterfall Model (Linear Sequential):</strong> Classic Lifecycle. <span
-                                class="pyq-badge">PYQ 2024</span> <br>Req → Design → Coding → Testing → Maintenance.
-                            Simple but rigid.</p>
-                        <p><strong>Incremental Model:</strong> Delivers software in small increments/versions.</p>
-                        <p><strong>RAD (Rapid Application Development):</strong> High-speed adaptation of linear model
-                            using component-based construction.</p>
-                        <p><strong>Spiral Model (Evolutionary):</strong> Risk-driven. Couples iterative nature of
-                            prototyping with systematic aspects of waterfall.
-                            <br><em>Phases:</em> Planning, Risk Analysis, Engineering, Evaluation. Best for high-risk,
-                            large projects. <span class="pyq-badge">PYQ 2022</span>
-                        </p>
-                        <p><strong>Prototype Model:</strong> Building a mock-up to clarify requirements early.
-                            <br><em>Use when:</em> Requirements are unclear. User gets a "feel" of the system before
-                            actual development.
-                        </p>
-                        <p><strong>Agile Model:</strong> Iterative, incremental, flexible. Focus on customer
-                            satisfaction and responding to change (e.g., Scrum, XP).</p>
-                        <div class="note-block-gray">
-                            <strong>Real World Comparison: When to use what?</strong>
-                            <ul>
-                                <li><strong>Waterfall (Construction):</strong> Building a bridge. You cannot change the design halfway through pouring concrete. Requirements must be fixed first.</li>
-                                <li><strong>Agile (Startup App):</strong> Developing Instagram. You release a basic version (MVP), get user feedback, and keep adding features (Stories, Reels) over time.</li>
-                                <li><strong>Spiral (NASA):</strong> Mars Rover software. High risk of failure implies billions lost. Risk analysis is critical at every step.</li>
-                            </ul>
+                            <div class="topic">
+                                <h4>2. Generic View of Software Engineering</h4>
+                                <div class="topic-content">
+                                    <p>Software Engineering is a <strong>Layered Technology</strong>:</p>
+                                    <ul>
+                                        <li><strong>Tools:</strong> Automated support (CASE tools).</li>
+                                        <li><strong>Methods:</strong> Technical "how-to" for building software
+                                            (Analysis, Design,
+                                            Coding, Testing).</li>
+                                        <li><strong>Process:</strong> The glue that holds layers together; defines the
+                                            framework
+                                            (Activities, Actions, Tasks).</li>
+                                        <li><strong>Quality Focus:</strong> The foundation; bedrock that supports
+                                            software
+                                            engineering.</li>
+                                    </ul>
+                                    <p><strong>Process Framework Activities:</strong> Communication, Planning, Modeling,
+                                        Construction, Deployment.</p>
+                                </div>
+                            </div>
+
+                            <div class="topic">
+                                <h4>3. Software Paradigms (SDLC Models) <span class="pyq-badge">PYQ 2022, 2024</span>
+                                </h4>
+                                <div class="topic-content">
+                                    <p><strong>Waterfall Model (Linear Sequential):</strong> Classic Lifecycle. <span
+                                            class="pyq-badge">PYQ 2024</span> <br>Req → Design → Coding → Testing →
+                                        Maintenance.
+                                        Simple but rigid.</p>
+                                    <p><strong>Incremental Model:</strong> Delivers software in small
+                                        increments/versions.</p>
+                                    <p><strong>RAD (Rapid Application Development):</strong> High-speed adaptation of
+                                        linear model
+                                        using component-based construction.</p>
+                                    <p><strong>Spiral Model (Evolutionary):</strong> Risk-driven. Couples iterative
+                                        nature of
+                                        prototyping with systematic aspects of waterfall.
+                                        <br><em>Phases:</em> Planning, Risk Analysis, Engineering, Evaluation. Best for
+                                        high-risk,
+                                        large projects. <span class="pyq-badge">PYQ 2022</span>
+                                    </p>
+                                    <p><strong>Prototype Model:</strong> Building a mock-up to clarify requirements
+                                        early.
+                                        <br><em>Use when:</em> Requirements are unclear. User gets a "feel" of the
+                                        system before
+                                        actual development.
+                                    </p>
+                                    <p><strong>Agile Model:</strong> Iterative, incremental, flexible. Focus on customer
+                                        satisfaction and responding to change (e.g., Scrum, XP).</p>
+                                    <div class="note-block-gray">
+                                        <strong>Real World Comparison: When to use what?</strong>
+                                        <ul>
+                                            <li><strong>Waterfall (Construction):</strong> Building a bridge. You cannot
+                                                change the design halfway through pouring concrete. Requirements must be
+                                                fixed first.</li>
+                                            <li><strong>Agile (Startup App):</strong> Developing Instagram. You release
+                                                a basic version (MVP), get user feedback, and keep adding features
+                                                (Stories, Reels) over time.</li>
+                                            <li><strong>Spiral (NASA):</strong> Mars Rover software. High risk of
+                                                failure implies billions lost. Risk analysis is critical at every step.
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
-        </div>
-                    </div>
-                </div>
 
-                <div class="unit-block">
-                    <div class="card-unit-header">
-                        <h3>Unit 2 Content</h3>
-                    </div>
-                    <div class="unit-content-pad">
-                        <div class="subject-container">
-            <div class="subject-header">
-                <h3><i class="fas fa-code"></i> Software Engineering</h3>
-                <i class="fas fa-chevron-down"></i>
-            </div>
-            <div class="subject-content">
-                <div class="topic">
-                    <h4>Requirements Analysis</h4>
-                    <div class="topic-content">
-                        <ul>
-                            <li><strong>Requirement Engineering Process:</strong> Feasibility Study, Elicitation,
-                                Analysis, and Validation.
-                                <ul>
-                                    <li><strong>Feasibility Study Types:</strong>
-                                        <ul>
-                                            <li><em>Technical:</em> Can we build it with current tech?</li>
-                                            <li><em>Economic:</em> Is it cost-effective? (Cost-Benefit Analysis).</li>
-                                            <li><em>Operational:</em> Will it work in the organization's environment?</li>
-                                        </ul>
-                                    </li>
-                                </ul>
-                            </li>
-                            <li><strong>SRS (Software Requirement Specification):</strong> A document describing
-                                <strong>what</strong> the system should do. <span class="pyq-badge">PYQ 2022</span>
-                                <ul>    
-                                    <li>Characteristics: <strong>Correctness, Unambiguous, Consistent,
-                                            Verifiable</strong>.</li>
-                                </ul>
-                            </li>
-                            <li><strong>Data Flow Diagrams (DFD):</strong> Used to model the flow of data.
-                                <ul>
-                                    <li><strong>Level-0 DFD (Context Diagram):</strong> Represents the entire system as
-                                        a single bubble interacting with external entities.</li>
-                                </ul>
-                            </li>
-                        </ul>
-                    </div>
+            <div class="unit-block">
+                <div class="card-unit-header">
+                    <h3>Unit 2 Content</h3>
                 </div>
-
-                <div class="topic">
-                    <h4>Cost Estimation Models (COCOMO)</h4>
-                    <div class="topic-content">
-                        <ul>
-                            <li><strong>COCOMO (Constructive Cost Model):</strong> Proposed by Barry Boehm to estimate
-                                project cost and effort.</li>
-                            <li><strong>Basic COCOMO:</strong> Estimates effort based on program size (KLOC - Kilo Lines
-                                of Code). Formula: $Effort = a(KLOC)^b$.</li>
-                            <li><strong>Modes of Development:</strong>
-                                <ul>
-                                    <li><strong>Organic:</strong> Small, simple projects, experienced team.</li>
-                                    <li><strong>Semidetached:</strong> Intermediate size and complexity.</li>
-                                    <li><strong>Embedded:</strong> Complex, hardware constraints.</li>
-                                </ul>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-
-                <div class="topic">
-                    <h4>Design Concepts: Coupling & Cohesion <span class="pyq-badge">PYQ 2022, 2024</span></h4>
-                    <div class="topic-content">
-                        <p><strong>Goal:</strong> High Cohesion and Low Coupling.</p>
-                        <ul>
-                            <li><strong>Cohesion (Internal strength):</strong> Measure of how related functions are
-                                within a module. <span class="pyq-badge">PYQ 2022</span>
-                                <ul>
-                                    <li><em>Functional Cohesion (Best):</em> Module performs one specific task.</li>
-                                    <li><em>Coincidental Cohesion (Worst):</em> Unrelated tasks grouped together.</li>
-                                </ul>
-                            </li>
-                            <li><strong>Coupling (Inter-dependency):</strong> Measure of dependency between two modules.
-                                <ul>
-                                    <li><em>Data Coupling (Best):</em> Modules share data via parameters.</li>
-                                    <li><em>Content Coupling (Worst):</em> One module modifies internal data of another.
-                                    </li>
-                                </ul>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-        </div>
-                    </div>
-                </div>
-
-                <div class="unit-block">
-                    <div class="card-unit-header">
-                        <h3>Unit 3 Content</h3>
-                    </div>
-                    <div class="unit-content-pad">
-                        <div class="subject-container">
-            <div class="subject-header">
-                <h3><i class="fas fa-code"></i> Software Engineering</h3>
-                <i class="fas fa-chevron-down"></i>
-            </div>
-            <div class="subject-content">
-                <div class="topic">
-                    <h4>Software Design Concepts</h4>
-                    <div class="topic-content">
-                        <ul>
-                            <li><strong>Software Design:</strong> Transforming SRS into a structure for implementation.
-                            </li>
-                            <li><strong>Modularity:</strong> Dividing software into distinct, addressable components.
-                            </li>
-                            <li><strong>Coupling:</strong> Interdependence between modules. <strong>Goal: Low
-                                    Coupling.</strong>
-                                <ul>
-                                    <li>Worst: Content Coupling. Best: Data Coupling.</li>
-                                </ul>
-                            </li>
-                            <li><strong>Cohesion:</strong> Strength of relationship within a module. <strong>Goal: High
-                                    Cohesion.</strong>
-                                <ul>
-                                    <li>Best: Functional Cohesion. Worst: Coincidental Cohesion.</li>
-                                </ul>
-                            </li>
-                            <li><strong>Structure Chart:</strong> Graphical representation of system modules and
-                                hierarchy.</li>
-                            <li><strong>Design Strategies:</strong>
-                                <ul>
-                                    <li><em>Top-Down:</em> Start with main component, decompose into sub-components.
-                                        (Stepwise Refinement).</li>
-                                    <li><em>Bottom-Up:</em> Start with lowest level components (utility functions),
-                                        combine to form higher levels.</li>
-                                </ul>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-        </div>
-                    </div>
-                </div>
-
-                <div class="unit-block">
-                    <div class="card-unit-header">
-                        <h3>Unit 4 Content</h3>
-                    </div>
-                    <div class="unit-content-pad">
-                        <div class="subject-container">
-            <div class="subject-header">
-                <h3><i class="fas fa-code"></i> Software Engineering</h3>
-                <i class="fas fa-chevron-down"></i>
-            </div>
-            <div class="subject-content">
-                <div class="topic">
-                    <h4>Implementation & Coding Standards</h4>
-                    <div class="topic-content">
-                        <ul>
-                            <li><strong>Implementation:</strong> Translating design into source code.</li>
-                            <li><strong>Good Coding Style:</strong> Focuses on readability, maintainability, and
-                                modularity.</li>
-                            <li><strong>Structured Programming:</strong> Uses sequence, selection, and iteration. Avoids
-                                `GOTO`.</li>
-                            <li><strong>Validation vs. Verification:</strong>
-                                <ul>
-                                    <li><strong>Validation:</strong> "Are we building the <em>right</em> product?" (User
-                                        needs).</li>
-                                    <li><strong>Verification:</strong> "Are we building the product <em>right</em>?"
-                                        (Specs).</li>
-                                </ul>
-                            </li>
-                            <!-- Gap Analysis Addition -->
-                            <li><strong>Software Testing Strategies:</strong>
-                                <ul>
-                                    <li><strong>White Box (Glass Box):</strong> Testing internal logic/code (e.g., Basis
-                                        Path). Developer does this. <span class="pyq-badge">PYQ 2024</span>
-                                        <ul>
-                                            <li><em>Cyclomatic Complexity:</em> Metric $V(G) = E - N + 2P$. Measures
-                                                logical complexity.</li>
-                                        </ul>
-                                    </li>
-                                    <li><strong>Black Box:</strong> Testing functionality (Input/Output) without knowing
-                                        code (e.g., Boundary Value Analysis). <span class="pyq-badge">PYQ 2024</span></li>
-                                    <li><strong>Levels:</strong>
-                                        <ul>
-                                            <li><em>Unit Testing:</em> Testing individual components (drivers/stubs). <span class="pyq-badge">PYQ</span></li>
-                                            <li><em>Integration Testing:</em> Testing interfaces between modules.
-                                                <ul>
-                                                    <li>Strategies: Top-down (Depth/Breadth-first), Bottom-up, Sandwich (Hybrid).</li>
-                                                </ul>
-                                            </li>
-                                            <li><em>System Testing:</em> Testing the full system against requirements (Recovery, Security, Stress).</li>
-                                            <li><em>Acceptance Testing:</em> Validation by the client.</li>
-                                        </ul>
-                                    </li>
-                                </ul>
-                                <div class="note-block-teal">
-                                    <strong>Analogy (The Car Test):</strong>
+                <div class="unit-content-pad">
+                    <div class="subject-container">
+                        <div class="subject-header">
+                            <h3><i class="fas fa-code"></i> Software Engineering</h3>
+                            <i class="fas fa-chevron-down"></i>
+                        </div>
+                        <div class="subject-content">
+                            <div class="topic">
+                                <h4>Requirements Analysis</h4>
+                                <div class="topic-content">
                                     <ul>
-                                        <li><strong>White Box:</strong> The mechanic opens the hood, checks the engine wiring, and ensures the pistons fire correctly. (Requires internal knowledge).</li>
-                                        <li><strong>Black Box:</strong> The driver sits in the seat, turns the key, and checks if the car starts and drives. (Doesn't care <em>how</em> the engine works, just that it works).</li>
+                                        <li><strong>Requirement Engineering Process:</strong> Feasibility Study,
+                                            Elicitation,
+                                            Analysis, and Validation.
+                                            <ul>
+                                                <li><strong>Feasibility Study Types:</strong>
+                                                    <ul>
+                                                        <li><em>Technical:</em> Can we build it with current tech?</li>
+                                                        <li><em>Economic:</em> Is it cost-effective? (Cost-Benefit
+                                                            Analysis).</li>
+                                                        <li><em>Operational:</em> Will it work in the organization's
+                                                            environment?</li>
+                                                    </ul>
+                                                </li>
+                                            </ul>
+                                        </li>
+                                        <li><strong>SRS (Software Requirement Specification):</strong> A document
+                                            describing
+                                            <strong>what</strong> the system should do. <span class="pyq-badge">PYQ
+                                                2022</span>
+                                            <ul>
+                                                <li>Characteristics: <strong>Correctness, Unambiguous, Consistent,
+                                                        Verifiable</strong>.</li>
+                                            </ul>
+                                        </li>
+                                        <li><strong>Data Flow Diagrams (DFD):</strong> Used to model the flow of data.
+                                            <ul>
+                                                <li><strong>Level-0 DFD (Context Diagram):</strong> Represents the
+                                                    entire system as
+                                                    a single bubble interacting with external entities.</li>
+                                            </ul>
+                                        </li>
                                     </ul>
                                 </div>
-                            </li>
-                            <li><strong>Software Configuration Management (SCM):</strong> Managing changes (Version
-                                Control) and controlling software evolution.</li>
-                            <li><strong>Testing Types:</strong>
-                                <ul>
-                                    <li><em>Alpha Testing:</em> By internal team in developer environment.</li>
-                                    <li><em>Beta Testing:</em> By real users in real environment.</li>
-                                    <li><em>Regression Testing:</em> Re-testing after modification to ensure no new
-                                        bugs.</li>
-                                </ul>
-                            </li>
-                            <li><strong>Software Maintenance:</strong>
-                                <ul>
-                                    <li><em>Corrective:</em> Fixing bugs.</li>
-                                    <li><em>Adaptive:</em> Moving to new platform/OS.</li>
-                                    <li><em>Perfective:</em> Adding new features.</li>
-                                    <li><em>Preventive:</em> Future-proofing (Refactoring).</li>
-                                </ul>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-        </div>
-                    </div>
-                </div>
+                            </div>
 
-                <div class="unit-block">
-                    <div class="card-unit-header">
-                        <h3>Unit 5 Content</h3>
-                    </div>
-                    <div class="unit-content-pad">
-                        <div class="subject-container">
-            <div class="subject-header">
-                <h3><i class="fas fa-tools"></i> Software Engineering</h3>
-                <i class="fas fa-chevron-down"></i>
-            </div>
-            <div class="subject-content">
-                <div class="topic">
-                    <h4>Software Maintenance</h4>
-                    <div class="topic-content">
-                        <ul>
-                            <li><strong>Definition:</strong> Modifying software after delivery.</li>
-                            <li><strong>Types of Maintenance:</strong> <span class="pyq-badge">PYQ 2022, 2024</span>
-                                <ol>
-                                    <li><strong>Corrective:</strong> Fixing bugs/errors (e.g., login failure).</li>
-                                    <li><strong>Adaptive:</strong> Adjusting to new environments (OS/Hardware changes).
-                                    </li>
-                                    <li><strong>Perfective:</strong> Adding features/improving performance (User
-                                        requests).</li>
-                                    <li><strong>Preventive:</strong> Refactoring to prevent future issues.</li>
-                                </ol>
-                            </li>
-                            <li><strong>Reverse Engineering:</strong> Analyzing a system to identify components and
-                                create a higher-level representation.</li>
-                            <li><strong>CASE Tools (Computer-Aided Software Engineering):</strong>
-                                <ul>
-                                    <li><em>Upper CASE:</em> Support Planning/Analysis/Design phases (e.g., Diagram
-                                        tools).</li>
-                                    <li><em>Lower CASE:</em> Support Coding/Testing/Maintenance (e.g., Compilers,
-                                        Debuggers).</li>
-                                </ul>
-                            </li>
-                        </ul>
+                            <div class="topic">
+                                <h4>Cost Estimation Models (COCOMO)</h4>
+                                <div class="topic-content">
+                                    <ul>
+                                        <li><strong>COCOMO (Constructive Cost Model):</strong> Proposed by Barry Boehm
+                                            to estimate
+                                            project cost and effort.</li>
+                                        <li><strong>Basic COCOMO:</strong> Estimates effort based on program size (KLOC
+                                            - Kilo Lines
+                                            of Code). Formula: $Effort = a(KLOC)^b$.</li>
+                                        <li><strong>Modes of Development:</strong>
+                                            <ul>
+                                                <li><strong>Organic:</strong> Small, simple projects, experienced team.
+                                                </li>
+                                                <li><strong>Semidetached:</strong> Intermediate size and complexity.
+                                                </li>
+                                                <li><strong>Embedded:</strong> Complex, hardware constraints.</li>
+                                            </ul>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+
+                            <div class="topic">
+                                <h4>Design Concepts: Coupling & Cohesion <span class="pyq-badge">PYQ 2022, 2024</span>
+                                </h4>
+                                <div class="topic-content">
+                                    <p><strong>Goal:</strong> High Cohesion and Low Coupling.</p>
+                                    <ul>
+                                        <li><strong>Cohesion (Internal strength):</strong> Measure of how related
+                                            functions are
+                                            within a module. <span class="pyq-badge">PYQ 2022</span>
+                                            <ul>
+                                                <li><em>Functional Cohesion (Best):</em> Module performs one specific
+                                                    task.</li>
+                                                <li><em>Coincidental Cohesion (Worst):</em> Unrelated tasks grouped
+                                                    together.</li>
+                                            </ul>
+                                        </li>
+                                        <li><strong>Coupling (Inter-dependency):</strong> Measure of dependency between
+                                            two modules.
+                                            <ul>
+                                                <li><em>Data Coupling (Best):</em> Modules share data via parameters.
+                                                </li>
+                                                <li><em>Content Coupling (Worst):</em> One module modifies internal data
+                                                    of another.
+                                                </li>
+                                            </ul>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
-        </div>
+
+            <div class="unit-block">
+                <div class="card-unit-header">
+                    <h3>Unit 3 Content</h3>
+                </div>
+                <div class="unit-content-pad">
+                    <div class="subject-container">
+                        <div class="subject-header">
+                            <h3><i class="fas fa-code"></i> Software Engineering</h3>
+                            <i class="fas fa-chevron-down"></i>
+                        </div>
+                        <div class="subject-content">
+                            <div class="topic">
+                                <h4>Software Design Concepts</h4>
+                                <div class="topic-content">
+                                    <ul>
+                                        <li><strong>Software Design:</strong> Transforming SRS into a structure for
+                                            implementation.
+                                        </li>
+                                        <li><strong>Modularity:</strong> Dividing software into distinct, addressable
+                                            components.
+                                        </li>
+                                        <li><strong>Coupling:</strong> Interdependence between modules. <strong>Goal:
+                                                Low
+                                                Coupling.</strong>
+                                            <ul>
+                                                <li>Worst: Content Coupling. Best: Data Coupling.</li>
+                                            </ul>
+                                        </li>
+                                        <li><strong>Cohesion:</strong> Strength of relationship within a module.
+                                            <strong>Goal: High
+                                                Cohesion.</strong>
+                                            <ul>
+                                                <li>Best: Functional Cohesion. Worst: Coincidental Cohesion.</li>
+                                            </ul>
+                                        </li>
+                                        <li><strong>Structure Chart:</strong> Graphical representation of system modules
+                                            and
+                                            hierarchy.</li>
+                                        <li><strong>Design Strategies:</strong>
+                                            <ul>
+                                                <li><em>Top-Down:</em> Start with main component, decompose into
+                                                    sub-components.
+                                                    (Stepwise Refinement).</li>
+                                                <li><em>Bottom-Up:</em> Start with lowest level components (utility
+                                                    functions),
+                                                    combine to form higher levels.</li>
+                                            </ul>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
+            </div>
+
+            <div class="unit-block">
+                <div class="card-unit-header">
+                    <h3>Unit 4 Content</h3>
+                </div>
+                <div class="unit-content-pad">
+                    <div class="subject-container">
+                        <div class="subject-header">
+                            <h3><i class="fas fa-code"></i> Software Engineering</h3>
+                            <i class="fas fa-chevron-down"></i>
+                        </div>
+                        <div class="subject-content">
+                            <div class="topic">
+                                <h4>Implementation & Coding Standards</h4>
+                                <div class="topic-content">
+                                    <ul>
+                                        <li><strong>Implementation:</strong> Translating design into source code.</li>
+                                        <li><strong>Good Coding Style:</strong> Focuses on readability, maintainability,
+                                            and
+                                            modularity.</li>
+                                        <li><strong>Structured Programming:</strong> Uses sequence, selection, and
+                                            iteration. Avoids
+                                            `GOTO`.</li>
+                                        <li><strong>Validation vs. Verification:</strong>
+                                            <ul>
+                                                <li><strong>Validation:</strong> "Are we building the <em>right</em>
+                                                    product?" (User
+                                                    needs).</li>
+                                                <li><strong>Verification:</strong> "Are we building the product
+                                                    <em>right</em>?"
+                                                    (Specs).</li>
+                                            </ul>
+                                        </li>
+                                        <!-- Gap Analysis Addition -->
+                                        <li><strong>Software Testing Strategies:</strong>
+                                            <ul>
+                                                <li><strong>White Box (Glass Box):</strong> Testing internal logic/code
+                                                    (e.g., Basis
+                                                    Path). Developer does this. <span class="pyq-badge">PYQ 2024</span>
+                                                    <ul>
+                                                        <li><em>Cyclomatic Complexity:</em> Metric $V(G) = E - N + 2P$.
+                                                            Measures
+                                                            logical complexity.</li>
+                                                    </ul>
+                                                </li>
+                                                <li><strong>Black Box:</strong> Testing functionality (Input/Output)
+                                                    without knowing
+                                                    code (e.g., Boundary Value Analysis). <span class="pyq-badge">PYQ
+                                                        2024</span></li>
+                                                <li><strong>Levels:</strong>
+                                                    <ul>
+                                                        <li><em>Unit Testing:</em> Testing individual components
+                                                            (drivers/stubs). <span class="pyq-badge">PYQ</span></li>
+                                                        <li><em>Integration Testing:</em> Testing interfaces between
+                                                            modules.
+                                                            <ul>
+                                                                <li>Strategies: Top-down (Depth/Breadth-first),
+                                                                    Bottom-up, Sandwich (Hybrid).</li>
+                                                            </ul>
+                                                        </li>
+                                                        <li><em>System Testing:</em> Testing the full system against
+                                                            requirements (Recovery, Security, Stress).</li>
+                                                        <li><em>Acceptance Testing:</em> Validation by the client.</li>
+                                                    </ul>
+                                                </li>
+                                            </ul>
+                                            <div class="note-block-teal">
+                                                <strong>Analogy (The Car Test):</strong>
+                                                <ul>
+                                                    <li><strong>White Box:</strong> The mechanic opens the hood, checks
+                                                        the engine wiring, and ensures the pistons fire correctly.
+                                                        (Requires internal knowledge).</li>
+                                                    <li><strong>Black Box:</strong> The driver sits in the seat, turns
+                                                        the key, and checks if the car starts and drives. (Doesn't care
+                                                        <em>how</em> the engine works, just that it works).</li>
+                                                </ul>
+                                            </div>
+                                        </li>
+                                        <li><strong>Software Configuration Management (SCM):</strong> Managing changes
+                                            (Version
+                                            Control) and controlling software evolution.</li>
+                                        <li><strong>Testing Types:</strong>
+                                            <ul>
+                                                <li><em>Alpha Testing:</em> By internal team in developer environment.
+                                                </li>
+                                                <li><em>Beta Testing:</em> By real users in real environment.</li>
+                                                <li><em>Regression Testing:</em> Re-testing after modification to ensure
+                                                    no new
+                                                    bugs.</li>
+                                            </ul>
+                                        </li>
+                                        <li><strong>Software Maintenance:</strong>
+                                            <ul>
+                                                <li><em>Corrective:</em> Fixing bugs.</li>
+                                                <li><em>Adaptive:</em> Moving to new platform/OS.</li>
+                                                <li><em>Perfective:</em> Adding new features.</li>
+                                                <li><em>Preventive:</em> Future-proofing (Refactoring).</li>
+                                            </ul>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="unit-block">
+                <div class="card-unit-header">
+                    <h3>Unit 5 Content</h3>
+                </div>
+                <div class="unit-content-pad">
+                    <div class="subject-container">
+                        <div class="subject-header">
+                            <h3><i class="fas fa-tools"></i> Software Engineering</h3>
+                            <i class="fas fa-chevron-down"></i>
+                        </div>
+                        <div class="subject-content">
+                            <div class="topic">
+                                <h4>Software Maintenance</h4>
+                                <div class="topic-content">
+                                    <ul>
+                                        <li><strong>Definition:</strong> Modifying software after delivery.</li>
+                                        <li><strong>Types of Maintenance:</strong> <span class="pyq-badge">PYQ 2022,
+                                                2024</span>
+                                            <ol>
+                                                <li><strong>Corrective:</strong> Fixing bugs/errors (e.g., login
+                                                    failure).</li>
+                                                <li><strong>Adaptive:</strong> Adjusting to new environments
+                                                    (OS/Hardware changes).
+                                                </li>
+                                                <li><strong>Perfective:</strong> Adding features/improving performance
+                                                    (User
+                                                    requests).</li>
+                                                <li><strong>Preventive:</strong> Refactoring to prevent future issues.
+                                                </li>
+                                            </ol>
+                                        </li>
+                                        <li><strong>Reverse Engineering:</strong> Analyzing a system to identify
+                                            components and
+                                            create a higher-level representation.</li>
+                                        <li><strong>CASE Tools (Computer-Aided Software Engineering):</strong>
+                                            <ul>
+                                                <li><em>Upper CASE:</em> Support Planning/Analysis/Design phases (e.g.,
+                                                    Diagram
+                                                    tools).</li>
+                                                <li><em>Lower CASE:</em> Support Coding/Testing/Maintenance (e.g.,
+                                                    Compilers,
+                                                    Debuggers).</li>
+                                            </ul>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
 
         <!-- MCQ Section -->
@@ -415,311 +493,317 @@
                 <p>Score: <span id="score">0</span> / <span id="total-questions">0</span></p>
                 <button id="reset-btn" class="btn btn-outline-primary btn-sm mt-2">Reset Quiz</button>
             </div>
-            
+
             <div class="mcq-container active">
-                <!-- Unit 1 MCQs --> <div class="unit-mcq-label" >Unit 1 Questions</div>
-                    <!-- MCQ 1 -->
-                    <div class="mcq-question">
-                        <div class="mcq-question-number">
-                            <span>1. What is Software Engineering?</span>
-                            <span class="pyq-label">PYQ 2024</span>
-                        </div>
-                        <div class="mcq-options">
-                            <div class="mcq-option" data-correct="true">A. Systematic, disciplined, quantifiable
-                                approach to development</div>
-                            <div class="mcq-option" data-correct="false">B. Only writing code</div>
-                            <div class="mcq-option" data-correct="false">C. Manufacturing of hardware</div>
-                            <div class="mcq-option" data-correct="false">D. Just testing software</div>
-                        </div>
+                <!-- Unit 1 MCQs -->
+                <div class="unit-mcq-label">Unit 1 Questions</div>
+                <!-- MCQ 1 -->
+                <div class="mcq-question">
+                    <div class="mcq-question-number">
+                        <span>1. What is Software Engineering?</span>
+                        <span class="pyq-label">PYQ 2024</span>
                     </div>
-
-                    <!-- MCQ 2 -->
-                    <div class="mcq-question">
-                        <div class="mcq-question-number">
-                            <span>2. Who is the father of software engineering?</span>
-                            <span class="pyq-label">PYQ 2024</span>
-                        </div>
-                        <div class="mcq-options">
-                            <div class="mcq-option" data-correct="true">A. Watts S. Humphrey</div>
-                            <div class="mcq-option" data-correct="false">B. Alan Turing</div>
-                            <div class="mcq-option" data-correct="false">C. Charles Babbage</div>
-                            <div class="mcq-option" data-correct="false">D. Bill Gates</div>
-                        </div>
-                        <div class="mcq-explanation">
-                            <strong>Explanation:</strong> Watts S. Humphrey is often called the "father of software
-                            engineering" for his contributions to software process improvement.
-                        </div>
+                    <div class="mcq-options">
+                        <div class="mcq-option" data-correct="true">A. Systematic, disciplined, quantifiable
+                            approach to development</div>
+                        <div class="mcq-option" data-correct="false">B. Only writing code</div>
+                        <div class="mcq-option" data-correct="false">C. Manufacturing of hardware</div>
+                        <div class="mcq-option" data-correct="false">D. Just testing software</div>
                     </div>
-
-                    <!-- MCQ 3 -->
-                    <div class="mcq-question">
-                        <div class="mcq-question-number">
-                            <span>3. Software is:</span>
-                            <span class="pyq-label">PYQ 2022</span>
-                        </div>
-                        <div class="mcq-options">
-                            <div class="mcq-option" data-correct="true">A. Developed or engineered</div>
-                            <div class="mcq-option" data-correct="false">B. Manufactured in the classical sense</div>
-                            <div class="mcq-option" data-correct="false">C. Always correct</div>
-                            <div class="mcq-option" data-correct="false">D. Physical entity</div>
-                        </div>
-                    </div>
-
-                    <!-- MCQ 4 -->
-                    <div class="mcq-question">
-                        <div class="mcq-question-number">
-                            <span>4. Which model is also known as the "Classic Life Cycle" or "Linear Sequential
-                                Model"?</span>
-                            <span class="pyq-label">PYQ 2024</span>
-                        </div>
-                        <div class="mcq-options">
-                            <div class="mcq-option" data-correct="true">A. Waterfall Model</div>
-                            <div class="mcq-option" data-correct="false">B. Spiral Model</div>
-                            <div class="mcq-option" data-correct="false">C. Prototype Model</div>
-                            <div class="mcq-option" data-correct="false">D. RAD Model</div>
-                        </div>
-                    </div>
-
-                    <!-- MCQ 5 -->
-                    <div class="mcq-question">
-                        <div class="mcq-question-number">
-                            <span>5. Which model is best for high-risk projects?</span>
-                            <span class="pyq-label">PYQ 2022</span>
-                        </div>
-                        <div class="mcq-options">
-                            <div class="mcq-option" data-correct="false">A. Waterfall</div>
-                            <div class="mcq-option" data-correct="true">B. Spiral Model</div>
-                            <div class="mcq-option" data-correct="false">C. Incremental Model</div>
-                            <div class="mcq-option" data-correct="false">D. V-Model</div>
-                        </div>
-                        <div class="mcq-explanation">
-                            <strong>Explanation:</strong> Spiral model is risk-driven and iterative, making it suitable
-                            for high-risk projects where requirements may change.
-                        </div>
-                    </div>
-
-                    <!-- MCQ 6 -->
-                    <div class="mcq-question">
-                        <div class="mcq-question-number">
-                            <span>6. Which phase is NOT available in the software life cycle?</span>
-                            <span class="pyq-label">PYQ 2022</span>
-                        </div>
-                        <div class="mcq-options">
-                            <div class="mcq-option" data-correct="false">A. Coding</div>
-                            <div class="mcq-option" data-correct="false">B. Testing</div>
-                            <div class="mcq-option" data-correct="false">C. Maintenance</div>
-                            <div class="mcq-option" data-correct="true">D. Abstraction</div>
-                        </div>
-                    </div>
-
-                    <!-- MCQ 7 -->
-                    <div class="mcq-question">
-                        <div class="mcq-question-number">
-                            <span>7. Feasibility study is conducted in which phase?</span>
-                            <span class="pyq-label">PYQ 2024</span>
-                        </div>
-                        <div class="mcq-options">
-                            <div class="mcq-option" data-correct="true">A. Planning / Analysis</div>
-                            <div class="mcq-option" data-correct="false">B. Design</div>
-                            <div class="mcq-option" data-correct="false">C. Testing</div>
-                            <div class="mcq-option" data-correct="false">D. Maintenance</div>
-                        </div>
-                    </div>
-
-                    <!-- MCQ 8 -->
-                    <div class="mcq-question">
-                        <div class="mcq-question-number">
-                            <span>8. SDLC stands for?</span>
-                            <span class="pyq-label">PYQ 2023</span>
-                        </div>
-                        <div class="mcq-options">
-                            <div class="mcq-option" data-correct="true">A. Software Development Life Cycle</div>
-                            <div class="mcq-option" data-correct="false">B. System Design Life Cycle</div>
-                            <div class="mcq-option" data-correct="false">C. Software Design Life Cycle</div>
-                            <div class="mcq-option" data-correct="false">D. System Development Life Cycle</div>
-                        </div>
-                    </div>
-
-                    <!-- MCQ 9 -->
-                    <div class="mcq-question">
-                        <div class="mcq-question-number">
-                            <span>9. White box testing is also known as?</span>
-                            <span class="pyq-label">PYQ 2024</span>
-                        </div>
-                        <div class="mcq-options">
-                            <div class="mcq-option" data-correct="true">A. Structural Testing</div>
-                            <div class="mcq-option" data-correct="false">B. Functional Testing</div>
-                            <div class="mcq-option" data-correct="false">C. Grey Box Testing</div>
-                            <div class="mcq-option" data-correct="false">D. None of the above</div>
-                        </div>
-                    </div>
-
-                    <!-- MCQ 10 -->
-                    <div class="mcq-question">
-                        <div class="mcq-question-number">
-                            <span>10. SRS stands for?</span>
-                            <span class="pyq-label">PYQ 2022</span>
-                        </div>
-                        <div class="mcq-options">
-                            <div class="mcq-option" data-correct="true">A. Software Requirements Specification</div>
-                            <div class="mcq-option" data-correct="false">B. System Requirements Specification</div>
-                            <div class="mcq-option" data-correct="false">C. Software Recruitment System</div>
-                            <div class="mcq-option" data-correct="false">D. System Reference Sheet</div>
-                        </div>
-                    </div>
-                
-<!-- Unit 2 MCQs --> <div class="unit-mcq-label" >Unit 2 Questions</div>
-            <div class="mcq-question">
-                <p class="question-text">Which of the following is NOT a requirement elicitation technique?</p>
-                <div class="mcq-options">
-                    <div class="mcq-option" data-correct="false">A. Interviews</div>
-                    <div class="mcq-option" data-correct="false">B. Brainstorming</div>
-                    <div class="mcq-option" data-correct="true">C. Flowcharting (This is a design/modeling tool)</div>
-                    <div class="mcq-option" data-correct="false">D. Observation</div>
                 </div>
-                <div class="mcq-explanation">Appeared in 2024</div>
-            </div>
 
-            <div class="mcq-question">
-                <p class="question-text">Which document is created by the system analyst after the requirements are
-                    collected from various stakeholders?</p>
-                <div class="mcq-options">
-                    <div class="mcq-option" data-correct="true">A. Software Requirement Specification (SRS)</div>
-                    <div class="mcq-option" data-correct="false">B. Software Requirement Validation</div>
-                    <div class="mcq-option" data-correct="false">C. Feasibility Study</div>
-                    <div class="mcq-option" data-correct="false">D. Testing Document</div>
+                <!-- MCQ 2 -->
+                <div class="mcq-question">
+                    <div class="mcq-question-number">
+                        <span>2. Who is the father of software engineering?</span>
+                        <span class="pyq-label">PYQ 2024</span>
+                    </div>
+                    <div class="mcq-options">
+                        <div class="mcq-option" data-correct="true">A. Watts S. Humphrey</div>
+                        <div class="mcq-option" data-correct="false">B. Alan Turing</div>
+                        <div class="mcq-option" data-correct="false">C. Charles Babbage</div>
+                        <div class="mcq-option" data-correct="false">D. Bill Gates</div>
+                    </div>
+                    <div class="mcq-explanation">
+                        <strong>Explanation:</strong> Watts S. Humphrey is often called the "father of software
+                        engineering" for his contributions to software process improvement.
+                    </div>
+                </div>
+
+                <!-- MCQ 3 -->
+                <div class="mcq-question">
+                    <div class="mcq-question-number">
+                        <span>3. Software is:</span>
+                        <span class="pyq-label">PYQ 2022</span>
+                    </div>
+                    <div class="mcq-options">
+                        <div class="mcq-option" data-correct="true">A. Developed or engineered</div>
+                        <div class="mcq-option" data-correct="false">B. Manufactured in the classical sense</div>
+                        <div class="mcq-option" data-correct="false">C. Always correct</div>
+                        <div class="mcq-option" data-correct="false">D. Physical entity</div>
+                    </div>
+                </div>
+
+                <!-- MCQ 4 -->
+                <div class="mcq-question">
+                    <div class="mcq-question-number">
+                        <span>4. Which model is also known as the "Classic Life Cycle" or "Linear Sequential
+                            Model"?</span>
+                        <span class="pyq-label">PYQ 2024</span>
+                    </div>
+                    <div class="mcq-options">
+                        <div class="mcq-option" data-correct="true">A. Waterfall Model</div>
+                        <div class="mcq-option" data-correct="false">B. Spiral Model</div>
+                        <div class="mcq-option" data-correct="false">C. Prototype Model</div>
+                        <div class="mcq-option" data-correct="false">D. RAD Model</div>
+                    </div>
+                </div>
+
+                <!-- MCQ 5 -->
+                <div class="mcq-question">
+                    <div class="mcq-question-number">
+                        <span>5. Which model is best for high-risk projects?</span>
+                        <span class="pyq-label">PYQ 2022</span>
+                    </div>
+                    <div class="mcq-options">
+                        <div class="mcq-option" data-correct="false">A. Waterfall</div>
+                        <div class="mcq-option" data-correct="true">B. Spiral Model</div>
+                        <div class="mcq-option" data-correct="false">C. Incremental Model</div>
+                        <div class="mcq-option" data-correct="false">D. V-Model</div>
+                    </div>
+                    <div class="mcq-explanation">
+                        <strong>Explanation:</strong> Spiral model is risk-driven and iterative, making it suitable
+                        for high-risk projects where requirements may change.
+                    </div>
+                </div>
+
+                <!-- MCQ 6 -->
+                <div class="mcq-question">
+                    <div class="mcq-question-number">
+                        <span>6. Which phase is NOT available in the software life cycle?</span>
+                        <span class="pyq-label">PYQ 2022</span>
+                    </div>
+                    <div class="mcq-options">
+                        <div class="mcq-option" data-correct="false">A. Coding</div>
+                        <div class="mcq-option" data-correct="false">B. Testing</div>
+                        <div class="mcq-option" data-correct="false">C. Maintenance</div>
+                        <div class="mcq-option" data-correct="true">D. Abstraction</div>
+                    </div>
+                </div>
+
+                <!-- MCQ 7 -->
+                <div class="mcq-question">
+                    <div class="mcq-question-number">
+                        <span>7. Feasibility study is conducted in which phase?</span>
+                        <span class="pyq-label">PYQ 2024</span>
+                    </div>
+                    <div class="mcq-options">
+                        <div class="mcq-option" data-correct="true">A. Planning / Analysis</div>
+                        <div class="mcq-option" data-correct="false">B. Design</div>
+                        <div class="mcq-option" data-correct="false">C. Testing</div>
+                        <div class="mcq-option" data-correct="false">D. Maintenance</div>
+                    </div>
+                </div>
+
+                <!-- MCQ 8 -->
+                <div class="mcq-question">
+                    <div class="mcq-question-number">
+                        <span>8. SDLC stands for?</span>
+                        <span class="pyq-label">PYQ 2023</span>
+                    </div>
+                    <div class="mcq-options">
+                        <div class="mcq-option" data-correct="true">A. Software Development Life Cycle</div>
+                        <div class="mcq-option" data-correct="false">B. System Design Life Cycle</div>
+                        <div class="mcq-option" data-correct="false">C. Software Design Life Cycle</div>
+                        <div class="mcq-option" data-correct="false">D. System Development Life Cycle</div>
+                    </div>
+                </div>
+
+                <!-- MCQ 9 -->
+                <div class="mcq-question">
+                    <div class="mcq-question-number">
+                        <span>9. White box testing is also known as?</span>
+                        <span class="pyq-label">PYQ 2024</span>
+                    </div>
+                    <div class="mcq-options">
+                        <div class="mcq-option" data-correct="true">A. Structural Testing</div>
+                        <div class="mcq-option" data-correct="false">B. Functional Testing</div>
+                        <div class="mcq-option" data-correct="false">C. Grey Box Testing</div>
+                        <div class="mcq-option" data-correct="false">D. None of the above</div>
+                    </div>
+                </div>
+
+                <!-- MCQ 10 -->
+                <div class="mcq-question">
+                    <div class="mcq-question-number">
+                        <span>10. SRS stands for?</span>
+                        <span class="pyq-label">PYQ 2022</span>
+                    </div>
+                    <div class="mcq-options">
+                        <div class="mcq-option" data-correct="true">A. Software Requirements Specification</div>
+                        <div class="mcq-option" data-correct="false">B. System Requirements Specification</div>
+                        <div class="mcq-option" data-correct="false">C. Software Recruitment System</div>
+                        <div class="mcq-option" data-correct="false">D. System Reference Sheet</div>
+                    </div>
+                </div>
+
+                <!-- Unit 2 MCQs -->
+                <div class="unit-mcq-label">Unit 2 Questions</div>
+                <div class="mcq-question">
+                    <p class="question-text">Which of the following is NOT a requirement elicitation technique?</p>
+                    <div class="mcq-options">
+                        <div class="mcq-option" data-correct="false">A. Interviews</div>
+                        <div class="mcq-option" data-correct="false">B. Brainstorming</div>
+                        <div class="mcq-option" data-correct="true">C. Flowcharting (This is a design/modeling tool)
+                        </div>
+                        <div class="mcq-option" data-correct="false">D. Observation</div>
+                    </div>
+                    <div class="mcq-explanation">Appeared in 2024</div>
+                </div>
+
+                <div class="mcq-question">
+                    <p class="question-text">Which document is created by the system analyst after the requirements are
+                        collected from various stakeholders?</p>
+                    <div class="mcq-options">
+                        <div class="mcq-option" data-correct="true">A. Software Requirement Specification (SRS)</div>
+                        <div class="mcq-option" data-correct="false">B. Software Requirement Validation</div>
+                        <div class="mcq-option" data-correct="false">C. Feasibility Study</div>
+                        <div class="mcq-option" data-correct="false">D. Testing Document</div>
+                    </div>
+                    <div class="mcq-explanation">Appeared in 2022</div>
+                </div>
+
+                <div class="mcq-question">
+                    <p class="question-text">Which one is NOT a characteristic of a good SRS?</p>
+                    <div class="mcq-options">
+                        <div class="mcq-option" data-correct="false">A. Correct</div>
+                        <div class="mcq-option" data-correct="false">B. Complete</div>
+                        <div class="mcq-option" data-correct="false">C. Consistent</div>
+                        <div class="mcq-option" data-correct="true">D. Brief (It should be detailed...)</div>
+                    </div>
+                    <div class="mcq-explanation">Appeared in 2022</div>
+                </div>
+
+                <div class="mcq-question">
+                    <p class="question-text">Feasibility study is the first step in which phase?</p>
+                    <div class="mcq-options">
+                        <div class="mcq-option" data-correct="true">A. Analysis / Planning</div>
+                        <div class="mcq-option" data-correct="false">B. Design</div>
+                        <div class="mcq-option" data-correct="false">C. Coding</div>
+                        <div class="mcq-option" data-correct="false">D. Testing</div>
+                    </div>
+                    <div class="mcq-explanation">Appeared in 2022</div>
+                </div>
+
+                <div class="mcq-question">
+                    <p class="question-text">Which type of DFD concentrates on the system process and flow of data in
+                        the
+                        system?</p>
+                    <div class="mcq-options">
+                        <div class="mcq-option" data-correct="true">A. Logical DFD</div>
+                        <div class="mcq-option" data-correct="false">B. Physical DFD</div>
+                        <div class="mcq-option" data-correct="false">C. Flowchart DFD</div>
+                        <div class="mcq-option" data-correct="false">D. System DFD</div>
+                    </div>
+                    <div class="mcq-explanation">Appeared in 2022</div>
+                </div>
+
+                <div class="mcq-question">
+                    <p class="question-text">Context Diagram explains:</p>
+                    <div class="mcq-options">
+                        <div class="mcq-option" data-correct="true">A. The overview of the system (Level-0 DFD)</div>
+                        <div class="mcq-option" data-correct="false">B. The internal view of the system</div>
+                        <div class="mcq-option" data-correct="false">C. The entities of the system</div>
+                        <div class="mcq-option" data-correct="false">D. None of the above</div>
+                    </div>
+                    <div class="mcq-explanation">Appeared in 2022</div>
                 </div>
                 <div class="mcq-explanation">Appeared in 2022</div>
-            </div>
 
-            <div class="mcq-question">
-                <p class="question-text">Which one is NOT a characteristic of a good SRS?</p>
-                <div class="mcq-options">
-                    <div class="mcq-option" data-correct="false">A. Correct</div>
-                    <div class="mcq-option" data-correct="false">B. Complete</div>
-                    <div class="mcq-option" data-correct="false">C. Consistent</div>
-                    <div class="mcq-option" data-correct="true">D. Brief (It should be detailed...)</div>
+                <!-- Unit 3 MCQs -->
+                <div class="unit-mcq-label">Unit 3 Questions</div>
+                <div class="mcq-question">
+                    <p class="question-text">The relationship of data elements in a module is called (or
+                        intra-dependability):</p>
+                    <div class="mcq-options">
+                        <div class="mcq-option" data-correct="false">A. Coupling</div>
+                        <div class="mcq-option" data-correct="false">B. Modularity</div>
+                        <div class="mcq-option" data-correct="true">C. Cohesion</div>
+                        <div class="mcq-option" data-correct="false">D. None of the above</div>
+                    </div>
+                    <div class="mcq-explanation">Appeared in: 2022, 2023</div>
                 </div>
-                <div class="mcq-explanation">Appeared in 2022</div>
-            </div>
 
-            <div class="mcq-question">
-                <p class="question-text">Feasibility study is the first step in which phase?</p>
-                <div class="mcq-options">
-                    <div class="mcq-option" data-correct="true">A. Analysis / Planning</div>
-                    <div class="mcq-option" data-correct="false">B. Design</div>
-                    <div class="mcq-option" data-correct="false">C. Coding</div>
-                    <div class="mcq-option" data-correct="false">D. Testing</div>
+                <div class="mcq-question">
+                    <p class="question-text">The extent to which different modules are dependent upon each other is
+                        called?</p>
+                    <div class="mcq-options">
+                        <div class="mcq-option" data-correct="false">A. Cohesion</div>
+                        <div class="mcq-option" data-correct="true">B. Coupling</div>
+                        <div class="mcq-option" data-correct="false">C. Modularity</div>
+                        <div class="mcq-option" data-correct="false">D. Stability</div>
+                    </div>
+                    <div class="mcq-explanation">Appeared in: 2022, 2024</div>
                 </div>
-                <div class="mcq-explanation">Appeared in 2022</div>
-            </div>
 
-            <div class="mcq-question">
-                <p class="question-text">Which type of DFD concentrates on the system process and flow of data in the
-                    system?</p>
-                <div class="mcq-options">
-                    <div class="mcq-option" data-correct="true">A. Logical DFD</div>
-                    <div class="mcq-option" data-correct="false">B. Physical DFD</div>
-                    <div class="mcq-option" data-correct="false">C. Flowchart DFD</div>
-                    <div class="mcq-option" data-correct="false">D. System DFD</div>
+                <div class="mcq-question">
+                    <p class="question-text">Which coupling is also known as Global Coupling?</p>
+                    <div class="mcq-options">
+                        <div class="mcq-option" data-correct="false">A. Content coupling</div>
+                        <div class="mcq-option" data-correct="false">B. Stamp coupling</div>
+                        <div class="mcq-option" data-correct="true">C. Common coupling</div>
+                        <div class="mcq-option" data-correct="false">D. Data coupling</div>
+                    </div>
+                    <div class="mcq-explanation">Appeared in: 2022</div>
                 </div>
-                <div class="mcq-explanation">Appeared in 2022</div>
-            </div>
 
-            <div class="mcq-question">
-                <p class="question-text">Context Diagram explains:</p>
-                <div class="mcq-options">
-                    <div class="mcq-option" data-correct="true">A. The overview of the system (Level-0 DFD)</div>
-                    <div class="mcq-option" data-correct="false">B. The internal view of the system</div>
-                    <div class="mcq-option" data-correct="false">C. The entities of the system</div>
-                    <div class="mcq-option" data-correct="false">D. None of the above</div>
+                <div class="mcq-question">
+                    <p class="question-text">Which is the best type of coupling? (Lowest dependency)</p>
+                    <div class="mcq-options">
+                        <div class="mcq-option" data-correct="false">A. Control coupling</div>
+                        <div class="mcq-option" data-correct="true">B. Data coupling</div>
+                        <div class="mcq-option" data-correct="false">C. Content coupling</div>
+                        <div class="mcq-option" data-correct="false">D. Stamp coupling</div>
+                    </div>
+                    <div class="mcq-explanation">Appeared in: 2022</div>
                 </div>
-                <div class="mcq-explanation">Appeared in 2022</div>
-            </div>
-            <div class="mcq-explanation">Appeared in 2022</div>
-        
-<!-- Unit 3 MCQs --> <div class="unit-mcq-label" >Unit 3 Questions</div>
-                    <div class="mcq-question">
-                        <p class="question-text">The relationship of data elements in a module is called (or
-                            intra-dependability):</p>
-                        <div class="mcq-options">
-                            <div class="mcq-option" data-correct="false">A. Coupling</div>
-                            <div class="mcq-option" data-correct="false">B. Modularity</div>
-                            <div class="mcq-option" data-correct="true">C. Cohesion</div>
-                            <div class="mcq-option" data-correct="false">D. None of the above</div>
-                        </div>
-                        <div class="mcq-explanation">Appeared in: 2022, 2023</div>
-                    </div>
 
-                    <div class="mcq-question">
-                        <p class="question-text">The extent to which different modules are dependent upon each other is
-                            called?</p>
-                        <div class="mcq-options">
-                            <div class="mcq-option" data-correct="false">A. Cohesion</div>
-                            <div class="mcq-option" data-correct="true">B. Coupling</div>
-                            <div class="mcq-option" data-correct="false">C. Modularity</div>
-                            <div class="mcq-option" data-correct="false">D. Stability</div>
-                        </div>
-                        <div class="mcq-explanation">Appeared in: 2022, 2024</div>
+                <div class="mcq-question">
+                    <p class="question-text">Which of the following is the highest form of cohesion?</p>
+                    <div class="mcq-options">
+                        <div class="mcq-option" data-correct="false">A. Temporal cohesion</div>
+                        <div class="mcq-option" data-correct="false">B. Procedural cohesion</div>
+                        <div class="mcq-option" data-correct="true">C. Functional cohesion</div>
+                        <div class="mcq-option" data-correct="false">D. Logical cohesion</div>
                     </div>
+                    <div class="mcq-explanation">Appeared in: 2022</div>
+                </div>
 
-                    <div class="mcq-question">
-                        <p class="question-text">Which coupling is also known as Global Coupling?</p>
-                        <div class="mcq-options">
-                            <div class="mcq-option" data-correct="false">A. Content coupling</div>
-                            <div class="mcq-option" data-correct="false">B. Stamp coupling</div>
-                            <div class="mcq-option" data-correct="true">C. Common coupling</div>
-                            <div class="mcq-option" data-correct="false">D. Data coupling</div>
-                        </div>
-                        <div class="mcq-explanation">Appeared in: 2022</div>
+                <div class="mcq-question">
+                    <p class="question-text">Which tool is used for structure design?</p>
+                    <div class="mcq-options">
+                        <div class="mcq-option" data-correct="true">A. Structure chart</div>
+                        <div class="mcq-option" data-correct="false">B. Program flow chart</div>
+                        <div class="mcq-option" data-correct="false">C. Data flow diagram</div>
+                        <div class="mcq-option" data-correct="false">D. Module</div>
                     </div>
+                    <div class="mcq-explanation">Appeared in: 2022, 2024</div>
+                </div>
 
-                    <div class="mcq-question">
-                        <p class="question-text">Which is the best type of coupling? (Lowest dependency)</p>
-                        <div class="mcq-options">
-                            <div class="mcq-option" data-correct="false">A. Control coupling</div>
-                            <div class="mcq-option" data-correct="true">B. Data coupling</div>
-                            <div class="mcq-option" data-correct="false">C. Content coupling</div>
-                            <div class="mcq-option" data-correct="false">D. Stamp coupling</div>
-                        </div>
-                        <div class="mcq-explanation">Appeared in: 2022</div>
+                <div class="mcq-question">
+                    <p class="question-text">The number of modules directly controlled by a given module is known
+                        as:</p>
+                    <div class="mcq-options">
+                        <div class="mcq-option" data-correct="false">A. Fan-in</div>
+                        <div class="mcq-option" data-correct="true">B. Fan-out</div>
+                        <div class="mcq-option" data-correct="false">C. Depth</div>
+                        <div class="mcq-option" data-correct="false">D. Width</div>
                     </div>
+                    <div class="mcq-explanation">Appeared in PYQ</div>
+                </div>
 
-                    <div class="mcq-question">
-                        <p class="question-text">Which of the following is the highest form of cohesion?</p>
-                        <div class="mcq-options">
-                            <div class="mcq-option" data-correct="false">A. Temporal cohesion</div>
-                            <div class="mcq-option" data-correct="false">B. Procedural cohesion</div>
-                            <div class="mcq-option" data-correct="true">C. Functional cohesion</div>
-                            <div class="mcq-option" data-correct="false">D. Logical cohesion</div>
-                        </div>
-                        <div class="mcq-explanation">Appeared in: 2022</div>
-                    </div>
-
-                    <div class="mcq-question">
-                        <p class="question-text">Which tool is used for structure design?</p>
-                        <div class="mcq-options">
-                            <div class="mcq-option" data-correct="true">A. Structure chart</div>
-                            <div class="mcq-option" data-correct="false">B. Program flow chart</div>
-                            <div class="mcq-option" data-correct="false">C. Data flow diagram</div>
-                            <div class="mcq-option" data-correct="false">D. Module</div>
-                        </div>
-                        <div class="mcq-explanation">Appeared in: 2022, 2024</div>
-                    </div>
-
-                    <div class="mcq-question">
-                        <p class="question-text">The number of modules directly controlled by a given module is known
-                            as:</p>
-                        <div class="mcq-options">
-                            <div class="mcq-option" data-correct="false">A. Fan-in</div>
-                            <div class="mcq-option" data-correct="true">B. Fan-out</div>
-                            <div class="mcq-option" data-correct="false">C. Depth</div>
-                            <div class="mcq-option" data-correct="false">D. Width</div>
-                        </div>
-                        <div class="mcq-explanation">Appeared in PYQ</div>
-                    </div>
-                
-<!-- Unit 4 MCQs --> <div class="unit-mcq-label" >Unit 4 Questions</div>
+                <!-- Unit 4 MCQs -->
+                <div class="unit-mcq-label">Unit 4 Questions</div>
                 <div class="mcq-question">
                     <p class="question-text">Which of the following is NOT recommended in good coding style?</p>
                     <div class="mcq-options">
@@ -795,8 +879,9 @@
                     </div>
                     <div class="mcq-explanation">Appeared in PYQ</div>
                 </div>
-            
-<!-- Unit 5 MCQs --> <div class="unit-mcq-label" >Unit 5 Questions</div>
+
+                <!-- Unit 5 MCQs -->
+                <div class="unit-mcq-label">Unit 5 Questions</div>
                 <div class="mcq-question">
                     <p class="question-text">Which maintenance activity deals with changing Software to keep it usable
                         in a changed environment?</p>
@@ -846,9 +931,9 @@
                     </div>
                     <div class="mcq-explanation">Appeared in 2024</div>
                 </div>
-            
+
             </div>
-            
+
             <div class="mcq-navigation mcq-nav">
                 <button id="prev-btn" class="btn btn-secondary" class="btn btn-secondary">Previous</button>
                 <button id="next-btn" class="btn btn-primary">Next</button>
@@ -879,7 +964,7 @@
         function initializeQuestions() {
             questions = [];
             const container = document.querySelector('.mcq-container.active');
-            if(!container) return;
+            if (!container) return;
 
             const qEls = container.querySelectorAll('.mcq-question');
             qEls.forEach(q => {
@@ -889,19 +974,19 @@
                     o.style.pointerEvents = 'auto';
                 });
                 const exp = q.querySelector('.mcq-explanation');
-                if(exp) exp.classList.remove('show');
+                if (exp) exp.classList.remove('show');
 
                 // Inject Button if missing
                 let btn = q.querySelector('.submit-answer-btn');
-                if(!btn) {
+                if (!btn) {
                     btn = document.createElement('button');
                     btn.className = 'submit-answer-btn';
                     btn.textContent = 'Submit Answer';
                     btn.classList.add('btn', 'btn-primary'); // Add new classes
                     btn.style.marginTop = '15px';
                     // q.appendChild(btn); // Append at end
-                     if(exp) q.insertBefore(btn, exp);
-                     else q.appendChild(btn);
+                    if (exp) q.insertBefore(btn, exp);
+                    else q.appendChild(btn);
                 }
                 btn.disabled = false;
                 btn.textContent = 'Submit Answer';
@@ -910,7 +995,7 @@
             });
 
             const totalQ = document.getElementById('total-questions');
-            if(totalQ) totalQ.textContent = questions.length;
+            if (totalQ) totalQ.textContent = questions.length;
             updateScore(0);
             showQuestion();
         }
@@ -918,58 +1003,58 @@
         function updateScore(s) {
             score = s;
             const scoreEl = document.getElementById('score');
-            if(scoreEl) scoreEl.textContent = score;
+            if (scoreEl) scoreEl.textContent = score;
         }
 
         function showQuestion() {
             questions.forEach(q => q.element.style.display = 'none');
-            if(questions[currentQuestion]) {
+            if (questions[currentQuestion]) {
                 questions[currentQuestion].element.style.display = 'block';
             }
-            
+
             const prev = document.getElementById('prev-btn');
             const next = document.getElementById('next-btn');
-            if(prev) prev.disabled = currentQuestion === 0;
-            if(next) next.innerHTML = currentQuestion === questions.length - 1 ? 'Finish' : 'Next <i class="fas fa-arrow-right"></i>';
+            if (prev) prev.disabled = currentQuestion === 0;
+            if (next) next.innerHTML = currentQuestion === questions.length - 1 ? 'Finish' : 'Next <i class="fas fa-arrow-right"></i>';
         }
 
         document.addEventListener('click', (e) => {
-            if(e.target.classList.contains('mcq-option')) {
+            if (e.target.classList.contains('mcq-option')) {
                 const qDiv = e.target.closest('.mcq-question');
                 const btn = qDiv.querySelector('.submit-answer-btn');
-                if(btn && btn.disabled) return;
-                
+                if (btn && btn.disabled) return;
+
                 qDiv.querySelectorAll('.mcq-option').forEach(o => o.classList.remove('selected'));
                 e.target.classList.add('selected');
             }
 
-            if(e.target.classList.contains('submit-answer-btn')) {
+            if (e.target.classList.contains('submit-answer-btn')) {
                 const btn = e.target;
                 const qDiv = btn.closest('.mcq-question');
                 const selected = qDiv.querySelector('.mcq-option.selected');
-                
-                if(!selected) { alert('Please select an option.'); return; }
+
+                if (!selected) { alert('Please select an option.'); return; }
 
                 const isCorrect = selected.dataset.correct === 'true';
-                if(isCorrect) updateScore(score + 1);
+                if (isCorrect) updateScore(score + 1);
 
                 qDiv.querySelectorAll('.mcq-option').forEach(o => {
                     o.style.pointerEvents = 'none';
-                    if(o.dataset.correct === 'true') o.classList.add('correct');
-                    else if(o.classList.contains('selected')) o.classList.add('incorrect');
+                    if (o.dataset.correct === 'true') o.classList.add('correct');
+                    else if (o.classList.contains('selected')) o.classList.add('incorrect');
                     o.classList.remove('selected');
                 });
-                
+
                 const exp = qDiv.querySelector('.mcq-explanation');
-                if(exp) exp.classList.add('show');
-                
+                if (exp) exp.classList.add('show');
+
                 btn.disabled = true;
                 btn.textContent = isCorrect ? 'Correct!' : 'Incorrect';
             }
         });
 
         document.getElementById('next-btn')?.addEventListener('click', () => {
-            if(currentQuestion < questions.length - 1) {
+            if (currentQuestion < questions.length - 1) {
                 currentQuestion++;
                 showQuestion();
             } else {
@@ -978,7 +1063,7 @@
         });
 
         document.getElementById('prev-btn')?.addEventListener('click', () => {
-            if(currentQuestion > 0) {
+            if (currentQuestion > 0) {
                 currentQuestion--;
                 showQuestion();
             }
@@ -990,7 +1075,7 @@
             initializeQuestions();
             // Open first note block
             const firstHeader = document.querySelector('.subject-header');
-            if(firstHeader) firstHeader.click();
+            if (firstHeader) firstHeader.click();
         });
 
         // Smooth scroll
@@ -1010,11 +1095,7 @@
         });
     </script>
     <script src="theme.js"></script>
+    <script src="hamburger-menu.js"></script>
 </body>
+
 </html>
-
-
-
-
-
-

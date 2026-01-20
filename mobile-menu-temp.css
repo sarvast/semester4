@@ -1,0 +1,107 @@
+/* Hamburger Menu for Mobile */
+.hamburger-menu {
+    display: none;
+    background: none;
+    border: none;
+    font-size: 1.5rem;
+    color: var(--text);
+    cursor: pointer;
+    padding: 0.5rem;
+    z-index: 1001;
+}
+
+@media (max-width: 768px) {
+    .hamburger-menu {
+        display: block;
+    }
+
+    nav ul {
+        position: fixed;
+        top: 0;
+        right: -100%;
+        width: 70%;
+        max-width: 300px;
+        height: 100vh;
+        background: #ffffff;
+        flex-direction: column;
+        padding: 4rem 2rem 2rem;
+        box-shadow: -5px 0 20px rgba(0, 0, 0, 0.5);
+        transition: right 0.3s ease;
+        z-index: 1000;
+        overflow-y: auto;
+        border-left: 3px solid #3b82f6;
+    }
+
+    [data-theme="dark"] nav ul {
+        background: #1a1a2e;
+        border-left-color: #60a5fa;
+    }
+
+    nav ul.nav-open {
+        right: 0;
+    }
+
+    nav ul li {
+        margin: 0;
+        padding: 0;
+        border-bottom: none;
+    }
+
+    nav ul li a {
+        display: block;
+        padding: 1rem 0.5rem;
+        font-size: 1.1rem;
+        font-weight: 600;
+        color: var(--text);
+        border-bottom: 1px solid var(--border);
+        transition: all 0.2s ease;
+    }
+
+    nav ul li a:hover,
+    nav ul li a.active {
+        background: var(--accent);
+        color: white;
+        padding-left: 1rem;
+    }
+
+    nav ul li:last-child a {
+        border-bottom: none;
+    }
+}
+
+/* Ensure desktop navigation is not affected */
+@media (min-width: 769px) {
+    .hamburger-menu {
+        display: none !important;
+    }
+
+    nav ul {
+        position: static !important;
+        flex-direction: row !important;
+        width: auto !important;
+        height: auto !important;
+        padding: 0 !important;
+        box-shadow: none !important;
+        border-left: none !important;
+        right: auto !important;
+    }
+
+    nav ul li {
+        margin: 0 !important;
+        padding: 0 !important;
+    }
+
+    nav ul li a {
+        display: inline !important;
+        padding: 0.5rem 1rem !important;
+        font-size: 0.9rem !important;
+        font-weight: 500 !important;
+        border-bottom: none !important;
+        background: none !important;
+    }
+
+    nav ul li a:hover {
+        background: none !important;
+        padding-left: 0.5rem 1rem !important;
+    }
+}

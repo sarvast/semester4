@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -13,7 +14,12 @@
     <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
     <style>
         /* Specific overrides for Subject Pages */
-        .subject-notes-wrapper { display: flex; flex-direction: column; gap: 1.5rem; }
+        .subject-notes-wrapper {
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
+        }
+
         .pyq-badge {
             background-color: #f59e0b;
             color: white;
@@ -27,6 +33,7 @@
         }
     </style>
 </head>
+
 <body>
 
     <header>
@@ -34,8 +41,8 @@
             <div class="logo">
                 <i class="fas fa-graduation-cap"></i>
                 <div>
-                   <span >Sarvasva Notes</span>
-                   <span class="logo-subtitle">Computer Graphics & Animation</span>
+                    <span>Sarvasva Notes</span>
+                    <span class="logo-subtitle">Computer Graphics & Animation</span>
                 </div>
             </div>
             <nav>
@@ -59,556 +66,690 @@
             <div class="hero-actions">
                 <a href="#notes" class="btn btn-primary"><i class="fas fa-book"></i> Notes</a>
                 <a href="#mcq" class="btn btn-secondary"><i class="fas fa-question-circle"></i> MCQs</a>
-                <a href="question-papers.html?subject=computer-graphics" class="btn" class="btn btn-accent"><i class="fas fa-stopwatch"></i> PYQ Test</a>
+                <a href="question-papers.html?subject=computer-graphics" class="btn" class="btn btn-accent"><i
+                        class="fas fa-stopwatch"></i> PYQ Test</a>
             </div>
         </section>
 
         <!-- Notes Section -->
         <h2 class="section-title" id="notes"><i class="fas fa-book-open"></i> Complete Notes (Unit 1-5)</h2>
         <div class="subject-notes-wrapper">
-            
-                <div class="unit-block">
-                    <div class="card-unit-header">
-                        <h3>Unit 1 Content</h3>
-                    </div>
-                    <div class="unit-content-pad">
-                        <div class="subject-container">
-            <div class="subject-header">
-                <h3><i class="fas fa-desktop"></i> Computer Graphics & Animation (BCA-4001)</h3>
-                <i class="fas fa-chevron-down"></i>
-            </div>
-            <div class="subject-content">
-                <div class="topic">
-                    <h4>1. Introduction to Interactive Computer Graphics <span class="pyq-badge">PYQ 2022, 2024</span>
-                    </h4>
-                    <div class="topic-content">
-                        <p><strong>Interactive Computer Graphics:</strong> Involves two-way communication between user
-                            and computer. The user controls the content, structure, and appearance of objects and images
-                            by using input devices (keyboard, mouse, touch). The image is updated on the display in
-                            real-time response to user inputs.</p>
-                        <p><strong>Passive (Non-Interactive) Graphics:</strong> The user has no control over the image.
-                            Example: Watching TV or a standard screensaver.</p>
-                        <p><strong>Conceptual Framework:</strong></p>
-                        <ul>
-                            <li><strong>Application Model:</strong> Represents the data or objects to be displayed.</li>
-                            <li><strong>Application Program:</strong> Creates and manipulates the model based on user
-                                input.</li>
-                            <li><strong>Graphics System:</strong> Intermediary between the application and the display
-                                hardware.</li>
-                        </ul>
-                    </div>
-                </div>
 
-                <div class="topic">
-                    <h4>2. Advantages of Interactive Graphics</h4>
-                    <div class="topic-content">
-                        <ul>
-                            <li><strong>Higher Quality:</strong> Produces precise and high-resolution images.</li>
-                            <li><strong>Better User Interface:</strong> Makes human-computer interaction more natural
-                                (GUIs).</li>
-                            <li><strong>Simulation:</strong> Allows testing of designs and scenarios without physical
-                                prototypes (CAD/Flight Simulators).</li>
-                            <li><strong>Visualization:</strong> Helps visualize complex data (graphs, charts, 3D
-                                models).</li>
-                            <li><strong>Productivity:</strong> Increases design speed and accuracy in engineering and
-                                creative fields.</li>
-                        </ul>
-                    </div>
+            <div class="unit-block">
+                <div class="card-unit-header">
+                    <h3>Unit 1 Content</h3>
                 </div>
-
-                <div class="topic">
-                    <h4>3. Classification of Applications</h4>
-                    <div class="topic-content">
-                        <p>Computer graphics applications can be classified into:</p>
-                        <ol>
-                            <li><strong>Business Graphics:</strong> Bar charts, pie charts for analyzing
-                                financial/statistical data.</li>
-                            <li><strong>CAD (Computer-Aided Design):</strong> Engineering drawings, architectural plans.
-                                <span class="pyq-badge">PYQ 2022</span>
-                            </li>
-                            <li><strong>Entertainment:</strong> Movies, games, animation.</li>
-                            <li><strong>Education & Training:</strong> Models for teaching, flight simulators.</li>
-                            <li><strong>Image Processing:</strong> Modifying existing photos/images (Photoshop, Medical
-                                Imaging like CT Scans).</li>
-                        </ol>
-                    </div>
-                </div>
-
-                <div class="topic">
-                    <h4>4. Hardware & Software Development</h4>
-                    <div class="topic-content">
-                        <p><strong>Hardware:</strong></p>
-                        <ul>
-                            <li><strong>Input Devices:</strong> Mouse, Keyboard, Tablet, Light Pen, Joystick. <span class="pyq-badge">PYQ 2024</span></li>
-                            <li><strong>Output Devices (Display Technologies):</strong>
-                                <ul>
-                                    <li><strong>CRT (Cathode Ray Tube):</strong> Uses electron guns to fire electrons at
-                                        a phosphorescent screen.
-                                        <ul>
-                                            <li><em>Random Scan (Vector):</em> Electron beam directed only to parts of
-                                                screen where picture is drawn.
-                                                <br><strong>Real Life Example:</strong> Old Oscilloscopes used in labs, early Radar displays. Crisp lines but no filled shapes.
-                                            </li>
-                                            <li><em>Raster Scan:</em> Electron beam scans across the screen row by row
-                                                from top to bottom.
-                                                <br><strong>Real Life Example:</strong> Traditional Tube TVs, Modern PC Monitors (LCD/LED work on the same pixel-grid principle).
-                                            </li>
-                                        </ul>
-                                    </li>
-                                    <li><strong>Flat Panel Displays:</strong> Portable and thinner.
-                                        <ul>
-                                            <li><em>LCD (Liquid Crystal Display):</em> Uses liquid crystals to
-                                                block/allow light.</li>
-                                            <li><em>LED / Plasma:</em> Emissive displays with better contrast.</li>
-                                        </ul>
-                                    </li>
-                                    <li><strong>CRT Variants:</strong>
-                                        <ul>
-                                            <li><em>Direct View Storage Tube (DVST):</em> Stores picture information as
-                                                a charge distribution behind the phosphor-coated screen. No refresh
-                                                needed. Issues: No partial erasure, no animation.</li>
-                                            <li><em>Color CRT (Shadow Mask):</em> Uses 3 electron guns (RGB) and a
-                                                shadow mask (metal plate with holes) to light up specific phosphor dots.
-                                            </li>
-                                        </ul>
-                                    </li>
-                                </ul>
-                            </li>
-                            <li><strong>Video Memory (Frame Buffer):</strong> Stores the pixel data (color/intensity) to
-                                be displayed. Depth (bits per pixel) determines color range.</li>
-                            <li><strong>Graphics Processor (GPU):</strong> Dedicated chip for rendering images quickly,
-                                offloading work from CPU.</li>
-                        </ul>
-                        <p><strong>Scan Conversion Algorithms:</strong> <span class="pyq-badge">Important</span></p>
-                        <ul>
-                            <li><strong>DDA (Digital Differential Analyzer):</strong> Uses floating-point arithmetic.
-                                Slower. Cumulative error build-up.</li>
-                            <li><strong>Bresenham’s Line Algorithm:</strong> Uses integer arithmetic
-                                (addition/subtraction). Faster and more accurate. <span class="pyq-badge">PYQ 2022</span></li>
-                            <li><strong>Circle Generation:</strong> Midpoint Circle Algorithm (also uses integer
-                                arithmetic).</li>
-                            <li><strong>Ellipse Generation:</strong> Midpoint Ellipse Algorithm.
-                                <ul>
-                                    <li>Similar to Midpoint Circle but calculates points for an ellipse ($b^2x^2 + a^2y^2 = a^2b^2$).</li>
-                                    <li>Divides the quadrant into two regions based on slope (magnitude > 1 and < 1) and uses different decision parameters for each.</li>
-                                </ul>
-                            </li>
-                        </ul>
-                        <p><strong>Software:</strong></p>
-                        <ul>
-                            <li><strong>GKS (Graphics Kernel System):</strong> First international standard (ISO) for 2D
-                                graphics.</li>
-                            <li><strong>PHIGS:</strong> Programmers' Hierarchical Interactive Graphics System (for 3D
-                                modeling).</li>
-                            <li><strong>OpenGL / DirectX / Vulkan:</strong> Modern APIs for hardware-accelerated
-                                rendering.</li>
-                        </ul>
-                    </div>
-                </div>
-
-                <div class="topic">
-                    <h4>5. Pixel, Resolution, Aspect Ratio <span class="pyq-badge">PYQ 2022, 2023</span></h4>
-                    <div class="topic-content">
-                        <p><strong>Pixel (Picture Element):</strong> The smallest addressable screen element.</p>
-                        <p><strong>Resolution:</strong> Number of pixels (Width × Height). Higher resolution = sharper
-                            image.</p>
-                        <p><strong>Aspect Ratio:</strong> Ratio of image Width to Height (e.g., 4:3, 16:9). <span
-                                class="pyq-badge">PYQ 2022, 2023</span></p>
-                    </div>
-                </div>
-            </div>
-        </div>
-                    </div>
-                </div>
-
-                <div class="unit-block">
-                    <div class="card-unit-header">
-                        <h3>Unit 2 Content</h3>
-                    </div>
-                    <div class="unit-content-pad">
-                        <div class="subject-container">
-            <div class="subject-header">
-                <h3><i class="fas fa-desktop"></i> Computer Graphics & Animation</h3>
-                <i class="fas fa-chevron-down"></i>
-            </div>
-            <div class="subject-content">
-                <div class="topic">
-                    <h4>Scan Converting Lines</h4>
-                    <div class="topic-content">
-                        <ul>
-                            <li><strong>Definition:</strong> The process of converting geometric primitives (like lines)
-                                into pixel coordinates on a raster grid is called scan conversion or rasterization.</li>
-                            <li><strong>Digital Differential Analyzer (DDA) Algorithm:</strong>
-                                <ul>
-                                    <li>A line drawing algorithm based on the equation $y = mx + c$.</li>
-                                    <li>It calculates the next point by adding a step value ($\Delta x$ or $\Delta y$)
-                                        to the current coordinate.</li>
-                                    <li><strong>Disadvantage:</strong> It involves floating-point calculations (rounding
-                                        off), which makes it slower than integer-based algorithms.</li>
-                                </ul>
-                            </li>
-                            <li><strong>Bresenham’s Line Algorithm:</strong>
-                                <ul>
-                                    <li>An accurate and efficient raster line-generating algorithm that uses only
-                                        <strong>integer addition and subtraction</strong>.
-                                    </li>
-                                    <li>It uses a <strong>Decision Parameter ($p_k$)</strong> to determine whether to
-                                        choose the next pixel as $(x_k+1, y_k)$ or $(x_k+1, y_k+1)$.</li>
-                                    <li>If $p_k < 0$, the next point is $(x_{k+1}, y_k)$; otherwise, it is $(x_{k+1},
-                                            y_{k+1})$ (for slope $0 < m < 1$).</li>
-                                </ul>
-                                <div class="note-info-block">
-                                    <strong>Practical Walkthrough:</strong> Drawing line from (9, 18) to (14, 22). 
-                                    <br>$\Delta x=5, \Delta y=4$. Decision Parameter $p_0 = 2\Delta y - \Delta x = 8 - 5 = 3$.
-                                    <br>Since $p_0 > 0$, we choose upper pixel $(10, 19)$ and update $p$. This avoids floating point math entirely!
+                <div class="unit-content-pad">
+                    <div class="subject-container">
+                        <div class="subject-header">
+                            <h3><i class="fas fa-desktop"></i> Computer Graphics & Animation (BCA-4001)</h3>
+                            <i class="fas fa-chevron-down"></i>
+                        </div>
+                        <div class="subject-content">
+                            <div class="topic">
+                                <h4>1. Introduction to Interactive Computer Graphics <span class="pyq-badge">PYQ 2022,
+                                        2024</span>
+                                </h4>
+                                <div class="topic-content">
+                                    <p><strong>Interactive Computer Graphics:</strong> Involves two-way communication
+                                        between user
+                                        and computer. The user controls the content, structure, and appearance of
+                                        objects and images
+                                        by using input devices (keyboard, mouse, touch). The image is updated on the
+                                        display in
+                                        real-time response to user inputs.</p>
+                                    <p><strong>Passive (Non-Interactive) Graphics:</strong> The user has no control over
+                                        the image.
+                                        Example: Watching TV or a standard screensaver.</p>
+                                    <p><strong>Conceptual Framework:</strong></p>
+                                    <ul>
+                                        <li><strong>Application Model:</strong> Represents the data or objects to be
+                                            displayed.</li>
+                                        <li><strong>Application Program:</strong> Creates and manipulates the model
+                                            based on user
+                                            input.</li>
+                                        <li><strong>Graphics System:</strong> Intermediary between the application and
+                                            the display
+                                            hardware.</li>
+                                    </ul>
                                 </div>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
+                            </div>
 
-                <div class="topic">
-                    <h4>Scan Converting Circles & Clipping</h4>
-                    <div class="topic-content">
-                        <ul>
-                            <li><strong>Symmetry:</strong> A circle is highly symmetric (8-way symmetry). If 
-                                <br><strong>Analogy:</strong> Looking through a camera viewfinder. You only see what's inside the rectangular frame; the rest of the world exists but is "clipped" from your photo.
-                            you
-                                calculate one point $(x, y)$, you can determine 7 other points.</li>
-                            <li><strong>Midpoint Circle Algorithm:</strong> Uses a decision parameter to find the
-                                closest pixel to the true circle boundary. It avoids square root calculations.</li>
-                            <li><strong>Clipping:</strong> Definition: The process of determining which parts of an
-                                object are visible (inside a window) and removing the parts that are outside.</li>
-                            <li><strong>Cohen-Sutherland Line Clipping:</strong> Uses a 4-bit region code (TBRL - Top,
-                                Bottom, Right, Left) to identify position relative to the window. <span class="pyq-badge">PYQ 2022</span>
-                                <ul>
-                                    <li>Region Codes: Bit 1 (Left), Bit 2 (Right), Bit 3 (Bottom), Bit 4 (Top).</li>
-                                    <li>Trivial Acceptance: Both endpoints have code 0000.</li>
-                                    <li>Trivial Rejection: Bitwise AND of endpoint codes is not 0000.</li>
-                                </ul>
-                            </li>
-                            <li><strong>Midpoint Subdivision Algorithm:</strong> A divide-and-conquer line clipping
-                                algorithm.
-                                <ul>
-                                    <li>It bisects the line segment until the visible portion is isolated.</li>
-                                    <li>Avoids complex intersection calculations by using simple midpoint formulas ($x_m
-                                        = \frac{x_1+x_2}{2}, y_m = \frac{y_1+y_2}{2}$).</li>
-                                </ul>
-                            </li>
-                            <li><strong>Sutherland-Hodgeman Polygon Clipping:</strong> Algorithms to clip polygons
-                                against the edges of a clipping window. It processes the polygon vertices against each
-                                clip edge (Left, Right, Top, Bottom) sequentially.
-                                <ul>
-                                    <li><em>Input:</em> Vertices of polygon. <em>Output:</em> New set of vertices
-                                        defining clipped polygon.</li>
-                                    <li><em>Rules:</em>
-                                        <ol>
-                                            <li>Both in: Save 2nd vertex.</li>
-                                            <li>In to Out: Save Intersection.</li>
-                                            <li>Out to Out: Save None.</li>
-                                            <li>Out to In: Save Intersection and 2nd vertex.</li>
-                                        </ol>
-                                    </li>
-                                </ul>
-                            </li>
-                            <li><strong>Weiler-Atherton Algorithm:</strong> Used for concave polygons
-                                (Sutherland-Hodgeman fails for concave/re-entrant polygons).</li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-        </div>
-                    </div>
-                </div>
+                            <div class="topic">
+                                <h4>2. Advantages of Interactive Graphics</h4>
+                                <div class="topic-content">
+                                    <ul>
+                                        <li><strong>Higher Quality:</strong> Produces precise and high-resolution
+                                            images.</li>
+                                        <li><strong>Better User Interface:</strong> Makes human-computer interaction
+                                            more natural
+                                            (GUIs).</li>
+                                        <li><strong>Simulation:</strong> Allows testing of designs and scenarios without
+                                            physical
+                                            prototypes (CAD/Flight Simulators).</li>
+                                        <li><strong>Visualization:</strong> Helps visualize complex data (graphs,
+                                            charts, 3D
+                                            models).</li>
+                                        <li><strong>Productivity:</strong> Increases design speed and accuracy in
+                                            engineering and
+                                            creative fields.</li>
+                                    </ul>
+                                </div>
+                            </div>
 
-                <div class="unit-block">
-                    <div class="card-unit-header">
-                        <h3>Unit 3 Content</h3>
-                    </div>
-                    <div class="unit-content-pad">
-                        <div class="subject-container">
-            <div class="subject-header">
-                <h3><i class="fas fa-desktop"></i> Computer Graphics & Animation</h3>
-                <i class="fas fa-chevron-down"></i>
-            </div>
-            <div class="subject-content">
-                <div class="topic">
-                    <h4>Geometrical Transformations (2D)</h4>
-                    <div class="topic-content">
-                        <ul>
-                            <li><strong>Concept:</strong> Methods to modify the shape, size, or position of an object.
-                            </li>
-                            <li><strong>Translation:</strong> Moving an object. Equations: $x' = x + t_x$, $y' = y +
-                                t_y$.
-                                <ul>
-                                    <li>Matrix: $\begin{bmatrix} 1 & 0 & t_x \\ 0 & 1 & t_y \\ 0 & 0 & 1 \end{bmatrix}$
-                                    </li>
-                                </ul>
-                            </li>
-                            <li><strong>Rotation:</strong> Rotating by angle $\theta$. Positive $\theta$ is
-                                Counter-Clockwise (CCW).
-                                <ul>
-                                    <li>Equation: $x' = x \cos\theta - y \sin\theta$, $y' = x \sin\theta + y
-                                        \cos\theta$.</li>
-                                    <li>Matrix: $\begin{bmatrix} \cos\theta & -\sin\theta & 0 \\ \sin\theta & \cos\theta
-                                        & 0 \\ 0 & 0 & 1 \end{bmatrix}$</li>
-                                </ul>
-                            </li>
-                            <li><strong>Scaling:</strong> Changing size coordinates. $x' = x \cdot s_x$, $y' = y \cdot
-                                s_y$. <span class="pyq-badge">PYQ 2022</span>
-                                <ul>
-                                    <li>Matrix: $\begin{bmatrix} s_x & 0 & 0 \\ 0 & s_y & 0 \\ 0 & 0 & 1 \end{bmatrix}$
-                                    </li>
-                                </ul>
-                            </li>
-                            <li><strong>Reflection:</strong> Mirror image about an axis ($x$-axis, $y$-axis, $y=x$).
-                                <ul>
-                                    <li>About X-axis ($y \to -y$): $\begin{bmatrix} 1 & 0 & 0 \\ 0 & -1 & 0 \\ 0 & 0 & 1
-                                        \end{bmatrix}$</li>
-                                    <li>About Y-axis ($x \to -x$): $\begin{bmatrix} -1 & 0 & 0 \\ 0 & 1 & 0 \\ 0 & 0 & 1
-                                        \end{bmatrix}$</li>
-                                    <li>About Line $y=x$ (Swap $x,y$): $\begin{bmatrix} 0 & 1 & 0 \\ 1 & 0 & 0 \\ 0 & 0
-                                        & 1 \end{bmatrix}$</li>
-                                    <li>About Line $y=-x$: $\begin{bmatrix} 0 & -1 & 0 \\ -1 & 0 & 0 \\ 0 & 0 & 1
-                                        \end{bmatrix}$</li>
-                                </ul>
-                            </li>
-                            <li><strong>Shearing:</strong> Slanting the object. X-shear: $x' = x + sh_x \cdot y, y' =
-                                y$.</li>
-                            <li><strong>Homogeneous Coordinates:</strong> Representing 2D points as $(x, y, 1)$ to allow
-                                matrix multiplication for translation.</li>
-                            <li><strong>Composite Transformation:</strong> Sequence of transformations e.g., Rotation
-                                about a pivot point $(x_f, y_f)$:
-                                <ol>
-                                    <li>Translate pivot to origin ($T(-x_f, -y_f)$).</li>
-                                    <li>Rotate about origin ($R(\theta)$).</li>
-                                    <li>Translate back ($T(x_f, y_f)$).</li>
-                                </ol>
-                            </li>
-                            <li><strong>3D Transformations:</strong> Extension to 3D $(x, y, z, 1)$.
-                                <ul>
-                                    <li><em>Rotation:</em> Can happen about X, Y, or Z axis (more complex matrices).
-                                    </li>
-                                </ul>
-                            </li>
-                            <li><strong>Window-to-Viewport Transformation:</strong>
-                                <ul>
-                                    <li><strong>Window:</strong> A world-coordinate area selected for display (What we see).</li>
-                                    <li><strong>Viewport:</strong> An area on a display device to map the window (Where we see it).</li>
-                                    <li><strong>Process:</strong> Maps world coordinates $(x_w, y_w)$ to device coordinates $(x_v, y_v)$.</li>
-                                    <li><strong>Formula:</strong>
-                                        <ul>
-                                            <li>$s_x = \frac{x_{vmax} - x_{vmin}}{x_{wmax} - x_{wmin}}$, $s_y = \frac{y_{vmax} - y_{vmin}}{y_{wmax} - y_{wmin}}$</li>
-                                            <li>$x_v = x_{vmin} + (x_w - x_{wmin}) \cdot s_x$</li>
-                                            <li>$y_v = y_{vmin} + (y_w - y_{wmin}) \cdot s_y$</li>
-                                        </ul>
-                                    </li>
-                                </ul>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-        </div>
-                    </div>
-                </div>
+                            <div class="topic">
+                                <h4>3. Classification of Applications</h4>
+                                <div class="topic-content">
+                                    <p>Computer graphics applications can be classified into:</p>
+                                    <ol>
+                                        <li><strong>Business Graphics:</strong> Bar charts, pie charts for analyzing
+                                            financial/statistical data.</li>
+                                        <li><strong>CAD (Computer-Aided Design):</strong> Engineering drawings,
+                                            architectural plans.
+                                            <span class="pyq-badge">PYQ 2022</span>
+                                        </li>
+                                        <li><strong>Entertainment:</strong> Movies, games, animation.</li>
+                                        <li><strong>Education & Training:</strong> Models for teaching, flight
+                                            simulators.</li>
+                                        <li><strong>Image Processing:</strong> Modifying existing photos/images
+                                            (Photoshop, Medical
+                                            Imaging like CT Scans).</li>
+                                    </ol>
+                                </div>
+                            </div>
 
-                <div class="unit-block">
-                    <div class="card-unit-header">
-                        <h3>Unit 4 Content</h3>
-                    </div>
-                    <div class="unit-content-pad">
-                        <div class="subject-container">
-            <div class="subject-header">
-                <h3><i class="fas fa-desktop"></i> Computer Graphics & Animation</h3>
-                <i class="fas fa-chevron-down"></i>
-            </div>
-            <div class="subject-content">
-                <div class="topic">
-                    <h4>Curves & Surfaces</h4>
-                    <div class="topic-content">
-                        <ul>
-                            <li><strong>Polygon Meshes:</strong> Collection of vertices, edges, and polygons
-                                representing 3D surfaces.</li>
-                            <li><strong>Parametric Representation:</strong> Surfaces defined by parameters $(u, v)$
-                                instead of $y=f(x)$, allowing complex shapes.</li>
-                            <li><strong>Interpolation vs. Approximation:</strong>
-                                <ul>
-                                    <li><strong>Interpolation:</strong> Curve passes <em>through</em> all control
-                                        points.</li>
-                                    <li><strong>Approximation:</strong> Curve is influenced by control points but
-                                        doesn't
-                                        necessarily pass through them (e.g., Bezier, B-Spline).</li>
-                                </ul>
-                            </li>
-                            <li><strong>Bezier Curve:</strong>
-                                <ul>
-                                    <li>Defined by $n+1$ control points. Degree of curve is $n$.</li>
-                                    <li><strong>Properties:</strong>
-                                        <ul>
-                                            <li><strong>Endpoint Interpolation:</strong> Passes through first ($P_0$)
-                                                and last ($P_n$) points.</li>
-                                            <li><strong>Convex Hull:</strong> The curve lies completely within the
-                                                convex hull of its control points.</li>
-                                            <li><strong>Global Control:</strong> Moving any single control point changes
-                                                the entire shape of the curve.</li>
-                                        </ul>
-                                    </li>
-                                </ul>
-                            </li>
-                            <li><strong>B-Spline Curve:</strong>
-                                <ul>
-                                    <li>Generalization of Bezier curves to overcome its limitations.</li>
-                                    <li><strong>Properties:</strong>
-                                        <ul>
-                                            <li><strong>Local Control:</strong> Moving a control point only affects a
-                                                specific segment of the curve.</li>
-                                            <li><strong>Degree Independence:</strong> The degree of the curve is
-                                                independent of the number of control points.</li>
-                                        </ul>
-                                    </li>
-                                </ul>
-                            </li>
-                            <li><strong>Quadric Surfaces:</strong>
-                                <ul>
-                                    <li>Surfaces defined by 2nd-degree equations (e.g., Spheres, Ellipsoids, Torus).</li>
-                                    <li>Equation: $Ax^2 + By^2 + Cz^2 + Dxy + ... = 0$.</li>
-                                    <li><strong>Superquadrics:</strong> Extension of quadrics with additional flexibility using powers to control shape (squareness/roundness). Used in solid modeling.</li>
-                                </ul>
-                            </li>
-                            <li><strong>Continuity:</strong>
-                                <ul>
-                                    <li>$G^0$: Curves touch (Position continuity).</li>
-                                    <li>$G^1$: Same tangent direction (Slope continuity).</li>
-                                    <li>$C^1$: Same tangent direction and magnitude (Parametric continuity).</li>
-                                </ul>
-                            </li>
-                            <li><strong>Comparison:</strong>
-                                <ul>
-                                    <li><em>Bezier:</em> Simple, Global control, Degree depends on points ($n$).</li>
-                                    <li><em>B-Spline:</em> Complex, Local control, Degree independent of points, can
-                                        represent conics.</li>
-                                </ul>
-                            </li>
-                            <!-- Gap Analysis Addition -->
-                            <li><strong>3D Projections:</strong> Converting 3D objects to 2D screen.
-                                <ul>
-                                    <li><strong>Parallel Projection:</strong> Preserves relative proportions (e.g.,
-                                        Orthographic). Good for engineering.</li>
-                                    <li><strong>Perspective Projection:</strong> Objects farther away appear smaller.
-                                        Realistic. Parallel lines meet at a <strong>Vanishing Point</strong>.</li>
-                                </ul>
-                            </li>
-                            <li><strong>Hidden Surface Removal:</strong> Determining visible surfaces.
-                                <ul>
-                                    <li><strong>Back-Face Culling:</strong> Hides polygons facing away.</li>
-                                    <li><strong>Z-Buffer (Depth Buffer):</strong> Pixel-based depth comparison.</li>
-                                </ul>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-        </div>
-                    </div>
-                </div>
+                            <div class="topic">
+                                <h4>4. Hardware & Software Development</h4>
+                                <div class="topic-content">
+                                    <p><strong>Hardware:</strong></p>
+                                    <ul>
+                                        <li><strong>Input Devices:</strong> Mouse, Keyboard, Tablet, Light Pen,
+                                            Joystick. <span class="pyq-badge">PYQ 2024</span></li>
+                                        <li><strong>Output Devices (Display Technologies):</strong>
+                                            <ul>
+                                                <li><strong>CRT (Cathode Ray Tube):</strong> Uses electron guns to fire
+                                                    electrons at
+                                                    a phosphorescent screen.
+                                                    <ul>
+                                                        <li><em>Random Scan (Vector):</em> Electron beam directed only
+                                                            to parts of
+                                                            screen where picture is drawn.
+                                                            <br><strong>Real Life Example:</strong> Old Oscilloscopes
+                                                            used in labs, early Radar displays. Crisp lines but no
+                                                            filled shapes.
+                                                        </li>
+                                                        <li><em>Raster Scan:</em> Electron beam scans across the screen
+                                                            row by row
+                                                            from top to bottom.
+                                                            <br><strong>Real Life Example:</strong> Traditional Tube
+                                                            TVs, Modern PC Monitors (LCD/LED work on the same pixel-grid
+                                                            principle).
+                                                        </li>
+                                                    </ul>
+                                                </li>
+                                                <li><strong>Flat Panel Displays:</strong> Portable and thinner.
+                                                    <ul>
+                                                        <li><em>LCD (Liquid Crystal Display):</em> Uses liquid crystals
+                                                            to
+                                                            block/allow light.</li>
+                                                        <li><em>LED / Plasma:</em> Emissive displays with better
+                                                            contrast.</li>
+                                                    </ul>
+                                                </li>
+                                                <li><strong>CRT Variants:</strong>
+                                                    <ul>
+                                                        <li><em>Direct View Storage Tube (DVST):</em> Stores picture
+                                                            information as
+                                                            a charge distribution behind the phosphor-coated screen. No
+                                                            refresh
+                                                            needed. Issues: No partial erasure, no animation.</li>
+                                                        <li><em>Color CRT (Shadow Mask):</em> Uses 3 electron guns (RGB)
+                                                            and a
+                                                            shadow mask (metal plate with holes) to light up specific
+                                                            phosphor dots.
+                                                        </li>
+                                                    </ul>
+                                                </li>
+                                            </ul>
+                                        </li>
+                                        <li><strong>Video Memory (Frame Buffer):</strong> Stores the pixel data
+                                            (color/intensity) to
+                                            be displayed. Depth (bits per pixel) determines color range.</li>
+                                        <li><strong>Graphics Processor (GPU):</strong> Dedicated chip for rendering
+                                            images quickly,
+                                            offloading work from CPU.</li>
+                                    </ul>
+                                    <p><strong>Scan Conversion Algorithms:</strong> <span
+                                            class="pyq-badge">Important</span></p>
+                                    <ul>
+                                        <li><strong>DDA (Digital Differential Analyzer):</strong> Uses floating-point
+                                            arithmetic.
+                                            Slower. Cumulative error build-up.</li>
+                                        <li><strong>Bresenham’s Line Algorithm:</strong> Uses integer arithmetic
+                                            (addition/subtraction). Faster and more accurate. <span
+                                                class="pyq-badge">PYQ 2022</span></li>
+                                        <li><strong>Circle Generation:</strong> Midpoint Circle Algorithm (also uses
+                                            integer
+                                            arithmetic).</li>
+                                        <li><strong>Ellipse Generation:</strong> Midpoint Ellipse Algorithm.
+                                            <ul>
+                                                <li>Similar to Midpoint Circle but calculates points for an ellipse
+                                                    ($b^2x^2 + a^2y^2 = a^2b^2$).</li>
+                                                <li>Divides the quadrant into two regions based on slope (magnitude > 1
+                                                    and < 1) and uses different decision parameters for each.</li>
+                                            </ul>
+                                        </li>
+                                    </ul>
+                                    <p><strong>Software:</strong></p>
+                                    <ul>
+                                        <li><strong>GKS (Graphics Kernel System):</strong> First international standard
+                                            (ISO) for 2D
+                                            graphics.</li>
+                                        <li><strong>PHIGS:</strong> Programmers' Hierarchical Interactive Graphics
+                                            System (for 3D
+                                            modeling).</li>
+                                        <li><strong>OpenGL / DirectX / Vulkan:</strong> Modern APIs for
+                                            hardware-accelerated
+                                            rendering.</li>
+                                    </ul>
+                                </div>
+                            </div>
 
-                <div class="unit-block">
-                    <div class="card-unit-header">
-                        <h3>Unit 5 Content</h3>
-                    </div>
-                    <div class="unit-content-pad">
-                        <div class="subject-container">
-            <div class="subject-header">
-                <h3><i class="fas fa-film"></i> Computer Graphics & Animation</h3>
-                <i class="fas fa-chevron-down"></i>
-            </div>
-            <div class="subject-content">
-                <div class="topic">
-                    <h4>Computer Animation</h4>
-                    <div class="topic-content">
-                        <ul>
-                            <li><strong>Definition:</strong> Creating fluid motion by displaying a sequence of still
-                                images (frames) quickly.</li>
-                            <li><strong>Frame Rate:</strong> Smooth motion typically requires 24-30 fps.</li>
-                            <li><strong>Key Concepts:</strong>
-                                <ul>
-                                    <li><strong>Keyframing:</strong> Defining start and end states; computer
-                                        interpolates intermediates.</li>
-                                    <li><strong>Tweening (In-betweening):</strong> Generating intermediate frames
-                                        between keyframes.</li>
-                                </ul>
-                            </li>
-                            <li><strong>Morphing:</strong> Transforming one image into another. Steps:
-                                <strong>Warping</strong> (Shape distortion) & <strong>Cross-dissolving</strong> (Color
-                                fading).
-                            </li>
-                            <li><strong>Motion Specifications:</strong>
-                                <ul>
-                                    <li><strong>Direct Motion:</strong> Explicitly setting rotation/translation values.
-                                    </li>
-                                    <li><strong>Goal-Directed:</strong> Defining the final state (e.g., "Walk to X").
-                                    </li>
-                                </ul>
-                            </li>
-                            <li><strong>3D Animation Process:</strong> Modeling $\to$ Layout/Animation $\to$ Rendering.
-                            </li>
-                            <li><strong>Animation Types:</strong>
-                                <ul>
-                                    <li><strong>Frame-by-Frame (Cel Animation):</strong> Traditional hand-drawn frames.</li>
-                                    <li><strong>Keyframing:</strong> Computer generates frames between start/end points.</li>
-                                    <li><strong>Procedural:</strong> Motion ruled by laws of physics/algorithms (particles).</li>
-                                    <li><strong>Morphing:</strong> Smooth transformation between two shapes.</li>
-                                </ul>
-                            </li>
-                            <li><strong>Sequencing of Animation Design:</strong>
-                                <ol>
-                                    <li><strong>Storyboarding:</strong> Visual outline of the events.</li>
-                                    <li><strong>Object Definition:</strong> Modeling the characters/objects.</li>
-                                    <li><strong>Keyframe Definition:</strong> Positioning objects at critical time points.</li>
-                                    <li><strong>In-betweening:</strong> Generating intermediate frames.</li>
-                                </ol>
-                            </li>
-                            <li><strong>Fundamental Principles (Disney's 12 Principles):</strong>
-                                <ul>
-                                    <li><strong>Squash and Stretch:</strong> Giving weight and volume to moving objects.</li>
-                                    <li><strong>Anticipation:</strong> Prepares the viewer for an action.</li>
-                                    <li><strong>Staging:</strong> Presenting an idea clearly.</li>
-                                    <li><strong>Follow Through & Overlapping Action:</strong> Parts continue moving after the main body stops.</li>
-                                    <li><strong>Slow In and Slow Out:</strong> Movement starts slow, speeds up, then slows down.</li>
-                                </ul>
-                            </li>
-                            <li><strong>Multimedia Standards & File Formats:</strong> <span class="pyq-badge">PYQ 2024</span>
-                                <ul>
-                                    <li><strong>TIFF (Tagged Image File Format):</strong> Lossless, high quality, used
-                                        in print/publishing.</li>
-                                    <li><strong>JPEG (Joint Photographic Experts Group):</strong> Lossy compression,
-                                        best for photographs. ($8\times8$ DCT).</li>
-                                    <li><strong>GIF (Graphics Interchange Format):</strong> 8-bit color (256 colors),
-                                        supports simple animation, LZW compression.</li>
-                                    <li><strong>MPEG (Moving Picture Experts Group):</strong> Standard for video
-                                        compression.</li>
-                                    <li><strong>MIDI (Musical Instrument Digital Interface):</strong> Communication
-                                        protocol for digital instruments (stores notes/velocity, not sound waves). Small
-                                        file size.</li>
-                                </ul>
-                            </li>
-                            <li><strong>Components:</strong> Text, Audio, Graphics, Video, Animation.</li>
-                            <li><strong>Authoring Tools:</strong> Software to create multimedia applications.
-                                <ul>
-                                    <li><em>Types:</em> Card/Page-based (HyperCard), Icon-based (Authorware), Time-based
-                                        (Flash/Animate).</li>
-                                </ul>
-                            </li>
-                            <li><strong>JPEG Compression Steps:</strong> Image Division ($8\times8$ blocks) $\to$ DCT
-                                $\to$ Quantization $\to$ Zig-Zag Scan $\to$ Entropy Encoding.</li>
-                        </ul>
+                            <div class="topic">
+                                <h4>5. Pixel, Resolution, Aspect Ratio <span class="pyq-badge">PYQ 2022, 2023</span>
+                                </h4>
+                                <div class="topic-content">
+                                    <p><strong>Pixel (Picture Element):</strong> The smallest addressable screen
+                                        element.</p>
+                                    <p><strong>Resolution:</strong> Number of pixels (Width × Height). Higher resolution
+                                        = sharper
+                                        image.</p>
+                                    <p><strong>Aspect Ratio:</strong> Ratio of image Width to Height (e.g., 4:3, 16:9).
+                                        <span class="pyq-badge">PYQ 2022, 2023</span></p>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
-        </div>
+
+            <div class="unit-block">
+                <div class="card-unit-header">
+                    <h3>Unit 2 Content</h3>
+                </div>
+                <div class="unit-content-pad">
+                    <div class="subject-container">
+                        <div class="subject-header">
+                            <h3><i class="fas fa-desktop"></i> Computer Graphics & Animation</h3>
+                            <i class="fas fa-chevron-down"></i>
+                        </div>
+                        <div class="subject-content">
+                            <div class="topic">
+                                <h4>Scan Converting Lines</h4>
+                                <div class="topic-content">
+                                    <ul>
+                                        <li><strong>Definition:</strong> The process of converting geometric primitives
+                                            (like lines)
+                                            into pixel coordinates on a raster grid is called scan conversion or
+                                            rasterization.</li>
+                                        <li><strong>Digital Differential Analyzer (DDA) Algorithm:</strong>
+                                            <ul>
+                                                <li>A line drawing algorithm based on the equation $y = mx + c$.</li>
+                                                <li>It calculates the next point by adding a step value ($\Delta x$ or
+                                                    $\Delta y$)
+                                                    to the current coordinate.</li>
+                                                <li><strong>Disadvantage:</strong> It involves floating-point
+                                                    calculations (rounding
+                                                    off), which makes it slower than integer-based algorithms.</li>
+                                            </ul>
+                                        </li>
+                                        <li><strong>Bresenham’s Line Algorithm:</strong>
+                                            <ul>
+                                                <li>An accurate and efficient raster line-generating algorithm that uses
+                                                    only
+                                                    <strong>integer addition and subtraction</strong>.
+                                                </li>
+                                                <li>It uses a <strong>Decision Parameter ($p_k$)</strong> to determine
+                                                    whether to
+                                                    choose the next pixel as $(x_k+1, y_k)$ or $(x_k+1, y_k+1)$.</li>
+                                                <li>If $p_k < 0$, the next point is $(x_{k+1}, y_k)$; otherwise, it is
+                                                        $(x_{k+1}, y_{k+1})$ (for slope $0 < m < 1$).</li>
+                                            </ul>
+                                            <div class="note-info-block">
+                                                <strong>Practical Walkthrough:</strong> Drawing line from (9, 18) to
+                                                (14, 22).
+                                                <br>$\Delta x=5, \Delta y=4$. Decision Parameter $p_0 = 2\Delta y -
+                                                \Delta x = 8 - 5 = 3$.
+                                                <br>Since $p_0 > 0$, we choose upper pixel $(10, 19)$ and update $p$.
+                                                This avoids floating point math entirely!
+                                            </div>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+
+                            <div class="topic">
+                                <h4>Scan Converting Circles & Clipping</h4>
+                                <div class="topic-content">
+                                    <ul>
+                                        <li><strong>Symmetry:</strong> A circle is highly symmetric (8-way symmetry). If
+                                            <br><strong>Analogy:</strong> Looking through a camera viewfinder. You only
+                                            see what's inside the rectangular frame; the rest of the world exists but is
+                                            "clipped" from your photo.
+                                            you
+                                            calculate one point $(x, y)$, you can determine 7 other points.
+                                        </li>
+                                        <li><strong>Midpoint Circle Algorithm:</strong> Uses a decision parameter to
+                                            find the
+                                            closest pixel to the true circle boundary. It avoids square root
+                                            calculations.</li>
+                                        <li><strong>Clipping:</strong> Definition: The process of determining which
+                                            parts of an
+                                            object are visible (inside a window) and removing the parts that are
+                                            outside.</li>
+                                        <li><strong>Cohen-Sutherland Line Clipping:</strong> Uses a 4-bit region code
+                                            (TBRL - Top,
+                                            Bottom, Right, Left) to identify position relative to the window. <span
+                                                class="pyq-badge">PYQ 2022</span>
+                                            <ul>
+                                                <li>Region Codes: Bit 1 (Left), Bit 2 (Right), Bit 3 (Bottom), Bit 4
+                                                    (Top).</li>
+                                                <li>Trivial Acceptance: Both endpoints have code 0000.</li>
+                                                <li>Trivial Rejection: Bitwise AND of endpoint codes is not 0000.</li>
+                                            </ul>
+                                        </li>
+                                        <li><strong>Midpoint Subdivision Algorithm:</strong> A divide-and-conquer line
+                                            clipping
+                                            algorithm.
+                                            <ul>
+                                                <li>It bisects the line segment until the visible portion is isolated.
+                                                </li>
+                                                <li>Avoids complex intersection calculations by using simple midpoint
+                                                    formulas ($x_m
+                                                    = \frac{x_1+x_2}{2}, y_m = \frac{y_1+y_2}{2}$).</li>
+                                            </ul>
+                                        </li>
+                                        <li><strong>Sutherland-Hodgeman Polygon Clipping:</strong> Algorithms to clip
+                                            polygons
+                                            against the edges of a clipping window. It processes the polygon vertices
+                                            against each
+                                            clip edge (Left, Right, Top, Bottom) sequentially.
+                                            <ul>
+                                                <li><em>Input:</em> Vertices of polygon. <em>Output:</em> New set of
+                                                    vertices
+                                                    defining clipped polygon.</li>
+                                                <li><em>Rules:</em>
+                                                    <ol>
+                                                        <li>Both in: Save 2nd vertex.</li>
+                                                        <li>In to Out: Save Intersection.</li>
+                                                        <li>Out to Out: Save None.</li>
+                                                        <li>Out to In: Save Intersection and 2nd vertex.</li>
+                                                    </ol>
+                                                </li>
+                                            </ul>
+                                        </li>
+                                        <li><strong>Weiler-Atherton Algorithm:</strong> Used for concave polygons
+                                            (Sutherland-Hodgeman fails for concave/re-entrant polygons).</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
+            </div>
+
+            <div class="unit-block">
+                <div class="card-unit-header">
+                    <h3>Unit 3 Content</h3>
+                </div>
+                <div class="unit-content-pad">
+                    <div class="subject-container">
+                        <div class="subject-header">
+                            <h3><i class="fas fa-desktop"></i> Computer Graphics & Animation</h3>
+                            <i class="fas fa-chevron-down"></i>
+                        </div>
+                        <div class="subject-content">
+                            <div class="topic">
+                                <h4>Geometrical Transformations (2D)</h4>
+                                <div class="topic-content">
+                                    <ul>
+                                        <li><strong>Concept:</strong> Methods to modify the shape, size, or position of
+                                            an object.
+                                        </li>
+                                        <li><strong>Translation:</strong> Moving an object. Equations: $x' = x + t_x$,
+                                            $y' = y +
+                                            t_y$.
+                                            <ul>
+                                                <li>Matrix: $\begin{bmatrix} 1 & 0 & t_x \\ 0 & 1 & t_y \\ 0 & 0 & 1
+                                                    \end{bmatrix}$
+                                                </li>
+                                            </ul>
+                                        </li>
+                                        <li><strong>Rotation:</strong> Rotating by angle $\theta$. Positive $\theta$ is
+                                            Counter-Clockwise (CCW).
+                                            <ul>
+                                                <li>Equation: $x' = x \cos\theta - y \sin\theta$, $y' = x \sin\theta + y
+                                                    \cos\theta$.</li>
+                                                <li>Matrix: $\begin{bmatrix} \cos\theta & -\sin\theta & 0 \\ \sin\theta
+                                                    & \cos\theta
+                                                    & 0 \\ 0 & 0 & 1 \end{bmatrix}$</li>
+                                            </ul>
+                                        </li>
+                                        <li><strong>Scaling:</strong> Changing size coordinates. $x' = x \cdot s_x$, $y'
+                                            = y \cdot
+                                            s_y$. <span class="pyq-badge">PYQ 2022</span>
+                                            <ul>
+                                                <li>Matrix: $\begin{bmatrix} s_x & 0 & 0 \\ 0 & s_y & 0 \\ 0 & 0 & 1
+                                                    \end{bmatrix}$
+                                                </li>
+                                            </ul>
+                                        </li>
+                                        <li><strong>Reflection:</strong> Mirror image about an axis ($x$-axis, $y$-axis,
+                                            $y=x$).
+                                            <ul>
+                                                <li>About X-axis ($y \to -y$): $\begin{bmatrix} 1 & 0 & 0 \\ 0 & -1 & 0
+                                                    \\ 0 & 0 & 1
+                                                    \end{bmatrix}$</li>
+                                                <li>About Y-axis ($x \to -x$): $\begin{bmatrix} -1 & 0 & 0 \\ 0 & 1 & 0
+                                                    \\ 0 & 0 & 1
+                                                    \end{bmatrix}$</li>
+                                                <li>About Line $y=x$ (Swap $x,y$): $\begin{bmatrix} 0 & 1 & 0 \\ 1 & 0 &
+                                                    0 \\ 0 & 0
+                                                    & 1 \end{bmatrix}$</li>
+                                                <li>About Line $y=-x$: $\begin{bmatrix} 0 & -1 & 0 \\ -1 & 0 & 0 \\ 0 &
+                                                    0 & 1
+                                                    \end{bmatrix}$</li>
+                                            </ul>
+                                        </li>
+                                        <li><strong>Shearing:</strong> Slanting the object. X-shear: $x' = x + sh_x
+                                            \cdot y, y' =
+                                            y$.</li>
+                                        <li><strong>Homogeneous Coordinates:</strong> Representing 2D points as $(x, y,
+                                            1)$ to allow
+                                            matrix multiplication for translation.</li>
+                                        <li><strong>Composite Transformation:</strong> Sequence of transformations e.g.,
+                                            Rotation
+                                            about a pivot point $(x_f, y_f)$:
+                                            <ol>
+                                                <li>Translate pivot to origin ($T(-x_f, -y_f)$).</li>
+                                                <li>Rotate about origin ($R(\theta)$).</li>
+                                                <li>Translate back ($T(x_f, y_f)$).</li>
+                                            </ol>
+                                        </li>
+                                        <li><strong>3D Transformations:</strong> Extension to 3D $(x, y, z, 1)$.
+                                            <ul>
+                                                <li><em>Rotation:</em> Can happen about X, Y, or Z axis (more complex
+                                                    matrices).
+                                                </li>
+                                            </ul>
+                                        </li>
+                                        <li><strong>Window-to-Viewport Transformation:</strong>
+                                            <ul>
+                                                <li><strong>Window:</strong> A world-coordinate area selected for
+                                                    display (What we see).</li>
+                                                <li><strong>Viewport:</strong> An area on a display device to map the
+                                                    window (Where we see it).</li>
+                                                <li><strong>Process:</strong> Maps world coordinates $(x_w, y_w)$ to
+                                                    device coordinates $(x_v, y_v)$.</li>
+                                                <li><strong>Formula:</strong>
+                                                    <ul>
+                                                        <li>$s_x = \frac{x_{vmax} - x_{vmin}}{x_{wmax} - x_{wmin}}$,
+                                                            $s_y = \frac{y_{vmax} - y_{vmin}}{y_{wmax} - y_{wmin}}$</li>
+                                                        <li>$x_v = x_{vmin} + (x_w - x_{wmin}) \cdot s_x$</li>
+                                                        <li>$y_v = y_{vmin} + (y_w - y_{wmin}) \cdot s_y$</li>
+                                                    </ul>
+                                                </li>
+                                            </ul>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="unit-block">
+                <div class="card-unit-header">
+                    <h3>Unit 4 Content</h3>
+                </div>
+                <div class="unit-content-pad">
+                    <div class="subject-container">
+                        <div class="subject-header">
+                            <h3><i class="fas fa-desktop"></i> Computer Graphics & Animation</h3>
+                            <i class="fas fa-chevron-down"></i>
+                        </div>
+                        <div class="subject-content">
+                            <div class="topic">
+                                <h4>Curves & Surfaces</h4>
+                                <div class="topic-content">
+                                    <ul>
+                                        <li><strong>Polygon Meshes:</strong> Collection of vertices, edges, and polygons
+                                            representing 3D surfaces.</li>
+                                        <li><strong>Parametric Representation:</strong> Surfaces defined by parameters
+                                            $(u, v)$
+                                            instead of $y=f(x)$, allowing complex shapes.</li>
+                                        <li><strong>Interpolation vs. Approximation:</strong>
+                                            <ul>
+                                                <li><strong>Interpolation:</strong> Curve passes <em>through</em> all
+                                                    control
+                                                    points.</li>
+                                                <li><strong>Approximation:</strong> Curve is influenced by control
+                                                    points but
+                                                    doesn't
+                                                    necessarily pass through them (e.g., Bezier, B-Spline).</li>
+                                            </ul>
+                                        </li>
+                                        <li><strong>Bezier Curve:</strong>
+                                            <ul>
+                                                <li>Defined by $n+1$ control points. Degree of curve is $n$.</li>
+                                                <li><strong>Properties:</strong>
+                                                    <ul>
+                                                        <li><strong>Endpoint Interpolation:</strong> Passes through
+                                                            first ($P_0$)
+                                                            and last ($P_n$) points.</li>
+                                                        <li><strong>Convex Hull:</strong> The curve lies completely
+                                                            within the
+                                                            convex hull of its control points.</li>
+                                                        <li><strong>Global Control:</strong> Moving any single control
+                                                            point changes
+                                                            the entire shape of the curve.</li>
+                                                    </ul>
+                                                </li>
+                                            </ul>
+                                        </li>
+                                        <li><strong>B-Spline Curve:</strong>
+                                            <ul>
+                                                <li>Generalization of Bezier curves to overcome its limitations.</li>
+                                                <li><strong>Properties:</strong>
+                                                    <ul>
+                                                        <li><strong>Local Control:</strong> Moving a control point only
+                                                            affects a
+                                                            specific segment of the curve.</li>
+                                                        <li><strong>Degree Independence:</strong> The degree of the
+                                                            curve is
+                                                            independent of the number of control points.</li>
+                                                    </ul>
+                                                </li>
+                                            </ul>
+                                        </li>
+                                        <li><strong>Quadric Surfaces:</strong>
+                                            <ul>
+                                                <li>Surfaces defined by 2nd-degree equations (e.g., Spheres, Ellipsoids,
+                                                    Torus).</li>
+                                                <li>Equation: $Ax^2 + By^2 + Cz^2 + Dxy + ... = 0$.</li>
+                                                <li><strong>Superquadrics:</strong> Extension of quadrics with
+                                                    additional flexibility using powers to control shape
+                                                    (squareness/roundness). Used in solid modeling.</li>
+                                            </ul>
+                                        </li>
+                                        <li><strong>Continuity:</strong>
+                                            <ul>
+                                                <li>$G^0$: Curves touch (Position continuity).</li>
+                                                <li>$G^1$: Same tangent direction (Slope continuity).</li>
+                                                <li>$C^1$: Same tangent direction and magnitude (Parametric continuity).
+                                                </li>
+                                            </ul>
+                                        </li>
+                                        <li><strong>Comparison:</strong>
+                                            <ul>
+                                                <li><em>Bezier:</em> Simple, Global control, Degree depends on points
+                                                    ($n$).</li>
+                                                <li><em>B-Spline:</em> Complex, Local control, Degree independent of
+                                                    points, can
+                                                    represent conics.</li>
+                                            </ul>
+                                        </li>
+                                        <!-- Gap Analysis Addition -->
+                                        <li><strong>3D Projections:</strong> Converting 3D objects to 2D screen.
+                                            <ul>
+                                                <li><strong>Parallel Projection:</strong> Preserves relative proportions
+                                                    (e.g.,
+                                                    Orthographic). Good for engineering.</li>
+                                                <li><strong>Perspective Projection:</strong> Objects farther away appear
+                                                    smaller.
+                                                    Realistic. Parallel lines meet at a <strong>Vanishing
+                                                        Point</strong>.</li>
+                                            </ul>
+                                        </li>
+                                        <li><strong>Hidden Surface Removal:</strong> Determining visible surfaces.
+                                            <ul>
+                                                <li><strong>Back-Face Culling:</strong> Hides polygons facing away.</li>
+                                                <li><strong>Z-Buffer (Depth Buffer):</strong> Pixel-based depth
+                                                    comparison.</li>
+                                            </ul>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="unit-block">
+                <div class="card-unit-header">
+                    <h3>Unit 5 Content</h3>
+                </div>
+                <div class="unit-content-pad">
+                    <div class="subject-container">
+                        <div class="subject-header">
+                            <h3><i class="fas fa-film"></i> Computer Graphics & Animation</h3>
+                            <i class="fas fa-chevron-down"></i>
+                        </div>
+                        <div class="subject-content">
+                            <div class="topic">
+                                <h4>Computer Animation</h4>
+                                <div class="topic-content">
+                                    <ul>
+                                        <li><strong>Definition:</strong> Creating fluid motion by displaying a sequence
+                                            of still
+                                            images (frames) quickly.</li>
+                                        <li><strong>Frame Rate:</strong> Smooth motion typically requires 24-30 fps.
+                                        </li>
+                                        <li><strong>Key Concepts:</strong>
+                                            <ul>
+                                                <li><strong>Keyframing:</strong> Defining start and end states; computer
+                                                    interpolates intermediates.</li>
+                                                <li><strong>Tweening (In-betweening):</strong> Generating intermediate
+                                                    frames
+                                                    between keyframes.</li>
+                                            </ul>
+                                        </li>
+                                        <li><strong>Morphing:</strong> Transforming one image into another. Steps:
+                                            <strong>Warping</strong> (Shape distortion) &
+                                            <strong>Cross-dissolving</strong> (Color
+                                            fading).
+                                        </li>
+                                        <li><strong>Motion Specifications:</strong>
+                                            <ul>
+                                                <li><strong>Direct Motion:</strong> Explicitly setting
+                                                    rotation/translation values.
+                                                </li>
+                                                <li><strong>Goal-Directed:</strong> Defining the final state (e.g.,
+                                                    "Walk to X").
+                                                </li>
+                                            </ul>
+                                        </li>
+                                        <li><strong>3D Animation Process:</strong> Modeling $\to$ Layout/Animation $\to$
+                                            Rendering.
+                                        </li>
+                                        <li><strong>Animation Types:</strong>
+                                            <ul>
+                                                <li><strong>Frame-by-Frame (Cel Animation):</strong> Traditional
+                                                    hand-drawn frames.</li>
+                                                <li><strong>Keyframing:</strong> Computer generates frames between
+                                                    start/end points.</li>
+                                                <li><strong>Procedural:</strong> Motion ruled by laws of
+                                                    physics/algorithms (particles).</li>
+                                                <li><strong>Morphing:</strong> Smooth transformation between two shapes.
+                                                </li>
+                                            </ul>
+                                        </li>
+                                        <li><strong>Sequencing of Animation Design:</strong>
+                                            <ol>
+                                                <li><strong>Storyboarding:</strong> Visual outline of the events.</li>
+                                                <li><strong>Object Definition:</strong> Modeling the characters/objects.
+                                                </li>
+                                                <li><strong>Keyframe Definition:</strong> Positioning objects at
+                                                    critical time points.</li>
+                                                <li><strong>In-betweening:</strong> Generating intermediate frames.</li>
+                                            </ol>
+                                        </li>
+                                        <li><strong>Fundamental Principles (Disney's 12 Principles):</strong>
+                                            <ul>
+                                                <li><strong>Squash and Stretch:</strong> Giving weight and volume to
+                                                    moving objects.</li>
+                                                <li><strong>Anticipation:</strong> Prepares the viewer for an action.
+                                                </li>
+                                                <li><strong>Staging:</strong> Presenting an idea clearly.</li>
+                                                <li><strong>Follow Through & Overlapping Action:</strong> Parts continue
+                                                    moving after the main body stops.</li>
+                                                <li><strong>Slow In and Slow Out:</strong> Movement starts slow, speeds
+                                                    up, then slows down.</li>
+                                            </ul>
+                                        </li>
+                                        <li><strong>Multimedia Standards & File Formats:</strong> <span
+                                                class="pyq-badge">PYQ 2024</span>
+                                            <ul>
+                                                <li><strong>TIFF (Tagged Image File Format):</strong> Lossless, high
+                                                    quality, used
+                                                    in print/publishing.</li>
+                                                <li><strong>JPEG (Joint Photographic Experts Group):</strong> Lossy
+                                                    compression,
+                                                    best for photographs. ($8\times8$ DCT).</li>
+                                                <li><strong>GIF (Graphics Interchange Format):</strong> 8-bit color (256
+                                                    colors),
+                                                    supports simple animation, LZW compression.</li>
+                                                <li><strong>MPEG (Moving Picture Experts Group):</strong> Standard for
+                                                    video
+                                                    compression.</li>
+                                                <li><strong>MIDI (Musical Instrument Digital Interface):</strong>
+                                                    Communication
+                                                    protocol for digital instruments (stores notes/velocity, not sound
+                                                    waves). Small
+                                                    file size.</li>
+                                            </ul>
+                                        </li>
+                                        <li><strong>Components:</strong> Text, Audio, Graphics, Video, Animation.</li>
+                                        <li><strong>Authoring Tools:</strong> Software to create multimedia
+                                            applications.
+                                            <ul>
+                                                <li><em>Types:</em> Card/Page-based (HyperCard), Icon-based
+                                                    (Authorware), Time-based
+                                                    (Flash/Animate).</li>
+                                            </ul>
+                                        </li>
+                                        <li><strong>JPEG Compression Steps:</strong> Image Division ($8\times8$ blocks)
+                                            $\to$ DCT
+                                            $\to$ Quantization $\to$ Zig-Zag Scan $\to$ Entropy Encoding.</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
 
         <!-- MCQ Section -->
@@ -618,9 +759,10 @@
                 <p>Score: <span id="score">0</span> / <span id="total-questions">0</span></p>
                 <button id="reset-btn" class="btn btn-outline-primary btn-sm mt-2">Reset Quiz</button>
             </div>
-            
+
             <div class="mcq-container active">
-                <!-- Unit 1 MCQs --> <div class="unit-mcq-label" >Unit 1 Questions</div>
+                <!-- Unit 1 MCQs -->
+                <div class="unit-mcq-label">Unit 1 Questions</div>
                 <!-- MCQ 1 -->
                 <div class="mcq-question">
                     <div class="mcq-question-number">
@@ -762,506 +904,519 @@
                             <div class="mcq-option" data-correct="false">D. None of the above</div>
                         </div>
                     </div>
-                
-<!-- Unit 2 MCQs --> <div class="unit-mcq-label" >Unit 2 Questions</div>
-                <div class="mcq-question">
-                    <p class="question-text">The process of determining which parts of an object are visible (inside a
-                        window) and removing the parts that are outside is called:</p>
-                    <div class="mcq-options">
-                        <div class="mcq-option" data-correct="false">A. Rendering</div>
-                        <div class="mcq-option" data-correct="true">B. Clipping</div>
-                        <div class="mcq-option" data-correct="false">C. Rasterization</div>
-                        <div class="mcq-option" data-correct="false">D. Transformation</div>
-                    </div>
-                </div>
 
-                <div class="mcq-question">
-                    <p class="question-text">Which algorithm is a faster method for calculating pixel positions for line
-                        drawing?</p>
-                    <div class="mcq-options">
-                        <div class="mcq-option" data-correct="true">A. Bresenham’s line algorithm</div>
-                        <div class="mcq-option" data-correct="false">B. Parallel line algorithm</div>
-                        <div class="mcq-option" data-correct="false">C. Midpoint algorithm</div>
-                        <div class="mcq-option" data-correct="false">D. DDA line algorithm</div>
-                    </div>
-                    <div class="mcq-explanation">Appeared in 2022, 2024</div>
-                </div>
-
-                <div class="mcq-question">
-                    <p class="question-text">The disadvantage of DDA algorithm is:</p>
-                    <div class="mcq-options">
-                        <div class="mcq-option" data-correct="true">A. Time consuming (due to floating point
-                            calculations)</div>
-                        <div class="mcq-option" data-correct="false">B. Faster</div>
-                        <div class="mcq-option" data-correct="false">C. Neither (A) nor (B)</div>
-                        <div class="mcq-option" data-correct="false">D. None of the above</div>
-                    </div>
-                    <div class="mcq-explanation">Appeared in 2022, 2024</div>
-                </div>
-
-                <div class="mcq-question">
-                    <p class="question-text">Which of the following is an accurate and efficient raster line generating
-                        algorithm?</p>
-                    <div class="mcq-options">
-                        <div class="mcq-option" data-correct="false">A. DDA algorithm</div>
-                        <div class="mcq-option" data-correct="false">B. Midpoint algorithm</div>
-                        <div class="mcq-option" data-correct="false">C. Parallel line algorithm</div>
-                        <div class="mcq-option" data-correct="true">D. Bresenham’s line algorithm</div>
-                    </div>
-                    <div class="mcq-explanation">Appeared in 2022</div>
-                </div>
-
-                <div class="mcq-question">
-                    <p class="question-text">In Bresenham’s line algorithm, if the distance $d_1 < d_2$, then the
-                            decision parameter $P_k$ is:</p>
-                            <div class="mcq-options">
-                                <div class="mcq-option" data-correct="true">A. Negative</div>
-                                <div class="mcq-option" data-correct="false">B. Positive</div>
-                                <div class="mcq-option" data-correct="false">C. Equal</div>
-                                <div class="mcq-option" data-correct="false">D. Zero</div>
-                            </div>
-                            <div class="mcq-explanation">Appeared in 2022</div>
-                </div>
-
-                <div class="mcq-question">
-                    <p class="question-text">The region against which an object is clipped is called as:</p>
-                    <div class="mcq-options">
-                        <div class="mcq-option" data-correct="false">A. Clipping</div>
-                        <div class="mcq-option" data-correct="false">B. Clipping region</div>
-                        <div class="mcq-option" data-correct="true">C. Clip window / Viewport</div>
-                        <div class="mcq-option" data-correct="false">D. None of them</div>
-                    </div>
-                    <div class="mcq-explanation">Appeared in 2022, 2024</div>
-                </div>
-
-                <div class="mcq-question">
-                    <p class="question-text">Which of the following can be first used to test for overlap of a curve
-                        with the clipping window?</p>
-                    <div class="mcq-options">
-                        <div class="mcq-option" data-correct="false">A. Edges of the curve</div>
-                        <div class="mcq-option" data-correct="true">B. The boundary rectangle for the curve (Extent)
+                    <!-- Unit 2 MCQs -->
+                    <div class="unit-mcq-label">Unit 2 Questions</div>
+                    <div class="mcq-question">
+                        <p class="question-text">The process of determining which parts of an object are visible (inside
+                            a
+                            window) and removing the parts that are outside is called:</p>
+                        <div class="mcq-options">
+                            <div class="mcq-option" data-correct="false">A. Rendering</div>
+                            <div class="mcq-option" data-correct="true">B. Clipping</div>
+                            <div class="mcq-option" data-correct="false">C. Rasterization</div>
+                            <div class="mcq-option" data-correct="false">D. Transformation</div>
                         </div>
-                        <div class="mcq-option" data-correct="false">C. Center of the curve</div>
-                        <div class="mcq-option" data-correct="false">D. None of the above</div>
+                    </div>
+
+                    <div class="mcq-question">
+                        <p class="question-text">Which algorithm is a faster method for calculating pixel positions for
+                            line
+                            drawing?</p>
+                        <div class="mcq-options">
+                            <div class="mcq-option" data-correct="true">A. Bresenham’s line algorithm</div>
+                            <div class="mcq-option" data-correct="false">B. Parallel line algorithm</div>
+                            <div class="mcq-option" data-correct="false">C. Midpoint algorithm</div>
+                            <div class="mcq-option" data-correct="false">D. DDA line algorithm</div>
+                        </div>
+                        <div class="mcq-explanation">Appeared in 2022, 2024</div>
+                    </div>
+
+                    <div class="mcq-question">
+                        <p class="question-text">The disadvantage of DDA algorithm is:</p>
+                        <div class="mcq-options">
+                            <div class="mcq-option" data-correct="true">A. Time consuming (due to floating point
+                                calculations)</div>
+                            <div class="mcq-option" data-correct="false">B. Faster</div>
+                            <div class="mcq-option" data-correct="false">C. Neither (A) nor (B)</div>
+                            <div class="mcq-option" data-correct="false">D. None of the above</div>
+                        </div>
+                        <div class="mcq-explanation">Appeared in 2022, 2024</div>
+                    </div>
+
+                    <div class="mcq-question">
+                        <p class="question-text">Which of the following is an accurate and efficient raster line
+                            generating
+                            algorithm?</p>
+                        <div class="mcq-options">
+                            <div class="mcq-option" data-correct="false">A. DDA algorithm</div>
+                            <div class="mcq-option" data-correct="false">B. Midpoint algorithm</div>
+                            <div class="mcq-option" data-correct="false">C. Parallel line algorithm</div>
+                            <div class="mcq-option" data-correct="true">D. Bresenham’s line algorithm</div>
+                        </div>
+                        <div class="mcq-explanation">Appeared in 2022</div>
+                    </div>
+
+                    <div class="mcq-question">
+                        <p class="question-text">In Bresenham’s line algorithm, if the distance $d_1 < d_2$, then the
+                                decision parameter $P_k$ is:</p>
+                                <div class="mcq-options">
+                                    <div class="mcq-option" data-correct="true">A. Negative</div>
+                                    <div class="mcq-option" data-correct="false">B. Positive</div>
+                                    <div class="mcq-option" data-correct="false">C. Equal</div>
+                                    <div class="mcq-option" data-correct="false">D. Zero</div>
+                                </div>
+                                <div class="mcq-explanation">Appeared in 2022</div>
+                    </div>
+
+                    <div class="mcq-question">
+                        <p class="question-text">The region against which an object is clipped is called as:</p>
+                        <div class="mcq-options">
+                            <div class="mcq-option" data-correct="false">A. Clipping</div>
+                            <div class="mcq-option" data-correct="false">B. Clipping region</div>
+                            <div class="mcq-option" data-correct="true">C. Clip window / Viewport</div>
+                            <div class="mcq-option" data-correct="false">D. None of them</div>
+                        </div>
+                        <div class="mcq-explanation">Appeared in 2022, 2024</div>
+                    </div>
+
+                    <div class="mcq-question">
+                        <p class="question-text">Which of the following can be first used to test for overlap of a curve
+                            with the clipping window?</p>
+                        <div class="mcq-options">
+                            <div class="mcq-option" data-correct="false">A. Edges of the curve</div>
+                            <div class="mcq-option" data-correct="true">B. The boundary rectangle for the curve (Extent)
+                            </div>
+                            <div class="mcq-option" data-correct="false">C. Center of the curve</div>
+                            <div class="mcq-option" data-correct="false">D. None of the above</div>
+                        </div>
+                        <div class="mcq-explanation">Appeared in 2023</div>
                     </div>
                     <div class="mcq-explanation">Appeared in 2023</div>
-                </div>
-                <div class="mcq-explanation">Appeared in 2023</div>
-            
-<!-- Unit 3 MCQs --> <div class="unit-mcq-label" >Unit 3 Questions</div>
-                <div class="mcq-question">
-                    <p class="question-text">A transformation that slants the shape of objects is called:</p>
-                    <div class="mcq-options">
-                        <div class="mcq-option" data-correct="false">A. Rotation</div>
-                        <div class="mcq-option" data-correct="true">B. Shear</div>
-                        <div class="mcq-option" data-correct="false">C. Reflection</div>
-                        <div class="mcq-option" data-correct="false">D. Translation</div>
-                    </div>
-                    <div class="mcq-explanation">Appeared in: 2022, 2024</div>
-                </div>
 
-                <div class="mcq-question">
-                    <p class="question-text">Positive values for the rotation angle defines:</p>
-                    <div class="mcq-options">
-                        <div class="mcq-option" data-correct="true">A. Counter clockwise rotations about the
-                            endpoints/origin</div>
-                        <div class="mcq-option" data-correct="false">B. Clockwise rotations</div>
-                        <div class="mcq-option" data-correct="false">C. Parallel moves</div>
-                        <div class="mcq-option" data-correct="false">D. None of these</div>
+                    <!-- Unit 3 MCQs -->
+                    <div class="unit-mcq-label">Unit 3 Questions</div>
+                    <div class="mcq-question">
+                        <p class="question-text">A transformation that slants the shape of objects is called:</p>
+                        <div class="mcq-options">
+                            <div class="mcq-option" data-correct="false">A. Rotation</div>
+                            <div class="mcq-option" data-correct="true">B. Shear</div>
+                            <div class="mcq-option" data-correct="false">C. Reflection</div>
+                            <div class="mcq-option" data-correct="false">D. Translation</div>
+                        </div>
+                        <div class="mcq-explanation">Appeared in: 2022, 2024</div>
                     </div>
-                    <div class="mcq-explanation">Appeared in: 2022, 2024</div>
-                </div>
 
-                <div class="mcq-question">
-                    <p class="question-text">In 2D translation, a point $(x, y)$ can move to the new position $(x', y')$
-                        by using the equation:</p>
-                    <div class="mcq-options">
-                        <div class="mcq-option" data-correct="true">A. $x' = x + t_x$ and $y' = y + t_y$</div>
-                        <div class="mcq-option" data-correct="false">B. $x' = x - t_x$ and $y' = y - t_y$</div>
-                        <div class="mcq-option" data-correct="false">C. $x' = x \cdot t_x$ and $y' = y \cdot t_y$</div>
-                        <div class="mcq-option" data-correct="false">D. None of the above</div>
+                    <div class="mcq-question">
+                        <p class="question-text">Positive values for the rotation angle defines:</p>
+                        <div class="mcq-options">
+                            <div class="mcq-option" data-correct="true">A. Counter clockwise rotations about the
+                                endpoints/origin</div>
+                            <div class="mcq-option" data-correct="false">B. Clockwise rotations</div>
+                            <div class="mcq-option" data-correct="false">C. Parallel moves</div>
+                            <div class="mcq-option" data-correct="false">D. None of these</div>
+                        </div>
+                        <div class="mcq-explanation">Appeared in: 2022, 2024</div>
                     </div>
-                    <div class="mcq-explanation">Appeared in: 2024</div>
-                </div>
 
-                <div class="mcq-question">
-                    <p class="question-text">The 2D scaling equation in the matrix form is:</p>
-                    <div class="mcq-options">
-                        <div class="mcq-option" data-correct="false">A. P'=P+T</div>
-                        <div class="mcq-option" data-correct="true">B. P'=S*P</div>
-                        <div class="mcq-option" data-correct="false">C. P'=P*R</div>
-                        <div class="mcq-option" data-correct="false">D. P'=R+S</div>
-                    </div>
-                    <div class="mcq-explanation">Appeared in: 2022, 2024</div>
-                </div>
-
-                <div class="mcq-question">
-                    <p class="question-text">Reflection of a point about x-axis, followed by a counter-clockwise
-                        rotation of $90^\circ$, is equivalent to reflection about the line:</p>
-                    <div class="mcq-options">
-                        <div class="mcq-option" data-correct="false">A. $x = -y$</div>
-                        <div class="mcq-option" data-correct="true">B. $y = x$</div>
-                        <div class="mcq-option" data-correct="false">C. $x = y$</div>
-                        <div class="mcq-option" data-correct="false">D. $x + y = 1$</div>
-                    </div>
-                    <div class="mcq-explanation">Appeared in: 2022, 2024</div>
-                </div>
-
-                <div class="mcq-question">
-                    <p class="question-text">Scaling transformation is said to be homogeneous if:</p>
-                    <div class="mcq-options">
-                        <div class="mcq-option" data-correct="true">A. $S_x = S_y$</div>
-                        <div class="mcq-option" data-correct="false">B. $S_x < S_y$</div>
-                                <div class="mcq-option" data-correct="false">C. $S_x > S_y$</div>
-                                <div class="mcq-option" data-correct="false">D. None of the above</div>
+                    <div class="mcq-question">
+                        <p class="question-text">In 2D translation, a point $(x, y)$ can move to the new position $(x',
+                            y')$
+                            by using the equation:</p>
+                        <div class="mcq-options">
+                            <div class="mcq-option" data-correct="true">A. $x' = x + t_x$ and $y' = y + t_y$</div>
+                            <div class="mcq-option" data-correct="false">B. $x' = x - t_x$ and $y' = y - t_y$</div>
+                            <div class="mcq-option" data-correct="false">C. $x' = x \cdot t_x$ and $y' = y \cdot t_y$
+                            </div>
+                            <div class="mcq-option" data-correct="false">D. None of the above</div>
                         </div>
                         <div class="mcq-explanation">Appeared in: 2024</div>
                     </div>
 
                     <div class="mcq-question">
-                        <p class="question-text">The mapping a world window in world coordinates system to viewport is
-                            called:</p>
+                        <p class="question-text">The 2D scaling equation in the matrix form is:</p>
                         <div class="mcq-options">
-                            <div class="mcq-option" data-correct="true">A. Transformation viewing</div>
-                            <div class="mcq-option" data-correct="false">B. Viewport</div>
-                            <div class="mcq-option" data-correct="false">C. Clipping window</div>
-                            <div class="mcq-option" data-correct="false">D. Screen coordinate system</div>
+                            <div class="mcq-option" data-correct="false">A. P'=P+T</div>
+                            <div class="mcq-option" data-correct="true">B. P'=S*P</div>
+                            <div class="mcq-option" data-correct="false">C. P'=P*R</div>
+                            <div class="mcq-option" data-correct="false">D. P'=R+S</div>
                         </div>
-                        <div class="mcq-explanation">Appeared in: 2022</div>
+                        <div class="mcq-explanation">Appeared in: 2022, 2024</div>
                     </div>
 
                     <div class="mcq-question">
-                        <p class="question-text">Two successive translations are:</p>
+                        <p class="question-text">Reflection of a point about x-axis, followed by a counter-clockwise
+                            rotation of $90^\circ$, is equivalent to reflection about the line:</p>
                         <div class="mcq-options">
-                            <div class="mcq-option" data-correct="true">A. Additive</div>
-                            <div class="mcq-option" data-correct="false">B. Multiplicative</div>
-                            <div class="mcq-option" data-correct="false">C. Subtractive</div>
-                            <div class="mcq-option" data-correct="false">D. None</div>
+                            <div class="mcq-option" data-correct="false">A. $x = -y$</div>
+                            <div class="mcq-option" data-correct="true">B. $y = x$</div>
+                            <div class="mcq-option" data-correct="false">C. $x = y$</div>
+                            <div class="mcq-option" data-correct="false">D. $x + y = 1$</div>
                         </div>
-                        <div class="mcq-explanation">Appeared in PYQ</div>
+                        <div class="mcq-explanation">Appeared in: 2022, 2024</div>
                     </div>
-                
-<!-- Unit 4 MCQs --> <div class="unit-mcq-label" >Unit 4 Questions</div>
-                <div class="mcq-question">
-                    <p class="question-text">When the curve passes through all the data points, then the curve is known
-                        as?</p>
-                    <div class="mcq-options">
-                        <div class="mcq-option" data-correct="false">A. Approximation curve</div>
-                        <div class="mcq-option" data-correct="false">B. Pitch curve</div>
-                        <div class="mcq-option" data-correct="false">C. Data curve</div>
-                        <div class="mcq-option" data-correct="true">D. Interpolant / Interpolation curve</div>
+
+                    <div class="mcq-question">
+                        <p class="question-text">Scaling transformation is said to be homogeneous if:</p>
+                        <div class="mcq-options">
+                            <div class="mcq-option" data-correct="true">A. $S_x = S_y$</div>
+                            <div class="mcq-option" data-correct="false">B. $S_x < S_y$</div>
+                                    <div class="mcq-option" data-correct="false">C. $S_x > S_y$</div>
+                                    <div class="mcq-option" data-correct="false">D. None of the above</div>
+                            </div>
+                            <div class="mcq-explanation">Appeared in: 2024</div>
+                        </div>
+
+                        <div class="mcq-question">
+                            <p class="question-text">The mapping a world window in world coordinates system to viewport
+                                is
+                                called:</p>
+                            <div class="mcq-options">
+                                <div class="mcq-option" data-correct="true">A. Transformation viewing</div>
+                                <div class="mcq-option" data-correct="false">B. Viewport</div>
+                                <div class="mcq-option" data-correct="false">C. Clipping window</div>
+                                <div class="mcq-option" data-correct="false">D. Screen coordinate system</div>
+                            </div>
+                            <div class="mcq-explanation">Appeared in: 2022</div>
+                        </div>
+
+                        <div class="mcq-question">
+                            <p class="question-text">Two successive translations are:</p>
+                            <div class="mcq-options">
+                                <div class="mcq-option" data-correct="true">A. Additive</div>
+                                <div class="mcq-option" data-correct="false">B. Multiplicative</div>
+                                <div class="mcq-option" data-correct="false">C. Subtractive</div>
+                                <div class="mcq-option" data-correct="false">D. None</div>
+                            </div>
+                            <div class="mcq-explanation">Appeared in PYQ</div>
+                        </div>
+
+                        <!-- Unit 4 MCQs -->
+                        <div class="unit-mcq-label">Unit 4 Questions</div>
+                        <div class="mcq-question">
+                            <p class="question-text">When the curve passes through all the data points, then the curve
+                                is known
+                                as?</p>
+                            <div class="mcq-options">
+                                <div class="mcq-option" data-correct="false">A. Approximation curve</div>
+                                <div class="mcq-option" data-correct="false">B. Pitch curve</div>
+                                <div class="mcq-option" data-correct="false">C. Data curve</div>
+                                <div class="mcq-option" data-correct="true">D. Interpolant / Interpolation curve</div>
+                            </div>
+                            <div class="mcq-explanation">Appeared in 2022</div>
+                        </div>
+                        <div class="mcq-question">
+                            <p class="question-text">Which of the following is not a synthetic entity?</p>
+                            <div class="mcq-options">
+                                <div class="mcq-option" data-correct="true">A. Hyperbola</div>
+                                <div class="mcq-option" data-correct="false">B. Bezier curve</div>
+                                <div class="mcq-option" data-correct="false">C. B-Spline curve</div>
+                                <div class="mcq-option" data-correct="false">D. Cubic curve</div>
+                            </div>
+                            <div class="mcq-explanation">Appeared in 2022</div>
+                        </div>
+                        <div class="mcq-question">
+                            <p class="question-text">Spline curve can be either:</p>
+                            <div class="mcq-options">
+                                <div class="mcq-option" data-correct="false">A. Bezier curve</div>
+                                <div class="mcq-option" data-correct="false">B. B-spline</div>
+                                <div class="mcq-option" data-correct="true">C. Both (A) & (B)</div>
+                                <div class="mcq-option" data-correct="false">D. None of these</div>
+                            </div>
+                            <div class="mcq-explanation">Appeared in 2022</div>
+                        </div>
+                        <div class="mcq-question">
+                            <p class="question-text">The representations for surface modeling include:</p>
+                            <div class="mcq-options">
+                                <div class="mcq-option" data-correct="false">A. Polygon mesh</div>
+                                <div class="mcq-option" data-correct="false">B. Parametric surfaces</div>
+                                <div class="mcq-option" data-correct="false">C. Quadratic surfaces</div>
+                                <div class="mcq-option" data-correct="true">D. All of these</div>
+                            </div>
+                            <div class="mcq-explanation">Appeared in 2022</div>
+                        </div>
+
+                        <div class="mcq-question">
+                            <p class="question-text">The point at which parallel lines appear to meet in a perspective
+                                projection is called:</p>
+                            <div class="mcq-options">
+                                <div class="mcq-option" data-correct="false">A. Projection point</div>
+                                <div class="mcq-option" data-correct="false">B. View point</div>
+                                <div class="mcq-option" data-correct="true">C. Vanishing point</div>
+                                <div class="mcq-option" data-correct="false">D. Focal point</div>
+                            </div>
+                            <div class="mcq-explanation">Appeared in PYQ</div>
+                        </div>
+
+                        <div class="mcq-question">
+                            <p class="question-text">Which algorithm is used for Hidden Surface Removal?</p>
+                            <div class="mcq-options">
+                                <div class="mcq-option" data-correct="false">A. Sutherland-Hodgeman</div>
+                                <div class="mcq-option" data-correct="true">B. Z-Buffer Algorithm</div>
+                                <div class="mcq-option" data-correct="false">C. Bresenham’s</div>
+                                <div class="mcq-option" data-correct="false">D. DDA</div>
+                            </div>
+                            <div class="mcq-explanation">Appeared in PYQ</div>
+                        </div>
+
+                        <div class="mcq-question">
+                            <p class="question-text">A Bezier curve is determined by:</p>
+                            <div class="mcq-options">
+                                <div class="mcq-option" data-correct="false">A. Interpolation Points</div>
+                                <div class="mcq-option" data-correct="true">B. Control Points</div>
+                                <div class="mcq-option" data-correct="false">C. Knots</div>
+                                <div class="mcq-option" data-correct="false">D. None</div>
+                            </div>
+                            <div class="mcq-explanation">Appeared in PYQ</div>
+                        </div>
+
+                        <!-- Unit 5 MCQs -->
+                        <div class="unit-mcq-label">Unit 5 Questions</div>
+                        <div class="mcq-question">
+                            <p class="question-text">The movement of different attributes of image would make the image
+                                dynamic
+                                and such a dynamic effect is termed as:</p>
+                            <div class="mcq-options">
+                                <div class="mcq-option" data-correct="false">A. Pictures</div>
+                                <div class="mcq-option" data-correct="true">B. Animation</div>
+                                <div class="mcq-option" data-correct="false">C. Pointing</div>
+                                <div class="mcq-option" data-correct="false">D. All of these</div>
+                            </div>
+                            <div class="mcq-explanation">Appeared in 2024</div>
+                        </div>
+                        <div class="mcq-question">
+                            <p class="question-text">Graphics and image processing technique used to produce a
+                                transformation of
+                                one object into another is called:</p>
+                            <div class="mcq-options">
+                                <div class="mcq-option" data-correct="false">A. Animation</div>
+                                <div class="mcq-option" data-correct="true">B. Morphing</div>
+                                <div class="mcq-option" data-correct="false">C. Half toning</div>
+                                <div class="mcq-option" data-correct="false">D. None of the above</div>
+                            </div>
+                            <div class="mcq-explanation">Appeared in 2024</div>
+                        </div>
+                        <div class="mcq-question">
+                            <p class="question-text">Which of the following is a technique to blend two or more images
+                                to form a
+                                new image?</p>
+                            <div class="mcq-options">
+                                <div class="mcq-option" data-correct="false">A. Modeling</div>
+                                <div class="mcq-option" data-correct="true">B. Morphing</div>
+                                <div class="mcq-option" data-correct="false">C. Animating</div>
+                                <div class="mcq-option" data-correct="false">D. Warping</div>
+                            </div>
+                            <div class="mcq-explanation">Appeared in 2022</div>
+                        </div>
+                        <div class="mcq-question">
+                            <p class="question-text">A multimedia file:</p>
+                            <div class="mcq-options">
+                                <div class="mcq-option" data-correct="false">A. Is same as any other regular file</div>
+                                <div class="mcq-option" data-correct="true">B. Must be accessed at specific rate
+                                    (Real-time
+                                    requirement)</div>
+                                <div class="mcq-option" data-correct="false">C. Stored on remote server</div>
+                                <div class="mcq-option" data-correct="false">D. None of these</div>
+                            </div>
+                            <div class="mcq-explanation">Appeared in 2022</div>
+                        </div>
+                        <div class="mcq-question">
+                            <p class="question-text">Video file format is:</p>
+                            <div class="mcq-options">
+                                <div class="mcq-option" data-correct="false">A. TIFF</div>
+                                <div class="mcq-option" data-correct="true">B. AVI</div>
+                                <div class="mcq-option" data-correct="false">C. WAV</div>
+                                <div class="mcq-option" data-correct="false">D. Both (A) & (B)</div>
+                            </div>
+                            <div class="mcq-explanation">Appeared in 2022</div>
+                        </div>
+                        <div class="mcq-question">
+                            <p class="question-text">How many step process for creating a 3D animation are required?</p>
+                            <div class="mcq-options">
+                                <div class="mcq-option" data-correct="false">A. 2</div>
+                                <div class="mcq-option" data-correct="true">B. 3 (Modeling, Layout/Animation, Rendering)
+                                </div>
+                                <div class="mcq-option" data-correct="false">C. 4</div>
+                                <div class="mcq-option" data-correct="false">D. 5</div>
+                            </div>
+                            <div class="mcq-explanation">Appeared in 2022</div>
+                        </div>
+
+                        <div class="mcq-question">
+                            <p class="question-text">JPEG stands for:</p>
+                            <div class="mcq-options">
+                                <div class="mcq-option" data-correct="false">A. Java Photo Expert Group</div>
+                                <div class="mcq-option" data-correct="true">B. Joint Photographic Experts Group</div>
+                                <div class="mcq-option" data-correct="false">C. Joint Picture Export Group</div>
+                                <div class="mcq-option" data-correct="false">D. Joint Photo Export Graph</div>
+                            </div>
+                            <div class="mcq-explanation">Appeared in PYQ</div>
+                        </div>
+
                     </div>
-                    <div class="mcq-explanation">Appeared in 2022</div>
-                </div>
-                <div class="mcq-question">
-                    <p class="question-text">Which of the following is not a synthetic entity?</p>
-                    <div class="mcq-options">
-                        <div class="mcq-option" data-correct="true">A. Hyperbola</div>
-                        <div class="mcq-option" data-correct="false">B. Bezier curve</div>
-                        <div class="mcq-option" data-correct="false">C. B-Spline curve</div>
-                        <div class="mcq-option" data-correct="false">D. Cubic curve</div>
+
+                    <div class="mcq-navigation mcq-nav">
+                        <button id="prev-btn" class="btn btn-secondary" class="btn btn-secondary">Previous</button>
+                        <button id="next-btn" class="btn btn-primary">Next</button>
                     </div>
-                    <div class="mcq-explanation">Appeared in 2022</div>
-                </div>
-                <div class="mcq-question">
-                    <p class="question-text">Spline curve can be either:</p>
-                    <div class="mcq-options">
-                        <div class="mcq-option" data-correct="false">A. Bezier curve</div>
-                        <div class="mcq-option" data-correct="false">B. B-spline</div>
-                        <div class="mcq-option" data-correct="true">C. Both (A) & (B)</div>
-                        <div class="mcq-option" data-correct="false">D. None of these</div>
-                    </div>
-                    <div class="mcq-explanation">Appeared in 2022</div>
-                </div>
-                <div class="mcq-question">
-                    <p class="question-text">The representations for surface modeling include:</p>
-                    <div class="mcq-options">
-                        <div class="mcq-option" data-correct="false">A. Polygon mesh</div>
-                        <div class="mcq-option" data-correct="false">B. Parametric surfaces</div>
-                        <div class="mcq-option" data-correct="false">C. Quadratic surfaces</div>
-                        <div class="mcq-option" data-correct="true">D. All of these</div>
-                    </div>
-                    <div class="mcq-explanation">Appeared in 2022</div>
                 </div>
 
-                <div class="mcq-question">
-                    <p class="question-text">The point at which parallel lines appear to meet in a perspective
-                        projection is called:</p>
-                    <div class="mcq-options">
-                        <div class="mcq-option" data-correct="false">A. Projection point</div>
-                        <div class="mcq-option" data-correct="false">B. View point</div>
-                        <div class="mcq-option" data-correct="true">C. Vanishing point</div>
-                        <div class="mcq-option" data-correct="false">D. Focal point</div>
-                    </div>
-                    <div class="mcq-explanation">Appeared in PYQ</div>
-                </div>
-
-                <div class="mcq-question">
-                    <p class="question-text">Which algorithm is used for Hidden Surface Removal?</p>
-                    <div class="mcq-options">
-                        <div class="mcq-option" data-correct="false">A. Sutherland-Hodgeman</div>
-                        <div class="mcq-option" data-correct="true">B. Z-Buffer Algorithm</div>
-                        <div class="mcq-option" data-correct="false">C. Bresenham’s</div>
-                        <div class="mcq-option" data-correct="false">D. DDA</div>
-                    </div>
-                    <div class="mcq-explanation">Appeared in PYQ</div>
-                </div>
-
-                <div class="mcq-question">
-                    <p class="question-text">A Bezier curve is determined by:</p>
-                    <div class="mcq-options">
-                        <div class="mcq-option" data-correct="false">A. Interpolation Points</div>
-                        <div class="mcq-option" data-correct="true">B. Control Points</div>
-                        <div class="mcq-option" data-correct="false">C. Knots</div>
-                        <div class="mcq-option" data-correct="false">D. None</div>
-                    </div>
-                    <div class="mcq-explanation">Appeared in PYQ</div>
-                </div>
-            
-<!-- Unit 5 MCQs --> <div class="unit-mcq-label" >Unit 5 Questions</div>
-                <div class="mcq-question">
-                    <p class="question-text">The movement of different attributes of image would make the image dynamic
-                        and such a dynamic effect is termed as:</p>
-                    <div class="mcq-options">
-                        <div class="mcq-option" data-correct="false">A. Pictures</div>
-                        <div class="mcq-option" data-correct="true">B. Animation</div>
-                        <div class="mcq-option" data-correct="false">C. Pointing</div>
-                        <div class="mcq-option" data-correct="false">D. All of these</div>
-                    </div>
-                    <div class="mcq-explanation">Appeared in 2024</div>
-                </div>
-                <div class="mcq-question">
-                    <p class="question-text">Graphics and image processing technique used to produce a transformation of
-                        one object into another is called:</p>
-                    <div class="mcq-options">
-                        <div class="mcq-option" data-correct="false">A. Animation</div>
-                        <div class="mcq-option" data-correct="true">B. Morphing</div>
-                        <div class="mcq-option" data-correct="false">C. Half toning</div>
-                        <div class="mcq-option" data-correct="false">D. None of the above</div>
-                    </div>
-                    <div class="mcq-explanation">Appeared in 2024</div>
-                </div>
-                <div class="mcq-question">
-                    <p class="question-text">Which of the following is a technique to blend two or more images to form a
-                        new image?</p>
-                    <div class="mcq-options">
-                        <div class="mcq-option" data-correct="false">A. Modeling</div>
-                        <div class="mcq-option" data-correct="true">B. Morphing</div>
-                        <div class="mcq-option" data-correct="false">C. Animating</div>
-                        <div class="mcq-option" data-correct="false">D. Warping</div>
-                    </div>
-                    <div class="mcq-explanation">Appeared in 2022</div>
-                </div>
-                <div class="mcq-question">
-                    <p class="question-text">A multimedia file:</p>
-                    <div class="mcq-options">
-                        <div class="mcq-option" data-correct="false">A. Is same as any other regular file</div>
-                        <div class="mcq-option" data-correct="true">B. Must be accessed at specific rate (Real-time
-                            requirement)</div>
-                        <div class="mcq-option" data-correct="false">C. Stored on remote server</div>
-                        <div class="mcq-option" data-correct="false">D. None of these</div>
-                    </div>
-                    <div class="mcq-explanation">Appeared in 2022</div>
-                </div>
-                <div class="mcq-question">
-                    <p class="question-text">Video file format is:</p>
-                    <div class="mcq-options">
-                        <div class="mcq-option" data-correct="false">A. TIFF</div>
-                        <div class="mcq-option" data-correct="true">B. AVI</div>
-                        <div class="mcq-option" data-correct="false">C. WAV</div>
-                        <div class="mcq-option" data-correct="false">D. Both (A) & (B)</div>
-                    </div>
-                    <div class="mcq-explanation">Appeared in 2022</div>
-                </div>
-                <div class="mcq-question">
-                    <p class="question-text">How many step process for creating a 3D animation are required?</p>
-                    <div class="mcq-options">
-                        <div class="mcq-option" data-correct="false">A. 2</div>
-                        <div class="mcq-option" data-correct="true">B. 3 (Modeling, Layout/Animation, Rendering)</div>
-                        <div class="mcq-option" data-correct="false">C. 4</div>
-                        <div class="mcq-option" data-correct="false">D. 5</div>
-                    </div>
-                    <div class="mcq-explanation">Appeared in 2022</div>
-                </div>
-
-                <div class="mcq-question">
-                    <p class="question-text">JPEG stands for:</p>
-                    <div class="mcq-options">
-                        <div class="mcq-option" data-correct="false">A. Java Photo Expert Group</div>
-                        <div class="mcq-option" data-correct="true">B. Joint Photographic Experts Group</div>
-                        <div class="mcq-option" data-correct="false">C. Joint Picture Export Group</div>
-                        <div class="mcq-option" data-correct="false">D. Joint Photo Export Graph</div>
-                    </div>
-                    <div class="mcq-explanation">Appeared in PYQ</div>
-                </div>
-            
             </div>
-            
-            <div class="mcq-navigation mcq-nav">
-                <button id="prev-btn" class="btn btn-secondary" class="btn btn-secondary">Previous</button>
-                <button id="next-btn" class="btn btn-primary">Next</button>
-            </div>
-        </div>
 
-    </div>
+            <footer>
+                <p>© 2026 Sarvasva Notes. All Rights Reserved.</p>
+            </footer>
 
-    <footer>
-        <p>© 2026 Sarvasva Notes. All Rights Reserved.</p>
-    </footer>
-
-    <script>
-        // Collapsible Logic
-        document.querySelectorAll('.subject-header').forEach(header => {
-            header.addEventListener('click', () => {
-                const content = header.nextElementSibling;
-                header.classList.toggle('active');
-                content.classList.toggle('active');
-            });
-        });
-
-        // MCQ Logic
-        let score = 0;
-        let currentQuestion = 0;
-        let questions = [];
-
-        function initializeQuestions() {
-            questions = [];
-            const container = document.querySelector('.mcq-container.active');
-            if(!container) return;
-
-            const qEls = container.querySelectorAll('.mcq-question');
-            qEls.forEach(q => {
-                // Reset UI
-                q.querySelectorAll('.mcq-option').forEach(o => {
-                    o.classList.remove('selected', 'correct', 'incorrect');
-                    o.style.pointerEvents = 'auto';
-                });
-                const exp = q.querySelector('.mcq-explanation');
-                if(exp) exp.classList.remove('show');
-
-                // Inject Button if missing
-                let btn = q.querySelector('.submit-answer-btn');
-                if(!btn) {
-                    btn = document.createElement('button');
-                    btn.className = 'submit-answer-btn';
-                    btn.textContent = 'Submit Answer';
-                    btn.classList.add('btn', 'btn-primary'); // Add new classes
-                    btn.style.marginTop = '15px';
-                    // q.appendChild(btn); // Append at end
-                     if(exp) q.insertBefore(btn, exp);
-                     else q.appendChild(btn);
-                }
-                btn.disabled = false;
-                btn.textContent = 'Submit Answer';
-
-                questions.push({ element: q, answered: false });
-            });
-
-            const totalQ = document.getElementById('total-questions');
-            if(totalQ) totalQ.textContent = questions.length;
-            updateScore(0);
-            showQuestion();
-        }
-
-        function updateScore(s) {
-            score = s;
-            const scoreEl = document.getElementById('score');
-            if(scoreEl) scoreEl.textContent = score;
-        }
-
-        function showQuestion() {
-            questions.forEach(q => q.element.style.display = 'none');
-            if(questions[currentQuestion]) {
-                questions[currentQuestion].element.style.display = 'block';
-            }
-            
-            const prev = document.getElementById('prev-btn');
-            const next = document.getElementById('next-btn');
-            if(prev) prev.disabled = currentQuestion === 0;
-            if(next) next.innerHTML = currentQuestion === questions.length - 1 ? 'Finish' : 'Next <i class="fas fa-arrow-right"></i>';
-        }
-
-        document.addEventListener('click', (e) => {
-            if(e.target.classList.contains('mcq-option')) {
-                const qDiv = e.target.closest('.mcq-question');
-                const btn = qDiv.querySelector('.submit-answer-btn');
-                if(btn && btn.disabled) return;
-                
-                qDiv.querySelectorAll('.mcq-option').forEach(o => o.classList.remove('selected'));
-                e.target.classList.add('selected');
-            }
-
-            if(e.target.classList.contains('submit-answer-btn')) {
-                const btn = e.target;
-                const qDiv = btn.closest('.mcq-question');
-                const selected = qDiv.querySelector('.mcq-option.selected');
-                
-                if(!selected) { alert('Please select an option.'); return; }
-
-                const isCorrect = selected.dataset.correct === 'true';
-                if(isCorrect) updateScore(score + 1);
-
-                qDiv.querySelectorAll('.mcq-option').forEach(o => {
-                    o.style.pointerEvents = 'none';
-                    if(o.dataset.correct === 'true') o.classList.add('correct');
-                    else if(o.classList.contains('selected')) o.classList.add('incorrect');
-                    o.classList.remove('selected');
-                });
-                
-                const exp = qDiv.querySelector('.mcq-explanation');
-                if(exp) exp.classList.add('show');
-                
-                btn.disabled = true;
-                btn.textContent = isCorrect ? 'Correct!' : 'Incorrect';
-            }
-        });
-
-        document.getElementById('next-btn')?.addEventListener('click', () => {
-            if(currentQuestion < questions.length - 1) {
-                currentQuestion++;
-                showQuestion();
-            } else {
-                alert('Quiz Complete! Score: ' + score);
-            }
-        });
-
-        document.getElementById('prev-btn')?.addEventListener('click', () => {
-            if(currentQuestion > 0) {
-                currentQuestion--;
-                showQuestion();
-            }
-        });
-
-        document.getElementById('reset-btn')?.addEventListener('click', () => initializeQuestions());
-
-        window.addEventListener('DOMContentLoaded', () => {
-            initializeQuestions();
-            // Open first note block
-            const firstHeader = document.querySelector('.subject-header');
-            if(firstHeader) firstHeader.click();
-        });
-
-        // Smooth scroll
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                e.preventDefault();
-                const targetId = this.getAttribute('href');
-                if (targetId === '#') return;
-                const targetElement = document.querySelector(targetId);
-                if (targetElement) {
-                    window.scrollTo({
-                        top: targetElement.offsetTop - 80,
-                        behavior: 'smooth'
+            <script>
+                // Collapsible Logic
+                document.querySelectorAll('.subject-header').forEach(header => {
+                    header.addEventListener('click', () => {
+                        const content = header.nextElementSibling;
+                        header.classList.toggle('active');
+                        content.classList.toggle('active');
                     });
+                });
+
+                // MCQ Logic
+                let score = 0;
+                let currentQuestion = 0;
+                let questions = [];
+
+                function initializeQuestions() {
+                    questions = [];
+                    const container = document.querySelector('.mcq-container.active');
+                    if (!container) return;
+
+                    const qEls = container.querySelectorAll('.mcq-question');
+                    qEls.forEach(q => {
+                        // Reset UI
+                        q.querySelectorAll('.mcq-option').forEach(o => {
+                            o.classList.remove('selected', 'correct', 'incorrect');
+                            o.style.pointerEvents = 'auto';
+                        });
+                        const exp = q.querySelector('.mcq-explanation');
+                        if (exp) exp.classList.remove('show');
+
+                        // Inject Button if missing
+                        let btn = q.querySelector('.submit-answer-btn');
+                        if (!btn) {
+                            btn = document.createElement('button');
+                            btn.className = 'submit-answer-btn';
+                            btn.textContent = 'Submit Answer';
+                            btn.classList.add('btn', 'btn-primary'); // Add new classes
+                            btn.style.marginTop = '15px';
+                            // q.appendChild(btn); // Append at end
+                            if (exp) q.insertBefore(btn, exp);
+                            else q.appendChild(btn);
+                        }
+                        btn.disabled = false;
+                        btn.textContent = 'Submit Answer';
+
+                        questions.push({ element: q, answered: false });
+                    });
+
+                    const totalQ = document.getElementById('total-questions');
+                    if (totalQ) totalQ.textContent = questions.length;
+                    updateScore(0);
+                    showQuestion();
                 }
-            });
-        });
-    </script>
-    <script src="theme.js"></script>
+
+                function updateScore(s) {
+                    score = s;
+                    const scoreEl = document.getElementById('score');
+                    if (scoreEl) scoreEl.textContent = score;
+                }
+
+                function showQuestion() {
+                    questions.forEach(q => q.element.style.display = 'none');
+                    if (questions[currentQuestion]) {
+                        questions[currentQuestion].element.style.display = 'block';
+                    }
+
+                    const prev = document.getElementById('prev-btn');
+                    const next = document.getElementById('next-btn');
+                    if (prev) prev.disabled = currentQuestion === 0;
+                    if (next) next.innerHTML = currentQuestion === questions.length - 1 ? 'Finish' : 'Next <i class="fas fa-arrow-right"></i>';
+                }
+
+                document.addEventListener('click', (e) => {
+                    if (e.target.classList.contains('mcq-option')) {
+                        const qDiv = e.target.closest('.mcq-question');
+                        const btn = qDiv.querySelector('.submit-answer-btn');
+                        if (btn && btn.disabled) return;
+
+                        qDiv.querySelectorAll('.mcq-option').forEach(o => o.classList.remove('selected'));
+                        e.target.classList.add('selected');
+                    }
+
+                    if (e.target.classList.contains('submit-answer-btn')) {
+                        const btn = e.target;
+                        const qDiv = btn.closest('.mcq-question');
+                        const selected = qDiv.querySelector('.mcq-option.selected');
+
+                        if (!selected) { alert('Please select an option.'); return; }
+
+                        const isCorrect = selected.dataset.correct === 'true';
+                        if (isCorrect) updateScore(score + 1);
+
+                        qDiv.querySelectorAll('.mcq-option').forEach(o => {
+                            o.style.pointerEvents = 'none';
+                            if (o.dataset.correct === 'true') o.classList.add('correct');
+                            else if (o.classList.contains('selected')) o.classList.add('incorrect');
+                            o.classList.remove('selected');
+                        });
+
+                        const exp = qDiv.querySelector('.mcq-explanation');
+                        if (exp) exp.classList.add('show');
+
+                        btn.disabled = true;
+                        btn.textContent = isCorrect ? 'Correct!' : 'Incorrect';
+                    }
+                });
+
+                document.getElementById('next-btn')?.addEventListener('click', () => {
+                    if (currentQuestion < questions.length - 1) {
+                        currentQuestion++;
+                        showQuestion();
+                    } else {
+                        alert('Quiz Complete! Score: ' + score);
+                    }
+                });
+
+                document.getElementById('prev-btn')?.addEventListener('click', () => {
+                    if (currentQuestion > 0) {
+                        currentQuestion--;
+                        showQuestion();
+                    }
+                });
+
+                document.getElementById('reset-btn')?.addEventListener('click', () => initializeQuestions());
+
+                window.addEventListener('DOMContentLoaded', () => {
+                    initializeQuestions();
+                    // Open first note block
+                    const firstHeader = document.querySelector('.subject-header');
+                    if (firstHeader) firstHeader.click();
+                });
+
+                // Smooth scroll
+                document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                    anchor.addEventListener('click', function (e) {
+                        e.preventDefault();
+                        const targetId = this.getAttribute('href');
+                        if (targetId === '#') return;
+                        const targetElement = document.querySelector(targetId);
+                        if (targetElement) {
+                            window.scrollTo({
+                                top: targetElement.offsetTop - 80,
+                                behavior: 'smooth'
+                            });
+                        }
+                    });
+                });
+            </script>
+            <script src="theme.js"></script>
+            <script src="hamburger-menu.js"></script>
 </body>
+
 </html>
-
-
-
-
-
